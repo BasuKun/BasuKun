@@ -51,10 +51,12 @@ public class GameUI : MonoBehaviour
     public void OnRestartButton()
     {
         SceneManager.LoadScene(1);
+        GameManager.instance.AddScore(GameManager.instance.score *-1);
     }
 
     public void OnMenuButton()
     {
         SceneManager.LoadScene(0);
+        GameManager.instance.AddScore(GameManager.instance.score * -1);
     }
 }
