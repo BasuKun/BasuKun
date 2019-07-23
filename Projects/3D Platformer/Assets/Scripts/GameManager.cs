@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public int score;
 
+    public bool paused;
+
     // instance
     public static GameManager instance;
 
@@ -21,6 +23,30 @@ public class GameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
+    }
+
+    void Update()
+    {
+        if(Input.GetButtonDown("Cancel"))
+        {
+            TogglePauseGame();
+        }
+    }
+
+    public void TogglePauseGame()
+    {
+        paused = !paused;
+
+        if(paused)
+        {
+            Time.timeScale = 0.0f;
+        }
+        else
+        {
+            Time.timeScale = 1.0f;
+        }
+
+        GameUI.instance.TogglePauseScreen(paused);
     }
 
     public void AddScore(int scoreToGive)
@@ -45,11 +71,13 @@ public class GameManager : MonoBehaviour
     public void WinGame()
     {
         GameUI.instance.SetEndScreen(true);
+        Time.timeScale = 0.0f;
     }
 
     public void GameOver()
     {
         GameUI.instance.SetEndScreen(false);
+        Time.timeScale = 0.0f;
     }
 
 }

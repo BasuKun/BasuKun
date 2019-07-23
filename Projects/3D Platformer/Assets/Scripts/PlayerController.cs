@@ -16,10 +16,15 @@ public class PlayerController : MonoBehaviour
         // get the components
         rig = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+
+        Time.timeScale = 1.0f;
     }
 
     void Update()
     {
+        if(GameManager.instance.paused)
+            return;
+
         Move();
 
         if(Input.GetButtonDown("Jump"))
