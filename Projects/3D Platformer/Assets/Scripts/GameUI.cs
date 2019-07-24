@@ -54,12 +54,14 @@ public class GameUI : MonoBehaviour
     {
         SceneManager.LoadScene(1);
         GameManager.instance.AddScore(GameManager.instance.score *-1);
+        GameManager.instance.paused = false;
     }
 
     public void OnMenuButton()
     {
         SceneManager.LoadScene(0);
         GameManager.instance.AddScore(GameManager.instance.score * -1);
+        GameManager.instance.paused = false;
     }
 
     public void TogglePauseScreen(bool paused)

@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
 
     public bool paused;
 
-    // instance
+    //public GameObject endScreen;
+
     public static GameManager instance;
 
     void Awake()
@@ -29,7 +30,10 @@ public class GameManager : MonoBehaviour
     {
         if(Input.GetButtonDown("Cancel"))
         {
-            TogglePauseGame();
+            //if(endScreen.activeSelf == false)
+            //{
+                TogglePauseGame();
+            //}
         }
     }
 
