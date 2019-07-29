@@ -9,10 +9,12 @@ public class GameController : MonoBehaviour
     public Text score1Text;
     public Text score2Text;
     public float scoreCoordinates = 3.4f;
+    public Text winText;
+    public GameObject endScreen;
 
     private Ball currentBall;
-    private int score1 = 0;
-    private int score2 = 0;
+    public int score1 = 0;
+    public int score2 = 0;
 
     void Start()
     {
@@ -46,6 +48,26 @@ public class GameController : MonoBehaviour
                 Destroy(currentBall.gameObject);
                 SpawnBall();
             }
+        }
+
+        if (score1 == 7 || score2 == 7)
+        {
+            EndGame(true);
+        }
+    }
+
+    public void EndGame(bool finished)
+    {
+        endScreen.SetActive(true);
+        Time.timeScale = 0.0f;
+
+        if (score1 == 7)
+        {
+            winText.text = "P1 Won";
+        }
+        if (score2 == 7)
+        {
+            winText.text = "P2 Won";
         }
     }
 }
