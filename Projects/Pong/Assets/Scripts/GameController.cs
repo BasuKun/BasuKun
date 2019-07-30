@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
     public Text winText;
     public GameObject endScreen;
     public int winCondition = 2;
+    public bool initialBallSpawned = false;
 
     private Ball currentBall;
     public int score1 = 0;
@@ -23,7 +24,6 @@ public class GameController : MonoBehaviour
         Time.timeScale = 1.0f;
         score1 = 0;
         score2 = 0;
-        SpawnBall();
     }
 
     void SpawnBall()
@@ -39,6 +39,12 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
+        if (Countdown.instance.countdownFinished == true && initialBallSpawned == false)
+        {
+            SpawnBall();
+            initialBallSpawned = true;
+        }
+
         if (currentBall != null)
         {
             if (currentBall.transform.position.x > scoreCoordinates)
