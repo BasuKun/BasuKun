@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class GameController : MonoBehaviour
     public float scoreCoordinates = 3.4f;
     public Text winText;
     public GameObject endScreen;
+    public int winCondition = 2;
 
     private Ball currentBall;
     public int score1 = 0;
@@ -18,6 +20,9 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1.0f;
+        score1 = 0;
+        score2 = 0;
         SpawnBall();
     }
 
@@ -50,7 +55,7 @@ public class GameController : MonoBehaviour
             }
         }
 
-        if (score1 == 7 || score2 == 7)
+        if (score1 == winCondition || score2 == winCondition)
         {
             EndGame(true);
         }
@@ -61,13 +66,23 @@ public class GameController : MonoBehaviour
         endScreen.SetActive(true);
         Time.timeScale = 0.0f;
 
-        if (score1 == 7)
+        if (score1 == winCondition)
         {
             winText.text = "P1 Won";
         }
-        if (score2 == 7)
+        if (score2 == winCondition)
         {
             winText.text = "P2 Won";
         }
+    }
+
+    public void OnRestartButton()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void OnHomeButton()
+    {
+        SceneManager.LoadScene(0);
     }
 }
