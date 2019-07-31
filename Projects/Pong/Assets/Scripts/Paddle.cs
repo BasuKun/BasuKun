@@ -6,7 +6,9 @@ public class Paddle : MonoBehaviour
 {
     public float speed = 1f;
     public float aiSpeedMultiplier = 0.8f;
+    public float finalAIMultiplier;
     public int playerIndex = 1;
+    public float ballVelocityComparison;
 
     public GameObject rightPaddle;
 
@@ -29,19 +31,57 @@ public class Paddle : MonoBehaviour
 
         if (ModeSelection.instance.modeSelected == "PVE")
         {
-            AIPaddle();
+            if (GameController.instance.currentBall.GetComponent<Rigidbody2D>().velocity.x > 0)
+            {
+                AIPaddle();
+            }
         }
     }
 
     public void AIPaddle()
     {
-        if(GameController.instance.currentBall.transform.position.y > rightPaddle.transform.position.y)
+        BallVelocityPositive();
+        if (GameController.instance.currentBall.transform.position.y > rightPaddle.transform.position.y)
         {
-            rightPaddle.GetComponent<Rigidbody2D>().velocity = new Vector2(0, aiSpeedMultiplier * speed);
+            if (ballVelocityComparison <= aiSpeedMultiplier * speed)
+            {
+                finalAIMultiplier = aiSpeedMultiplier * speed;
+                finalAIMultiplier = Mathf.Clamp(aiSpeedMultiplier * speed, GameController.instance.currentBall.GetComponent<Rigidbody2D>().velocity.y, GameController.instance.currentBall.GetComponent<Rigidbody2D>().velocity.y);
+                rightPaddle.GetComponent<Rigidbody2D>().velocity = new Vector2(0, finalAIMultiplier);
+            }
+            if (ballVelocityComparison > aiSpeedMultiplier * speed)
+            {
+                finalAIMultiplier = aiSpeedMultiplier * speed;
+                finalAIMultiplier = Mathf.Clamp(aiSpeedMultiplier * speed, aiSpeedMultiplier * speed, aiSpeedMultiplier * speed);
+                rightPaddle.GetComponent<Rigidbody2D>().velocity = new Vector2(0, finalAIMultiplier);
+            }
         }
         if (GameController.instance.currentBall.transform.position.y < rightPaddle.transform.position.y)
         {
-            rightPaddle.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -aiSpeedMultiplier * speed);
+            if (ballVelocityComparison <= aiSpeedMultiplier * speed)
+            {
+                finalAIMultiplier = -aiSpeedMultiplier * speed;
+                finalAIMultiplier = Mathf.Clamp(-aiSpeedMultiplier * speed, GameController.instance.currentBall.GetComponent<Rigidbody2D>().velocity.y, GameController.instance.currentBall.GetComponent<Rigidbody2D>().velocity.y);
+                rightPaddle.GetComponent<Rigidbody2D>().velocity = new Vector2(0, finalAIMultiplier);
+            }
+            if (ballVelocityComparison > aiSpeedMultiplier * speed)
+            {
+                finalAIMultiplier = -aiSpeedMultiplier * speed;
+                finalAIMultiplier = Mathf.Clamp(-aiSpeedMultiplier * speed, -aiSpeedMultiplier * speed, -aiSpeedMultiplier * speed);
+                rightPaddle.GetComponent<Rigidbody2D>().velocity = new Vector2(0, finalAIMultiplier);
+            }
+        }
+    }
+
+    public void BallVelocityPositive()
+    {
+        if (GameController.instance.currentBall.GetComponent<Rigidbody2D>().velocity.y < 0)
+        {
+            ballVelocityComparison = GameController.instance.currentBall.GetComponent<Rigidbody2D>().velocity.y * -1;
+        }
+        else
+        {
+            ballVelocityComparison = GameController.instance.currentBall.GetComponent<Rigidbody2D>().velocity.y;
         }
     }
 }
