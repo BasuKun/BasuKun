@@ -28,7 +28,6 @@ public class Countdown : MonoBehaviour
         if (countdownDisappear == false)
         {
             timer -= Time.deltaTime;
-            Debug.Log(timer);
             UpdateCountdown();
         }
     }

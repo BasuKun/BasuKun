@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    public float difficultyMultiplier = 1.3f;
+    public float difficultyMultiplier = 1.2f;
 
+    public float startSpeed = 1.2f;
     public float minXSpeed = 0.8f;
     public float maxXSpeed = 1.2f;
     public float minYSpeed = 0.8f;
@@ -16,7 +17,7 @@ public class Ball : MonoBehaviour
     void Start()
     {
         ballRigidbody = GetComponent<Rigidbody2D>();
-        ballRigidbody.velocity = new Vector2(Random.Range(minXSpeed, maxXSpeed) * (Random.value > 0.5f ? -1 : 1), Random.Range(minYSpeed, maxYSpeed) * (Random.value > 0.5f ? -1 : 1));
+        ballRigidbody.velocity = new Vector2(Random.Range(minXSpeed, maxXSpeed) * (Random.value > 0.5f ? -1 : 1) * startSpeed, Random.Range(minYSpeed, maxYSpeed) * (Random.value > 0.5f ? -1 : 1) * startSpeed);
     }
 
     // Update is called once per frame

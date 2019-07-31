@@ -47,7 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 431d18dcba27b4f46b9060649e2e067e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficultyMultiplier: 1.3
+  difficultyMultiplier: 1.2
+  startSpeed: 1.2
   minXSpeed: 0.6
   maxXSpeed: 1
   minYSpeed: 0.6

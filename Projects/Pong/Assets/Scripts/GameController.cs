@@ -15,12 +15,15 @@ public class GameController : MonoBehaviour
     public int winCondition = 2;
     public bool initialBallSpawned = false;
 
-    private Ball currentBall;
+    public Ball currentBall;
     public int score1 = 0;
     public int score2 = 0;
 
+    public static GameController instance;
+
     void Start()
     {
+        instance = this;
         Time.timeScale = 1.0f;
         score1 = 0;
         score2 = 0;

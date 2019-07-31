@@ -144,7 +144,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  aiSpeedMultiplier: 0.8
   playerIndex: 1
+  rightPaddle: {fileID: 54965934}
 --- !u!4 &4788256
 Transform:
   m_ObjectHideFlags: 0
@@ -367,7 +369,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  aiSpeedMultiplier: 0.8
   playerIndex: 2
+  rightPaddle: {fileID: 54965934}
 --- !u!1001 &110288305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1235,10 +1239,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d6e75ac7ea89e148ae1ce6058c4288a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdown: {fileID: 168096626}
   timer: 3
-  countdownObject: {fileID: 1342241361}
   countdownFinished: 0
+  countdownDisappear: 0
+  countdownObject: {fileID: 1342241361}
+  countdown: {fileID: 168096626}
 --- !u!1 &738464875
 GameObject:
   m_ObjectHideFlags: 0
@@ -1852,6 +1857,8 @@ MonoBehaviour:
   endScreen: {fileID: 977614548}
   winCondition: 2
   initialBallSpawned: 0
+  currentBall: {fileID: 8660128168500956366, guid: 14b7fb8bace8c374ca5ec7697358fe53,
+    type: 3}
   score1: 0
   score2: 0
 --- !u!4 &1431101879

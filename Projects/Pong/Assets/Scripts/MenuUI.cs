@@ -5,8 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MenuUI : MonoBehaviour
 {
+    public void OnPlayAIButton()
+    {
+        ModeSelection.instance.modeSelected = "PVE";
+        SceneManager.LoadScene(1);
+    }
+
     public void OnPlayMultiplayerButton()
     {
+        ModeSelection.instance.modeSelected = "PVP";
         SceneManager.LoadScene(1);
     }
 
