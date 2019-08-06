@@ -8,9 +8,10 @@ public class Player : MonoBehaviour
     public float horizontalLimit = 2.5f;
     public GameObject missilePrefab;
     public float firingSpeed = 3f;
+    public float firingCooldownDuration = 1f;
     public float missileLastingTime = 2f;
 
-    private bool fired = false;
+    private float cooldownTimer;
 
     void Update()
     {
@@ -28,23 +29,18 @@ public class Player : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
 
-        if (Input.GetAxis("Fire1") == 1f)
-        {
-            if (fired == false)
-            {
-                fired = true;
+        cooldownTimer -= Time.deltaTime;
 
-                GameObject missileInstance = Instantiate(missilePrefab);
-                missileInstance.transform.SetParent(transform.parent);
-                missileInstance.transform.position = transform.position;
-                missileInstance.GetComponent<Rigidbody2D>().velocity = new Vector2(0, firingSpeed);
-
-                Destroy(missileInstance, missileLastingTime);
-            }
-        }
-        else
+        if (cooldownTimer <= 0 && Input.GetAxis("Fire1") == 1f)
         {
-            fired = false;
+            cooldownTimer = firingCooldownDuration;
+
+            GameObject missileInstance = Instantiate(missilePrefab);
+            missileInstance.transform.SetParent(transform.parent);
+            missileInstance.transform.position = transform.position;
+            missileInstance.GetComponent<Rigidbody2D>().velocity = new Vector2(0, firingSpeed);
+
+            Destroy(missileInstance, missileLastingTime);
         }
     }
 }
