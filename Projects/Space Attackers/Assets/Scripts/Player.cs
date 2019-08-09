@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public float firingSpeed = 3f;
     public float firingCooldownDuration = 1f;
     public float missileLastingTime = 2f;
+    public GameObject explosionPrefab;
 
     private float cooldownTimer;
 
@@ -41,6 +42,20 @@ public class Player : MonoBehaviour
             missileInstance.GetComponent<Rigidbody2D>().velocity = new Vector2(0, firingSpeed);
 
             Destroy(missileInstance, missileLastingTime);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D otherCollider)
+    {
+        if (otherCollider.tag == "EnemyMissile")
+        {
+            GameObject explosionInstance = Instantiate(explosionPrefab);
+            explosionInstance.transform.SetParent(transform.parent);
+            explosionInstance.transform.position = transform.position;
+
+            Destroy(explosionInstance, 0.5f);
+            Destroy(gameObject);
+            Destroy(otherCollider.gameObject);
         }
     }
 }
