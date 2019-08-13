@@ -865,6 +865,12 @@ MonoBehaviour:
   shootingSpeed: 1.5
   enemyMissilePrefab: {fileID: 813341837761890832, guid: 736bafea3702dd94a9a6a2a471a6ea2b,
     type: 3}
+  enemyContainer: {fileID: 121308440}
+  maximumMovingInterval: 0.4
+  minimumMovingInterval: 0.05
+  movingDistance: 0.12
+  horizontalLimit: 2.5
+  player: {fileID: 983653436}
 --- !u!1001 &671439768
 PrefabInstance:
   m_ObjectHideFlags: 0
