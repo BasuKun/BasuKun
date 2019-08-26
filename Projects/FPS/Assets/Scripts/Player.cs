@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("Stats")]
+    public int curHP;
+    public int maxHP;
+
     [Header("Movement")]
     public float moveSpeed;
     public float jumpForce;
@@ -79,5 +83,30 @@ public class Player : MonoBehaviour
         {
             rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        curHP -= damage;
+
+        if (curHP <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        
+    }
+
+    public void GiveHealth(int amountToGive)
+    {
+        curHP = Mathf.Clamp(curHP + amountToGive, 0, maxHP);
+    }
+
+    public void GiveAmmo(int amountToGive)
+    {
+        weapon.curAmmo = Mathf.Clamp(weapon.curAmmo + amountToGive, 0, weapon.maxAmmo);
     }
 }
