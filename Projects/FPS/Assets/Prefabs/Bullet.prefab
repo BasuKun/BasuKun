@@ -49,6 +49,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   lifetime: 3
+  hitParticle: {fileID: 8260956334576518196, guid: 0de7154dc6104584abe991f0a15c2f77,
+    type: 3}
+  hitParticleSmall: {fileID: 50466027133975955, guid: 3622fb6a4a5799f4383cca07fb841727,
+    type: 3}
 --- !u!33 &5163003293155085798
 MeshFilter:
   m_ObjectHideFlags: 0
