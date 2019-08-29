@@ -10,6 +10,7 @@ public class Weapon : MonoBehaviour
     public int curAmmo;
     public int maxAmmo;
     public bool infiniteAmmo;
+    public GameObject hitParticleSmall;
 
     public float bulletSpeed;
 
@@ -47,6 +48,9 @@ public class Weapon : MonoBehaviour
 
         bullet.transform.position = muzzle.position;
         bullet.transform.rotation = muzzle.rotation;
+
+        GameObject objSmall = Instantiate(hitParticleSmall, muzzle.position, Quaternion.identity);
+        Destroy(objSmall, 0.5f);
 
         // set the velocity
         bullet.GetComponent<Rigidbody>().velocity = muzzle.forward * bulletSpeed;
