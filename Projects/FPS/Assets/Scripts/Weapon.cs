@@ -44,6 +44,11 @@ public class Weapon : MonoBehaviour
         lastShootTime = Time.time;
         curAmmo--;
 
+        if (isPlayer)
+        {
+            GameUI.instance.UpdateAmmoText(curAmmo, maxAmmo);
+        }
+
         GameObject bullet = bulletPool.GetObject();
 
         bullet.transform.position = muzzle.position;
