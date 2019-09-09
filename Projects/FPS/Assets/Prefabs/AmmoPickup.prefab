@@ -4859,6 +4859,7 @@ MonoBehaviour:
   rotateSpeed: 90
   bobSpeed: 1
   bobHeight: 0.5
+  pickupSfx: {fileID: 8300000, guid: 2761a7958bf2f8e479b517486256b472, type: 3}
 --- !u!1 &6485338029088903142
 GameObject:
   m_ObjectHideFlags: 0
