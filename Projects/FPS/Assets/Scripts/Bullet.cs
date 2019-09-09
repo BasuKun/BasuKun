@@ -24,8 +24,11 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
+        var other = collision.transform;
+        var player = other.GetComponent<Player>();
+
         // did we hit the player?
         if (other.CompareTag("Player"))
         {
@@ -36,9 +39,14 @@ public class Bullet : MonoBehaviour
             other.GetComponent<Enemy>().TakeDamage(damage);
         }
 
+        other.GetComponent<BoxCollider>();
+        var posMe = transform.position;
+        var posNormal = collision.contacts[0].normal;
+        var spawnPos = posMe + posNormal * 0.2f;
+
         // create the hit particle
-        GameObject obj = Instantiate(hitParticle, transform.position, Quaternion.identity);
-        GameObject objSmall = Instantiate(hitParticleSmall, transform.position, Quaternion.identity);
+        GameObject obj = Instantiate(hitParticle, spawnPos, Quaternion.identity);
+        GameObject objSmall = Instantiate(hitParticleSmall, spawnPos, Quaternion.identity);
         Destroy(obj, 0.5f);
         Destroy(objSmall, 0.5f);
 
