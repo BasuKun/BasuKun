@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc97a952bf38b546b551c314e1de5a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
 --- !u!212 &151408112
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -234,6 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc97a952bf38b546b551c314e1de5a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
 --- !u!212 &298469516
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -388,6 +390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 635995334}
   - component: {fileID: 635995333}
+  - component: {fileID: 635995335}
   m_Layer: 0
   m_Name: Armed Base
   m_TagString: Untagged
@@ -457,6 +460,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &635995335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635995332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16f57352ecc41ee49b0f212bb8b7d560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  rocket: {fileID: 857750019442011530, guid: 4b730245930e9ec44ae07404812087e9, type: 3}
 --- !u!1 &666542974
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,6 +504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc97a952bf38b546b551c314e1de5a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
 --- !u!212 &666542976
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -623,6 +641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc97a952bf38b546b551c314e1de5a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
 --- !u!212 &908267426
 SpriteRenderer:
   m_ObjectHideFlags: 0
