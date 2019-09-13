@@ -17,7 +17,7 @@ public class Bases : MonoBehaviour
 
     public Base GetRandomBase()
     {
-        for (int i = BaseCount-1; i >= 0; i++)
+        for (int i = BaseCount-1; i >= 0; i--)
         {
             if (bases[i].health <= 0)
             {

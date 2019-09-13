@@ -26,8 +26,11 @@ public class Rocket : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        audioSource.PlayOneShot(audioClips[1]);
-        Destroy(this.gameObject, .33f);
+        if (collision.gameObject.CompareTag("Baddie"))
+        {
+            audioSource.PlayOneShot(audioClips[1]);
+            Destroy(this.gameObject, .33f);
+        }
     }
 
     public void Launch(Vector2 direction, float speed)
