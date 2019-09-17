@@ -15,9 +15,16 @@ public class Game : MonoBehaviour
     private Transform gameMenu;
     [SerializeField]
     private Bases bases;
-    private bool isRoundOver;
+    public bool isRoundOver;
     [SerializeField]
     private TextMeshProUGUI timerText;
+
+    public static Game instance;
+
+    void Awake()
+    {
+        instance = this;
+    }
 
     void Update()
     {

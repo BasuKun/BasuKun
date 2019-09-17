@@ -6,9 +6,13 @@ public class Base : MonoBehaviour
 {
     public float health;
 
-    void Awake()
+    void Update()
     {
-        health = 3;
+        if (Game.instance.isRoundOver == true)
+        {
+            health = 1;
+            this.GetComponent<SpriteRenderer>().enabled = true;
+        }
     }
 
     public void Damage(int amount)
@@ -23,6 +27,6 @@ public class Base : MonoBehaviour
 
     private void Die()
     {
-        // died!
+        this.GetComponent<SpriteRenderer>().enabled = false;
     }
 }
