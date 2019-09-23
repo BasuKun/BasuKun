@@ -1165,6 +1165,8 @@ MonoBehaviour:
   score: 0
   player: {fileID: 6679749230901750941, guid: 130d5ac7a70923e4388d1657baf87d91, type: 3}
   playerSpawnPoint: {fileID: 305119355}
+  spawners:
+  - {fileID: 888270434}
 --- !u!4 &1439506569
 Transform:
   m_ObjectHideFlags: 0
@@ -2026,6 +2028,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821589536876192050, guid: 130d5ac7a70923e4388d1657baf87d91,
+        type: 3}
+      propertyPath: m_MaxSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821589536876192050, guid: 130d5ac7a70923e4388d1657baf87d91,
+        type: 3}
+      propertyPath: m_JumpForce
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821589536876192050, guid: 130d5ac7a70923e4388d1657baf87d91,
+        type: 3}
+      propertyPath: m_CrouchSpeed
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 130d5ac7a70923e4388d1657baf87d91, type: 3}
