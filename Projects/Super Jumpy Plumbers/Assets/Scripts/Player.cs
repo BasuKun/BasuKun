@@ -5,10 +5,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Game game;
+    private Rigidbody2D body;
+    private float bounceForce = 1000f;
 
     void Awake()
     {
         game = FindObjectOfType<Game>();
+        body = GetComponent<Rigidbody2D>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -24,7 +27,16 @@ public class Player : MonoBehaviour
         switch(collision.gameObject.tag)
         {
             case "Enemy":
+                body.AddForce(new Vector2(0f, bounceForce));
                 StartCoroutine(HurtEnemy(collision.gameObject.GetComponent<Enemy>()));
+                break;
+            case "Gem":
+                game.AddLife();
+                Destroy(collision.gameObject);
+                break;
+            case "Coin":
+                game.AddPoints(50);
+                Destroy(collision.gameObject);
                 break;
         }
     }

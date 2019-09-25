@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Game : MonoBehaviour
 {
-    public int lives, score;
+    public int lives, score, highscore;
     [SerializeField]
     private Player player;
     [SerializeField]
@@ -13,10 +14,15 @@ public class Game : MonoBehaviour
     [SerializeField]
     private Spawner[] spawners;
     private int level;
+    [SerializeField]
+    private TextMeshProUGUI scoreText, livesText, bestText;
 
     void Start()
     {
+        highscore = PlayerPrefs.GetInt("Highscore", 0);
         Load();
+        bestText.text = "Best: " + highscore;
+        UpdateHUD();
     }
 
     public void LoseLife()
@@ -34,7 +40,7 @@ public class Game : MonoBehaviour
 
     void EndGame()
     {
-        if (score > PlayerPrefs.GetInt("Highscore", 0))
+        if (score > highscore)
         {
             PlayerPrefs.SetInt("Highscore", score);
         }
@@ -47,14 +53,20 @@ public class Game : MonoBehaviour
         yield return new WaitForSeconds(2f);
         lives--;
         Instantiate(player.gameObject, playerSpawnPoint.position, Quaternion.identity);
-        // update HUD show new life count
+        UpdateHUD();
     }
 
     public void AddPoints(int points)
     {
         score += points;
-        // update HUD
+        UpdateHUD();
         CheckForLevelCompletion();
+    }
+
+    public void AddLife()
+    {
+        lives++;
+        UpdateHUD();
     }
 
     private void CheckForLevelCompletion()
@@ -69,24 +81,23 @@ public class Game : MonoBehaviour
                 {
                     return;
                 }
-                // complete level
-                CompleteLevel();
             }
+            CompleteLevel();
         }
     }
 
     private void CompleteLevel()
     {
-        Save();
         level++;
-
-        if (SceneManager.GetSceneByBuildIndex(level) != null)
+        Save();
+        if (level <= SceneManager.sceneCountInBuildSettings-1)
         {
             SceneManager.LoadScene(level);
         }
         else
         {
             Debug.Log("Game Won! Nice!");
+            EndGame();
         }
     }
 
@@ -94,12 +105,14 @@ public class Game : MonoBehaviour
     {
         PlayerPrefs.SetInt("Score", score);
         PlayerPrefs.SetInt("Lives", lives);
+        PlayerPrefs.SetInt("Level", level);
     }
 
     private void Load()
     {
         score = PlayerPrefs.GetInt("Score", 0);
         lives = PlayerPrefs.GetInt("Lives", 3);
+        level = PlayerPrefs.GetInt("level", 0);
     }
 
     void StartNewGame()
@@ -108,5 +121,12 @@ public class Game : MonoBehaviour
         SceneManager.LoadScene(level);
         PlayerPrefs.DeleteKey("Score");
         PlayerPrefs.DeleteKey("Lives");
+        PlayerPrefs.DeleteKey("Level");
+    }
+
+    void UpdateHUD()
+    {
+        scoreText.text = "Score: " + score;
+        livesText.text = "Lives: " + lives;
     }
 }
