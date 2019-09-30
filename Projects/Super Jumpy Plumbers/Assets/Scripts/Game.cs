@@ -17,6 +17,8 @@ public class Game : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI scoreText, livesText, bestText;
 
+    public GameObject scoreFloatPrefab;
+
     void Start()
     {
         highscore = PlayerPrefs.GetInt("Highscore", 0);
@@ -60,6 +62,9 @@ public class Game : MonoBehaviour
     {
         score += points;
         UpdateHUD();
+        //GameObject scorePopup = Instantiate(scoreFloatPrefab, player.transform.position, Quaternion.identity);
+        //scorePopup.GetComponent<TMPro.TextMeshProUGUI>().text = "+" + points;
+        //Destroy(scorePopup, 1f);
         CheckForLevelCompletion();
     }
 
