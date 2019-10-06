@@ -35,6 +35,6 @@ public class Firefly : MonoBehaviour
 
     private void Move()
     {
-        transform.Translate((direction * 1.3f) * Time.deltaTime);
+        transform.Translate((direction * moveSpeed) * Time.deltaTime);
     }
 }

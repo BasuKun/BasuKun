@@ -10,15 +10,20 @@ public class Toad : MonoBehaviour
     [SerializeField]
     private float jumpSpeed;
     [SerializeField]
+    private Tongue tongue;
+    [SerializeField]
     private Sprite[] toadSprites;
     private bool grounded, reachedTargetPoint;
     private int positionIndex;
     private Vector2 jumpDirection;
     private SpriteRenderer spriteRenderer;
 
+    private bool isTongueOut;
+
     void Awake()
     {
         grounded = true;
+        isTongueOut = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -30,7 +35,7 @@ public class Toad : MonoBehaviour
             spriteRenderer.sprite = toadSprites[1];
             grounded = false;
         }
-        else if (Input.GetButtonDown("Action" + player))
+        else if (Input.GetButtonDown("Action" + player) && !isTongueOut)
         {
             StartCoroutine(Attack());
         }
@@ -39,9 +44,11 @@ public class Toad : MonoBehaviour
 
     IEnumerator Attack()
     {
-        // activate tongue
-        yield return new WaitForSeconds(0.7f);
-        // deactivate tongue
+        isTongueOut = true;
+        tongue.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.6f);
+        isTongueOut = false;
+        tongue.gameObject.SetActive(false);
     }
 
     void Move()

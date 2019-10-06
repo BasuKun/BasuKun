@@ -63,7 +63,7 @@ public class Game : MonoBehaviour
         score += points;
         UpdateHUD();
         //GameObject scorePopup = Instantiate(scoreFloatPrefab, player.transform.position, Quaternion.identity);
-        //scorePopup.GetComponent<TMPro.TextMeshProUGUI>().text = "+" + points;
+        //scorePopup.GetComponent<TMPro.TextMeshProUGUI>().text = points.ToString();
         //Destroy(scorePopup, 1f);
         CheckForLevelCompletion();
     }
