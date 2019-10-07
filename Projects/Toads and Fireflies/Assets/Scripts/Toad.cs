@@ -12,6 +12,8 @@ public class Toad : MonoBehaviour
     [SerializeField]
     private Tongue tongue;
     [SerializeField]
+    private Game game;
+    [SerializeField]
     private Sprite[] toadSprites;
     private bool grounded, reachedTargetPoint;
     private int positionIndex;
@@ -29,6 +31,11 @@ public class Toad : MonoBehaviour
 
     void Update()
     {
+        if (game.gamePaused)
+        {
+            return;
+        }
+
         if (Input.GetButtonDown("Action" + player) && grounded)
         {
             jumpDirection = positionIndex == 0 ? Vector2.right : Vector2.left;
@@ -79,7 +86,7 @@ public class Toad : MonoBehaviour
                 }
             }
         }
-        transform.position = Vector2.MoveTowards(transform.position, jumpPathPoints[positionIndex].position, jumpSpeed);
+        transform.position = Vector2.MoveTowards(transform.position, jumpPathPoints[positionIndex].position, jumpSpeed * Time.deltaTime);
     }
 
     bool ReachedLandingPad()

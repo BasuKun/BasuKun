@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
@@ -12,12 +13,15 @@ public class Game : MonoBehaviour
     public Text timerText, playerWinnerText;
     [SerializeField]
     private GameObject gameOverPanel;
+    public bool gamePaused;
 
     private int winner;
 
     void Start()
     {
+        Time.timeScale = 1f;
         playerScores = new int[2];
+        gamePaused = false;
     }
 
     void Update()
@@ -42,14 +46,17 @@ public class Game : MonoBehaviour
             }
 
             gameOverPanel.SetActive(true);
+            gamePaused = true;
 
             if (winner == 1 || winner == 2)
             {
                 playerWinnerText.text = string.Format("Player {0} wins!", winner);
+                playerWinnerText.color = winner == 1 ? new Color(0.5f, 0.7f, 0.1f) : new Color(0.8f, 0.5f, 0.06f);
             }
             else
             {
                 playerWinnerText.text = string.Format("Draw!");
+                playerWinnerText.color = new Color(0.64f, 0.65f, 0.62f);
             }
         }
     }
@@ -68,6 +75,7 @@ public class Game : MonoBehaviour
 
     public void OnRetryClick()
     {
-        // TO COMPLETE!!!!
+        gamePaused = false;
+        SceneManager.LoadScene(0);
     }
 }
