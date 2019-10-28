@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public delegate void PlayerHandler();
+    public event PlayerHandler OnPlayerMoved;
+    public event PlayerHandler OnPlayerEscaped;
+
     public float jumpDistance = 0.32f;
 
     private bool jumped;
@@ -42,6 +46,10 @@ public class Player : MonoBehaviour
             {
                 transform.position = targetPosition;
                 jumped = true;
+                if (OnPlayerMoved != null)
+                {
+                    OnPlayerMoved();
+                }
             }
         }
         else
