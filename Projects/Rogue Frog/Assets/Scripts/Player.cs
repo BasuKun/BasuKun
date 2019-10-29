@@ -42,10 +42,11 @@ public class Player : MonoBehaviour
 
             Collider2D hitCollider = Physics2D.OverlapCircle(targetPosition, 0.1f);
 
-            if (tryingToMove == true && hitCollider == null)
+            if (tryingToMove == true && (hitCollider == null || hitCollider.GetComponent<Enemy>() != null))
             {
                 transform.position = targetPosition;
                 jumped = true;
+                GetComponent<AudioSource>().Play();
                 if (OnPlayerMoved != null)
                 {
                     OnPlayerMoved();
@@ -69,6 +70,10 @@ public class Player : MonoBehaviour
         if (transform.position.y > (Screen.height / 100f) / 2f)
         {
             transform.position = startingPosition;
+            if (OnPlayerEscaped != null)
+            {
+                OnPlayerEscaped();
+            }
         }
 
         if (transform.position.x < -((Screen.width / 100f) / 2f))
@@ -79,6 +84,14 @@ public class Player : MonoBehaviour
         if (transform.position.x > ((Screen.width / 100f) / 2f))
         {
             transform.position = new Vector3(transform.position.x - jumpDistance, transform.position.y, transform.position.z);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D otherCollider)
+    {
+        if (otherCollider.GetComponent<Enemy>() != null)
+        {
+            Destroy(gameObject);
         }
     }
 }
