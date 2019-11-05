@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4c4b7e67c0ac9d439c83edc7d0e71bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 1.7
   horizontalLimit: 2.8
   bulletPrefab: {fileID: 6653986478297748421, guid: 748d309b851bcdc4ab25f6915ddc7e76,
     type: 3}
@@ -470,9 +470,10 @@ MonoBehaviour:
   boxPrefab: {fileID: 4408307550422222728, guid: c6101a0bf97f5164e8528f3b73e862af,
     type: 3}
   tileSize: 32
-  boxChance: 0.1
+  boxChance: 0.06
   monsterPrefab: {fileID: 3391568741725023349, guid: 60b0dcd7da5bf8549adb7974d5412b1e,
     type: 3}
+  monsterSize: 6
 --- !u!1 &823571584
 GameObject:
   m_ObjectHideFlags: 0

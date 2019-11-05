@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
+    public delegate void KillHandler(Monster monster);
+    public event KillHandler onKill;
+
     public float speed = 2f;
     public float horizontalLimit = 2.8f;
     public int tileSize = 32;
@@ -34,12 +37,26 @@ public class Monster : MonoBehaviour
         {
             MoveDown();
         }
+        else if (otherCollider.tag == "Bullet")
+        {
+            Destroy(otherCollider.gameObject);
+            if (onKill != null)
+            {
+                onKill(this);
+            }
+        }
     }
 
     void MoveDown()
     {
         movingDirection *= -1;
         transform.position = new Vector2(transform.position.x, transform.position.y - tileSize / 100f);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(speed * movingDirection, 0);
+    }
+
+    public void ChangeDirection()
+    {
+        movingDirection *= -1;
         GetComponent<Rigidbody2D>().velocity = new Vector2(speed * movingDirection, 0);
     }
 }
