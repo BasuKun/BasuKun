@@ -8,7 +8,7 @@ public class Day2 : MonoBehaviour
         2, 9, 47, 51, 1, 51, 6, 55, 2, 55, 10, 59, 1, 59, 5, 63, 2, 10, 63, 67, 2, 9, 67, 71, 1, 71, 5, 75, 2, 10, 75, 79, 1, 79, 6, 83, 2, 10, 83, 87, 1, 5, 87, 91, 2, 9, 91, 95, 1, 95, 5,
         99, 1, 99, 2, 103, 1, 103, 13, 0, 99, 2, 14, 0, 0 };
 
-    private void Update()
+    private void Start()
     {
         while (program[0] != 19690720)
         {
@@ -41,7 +41,7 @@ public class Day2 : MonoBehaviour
             {
                 if (program[0] == 19690720)
                 {
-                    Debug.Log("SOLUTION FOUND:" + noun + " + " + verb + ". SOLUTION IS: " + ((100 * noun) + verb));
+                    Debug.Log("SOLUTION FOUND: " + noun + " + " + verb + ". SOLUTION IS: " + ((100 * noun) + verb));
                     break;
                 }
                 else
