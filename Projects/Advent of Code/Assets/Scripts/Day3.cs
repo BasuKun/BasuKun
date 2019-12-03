@@ -49,7 +49,7 @@ public class Day3 : MonoBehaviour
 
         //SOLVE PART 1
         var intersections = lineApath.Values.Intersect(lineBpath.Values);
-        Debug.Log(intersections.Min(point => Manhattan(point.Item1, point.Item2)));
+        Debug.Log(intersections.Min(point => AbsoluteShifter(point.Item1, point.Item2)));
 
         //SOLVE PART 2
         //var intersectionsLengths = lineApath.Keys.Intersect(lineBpath.Keys);
@@ -60,7 +60,7 @@ public class Day3 : MonoBehaviour
 
     }
 
-    private int Manhattan(int x, int y)
+    private int AbsoluteShifter(int x, int y)
     {
         return Mathf.Abs(x) + Mathf.Abs(y);
     }
