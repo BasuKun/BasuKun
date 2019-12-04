@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -52,37 +53,16 @@ public class Day3 : MonoBehaviour
         Debug.Log(intersections.Min(point => AbsoluteShifter(point.Item1, point.Item2)));
 
         //SOLVE PART 2
-        var intersectionLength = lineApath.Intersect(lineBpath, new eq());
-
-        foreach (var i in intersectionLength)
+        var intersectionsLength = lineApath.Where(d => lineBpath.ContainsValue(d.Value)).Union(lineBpath.Where(d => lineApath.ContainsValue(d.Value)));
+        foreach (var i in intersectionsLength)
         {
-            Debug.Log($"Key: {i.Key}, Value: {i.Value}");
+            Debug.Log(i);
         }
     }
 
     private int AbsoluteShifter(int x, int y)
     {
         return Mathf.Abs(x) + Mathf.Abs(y);
-    }
-
-    class eq : IEqualityComparer<KeyValuePair<int, (int, int)>>
-    {
-        public bool Equals(KeyValuePair<int, (int, int)> x, KeyValuePair<int, (int, int)> y)
-        {
-            return x.Value == y.Value;
-        }
-
-        public int GetHashCode(KeyValuePair<int, (int, int)> obj)
-        {
-            unchecked
-            {
-                int hash = 17;
-                hash = hash * 23 + obj.Key;
-                hash = hash * 23 + obj.Value.Item1;
-                hash = hash * 23 + obj.Value.Item2;
-                return hash;
-            }
-        }
     }
 
     void CoordinatesMaker(Dictionary<int, (int, int)> dictionary, string[] array, ref int x, ref int y, ref int key)
@@ -93,28 +73,28 @@ public class Day3 : MonoBehaviour
             {
                 for (int i = 0; i < int.Parse(direction.Substring(1)); i++)
                 {
-                    dictionary.Add(key++, (++x, y));
+                    dictionary.Add(++key, (++x, y));
                 }
             }
             else if (direction.Substring(0, 1) == "L")
             {
                 for (int i = 0; i < int.Parse(direction.Substring(1)); i++)
                 {
-                    dictionary.Add(key++, (--x, y));
+                    dictionary.Add(++key, (--x, y));
                 }
             }
             else if (direction.Substring(0, 1) == "U")
             {
                 for (int i = 0; i < int.Parse(direction.Substring(1)); i++)
                 {
-                    dictionary.Add(key++, (x, ++y));
+                    dictionary.Add(++key, (x, ++y));
                 }
             }
             else if (direction.Substring(0, 1) == "D")
             {
                 for (int i = 0; i < int.Parse(direction.Substring(1)); i++)
                 {
-                    dictionary.Add(key++, (x, --y));
+                    dictionary.Add(++key, (x, --y));
                 }
             }
         }
