@@ -39,35 +39,44 @@ public class Day5 : MonoBehaviour
     {
         for (int i = 0; i < program.Length; i += ((int)Mathf.Abs(program[i] % (10)) == 3 || (int)Mathf.Abs(program[i] % (10)) == 4 ? 2:4))
         {
+            Debug.Log("Checking position " + i + ": " + program[i]);
+
             float opcode = (int)Mathf.Abs(program[i] % 10); 
             float firstParam = (int)Mathf.Abs(program[i] / 100 % 10);
             float secondParam = (int)Mathf.Abs(program[i] / 1000 % 10);
             float thirdParam = (int)Mathf.Abs(program[i] / 10000 % 10);
 
-            int firstInputParam = secondParam == 0 ? program[program[i + 1]] : program[i + 1];
-            int secondInputParam = thirdParam == 0 ? program[program[i + 2]] : program[i + 2];
+            int firstInputParam = firstParam == 0 ? program[program[i + 1]] : program[i + 1];
+            int secondInputParam = secondParam == 0 ? program[program[i + 2]] : program[i + 2];
+
+            Debug.Log("Opcode: " + opcode + ", FirstParam: " + firstParam + ", SecondParam: " + secondParam + ", ThirdParam: " + thirdParam);
 
             if (opcode == 1)
             {
-                if (firstParam == 0)
+                if (thirdParam == 0)
                 {
                     program[program[i + 3]] = firstInputParam + secondInputParam;
+                    Debug.Log("O1P0: Changed position " + program[i + 3] + " to " + program[program[i + 3]]);
                 }
                 else
                 {
                     program[i + 3] = firstInputParam + secondInputParam;
+                    Debug.Log("01P1: Changed position " + (i + 3) + " to " + program[i + 3]);
                 }
+
             }
 
             else if (opcode == 2)
             {
-                if (firstParam == 0)
+                if (thirdParam == 0)
                 {
                     program[program[i + 3]] = firstInputParam * secondInputParam;
+                    Debug.Log("O2P0: Changed position " + program[i + 3] + " to " + program[program[i + 3]]);
                 }
                 else
                 {
                     program[i + 3] = firstInputParam * secondInputParam;
+                    Debug.Log("O2P1: Changed position " + (i + 3) + " to " + program[i + 3]);
                 }
             }
 
@@ -76,20 +85,32 @@ public class Day5 : MonoBehaviour
                 if (firstParam == 0)
                 {
                     program[program[i + 1]] = input;
+                    Debug.Log("O3P0: Changed position " + program[i + 1] + " to " + input);
                 }
                 else
                 {
                     program[i + 1] = input;
+                    Debug.Log("O3P1: Changed position " + (i + 1) + " to " + input);
                 }
             }
 
             else if (opcode == 4)
             {
-                output.Add(firstInputParam);
+                if (firstParam == 0)
+                {
+                    output.Add(program[program[i + 1]]);
+                    Debug.Log("O4P0: Added " + program[program[i + 1]] + " to diagnostic.");
+                }
+                else
+                {
+                    output.Add(program[i + 1]);
+                    Debug.Log("O4P1: Added " + program[i + 1] + " to diagnostic.");
+                }
             }
 
             else if (opcode == 9)
             {
+                Debug.Log("Broke out.");
                 break;
             }
         }
