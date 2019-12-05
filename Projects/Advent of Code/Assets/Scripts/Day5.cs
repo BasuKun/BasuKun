@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Day5 : MonoBehaviour
 {
-    public int[] program = { 3, 225, 1, 225, 6, 6, 1100, 1, 238, 225, 104, 0, 1001, 210, 88, 224, 101, -143, 224, 224, 4, 224, 1002, 223, 8, 223, 101, 3, 224, 224, 1, 223, 224, 223, 101, 42, 92, 224,
+    private int[] program = { 3, 225, 1, 225, 6, 6, 1100, 1, 238, 225, 104, 0, 1001, 210, 88, 224, 101, -143, 224, 224, 4, 224, 1002, 223, 8, 223, 101, 3, 224, 224, 1, 223, 224, 223, 101, 42, 92, 224,
         101, -78, 224, 224, 4, 224, 1002, 223, 8, 223, 1001, 224, 3, 224, 1, 223, 224, 223, 1101, 73, 10, 225, 1102, 38, 21, 225, 1102, 62, 32, 225, 1, 218, 61, 224, 1001, 224, -132, 224, 4, 224, 102,
         8, 223, 223, 1001, 224, 5, 224, 1, 224, 223, 223, 1102, 19, 36, 225, 102, 79, 65, 224, 101, -4898, 224, 224, 4, 224, 102, 8, 223, 223, 101, 4, 224, 224, 1, 224, 223, 223, 1101, 66, 56, 224,
         1001, 224, -122, 224, 4, 224, 102, 8, 223, 223, 1001, 224, 2, 224, 1, 224, 223, 223, 1002, 58, 82, 224, 101, -820, 224, 224, 4, 224, 1002, 223, 8, 223, 101, 3, 224, 224, 1, 223, 224, 223, 2,
@@ -37,33 +37,57 @@ public class Day5 : MonoBehaviour
 
     private void RunProgram(int input, ref List<int> output)
     {
-        for (int i = 0; i < program.Length; i += (program[(int)Mathf.Abs(i % (10))] == 3 || program[(int)Mathf.Abs(i % (10))] == 4 ? 2:4))
+        for (int i = 0; i < program.Length; i += ((int)Mathf.Abs(program[i] % (10)) == 3 || (int)Mathf.Abs(program[i] % (10)) == 4 ? 2:4))
         {
-            float opcode = (int)Mathf.Abs(i % (10));
-            float firstParam = (int)Mathf.Abs(i / 100 % 10);
-            float secondParam = (int)Mathf.Abs(i / 1000 % 10);
-            float thirdParam = (int)Mathf.Abs(i / 10000 % 10);
+            float opcode = (int)Mathf.Abs(program[i] % 10); 
+            float firstParam = (int)Mathf.Abs(program[i] / 100 % 10);
+            float secondParam = (int)Mathf.Abs(program[i] / 1000 % 10);
+            float thirdParam = (int)Mathf.Abs(program[i] / 10000 % 10);
 
-            int outputPosition = firstParam == 0 ? program[program[i + 3]] : program[i + 3];
             int firstInputParam = secondParam == 0 ? program[program[i + 1]] : program[i + 1];
             int secondInputParam = thirdParam == 0 ? program[program[i + 2]] : program[i + 2];
 
             if (opcode == 1)
             {
-                outputPosition = firstInputParam + secondInputParam;
+                if (firstParam == 0)
+                {
+                    program[program[i + 3]] = firstInputParam + secondInputParam;
+                }
+                else
+                {
+                    program[i + 3] = firstInputParam + secondInputParam;
+                }
             }
+
             else if (opcode == 2)
             {
-                outputPosition = firstInputParam * secondInputParam;
+                if (firstParam == 0)
+                {
+                    program[program[i + 3]] = firstInputParam * secondInputParam;
+                }
+                else
+                {
+                    program[i + 3] = firstInputParam * secondInputParam;
+                }
             }
+
             else if (opcode == 3)
             {
-                firstInputParam = input;
+                if (firstParam == 0)
+                {
+                    program[program[i + 1]] = input;
+                }
+                else
+                {
+                    program[i + 1] = input;
+                }
             }
+
             else if (opcode == 4)
             {
                 output.Add(firstInputParam);
             }
+
             else if (opcode == 9)
             {
                 break;
