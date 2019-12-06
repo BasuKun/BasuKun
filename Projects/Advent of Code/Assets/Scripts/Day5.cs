@@ -47,7 +47,12 @@ public class Day5 : MonoBehaviour
             float thirdParam = (int)Mathf.Abs(program[i] / 10000 % 10);
 
             int firstInputParam = firstParam == 0 ? program[program[i + 1]] : program[i + 1];
-            int secondInputParam = secondParam == 0 ? program[program[i + 2]] : program[i + 2];
+            int secondInputParam = 0;
+
+            if (opcode != 3 || opcode != 4)
+            {
+                secondInputParam = secondParam == 0 ? program[program[i + 2]] : program[i + 2];
+            }
 
             Debug.Log("Opcode: " + opcode + ", FirstParam: " + firstParam + ", SecondParam: " + secondParam + ", ThirdParam: " + thirdParam);
 
@@ -96,16 +101,16 @@ public class Day5 : MonoBehaviour
 
             else if (opcode == 4)
             {
-                if (firstParam == 0)
-                {
+                //if (firstParam == 0)
+                //{
                     output.Add(program[program[i + 1]]);
                     Debug.Log("O4P0: Added " + program[program[i + 1]] + " to diagnostic.");
-                }
-                else
-                {
-                    output.Add(program[i + 1]);
-                    Debug.Log("O4P1: Added " + program[i + 1] + " to diagnostic.");
-                }
+                //}
+                //else
+                //{
+                    //output.Add(program[i + 1]);
+                    //Debug.Log("O4P1: Added " + program[i + 1] + " to diagnostic.");
+                //}
             }
 
             else if (opcode == 9)
