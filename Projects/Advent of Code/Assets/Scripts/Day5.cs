@@ -49,9 +49,15 @@ public class Day5 : MonoBehaviour
             int firstInputParam = firstParam == 0 ? program[program[i + 1]] : program[i + 1];
             int secondInputParam = 0;
 
-            if (opcode != 3 || opcode != 4)
+            if (opcode != 3)
             {
-                secondInputParam = secondParam == 0 ? program[program[i + 2]] : program[i + 2];
+                if (opcode != 4)
+                {
+                    if (opcode != 9)
+                    {
+                        secondInputParam = secondParam == 0 ? program[program[i + 2]] : program[i + 2];
+                    }
+                }
             }
 
             Debug.Log("Opcode: " + opcode + ", FirstParam: " + firstParam + ", SecondParam: " + secondParam + ", ThirdParam: " + thirdParam);
