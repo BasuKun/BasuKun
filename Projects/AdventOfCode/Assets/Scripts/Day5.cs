@@ -22,12 +22,13 @@ public class Day5 : MonoBehaviour
         224, 102, 2, 223, 223, 1006, 224, 614, 1001, 223, 1, 223, 107, 677, 677, 224, 1002, 223, 2, 223, 1005, 224, 629, 1001, 223, 1, 223, 1107, 226, 677, 224, 1002, 223, 2, 223, 1006, 224, 644, 101,
         1, 223, 223, 1007, 677, 677, 224, 102, 2, 223, 223, 1006, 224, 659, 1001, 223, 1, 223, 1007, 226, 226, 224, 1002, 223, 2, 223, 1006, 224, 674, 1001, 223, 1, 223, 4, 223, 99, 226 };
 
-    public int inputInstruction = 1;
+    public int inputInstruction = 5;
     public List<int> output = new List<int>();
+    private int instructionPointer = 4;
 
     private void Start()
     {
-        RunProgram(inputInstruction, ref output);
+        RunProgram(inputInstruction, ref output, ref instructionPointer);
 
         foreach (int diagnostic in output)
         {
@@ -35,11 +36,11 @@ public class Day5 : MonoBehaviour
         }
     }
 
-    private void RunProgram(int input, ref List<int> output)
+    private void RunProgram(int input, ref List<int> output, ref int IP)
     {
-        for (int i = 0; i < program.Length; i += ((int)Mathf.Abs(program[i] % (10)) == 3 || (int)Mathf.Abs(program[i] % (10)) == 4 ? 2:4))
+        for (int i = 0; i < program.Length; i += IP)
         {
-            Debug.Log("Checking position " + i + ": " + program[i]);
+            Debug.Log("== CHECKING POSITION " + i + ": " + program[i] + " ==");
 
             float opcode = (int)Mathf.Abs(program[i] % 10); 
             float firstParam = (int)Mathf.Abs(program[i] / 100 % 10);
@@ -48,6 +49,9 @@ public class Day5 : MonoBehaviour
 
             int firstInputParam = firstParam == 0 ? program[program[i + 1]] : program[i + 1];
             int secondInputParam = 0;
+            IP = 4;
+
+            Debug.Log("Opcode: " + opcode + ", FirstParam: " + firstParam + ", SecondParam: " + secondParam + ", ThirdParam: " + thirdParam);
 
             if (opcode != 3)
             {
@@ -60,19 +64,17 @@ public class Day5 : MonoBehaviour
                 }
             }
 
-            Debug.Log("Opcode: " + opcode + ", FirstParam: " + firstParam + ", SecondParam: " + secondParam + ", ThirdParam: " + thirdParam);
-
             if (opcode == 1)
             {
                 if (thirdParam == 0)
                 {
                     program[program[i + 3]] = firstInputParam + secondInputParam;
-                    Debug.Log("O1P0: Changed position " + program[i + 3] + " to " + program[program[i + 3]]);
+                    Debug.Log("O1P0: Changed position " + program[i + 3] + " to " + program[program[i + 3]] + ". IP: " + IP);
                 }
                 else
                 {
                     program[i + 3] = firstInputParam + secondInputParam;
-                    Debug.Log("01P1: Changed position " + (i + 3) + " to " + program[i + 3]);
+                    Debug.Log("01P1: Changed position " + (i + 3) + " to " + program[i + 3] + ". IP: " + IP);
                 }
 
             }
@@ -82,46 +84,73 @@ public class Day5 : MonoBehaviour
                 if (thirdParam == 0)
                 {
                     program[program[i + 3]] = firstInputParam * secondInputParam;
-                    Debug.Log("O2P0: Changed position " + program[i + 3] + " to " + program[program[i + 3]]);
+                    Debug.Log("O2P0: Changed position " + program[i + 3] + " to " + program[program[i + 3]] + ". IP: " + IP);
                 }
                 else
                 {
                     program[i + 3] = firstInputParam * secondInputParam;
-                    Debug.Log("O2P1: Changed position " + (i + 3) + " to " + program[i + 3]);
+                    Debug.Log("O2P1: Changed position " + (i + 3) + " to " + program[i + 3] + ". IP: " + IP);
                 }
             }
 
             else if (opcode == 3)
             {
-                if (firstParam == 0)
-                {
-                    program[program[i + 1]] = input;
-                    Debug.Log("O3P0: Changed position " + program[i + 1] + " to " + input);
-                }
-                else
-                {
-                    program[i + 1] = input;
-                    Debug.Log("O3P1: Changed position " + (i + 1) + " to " + input);
-                }
+                program[program[i + 1]] = input;
+                IP = 2;
+                Debug.Log("O3: Changed position " + program[i + 1] + " to " + input + ". IP: " + IP);
             }
 
             else if (opcode == 4)
             {
-                //if (firstParam == 0)
-                //{
-                    output.Add(program[program[i + 1]]);
-                    Debug.Log("O4P0: Added " + program[program[i + 1]] + " to diagnostic.");
-                //}
-                //else
-                //{
-                    //output.Add(program[i + 1]);
-                    //Debug.Log("O4P1: Added " + program[i + 1] + " to diagnostic.");
-                //}
+                output.Add(program[program[i + 1]]);
+                IP = 2;
+                Debug.Log("O4: Added " + program[program[i + 1]] + " to diagnostic. IP: " + IP);
+            }
+
+            else if (opcode == 5)
+            {
+                if (firstInputParam != 0)
+                {
+                    IP = secondInputParam;
+                    Debug.Log("O5: Changing IP to: " + IP);
+                }
+            }
+
+            else if (opcode == 6)
+            {
+                if (firstInputParam == 0)
+                {
+                    IP = secondInputParam;
+                    Debug.Log("O6: Changing IP to: " + IP);
+                }
+            }
+
+            else if (opcode == 7)
+            {
+                if (thirdParam == 0)
+                {
+                    program[program[i + 3]] = (firstInputParam < secondInputParam) ? 1 : 0;
+                }
+                else
+                {
+                    program[i + 3] = (firstInputParam < secondInputParam) ? 1 : 0;
+                }
+            }
+
+            else if (opcode == 8)
+            {
+                if (thirdParam == 0)
+                {
+                    program[program[i + 3]] = (firstInputParam == secondInputParam) ? 1 : 0;
+                }
+                else
+                {
+                    program[i + 3] = (firstInputParam == secondInputParam) ? 1 : 0;
+                }
             }
 
             else if (opcode == 9)
             {
-                Debug.Log("Broke out.");
                 break;
             }
         }
