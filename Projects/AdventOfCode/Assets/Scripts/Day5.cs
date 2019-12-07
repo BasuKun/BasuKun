@@ -40,7 +40,6 @@ public class Day5 : MonoBehaviour
     {
         for (int i = 0; i < program.Length; i += IP)
         {
-            Debug.Log("== CHECKING POSITION " + i + ": " + program[i] + " ==");
 
             float opcode = (int)Mathf.Abs(program[i] % 10); 
             float firstParam = (int)Mathf.Abs(program[i] / 100 % 10);
@@ -49,9 +48,8 @@ public class Day5 : MonoBehaviour
 
             int firstInputParam = firstParam == 0 ? program[program[i + 1]] : program[i + 1];
             int secondInputParam = 0;
-            IP = 4;
 
-            Debug.Log("Opcode: " + opcode + ", FirstParam: " + firstParam + ", SecondParam: " + secondParam + ", ThirdParam: " + thirdParam);
+            IP = 4;
 
             if (opcode != 3)
             {
@@ -69,12 +67,10 @@ public class Day5 : MonoBehaviour
                 if (thirdParam == 0)
                 {
                     program[program[i + 3]] = firstInputParam + secondInputParam;
-                    Debug.Log("O1P0: Changed position " + program[i + 3] + " to " + program[program[i + 3]] + ". IP: " + IP);
                 }
                 else
                 {
                     program[i + 3] = firstInputParam + secondInputParam;
-                    Debug.Log("01P1: Changed position " + (i + 3) + " to " + program[i + 3] + ". IP: " + IP);
                 }
 
             }
@@ -84,12 +80,10 @@ public class Day5 : MonoBehaviour
                 if (thirdParam == 0)
                 {
                     program[program[i + 3]] = firstInputParam * secondInputParam;
-                    Debug.Log("O2P0: Changed position " + program[i + 3] + " to " + program[program[i + 3]] + ". IP: " + IP);
                 }
                 else
                 {
                     program[i + 3] = firstInputParam * secondInputParam;
-                    Debug.Log("O2P1: Changed position " + (i + 3) + " to " + program[i + 3] + ". IP: " + IP);
                 }
             }
 
@@ -97,22 +91,23 @@ public class Day5 : MonoBehaviour
             {
                 program[program[i + 1]] = input;
                 IP = 2;
-                Debug.Log("O3: Changed position " + program[i + 1] + " to " + input + ". IP: " + IP);
             }
 
             else if (opcode == 4)
             {
                 output.Add(program[program[i + 1]]);
                 IP = 2;
-                Debug.Log("O4: Added " + program[program[i + 1]] + " to diagnostic. IP: " + IP);
             }
 
             else if (opcode == 5)
             {
                 if (firstInputParam != 0)
                 {
-                    IP = secondInputParam;
-                    Debug.Log("O5: Changing IP to: " + IP);
+                    IP = secondInputParam - i;
+                }
+                else
+                {
+                    IP = 3;
                 }
             }
 
@@ -120,8 +115,11 @@ public class Day5 : MonoBehaviour
             {
                 if (firstInputParam == 0)
                 {
-                    IP = secondInputParam;
-                    Debug.Log("O6: Changing IP to: " + IP);
+                    IP = secondInputParam - i;
+                }
+                else
+                {
+                    IP = 3;
                 }
             }
 
