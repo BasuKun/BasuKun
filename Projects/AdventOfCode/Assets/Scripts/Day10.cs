@@ -110,7 +110,7 @@ public class Day10 : MonoBehaviour
         foreach (KeyValuePair<float, List<Asteroid>> angle in OrderedAngles)
         {
             destroyCount++;
-            Debug.Log(angle.Value[0].x + ", " + angle.Value[0].x + " removed. " + angle.Value[0].angle + ". Destroy: " + destroyCount);
+            Debug.Log(angle.Value[0].x + ", " + angle.Value[0].y + " removed. " + angle.Value[0].angle + ". Destroy: " + destroyCount);
             angle.Value.RemoveAt(0);
         }
     }
