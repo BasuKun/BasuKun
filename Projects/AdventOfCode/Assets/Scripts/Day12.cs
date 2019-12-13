@@ -6,12 +6,9 @@ using UnityEngine;
 public class Day12 : MonoBehaviour
 {
     public List<Moon> MoonsList = new List<Moon>();
-    public List<Moon> MoonsListCopy = new List<Moon>();
     private int systemTotalEnergy;
     private int totalIdentical;
     private long totalSteps;
-    private bool isBackToOriginal = false;
-    private bool ReturnedFalse = false;
 
     void Awake()
     {
@@ -20,17 +17,6 @@ public class Day12 : MonoBehaviour
             new Moon("Europa", new Vector3(-1, -9, -4)),
             new Moon("Ganymede", new Vector3(17, 6, 8)),
             new Moon("Callisto", new Vector3(12, 4, 2)) });
-
-        MoonsListCopy.AddRange(new List<Moon>{
-            new Moon("Io", new Vector3(1, 2, -9)),
-            new Moon("Europa", new Vector3(-1, -9, -4)),
-            new Moon("Ganymede", new Vector3(17, 6, 8)),
-            new Moon("Callisto", new Vector3(12, 4, 2)) });
-
-        //foreach (Moon moon in MoonsListCopy)
-        //{
-        //    Debug.Log("Moon " + moon.name + ": " + moon.pos.x + ", " + moon.pos.y + ", " + moon.pos.z + ".");
-        //}
     }
 
     void Start()
@@ -39,44 +25,15 @@ public class Day12 : MonoBehaviour
         {
             Step();
 
-            isBackToOriginal = false;
+            totalIdentical = 0;
             foreach (Moon moon in MoonsList)
             {
-                foreach (Moon original in MoonsListCopy)
-                {
-                    if (moon.name == original.name && totalSteps > 10)
-                    {
-                        if (moon.pos == original.pos && moon.velocity == original.velocity)
-                        {
-                            Debug.Log(moon.name + " is equal to " + original.name + ": " + moon.pos + " and " + original.pos);
-                            isBackToOriginal = true;
-                        }
-                        else
-                        {
-                            isBackToOriginal = false;
-                        }
-                    }
-                    else
-                    {
-                        continue;
-                    }
-
-                    if (!isBackToOriginal)
-                    {
-                        ReturnedFalse = true;
-                        break;
-                    }
-                }
-
-                if (ReturnedFalse)
-                {
-                    ReturnedFalse = false;
-                    break;
-                }
+                moon.CheckForOriginalPos();
+                totalIdentical = moon.isBackToOriginal == true ? totalIdentical + 1 : 0;
             }
-
-            if (isBackToOriginal)
+            if (totalIdentical == 4)
             {
+                // SOLVE PART 2
                 Debug.Log(totalSteps);
                 break;
             }
@@ -137,15 +94,23 @@ public class Day12 : MonoBehaviour
     public class Moon
     {
         public string name;
+        public Vector3 originalPos = new Vector3(0, 0, 0);
         public Vector3 pos = new Vector3(0, 0, 0);
         public Vector3 velocity = new Vector3(0, 0, 0);
         public int potentialEnergy;
         public int kineticEnergy;
         public int totalEnergy;
+        public bool isBackToOriginal = false;
+
+        public void CheckForOriginalPos()
+        {
+            isBackToOriginal = this.pos == this.originalPos && velocity.x == 0 ? true : false;
+        }
 
         public Moon(string name, Vector3 pos)
         {
             this.name = name;
+            this.originalPos = pos;
             this.pos = pos;
         }
     }
