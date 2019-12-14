@@ -10,11 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7403663703441380855}
   - component: {fileID: 1958713384379749750}
-  - component: {fileID: 1746436446299069866}
-  - component: {fileID: -5693030475645984436}
-  - component: {fileID: -8684509935553929182}
+  - component: {fileID: -7154995600716915449}
+  - component: {fileID: 653872282430250785}
   m_Layer: 0
-  m_Name: White
+  m_Name: Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +72,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8029975f6343dc0419ad9339d3dee5bf, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.12941177, g: 0.6901961, b: 0.3019608, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -83,7 +82,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1746436446299069866
+--- !u!61 &-7154995600716915449
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,7 +92,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -107,9 +106,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.33, y: 0.33}
   m_EdgeRadius: 0
---- !u!50 &-5693030475645984436
+--- !u!50 &653872282430250785
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -130,23 +129,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-8684509935553929182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5405757150002057899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d6d61d964a7a0947b89464cdfe20aa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  output: 
-  wall: {fileID: 5405757150002057899, guid: ae81d15879b2d1e448650ab1e43bb6ea, type: 3}
-  block: {fileID: 5405757150002057899, guid: c8a4d19aa1f06f744b9b6d87566ea877, type: 3}
-  paddle: {fileID: 5405757150002057899, guid: 957a2b04780617748aa99b5d49497412, type: 3}
-  ball: {fileID: 5405757150002057899}
-  score: 0
-  ballCollided: 0
-  blockAmount: 0

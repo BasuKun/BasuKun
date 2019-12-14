@@ -213,6 +213,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2124695797}
   - component: {fileID: 2124695796}
+  - component: {fileID: 2124695798}
   m_Layer: 0
   m_Name: Day
   m_TagString: Untagged
@@ -229,9 +230,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2124695795}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16198fda0e6feed40a38813875b8f3a4, type: 3}
+  m_Script: {fileID: 11500000, guid: b513dc803e1da52479e27f9dd28bc8f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  output: 
 --- !u!4 &2124695797
 Transform:
   m_ObjectHideFlags: 0
@@ -246,3 +248,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2124695798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124695795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56bd29636294e604680427c45981abfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  output: 
+  wall: {fileID: 5405757150002057899, guid: ae81d15879b2d1e448650ab1e43bb6ea, type: 3}
+  block: {fileID: 5405757150002057899, guid: c8a4d19aa1f06f744b9b6d87566ea877, type: 3}
+  paddle: {fileID: 5405757150002057899, guid: 957a2b04780617748aa99b5d49497412, type: 3}
+  ball: {fileID: 5405757150002057899, guid: 59c24e9e0563be641843f70a0b63d60e, type: 3}
+  score: 0
+  blockAmount: 0
