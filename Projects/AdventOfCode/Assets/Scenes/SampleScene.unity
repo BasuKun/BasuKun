@@ -265,5 +265,6 @@ MonoBehaviour:
   block: {fileID: 5405757150002057899, guid: c8a4d19aa1f06f744b9b6d87566ea877, type: 3}
   paddle: {fileID: 5405757150002057899, guid: 957a2b04780617748aa99b5d49497412, type: 3}
   ball: {fileID: 5405757150002057899, guid: 59c24e9e0563be641843f70a0b63d60e, type: 3}
+  empty: {fileID: 5405757150002057899, guid: a67432f0d2a36a74c973cfa816080f29, type: 3}
   score: 0
   blockAmount: 0

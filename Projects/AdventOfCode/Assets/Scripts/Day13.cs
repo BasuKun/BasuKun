@@ -10,6 +10,7 @@ namespace intcode
         public GameObject block;
         public GameObject paddle;
         public GameObject ball;
+        public GameObject empty;
         public long score = 0;
 
         GameObject ballInstance;
@@ -40,7 +41,8 @@ namespace intcode
                 {
                     switch (output[2])
                     {
-                        case 0: //nothing
+                        case 0: //empty
+                            Instantiate(empty, new Vector2(output[0], -output[1]), transform.rotation);
                             break;
                         case 1: //wall
                             Instantiate(wall, new Vector2(output[0], -output[1]), transform.rotation);
