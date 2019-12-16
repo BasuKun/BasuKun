@@ -264,6 +264,8 @@ MonoBehaviour:
   steps: []
   walls: []
   deadends: []
+  completeMap: []
+  ventilated: []
   currentPos: {x: 0, y: 0}
   wall: {fileID: 5405757150002057899, guid: ae81d15879b2d1e448650ab1e43bb6ea, type: 3}
   robot: {fileID: 5405757150002057899, guid: c8a4d19aa1f06f744b9b6d87566ea877, type: 3}
@@ -271,7 +273,12 @@ MonoBehaviour:
   oxygenSystem: {fileID: 5405757150002057899, guid: 957a2b04780617748aa99b5d49497412,
     type: 3}
   deadend: {fileID: 5405757150002057899, guid: 1f2a16839cee1a341b5b19cee4934fcb, type: 3}
+  ventilation: {fileID: 5405757150002057899, guid: 27ca035b4bf483e4289c828e4fc16797,
+    type: 3}
   randomAI: 1
   foundSystem: 0
+  readyToVentilate: 0
+  mapListDone: 0
   movementInput: 0
   totalSteps: 0
+  ventilationTime: 0

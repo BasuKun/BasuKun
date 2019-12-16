@@ -25,6 +25,7 @@ namespace intcode
         public bool foundSystem = false;
         public bool readyToVentilate = false;
         public bool mapListDone = false;
+        public bool ventilationStepDone = true;
 
         public int movementInput;
         public int totalSteps;
@@ -118,7 +119,10 @@ namespace intcode
                     }
                     //Debug.Log("FOUND OXYGEN SYSTEM AT " + currentPos);
                     Instantiate(oxygenSystem, currentPos, transform.rotation);
-                    ventilated.Add(currentPos);
+                    if (!ventilated.Contains(currentPos))
+                    {
+                        ventilated.Add(currentPos);
+                    }
                     randomAI = false;
                     foundSystem = true;
                 }
@@ -142,8 +146,13 @@ namespace intcode
                     completeMap = steps.Concat(deadends).ToList();
                     mapListDone = true;
                 }
-                ventilationTime = Ventilate() ? ventilationTime + 1 : ventilationTime;
-                Debug.Log(ventilationTime);
+
+                if (ventilationStepDone)
+                {
+                    ventilationTime = Ventilate() ? ventilationTime + 1 : ventilationTime;
+                    Debug.Log(ventilationTime);
+                }
+
             }
         }
 
@@ -253,6 +262,7 @@ namespace intcode
 
         public bool Ventilate()
         {
+            ventilationStepDone = false;
             bool newVentilated = false;
             List<Vector2> ventilatedToAdd = new List<Vector2>();
             List<Vector2> completeToRemove = new List<Vector2>();
@@ -264,21 +274,23 @@ namespace intcode
                     if (m == new Vector2(v.x, v.y + 1) || m == new Vector2(v.x, v.y - 1) || m == new Vector2(v.x + 1, v.y) || m == new Vector2(v.x - 1, v.y))
                     {
                         ventilatedToAdd.Add(m);
-                        completeToRemove.Remove(m);
+                        completeToRemove.Add(m);
                         Instantiate(ventilation, m, transform.rotation);
                         newVentilated = true;
                     }
                 }
             }
+
             foreach (Vector2 v in ventilatedToAdd)
             {
                 ventilated.Add(v);
             }
             foreach (Vector2 m in completeToRemove)
             {
-                ventilated.Remove(m);
+                completeMap.Remove(m);
             }
 
+            ventilationStepDone = true;
             return newVentilated;
         }
     }
