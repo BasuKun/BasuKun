@@ -15,7 +15,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Snowflakes
   - 
   - 
   - 
@@ -40,6 +40,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Snowflakes
+    uniqueID: 470520555
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
