@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MouseRadius
   - Snowflake
+  - Floor
   layers:
   - Default
   - TransparentFX
