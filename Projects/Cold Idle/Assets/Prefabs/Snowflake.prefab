@@ -99,6 +99,10 @@ MonoBehaviour:
   fallingCooldown: 1
   snowflake: {fileID: 0}
   sfObject: {fileID: 0}
+  pileTile: {fileID: 6675752520635972213, guid: 76dcdce920e51214c8466b43c2e7db05,
+    type: 3}
+  pileGroup: {fileID: 1639960403160636785, guid: d5bca0261818f1a4b98b9f30807dc9ef,
+    type: 3}
   snowBurst: {fileID: 5865563547707979268, guid: 0039a10c89f8084448d860b32b26a1b0,
     type: 3}
 --- !u!61 &4058865120170629156
@@ -141,7 +145,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0

@@ -7,6 +7,8 @@ TagManager:
   - MouseRadius
   - Snowflake
   - Floor
+  - PileGroup
+  - Pile
   layers:
   - Default
   - TransparentFX
@@ -17,9 +19,9 @@ TagManager:
   - 
   - 
   - Snowflakes
-  - 
-  - 
-  - 
+  - Snowpiles
+  - Floor
+  - Burst
   - 
   - 
   - 
@@ -41,9 +43,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
   - name: Snowflakes
     uniqueID: 470520555
     locked: 0
-  - name: Default
-    uniqueID: 0
+  - name: PileBurst
+    uniqueID: 1547954079
     locked: 0
