@@ -12,6 +12,7 @@ namespace TextRPG
             Attack = 5;
             Defense = 3;
             Gold = 20;
+            Description = "Raccoon";
             Inventory.Add("Bandit Mask");
         }
 

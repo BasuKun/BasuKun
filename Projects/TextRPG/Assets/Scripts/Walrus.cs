@@ -12,6 +12,7 @@ namespace TextRPG
             Attack = 3;
             Defense = 5;
             Gold = 30;
+            Description = "Walrus";
             Inventory.Add("Walrus Tooth");
         }
 

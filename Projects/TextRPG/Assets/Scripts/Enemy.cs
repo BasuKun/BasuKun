@@ -6,10 +6,7 @@ namespace TextRPG
 {
     public class Enemy : Character
     {
-        void Start()
-        {
-
-        }
+        public string Description { get; set; }
 
         public override void TakeDamage(int amount)
         {
