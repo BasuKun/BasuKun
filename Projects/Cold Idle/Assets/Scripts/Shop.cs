@@ -9,6 +9,7 @@ public class Shop : MonoBehaviour
     [Header("COSTS")]
     public int moreSnowCost = 10;
     public int biggerRadiusCost = 25;
+    public int fasterShovelCost = 40;
 
     void Awake()
     {
@@ -34,5 +35,14 @@ public class Shop : MonoBehaviour
         GameManager.Instance.radius += 1;
         GameUI.Instance.snowflakesUpdateText();
         GameUI.Instance.biggerRadiusButtonUpdateText();
+    }
+
+    public void FasterShovel()
+    {
+        GameManager.Instance.snowflakesAmount -= fasterShovelCost;
+        fasterShovelCost += (int)(fasterShovelCost * 1.5f);
+        GameManager.Instance.shovelSpeed -= (10f / 100f * GameManager.Instance.shovelSpeed);
+        GameUI.Instance.snowflakesUpdateText();
+        GameUI.Instance.fasterShovelButtonUpdateText();
     }
 }

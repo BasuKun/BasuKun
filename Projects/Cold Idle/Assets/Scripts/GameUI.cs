@@ -9,6 +9,7 @@ public class GameUI : MonoBehaviour
     [Header("BUTTONS TEXTS")]
     public TextMeshProUGUI moreSnowButtonText;
     public TextMeshProUGUI biggerRadiusButtonText;
+    public TextMeshProUGUI fasterShovelButtonText;
 
     [Header("CURRENCIES")]
     public TextMeshProUGUI snowflakesAmountText;
@@ -27,6 +28,7 @@ public class GameUI : MonoBehaviour
     {
         moreSnowButtonUpdateText();
         biggerRadiusButtonUpdateText();
+        fasterShovelButtonUpdateText();
     }
 
     public void snowflakesUpdateText()
@@ -42,5 +44,10 @@ public class GameUI : MonoBehaviour
     public void biggerRadiusButtonUpdateText()
     {
         biggerRadiusButtonText.text = "Bigger Radius! " + Shop.Instance.biggerRadiusCost + " SF";
+    }
+
+    public void fasterShovelButtonUpdateText()
+    {
+        fasterShovelButtonText.text = "Faster Shovel! " + Shop.Instance.fasterShovelCost + " SF";
     }
 }

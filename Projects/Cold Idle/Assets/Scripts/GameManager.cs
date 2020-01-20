@@ -7,7 +7,9 @@ public class GameManager : MonoBehaviour
     [Header("UPGRADES")]
     public float spawnSpeed = 3f;
     public float valueMultiplier = 1f;
+    public int snowflakeValue = 1;
     public float radius = 0.1f;
+    public float shovelSpeed = 2f;
 
     [Header("CURRENCIES")]
     public int snowflakesAmount = 0;

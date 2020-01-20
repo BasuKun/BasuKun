@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Snowflake : MonoBehaviour
 {
-    public float baseValue = 1;
     public float fallSpeed = 8f;
     public float fallingCooldown = 1f;
     public Snowflake snowflake;
@@ -54,7 +53,7 @@ public class Snowflake : MonoBehaviour
         if (collision.gameObject.tag == "MouseRadius")
         {
             ParticleSystem burst = Instantiate(snowBurst, transform.position, Quaternion.identity);
-            GameManager.Instance.collectSnowflakes(baseValue);
+            GameManager.Instance.collectSnowflakes(GameManager.Instance.snowflakeValue);
         }
 
         else if ((collision.gameObject.tag == "Floor" || collision.gameObject.tag == "Pile") && !isPiling)
