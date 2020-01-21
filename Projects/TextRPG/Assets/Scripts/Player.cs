@@ -8,7 +8,8 @@ namespace TextRPG
     {
         public int Floor { get; set; }
         public Room Room { get; set; }
-        [SerializeField] World world;
+        [SerializeField] Encounter encounter;
+        public World world;
 
         void Start()
         {
@@ -60,6 +61,7 @@ namespace TextRPG
         public void Investigate()
         {
             this.Room = world.Dungeon[(int)RoomIndex.x, (int)RoomIndex.y];
+            encounter.ResetDynamicControls();
 
             if (this.Room.Empty)
             {
@@ -67,14 +69,17 @@ namespace TextRPG
             }
             else if (this.Room.Chest != null)
             {
+                encounter.StartChest();
                 Journal.Instance.Log("You found a chest! What would you like to do?");
             }
             else if (this.Room.Enemy != null)
             {
                 Journal.Instance.Log("You are jumped by a " + Room.Enemy.Description + "! What would you like to do?");
+                encounter.StartCombat();
             }
             else if (this.Room.Exit)
             {
+                encounter.StartExit();
                 Journal.Instance.Log("You found the exit to the next floor. Would you like to continue?");
             }
         }

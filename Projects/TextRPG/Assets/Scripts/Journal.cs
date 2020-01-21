@@ -20,6 +20,8 @@ namespace TextRPG
             {
                 Instance = this;
             }
+
+            logText.supportRichText = true;
         }
 
         public void Log(string text)
