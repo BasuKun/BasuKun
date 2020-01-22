@@ -15,6 +15,7 @@ namespace TextRPG
         {
             Floor = 0;
             Energy = 30;
+            MaxEnergy = 30;
             Attack = 10;
             Defense = 5;
             Gold = 0;
@@ -22,7 +23,9 @@ namespace TextRPG
             RoomIndex = new Vector2(2,2);
             this.Room = world.Dungeon[(int)RoomIndex.x, (int)RoomIndex.y];
             this.Room.Empty = true;
-            AddItem("Lots o' dough");
+
+            UIController.OnPlayerStatChange();
+            UIController.OnPlayerInventoryChange();
         }
 
         public void Move(int direction)
@@ -88,12 +91,13 @@ namespace TextRPG
         {
             Journal.Instance.Log("You were given item: " + item);
             Inventory.Add(item);
+            UIController.OnPlayerInventoryChange();
         }
 
         public override void TakeDamage(int amount)
         {
-            Debug.Log("Player took damage.");
             base.TakeDamage(amount);
+            UIController.OnPlayerStatChange();
         }
 
         public override void Die()

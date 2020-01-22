@@ -9,6 +9,7 @@ namespace TextRPG
         void Start()
         {
             Energy = 15;
+            MaxEnergy = 15;
             Attack = 3;
             Defense = 5;
             Gold = 30;
