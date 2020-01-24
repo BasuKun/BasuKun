@@ -5,7 +5,7 @@ using UnityEngine;
 public class MouseRadius : MonoBehaviour
 {
     private Transform sphere;
-    public CircleCollider2D collider;
+    public new CircleCollider2D collider;
 
     void Start()
     {

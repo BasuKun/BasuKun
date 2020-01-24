@@ -10,8 +10,7 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
     public UnityEvent onLongClick;
 
-    [SerializeField]
-    private Image fillImage;
+    public Image fillImage;
 
     public void OnPointerDown(PointerEventData eventData)
     {
