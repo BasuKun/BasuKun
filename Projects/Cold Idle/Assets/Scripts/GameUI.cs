@@ -13,6 +13,7 @@ public class GameUI : MonoBehaviour
 
     [Header("CURRENCIES")]
     public TextMeshProUGUI snowflakesAmountText;
+    public TextMeshProUGUI IntelligencePointsAmountText;
 
     public static GameUI Instance;
 
@@ -33,21 +34,71 @@ public class GameUI : MonoBehaviour
 
     public void snowflakesUpdateText()
     {
-        snowflakesAmountText.text = "SF: " + GameManager.Instance.snowflakesAmount;
+        snowflakesAmountText.text = "SF: " + CurrencyLetterFormatting(GameManager.Instance.snowflakesAmount);
+    }
+
+    public void IntelligencePointsUpdateText()
+    {
+        IntelligencePointsAmountText.text = "IP: " + CurrencyLetterFormatting(GameManager.Instance.intelligencePoints);
     }
 
     public void moreSnowButtonUpdateText()
     {
-        moreSnowButtonText.text = "More Snow! " + Shop.Instance.moreSnowCost + " SF";
+        moreSnowButtonText.text = "More Snow! " + CurrencyLetterFormatting(Shop.Instance.moreSnowCost) + " SF";
     }
 
     public void biggerRadiusButtonUpdateText()
     {
-        biggerRadiusButtonText.text = "Bigger Radius! " + Shop.Instance.biggerRadiusCost + " SF";
+        biggerRadiusButtonText.text = "Bigger Radius! " + CurrencyLetterFormatting(Shop.Instance.biggerRadiusCost) + " SF";
     }
 
     public void fasterShovelButtonUpdateText()
     {
-        fasterShovelButtonText.text = "Faster Shovel! " + Shop.Instance.fasterShovelCost + " SF";
+        fasterShovelButtonText.text = "Faster Shovel! " + CurrencyLetterFormatting(Shop.Instance.fasterShovelCost) + " SF";
+    }
+
+    public string CurrencyLetterFormatting(double value)
+    {
+        if (value >= 10000000000000000)
+        {
+            return (value / 1000000000000000D).ToString("0.#Q");
+        }
+        if (value >= 1000000000000000)
+        {
+            return (value / 1000000000000000D).ToString("0.##Q");
+        }
+        if (value >= 10000000000000)
+        {
+            return (value / 1000000000000D).ToString("0.#t");
+        }
+        if (value >= 1000000000000)
+        {
+            return (value / 1000000000000D).ToString("0.##t");
+        }
+        if (value >= 10000000000)
+        {
+            return (value / 1000000000D).ToString("0.#B");
+        }
+        if (value >= 1000000000)
+        {
+            return (value / 1000000000D).ToString("0.##B");
+        }
+        if (value >= 100000000)
+        {
+            return (value / 1000000D).ToString("0.#M");
+        }
+        if (value >= 1000000)
+        {
+            return (value / 1000000D).ToString("0.##M");
+        }
+        if (value >= 100000)
+        {
+            return (value / 1000D).ToString("0.#K");
+        }
+        if (value >= 1000)
+        {
+            return (value / 1000D).ToString("0.##K");
+        }
+        return value.ToString("#,0");
     }
 }

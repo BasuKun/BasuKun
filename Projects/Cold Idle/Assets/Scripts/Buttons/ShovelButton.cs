@@ -8,7 +8,6 @@ public class ShovelButton : MonoBehaviour
 {
     public Button button;
     public ParticleSystem snowBurst;
-    public float baseValue = 1;
 
     void Start()
     {

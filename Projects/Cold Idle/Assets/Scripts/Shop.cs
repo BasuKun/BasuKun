@@ -7,9 +7,9 @@ public class Shop : MonoBehaviour
     public static Shop Instance;
 
     [Header("COSTS")]
-    public int moreSnowCost = 10;
-    public int biggerRadiusCost = 25;
-    public int fasterShovelCost = 40;
+    public double moreSnowCost = 10;
+    public double biggerRadiusCost = 25;
+    public double fasterShovelCost = 40;
 
     void Awake()
     {

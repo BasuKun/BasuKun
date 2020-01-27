@@ -7,13 +7,16 @@ public class GameManager : MonoBehaviour
     [Header("UPGRADES")]
     public float spawnSpeed = 3f;
     public float valueMultiplier = 1f;
-    public int snowflakeValue = 1;
+    public double snowflakeValue = 1;
     public float radius = 0.1f;
     public float shovelSpeed = 2f;
 
     [Header("CURRENCIES")]
-    public int snowflakesAmount = 0;
-    public int frostflakesAmount = 0;
+    public double snowflakesAmount = 0;
+    public double intelligencePoints = 0;
+
+    [Header("OTHERS")]
+    public int absorbedSnowflakes = 0;
 
     public static GameManager Instance;
 
@@ -25,7 +28,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void collectSnowflakes(float value)
+    public void collectSnowflakes(double value)
     {
         snowflakesAmount += (int)value * (int)valueMultiplier;
         GameUI.Instance.snowflakesUpdateText();
