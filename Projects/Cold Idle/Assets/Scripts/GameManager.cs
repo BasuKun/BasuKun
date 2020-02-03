@@ -10,10 +10,13 @@ public class GameManager : MonoBehaviour
     public double snowflakeValue = 1;
     public float radius = 0.1f;
     public float shovelSpeed = 2f;
+    public double habitatsAmount = 0;
+    public double idlePopulationAmount = 0;
 
     [Header("CURRENCIES")]
     public double snowflakesAmount = 0;
     public double intelligencePoints = 0;
+    public double iceBlocksAmount = 0;
 
     [Header("OTHERS")]
     public int absorbedSnowflakes = 0;
@@ -32,5 +35,11 @@ public class GameManager : MonoBehaviour
     {
         snowflakesAmount += (int)value * (int)valueMultiplier;
         GameUI.Instance.snowflakesUpdateText();
+    }
+
+    public void collectIceBlocks(double value)
+    {
+        iceBlocksAmount += (int)value;
+        GameUI.Instance.iceBlocksUpdateText();
     }
 }

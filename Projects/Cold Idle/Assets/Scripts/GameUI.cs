@@ -8,12 +8,24 @@ public class GameUI : MonoBehaviour
 {
     [Header("BUTTONS TEXTS")]
     public TextMeshProUGUI moreSnowButtonText;
+    public TextMeshProUGUI betterValueButtonText;
     public TextMeshProUGUI biggerRadiusButtonText;
     public TextMeshProUGUI fasterShovelButtonText;
+    public TextMeshProUGUI moreHabitatButtonText;
 
     [Header("CURRENCIES")]
     public TextMeshProUGUI snowflakesAmountText;
     public TextMeshProUGUI IntelligencePointsAmountText;
+    public TextMeshProUGUI iceBlocksAmountText;
+
+    [Header("HABITATS TEXTS")]
+    public TextMeshProUGUI populationText;
+    public TextMeshProUGUI idlePopulationText;
+
+    [Header("COLORS")]
+    public Color snowflakesColor = new Color(0.71f, 0.94f, 0.95f, 1);
+    public Color intelligencePointsColor = new Color(0.90f, 0.61f, 0.85f, 1);
+    public Color iceBlocksColor = new Color(0.26f, 0.67f, 0.76f, 1);
 
     public static GameUI Instance;
 
@@ -28,13 +40,26 @@ public class GameUI : MonoBehaviour
     void Start()
     {
         moreSnowButtonUpdateText();
+        betterValueButtonUpdateText();
         biggerRadiusButtonUpdateText();
         fasterShovelButtonUpdateText();
+        moreHabitatButtonUpdateText();
+
+        populationUpdateText();
+
+        snowflakesAmountText.color = snowflakesColor;
+        iceBlocksAmountText.color = iceBlocksColor;
+        IntelligencePointsAmountText.color = intelligencePointsColor;
     }
 
     public void snowflakesUpdateText()
     {
         snowflakesAmountText.text = "SF: " + CurrencyLetterFormatting(GameManager.Instance.snowflakesAmount);
+    }
+
+    public void iceBlocksUpdateText()
+    {
+        iceBlocksAmountText.text = "IB: " + CurrencyLetterFormatting(GameManager.Instance.iceBlocksAmount);
     }
 
     public void IntelligencePointsUpdateText()
@@ -44,17 +69,37 @@ public class GameUI : MonoBehaviour
 
     public void moreSnowButtonUpdateText()
     {
-        moreSnowButtonText.text = "More Snow! " + CurrencyLetterFormatting(Shop.Instance.moreSnowCost) + " SF";
+        moreSnowButtonText.text = "<color=#B5F0F2>" + CurrencyLetterFormatting(Shop.Instance.moreSnowCost) + " SF</color>";
+    }
+
+    public void betterValueButtonUpdateText()
+    {
+        betterValueButtonText.text = "<color=#B5F0F2>" + CurrencyLetterFormatting(Shop.Instance.betterValueCost) + " SF</color>";
     }
 
     public void biggerRadiusButtonUpdateText()
     {
-        biggerRadiusButtonText.text = "Bigger Radius! " + CurrencyLetterFormatting(Shop.Instance.biggerRadiusCost) + " SF";
+        biggerRadiusButtonText.text = "<color=#B5F0F2>" + CurrencyLetterFormatting(Shop.Instance.biggerRadiusCost) + " SF</color>";
     }
 
     public void fasterShovelButtonUpdateText()
     {
-        fasterShovelButtonText.text = "Faster Shovel! " + CurrencyLetterFormatting(Shop.Instance.fasterShovelCost) + " SF";
+        fasterShovelButtonText.text = "<color=#B5F0F2>" + CurrencyLetterFormatting(Shop.Instance.fasterShovelCost) + " SF</color>";
+    }
+
+    public void moreHabitatButtonUpdateText()
+    {
+        moreHabitatButtonText.text = "<color=#42ABC2>" + CurrencyLetterFormatting(Shop.Instance.moreHabitatCost) + " IB</color>";
+    }
+
+    public void populationUpdateText()
+    {
+        populationText.text = "Population: " + CurrencyLetterFormatting(GameManager.Instance.habitatsAmount);
+    }
+
+    public void idlePopulationUpdateText()
+    {
+        idlePopulationText.text = "Idle: " + CurrencyLetterFormatting(GameManager.Instance.idlePopulationAmount);
     }
 
     public string CurrencyLetterFormatting(double value)
