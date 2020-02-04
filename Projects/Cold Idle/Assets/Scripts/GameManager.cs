@@ -10,8 +10,7 @@ public class GameManager : MonoBehaviour
     public double snowflakeValue = 1;
     public float radius = 0.1f;
     public float shovelSpeed = 2f;
-    public double habitatsAmount = 0;
-    public double idlePopulationAmount = 0;
+
 
     [Header("CURRENCIES")]
     public double snowflakesAmount = 0;
@@ -20,6 +19,11 @@ public class GameManager : MonoBehaviour
 
     [Header("OTHERS")]
     public int absorbedSnowflakes = 0;
+
+    [Header("HABITATS")]
+    public double habitatsAmount = 0;
+    public double idlePopulationAmount = 0;
+    public double shovelersAmount = 0;
 
     public static GameManager Instance;
 

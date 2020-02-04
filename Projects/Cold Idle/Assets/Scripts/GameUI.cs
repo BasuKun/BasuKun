@@ -21,6 +21,7 @@ public class GameUI : MonoBehaviour
     [Header("HABITATS TEXTS")]
     public TextMeshProUGUI populationText;
     public TextMeshProUGUI idlePopulationText;
+    public TextMeshProUGUI shovelersText;
 
     [Header("COLORS")]
     public Color snowflakesColor = new Color(0.71f, 0.94f, 0.95f, 1);
@@ -100,6 +101,11 @@ public class GameUI : MonoBehaviour
     public void idlePopulationUpdateText()
     {
         idlePopulationText.text = "Idle: " + CurrencyLetterFormatting(GameManager.Instance.idlePopulationAmount);
+    }
+
+    public void shovelersUpdateText()
+    {
+        shovelersText.text = "Shovelers: " + CurrencyLetterFormatting(GameManager.Instance.shovelersAmount);
     }
 
     public string CurrencyLetterFormatting(double value)

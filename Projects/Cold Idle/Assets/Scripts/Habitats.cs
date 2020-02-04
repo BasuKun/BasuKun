@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class Habitats : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void AddOccupation(string occupation)
     {
-        
+        GameManager.Instance.idlePopulationAmount--;
+
+        switch (occupation)
+        {
+            case "shoveler":
+                GameManager.Instance.shovelersAmount++;
+                GameUI.Instance.shovelersUpdateText();
+                break;
+        }
+        GameUI.Instance.idlePopulationUpdateText();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RemoveOccupation(string occupation)
     {
-        
+        GameManager.Instance.idlePopulationAmount++;
+
+        switch (occupation)
+        {
+            case "shoveler":
+                GameManager.Instance.shovelersAmount--;
+                GameUI.Instance.shovelersUpdateText();
+                break;
+        }
+        GameUI.Instance.idlePopulationUpdateText();
     }
 }
