@@ -582,6 +582,7 @@ GameObject:
   m_Component:
   - component: {fileID: 330768303}
   - component: {fileID: 330768302}
+  - component: {fileID: 330768304}
   m_Layer: 0
   m_Name: City
   m_TagString: Untagged
@@ -616,6 +617,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &330768304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330768301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e24ae1e568316b04fa5b045a2992d6a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayText: {fileID: 1968422032}
+  cityText: {fileID: 2029375125}
 --- !u!1 &413525941
 GameObject:
   m_ObjectHideFlags: 0
@@ -2154,7 +2169,7 @@ GameObject:
   - component: {fileID: 2002990096}
   - component: {fileID: 2002990095}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: City
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
