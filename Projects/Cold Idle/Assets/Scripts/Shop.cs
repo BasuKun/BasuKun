@@ -24,7 +24,7 @@ public class Shop : MonoBehaviour
     public void BuyMoreSnow()
     {
         GameManager.Instance.snowflakesAmount -= moreSnowCost;
-        moreSnowCost += (int)(moreSnowCost * 1.1f);
+        moreSnowCost += (int)(moreSnowCost * 0.5f);
         GameManager.Instance.spawnSpeed += 1;
         GameUI.Instance.snowflakesUpdateText();
         GameUI.Instance.moreSnowButtonUpdateText();
@@ -33,7 +33,7 @@ public class Shop : MonoBehaviour
     public void BuyBetterValue()
     {
         GameManager.Instance.snowflakesAmount -= betterValueCost;
-        betterValueCost += (int)(betterValueCost * 1.3f);
+        betterValueCost += (int)(betterValueCost * 1.1f);
         GameManager.Instance.snowflakeValue += 1;
         GameUI.Instance.snowflakesUpdateText();
         GameUI.Instance.betterValueButtonUpdateText();
@@ -42,7 +42,7 @@ public class Shop : MonoBehaviour
     public void BiggerRadius()
     {
         GameManager.Instance.snowflakesAmount -= biggerRadiusCost;
-        biggerRadiusCost += (int)(biggerRadiusCost * 1.3f);
+        biggerRadiusCost += (int)(biggerRadiusCost * 1.2f);
         GameManager.Instance.radius += 1;
         GameUI.Instance.snowflakesUpdateText();
         GameUI.Instance.biggerRadiusButtonUpdateText();
@@ -51,7 +51,7 @@ public class Shop : MonoBehaviour
     public void FasterShovel()
     {
         GameManager.Instance.snowflakesAmount -= fasterShovelCost;
-        fasterShovelCost += (int)(fasterShovelCost * 1.5f);
+        fasterShovelCost += (int)(fasterShovelCost * 0.8f);
         GameManager.Instance.shovelSpeed -= (10f / 100f * GameManager.Instance.shovelSpeed);
         GameUI.Instance.snowflakesUpdateText();
         GameUI.Instance.fasterShovelButtonUpdateText();
@@ -60,7 +60,7 @@ public class Shop : MonoBehaviour
     public void MoreHabitat()
     {
         GameManager.Instance.iceBlocksAmount -= moreHabitatCost;
-        moreHabitatCost += (int)(moreHabitatCost * 1.2f);
+        moreHabitatCost += (int)(moreHabitatCost * 0.5f);
         GameManager.Instance.habitatsAmount += 1;
         GameManager.Instance.idlePopulationAmount += 1;
         GameUI.Instance.iceBlocksUpdateText();

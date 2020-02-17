@@ -391,9 +391,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 1931308578}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
-  m_MovementType: 1
+  m_MovementType: 2
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
@@ -1058,6 +1058,7 @@ MonoBehaviour:
   habitatsAmount: 0
   idlePopulationAmount: 0
   shovelersAmount: 0
+  autoShovelSpeed: 0
 --- !u!4 &314468315
 Transform:
   m_ObjectHideFlags: 0
@@ -5426,9 +5427,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 477920750}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
-  m_MovementType: 1
+  m_MovementType: 2
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
@@ -6807,6 +6808,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16a820ccc00e0094aa746387410c1a47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShovelButton: {fileID: 649061598}
+  autoShovelInterval: 5
 --- !u!1 &1788444548
 GameObject:
   m_ObjectHideFlags: 0
