@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     public double habitatsAmount = 0;
     public double idlePopulationAmount = 0;
     public double shovelersAmount = 0;
+    public float autoShovelSpeed;
 
     public static GameManager Instance;
 
