@@ -9,7 +9,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private Text cityText;
     private City city;
 
-    private void Start()
+    private void Awake()
     {
         city = GetComponent<City>();
     }

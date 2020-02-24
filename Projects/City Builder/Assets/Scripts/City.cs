@@ -12,18 +12,16 @@ public class City : MonoBehaviour
     public int JobsCeiling { get; set; }
     public float Food { get; set; }
 
-    public int[] buildingCounts = new int[3];
+    public int[] buildingCounts = new int[4];
     private UIController uiController;
 
     private void Start()
     {
         uiController = GetComponent<UIController>();
-        buildingCounts[0] = 6;
-        buildingCounts[1] = 1;
-        buildingCounts[2] = 3;
-        Cash = 10000;
-        Food = 6;
-        JobsCeiling = 10;
+        Cash = 5000;
+        Day = 1;
+        uiController.UpdateCityData();
+        uiController.UpdateDayCount();
     }
 
     public void EndTurn()
@@ -39,7 +37,7 @@ public class City : MonoBehaviour
 
     public void CalculateJobs()
     {
-        JobsCeiling = buildingCounts[2] * 10;
+        JobsCeiling = buildingCounts[3] * 10;
         JobsCurrent = Mathf.Min((int)PopulationCurrent, JobsCeiling);
     }
 
@@ -48,14 +46,19 @@ public class City : MonoBehaviour
         Cash += JobsCurrent * 2;
     }
 
+    public void HandleCash(int cash)
+    {
+        Cash += cash;
+    }
+
     public void CalculateFood()
     {
-        Food += buildingCounts[1] * 4f;
+        Food += buildingCounts[2] * 4f;
     }
 
     public void CalculatePopulation()
     {
-        PopulationCeiling = buildingCounts[0] * 5;
+        PopulationCeiling = buildingCounts[1] * 5;
 
         if (Food >= PopulationCurrent && PopulationCurrent < PopulationCeiling)
         {
