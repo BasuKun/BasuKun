@@ -60,7 +60,7 @@ public class Shop : MonoBehaviour
     public void MoreHabitat()
     {
         GameManager.Instance.iceBlocksAmount -= moreHabitatCost;
-        moreHabitatCost += (int)(moreHabitatCost * 0.5f);
+        moreHabitatCost += (int)(moreHabitatCost * 0.3f);
         GameManager.Instance.habitatsAmount += 1;
         GameManager.Instance.idlePopulationAmount += 1;
         GameUI.Instance.iceBlocksUpdateText();
