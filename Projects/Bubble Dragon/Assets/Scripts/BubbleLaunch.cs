@@ -4,13 +4,27 @@ using UnityEngine;
 
 public class BubbleLaunch : MonoBehaviour
 {
-    private float dashSpeed = 7;
-    private float dashTime = 0.1f;
-    private float StartDashTime = 0.1f;
+    private float dashTime = 0.3f;
+    public float DashTime
+    {
+        get { return dashTime; }
+        private set { dashTime = DashTime; }
+    }
+
+    private float startDashTime = 0.3f;
+    public float StartDashTime
+    {
+        get { return startDashTime; }
+        private set { startDashTime = StartDashTime; }
+    }
+
+    private float dashSpeed = 4;
     private float velocityResetSpeed = 0.6f;
+    private float gravityResetSpeed = 1.3f;
     private bool isDashing = false;
     public bool dashInitiated = false;
     private bool endingDash = false;
+    public bool dashingUp = false;
 
     private Rigidbody2D rig;
 
@@ -30,6 +44,11 @@ public class BubbleLaunch : MonoBehaviour
         }
         if (isDashing)
         {
+            if (dashTime <= startDashTime / gravityResetSpeed)
+            {
+                rig.gravityScale = Mathf.Clamp(rig.gravityScale + 10f * Time.deltaTime, 0f, 1f);
+            }
+
             if (dashTime <= 0)
             {
                 EndPropulse();
@@ -59,6 +78,7 @@ public class BubbleLaunch : MonoBehaviour
     {
         dashInitiated = true;
         rig.velocity = Vector2.zero;
+        rig.gravityScale = 0;
 
         switch (angle)
         {
@@ -69,7 +89,8 @@ public class BubbleLaunch : MonoBehaviour
                 rig.velocity = Vector2.left * dashSpeed;
                 break;
             case 2:
-                rig.velocity = Vector2.up * dashSpeed * 0.75f;
+                dashingUp = true;
+                rig.velocity = Vector2.up * dashSpeed;
                 break;
             case 3:
                 rig.velocity = Vector2.right * dashSpeed;
@@ -79,7 +100,7 @@ public class BubbleLaunch : MonoBehaviour
 
     private void EndPropulse()
     {
-        dashTime = StartDashTime;
+        dashTime = startDashTime;
         endingDash = true;
         isDashing = false;
         dashInitiated = false;
@@ -91,9 +112,10 @@ public class BubbleLaunch : MonoBehaviour
 
         if (rig.velocity.x < 0.5f && rig.velocity.x > -0.5f)
         {
+            rig.gravityScale = 1;
             rig.velocity = Vector2.zero;
-            Debug.Log("Dash ended");
             endingDash = false;
+            dashingUp = false;
         }
     }
 }
