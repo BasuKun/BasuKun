@@ -40,7 +40,7 @@ public class CharacterMovement : MonoBehaviour
         {
             JumpGravityModifier(fallMultiplier);
         }
-        else if (rig.velocity.y > 0 && !Input.GetButton("Jump"))
+        else if (rig.velocity.y > 0 && !Input.GetButton("Jump") && !bubbleLaunch.dashInitiated)
         {
             JumpGravityModifier(lowJumpMultiplier);
         }

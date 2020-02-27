@@ -63,7 +63,6 @@ public class BubbleLaunch : MonoBehaviour
                 }
             }
         }
-
     }
 
     private void FixedUpdate()
@@ -90,7 +89,7 @@ public class BubbleLaunch : MonoBehaviour
                 break;
             case 2:
                 dashingUp = true;
-                rig.velocity = Vector2.up * dashSpeed;
+                rig.velocity = Vector2.up * dashSpeed * 0.6f;
                 break;
             case 3:
                 rig.velocity = Vector2.right * dashSpeed;
