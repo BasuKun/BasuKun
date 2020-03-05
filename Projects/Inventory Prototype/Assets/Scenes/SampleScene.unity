@@ -333,6 +333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDatabase: {fileID: 30581240}
+  inventoryUI: {fileID: 937048946}
 --- !u!4 &896104404
 Transform:
   m_ObjectHideFlags: 0
@@ -435,6 +436,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c57d03504c93864cb280e4c6617688f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiItems: []
+  slotPrefab: {fileID: 3444248028518690461, guid: e4a9ce8277863d642bb7d0f3eb3d3b72,
+    type: 3}
+  slotPanel: {fileID: 1540622016}
 --- !u!1 &1337168549
 GameObject:
   m_ObjectHideFlags: 0
