@@ -18,9 +18,11 @@ public class BubbleLaunch : MonoBehaviour
         private set { startDashTime = StartDashTime; }
     }
 
-    private float dashSpeed = 4;
+    public float dashCharge = 0f;
+    private float dashSpeed = 4f;
     private float velocityResetSpeed = 0.6f;
     private float gravityResetSpeed = 1.3f;
+    private int arrowKeyDirection;
     private bool isDashing = false;
     public bool dashInitiated = false;
     private bool endingDash = false;
@@ -38,10 +40,39 @@ public class BubbleLaunch : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !isDashing)
+        if (Input.GetMouseButton(0) && !isDashing && GameManager.instance.isUsingMouse)
+        {
+            dashCharge = Mathf.Clamp(dashCharge + Time.deltaTime, 0f, 1f);
+        }
+        if (Input.GetMouseButtonUp(0))
         {
             isDashing = true;
         }
+
+        else if (!isDashing && !GameManager.instance.isUsingMouse)
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                arrowKeyDirection = 0;
+                isDashing = true;
+            }
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                arrowKeyDirection = 1;
+                isDashing = true;
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                arrowKeyDirection = 2;
+                isDashing = true;
+            }
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                arrowKeyDirection = 3;
+                isDashing = true;
+            }
+        }
+
         if (isDashing)
         {
             if (dashTime <= startDashTime / gravityResetSpeed)
@@ -59,7 +90,16 @@ public class BubbleLaunch : MonoBehaviour
 
                 if (!dashInitiated)
                 {
-                    CharacterPropulsor(mouseAngleFinder.mouseAngle);
+                    if (GameManager.instance.isUsingMouse)
+                    {
+                        CharacterPropulsor(mouseAngleFinder.mouseAngle, (int)(dashCharge + 1));
+                        dashCharge = 0;
+                    }
+                    else
+                    {
+                        CharacterPropulsor(arrowKeyDirection, 1);
+                        dashCharge = 0;
+                    }
                 }
             }
         }
@@ -73,7 +113,7 @@ public class BubbleLaunch : MonoBehaviour
         }
     }
 
-    private void CharacterPropulsor(int angle)
+    private void CharacterPropulsor(int angle, int strength)
     {
         dashInitiated = true;
         rig.velocity = Vector2.zero;
@@ -82,17 +122,17 @@ public class BubbleLaunch : MonoBehaviour
         switch (angle)
         {
             case 0:
-                rig.velocity = Vector2.down * dashSpeed;
+                rig.velocity = Vector2.down * dashSpeed * strength;
                 break;
             case 1:
-                rig.velocity = Vector2.left * dashSpeed;
+                rig.velocity = Vector2.left * dashSpeed * strength;
                 break;
             case 2:
                 dashingUp = true;
-                rig.velocity = Vector2.up * dashSpeed * 0.6f;
+                rig.velocity = Vector2.up * dashSpeed * 0.75f * strength;
                 break;
             case 3:
-                rig.velocity = Vector2.right * dashSpeed;
+                rig.velocity = Vector2.right * dashSpeed * strength;
                 break;
         }
     }
@@ -109,7 +149,7 @@ public class BubbleLaunch : MonoBehaviour
     {
         rig.velocity = new Vector2(rig.velocity.x * velocityResetSpeed, rig.velocity.y);
 
-        if (rig.velocity.x < 0.5f && rig.velocity.x > -0.5f)
+        if (rig.velocity.x < 0.1f && rig.velocity.x > -0.1f)
         {
             rig.gravityScale = 1;
             rig.velocity = Vector2.zero;
