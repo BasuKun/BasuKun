@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class UIItem : MonoBehaviour
+public class UIItem : MonoBehaviour, IPointerDownHandler
 {
     public Item item;
     private Image spriteImage;
+    private UIItem selectedItem;
 
     private void Awake()
     {
+        selectedItem = GameObject.Find("SelectedItem").GetComponent<UIItem>();
         spriteImage = GetComponent<Image>();
         UpdateItem(null);
     }
@@ -26,6 +29,29 @@ public class UIItem : MonoBehaviour
         else
         {
             spriteImage.color = Color.clear;
+        }
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        if (this.item != null)
+        {
+            if(selectedItem.item != null)
+            {
+                Item clone = new Item(selectedItem.item);
+                selectedItem.UpdateItem(this.item);
+                UpdateItem(clone);
+            }
+            else
+            {
+                selectedItem.UpdateItem(this.item);
+                UpdateItem(null);
+            }
+        }
+        else if(selectedItem.item != null)
+        {
+            UpdateItem(selectedItem.item);
+            selectedItem.UpdateItem(null);
         }
     }
 }
