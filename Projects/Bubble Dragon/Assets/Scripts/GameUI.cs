@@ -25,7 +25,7 @@ public class GameUI : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         ChargeBarFiller();
     }

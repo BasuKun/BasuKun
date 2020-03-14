@@ -88,7 +88,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (!characterHorizontalCollider.isHittingWall)
         {
-            if (!bubbleLaunch.dashInitiated || bubbleLaunch.dashInitiated && bubbleLaunch.dashingUp && bubbleLaunch.DashTime <= bubbleLaunch.StartDashTime / 1.2f)
+            if (!bubbleLaunch.dashInitiated || bubbleLaunch.dashInitiated && bubbleLaunch.dashingUp && bubbleLaunch.DashTime <= bubbleLaunch.StartDashTime / (1.2f + (int)bubbleLaunch.dashCharge))
             {
                 transform.position += new Vector3(Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime, 0);
             }
