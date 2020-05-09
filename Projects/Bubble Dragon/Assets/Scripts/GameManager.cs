@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public bool isUsingMouse = true;
     public static GameManager instance;
 
+    public int bubbleAmount = 3;
+
     void Awake()
     {
         if (instance != null && instance != this)

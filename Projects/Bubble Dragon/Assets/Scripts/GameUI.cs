@@ -8,6 +8,7 @@ public class GameUI : MonoBehaviour
     public BubbleLaunch bubbleLaunch;
     public GameObject chargeBar;
     public Image chargeFiller;
+    public List<Image> bubblesList = new List<Image>();
     private Color chargeColor = new Color(0.3415807f, 0.7169812f, 0.6826473f);
 
     public static GameUI instance;
@@ -23,6 +24,11 @@ public class GameUI : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
+    }
+
+    void Start()
+    {
+        UpdateBubbleAmountUI();
     }
 
     void FixedUpdate()
@@ -50,6 +56,19 @@ public class GameUI : MonoBehaviour
             Vector2 charPos = Camera.main.WorldToScreenPoint(bubbleLaunch.transform.position);
             chargeBar.transform.position = new Vector2(charPos.x, charPos.y + 40f);
             chargeFiller.color = Color.white;
+        }
+    }
+
+    public void UpdateBubbleAmountUI()
+    {
+        foreach (var bubbles in bubblesList)
+        {
+            bubbles.color = Color.black;
+        }
+
+        for (int i = 0; i < GameManager.instance.bubbleAmount; i++)
+        {
+            bubblesList[i].color = Color.white;
         }
     }
 }

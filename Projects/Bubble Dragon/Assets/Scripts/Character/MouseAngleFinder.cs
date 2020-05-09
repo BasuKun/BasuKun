@@ -7,6 +7,7 @@ public class MouseAngleFinder : MonoBehaviour
     private Vector3 mousePos;
     private CharacterMovement characterMovement;
     public int mouseAngle;
+    public bool isAimingRight;
 
     private void Awake()
     {
@@ -33,6 +34,7 @@ public class MouseAngleFinder : MonoBehaviour
         }
         else if (angle >= -45 && angle < 45)
         {
+            isAimingRight = true;
             return 1;
         }
         else if (angle >= -135 && angle < -45)
@@ -41,6 +43,7 @@ public class MouseAngleFinder : MonoBehaviour
         }
         else
         {
+            isAimingRight = false;
             return 3;
         }
     }
