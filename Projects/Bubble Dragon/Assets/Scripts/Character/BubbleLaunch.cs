@@ -19,6 +19,7 @@ public class BubbleLaunch : MonoBehaviour
     }
 
     public float dashCharge = 0f;
+    private float chargeSpeed = 1.5f;
     private float dashSpeed = 3f;
     private float velocityResetSpeed = 0.6f;
     private float gravityResetSpeed = 2.5f; // higher = longer
@@ -28,7 +29,9 @@ public class BubbleLaunch : MonoBehaviour
     private bool endingDash = false;
     public bool dashingUp = false;
     public bool isCharging = false;
+    public bool hasFlashed = false;
 
+    public TintController tintController;
     private CharacterMovement characterMovement;
     private Rigidbody2D rig;
     public GameObject bubble;
@@ -66,10 +69,13 @@ public class BubbleLaunch : MonoBehaviour
     private void ButtonUsedToPropulse()
     {
         if (GameManager.instance.bubbleAmount <= 0) return;
+        if (characterMovement.isAbsorbing) return;
+        if (isDashing) return;
 
         if (Input.GetMouseButton(0) && !isDashing && GameManager.instance.isUsingMouse)
         {
-            dashCharge = Mathf.Clamp(dashCharge + Time.deltaTime, 0f, 1f);
+            dashCharge = Mathf.Clamp(dashCharge + (Time.deltaTime * chargeSpeed), 0f, 1f);
+            CharacterBlinker();
         }
         if (Input.GetMouseButtonUp(0) && GameManager.instance.isUsingMouse)
         {
@@ -80,7 +86,8 @@ public class BubbleLaunch : MonoBehaviour
         {
             if (!GameManager.instance.isUsingMouse && (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow)))
             {
-                dashCharge = Mathf.Clamp(dashCharge + Time.deltaTime, 0f, 1f);
+                dashCharge = Mathf.Clamp(dashCharge + (Time.deltaTime * chargeSpeed), 0f, 1f);
+                CharacterBlinker();
             }
 
             if (Input.GetKeyUp(KeyCode.UpArrow) && !GameManager.instance.isUsingMouse)
@@ -138,13 +145,13 @@ public class BubbleLaunch : MonoBehaviour
                 if (GameManager.instance.isUsingMouse)
                 {
                     CharacterPropulsor(mouseAngleFinder.mouseAngle, (int)(dashCharge + 1));
-                    shootBubble(mouseAngleFinder.mouseAngle, (int)(dashCharge + 1));
+                    ShootBubble(mouseAngleFinder.mouseAngle, (int)(dashCharge + 1));
                     dashCharge = 0;
                 }
                 else
                 {
                     CharacterPropulsor(arrowKeyDirection, (int)(dashCharge + 1));
-                    shootBubble(arrowKeyDirection, (int)(dashCharge + 1));
+                    ShootBubble(arrowKeyDirection, (int)(dashCharge + 1));
                     dashCharge = 0;
                 }
             }
@@ -153,6 +160,7 @@ public class BubbleLaunch : MonoBehaviour
 
     private void CharacterPropulsor(int angle, int strength)
     {
+        hasFlashed = false;
         dashInitiated = true;
         rig.velocity = Vector2.zero;
         rig.gravityScale = 0;
@@ -170,7 +178,7 @@ public class BubbleLaunch : MonoBehaviour
                 break;
             case 2:
                 dashingUp = true;
-                rig.velocity = Vector2.up * dashSpeed * 0.75f * strength;
+                rig.velocity = Vector2.up * dashSpeed * 0.75f * Mathf.Clamp(strength * 0.8f, 1f, 2f);
                 break;
             case 3:
                 rig.velocity = Vector2.right * dashSpeed * strength;
@@ -205,7 +213,7 @@ public class BubbleLaunch : MonoBehaviour
         }
     }
 
-    private void shootBubble(int angle, int strength)
+    private void ShootBubble(int angle, int strength)
     {
         GameObject bubblePrefab = Instantiate(bubble, transform.position, transform.rotation, bubblesHolder);
         Rigidbody2D bubbleRig = bubblePrefab.GetComponent<Rigidbody2D>();
@@ -228,5 +236,18 @@ public class BubbleLaunch : MonoBehaviour
 
         GameManager.instance.bubbleAmount--;
         GameUI.instance.UpdateBubbleAmountUI();
+    }
+
+    private void CharacterBlinker()
+    {
+        if (dashCharge < 1f || (dashCharge == 1f && hasFlashed))
+        {
+            tintController.Blink(dashCharge);
+        }
+        else if (dashCharge == 1f && !hasFlashed)
+        {
+            tintController.BlinkCharged();
+            hasFlashed = true;
+        }
     }
 }

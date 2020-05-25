@@ -8,11 +8,15 @@ public class CharacterHorizontalCollider : MonoBehaviour
 
     private Rigidbody2D rig;
     private CharacterMovement characterMovement;
+    private MouseAngleFinder mouseAngleFinder;
+    private BubbleLaunch bubbleLaunch;
 
     public LayerMask groundLayer;
 
     private void Awake()
     {
+        bubbleLaunch = GetComponent<BubbleLaunch>();
+        mouseAngleFinder = GetComponent<MouseAngleFinder>();
         rig = GetComponent<Rigidbody2D>();
         characterMovement = GetComponent<CharacterMovement>();
     }
@@ -33,15 +37,16 @@ public class CharacterHorizontalCollider : MonoBehaviour
     private bool CheckForHorizontalCollision()
     {
         Vector2 position = transform.position;
-        Vector2 direction = characterMovement.isLookingRight ? Vector2.right : Vector2.left;
+        Vector2 direction = Input.GetAxis("Horizontal") > 0 ? Vector2.right : Vector2.left;
+
         float distance = 0.14f;
         float offsetU = 0.10f;
         float offsetD = 0.10f;
 
         RaycastHit2D hitU = Physics2D.Raycast(new Vector2(position.x, position.y + offsetU), direction, distance, groundLayer);
-        //Debug.DrawRay(new Vector2(position.x, position.y + offsetU), direction * distance);
+        Debug.DrawRay(new Vector2(position.x, position.y + offsetU), direction * distance);
         RaycastHit2D hitD = Physics2D.Raycast(new Vector2(position.x, position.y - offsetD), direction, distance, groundLayer);
-        //Debug.DrawRay(new Vector2(position.x, position.y - offsetD), direction * distance);
+        Debug.DrawRay(new Vector2(position.x, position.y - offsetD), direction * distance);
 
         if (hitU || hitD)
         {

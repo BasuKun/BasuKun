@@ -7,7 +7,7 @@ public class CharacterMovement : MonoBehaviour
     public bool isJumping = false;
     public bool isGrounded = false;
     public bool isLookingRight = true;
-    private bool isAbsorbing = false;
+    public bool isAbsorbing = false;
     private float movementSpeed = 1.5f;
     private float jumpVelocity = 2.3f;
     private float fallMultiplier = 2.5f;
@@ -41,12 +41,12 @@ public class CharacterMovement : MonoBehaviour
         isGrounded = IsGrounded();
         isJumping = !isGrounded;
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded && !isAbsorbing)
         {
             Jump();
         }
 
-        if (Input.GetButton("Fire2") && !bubbleLaunch.isDashing)
+        if (Input.GetButton("Fire2") && !bubbleLaunch.isDashing && !bubbleLaunch.isCharging && isGrounded)
         {
             BubbleAbsorb(Input.GetButton("Fire2"));
         }
@@ -108,7 +108,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void Movement()
     {
-        if (!characterHorizontalCollider.isHittingWall)
+        if (!characterHorizontalCollider.isHittingWall && !isAbsorbing)
         {
             if (!bubbleLaunch.dashInitiated || bubbleLaunch.dashInitiated && bubbleLaunch.dashingUp && bubbleLaunch.DashTime <= bubbleLaunch.StartDashTime / 2f)
             {
@@ -137,15 +137,17 @@ public class CharacterMovement : MonoBehaviour
         }
         else
         {
-            if (Input.GetAxis("Horizontal") > 0 && sprite.flipX == mouseAngleFinder.isAimingRight)
+            if (Input.GetAxis("Horizontal") >= 0 && sprite.flipX == mouseAngleFinder.isAimingRight)
             {
                 isLookingRight = true;
                 sprite.flipX = mouseAngleFinder.isAimingRight ? false : true;
+                absorbAreaCollider.offset = mouseAngleFinder.isAimingRight ? new Vector2(0.4f, 0) : new Vector2(-0.4f, 0);
             }
             else if (Input.GetAxis("Horizontal") < 0 && sprite.flipX == mouseAngleFinder.isAimingRight)
             {
                 isLookingRight = false;
                 sprite.flipX = mouseAngleFinder.isAimingRight ? false : true;
+                absorbAreaCollider.offset = mouseAngleFinder.isAimingRight ? new Vector2(0.4f, 0) : new Vector2(-0.4f, 0);
             }
         }
     }
@@ -160,6 +162,7 @@ public class CharacterMovement : MonoBehaviour
     private void CharacterAnimator()
     {
         animator.SetBool("IsGrounded", isGrounded);
+        animator.SetBool("IsAbsorbing", isAbsorbing);
         animator.SetBool("IsRunning", Input.GetButton("Horizontal"));
         animator.SetBool("IsSpittingDown", bubbleLaunch.dashingUp);
         animator.SetBool("IsSpitting", bubbleLaunch.isDashing);
