@@ -59,7 +59,7 @@ public class BubbleLaunch : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
+    {  
         if (endingDash)
         {
             ResetVelocity();

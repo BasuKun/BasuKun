@@ -10,6 +10,7 @@ public class CharacterHorizontalCollider : MonoBehaviour
     private CharacterMovement characterMovement;
     private MouseAngleFinder mouseAngleFinder;
     private BubbleLaunch bubbleLaunch;
+    private Character character;
 
     public LayerMask groundLayer;
 
@@ -19,6 +20,7 @@ public class CharacterHorizontalCollider : MonoBehaviour
         mouseAngleFinder = GetComponent<MouseAngleFinder>();
         rig = GetComponent<Rigidbody2D>();
         characterMovement = GetComponent<CharacterMovement>();
+        character = GetComponent<Character>();
     }
 
     private void Update()
@@ -44,9 +46,22 @@ public class CharacterHorizontalCollider : MonoBehaviour
         float offsetD = 0.10f;
 
         RaycastHit2D hitU = Physics2D.Raycast(new Vector2(position.x, position.y + offsetU), direction, distance, groundLayer);
-        Debug.DrawRay(new Vector2(position.x, position.y + offsetU), direction * distance);
+        //Debug.DrawRay(new Vector2(position.x, position.y + offsetU), direction * distance);
         RaycastHit2D hitD = Physics2D.Raycast(new Vector2(position.x, position.y - offsetD), direction, distance, groundLayer);
-        Debug.DrawRay(new Vector2(position.x, position.y - offsetD), direction * distance);
+        //Debug.DrawRay(new Vector2(position.x, position.y - offsetD), direction * distance);
+
+        if (bubbleLaunch.isDashing && character.hasHitWall)
+        {
+            RaycastHit2D hitReverseU = Physics2D.Raycast(new Vector2(position.x, position.y + offsetU), -direction, distance, groundLayer);
+            //Debug.DrawRay(new Vector2(position.x, position.y + offsetU), -direction * distance);
+            RaycastHit2D hitReverseD = Physics2D.Raycast(new Vector2(position.x, position.y - offsetD), -direction, distance, groundLayer);
+            //Debug.DrawRay(new Vector2(position.x, position.y - offsetD), -direction * distance);
+
+            if (hitReverseU || hitReverseD)
+            {
+                return true;
+            }
+        }
 
         if (hitU || hitD)
         {

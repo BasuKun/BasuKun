@@ -18,8 +18,9 @@ public class CharacterMovement : MonoBehaviour
     public GameObject absorbArea;
     public GameObject absorbedArea;
     private BoxCollider2D absorbAreaCollider;
+    private BoxCollider2D boxCollider;
     private Rigidbody2D rig;
-    private CharacterHorizontalCollider characterHorizontalCollider;
+    //private CharacterHorizontalCollider characterHorizontalCollider;
     private BubbleLaunch bubbleLaunch;
     private MouseAngleFinder mouseAngleFinder;
 
@@ -31,8 +32,9 @@ public class CharacterMovement : MonoBehaviour
 
         bubbleLaunch = GetComponent<BubbleLaunch>();
         rig = GetComponent<Rigidbody2D>();
-        characterHorizontalCollider = GetComponent<CharacterHorizontalCollider>();
+        //characterHorizontalCollider = GetComponent<CharacterHorizontalCollider>();
         absorbAreaCollider = absorbArea.GetComponent<BoxCollider2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
         mouseAngleFinder = GetComponent<MouseAngleFinder>();
     }
 
@@ -65,6 +67,11 @@ public class CharacterMovement : MonoBehaviour
         }
 
         CharacterAnimator();
+
+        if (rig.velocity.x < 0.001f && rig.velocity.x > -0.001f && rig.velocity.x != 0)
+        {
+            rig.velocity = new Vector2(0, rig.velocity.y);
+        }
     }
 
     private void FixedUpdate()
@@ -86,14 +93,7 @@ public class CharacterMovement : MonoBehaviour
         RaycastHit2D hitR = Physics2D.Raycast(new Vector2(position.x + offsetR, position.y), direction, distance, groundLayer);
         //Debug.DrawRay(new Vector2(position.x + offsetR, position.y), direction * distance);
 
-        if (hitL || hitR)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return hitL || hitR;
     }
 
     private void Jump()
@@ -108,11 +108,13 @@ public class CharacterMovement : MonoBehaviour
 
     private void Movement()
     {
-        if (!characterHorizontalCollider.isHittingWall && !isAbsorbing)
+        if (!isAbsorbing)
         {
             if (!bubbleLaunch.dashInitiated || bubbleLaunch.dashInitiated && bubbleLaunch.dashingUp && bubbleLaunch.DashTime <= bubbleLaunch.StartDashTime / 2f)
             {
-                transform.position += new Vector3(Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime, 0);
+                //rig.MovePosition(rig.position + new Vector2(Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime, 0));
+                rig.position = (rig.position + new Vector2(Input.GetAxis("Horizontal") * movementSpeed * Time.fixedDeltaTime, 0));
+                //rig.AddForce(new Vector2(Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime, 0), ForceMode2D.Force);
             }
         }
         
@@ -127,12 +129,14 @@ public class CharacterMovement : MonoBehaviour
                 isLookingRight = true;
                 sprite.flipX = false;
                 absorbAreaCollider.offset = new Vector2(0.4f, 0);
+                boxCollider.offset = new Vector2(0.02f, 0);
             }
             else if (Input.GetAxis("Horizontal") < 0 && isLookingRight)
             {
                 isLookingRight = false;
                 sprite.flipX = true;
                 absorbAreaCollider.offset = new Vector2(-0.4f, 0);
+                boxCollider.offset = new Vector2(-0.02f, 0);
             }
         }
         else
@@ -142,12 +146,14 @@ public class CharacterMovement : MonoBehaviour
                 isLookingRight = true;
                 sprite.flipX = mouseAngleFinder.isAimingRight ? false : true;
                 absorbAreaCollider.offset = mouseAngleFinder.isAimingRight ? new Vector2(0.4f, 0) : new Vector2(-0.4f, 0);
+                boxCollider.offset = mouseAngleFinder.isAimingRight ? new Vector2(0.02f, 0) : new Vector2(-0.02f, 0);
             }
             else if (Input.GetAxis("Horizontal") < 0 && sprite.flipX == mouseAngleFinder.isAimingRight)
             {
                 isLookingRight = false;
                 sprite.flipX = mouseAngleFinder.isAimingRight ? false : true;
                 absorbAreaCollider.offset = mouseAngleFinder.isAimingRight ? new Vector2(0.4f, 0) : new Vector2(-0.4f, 0);
+                boxCollider.offset = mouseAngleFinder.isAimingRight ? new Vector2(0.02f, 0) : new Vector2(-0.02f, 0);
             }
         }
     }
