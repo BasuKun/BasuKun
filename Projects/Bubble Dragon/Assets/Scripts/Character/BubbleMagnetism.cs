@@ -44,7 +44,19 @@ public class BubbleMagnetism : MonoBehaviour
         else if (col.gameObject.tag == "Dragon")
         {
             tintController.BlinkCharged();
-            GameManager.instance.bubbleAmount++;
+            int index = gameObject.GetComponent<BubbleIndex>().index;
+            bool isSpecialItem = gameObject.GetComponent<BubbleIndex>().isSpecialItem;
+
+            if (isSpecialItem)
+            {
+                GameManager.instance.itemInventory.Add(GameManager.instance.bubblesOptions[index]);
+            }
+            else
+            {
+                GameManager.instance.bubbleAmount++;
+                GameManager.instance.bubblesInventory.Add(GameManager.instance.bubblesOptions[index]);
+            }
+
             GameUI.instance.UpdateBubbleAmountUI();
             Destroy(gameObject);
         }

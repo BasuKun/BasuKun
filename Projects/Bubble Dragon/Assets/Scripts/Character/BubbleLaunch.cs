@@ -215,7 +215,11 @@ public class BubbleLaunch : MonoBehaviour
 
     private void ShootBubble(int angle, int strength)
     {
-        GameObject bubblePrefab = Instantiate(bubble, transform.position, transform.rotation, bubblesHolder);
+        GameObject bubblePrefab = Instantiate(
+            GameManager.instance.hasSpecialItem ? GameManager.instance.itemInventory[0].prefab : GameManager.instance.bubblesInventory[0].prefab, 
+            transform.position, 
+            transform.rotation, 
+            bubblesHolder);
         Rigidbody2D bubbleRig = bubblePrefab.GetComponent<Rigidbody2D>();
 
         switch (angle)
@@ -234,7 +238,15 @@ public class BubbleLaunch : MonoBehaviour
                 break;
         }
 
-        GameManager.instance.bubbleAmount--;
+        if (GameManager.instance.hasSpecialItem)
+        {
+            GameManager.instance.itemInventory.RemoveAt(0);
+        }
+        else
+        {
+            GameManager.instance.bubbleAmount--;
+            GameManager.instance.bubblesInventory.RemoveAt(0);
+        }
         GameUI.instance.UpdateBubbleAmountUI();
     }
 

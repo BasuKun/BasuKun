@@ -8,8 +8,10 @@ public class GameUI : MonoBehaviour
     public BubbleLaunch bubbleLaunch;
     public GameObject chargeBar;
     public Image chargeFiller;
-    public List<Image> bubblesList = new List<Image>();
+    public GameObject invArrowCircle;
+    public GameObject invArrowSquare;
     private Color chargeColor = new Color(0.3415807f, 0.7169812f, 0.6826473f);
+    public List<Image> bubblesUI = new List<Image>();
 
     public static GameUI instance;
 
@@ -26,15 +28,11 @@ public class GameUI : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        UpdateBubbleAmountUI();
-    }
-
     void FixedUpdate()
     {
         ChargeBarFiller();
     }
+
 
     void ChargeBarFiller()
     {
@@ -61,14 +59,25 @@ public class GameUI : MonoBehaviour
 
     public void UpdateBubbleAmountUI()
     {
-        foreach (var bubbles in bubblesList)
+        foreach (var bubbles in bubblesUI)
         {
-            bubbles.color = Color.black;
+            bubbles.gameObject.SetActive(false);
+            GameManager.instance.hasSpecialItem = false;
         }
-
         for (int i = 0; i < GameManager.instance.bubbleAmount; i++)
         {
-            bubblesList[i].color = Color.white;
+            bubblesUI[i].gameObject.SetActive(true);
+            bubblesUI[i].sprite = GameManager.instance.bubblesInventory[i].appearance;
         }
+
+        if (GameManager.instance.itemInventory.Count > 0)
+        {
+            bubblesUI[3].gameObject.SetActive(true);
+            bubblesUI[3].sprite = GameManager.instance.itemInventory[0].appearance;
+            GameManager.instance.hasSpecialItem = true;
+        }
+
+        invArrowCircle.SetActive(!GameManager.instance.hasSpecialItem);
+        invArrowSquare.SetActive(GameManager.instance.hasSpecialItem);
     }
 }

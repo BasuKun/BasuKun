@@ -43,12 +43,36 @@ public class Character : MonoBehaviour
         GameUI.instance.UpdateBubbleAmountUI();
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    /*void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Breakable")
         {
-            if (bubbleLaunch.isDashing && !hasHitWall)
+            if (bubbleLaunch.isDashing && !bubbleLaunch.dashingUp && !hasHitWall)
             {                
+                BreakableWalls breakableWalls = col.gameObject.GetComponent<BreakableWalls>();
+                breakableWalls.RemoveHP(1);
+                StartCoroutine(cameraShake.CameraShaker(0.3f, 0.3f));
+                hasHitWall = true;
+
+                if (breakableWalls.hp == 0)
+                {
+                    rig.velocity = new Vector2(currentVelX, rig.velocity.y);
+                }
+            }
+        }
+
+        if (col.gameObject.tag == "Spikes")
+        {
+            Die();
+        }
+    }*/
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Breakable")
+        {
+            if (bubbleLaunch.isDashing && !bubbleLaunch.dashingUp && !hasHitWall)
+            {
                 BreakableWalls breakableWalls = col.gameObject.GetComponent<BreakableWalls>();
                 breakableWalls.RemoveHP(1);
                 StartCoroutine(cameraShake.CameraShaker(0.3f, 0.3f));
