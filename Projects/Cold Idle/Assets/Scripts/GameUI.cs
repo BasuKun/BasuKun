@@ -6,12 +6,23 @@ using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
 {
-    [Header("BUTTONS TEXTS")]
+    [Header("UPGRADES TEXTS")]
     public TextMeshProUGUI moreSnowButtonText;
     public TextMeshProUGUI betterValueButtonText;
     public TextMeshProUGUI biggerRadiusButtonText;
     public TextMeshProUGUI fasterShovelButtonText;
     public TextMeshProUGUI moreHabitatButtonText;
+    public TextMeshProUGUI higherSnowpileButtonText;
+    public TextMeshProUGUI moreGleamingSnowflakesButtonText;
+
+    [Header("POWERUPS")]
+    public TextMeshProUGUI equippedPowerupsText;
+    public TextMeshProUGUI snowstormSeekerText;
+    public TextMeshProUGUI luckyWinterText;
+    public TextMeshProUGUI blessedSnowflakesText;
+    public TextMeshProUGUI shovelMasterText;
+    public TextMeshProUGUI snowflakeBoosterText;
+    public TextMeshProUGUI snowpileFreezerText;
 
     [Header("CURRENCIES")]
     public TextMeshProUGUI snowflakesAmountText;
@@ -22,6 +33,7 @@ public class GameUI : MonoBehaviour
     public TextMeshProUGUI populationText;
     public TextMeshProUGUI idlePopulationText;
     public TextMeshProUGUI shovelersText;
+    public TextMeshProUGUI collectorsText;
 
     [Header("COLORS")]
     public Color snowflakesColor = new Color(0.71f, 0.94f, 0.95f, 1);
@@ -45,6 +57,16 @@ public class GameUI : MonoBehaviour
         biggerRadiusButtonUpdateText();
         fasterShovelButtonUpdateText();
         moreHabitatButtonUpdateText();
+        higherSnowpileButtonUpdateText();
+        moreGleamingSnowflakesButtonUpdateText();
+
+        equippedPowerupUpdateText();
+        snowstormSeekerUpdateText();
+        luckyWinterUpdateText();
+        blessedSnowflakesUpdateText();
+        shovelMasterUpdateText();
+        snowflakeBoosterUpdateText();
+        snowpileFreezerUpdateText();
 
         populationUpdateText();
 
@@ -65,7 +87,7 @@ public class GameUI : MonoBehaviour
 
     public void IntelligencePointsUpdateText()
     {
-        IntelligencePointsAmountText.text = "IP: " + CurrencyLetterFormatting(GameManager.Instance.intelligencePoints);
+        IntelligencePointsAmountText.text = "IP: " + CurrencyLetterFormatting(GameManager.Instance.intelligencePointsAmount);
     }
 
     public void moreSnowButtonUpdateText()
@@ -93,6 +115,51 @@ public class GameUI : MonoBehaviour
         moreHabitatButtonText.text = "<color=#42ABC2>" + CurrencyLetterFormatting(Shop.Instance.moreHabitatCost) + " IB</color>";
     }
 
+    public void higherSnowpileButtonUpdateText()
+    {
+        higherSnowpileButtonText.text = "<color=#42ABC2>" + CurrencyLetterFormatting(Shop.Instance.higherSnowpileCost) + " IB</color>";
+    }
+
+    public void moreGleamingSnowflakesButtonUpdateText()
+    {
+        moreGleamingSnowflakesButtonText.text = "<color=#B5F0F2>" + CurrencyLetterFormatting(Shop.Instance.moreGleamingSnowflakesCost) + " SF</color>";
+    }
+
+    public void snowstormSeekerUpdateText()
+    {
+        snowstormSeekerText.text = "<color=#E69CD9>" + CurrencyLetterFormatting(Shop.Instance.snowstormSeekerCost) + " IP</color>";
+    }
+
+    public void luckyWinterUpdateText()
+    {
+        luckyWinterText.text = "<color=#E69CD9>" + CurrencyLetterFormatting(Shop.Instance.luckyWinterCost) + " IP</color>";
+    }
+
+    public void blessedSnowflakesUpdateText()
+    {
+        blessedSnowflakesText.text = "<color=#E69CD9>" + CurrencyLetterFormatting(Shop.Instance.blessedSnowflakesCost) + " IP</color>";
+    }
+
+    public void shovelMasterUpdateText()
+    {
+        shovelMasterText.text = "<color=#E69CD9>" + CurrencyLetterFormatting(Shop.Instance.shovelMasterCost) + " IP</color>";
+    }
+
+    public void snowflakeBoosterUpdateText()
+    {
+        snowflakeBoosterText.text = "<color=#E69CD9>" + CurrencyLetterFormatting(Shop.Instance.snowflakeBoosterCost) + " IP</color>";
+    }
+
+    public void snowpileFreezerUpdateText()
+    {
+        snowpileFreezerText.text = "<color=#E69CD9>" + CurrencyLetterFormatting(Shop.Instance.snowpileFreezerCost) + " IP</color>";
+    }
+
+    public void equippedPowerupUpdateText()
+    {
+        equippedPowerupsText.text = "Equipped: " + GameManager.Instance.equippedPowerups + "/" + GameManager.Instance.maxPowerups;
+    }
+
     public void populationUpdateText()
     {
         populationText.text = "Population: " + CurrencyLetterFormatting(GameManager.Instance.habitatsAmount);
@@ -106,6 +173,27 @@ public class GameUI : MonoBehaviour
     public void shovelersUpdateText()
     {
         shovelersText.text = "Shovelers: " + CurrencyLetterFormatting(GameManager.Instance.shovelersAmount);
+    }
+
+    public void collectorsUpdateText()
+    {
+        collectorsText.text = "Collectors: " + CurrencyLetterFormatting(GameManager.Instance.collectorsAmount);
+    }
+
+    public void CheckForMaxEquippedPowerups()
+    {
+        foreach (Button button in Shop.Instance.EquipButtonsList)
+        {
+            if (GameManager.Instance.equippedPowerups == GameManager.Instance.maxPowerups)
+            {
+                TextMeshProUGUI equipText = button.GetComponentInChildren<TextMeshProUGUI>();
+                button.interactable = equipText.text == "Unequip" ? true : false;
+            }
+            else
+            {
+                button.interactable = true;
+            }
+        }
     }
 
     public string CurrencyLetterFormatting(double value)

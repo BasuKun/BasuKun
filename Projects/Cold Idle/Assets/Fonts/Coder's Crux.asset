@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Coder's Crux
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 1397250967
   material: {fileID: 21490144729140418}
-  materialHashCode: 0
+  materialHashCode: 181609148
   fontAssetType: 2
   m_fontInfo:
     Name: Coder's Crux
     PointSize: 311
-    Scale: 0
+    Scale: 1
     CharacterCount: 96
     LineHeight: 175
     Baseline: 0
     Ascender: 137
-    CapHeight: 0
+    CapHeight: 136
     Descender: -39
     CenterLine: 0
     SuperscriptOffset: 137
@@ -34,19 +34,19 @@ MonoBehaviour:
     UnderlineThickness: 15.489258
     strikethrough: 35.636364
     strikethroughThickness: 15.489258
-    TabWidth: 0
+    TabWidth: 1180
     Padding: 0
     AtlasWidth: 1024
     AtlasHeight: 1024
-  atlas: {fileID: 28505868595354788}
+  atlas: {fileID: 28509107887879224}
   m_glyphInfoList:
   - id: 32
     x: 0
     y: 1024
-    width: 0
-    height: 0
+    width: 118
+    height: 176
     xOffset: 0
-    yOffset: 0
+    yOffset: 137
     xAdvance: 118
     scale: 1
   - id: 33
@@ -989,7 +989,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 28505868595354788}
+        m_Texture: {fileID: 28509107887879224}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -1006,7 +1006,7 @@ Material:
     m_Colors:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
     - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!28 &28505868595354788
+--- !u!28 &28509107887879224
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

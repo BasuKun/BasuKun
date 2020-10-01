@@ -27,7 +27,7 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         if (pointerDown && PileHandler.Instance.pileDict.Count > 0)
         {
             pointerDownTimer += Time.deltaTime;
-            if (pointerDownTimer >= GameManager.Instance.shovelSpeed)
+            if (pointerDownTimer >= GameManager.Instance.shovelSpeed * Powerups.Instance.ShovelMaster(GameManager.Instance.equippedShovelMaster))
             {
                 if (onLongClick != null)
                     onLongClick.Invoke();
@@ -41,7 +41,7 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
                     Reset();
                 }
             }
-            fillImage.fillAmount = pointerDownTimer / GameManager.Instance.shovelSpeed;
+            fillImage.fillAmount = pointerDownTimer / (GameManager.Instance.shovelSpeed * Powerups.Instance.ShovelMaster(GameManager.Instance.equippedShovelMaster));
         }
     }
 
@@ -49,7 +49,7 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     {
         pointerDown = false;
         pointerDownTimer = 0;
-        fillImage.fillAmount = pointerDownTimer / GameManager.Instance.shovelSpeed;
+        fillImage.fillAmount = pointerDownTimer / (GameManager.Instance.shovelSpeed * Powerups.Instance.ShovelMaster(GameManager.Instance.equippedShovelMaster));
     }
 
 }

@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class LongClickInstantButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     private bool pointerDown;
-    private float pointerDownTimer = 1;
-    private float timeNeeded = 1;
+    private float pointerDownTimer = 0.5f;
+    private float timeNeeded = 0.5f;
+    private float acceleration = 1.05f;
+    private float maxAcceleration = 0.05f;
 
     public UnityEvent onLongClick;
 
@@ -34,7 +36,7 @@ public class LongClickInstantButton : MonoBehaviour, IPointerDownHandler, IPoint
                 {
                     onLongClick.Invoke();
                     fillImage.fillAmount = (float)GameManager.Instance.absorbedSnowflakes / 10f;
-                    timeNeeded /= 1.3f;
+                    timeNeeded = Mathf.Clamp(timeNeeded / acceleration, maxAcceleration, 0.5f);
                 }
                 if (GameManager.Instance.snowflakesAmount > 0)
                 {
@@ -51,8 +53,8 @@ public class LongClickInstantButton : MonoBehaviour, IPointerDownHandler, IPoint
     private void Reset()
     {
         pointerDown = false;
-        pointerDownTimer = 1;
-        timeNeeded = 1;
+        pointerDownTimer = 0.5f;
+        timeNeeded = 0.5f;
         fillImage.fillAmount = (float)GameManager.Instance.absorbedSnowflakes / 10f;
     }
 

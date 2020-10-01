@@ -8,6 +8,8 @@ TagManager:
   - Dragon
   - Spikes
   - Breakable
+  - Ground
+  - Stalagmite
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - Ground
   - Bubble
   - Dragon
-  - 
+  - Stalagmite
   - 
   - 
   - 

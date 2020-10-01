@@ -35,8 +35,9 @@ public class AbsorbSnowButton : MonoBehaviour
         if (GameManager.Instance.absorbedSnowflakes == 10)
         {
             GameManager.Instance.absorbedSnowflakes = 0;
-            GameManager.Instance.intelligencePoints++;
+            GameManager.Instance.intelligencePointsAmount++;
             GameUI.Instance.IntelligencePointsUpdateText();
+            GameManager.Instance.currencyPopout(Camera.main.ScreenToWorldPoint(button.transform.position), 1, "IP", GameUI.Instance.intelligencePointsColor);
         }
     }
 }
