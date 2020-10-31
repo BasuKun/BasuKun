@@ -5,14 +5,12 @@ using UnityEngine;
 public class Snowflake : MonoBehaviour
 {
     public float fallSpeed = 8f;
-    public float fallingCooldown = 1f;
-    public Snowflake snowflake;
-    public GameObject sfObject;
+    private float fallingCooldown = 1f;
+    private float randomizedFallingCooldown;
     public GameObject pileTile;
     public GameObject pileGroup;
     public ParticleSystem snowBurst;
     public ParticleSystem doubleSnowBurst;
-    public SnowflakeSpawner snowflakeSpawner;
     private bool wentLeft = true;
     private bool isPiling = false;
     private bool isBursting;
@@ -22,11 +20,10 @@ public class Snowflake : MonoBehaviour
 
     void Start()
     {
+        randomizedFallingCooldown = RandomizeFallingCooldown();
+        fallingCooldown = randomizedFallingCooldown;
         isSelectedByCollector = false;
         pileGroup = GameObject.FindGameObjectWithTag("Floor");
-        snowflakeSpawner = GameObject.FindObjectOfType<SnowflakeSpawner>();
-        snowflake = gameObject.GetComponent<Snowflake>();
-        sfObject = this.gameObject;
         wentLeft = (Random.value > 0.5f);
     }
 
@@ -53,7 +50,12 @@ public class Snowflake : MonoBehaviour
             new Vector2(transform.position.x - 0.2f, transform.position.y - 0.2f);
 
         wentLeft = !wentLeft;
-        fallingCooldown = 1f;
+        fallingCooldown = randomizedFallingCooldown;
+    }
+
+    float RandomizeFallingCooldown()
+    {
+        return Random.Range(0.95f, 1.05f);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -61,7 +63,7 @@ public class Snowflake : MonoBehaviour
 
         if (collision.gameObject.tag == "MouseRadius" && !isSelectedByCollector)
         {
-            GameManager.Instance.collectSnowflakes(GameManager.Instance.snowflakeValue, isDouble ? true : false, this.transform.position);
+            GameManager.Instance.collectSnowflakes(GameManager.Instance.snowflakeValue, isDouble ? true : false, false, this.transform.position);
             isBursting = true;
         }
 
@@ -103,10 +105,10 @@ public class Snowflake : MonoBehaviour
 
         if(isBursting)
         {
-            ParticleSystem burst = Instantiate(isDouble ? doubleSnowBurst : snowBurst, transform.position, Quaternion.identity);
+            ParticleSystem burst = Instantiate(isDouble ? doubleSnowBurst : snowBurst, transform.position, Quaternion.identity, SnowflakeSpawner.Instance.gameObject.transform);
         }
 
-        snowflakeSpawner.currentSnowflakesList.Remove(gameObject);
+        SnowflakeSpawner.Instance.currentSnowflakesList.Remove(gameObject);
         Destroy(gameObject);
     }
 }

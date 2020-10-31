@@ -7,6 +7,7 @@ public class SnowflakeSpawner : MonoBehaviour
     public List<GameObject> snowflakesTypes = new List<GameObject>();
     public List<GameObject> currentSnowflakesList = new List<GameObject>();
     public GameObject spawner;
+    public float initialSpawnInterval = 8.5f;
     public float spawnInterval = 8.5f;
 
     public static SnowflakeSpawner Instance;
@@ -35,7 +36,7 @@ public class SnowflakeSpawner : MonoBehaviour
 
             currentSnowflakesList.Add(sf);
 
-            spawnInterval = 8.5f;
+            spawnInterval = initialSpawnInterval;
         }
     }
 
@@ -44,7 +45,7 @@ public class SnowflakeSpawner : MonoBehaviour
         int doubleChance = Random.Range(1, 201);
         int index;
 
-        if (doubleChance <= GameManager.Instance.doubleValueChance + Powerups.Instance.LuckyWinter(GameManager.Instance.equippedLuckyWinter))
+        if (doubleChance <= GameManager.Instance.doubleValueChance + Powerups.Instance.LuckyWinter())
         {
             index = 1; //get a gleaming snowflake
         }

@@ -16,7 +16,7 @@ public class AbsorbSnowButton : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.Instance.snowflakesAmount > 0)
+        if (GameManager.Instance.snowflakesAmount >= GameManager.Instance.absorbedSnowflakesAmount)
         {
             button.interactable = true;
         }
@@ -28,16 +28,17 @@ public class AbsorbSnowButton : MonoBehaviour
 
     public void AbsorbSnow()
     {
-        GameManager.Instance.snowflakesAmount--;
+        GameManager.Instance.snowflakesAmount -= GameManager.Instance.absorbedSnowflakesAmount;
         GameManager.Instance.absorbedSnowflakes++;
         GameUI.Instance.snowflakesUpdateText();
 
         if (GameManager.Instance.absorbedSnowflakes == 10)
         {
             GameManager.Instance.absorbedSnowflakes = 0;
-            GameManager.Instance.intelligencePointsAmount++;
+            GameManager.Instance.intelligencePointsAmount += GameManager.Instance.obtainedIntelligenceAmount;
             GameUI.Instance.IntelligencePointsUpdateText();
-            GameManager.Instance.currencyPopout(Camera.main.ScreenToWorldPoint(button.transform.position), 1, "IP", GameUI.Instance.intelligencePointsColor);
+            GameManager.Instance.currencyPopout(Camera.main.ScreenToWorldPoint(button.transform.position), GameManager.Instance.obtainedIntelligenceAmount, "IP", GameUI.Instance.intelligencePointsColor);
+            UnlocksListHandler.Instance.CheckForUnlocks();
         }
     }
 }

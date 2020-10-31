@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,13 +10,17 @@ public class GameManager : MonoBehaviour
     public double snowflakeValue = 1;
     public float radius = 0.1f;
     public float shovelSpeed = 2f;
-    public float snowpileHeightLimit = -4f;
+    public float snowpileHeightLimit = -4.5f;
     public int doubleValueChance = 0;
+    public int maxTierAllowed = 1;
+    public int absorbedSnowflakesAmount = 1;
+    public int obtainedIntelligenceAmount = 1;
 
     [Header("CURRENCIES")]
     public double snowflakesAmount = 0;
     public double intelligencePointsAmount = 0;
     public double iceBlocksAmount = 0;
+    public double blessingPointsAmount = 0;
 
     [Header("OTHERS")]
     public int absorbedSnowflakes = 0;
@@ -25,28 +30,17 @@ public class GameManager : MonoBehaviour
     public double idlePopulationAmount = 0;
     public double shovelersAmount = 0;
     public double collectorsAmount = 0;
+    public double transplantersAmount = 0;
+    public double worshippersAmount = 0;
     public float autoShovelSpeed;
     public float autoCollectSpeed;
+    public float autoAbsorbSpeed;
+    public float newPowerupUnlockChance = 1f;
+    public float newPowerupCurrentChance = 0f;
 
     [Header("POWERUPS")]
     public int maxPowerups = 1;
     public int equippedPowerups = 0;
-    public bool boughtSnowstormSeeker = false;
-    public bool boughtSnowpileEnthusiast = false;
-    public bool boughtSnowflakeBooster = false;
-    public bool boughtShovelMaster = false;
-    public bool boughtLuckyWinter = false;
-    public bool boughtMountainMaker = false;
-    public bool boughtBlessedSnowflakes = false;
-    public bool boughtSnowpileFreezer = false;
-    public bool equippedSnowstormSeeker = false;
-    public bool equippedSnowpileEnthusiast = false;
-    public bool equippedSnowflakeBooster = false;
-    public bool equippedShovelMaster = false;
-    public bool equippedLuckyWinter = false;
-    public bool equippedMountainMaker = false;
-    public bool equippedBlessedSnowflakes = false;
-    public bool equippedSnowpileFreezer = false;
 
     public SnowflakeSpawner snowflakeSpawner;
     public GameObject currencyGainPopout;
@@ -61,11 +55,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void collectSnowflakes(double value, bool isDouble, Vector3 pos)
+    public void collectSnowflakes(double value, bool isDouble, bool wasShoveled, Vector3 pos)
     {
-        double valueToAdd = (int)(value * Powerups.Instance.SnowflakeBooster(equippedSnowflakeBooster) *
-            (isDouble ? 2 + Powerups.Instance.BlessedSnowflakes(equippedBlessedSnowflakes) : 1) *
-            Powerups.Instance.SnowstormSeeker(equippedSnowstormSeeker));
+        double valueToAdd;
+
+        if (!wasShoveled)
+        {
+            valueToAdd = Math.Round(value * Powerups.Instance.SnowflakeBooster() *
+            (isDouble ? 2 + Powerups.Instance.BlessedSnowflakes() : 1) *
+            Powerups.Instance.SnowstormSeeker());
+        }
+        else
+        {
+            valueToAdd = Math.Round(value);
+        }
         snowflakesAmount += valueToAdd;
         GameUI.Instance.snowflakesUpdateText();
         currencyPopout(pos, valueToAdd, "SF", GameUI.Instance.snowflakesColor);
@@ -73,7 +76,7 @@ public class GameManager : MonoBehaviour
 
     public void collectIceBlocks(double value, Vector3 pos)
     {
-        double valueToAdd = (int)value * Powerups.Instance.SnowpileFreezer(equippedSnowpileFreezer);
+        double valueToAdd = Math.Round(value * Powerups.Instance.SnowpileFreezer());
         iceBlocksAmount += valueToAdd;
         GameUI.Instance.iceBlocksUpdateText();
         currencyPopout(pos, valueToAdd, "IB", GameUI.Instance.iceBlocksColor);

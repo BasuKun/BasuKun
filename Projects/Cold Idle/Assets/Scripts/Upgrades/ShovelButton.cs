@@ -37,7 +37,7 @@ public class ShovelButton : MonoBehaviour
         Destroy(PileHandler.Instance.pileDict.ElementAt(index).Value);
         ParticleSystem burst = Instantiate(snowBurst, indexVector, Quaternion.identity);
 
-        GameManager.Instance.collectSnowflakes((int)(GameManager.Instance.snowflakeValue / 2), false, new Vector3(burst.transform.position.x, burst.transform.position.y + 0.15f, burst.transform.position.z));
+        GameManager.Instance.collectSnowflakes((int)(GameManager.Instance.snowflakeValue / 2), false, true, new Vector3(burst.transform.position.x, burst.transform.position.y + 0.15f, burst.transform.position.z));
         GameManager.Instance.collectIceBlocks((int)(GameManager.Instance.snowflakeValue / 2) + 1, burst.transform.position);
 
         PileHandler.Instance.pileDict.Remove(indexVector);

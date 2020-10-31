@@ -15,6 +15,8 @@ public class PileHandler : MonoBehaviour
     public Sprite fullPileRight;
 
     public GameObject snowPile;
+    public GameObject pileLimitArrow;
+    public GameObject limitLineText;
     public Dictionary<Vector3, GameObject> pileDict = new Dictionary<Vector3, GameObject>();
 
     public static PileHandler Instance;
@@ -25,6 +27,11 @@ public class PileHandler : MonoBehaviour
         {
             Instance = this;
         }
+    }
+
+    void Start()
+    {
+        MovePileHeightLimitArrow();
     }
 
     public void AutoTile()
@@ -94,5 +101,15 @@ public class PileHandler : MonoBehaviour
                     break;
             }
         }
+    }
+
+    public void MovePileHeightLimitArrow()
+    {
+        pileLimitArrow.transform.position = Camera.main.WorldToScreenPoint(new Vector2(transform.position.x + 8.75f, GameManager.Instance.snowpileHeightLimit));
+    }
+
+    public void DisplayLimitLine()
+    {
+        limitLineText.SetActive(!limitLineText.activeSelf);
     }
 }
