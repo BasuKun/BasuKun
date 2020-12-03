@@ -22,6 +22,7 @@ public class Unlocks : MonoBehaviour
     public GameObject logsTabX;
 
     [Header("UPGRADES")]
+    public GameObject betterValueButton;
     public GameObject moreSnowButton;
     public GameObject biggerRadiusButton;
     public GameObject betterAbsorbRatioButton;
@@ -82,7 +83,7 @@ public class Unlocks : MonoBehaviour
         if (isLogsTab) hasLogsHighlight = true;
     }
 
-    public void BuyUnlock(int ID)
+    public void BuyUnlock(int ID, double bonus)
     {
         switch (ID)
         {
@@ -127,6 +128,9 @@ public class Unlocks : MonoBehaviour
                 break;
             case 13:
                 TierUnlock();
+                break;
+            case 14:
+                BetterValueBoost(bonus);
                 break;
             default:
                 break;
@@ -277,5 +281,12 @@ public class Unlocks : MonoBehaviour
     public void TierUnlock()
     {
         GameManager.Instance.maxTierAllowed++;
+    }
+
+    public void BetterValueBoost(double bonus)
+    {
+        GameManager.Instance.snowflakeExtraValue += bonus;
+        UpgradesButton button = betterValueButton.gameObject.GetComponent<UpgradesButton>();
+        GameManager.Instance.snowflakeValue += GameManager.Instance.snowflakeExtraValue * button.level;
     }
 }

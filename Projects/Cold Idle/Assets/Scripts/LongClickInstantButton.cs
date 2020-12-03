@@ -27,7 +27,7 @@ public class LongClickInstantButton : MonoBehaviour, IPointerDownHandler, IPoint
 
     private void Update()
     {
-        if (pointerDown && GameManager.Instance.snowflakesAmount > 0)
+        if (pointerDown && GameManager.Instance.snowflakesAmount >= GameManager.Instance.absorbedSnowflakesAmount)
         {
             InfoPopupHandler.Instance.DespawnInfoPopup();
             pointerDownTimer += Time.deltaTime;
@@ -39,7 +39,7 @@ public class LongClickInstantButton : MonoBehaviour, IPointerDownHandler, IPoint
                     fillImage.fillAmount = (float)GameManager.Instance.absorbedSnowflakes / 10f;
                     timeNeeded = Mathf.Clamp(timeNeeded / (acceleration + Powerups.Instance.AbsorbantBody()), maxAcceleration, 0.5f);
                 }
-                if (GameManager.Instance.snowflakesAmount > 0)
+                if (GameManager.Instance.snowflakesAmount >= GameManager.Instance.absorbedSnowflakesAmount)
                 {
                     pointerDownTimer = 0;
                 }

@@ -256,6 +256,203 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7360249}
   m_CullTransparentMesh: 0
+--- !u!1001 &15849099
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 395308159}
+    m_Modifications:
+    - target: {fileID: 6624104742243605180, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_Name
+      value: BetterSFValue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624104742243605180, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: name
+      value: Better SF value per level
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: cost
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: appearCost
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: logsText
+      value: Upgrading upgrades sure seems redundant, but you're not saying no to
+        any kind of powerup you can get your hands on.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: unlockRequirement
+      value: 
+      objectReference: {fileID: 314468313}
+    - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: ID
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: bonus
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 112.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -23.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 204.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 26.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4745897837300178150, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452773948205184926, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452773948205184926, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460605232576287412, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460605232576287412, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249969896481112547, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249969896481112547, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353131834320061960, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353131834320061960, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3215457529072691655, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: description
+      value: 'Increases the SF value boost when levelling up "Better Value" upgrade.
+
+        This boost is retroactive.'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+--- !u!224 &15849100 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725,
+    type: 3}
+  m_PrefabInstance: {fileID: 15849099}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &46679875
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,7 +898,7 @@ PrefabInstance:
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
       propertyPath: multiplier
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
@@ -913,12 +1110,12 @@ PrefabInstance:
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: cost
-      value: 200
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: appearCost
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
@@ -966,7 +1163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1104,17 +1301,20 @@ PrefabInstance:
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: cost
-      value: 300
+      value: 550
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: appearCost
-      value: 150
+      value: 275
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: logsText
-      value: 
+      value: 'Just when you thought you couldn''t get any stronger, memories of your
+        past being are returning. How powerful were you even back then?
+
+        You feel like you can get even stronger now.'
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
@@ -1156,7 +1356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1403,12 +1603,12 @@ PrefabInstance:
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: cost
-      value: 1400
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: appearCost
-      value: 700
+      value: 2500
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
@@ -1456,7 +1656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2423,12 +2623,12 @@ PrefabInstance:
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
       propertyPath: cost
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
       propertyPath: multiplier
-      value: 3
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
@@ -2438,7 +2638,7 @@ PrefabInstance:
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
       propertyPath: levelsPerTier
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
@@ -2862,7 +3062,7 @@ PrefabInstance:
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
       propertyPath: multiplier
-      value: 1.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
@@ -2882,7 +3082,7 @@ PrefabInstance:
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
       propertyPath: levelsPerTier
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
@@ -2939,6 +3139,12 @@ PrefabInstance:
 --- !u!224 &232413484 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1804400436825015174, guid: 01be077d934f00e4bbc761b74779cda6,
+    type: 3}
+  m_PrefabInstance: {fileID: 232413483}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &232413485 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1804400436825015173, guid: 01be077d934f00e4bbc761b74779cda6,
     type: 3}
   m_PrefabInstance: {fileID: 232413483}
   m_PrefabAsset: {fileID: 0}
@@ -3470,17 +3676,21 @@ PrefabInstance:
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: cost
-      value: 2000
+      value: 100000
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: appearCost
-      value: 1000
+      value: 50000
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: logsText
-      value: 
+      value: 'The more you remember your old self, the more you start wondering...
+        how did you even fall into this long slumber? Clearly no one would have been
+        strong enough to stop you if they tried.
+
+        You feel like you can get even stronger now.'
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
@@ -3522,7 +3732,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3666,6 +3876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnSpeed: 3
   snowflakeValue: 1
+  snowflakeExtraValue: 0
   radius: 0.1
   shovelSpeed: 2
   snowpileHeightLimit: -4.5
@@ -3831,6 +4042,7 @@ MonoBehaviour:
   habitatsTabX: {fileID: 1902819960}
   shopTabX: {fileID: 750353277}
   logsTabX: {fileID: 2057497056}
+  betterValueButton: {fileID: 232413485}
   moreSnowButton: {fileID: 1300481030}
   biggerRadiusButton: {fileID: 175086475}
   betterAbsorbRatioButton: {fileID: 1092961259}
@@ -3877,17 +4089,20 @@ PrefabInstance:
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: cost
-      value: 1000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: appearCost
-      value: 500
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: logsText
-      value: 
+      value: 'More memories are flowing back to the surface. You were incredibly powerful
+        back then, that''s for sure.
+
+        You feel like you can get even stronger now.'
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
@@ -3929,7 +4144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4565,16 +4780,19 @@ RectTransform:
   - {fileID: 882913452}
   - {fileID: 170419400}
   - {fileID: 1121225145}
-  - {fileID: 1292678674}
-  - {fileID: 1992691880}
+  - {fileID: 15849100}
   - {fileID: 1680400341}
+  - {fileID: 1992691880}
+  - {fileID: 1292678674}
   - {fileID: 1647870106}
+  - {fileID: 699536327}
   - {fileID: 110685874}
   - {fileID: 1872618960}
+  - {fileID: 118388561}
   - {fileID: 898520702}
+  - {fileID: 636970156}
   - {fileID: 1257710346}
   - {fileID: 137784438}
-  - {fileID: 118388561}
   - {fileID: 361808118}
   - {fileID: 302181052}
   - {fileID: 567022493}
@@ -5119,7 +5337,7 @@ PrefabInstance:
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
       propertyPath: multiplier
-      value: 1.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
@@ -5542,7 +5760,7 @@ PrefabInstance:
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
       propertyPath: multiplier
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
@@ -5552,7 +5770,7 @@ PrefabInstance:
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
       propertyPath: levelsPerTier
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
@@ -5572,7 +5790,7 @@ PrefabInstance:
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
       propertyPath: bonusPerTier
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
@@ -6984,7 +7202,7 @@ PrefabInstance:
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
       propertyPath: multiplier
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
@@ -6994,7 +7212,7 @@ PrefabInstance:
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
       propertyPath: levelsPerTier
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
@@ -7086,17 +7304,21 @@ PrefabInstance:
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: cost
-      value: 4000
+      value: 1000000
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: appearCost
-      value: 2000
+      value: 500000
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: logsText
-      value: 
+      value: 'As the final bits of memories flow back to the surface, you realize
+        no one ever tried stopping you back then; you stopped yourself. You were scared
+        of how omnipotent you became, so you put yourself into this slumber.
+
+        You now feel you can get even stronger... but at what cost?'
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
@@ -7138,7 +7360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7729,6 +7951,203 @@ MonoBehaviour:
   isHabitat: 1
   isSimpleText: 0
   isBeingChecked: 0
+--- !u!1001 &636970155
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 395308159}
+    m_Modifications:
+    - target: {fileID: 6624104742243605180, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_Name
+      value: BetterSFValueIII
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624104742243605180, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: name
+      value: Better SF value per level
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: cost
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: appearCost
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: logsText
+      value: Upgrading upgrades sure seems redundant, but you're not saying no to
+        any kind of powerup you can get your hands on.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: unlockRequirement
+      value: 
+      objectReference: {fileID: 314468313}
+    - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: ID
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: bonus
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 112.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -23.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 204.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 26.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4745897837300178150, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452773948205184926, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452773948205184926, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460605232576287412, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460605232576287412, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249969896481112547, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249969896481112547, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353131834320061960, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353131834320061960, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3215457529072691655, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: description
+      value: 'Increases the SF value boost when levelling up "Better Value" upgrade.
+
+        This boost is retroactive.'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+--- !u!224 &636970156 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725,
+    type: 3}
+  m_PrefabInstance: {fileID: 636970155}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &649061593
 GameObject:
   m_ObjectHideFlags: 0
@@ -8187,6 +8606,203 @@ MonoBehaviour:
   button: {fileID: 688130188}
   equippedAmountText: {fileID: 1531562122}
   costText: {fileID: 1695076211}
+--- !u!1001 &699536326
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 395308159}
+    m_Modifications:
+    - target: {fileID: 6624104742243605180, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_Name
+      value: BetterSFValueII
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624104742243605180, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: name
+      value: Better SF value per level
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: cost
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: appearCost
+      value: 175
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: logsText
+      value: Upgrading upgrades sure seems redundant, but you're not saying no to
+        any kind of powerup you can get your hands on.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: unlockRequirement
+      value: 
+      objectReference: {fileID: 314468313}
+    - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: ID
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: bonus
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 112.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -23.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 204.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 26.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4745897837300178150, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452773948205184926, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452773948205184926, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460605232576287412, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460605232576287412, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249969896481112547, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249969896481112547, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353131834320061960, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353131834320061960, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3215457529072691655, guid: 974fa25ba7dc6844b95ba29734ed0725,
+        type: 3}
+      propertyPath: description
+      value: 'Increases the SF value boost when levelling up "Better Value" upgrade.
+
+        This boost is retroactive.'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
+--- !u!224 &699536327 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725,
+    type: 3}
+  m_PrefabInstance: {fileID: 699536326}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &736950790
 GameObject:
   m_ObjectHideFlags: 0
@@ -10119,12 +10735,12 @@ PrefabInstance:
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: cost
-      value: 500
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: appearCost
-      value: 250
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
@@ -10175,7 +10791,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -12630,12 +13246,12 @@ PrefabInstance:
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: cost
-      value: 900
+      value: 2500
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: appearCost
-      value: 450
+      value: 1750
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
@@ -12686,7 +13302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13319,12 +13935,12 @@ PrefabInstance:
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: cost
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: appearCost
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
@@ -13372,7 +13988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -15210,12 +15826,12 @@ PrefabInstance:
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
       propertyPath: cost
-      value: 800
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
       propertyPath: multiplier
-      value: 0.4
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
@@ -16420,12 +17036,12 @@ PrefabInstance:
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: cost
-      value: 170
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: appearCost
-      value: 85
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
@@ -16473,7 +17089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -16905,12 +17521,12 @@ PrefabInstance:
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: cost
-      value: 150
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: appearCost
-      value: 75
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
@@ -16959,7 +17575,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -19104,12 +19720,12 @@ PrefabInstance:
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: cost
-      value: 400
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
       propertyPath: appearCost
-      value: 200
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 7522481722126651387, guid: 974fa25ba7dc6844b95ba29734ed0725,
         type: 3}
@@ -19158,7 +19774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -19434,7 +20050,7 @@ PrefabInstance:
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
       propertyPath: multiplier
-      value: 0.75
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
@@ -19449,7 +20065,7 @@ PrefabInstance:
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
       propertyPath: levelsPerTier
-      value: 15
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
@@ -20090,7 +20706,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 483047305, guid: 974fa25ba7dc6844b95ba29734ed0725, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -21506,7 +22122,7 @@ PrefabInstance:
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}
       propertyPath: multiplier
-      value: 0.75
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1804400436825015178, guid: 01be077d934f00e4bbc761b74779cda6,
         type: 3}

@@ -10,6 +10,7 @@ public class UnlocksButton : MonoBehaviour
     public new string name;
     public double cost;
     public double appearCost;
+    public double bonus;
     public GameObject unlockRequirement;
     [TextArea] public string logsText;
 
@@ -41,7 +42,7 @@ public class UnlocksButton : MonoBehaviour
         GameManager.Instance.intelligencePointsAmount -= cost;
         GameUI.Instance.IntelligencePointsUpdateText();
         Logs.Instance.AddLog(logsText, logsColor);
-        Unlocks.Instance.BuyUnlock(ID);
+        Unlocks.Instance.BuyUnlock(ID, bonus);
         UnlocksListHandler.Instance.UnlocksButtonsList.Remove(this);
         this.gameObject.GetComponent<OnMouseOverHandler>().DespawnPopup();
         this.gameObject.SetActive(false);

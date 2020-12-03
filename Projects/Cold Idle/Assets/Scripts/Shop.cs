@@ -59,7 +59,7 @@ public class Shop : MonoBehaviour
 
     public void BetterValue(float defaultBonus, float bonusPerTier, int tier)
     {
-        GameManager.Instance.snowflakeValue += defaultBonus + (bonusPerTier * (tier - 1));
+        GameManager.Instance.snowflakeValue += defaultBonus + GameManager.Instance.snowflakeExtraValue + (bonusPerTier * (tier - 1));
     }
 
     public void BiggerRadius(float defaultBonus, float bonusPerTier, int tier)

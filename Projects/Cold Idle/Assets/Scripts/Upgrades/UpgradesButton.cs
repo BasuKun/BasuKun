@@ -99,14 +99,15 @@ public class UpgradesButton : MonoBehaviour
             default:
                 break;
         }
-        cost += Math.Round(cost * multiplier);
         level++;
+        cost += Math.Round(cost * multiplier + (level * 10));
         isMaxLevel = CheckIfMaxLevel();
         CheckIfReachedNewTier();
         UpdateText();
         Shop.Instance.BuyUpgrade(name, defaultBonus, bonusPerTier, tier);
         GetComponent<OnMouseOverHandler>().RefreshText();
         Logs.Instance.AddLog(logsText, logsColor);
+        Debug.Log(name + ": " + cost.ToString());
     }
 
     private bool CheckIfMaxLevel()

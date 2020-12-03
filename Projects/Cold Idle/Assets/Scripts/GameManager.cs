@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [Header("UPGRADES")]
     public float spawnSpeed = 3f;
     public double snowflakeValue = 1;
+    public double snowflakeExtraValue = 0;
     public float radius = 0.1f;
     public float shovelSpeed = 2f;
     public float snowpileHeightLimit = -4.5f;

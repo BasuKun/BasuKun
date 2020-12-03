@@ -66,7 +66,7 @@ public class OnMouseOverHandler : MonoBehaviour, IPointerEnterHandler, IPointerE
                 break;
             case "Better Value":
                 currentBonus = GameManager.Instance.snowflakeValue;
-                nextBonus = GameManager.Instance.snowflakeValue + upgradesButton.defaultBonus + (upgradesButton.bonusPerTier * (upgradesButton.tier - 1));
+                nextBonus = GameManager.Instance.snowflakeValue + GameManager.Instance.snowflakeExtraValue + upgradesButton.defaultBonus + (upgradesButton.bonusPerTier * (upgradesButton.tier - 1));
                 break;
             case "Bigger Radius":
                 currentBonus = Mathf.Round(GameManager.Instance.radius * 1000.0f) / 1000.0f;
