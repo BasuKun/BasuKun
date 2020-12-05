@@ -40,5 +40,33 @@ namespace AoC2020
 
             return ParsedListFloat;
         }
+
+        public static List<Dictionary<string, string>> ParseFileDict(int day)
+        {
+            var TextLines = new List<string>();
+            TextLines = File.ReadAllLines($@"C:\Users\Seb\Documents\GitHub\BasuKun\Projects\AoC2020\TextFiles\Day{day}.txt").ToList();
+
+            var dictList = new List<Dictionary<string, string>>();
+            int listIndex = 0;
+
+            foreach (string line in TextLines)
+            {
+                if (line.Length == 0)
+                {
+                    listIndex++;
+                    continue;
+                }
+
+                var lineSplit = line.Split(' ').ToList();
+                foreach (string entry in lineSplit)
+                {
+                    dictList.Add(new Dictionary<string, string>());
+
+                    var entrySplit = entry.Split(':').ToList();
+                    dictList[listIndex].Add(entrySplit[0], entrySplit[1]);
+                }
+            }
+            return dictList;
+        }
     }
 }
