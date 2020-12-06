@@ -68,5 +68,29 @@ namespace AoC2020
             }
             return dictList;
         }
+
+        public static List<List<string>> ParseFileList(int day)
+        {
+            var TextLines = new List<string>();
+            TextLines = File.ReadAllLines($@"C:\Users\Seb\Documents\GitHub\BasuKun\Projects\AoC2020\TextFiles\Day{day}.txt").ToList();
+
+            var listList = new List<List<string>>();
+            int listIndex = 0;
+
+            foreach (string line in TextLines)
+            {
+                if (line.Length == 0 || line == " ")
+                {
+                    listIndex++;
+                    continue;
+                }
+                if (listList.Count <= listIndex)
+                {
+                    listList.Add(new List<string>());
+                }
+                listList[listIndex].Add(line);
+            }
+            return listList;
+        }
     }
 }
