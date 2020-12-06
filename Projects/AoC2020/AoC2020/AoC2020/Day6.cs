@@ -46,17 +46,20 @@ namespace AoC2020
             {
                 List<char> groupYesses = new List<char>();
                 List<char> currentYesses = new List<char>();
+                bool checkedFirstPerson = false;
 
                 foreach (var person in group)
                 {
                     var personYesses = person.ToCharArray().ToList();
-                    if (group.First() == person && groupYesses.Count == 0)
+
+                    if (!checkedFirstPerson)
                     {
                         foreach (var yes in personYesses)
                         {
                             currentYesses.Add(yes);
                             groupYesses = new List<char>(currentYesses);
                         }
+                        checkedFirstPerson = true;
                     }
                     else
                     {
