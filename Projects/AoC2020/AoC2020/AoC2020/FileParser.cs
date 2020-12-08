@@ -92,5 +92,15 @@ namespace AoC2020
             }
             return listList;
         }
+
+        public static Dictionary<string, string> ParseFileCustomDictionary(int day)
+        {
+            var dictionary = new Dictionary<string, string>();
+            dictionary = File.ReadAllLines($@"C:\Users\Seb\Documents\GitHub\BasuKun\Projects\AoC2020\TextFiles\Day{day}.txt")
+                            .Select(str => str.Substring(0, str.Length - 1).Replace(" bags", "").Replace(" bag", ""))
+                            .ToDictionary(str => str.Split(new string[] { " contain " }, StringSplitOptions.None)[0], str => str.Split(new string[] { " contain " }, StringSplitOptions.None)[1]);
+
+            return dictionary;
+        }
     }
 }
