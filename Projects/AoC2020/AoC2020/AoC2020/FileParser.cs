@@ -30,6 +30,17 @@ namespace AoC2020
             return ParsedListInt;
         }
 
+        public static List<double> ParseFileDouble(int day)
+        {
+            List<string> ParsedList = new List<string>();
+            List<double> ParsedListDouble = new List<double>();
+            string text = File.ReadAllText($@"C:\Users\Seb\Documents\GitHub\BasuKun\Projects\AoC2020\TextFiles\Day{day}.txt");
+            ParsedList = text.Split('\n').ToList();
+            ParsedListDouble = ParsedList.Select(double.Parse).ToList();
+
+            return ParsedListDouble;
+        }
+
         public static List<float> ParseFileFloat(int day)
         {
             List<string> ParsedList = new List<string>();
