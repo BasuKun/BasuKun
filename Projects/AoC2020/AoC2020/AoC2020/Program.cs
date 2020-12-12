@@ -14,7 +14,7 @@ namespace AoC2020
         static void Main(string[] args)
         {
             sw.Restart();
-            Day11.Execute();
+            Day12.Execute();
             sw.Stop();
             Console.WriteLine("TIME NEEDED: " + sw.ElapsedMilliseconds + "ms");
             Console.ReadLine();
