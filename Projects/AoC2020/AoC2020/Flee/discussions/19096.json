@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "62764",
+    "ThreadId": "19096",
+    "Html": "\r\nif i try to evaluate 1/100 i obtain 0 not 0.01<br />It's a bug?<br /><br />i've tryed:<br />IGenericExpression&lt;decimal&gt; eGeneric = ExpressionFactory.CreateGeneric&lt;decimal&gt;(\"1/100\", context);<br />",
+    "PostedDate": "2007-12-13T01:50:43.203-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "62940",
+    "ThreadId": "19096",
+    "Html": "\r\nWhen dividing two integers, an integer division is performed (which gives an integer result).  If you change either of the numbers to a floating-point value, then a floating-point division is performed.  So if you try the expression <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">1.0/100</span> or <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">1/100.0</span> then the result will be 0.01.<br />",
+    "PostedDate": "2007-12-13T19:17:25.477-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "62966",
+    "ThreadId": "19096",
+    "Html": "<b>thank you</b><br />",
+    "PostedDate": "2007-12-14T00:30:43.883-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

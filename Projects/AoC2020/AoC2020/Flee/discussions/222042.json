@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "474890",
+    "ThreadId": "222042",
+    "Html": "If I try to evaluate the following, I get a Int32 to Boolean error:\r\n\r\n(0xF0 or 0x0F == 0xFF)\r\n\r\nShouldn't it return &quot;True&quot;?",
+    "PostedDate": "2010-07-30T13:00:34.307-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "474895",
+    "ThreadId": "222042",
+    "Html": "Ah, nevermind\r\n\r\n have to do (0xF0 or 0x0F) = 0xFF\r\nthis wont work:  0xF0 or 0x0F = 0xFF\r\n\r\nIt tries to evaluate the 0x0F = 0xFF first then or an integer with a boolean. aghhh.",
+    "PostedDate": "2010-07-30T13:39:23.323-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

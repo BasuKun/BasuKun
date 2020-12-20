@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\n\nif you have an expression accessing a value type field member and using the result in a further expression element which requires an address you run into an unhandled exception within the IL code, e.g.\n\n_Int32.MaxValue.ToString( )_\n\nMaxValue is a constant field of a value type and the ToString( ) will cause the exception in the IL code.\n\n_1.ToString( )_\n\ndoesn't run into that problem, since the IL code generation is done in a different way (no field member). \n\nHow to fix that?\nChange Identifier.vb in the following way\n\n1) add a new parameter _nextRequiresAddress As Boolean_ to _Sub EmitLiteral_ like\n\n_Sub EmitLiteral(ByVal fi As System.Reflection.FieldInfo, ByVal ilg As FleeILGenerator, ByVal services As IServiceProvider, ByVal nextRequiresAddress As Boolean)_\n\n2) after code line  _elem.Emit(ilg, services)_  in _Sub EmitLiteral_ add the following code\n\n_If nextRequiresAddress = True Then\n   EmitValueTypeLoadAddress(ilg, t)\nEnd If_\n\n3) change the _EmitFieldLoad Sub_ where the _EmitLiteral Sub_ is called like\n\n_EmitLiteral(fi, ilg, services, Me.NextRequiresAddress)_\n\nMany thanks to the author of Flee for this excellent library!\nbest regards grabul",
+    "LastUpdatedDate": "2016-03-30T05:49:00.31-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2016-03-30T05:49:00.31-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "EmitLiteral in Identifier.vb",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 17638
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

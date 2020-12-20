@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "449916",
+    "ThreadId": "214547",
+    "Html": "<div style=\"color:black;background-color:white\">\r\n<pre>Hello,</pre>\r\n<pre>I'm using the Flee library in one of my projects and I'm excited about all the possibilities!</pre>\r\n<pre>However, I have one problem, using decimals as literals, the following unittest demonstrates exactly what goes wrong...</pre>\r\n<pre>I'm using version 0.9.26.0 and I'm working with VS 2010 in a Test project with .NET Framework 4.0</pre>\r\n<pre>&nbsp;</pre>\r\n<pre>        <span style=\"color:gray\">///</span> <span style=\"color:gray\">&lt;summary&gt;</span>\r\n        <span style=\"color:gray\">///</span><span style=\"color:green\"> Test parsing a double</span>\r\n        <span style=\"color:gray\">///</span> <span style=\"color:gray\">&lt;/summary&gt;</span>\r\n        [TestMethod]\r\n        <span style=\"color:blue\">public</span> <span style=\"color:blue\">void</span> SimpleDoubleExpressionParseTest()\r\n        {\r\n            <span style=\"color:green\">// Allow the expression to use all static public methods of System.Math</span>\r\n            <span style=\"color:blue\">var</span> OurExpressionContext = <span style=\"color:blue\">new</span> ExpressionContext();\r\n            OurExpressionContext.Imports.AddType(<span style=\"color:blue\">typeof</span>(Math));\r\n            OurExpressionContext.ParserOptions.DecimalSeparator = <span style=\"color:#a31515\">'.'</span>;\r\n            OurExpressionContext.ParserOptions.RequireDigitsBeforeDecimalPoint = <span style=\"color:blue\">true</span>;\r\n            OurExpressionContext.Options.IntegersAsDoubles = <span style=\"color:blue\">true</span>;\r\n            OurExpressionContext.Options.RealLiteralDataType = RealLiteralDataType.Double;\r\n            OurExpressionContext.Options.ResultType = <span style=\"color:blue\">typeof</span>(<span style=\"color:blue\">double</span>);\r\n\r\n            <span style=\"color:blue\">var</span> compiledExpression = OurExpressionContext.CompileGeneric&lt;<span style=\"color:blue\">double</span>&gt;(<span style=\"color:#a31515\">&quot;0.25&quot;</span>);\r\n\r\n            <span style=\"color:blue\">double</span> actual = compiledExpression.Evaluate();\r\n            <span style=\"color:blue\">double</span> expected = 0.25;\r\n            Assert.AreEqual(expected, actual);\r\n        }\r\n</pre>\r\n<pre>If I run this test, I get the following exception:</pre>\r\n<pre>Errormessage:</pre>\r\n<pre>Test method TDABC.Test.Modules.FormulaExpressionTest.SimpleDoubleExpressionParseTest threw exception: <br>Ciloci.Flee.ExpressionCompileException: SyntaxError: Unexpected token &quot;25&quot; &lt;INTEGER&gt;; expected one of &lt;IDENTIFIER&gt;<br>Line: 1, Column: 3<br>&nbsp;---&gt; Ciloci.Flee.PerCederberg.Grammatica.Runtime.ParserLogException: Unexpected token &quot;25&quot; &lt;INTEGER&gt;; expected one of &lt;IDENTIFIER&gt;<br>Line: 1, Column: 3</pre>\r\n<pre>Exception:</pre>\r\n<pre>Ciloci.Flee.PerCederberg.Grammatica.Runtime.Parser.Parse()<br>Ciloci.Flee.ExpressionContext.DoParse()<br>Ciloci.Flee.ExpressionContext.DoParse()<br>Ciloci.Flee.ExpressionContext.Parse(String expression, IServiceProvider services)<br>Ciloci.Flee.Expression`1.Compile(String expression, ExpressionOptions options)<br>Ciloci.Flee.Expression`1..ctor(String expression, ExpressionContext context, Boolean isGeneric)<br>TDABC.Test.Modules.FormulaExpressionTest.SimpleDoubleExpressionParseTest() in K:\\MyProjects\\Test.cs: line 103<br></pre>\r\n<pre>&nbsp;</pre>\r\n<pre>Can anyone please help me out? I can't imagine that this type of expressions would not be possible to evaluate.</pre>\r\n<pre>Thanks in advance!</pre>\r\n<pre>Best regards,</pre>\r\n<pre>Jeroen</pre>\r\n<pre>&nbsp;</pre>\r\n</div>\r\n<div id=\"_mcePaste\" style=\"width:1px;height:1px;overflow:hidden;top:0px;left:-10000px\">﻿</div>",
+    "PostedDate": "2010-06-01T02:18:37.303-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "449920",
+    "ThreadId": "214547",
+    "Html": "<p>Further investigation shows that it looks like the decimal separator is the problem here.<br>I'm working in The Netherlands on a Dutch decimal separator (comma) and thousand separator (dot).<br>The following unittest works well, using all default settings:</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>        <span style=\"color:gray\">///</span> <span style=\"color:gray\">&lt;summary&gt;</span>\r\n        <span style=\"color:gray\">///</span><span style=\"color:green\"> Test parsing a double</span>\r\n        <span style=\"color:gray\">///</span> <span style=\"color:gray\">&lt;/summary&gt;</span>\r\n        [TestMethod]\r\n        <span style=\"color:blue\">public</span> <span style=\"color:blue\">void</span> SimpleDoubleExpressionParseTest()\r\n        {\r\n            <span style=\"color:green\">// Allow the expression to use all static public methods of System.Math</span>\r\n            <span style=\"color:blue\">var</span> OurExpressionContext = <span style=\"color:blue\">new</span> ExpressionContext();\r\n            <span style=\"color:blue\">var</span> compiledExpression = OurExpressionContext.CompileGeneric&lt;<span style=\"color:blue\">double</span>&gt;(<span style=\"color:#a31515\">&quot;0,25&quot;</span>);\r\n\r\n            <span style=\"color:blue\">var</span> actual = compiledExpression.Evaluate();\r\n            <span style=\"color:blue\">double</span> expected = 0.25;\r\n            Assert.AreEqual(expected, actual);\r\n        }\r\n</pre>\r\n<pre>When I add the line to set the decimal separator to a dot, it starts failing.</pre>\r\n<pre>However, I would like to set a fixed separator instead of depending on the local settings.</pre>\r\n<pre>Looks like a bug that needs fixing but I don't know where to look for it...</pre>\r\n</div>",
+    "PostedDate": "2010-06-01T02:28:54.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "449931",
+    "ThreadId": "214547",
+    "Html": "<p>You must set the culture.</p>\r\n<p>I.e. OurExpressionContext.Options.ParseCulture = Globalization.CultureInfo.InvariantCulture</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-06-01T02:50:51.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "449944",
+    "ThreadId": "214547",
+    "Html": "<p>&nbsp;</p>\r\n<p>Thanks! That fixed it indeed.</p>\r\n<p>Best regards, Jeroen</p>",
+    "PostedDate": "2010-06-01T03:27:02.213-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

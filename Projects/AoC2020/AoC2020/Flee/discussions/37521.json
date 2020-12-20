@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "124482",
+    "ThreadId": "37521",
+    "Html": "This is a really exciting project and implements functionality that I really need, but my requirement is for a lightweight C# language parser.&nbsp; Particularly I need to be able to use the &quot;hook&quot; syntax:&nbsp; (boolean expression) ? (true result) : (false result) ;<br>\r\n<br>\r\nIs there any way to replace the existing language parser with one that would recognize C/C# syntax?\r\n",
+    "PostedDate": "2008-10-11T10:07:01.62-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "124727",
+    "ThreadId": "37521",
+    "Html": "Have you checked out the Irony project at <a href=\"http://www.codeplex.com/irony\">http://www.codeplex.com/irony</a>?&nbsp; This project has a scanner and an <span id=\"ctl00_ctl00_MasterContent_TabContentPanel_Content_wikiSourceLabel\">LALR(1) </span>parser and one of the example grammars is for C#. Unfortunately, I haven't seen too much from the FLEE project since the author's last update.&nbsp; I hope the author gets a second wind because I think it was a lot of potential. <br>\r\n",
+    "PostedDate": "2008-10-13T08:21:54.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

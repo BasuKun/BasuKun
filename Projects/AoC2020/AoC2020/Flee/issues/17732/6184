@@ -1,0 +1,19 @@
+--- /Miscellaneous/trunk/Flee/src/Lib/ExpressionElements/Base/Member.vb	di okt 25 10:53:46 2016
++++ /Miscellaneous/trunk/Flee/src/Lib/ExpressionElements/Base/Member.vb	di okt 25 15:51:43 2016
+@@ -222,4 +222,12 @@ Friend MustInherit Class MemberElement
+-		If MyOptions.IsOwnerType(member.ReflectedType) = True Then
+-			Return IsOwnerMemberAccessible(member, MyOptions)
+-		Else
+-			Return IsMemberPublic(member)
++        Dim method As MethodInfo = TryCast(member, MethodInfo)
++        If method IsNot Nothing Then
++            If method.ReturnType.IsSubclassOf(GetType(Type)) Or method.ReturnType.Equals(GetType(Type)) Then
++                Return False
++            End If
++        End If
++
++
++        If MyOptions.IsOwnerType(member.ReflectedType) = True Then
++            Return IsOwnerMemberAccessible(member, MyOptions)
++        Else
++            Return IsMemberPublic(member)

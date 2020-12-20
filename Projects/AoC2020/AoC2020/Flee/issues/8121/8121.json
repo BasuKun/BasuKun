@@ -1,0 +1,136 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Is it possible?",
+    "LastUpdatedDate": "2013-02-21T16:54:03.327-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2009-07-22T07:49:06.83-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Silverlight compatibility",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 6,
+    "Id": 8121
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2843,
+      "FileName": "Flee.zip",
+      "DownloadUrl": ".\\2843"
+    },
+    {
+      "FileId": 3507,
+      "FileName": "Flee.silverlight-binary.zip",
+      "DownloadUrl": ".\\3507"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Silverlight doesn't allow you to use Reflection.Emit, so it's not possible to use code generation (that FLEE does).",
+      "PostedDate": "2009-07-25T10:06:00.423-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I converted a previous version of Flee to Silverlight, works nicely. Emit does work but you can't specify your expression owner, it is marked as internal in Silverlight.",
+      "PostedDate": "2009-10-01T20:38:15.103-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-10-21T10:57:52.11-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "doozel, could you share the converted version you made? I've tried myself, but I get a lot of compile errors. And what does it mean that the Reflection.Emit is missing? Is it a crucial part of Flee?",
+      "PostedDate": "2010-04-06T00:57:02.143-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-04-06T00:57:15.727-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-04-08T15:59:39.73-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Here is the Silverlight version, it is an older version of Flee but has been in prod for over a year with no problems.",
+      "PostedDate": "2010-04-08T16:29:56.95-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-04-08T16:29:58.387-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I opened solution from flee.zip in Visual Web Developer 2010 express and got 102 errors and 18 warnings.\r\nIt looks like unit test  assemblies are not included.\r\n\r\nHow to use it from Visual Web Developer 2010 ?\r\n\r\nflee seems to be written in vb. Where to find C# version ?\r\n\r\nAndrus.",
+      "PostedDate": "2010-09-30T05:22:01.937-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-10-01T13:54:15.697-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "If you are using Visual Web Developer 2010 Express to compile Flee exclude the test project, and Flee will compile without errors.\r\n\r\nI attached the binary version",
+      "PostedDate": "2010-10-01T13:54:17.193-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Thank you. Flee works now.\r\n\r\nHow to find c# sample code / modify flee to use Flee as c# scripting engine in Silverlight, eq. execute\r\n\r\nvar i=3;\r\nMessageBox.Show(\"Hello, world \"+i.ToString() );\r\n\r\nscript from SL 4 C# application?\r\n\r\nAndrus.",
+      "PostedDate": "2010-10-02T11:32:45.923-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I get the error \"Attempt by security transparent method 'Ciloci.Flee.ExpressionElement.CreateTempFleeILGenerator()' to access security critical method 'System.Reflection.Emit.DynamicMethod..ctor(System.String, System.Type, System.Type[], System.Type)' failed.\"  when trying to execute a simple conditional expression 'if(true,\"a\",\"b\")'. This seems to be due to the security settings in .NET4 and SilverLight 4. Is there a workaround for this? Thanks.\r\n\r\nNote: Simple concatenation expressions work ok in SiliverLight 4 enivornment (Example: \"One \" + \" Test\").",
+      "PostedDate": "2010-10-29T13:30:34.577-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hello aseshan, you are right, in silverlight you can't use the if stament, but you could write your own If custom function, by example:\r\n\r\npublic static class CustomFunctions\r\n{\r\n         public static object IfEquals(object a, object b, object objTrue, object objFalse)\r\n        {\r\n            object ret = objFalse;\r\n\r\n            if (a == null && b == null)\r\n                ret = objTrue;\r\n\r\n            if (a != null && a.Equals(b))\r\n                ret = objFalse;\r\n\r\n            return ret;\r\n        }\r\n}\r\n\r\n//This is another context\r\n\r\nExpressionContext context = new Ciloci.Flee.ExpressionContext();\r\ncontext.Imports.ImportBuiltinTypes();\r\n//To invoke the custom function you must register it first\r\ncontext.Imports.AddType(typeof(CustomFunctions));\r\n\r\nvar exp2 = ExpressionFactory.CreateDynamic(\"IfEquals(5, 5, 10 + 1, 7 * 5)\", context);\r\nvar obj = exp2.Evaluate();\r\n\r\nIt isn't the ideal situation but it works\r\n\r\nHope this help",
+      "PostedDate": "2010-11-03T07:54:38.28-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-08-04T13:46:24.27-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-08-10T08:28:30.14-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:54:03.327-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

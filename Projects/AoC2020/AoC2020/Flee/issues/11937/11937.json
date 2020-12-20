@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I am using 0.9.23  compiled with VisualStudio 2005 and .NET SP2.\n \nThe attached self-contained code should explain it, but I will elaborate here.\n \nI define a nullable type and use it as a variable in an expression that uses a comparison operator and it works. For example: \"nullableInt < 2\". Good!\n \nI define a class that contains a property that is a nullable type. I add an initialized instance of the class as a variable and use the instance.NullableProperty in a comparison expression and it throws an exception. For example: \"container.NullableInt < 2\". The exception:\nCompareElement: Operation 'Equal' is not defined for types 'Nullable`1' and 'Int32'\nThe operation method (Equal) could be different depending on the comparison operator you choose and the Int32 could be different depending on the ValueType that you make nullable, but the result is still an exception.",
+    "LastUpdatedDate": "2014-07-29T08:56:11.08-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2010-09-15T10:46:15.813-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Nested nullable property types fail in expression comparison operators",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 11937
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3473,
+      "FileName": "Program.cs",
+      "DownloadUrl": ".\\3473"
+    }
+  ],
+  "Comments": []
+}

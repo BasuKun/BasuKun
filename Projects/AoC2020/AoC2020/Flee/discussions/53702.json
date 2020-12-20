@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "180790",
+    "ThreadId": "53702",
+    "Html": "Doesn't work, can't correctly parse decimal separator for current culture that use ',' for it.<br>\r\n",
+    "PostedDate": "2009-04-18T02:56:49.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "182110",
+    "ThreadId": "53702",
+    "Html": "I wasn't properly initializing the parse culture.&nbsp; It's fixed in the source.<br>\r\n",
+    "PostedDate": "2009-04-21T19:55:54.273-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

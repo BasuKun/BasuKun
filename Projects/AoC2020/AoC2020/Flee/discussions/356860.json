@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "839946",
+    "ThreadId": "356860",
+    "Html": "\r\n<p>I'm using CalcEngine to Financial statements. The chart of accounts, formulas and account balances come from the database. The formulas have dependency between them thus a network of formulas.</p>\r\n<p>CalcEngine works fine as long as I don't handle ResolveVariable events -- I tried to assign default values if the database doesn't have values.&nbsp; CalcEngine's dependencyMap seems to be breaking down if I tried to resolve the type and values of the variables\r\n at runtime. Is there a workaround/fix for this issue.</p>\r\n<p>Thanks much. It's a great tool.</p>\r\n<p>&nbsp;</p>\r\n<p>Siva</p>\r\n",
+    "PostedDate": "2012-05-23T08:00:22.103-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

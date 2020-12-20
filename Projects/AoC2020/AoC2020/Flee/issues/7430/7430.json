@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Library",
+      "DisplayName": "Library"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have suggestion for expression parser. It would be useful to recognize variable or function with multiplier (without multiplication sign) and convert it to appropriate IL-instruction.\n \nI think, it makes expression like \"2pi + 3 sin(x^2)\" more lightweight.",
+    "LastUpdatedDate": "2017-11-27T17:47:01.22-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2009-04-06T05:07:05.507-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Implicit multiplication",
+    "Type": {
+      "Name": "Feature",
+      "Id": 1
+    },
+    "VoteCount": 1,
+    "Id": 7430
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I'll see what I can do.",
+      "PostedDate": "2009-04-21T20:03:27.447-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-21T20:03:49.4-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Sorry for being so late on this.\r\n\r\nWith this approach, there is an ambiguity for expressions with subtraction:\r\n(2+3) - 2\r\nIs treated as (2 + 3) * -2\r\nHow do you think this should be handled?",
+      "PostedDate": "2009-07-02T19:18:14.383-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "There is no ambiguity because it works only for numbers before variable, constant or function and optionally before and after brackets like 2(3+1) or (2+3)x. Only side effect is possible when using exponential form numbers like 2e-1. It's also perfect way to support complex numbers. You just need define constant i = Complex(0, 1) and override some arithmetic operators. ",
+      "PostedDate": "2009-07-23T03:01:11.203-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "It's not necessary to handle post-bracket implicit multiplication. The central idea is making some operations with custom types more flexible and transparent. For example, '2 months + 3 years' looks much better than '2 * months + 3 * years'.",
+      "PostedDate": "2009-07-23T03:16:49.797-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:54:03.87-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2017-11-27T17:47:01.22-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

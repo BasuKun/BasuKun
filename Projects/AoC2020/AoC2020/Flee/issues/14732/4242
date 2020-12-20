@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\bin\Debug\Ciloci.Flee.Tests.dll" total="55" errors="11" failures="1" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-02-08" time="01:44:02">
+  <environment nunit-version="2.5.10.11092" clr-version="2.0.50727.5448" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\bin\Debug" machine-name="ARES" user="alain.mereaux" user-domain="ARES" />
+  <culture-info current-culture="fr-FR" current-uiculture="fr-FR" />
+  <test-suite type="Assembly" name="F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\bin\Debug\Ciloci.Flee.Tests.dll" executed="True" result="Failure" success="False" time="0.749" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="Ciloci" executed="True" result="Failure" success="False" time="0.749" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="Flee" executed="True" result="Failure" success="False" time="0.748" asserts="0">
+            <results>
+              <test-suite type="Namespace" name="Tests" executed="True" result="Failure" success="False" time="0.748" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="Benchmarks" executed="True" result="Failure" success="False" time="0.076" asserts="0">
+                    <results>
+                      <test-case name="Ciloci.Flee.Tests.Benchmarks.TestFastVariables" description="Test that setting variables is fast" executed="True" result="Success" success="True" time="0.037" asserts="1" />
+                      <test-case name="Ciloci.Flee.Tests.Benchmarks.TestParseCompileSpeed" description="Test how fast we parse/compile an expression" executed="True" result="Error" success="False" time="0.023" asserts="0">
+                        <failure>
+                          <message><![CDATA[Ciloci.Flee.ExpressionCompileException : SyntaxError: Unexpected character: ,
+Line: 1, Column: 9
+
+  ----> Ciloci.Flee.PerCederberg.Grammatica.Runtime.ParserLogException : Unexpected character: ,
+Line: 1, Column: 9
+]]></message>
+                          <stack-trace><![CDATA[à Ciloci.Flee.ExpressionContext.DoParse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 153
+à Ciloci.Flee.ExpressionContext.Parse(String expression, IServiceProvider services) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 133
+à Ciloci.Flee.Expression`1.Compile(String expression, ExpressionOptions options) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\InternalTypes\Expression.vb:ligne 83
+à Ciloci.Flee.Expression`1..ctor(String expression, ExpressionContext context, Boolean isGeneric) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\InternalTypes\Expression.vb:ligne 58
+à Ciloci.Flee.ExpressionContext.CompileDynamic(String expression) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 186
+à Ciloci.Flee.Tests.ExpressionTests.CreateDynamicExpression(String expression, ExpressionContext context) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\Core.vb:ligne 113
+à Ciloci.Flee.Tests.ExpressionTests.CreateDynamicExpression(String expression) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\Core.vb:ligne 109
+à Ciloci.Flee.Tests.Benchmarks.TestParseCompileSpeed() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\Benchmarks.vb:ligne 117
+--ParserLogException
+à Ciloci.Flee.PerCederberg.Grammatica.Runtime.Parser.Parse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\Parsing\grammatica-1.5.alpha2\PerCederberg.Grammatica.Runtime\Parser.vb:ligne 350
+à Ciloci.Flee.ExpressionContext.DoParse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 150
+]]></stack-trace>
+                        </failure>
+                      </test-case>
+                      <test-case name="Ciloci.Flee.Tests.Benchmarks.TestSimpleCalcEngine" description="Test the speed of the simple calc engine" executed="True" result="Error" success="False" time="0.006" asserts="0">
+                        <failure>
+                          <message><![CDATA[Ciloci.Flee.PerCederberg.Grammatica.Runtime.ParserLogException : Unexpected token "14" <INTEGER>; expected one of <IDENTIFIER>
+Line: 1, Column: 15
+]]></message>
+                          <stack-trace><![CDATA[à Ciloci.Flee.PerCederberg.Grammatica.Runtime.Parser.Parse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\Parsing\grammatica-1.5.alpha2\PerCederberg.Grammatica.Runtime\Parser.vb:ligne 350
+à Ciloci.Flee.ExpressionContext.ParseIdentifiers(String expression) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 171
+à Ciloci.Flee.CalcEngine.SimpleCalcEngine.ParseAndLink(String expressionName, String expression) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\CalcEngine\PublicTypes\SimpleCalcEngine.vb:ligne 53
+à Ciloci.Flee.CalcEngine.SimpleCalcEngine.AddGeneric[T](String expressionName, String expression) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\CalcEngine\PublicTypes\SimpleCalcEngine.vb:ligne 95
+à Ciloci.Flee.Tests.Benchmarks.TestSimpleCalcEngine() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\Benchmarks.vb:ligne 60
+]]></stack-trace>
+                        </failure>
+                      </test-case>
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="BulkTests" executed="True" result="Failure" success="False" time="0.298" asserts="0">
+                    <results>
+                      <test-case name="Ciloci.Flee.Tests.BulkTests.TestCheckedExpressions" description="Test our handling of checked expressions" executed="True" result="Error" success="False" time="0.162" asserts="50">
+                        <failure>
+                          <message><![CDATA[Ciloci.Flee.ExpressionCompileException : SyntaxError: Unexpected character: ,
+Line: 1, Column: 8
+
+  ----> Ciloci.Flee.PerCederberg.Grammatica.Runtime.ParserLogException : Unexpected character: ,
+Line: 1, Column: 8
+]]></message>
+                          <stack-trace><![CDATA[à Ciloci.Flee.ExpressionContext.DoParse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 153
+à Ciloci.Flee.ExpressionContext.Parse(String expression, IServiceProvider services) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 133
+à Ciloci.Flee.Expression`1.Compile(String expression, ExpressionOptions options) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\InternalTypes\Expression.vb:ligne 83
+à Ciloci.Flee.Expression`1..ctor(String expression, ExpressionContext context, Boolean isGeneric) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\InternalTypes\Expression.vb:ligne 58
+à Ciloci.Flee.ExpressionContext.CompileDynamic(String expression) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 186
+à Ciloci.Flee.Tests.ExpressionTests.CreateDynamicExpression(String expression, ExpressionContext context) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\Core.vb:ligne 113
+à Ciloci.Flee.Tests.BulkTests.DoTestCheckedExpressions(String[] arr) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\BulkTests.vb:ligne 81
+à Ciloci.Flee.Tests.ExpressionTests.ProcessLine(String line, LineProcessor processor) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\Core.vb:ligne 211
+à Ciloci.Flee.Tests.ExpressionTests.ProcessLines(TextReader sr, LineProcessor processor) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\Core.vb:ligne 197
+à Ciloci.Flee.Tests.ExpressionTests.ProcessScriptTests(String scriptFileName, LineProcessor processor) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\Core.vb:ligne 188
+à Ciloci.Flee.Tests.BulkTests.TestCheckedExpressions() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\BulkTests.vb:ligne 42
+--ParserLogException
+à Ciloci.Flee.PerCederberg.Grammatica.Runtime.Parser.Parse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\Parsing\grammatica-1.5.alpha2\PerCederberg.Grammatica.Runtime\Parser.vb:ligne 350
+à Ciloci.Flee.ExpressionContext.DoParse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 150
+]]></stack-trace>
+                        </failure>
+                      </test-case>
+                      <test-case name="Ciloci.Flee.Tests.BulkTests.TestInvalidExpressions" description="Expressions that should not be valid" executed="True" result="Success" success="True" time="0.115" asserts="0" />
+                      <test-case name="Ciloci.Flee.Tests.BulkTests.TestValidCasts" description="Casts that should be valid" executed="True" result="Error" success="False" time="0.003" asserts="0">
+                        <failure>
+                          <message><![CDATA[Ciloci.Flee.ExpressionCompileException : SyntaxError: Unexpected character: ,
+Line: 1, Column: 11
+
+  ----> Ciloci.Flee.PerCederberg.Grammatica.Runtime.ParserLogException : Unexpected character: ,
+Line: 1, Column: 11
+]]></message>
+                          <stack-trace><![CDATA[à Ciloci.Flee.ExpressionContext.DoParse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 153
+à Ciloci.Flee.ExpressionContext.Parse(String expression, IServiceProvider services) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 133
+à Ciloci.Flee.Expression`1.Compile(String expression, ExpressionOptions options) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\InternalTypes\Expression.vb:ligne 83
+à Ciloci.Flee.Expression`1..ctor(String expression, ExpressionContext context, Boolean isGeneric) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\InternalTypes\Expression.vb:ligne 58
+à Ciloci.Flee.ExpressionContext.CompileDynamic(String expression) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 186
+à Ciloci.Flee.Tests.ExpressionTests.CreateDynamicExpression(String expression, ExpressionContext context) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\Core.vb:ligne 113
+à Ciloci.Flee.Tests.BulkTests.DoTestValidExpressions(String[] arr) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\BulkTests.vb:ligne 52
+à Ciloci.Flee.Tests.ExpressionTests.ProcessLine(String line, LineProcessor processor) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\Core.vb:ligne 211
+à Ciloci.Flee.Tests.ExpressionTests.ProcessLines(TextReader sr, LineProcessor processor) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\Core.vb:ligne 197
+à Ciloci.Flee.Tests.ExpressionTests.ProcessScriptTests(String scriptFileName, LineProcessor processor) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\Core.vb:ligne 188
+à Ciloci.Flee.Tests.BulkTests.TestValidCasts() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\BulkTests.vb:ligne 37
+--ParserLogException
+à Ciloci.Flee.PerCederberg.Grammatica.Runtime.Parser.Parse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\Parsing\grammatica-1.5.alpha2\PerCederberg.Grammatica.Runtime\Parser.vb:ligne 350
+à Ciloci.Flee.ExpressionContext.DoParse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 150
+]]></stack-trace>
+                        </failure>
+                      </test-case>
+                      <test-case name="Ciloci.Flee.Tests.BulkTests.TestValidExpressions" description="Expressions that should be valid" executed="True" result="Error" success="False" time="0.011" asserts="21">
+                        <failure>
+                          <message><![CDATA[Ciloci.Flee.ExpressionCompileException : SyntaxError: Unexpected token "0f" <INTEGER>; expected one of <IDENTIFIER>
+Line: 1, Column: 3
+
+  ----> Ciloci.Flee.PerCederberg.Grammatica.Runtime.ParserLogException : Unexpected token "0f" <INTEGER>; expected one of <IDENTIFIER>
+Line: 1, Column: 3
+]]></message>
+                          <stack-trace><![CDATA[à Ciloci.Flee.ExpressionContext.DoParse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 153
+à Ciloci.Flee.ExpressionContext.Parse(String expression, IServiceProvider services) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 133
+à Ciloci.Flee.Expression`1.Compile(String expression, ExpressionOptions options) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\InternalTypes\Expression.vb:ligne 83
+à Ciloci.Flee.Expression`1..ctor(String expression, ExpressionContext context, Boolean isGeneric) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\InternalTypes\Expression.vb:ligne 58
+à Ciloci.Flee.ExpressionContext.CompileDynamic(String expression) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 186
+à Ciloci.Flee.Tests.ExpressionTests.CreateDynamicExpression(String expression, ExpressionContext context) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\Core.vb:ligne 113
+à Ciloci.Flee.Tests.BulkTests.DoTestValidExpressions(String[] arr) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\BulkTests.vb:ligne 52
+à Ciloci.Flee.Tests.ExpressionTests.ProcessLine(String line, LineProcessor processor) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\Core.vb:ligne 211
+à Ciloci.Flee.Tests.ExpressionTests.ProcessLines(TextReader sr, LineProcessor processor) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\Core.vb:ligne 197
+à Ciloci.Flee.Tests.ExpressionTests.ProcessScriptTests(String scriptFileName, LineProcessor processor) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\Core.vb:ligne 188
+à Ciloci.Flee.Tests.BulkTests.TestValidExpressions() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\BulkTests.vb:ligne 15
+--ParserLogException
+à Ciloci.Flee.PerCederberg.Grammatica.Runtime.Parser.Parse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\Parsing\grammatica-1.5.alpha2\PerCederberg.Grammatica.Runtime\Parser.vb:ligne 350
+à Ciloci.Flee.ExpressionContext.DoParse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 150
+]]></stack-trace>
+                        </failure>
+                      </test-case>
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="CalcEngineTestFixture" executed="True" result="Success" success="True" time="0.098" asserts="0">
+                    <results>
+                      <test-case name="Ciloci.Flee.Tests.CalcEngineTestFixture.TestBasic" executed="True" result="Success" success="True" time="0.005" asserts="2" />
+                      <test-case name="Ciloci.Flee.Tests.CalcEngineTestFixture.TestBatchLoad" executed="True" result="Success" success="True" time="0.007" asserts="4" />
+                      <test-case name="Ciloci.Flee.Tests.CalcEngineTestFixture.TestCalcEngineAtom" executed="True" result="Success" success="True" time="0.004" asserts="2" />
+                      <test-case name="Ciloci.Flee.Tests.CalcEngineTestFixture.TestCircularReference1" executed="True" result="Success" success="True" time="0.004" asserts="0" />
+                      <test-case name="Ciloci.Flee.Tests.CalcEngineTestFixture.TestCircularReference2" executed="True" result="Success" success="True" time="0.004" asserts="0" />
+                      <test-case name="Ciloci.Flee.Tests.CalcEngineTestFixture.TestClear" executed="True" result="Success" success="True" time="0.004" asserts="3" />
+                      <test-case name="Ciloci.Flee.Tests.CalcEngineTestFixture.TestComplex" executed="True" result="Success" success="True" time="0.005" asserts="1" />
+                      <test-case name="Ciloci.Flee.Tests.CalcEngineTestFixture.TestDependencyManagement" executed="True" result="Success" success="True" time="0.004" asserts="41" />
+                      <test-case name="Ciloci.Flee.Tests.CalcEngineTestFixture.TestInfoMethodsWithMissing" executed="True" result="Success" success="True" time="0.000" asserts="4" />
+                      <test-case name="Ciloci.Flee.Tests.CalcEngineTestFixture.TestMutipleIdenticalReferences" executed="True" result="Success" success="True" time="0.004" asserts="1" />
+                      <test-case name="Ciloci.Flee.Tests.CalcEngineTestFixture.TestPartialRecalculate" executed="True" result="Success" success="True" time="0.004" asserts="1" />
+                      <test-case name="Ciloci.Flee.Tests.CalcEngineTestFixture.TestRecalculateNonSource" executed="True" result="Success" success="True" time="0.004" asserts="1" />
+                      <test-case name="Ciloci.Flee.Tests.CalcEngineTestFixture.TestRemove1" executed="True" result="Success" success="True" time="0.005" asserts="7" />
+                      <test-case name="Ciloci.Flee.Tests.CalcEngineTestFixture.TestRemove2" executed="True" result="Success" success="True" time="0.004" asserts="3" />
+                      <test-case name="Ciloci.Flee.Tests.CalcEngineTestFixture.TestRemove3" executed="True" result="Success" success="True" time="0.005" asserts="4" />
+                      <test-case name="Ciloci.Flee.Tests.CalcEngineTestFixture.TestRemove4" executed="True" result="Success" success="True" time="0.004" asserts="2" />
+                      <test-case name="Ciloci.Flee.Tests.CalcEngineTestFixture.TestWithReferenceTypes" executed="True" result="Success" success="True" time="0.005" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="IndividualTests" executed="True" result="Failure" success="False" time="0.243" asserts="0">
+                    <results>
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestCultureSensitiveParse" description="Test parsing for different culture" executed="True" result="Success" success="True" time="0.004" asserts="3" />
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestDerivedOwner" description="Test that we can work with base and derived owner classes" executed="True" result="Success" success="True" time="0.006" asserts="3" />
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestExpressionClone" description="Test cloning an expression" executed="True" result="Success" success="True" time="0.004" asserts="4554" />
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestExpressionVariables" description="Test variables that are expressions" executed="True" result="Success" success="True" time="0.012" asserts="13753" />
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestFieldWithSameNameAsVariable" description="We should not compile an expression that accesses a non-public field with the same name as a variable" executed="True" result="Success" success="True" time="0.007" asserts="1" />
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestGenericEvaluate" description="Test evaluation of generic expressions" executed="True" result="Error" success="False" time="0.004" asserts="1">
+                        <failure>
+                          <message><![CDATA[Ciloci.Flee.ExpressionCompileException : SyntaxError: Unexpected token "25" <INTEGER>; expected one of <IDENTIFIER>
+Line: 1, Column: 6
+
+  ----> Ciloci.Flee.PerCederberg.Grammatica.Runtime.ParserLogException : Unexpected token "25" <INTEGER>; expected one of <IDENTIFIER>
+Line: 1, Column: 6
+]]></message>
+                          <stack-trace><![CDATA[à Ciloci.Flee.ExpressionContext.DoParse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 153
+à Ciloci.Flee.ExpressionContext.Parse(String expression, IServiceProvider services) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 133
+à Ciloci.Flee.Expression`1.Compile(String expression, ExpressionOptions options) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\InternalTypes\Expression.vb:ligne 83
+à Ciloci.Flee.Expression`1..ctor(String expression, ExpressionContext context, Boolean isGeneric) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\InternalTypes\Expression.vb:ligne 58
+à Ciloci.Flee.ExpressionContext.CompileGeneric[TResultType](String expression) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 191
+à Ciloci.Flee.Tests.ExpressionTests.CreateGenericExpression[T](String expression, ExpressionContext context) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\Core.vb:ligne 104
+à Ciloci.Flee.Tests.IndividualTests.TestGenericEvaluate() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\IndividualTests.vb:ligne 80
+--ParserLogException
+à Ciloci.Flee.PerCederberg.Grammatica.Runtime.Parser.Parse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\Parsing\grammatica-1.5.alpha2\PerCederberg.Grammatica.Runtime\Parser.vb:ligne 350
+à Ciloci.Flee.ExpressionContext.DoParse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 150
+]]></stack-trace>
+                        </failure>
+                      </test-case>
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestGetReferencedVariables" description="Test getting the variables used in an expression" executed="True" result="Success" success="True" time="0.003" asserts="3" />
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestImportMethod" description="Test importing of a method" executed="True" result="Success" success="True" time="0.005" asserts="2" />
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestImports" description="Test expression imports" executed="True" result="Error" success="False" time="0.014" asserts="2">
+                        <failure>
+                          <message><![CDATA[Ciloci.Flee.ExpressionCompileException : SyntaxError: Unexpected character: ,
+Line: 1, Column: 18
+
+  ----> Ciloci.Flee.PerCederberg.Grammatica.Runtime.ParserLogException : Unexpected character: ,
+Line: 1, Column: 18
+]]></message>
+                          <stack-trace><![CDATA[à Ciloci.Flee.ExpressionContext.DoParse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 153
+à Ciloci.Flee.ExpressionContext.Parse(String expression, IServiceProvider services) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 133
+à Ciloci.Flee.Expression`1.Compile(String expression, ExpressionOptions options) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\InternalTypes\Expression.vb:ligne 83
+à Ciloci.Flee.Expression`1..ctor(String expression, ExpressionContext context, Boolean isGeneric) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\InternalTypes\Expression.vb:ligne 58
+à Ciloci.Flee.ExpressionContext.CompileGeneric[TResultType](String expression) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 191
+à Ciloci.Flee.Tests.ExpressionTests.CreateGenericExpression[T](String expression, ExpressionContext context) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\Core.vb:ligne 104
+à Ciloci.Flee.Tests.IndividualTests.TestImports() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\IndividualTests.vb:ligne 127
+--ParserLogException
+à Ciloci.Flee.PerCederberg.Grammatica.Runtime.Parser.Parse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\Parsing\grammatica-1.5.alpha2\PerCederberg.Grammatica.Runtime\Parser.vb:ligne 350
+à Ciloci.Flee.ExpressionContext.DoParse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 150
+]]></stack-trace>
+                        </failure>
+                      </test-case>
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestImportsNamespaces" description="Test that we can import multiple types into a namespace" executed="True" result="Error" success="False" time="0.004" asserts="1">
+                        <failure>
+                          <message><![CDATA[Ciloci.Flee.ExpressionCompileException : SyntaxError: Unexpected character: ,
+Line: 1, Column: 15
+
+  ----> Ciloci.Flee.PerCederberg.Grammatica.Runtime.ParserLogException : Unexpected character: ,
+Line: 1, Column: 15
+]]></message>
+                          <stack-trace><![CDATA[à Ciloci.Flee.ExpressionContext.DoParse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 153
+à Ciloci.Flee.ExpressionContext.Parse(String expression, IServiceProvider services) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 133
+à Ciloci.Flee.Expression`1.Compile(String expression, ExpressionOptions options) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\InternalTypes\Expression.vb:ligne 83
+à Ciloci.Flee.Expression`1..ctor(String expression, ExpressionContext context, Boolean isGeneric) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\InternalTypes\Expression.vb:ligne 58
+à Ciloci.Flee.ExpressionContext.CompileDynamic(String expression) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 186
+à Ciloci.Flee.Tests.ExpressionTests.CreateDynamicExpression(String expression, ExpressionContext context) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\Core.vb:ligne 113
+à Ciloci.Flee.Tests.IndividualTests.TestImportsNamespaces() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\IndividualTests.vb:ligne 155
+--ParserLogException
+à Ciloci.Flee.PerCederberg.Grammatica.Runtime.Parser.Parse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\Parsing\grammatica-1.5.alpha2\PerCederberg.Grammatica.Runtime\Parser.vb:ligne 350
+à Ciloci.Flee.ExpressionContext.DoParse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 150
+]]></stack-trace>
+                        </failure>
+                      </test-case>
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestLongBranchLogical1" description="Test that we can handle long logical expressions and that we properly adjust for long branches" executed="True" result="Success" success="True" time="0.009" asserts="0" />
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestLongBranchLogical2" description="Test that we can handle long logical expressions and that we properly adjust for long branches" executed="True" result="Success" success="True" time="0.007" asserts="1" />
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestMemberAccess" description="Test that we properly enforce member access on the expression owner" executed="True" result="Success" success="True" time="0.005" asserts="0" />
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestMemberCaseSensitivity" description="Test we can match members with names that differ only by case" executed="True" result="Success" success="True" time="0.003" asserts="2" />
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestMultiTreadedEvaluate" description="Test that we can parse from multiple threads" executed="True" result="Success" success="True" time="0.003" asserts="80" />
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestMultiTreadedParse" description="Test that we can parse from multiple threads" executed="True" result="Success" success="True" time="0.014" asserts="0" />
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestNestedTypeImport" description="Test import with nested types" executed="True" result="Success" success="True" time="0.008" asserts="2" />
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestNonPublicImports" description="We should be able to import non-public types if they are in the same module as our owner" executed="True" result="Success" success="True" time="0.006" asserts="3" />
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestNonPublicVariableMemberAccess" description="We should not allow access to the non-public members of a variable" executed="True" result="Success" success="True" time="0.004" asserts="0" />
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestNoStateHeldInContext" description="Test that no state is held in the original context between compiles" executed="True" result="Success" success="True" time="0.003" asserts="4" />
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestNumbersAsDoubles" description="Test the NumbersAsDoubles option" executed="True" result="Success" success="True" time="0.003" asserts="4" />
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestOnDemandFunctions" description="Test on-demand functions" executed="True" result="Error" success="False" time="0.004" asserts="0">
+                        <failure>
+                          <message><![CDATA[Ciloci.Flee.ExpressionCompileException : SyntaxError: Unexpected token "25" <INTEGER>; expected one of <IDENTIFIER>
+Line: 1, Column: 22
+
+  ----> Ciloci.Flee.PerCederberg.Grammatica.Runtime.ParserLogException : Unexpected token "25" <INTEGER>; expected one of <IDENTIFIER>
+Line: 1, Column: 22
+]]></message>
+                          <stack-trace><![CDATA[à Ciloci.Flee.ExpressionContext.DoParse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 153
+à Ciloci.Flee.ExpressionContext.Parse(String expression, IServiceProvider services) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 133
+à Ciloci.Flee.Expression`1.Compile(String expression, ExpressionOptions options) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\InternalTypes\Expression.vb:ligne 83
+à Ciloci.Flee.Expression`1..ctor(String expression, ExpressionContext context, Boolean isGeneric) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\InternalTypes\Expression.vb:ligne 58
+à Ciloci.Flee.ExpressionContext.CompileDynamic(String expression) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 186
+à Ciloci.Flee.Tests.ExpressionTests.CreateDynamicExpression(String expression, ExpressionContext context) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\Core.vb:ligne 113
+à Ciloci.Flee.Tests.IndividualTests.TestOnDemandFunctions() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\IndividualTests.vb:ligne 568
+--ParserLogException
+à Ciloci.Flee.PerCederberg.Grammatica.Runtime.Parser.Parse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\Parsing\grammatica-1.5.alpha2\PerCederberg.Grammatica.Runtime\Parser.vb:ligne 350
+à Ciloci.Flee.ExpressionContext.DoParse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 150
+]]></stack-trace>
+                        </failure>
+                      </test-case>
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestOnDemandVariables" description="Test handling of on-demand variables" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestOverloadResolution" description="Test that we properly resolve method overloads" executed="True" result="Failure" success="False" time="0.006" asserts="2">
+                        <failure>
+                          <message><![CDATA[
+	expected: <-1>
+	 but was: <2>]]></message>
+                          <stack-trace><![CDATA[à Ciloci.Flee.Tests.IndividualTests.DoTestOverloadResolution(String expression, ExpressionContext context, Int32 expectedResult) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\IndividualTests.vb:ligne 636
+à Ciloci.Flee.Tests.IndividualTests.TestOverloadResolution() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\IndividualTests.vb:ligne 592
+]]></stack-trace>
+                        </failure>
+                      </test-case>
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestParserOptions" description="Test tweaking of parser options" executed="True" result="Success" success="True" time="0.016" asserts="6" />
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestRealLiteralDataTypeOption" description="Test the RealLiteralDataType option" executed="True" result="Error" success="False" time="0.004" asserts="0">
+                        <failure>
+                          <message><![CDATA[Ciloci.Flee.ExpressionCompileException : SyntaxError: Unexpected token "25" <INTEGER>; expected one of <IDENTIFIER>
+Line: 1, Column: 5
+
+  ----> Ciloci.Flee.PerCederberg.Grammatica.Runtime.ParserLogException : Unexpected token "25" <INTEGER>; expected one of <IDENTIFIER>
+Line: 1, Column: 5
+]]></message>
+                          <stack-trace><![CDATA[à Ciloci.Flee.ExpressionContext.DoParse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 153
+à Ciloci.Flee.ExpressionContext.Parse(String expression, IServiceProvider services) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 133
+à Ciloci.Flee.Expression`1.Compile(String expression, ExpressionOptions options) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\InternalTypes\Expression.vb:ligne 83
+à Ciloci.Flee.Expression`1..ctor(String expression, ExpressionContext context, Boolean isGeneric) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\InternalTypes\Expression.vb:ligne 58
+à Ciloci.Flee.ExpressionContext.CompileDynamic(String expression) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 186
+à Ciloci.Flee.Tests.ExpressionTests.CreateDynamicExpression(String expression, ExpressionContext context) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\Core.vb:ligne 113
+à Ciloci.Flee.Tests.IndividualTests.TestRealLiteralDataTypeOption() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\IndividualTests.vb:ligne 754
+--ParserLogException
+à Ciloci.Flee.PerCederberg.Grammatica.Runtime.Parser.Parse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\Parsing\grammatica-1.5.alpha2\PerCederberg.Grammatica.Runtime\Parser.vb:ligne 350
+à Ciloci.Flee.ExpressionContext.DoParse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 150
+]]></stack-trace>
+                        </failure>
+                      </test-case>
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestStringEquality" description="Test our string equality" executed="True" result="Success" success="True" time="0.004" asserts="6" />
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestStringNewlineEscape" description="Test that we properly handle newline escapes in strings" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestValueTypeOwner" description="Test we can handle an expression owner that is a value type" executed="True" result="Success" success="True" time="0.008" asserts="5" />
+                      <test-case name="Ciloci.Flee.Tests.IndividualTests.TestVariables" description="Test expression variables" executed="True" result="Success" success="True" time="0.007" asserts="7" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="SimpleCalcEngineTests" executed="True" result="Failure" success="False" time="0.019" asserts="0">
+                    <results>
+                      <test-case name="Ciloci.Flee.Tests.SimpleCalcEngineTests.TestScripts" executed="True" result="Error" success="False" time="0.017" asserts="7">
+                        <failure>
+                          <message><![CDATA[Ciloci.Flee.PerCederberg.Grammatica.Runtime.ParserLogException : Unexpected character: ,
+Line: 1, Column: 9
+]]></message>
+                          <stack-trace><![CDATA[à Ciloci.Flee.PerCederberg.Grammatica.Runtime.Parser.Parse() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\Parsing\grammatica-1.5.alpha2\PerCederberg.Grammatica.Runtime\Parser.vb:ligne 350
+à Ciloci.Flee.ExpressionContext.ParseIdentifiers(String expression) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\PublicTypes\ExpressionContext.vb:ligne 171
+à Ciloci.Flee.CalcEngine.SimpleCalcEngine.ParseAndLink(String expressionName, String expression) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\CalcEngine\PublicTypes\SimpleCalcEngine.vb:ligne 53
+à Ciloci.Flee.CalcEngine.SimpleCalcEngine.AddDynamic(String expressionName, String expression) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Lib\CalcEngine\PublicTypes\SimpleCalcEngine.vb:ligne 89
+à Ciloci.Flee.Tests.SimpleCalcEngineTests.AddExpressions(String[] expressions) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\CalcEngineTests\SimpleCalcEngineTests.vb:ligne 48
+à Ciloci.Flee.Tests.SimpleCalcEngineTests.SimpleCalcEngineTestsProcessor(String[] lineParts) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\CalcEngineTests\SimpleCalcEngineTests.vb:ligne 30
+à Ciloci.Flee.Tests.ExpressionTests.ProcessLine(String line, LineProcessor processor) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\Core.vb:ligne 211
+à Ciloci.Flee.Tests.ExpressionTests.ProcessLines(TextReader sr, LineProcessor processor) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\Core.vb:ligne 197
+à Ciloci.Flee.Tests.ExpressionTests.ProcessScriptTests(String scriptFileName, LineProcessor processor) dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\ExpressionTests\Core.vb:ligne 188
+à Ciloci.Flee.Tests.SimpleCalcEngineTests.TestScripts() dans F:\Developments\Community\CodePlex\Flee-0.9.26.0\src\Tests\CalcEngineTests\SimpleCalcEngineTests.vb:ligne 22
+]]></stack-trace>
+                        </failure>
+                      </test-case>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

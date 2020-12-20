@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "229939",
+    "ThreadId": "67649",
+    "Html": "<p>I am running into a problem.&nbsp; I have the following formula, well I simplified this one.</p>\r\n<p>0333 = 333</p>\r\n<p>This always evals to true since 0333 is technically a number.&nbsp; We now I am told that this should not return true since the codes 0333 and 333 would have different meanings.&nbsp; Is there any way to handle this without turning into a string and comparing strings.</p>\r\n<p>I could have an expression that looked like</p>\r\n<p>(0419.4<strong>5</strong> = 419.45) OR (0419.4<strong>6</strong> = 419.45) OR (0419.4<strong>7</strong> = 419.45) OR (0419.4<strong>8</strong> = 419.45) OR (0419.4<strong>9</strong> = 419.45)&nbsp; .....etc</p>\r\n<p>I would like to do something like:</p>\r\n<p>(419.<strong>45</strong> &gt;= 0419.10) AND (419.45 &lt;= 0419.<strong>99</strong>)&nbsp; and it still return false.&nbsp; I don't want to have to write out an expression string for each number incrementing my .1 since I could be talking about a range from .1 to 999.</p>\r\n<p>I hope this makes sense.&nbsp;</p>\r\n<p>Thanks for your help,</p>\r\n<p>Jason</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-01T15:56:31.123-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

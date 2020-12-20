@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "45137",
+    "ThreadId": "13849",
+    "Html": "\r\nHi, i need to reimplement a software that is made in clarion language, this language allows dynamic expressions, and bind into the dynamic expressions variables and procedures, the mechanism is<br /><br />BIND('VarA', VarA)<br />tells the compiler, when evaluating string, if you find the characters 'VarA' it means the offset of memory of the var VarA<br /><br />Same with procedures so i can build special procedures like:<br /><br />CalculateInterest(REAL amount), REAL<br /><br />And use it in dynamic expressions like:<br /><br />BIND('CalculateInterest', CalculateInterest)<br />BIND('VarAmount', VarAmount)<br /><br />VarInterest = EVALUATE('CalculateInterest(VarAmount)')<br /><br />Can i acomplish something similar with FLEE in C# ?<br /><br />in all examples i see you use predefined attributes like<br /><br />owner.a = 4;<br /><br />Are the hard-coded ??<br />Can you do something like:<br /><br />owner.AddField('A', 4);      <br /><br />instead? so we are not limited to hard-coded fields...<br /><br />Thanks for your time.<br /><br />",
+    "PostedDate": "2007-08-15T12:15:52.457-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45287",
+    "ThreadId": "13849",
+    "Html": "<br />Hi,<br />ExpressionOwner is the symbol table, have static nature, and dynamic members not allows.<br /><br />An idea is:<br /><br />public class ExpressionOwner {<br /><br />        public Map&lt;string,double&gt; var;<br /><br />}<br /><br /><br />ExpressionOwner owner = new ExpressionOwner();<br />owner.var.Add('A',5);<br /><br />...<br /><br />Expression expr = new Expression(\"var<a href=\"http://www.codeplex.com/Flee/Wiki/View.aspx?title=%5c%22A%5c%22\">\\\"A\\\"</a>+5\", owner, options);<br />ExpressionEvaluator&lt;double&gt; eval = (ExpressionEvaluator&lt;double&gt;)expr.Evaluator;<br />double result = eval();<br /><br />...<br />but Dinamyc Vars and List Expressions not allowed ...<br /><br />Thanks,<br /><br /><br /><br /><br />",
+    "PostedDate": "2007-08-16T08:48:33.087-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45380",
+    "ThreadId": "13849",
+    "Html": "\r\nHi,<br /><br />I will see if I can implement this over the weekend.  Internally, the solution will probably wind up being very similar to what jmptrader has described but you will be able to reference variables by just using their name.  Binding method names will be more complicated since it will require a delegate or methodInfo.<br /><br />Thanks,<br /><br />Eugene<br />",
+    "PostedDate": "2007-08-16T19:26:04.253-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45414",
+    "ThreadId": "13849",
+    "Html": "\r\nThank, but im still understandign this :-D<br /><br />ExpressionOwner its a class of FLEE or its jus any Object ?<br /><br />Can i use my own class as owner and i have available all my object properties ?<br /><br />Also, in the options, can i add a import of any namespace of my own, and the use my own functions like you do with System.Math ?<br /><br />what limitations this have or what rules i must follow?<br /><br />Thanks <br /><br /><br />",
+    "PostedDate": "2007-08-17T05:03:34.34-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45423",
+    "ThreadId": "13849",
+    "Html": "\r\n&gt;ExpressionOwner its a class of FLEE or its jus any Object ?<br />Flee dynamically creates a method based on the given expression.  .NET requires that this method be attached to a class (or module).  Once attached, the method acts as a static method on the type.  I chose to call the class that I attach the method to the Expression Owner.  It can be any object.<br /><br />&gt;Can i use my own class as owner and i have available all my object properties ?<br />Yes, the expression has access to all public/non-public fields, properties, and methods (static and instance) on the owner.<br /><br />&gt;Also, in the options, can i add a import of any namespace of my own, and the use my own functions like you do with System.Math ?<br />You can import a System.Type and then you can use its static methods in the expression without requiring any qualification (ie: \"cos(a)\").  You can import a namespace and then you can use to all types <b>directly</b> in the namespace by qualifying them with the type name (ie: \"DateTime.Now\").  You can also use any functions on the expression owner and any functions on its fields/properties (\"myvar.tostring()\").<br />",
+    "PostedDate": "2007-08-17T06:27:17.103-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

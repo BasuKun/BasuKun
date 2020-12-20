@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "829540",
+    "ThreadId": "353849",
+    "Html": "<p>Greetings!</p>\n<p>We need to handle expressions submitted by users. But we got a situation when they're submitting expressions to add/subtract a TimeSpan to DateTime. The other way around, DateTime minus a TimeSpan, is working pretty well.</p>\n<p>Any ideas to handle that situation?</p>\n<p>Thanks in advance!</p>",
+    "PostedDate": "2012-04-27T14:03:27.147-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

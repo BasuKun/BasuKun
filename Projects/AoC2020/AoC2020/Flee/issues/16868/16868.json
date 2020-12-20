@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When running under Mono, the current release throws a null reference exception at Lib/InternalTypes/Utility.vb:244 when calling GetILGeneratorLength. This is because the Mono implementation of the ILGenerator class doesn't use a member m_length to hold the code length, instead it uses code_len.\n\nI've worked around it by detecting the runtime and choosing the value as appropriate - somewhat of a cludge, but I'm sure someone with more knowledge of this project than me can do better:\n\n    Public Shared Function GetILGeneratorLength(ByVal ilg As ILGenerator) As Integer\n\n        Dim fi As System.Reflection.FieldInfo\n\n        If (Type.GetType(\"Mono.Runtime\") Is Nothing) Then\n            fi = GetType(ILGenerator).GetField(\"m_length\", Reflection.BindingFlags.Instance Or Reflection.BindingFlags.NonPublic)\n        Else\n            fi = GetType(ILGenerator).GetField(\"code_len\", Reflection.BindingFlags.Instance Or Reflection.BindingFlags.NonPublic)\n        End If\n\n        Return DirectCast(fi.GetValue(ilg), Integer)\n    End Function",
+    "LastUpdatedDate": "2014-06-09T16:29:11.337-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2014-06-09T16:29:11.337-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ILGenerator reflection issue under Mono",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 16868
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

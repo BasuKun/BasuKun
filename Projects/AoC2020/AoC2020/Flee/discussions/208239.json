@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "427075",
+    "ThreadId": "208239",
+    "Html": "<p>Hi,</p>\r\n<p>Sorry if my question is naive, but I can't find out how to create an engine that accepts &quot;dynamic variables&quot; as entries.</p>\r\n<p>What I would like to do is the following:</p>\r\n<ul>\r\n<li>Add a series of expressions to an engine</li>\r\n<li>Add a series of variables to the engine</li>\r\n<li>Compile the engine (to become a mega-function)</li>\r\n<li>At runtime:\r\n<ul>\r\n<li>Provide the variables' values</li>\r\n<li>Get the result of the compiled engine</li>\r\n</ul>\r\n</li>\r\n</ul>\r\n<p>The twist is that I don't want to re-compile the engine each time I change one of the variable's value.</p>\r\n<p>Could someone give me a hint on how to do this?</p>\r\n<p>Thanks in advance!</p>",
+    "PostedDate": "2010-04-03T09:52:42.823-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "443366",
+    "ThreadId": "208239",
+    "Html": "<p>Hi,</p>\r\n<p>This Might Be what you are looking for</p>\r\n<p>Search for&nbsp;</p>\r\n<h2><a id=\"ctl00_ctl00_MasterContent_Content_ThreadList_ctl00_ThreadLink\" href=\"View.aspx?ThreadId=44053\">Custom  Expression Engine for Payroll</a></h2>\r\n<p>Discussion, as I Used this Library for a payroll Engine,</p>\r\n<p>&nbsp;</p>\r\n<p>Best Regards</p>\r\n<p><br>Arturo Ruvalcaba</p>",
+    "PostedDate": "2010-05-15T19:34:32.927-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "443385",
+    "ThreadId": "208239",
+    "Html": "<p>Hi aruvalcaba,</p>\r\n<p>Thanks for your answer, it finally helped me.</p>\r\n<p>I could tremendously speed up the engine by asking to recalculate the topmost variable instead of the lowermost one. I never anticipated this would impact the engine speed to such extend.</p>\r\n<p>In my case, I don't know the order in which the expressions have to be evaluated but I do know what are the input (lowermost) variables and the output (topmost) ones. The Flee engine is therefore very handy as it allows to not care about the order of the expressions, while still benefiting from the Flee performance at each re-evaluation of the output variables.</p>\r\n<p>This piece of code is a very nice one... Is it still supported by eciloci?</p>\r\n<p>Cheers,</p>\r\n<p>ZeJibe</p>",
+    "PostedDate": "2010-05-16T00:39:33.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

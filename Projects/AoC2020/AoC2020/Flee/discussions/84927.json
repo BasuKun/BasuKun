@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "289634",
+    "ThreadId": "84927",
+    "Html": "<p>Hi Eugene,<br> &nbsp;&nbsp; &nbsp;We are using Ciloci in our project to execute expressions and allow designers to change them on the fly. Thanks for this awesome library. <br> <br>&nbsp;&nbsp;&nbsp; We are using a static instance of IDynamicExpression to perform expression evaluation. Whenever we execute an expression, we fill up the required variables collection and clear them once the expression has executed. After performing a memory analysis of our process, the Ciloci Variables collection seems to be holding on to an instance of our object. An extract of the Windbg log is as follows:<br> <br> <em><span style=\"font-size:9pt\">0:049&gt; !gcroot 3fb54754 (<strong> - This is the address of my object whose reference remains in Garbage collector - generation 2)</strong><br> DOMAIN(00157778):HANDLE(Pinned):6713e0:Root:01fe5270(System.Object[])-&gt;<br> 01500b68(System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[BizAPP.Runtime.Core.Utils.ExpressionEvaluatorHelper+ExpressionEvaluatorItem, BizAPP.Runtime.Core.Framework]])-&gt;<br> 25e1999c(System.Collections.Generic.Dictionary`2+Entry[[System.String, mscorlib],[BizAPP.Runtime.Core.Utils.ExpressionEvaluatorHelper+ExpressionEvaluatorItem, BizAPP.Runtime.Core.Framework]][])-&gt;<br> 3fb4b3d8(BizAPP.Runtime.Core.Utils.ExpressionEvaluatorHelper+ExpressionEvaluatorItem)-&gt;<br> 3fb54760(Ciloci.Flee.Expression`1[[System.Object, mscorlib]])-&gt;<br> 3fb54940(Ciloci.Flee.ExpressionOptions)-&gt;<br> 3fb6222c(System.EventHandler)-&gt;<br> 3fb621fc(System.Object[])-&gt;<br> 3fb4d584(System.EventHandler)-&gt;<br> 3fb4d530(Ciloci.Flee.VariableCollection)-&gt;<br> 3fb4d550(System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Ciloci.Flee.IVariable, Ciloci.Flee]])-&gt;<br> 3fb54718(System.Collections.Generic.Dictionary`2+Entry[[System.String, mscorlib],[Ciloci.Flee.IVariable, Ciloci.Flee]][])</span></em><br> <br> &nbsp;&nbsp; &nbsp;I could provide you with the detailed log and code samples if you need them. Can you please let us know if there are any additional references to the Variables collection being added internally that are not cleared?</p>\r\n<p>Thanks in advance,<br>Bharath<br>AppPoint Software Solutions.</p>",
+    "PostedDate": "2010-02-11T08:07:52.097-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "292216",
+    "ThreadId": "84927",
+    "Html": "<p>Hello,</p>\r\n<p>&nbsp; On further analysis I found that the memory leakage was an issue at my end. I was not clearing the variables for the base expression that was cloned many time over even though the resultant cloned expressions were being disposed correctly.</p>\r\n<p>Cheers,<br>Bharath.</p>",
+    "PostedDate": "2010-02-18T08:07:09.477-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,91 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "-Moved over into discussions",
+    "ClosedDate": "2008-01-11T18:56:00.87-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Eugene,\n \nAs I indicated I was working on a replacement inface so that I could easily swap out my old calculation engine and implement the Flee calc engine to see if it was faster. I have the initial skeloton code complete but before I go any further I would like you to have a look at it. The two really important parts are the events and the Custom Function support. \n \n \nthanks\n \nbrian",
+    "LastUpdatedDate": "2013-05-16T04:24:08.92-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2007-11-28T19:38:15.433-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "FleeCalc Implementation",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 2515
+  },
+  "FileAttachments": [
+    {
+      "FileId": 553,
+      "FileName": "Ciloci.FleeCalc.rar",
+      "DownloadUrl": ".\\553"
+    },
+    {
+      "FileId": 554,
+      "FileName": "Ciloci.FleeCalc.zip",
+      "DownloadUrl": ".\\554"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "I've also attached the .zip file.\r\n\r\nbrian",
+      "PostedDate": "2007-11-28T19:39:31.237-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2007-11-28T19:39:31.487-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Thanks for posting the project.  I will have a look at it over the weekend as I won't have an internet connection tomorrow.",
+      "PostedDate": "2007-11-29T18:53:44.58-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Sorry I'm running behind schedule.  I will have a look at it tomorrow.",
+      "PostedDate": "2007-12-03T19:19:48.67-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-01-11T18:56:00.87-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Eugene,\r\n\r\nIs there a way to instruct flee to create the variables if they are not already defined in the ExpressionContext.Variables?  I noticed that Flee throws and exception if I try to parse (x + y) and y has not been defined.  Do all of the variables for and expression need to be defined before you can create and expression?",
+      "PostedDate": "2008-02-05T08:39:17.637-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:54:06.83-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:24:08.92-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

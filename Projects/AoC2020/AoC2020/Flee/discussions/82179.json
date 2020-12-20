@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "282345",
+    "ThreadId": "82179",
+    "Html": "<p>Hi,</p>\r\n<p>I have a need to evaluate the same variable differently based on the context - &nbsp;when the ResolveVariableValue event is raised, I would like to know the context in which the value is needed (essentially some information that points to the node that was parsed before, in this case 'sum').</p>\r\n<p>Example expression:&nbsp;&nbsp; sum(columnName) + columnName</p>\r\n<p>where columnName ==&gt; is a column on a data grid. In the first case, I would like columnName to return an array of all the column values for the DataGrid and in the second case I would like it to just return the selected column value (the code for resolving the selected column value is very similar to the sample code you have put out in the FleeDataTableCompute project).</p>\r\n<p>Is there any way do this?</p>\r\n<p>Thanks,</p>\r\n<p>Sahana</p>",
+    "PostedDate": "2010-01-27T07:10:00.81-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "285401",
+    "ThreadId": "82179",
+    "Html": "<p>Hi again,</p>\r\n<p>I solved the above expression by storing the DataGrid and DataColumn name when ResolveVariable is called and using the ResolveFunction event to pass in those values to the function&nbsp;that is used to compute the sum.</p>\r\n<p>However this really does not work well, because it fails for an expression of the type sum(column1 + column2)!</p>\r\n<p>Is there any other way of working this so it works for all expressions?</p>\r\n<p>Thanks,</p>\r\n<p>Sahana</p>",
+    "PostedDate": "2010-02-03T10:28:28.1-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

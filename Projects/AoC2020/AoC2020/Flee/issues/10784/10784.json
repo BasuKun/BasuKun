@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "With .NET 3.0 and up, .NET has method extensions. With this a method can be added onto an existing class (like an Int32). I want the extended methods to be accessible to the FLEE expression elements. The following example illustrates:\n// An extension method for an int that determines how many numbers compose the integer if it was represented as a string.\nstatic class IntExtension\n{\npublic static int Length(this int i)\n{\n    if (i <= 0) throw new ArgumentOutOfRangeException();\n \n    return (int)Math.Floor(Math.Log10(i)) + 1;\n}\n}\n \n// Test for it.\n// 3.Length() == 1\n// 462.Length() == 3\n \nAlso see: http://www.extensionmethod.net/ for more examples of extension methods.",
+    "LastUpdatedDate": "2015-11-25T03:35:23.54-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2010-05-05T13:00:34.337-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Needs support for Extension Methods",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10784
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi I'm not the project owner, but I don't think its possible to do that because extension methods are only used by the compiler and they are converted to static method calls in IL. There a compiler feature and not a langauge feature so they don't exist anymore after compiling...",
+      "PostedDate": "2010-05-27T13:34:29.887-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:54:02.757-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi,\r\n\r\nI needed that feature also in my project, if someone wants it I have put my version to github: https://github.com/ThomasZitzler/flee\r\n\r\nSeems to work.\r\n\r\nI do not really check if the first paramter of the static method is really marked with the \"this\" keyword. I just enhanced the checks so that FLEE also accepts static methods with the current context object as first parameter (all thos have to be registered to the context!).\r\n\r\nIL generation is actually same as for member calls.\n",
+      "PostedDate": "2015-11-25T03:35:23.54-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

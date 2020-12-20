@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "83266",
+    "ThreadId": "24843",
+    "Html": "\r\nThis expression will throw an IndexOutOfRangeException: A(A(false, false), false, false)<br /><br />Again, the most simple code I can produce<br /><br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\n  public partial class Form1 : Form\r\n    {\r\n        private void button1_Click (object sender, EventArgs e)\r\n        {\r\n            string text;\r\n            text = @\"A(A(false, false), false, false)\";\r\n            ExpressionContext ctx = new ExpressionContext ();\r\n            ctx.Imports.AddMethod (\"A\", typeof (FleeHelper), \"\");\r\n \r\n            IGenericExpression&lt;bool&gt; executer = ExpressionFactory.CreateGeneric&lt;bool&gt; (text, ctx);\r\n            bool result = executer.Evaluate ();\r\n        }\r\n    }\r\n \r\n    public static class FleeHelper\r\n    {\r\n        public static bool A (params bool[] args)\r\n        {\r\n            return true;\r\n        }\r\n    }\r\n</pre>",
+    "PostedDate": "2008-03-27T09:13:45.137-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "83528",
+    "ThreadId": "24843",
+    "Html": "\r\nLooks like another bug.  After fixing the bug in your other post, I think I have an idea as to what is causing this one.<br />",
+    "PostedDate": "2008-03-28T07:57:57.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "83634",
+    "ThreadId": "24843",
+    "Html": "\r\nFixed in <a href=\"http://www.codeplex.com/Flee/Release/ProjectReleases.aspx?ReleaseId=12077\">Flee-0.9.17.5</a><br />",
+    "PostedDate": "2008-03-28T19:15:59.547-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

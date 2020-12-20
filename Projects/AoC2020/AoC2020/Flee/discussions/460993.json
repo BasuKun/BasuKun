@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1102961",
+    "ThreadId": "460993",
+    "Html": "Hello,\r<br />\nMy question is quite simple, but I don't know if it could be easy to modify in source code.\r<br />\nI tried, but I prefer to ask first...\r<br />\n<br />\nIs it possible be able to have some special characters to variables?\r<br />\nCurrently, I think it is limited to a-z, A-Z, 0-9 and &quot;_&quot;.\r<br />\n-&gt; I would like to add several prefix, like $, @, or %. What should I modify in the source code to be able to do that?\r<br />\n<br />\nActually, I would like to do this in order to be able to cast the type of variable.\r<br />\nI cannot know the type within the event &quot;ruleContext.Variables.ResolveVariableType&quot;.\r<br />\n<br />\nI would like to add these prefix to be able to make something like this:<br />\n<ul>\n<li>no prefix: double</li>\n<li>$xxx : double[]</li>\n<li>\n@xxx : etc.<br />\n</li>\n</ul>\nI think it could be in the files: RegExp.vb, or CharacterElement.vb, but I'm afraid to make a change that could break everything...\r<br />\n<br />\nThanks a lot if you have an idea. :)\r<br />\nBest regards! <br />\n",
+    "PostedDate": "2013-10-02T15:31:41.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1102963",
+    "ThreadId": "460993",
+    "Html": "Just to be more precise, the second part works. \r<br />\nCurrently I use the &quot;_&quot; character as a prefix, but I would like to use more...\r<br />\n<br />\n<br />\nHere is my ResolveVariableType event:\r<br />\n<br />\nstatic void Variables_ResolveVariableType(object sender, ResolveVariableTypeEventArgs e)<br />\n<pre><code>    {\n\n        if (e.VariableName.Substring(0, 1) == &quot;_&quot;)\n        {\n           e.VariableType = typeof(double[]);\n        }\n        else\n        {\n            e.VariableType = typeof(double);\n        }\n\n    }</code></pre>\n\n",
+    "PostedDate": "2013-10-02T15:33:45.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1105361",
+    "ThreadId": "460993",
+    "Html": "Hi,\r<br />\n<br />\nIn ExpressionTokenizer.vb, try to change<br />\n<pre><code>pattern = New TokenPattern(CInt(ExpressionConstants.IDENTIFIER), &quot;IDENTIFIER&quot;, TokenPattern.PatternType.REGEXP, &quot;[a-z_]\\w*&quot;)</code></pre>\n\nby<br />\n<pre><code>pattern = New TokenPattern(CInt(ExpressionConstants.IDENTIFIER), &quot;IDENTIFIER&quot;, TokenPattern.PatternType.REGEXP, &quot;[a-z_@$]\\w*&quot;)</code></pre>\n\nI don't recommand using % as a prefix since it is also used for the modulo operation.<br />\n",
+    "PostedDate": "2013-10-09T01:33:20.3-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1111253",
+    "ThreadId": "460993",
+    "Html": "Thanks a lot<br />\n",
+    "PostedDate": "2013-10-23T13:34:50.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1424207",
+    "ThreadId": "460993",
+    "Html": "Thank you for this.<br />\n<br />\nI have used the &quot;[&quot; and &quot;]&quot; braces to define variables in my equations and so that they can contain spaces and other characters with it. I changed the Regex pattern as suggested and it seems to work fine.<br />\n<pre><code>pattern = New TokenPattern(CInt(ExpressionConstants.IDENTIFIER), &quot;IDENTIFIER&quot;, TokenPattern.PatternType.REGEXP, &quot;\\[.+?\\]&quot;)\nAddPattern(pattern)</code></pre>\n\n",
+    "PostedDate": "2015-05-08T08:16:19.65-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

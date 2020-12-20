@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "837451",
+    "ThreadId": "356089",
+    "Html": "\r\n<p>I would like to create a C# port of FLEE and use the official C# version of Grammatica 1.5. Is there a way to create a fork for this project?</p>\r\n",
+    "PostedDate": "2012-05-16T15:58:58.92-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "843596",
+    "ThreadId": "356089",
+    "Html": "<p>Hi,</p>\r\n<p>I tried to contact the project owner with no availability, and would be interested in contributing to a new version (I have a couple of fixes to hand).</p>\r\n<p>Let me know if you proceed.</p>",
+    "PostedDate": "2012-06-01T09:35:46.1-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "897617",
+    "ThreadId": "356089",
+    "Html": "<p>I too have invested some time in adding some extended behavior to this library. I anyone do create a \"branch\" of this project, I would be interested in contributing.</p>",
+    "PostedDate": "2012-08-09T08:36:18.473-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "918764",
+    "ThreadId": "356089",
+    "Html": "<p>I have managed to port FLEE to C# --&nbsp;I call it FleeSharp :-)&nbsp; I haven't been able to find a way to get in touch with the original author Ciloci to get his blessing on it, but it was a relatively painless process to get it up and running in C#.</p>",
+    "PostedDate": "2012-09-27T16:15:11.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "918881",
+    "ThreadId": "356089",
+    "Html": "<blockquote style=\"border: solid .1em #ccc; font-style: italic; margin: .25em 1em 0 1em; padding: 0 .25em 0 .25em;\"><strong>chadknudson wrote:</strong><br />\r\n<p>I have managed to port FLEE to C# --&nbsp;I call it FleeSharp :-)&nbsp; I haven't been able to find a way to get in touch with the original author Ciloci to get his blessing on it, but it was a relatively painless process to get it up and running in C#.</p>\r\n</blockquote>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size: 11pt; color: #1f497d;\" lang=\"EN-US\">This is good news, thanks.</span></p>\r\n<p><span style=\"font-size: 11pt; color: #1f497d;\" lang=\"EN-US\">I&rsquo;ve got a couple of fixes to submit then. I think you should register a new Codeplex project, as the original author proved unreachable over several years, and maybe PM mmatriccino and SCDeveloper in case they were not subscribed to this thread.<br /></span></p>\r\n<p><span style=\"font-size: 11pt; color: #1f497d;\" lang=\"EN-US\">Our team has been using that library extensively, so we&rsquo;re definitely up for contributing.</span></p>\r\n<p><span style=\"font-size: 11pt; color: #1f497d;\" lang=\"EN-US\">Cheers<br /></span></p>",
+    "PostedDate": "2012-09-28T01:22:23.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "933666",
+    "ThreadId": "356089",
+    "Html": "<blockquote style=\"border: solid .1em #ccc; font-style: italic; margin: .25em 1em 0 1em; padding: 0 .25em 0 .25em;\"><strong>chadknudson wrote:</strong><br />\r\n<p>I have managed to port FLEE to C# --&nbsp;I call it FleeSharp :-)&nbsp; I haven't been able to find a way to get in touch with the original author Ciloci to get his blessing on it, but it was a relatively painless process to get it up and running in C#.</p>\r\n</blockquote>\r\n<p>Hi, as Aricie said, it's good news, personaly, it will help me a lot to have the C# version. Did you publish it somwhere ?<br /><br />Thanks</p>",
+    "PostedDate": "2012-10-29T01:44:38.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "950109",
+    "ThreadId": "356089",
+    "Html": "\r\n<p>Hi guy's. I have ported Flee to C#.</p>\r\n<p>Updated grammatica from 1.5 alpha to 1.5 stable and modified it to work well with Flee.</p>\r\n<p>I have ran all of the unit tests and they all pass</p>\r\n<p>I have compared benchmark results from original flee to Flee# and Flee# parses expressions faster - most probably the grammatica update.</p>\r\n<p>&nbsp;</p>\r\n<p>The project is in codeplex -&nbsp;http://fleesharp.codeplex.com/</p>\r\n",
+    "PostedDate": "2012-12-02T00:47:57.183-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "951609",
+    "ThreadId": "356089",
+    "Html": "\r\n<p>Thanks a lot for that,</p>\r\n<p>We're definitely up for contributing.</p>\r\n<p>Can you add this account as a developper to the project?</p>\r\n<p>See you there,</p>\r\n<p>&nbsp;</p>\r\n<p>Jesse</p>\r\n<p>CTO Aricie</p>\r\n",
+    "PostedDate": "2012-12-05T03:42:16.29-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "952231",
+    "ThreadId": "356089",
+    "Html": "\r\n<p>Done :)</p>\r\n",
+    "PostedDate": "2012-12-06T04:44:09.947-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

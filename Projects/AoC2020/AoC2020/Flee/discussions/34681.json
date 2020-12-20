@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "115158",
+    "ThreadId": "34681",
+    "Html": "Hi,<br>\r\n<br>\r\nI have a question about Ciloci.Flee.ExpressionFactory.SetParseCulture.<br>\r\n<br>\r\nThis method is static, and I'm starting to wonder if there is any reason for it. I'm facing now that two different parts of my application will use Flee, and it could happen (well, it won't happen in this software, but it could) that those parts need different cultures for Flee.<br>\r\n<br>\r\nCalling this method can lead to problems, because the code will be running in different threads, and it is not guaranteed that the other thread won't change the culture from my call to SetParseCulture to my call to CreateDynamic.<br>\r\n<br>\r\nTwo questions arise:<br>\r\n<br>\r\n1. Is Flee thread safe? I mean, can I call &quot;CreateDynamic&quot; in different threads without locking anything?<br>\r\n2. Is there any reason for SetParseCulture to exist? From my point of view, it would be easier to include the culture as a parameter for CreateDynamic, and delete this method. Ok, maybe not delete it (it would break the existing API), but the parameter would override any previous call to that function.<br>\r\n<br>\r\nThanks in advance,<br>\r\n<br>\r\nFernando<br>\r\n",
+    "PostedDate": "2008-09-01T07:15:34.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "126475",
+    "ThreadId": "34681",
+    "Html": "I am considering to implement Flee in our web application. My first impression is really positive, it seems like a well thought over product and seems to work really good (and fast)! (after some quick tests). Compliments for making and sharing this nice library!<br>\r\n<br>\r\nBut I was asking myself exactly the same question as fernandonajera.&nbsp; Our web application has to support multiple cultures at the same time, so this is a critical issue. Wouldn't it be better to use Thread.CurrentThread.CurrentCulture as default? That would eliminate the need for a specific option altogether.<br>\r\n",
+    "PostedDate": "2008-10-21T02:29:22.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "131216",
+    "ThreadId": "34681",
+    "Html": "In the 0.9.19.0 release, each expression context now has its own parser.  The parse culture has been moved to the expression options on the context.  Creating expressions from a context is thread-safe.<br>\r\n<br>\r\nI initially did this because I thought that creating a parser was slow so I tried to only do it once.  After some testing, it looks like creating the first parser is slower than normal, but all further new parsers are created without much of a speed hit.\r\n",
+    "PostedDate": "2008-11-09T14:36:09.523-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "131270",
+    "ThreadId": "34681",
+    "Html": "Thank you very much!<br>\r\n",
+    "PostedDate": "2008-11-10T00:13:48.567-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

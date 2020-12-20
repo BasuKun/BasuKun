@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "834730",
+    "ThreadId": "355342",
+    "Html": "\r\n<p>I have a class with a custom function. How do I call this method in while creating the expression.</p>\r\n<p>The below statement does not work? It gives an error saying that &quot;Could not find function 'SumIf(List'1, Func'2, Func'2)' &quot;</p>\r\n<p>&nbsp;context.Imports.AddType(typeof(Helper));</p>\r\n<p>IGenericExpression&lt;double&gt; eGeneric = context.CompileGeneric&lt;double&gt;(&quot;SumIf(a,b,c)&quot;);</p>\r\n<p>&nbsp;</p>\r\n<p>public static class Helper&nbsp;&nbsp; &nbsp;</p>\r\n<p>{</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp;public static double SumIf&lt;T&gt;(IList&lt;T&gt; source, Func&lt;T, bool&gt; pred, Func&lt;T, double&gt; val)</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; double sum = 0;<br>\r\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach (var item in source)</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (pred(item))&nbsp;</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sum &#43;= val(item);<br>\r\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return sum;&nbsp; &nbsp; &nbsp; &nbsp;</p>\r\n<p>}</p>\r\n",
+    "PostedDate": "2012-05-10T11:12:44.517-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "836666",
+    "ThreadId": "355342",
+    "Html": "<p>Sorry to say that this implementation will not support generics. It was done in Visual Studio 2005 and in VB at that. I like this library, but the author does not appear to be monitoring,&nbsp;improving or fixing&nbsp;this project.</p>\r\n<p>I too wanted to use generics,&nbsp;but found that providing overloads for the types I needed was sufficient. I used generics \"under the covers\", but&nbsp;had to keep the public methods non-generic.</p>\r\n<p>I have done a small amount of changes on it to enable optional parameters, and have applied some fixes provided by other users. I believe that is how most people go when they use this project.</p>",
+    "PostedDate": "2012-05-15T06:57:30.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "82662",
+    "ThreadId": "24657",
+    "Html": "\r\nOk, this is weird. I got the exception above for a very simple expression:<br /><br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\n  True OR (x() &gt; 1)\r\n</pre><br />The ResolveFunction for x returns typeof(int), and the InvokeFunction is not even called.<br /><br />I have simplified the code as much as possible, so this is my little buggy example:<br /><br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\n        private void button1_Click (object sender, EventArgs e)\r\n        {\r\n            string text = @\"True OR (x(3) &gt; 1)\";\r\n            ExpressionContext ctx = new ExpressionContext ();\r\n            ctx.Variables.ResolveFunction += new EventHandler&lt;ResolveFunctionEventArgs&gt; (Functions_ResolveFunction);\r\n            ctx.Variables.InvokeFunction += new EventHandler&lt;InvokeFunctionEventArgs&gt; (Functions_InvokeFunction);\r\n            IGenericExpression&lt;bool&gt; executer = ExpressionFactory.CreateGeneric&lt;bool&gt; (text, ctx);\r\n            bool result = executer.Evaluate ();\r\n        }\r\n \r\n        void Functions_InvokeFunction (object sender, InvokeFunctionEventArgs e)\r\n        {\r\n            e.Result = 3;\r\n        }\r\n \r\n        void Functions_ResolveFunction (object sender, ResolveFunctionEventArgs e)\r\n        {\r\n            e.ReturnType = typeof (int);\r\n        }\r\n</pre><br />Maybe I am too tired today, but... is there anything that I am missing here?<br />",
+    "PostedDate": "2008-03-25T06:28:00.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "83115",
+    "ThreadId": "24657",
+    "Html": "\r\nThat exception means I'm emitting invalid IL.  In other words it's a bug I need to look into.<br />",
+    "PostedDate": "2008-03-26T17:58:48.827-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "83446",
+    "ThreadId": "24657",
+    "Html": "\r\nAfter digging through the code - and please forgive me if I am saying nonsenses -, I think the problem is the IL Generator is missing the local variables when created inside the DoEmitLogical() call. Why? I don't know.<br /><br />This is the emitted IL for \"true or (x(3)&gt;3)\":<br /><br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\n.method public static object Evaluate(object, class [Ciloci.Flee]Ciloci.Flee.ExpressionContext, class [Ciloci.Flee]Ciloci.Flee.VariableCollection) cil managed\r\n{\r\n    .maxstack 6\r\n    L_0000: ldc.i4.1 \r\n    L_0001: brtrue.s L_0024\r\n    L_0003: ldarg.2 \r\n    L_0004: ldstr \"x\"\r\n    L_0009: ldc.i4.1 \r\n    L_000a: newarr object\r\n    L_000f: stloc.0 \r\n    L_0010: ldloc.0 \r\n    L_0011: ldc.i4.0 \r\n    L_0012: ldc.i4.3 \r\n    L_0013: box int32\r\n    L_0018: stelem.ref \r\n    L_0019: ldloc.0 \r\n    L_001a: callvirt instance !!0 [Ciloci.Flee]Ciloci.Flee.VariableCollection::GetFunctionResultInternal&lt;int32&gt;(string, object[])\r\n    L_001f: ldc.i4.3 \r\n    L_0020: cgt \r\n    L_0022: br.s L_0025\r\n    L_0024: ldc.i4.1 \r\n    L_0025: box bool\r\n    L_002a: ret \r\n}\r\n</pre><br />And PEVerify.exe says<br /><br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\n[IL]: Error: [Expression.dll : &lt;Module&gt;::Evaluate][offset 0x0000000F] Unrecognized local variable number.\r\n1 Error Verifying Expression.dll\r\n</pre><br />which is right, because it is trying to store things in the locals, but there are no locals. It is missing the initial declaration<br /><br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\n   .locals init (\r\n        [0] object[] objArray)\r\n</pre><br />My knowledge of IL is just that. I cannot fix the sourcecode... Does this helps?<br /><br />As a workaround, I have changed the sourcecode to use bitwise operation for these cases too... it is non-optimal, and it does not short-circuit anymore, but the IL code seems to work.<br /><br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\nPublic Overrides Sub Emit(ByVal ilg As FleeILGenerator, ByVal services As IServiceProvider)\r\n    Dim resultType As Type = Me.ResultType\r\n \r\n    'If resultType Is GetType(Boolean) Then\r\n    '    Me.DoEmitLogical(ilg, services)\r\n    'Else\r\n        MyLeftChild.Emit(ilg, services)\r\n        ImplicitConverter.EmitImplicitConvert(MyLeftChild.ResultType, resultType, ilg)\r\n        MyRightChild.Emit(ilg, services)\r\n        ImplicitConverter.EmitImplicitConvert(MyRightChild.ResultType, resultType, ilg)\r\n        Me.EmitBitwiseOperation(ilg, MyOperation)\r\n    'End If\r\nEnd Sub\r\n</pre><br />The new IL now has the .locals section in place, and it PEVerifies.<br /><br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\n.method public static object Evaluate(object, class [Ciloci.Flee]Ciloci.Flee.ExpressionContext, class [Ciloci.Flee]Ciloci.Flee.VariableCollection) cil managed\r\n{\r\n    .maxstack 6\r\n    .locals init (\r\n        [0] object[] objArray)\r\n    L_0000: ldc.i4.1 \r\n    L_0001: ldarg.2 \r\n    L_0002: ldstr \"x\"\r\n    L_0007: ldc.i4.1 \r\n    L_0008: newarr object\r\n    L_000d: stloc.0 \r\n    L_000e: ldloc.0 \r\n    L_000f: ldc.i4.0 \r\n    L_0010: ldc.i4.3 \r\n    L_0011: box int32\r\n    L_0016: stelem.ref \r\n    L_0017: ldloc.0 \r\n    L_0018: callvirt instance !!0 [Ciloci.Flee]Ciloci.Flee.VariableCollection::GetFunctionResultInternal&lt;int32&gt;(string, object[])\r\n    L_001d: ldc.i4.3 \r\n    L_001e: cgt \r\n    L_0020: or \r\n    L_0021: box bool\r\n    L_0026: ret \r\n}\r\n</pre>",
+    "PostedDate": "2008-03-28T01:18:52.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "83530",
+    "ThreadId": "24657",
+    "Html": "\r\nYou're right, the missing locals declaration was causing the exception.<br /><br />I checked in the fix for this bug so you can do a build from source if you need it fixed before the next release.<br />",
+    "PostedDate": "2008-03-28T08:03:36.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "83633",
+    "ThreadId": "24657",
+    "Html": "\r\nFixed in <a href=\"http://www.codeplex.com/Flee/Release/ProjectReleases.aspx?ReleaseId=12077\">Flee-0.9.17.5</a><br />",
+    "PostedDate": "2008-03-28T19:15:31.61-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

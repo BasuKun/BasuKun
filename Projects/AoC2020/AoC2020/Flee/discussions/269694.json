@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "660551",
+    "ThreadId": "269694",
+    "Html": "\r\n<p>Hi</p>\r\n<p>1st let me thank you for such great library as Flee really is.</p>\r\n<p>I think i've found bug in ExpressionContext class which leads to leaking memory when using ExpressionContext member method Clone.</p>\r\n<p>Problem is in CloneInternal method</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">If</span> cloneVariables = <span style=\"color:blue\">True</span> <span style=\"color:blue\">Then</span>\r\n\tcontext.MyVariables = <span style=\"color:blue\">New</span> VariableCollection(<span style=\"color:blue\">Me</span>)\r\n\t<span style=\"color:blue\">Me</span>.Variables.Copy(context.MyVariables)\r\n<span style=\"color:blue\">End</span> <span style=\"color:blue\">If</span>\r\n\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>Here, source context is passed into VariableCollection constructor instead of cloned one which means tha VariableCollection hooks to the source context CaseSensitiveChanged event. This way, all clones are indefinitely hooked to its &quot;master&quot; :) And because\r\n I use one ExpressionContext as &quot;template&quot; and use its Clone method to create contexts i really use for evaluating expressions, all contexts are held in memory for application lifetime....which is not good</p>\r\n<p>HTH</p>\r\n",
+    "PostedDate": "2011-08-19T05:48:43.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "57621",
+    "ThreadId": "17660",
+    "Html": "\r\nHi Eugene,<br /><br />Sorry in advance for the beginner question but I am trying to use your code to evaluate a boolean expression and I am not sure how to do it. I have successfully run your examples here, but they basically give a numeric answer, but I would like to evaluate something like...<br /><br />string s = ((x==3)||(x==4))&amp;&amp;(y==0)) ? “Print this if True” : ”Print this if false”;<br /><br />or even just to get <br /><br />bool b = ((x==3)||(x==4))&amp;&amp;(y==0));<br /><br />I am pretty sure that this is possible, but I just can't find any examples to do it.<br /><br />Thanks in advance,<br /><br />-a<br />",
+    "PostedDate": "2007-11-09T17:15:23.583-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "57662",
+    "ThreadId": "17660",
+    "Html": "\r\nHi Eugene,<br /><br />I think I answered my own question already, I am doing it like this...<br /><br /><br />            ExpressionContext context = new ExpressionContext();<br />            context.Variables.DefineVariable(\"a\", typeof(int));<br />            context.Variables.DefineVariable(\"B\", typeof(bool));<br />            IDynamicExpression [] array = new IDynamicExpression[2];<br />            array[0] = ExpressionFactory.CreateDynamic(\"b and (a &lt; 100)AND(A&gt;0)\", context);<br />            array[1] = ExpressionFactory.CreateDynamic(\"b or (a &lt; 100) or (A&gt;0)\", context);<br />            context.Variables.SetVariableValue(\"A\", 10);<br />            context.Variables.SetVariableValue(\"B\", true);<br />            object o = array[0].Evaluate();<br />            object p = array[1].Evaluate();<br />            bool result = (bool)o;<br />            bool result2 = (bool)p;<br />            Console.WriteLine(\"FleeTest result is {0}. {1}.\", result, result2);<br /><br /><br />Questions:<br /><br />1. is there another way that I should be doing the booleans or is this ok?<br />2. is using an array ok for the expressions and contexts? I basically want to load up some expressions and vary the context then then evaluate.<br />3. is the limit for the expression length basically the C# max length of the string?<br /><br />Thank you.<br /><br />-a<br />",
+    "PostedDate": "2007-11-10T02:03:02.4-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "57672",
+    "ThreadId": "17660",
+    "Html": "\r\nThe AND/OR operators perform double duty.  If both their operands are boolean, they do a logical operation.  If both operands are integers, they perform a bitwise operation.  Since there is no conversion between integers and booleans this works out.<br /><br />&gt; ((x==3)||(x==4))&amp;&amp;(y==0)) ? “Print this if True” : ”Print this if false”;<br />The Flee equivalent would be: <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">If((x=3 OR x=4) AND y=0, \"True!\", \"False!\")</span><br />The comparison operators (=, &gt;, &lt;) are evaluated before the AND/OR operators so you don't have to wrap them in brackets.<br /><br />&gt;is there another way that I should be doing the booleans or is this ok?<br />Well, since you know that your expressions will always evaluate to a Boolean, you can use a generic expression: <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">ExpressionFactory.CreateGeneric&lt;bool&gt;(\"a &gt; 1\", context)</span>.  This will make the expression evaluate to a boolean (no casting required) and Flee won't compile your expression unless it evaluates to a Boolean (catches type errors).<br /><br />&gt;is using an array ok for the expressions and contexts? I basically want to load up some expressions and vary the context then then evaluate.<br />Have a look at using an <a href=\"http://www.codeplex.com/Flee/Wiki/View.aspx?title=ExpressionOwner\">ExpressionOwner</a>.  It lets you use the members of a class as the variables of an expression and lets you swap in other instances of a class after an expression is compiled thus letting you change the context of an expression.<br /><br />&gt;is the limit for the expression length basically the C# max length of the string?<br />I'm sure there are other limitations (memory, IL size), but I don't set any limits on expression size.<br /><br />I will also put in an example for evaluating boolean expressions since it seems it's a popular use for Flee.<br />",
+    "PostedDate": "2007-11-10T07:52:53.303-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "57733",
+    "ThreadId": "17660",
+    "Html": "\r\nHi Eugene,<br /><br />thank you for your suggestion, it seems like this will work.<br /><br />-a<br />",
+    "PostedDate": "2007-11-10T23:12:37.68-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "60359",
+    "ThreadId": "17660",
+    "Html": "\r\nHi again Eugene,<br /><br />I am getting an issue when the expression is long that says...<br /><br />Unhandled Exception: System.NotSupportedException: Illegal one-byte branch at position: 473. Requested branch was: 144.<br />   at System.Reflection.Emit.ILGenerator.BakeByteArray()<br />   at System.Reflection.Emit.DynamicResolver..ctor(DynamicILGenerator ilGenerator)<br />   at System.Reflection.Emit.DynamicILGenerator.GetCallableMethod(Void* module)<br />   at System.Reflection.Emit.DynamicMethod.GetMethodDescriptor()<br />   at System.Reflection.Emit.DynamicMethod.CreateDelegate(Type delegateType)<br />   at Ciloci.Flee.Expression`1.Compile(String expression, Object owner, ExpressionOptions options) in D:\\Visual Studio 2005\\Flee\\Flee-0.9.13.0\\src\\Lib\\Expression.vb:line 197<br />   at Ciloci.Flee.Expression`1..ctor(String expression, Object owner, ExpressionContext context) in D:\\Visual Studio 2005\\Flee\\Flee-0.9.13.0\\src\\Lib\\Expression.vb:line 122<br />   at Ciloci.Flee.ExpressionFactory.CreateGeneric<a href=\"http://www.codeplex.com/Flee/Wiki/View.aspx?title=T\">T</a>(String expression, Object owner, ExpressionContext context) in D:\\Visual Studio 2005\\Flee\\Flee-0.9.13.0\\src\\Lib\\Expression.vb:line 75<br />   at Ciloci.Flee.ExpressionFactory.CreateGeneric<a href=\"http://www.codeplex.com/Flee/Wiki/View.aspx?title=T\">T</a>(String expression, ExpressionContext context) in D:\\Visual Studio 2005\\Flee\\Flee-0.9.13.0\\src\\Lib\\Expression.vb:line 82<br />   at B1Rules.B1RuleSetItem.compile(ExpressionContext context) in D:\\Visual Studio 2005\\Projects\\B1RulesTest\\B1RulesTest\\B1RulesTest\\B1RuleSetItem.cs:line 31<br />   at B1Rules.B1RuleSet.compile() in D:\\Visual Studio 2005\\Projects\\B1RulesTest\\B1RulesTest\\B1RulesTest\\B1RuleSet.cs:line 314<br />   at B1Rules.B1RuleSet.compile(ExpressionContext B1RecordContext) in D:\\VisualStudio 2005\\Projects\\B1RulesTest\\B1RulesTest\\B1RulesTest\\B1RuleSet.cs:line 328<br />   at B1Rules.B1Evaluator.processB1string(String B1String) in D:\\Visual Studio 2005\\Projects\\B1RulesTest\\B1RulesTest\\B1RulesTest\\B1Evaluator.cs:line 87<br />   at B1RulesTest.Program.Main(String[] args) in D:\\Visual Studio 2005\\Projects\\B1RulesTest\\B1RulesTest\\B1RulesTest\\Program.cs:line 56<br /><br /><br />Line 31 of B1RuleSetItem.cs is the following...<br /><br /> public void compile(ExpressionContext context) { iexpression = ExpressionFactory.CreateGeneric&lt;bool&gt;(condition, context); } <br /><br /><br />The expression that is having an issue is the following:<br /><br /> ((M0100_ASSMT_REASON = \"01\" OR M0100_ASSMT_REASON = \"03\") AND (M0220_PRIOR_UR_INCON_bool OR M0220_PRIOR_CATH_bool OR M0220_PRIOR_INTRACT_PAIN_bool OR M0220_PRIOR_IMPR_DECSN_bool OR M0220_PRIOR_DISRUPTIVE_bool OR M0220_PRIOR_MEM_LOSS_bool OR M0220_PRIOR_NONE_bool OR M0220_PRIOR_NOCHG_14D_bool OR M0220_PRIOR_UNKNOWN_bool) AND ((M0220_PRIOR_UR_INCON = \"0\" OR M0220_PRIOR_UR_INCON = \"0\") AND (M0220_PRIOR_CATH = \"0\" OR M0220_PRIOR_CATH = \"0\") AND (M0220_PRIOR_INTRACT_PAIN = \"0\" OR M0220_PRIOR_INTRACT_PAIN = \"0\") AND (M0220_PRIOR_IMPR_DECSN = \"0\" OR M0220_PRIOR_IMPR_DECSN = \"0\") AND (M0220_PRIOR_DISRUPTIVE = \"0\" OR M0220_PRIOR_DISRUPTIVE = \"0\") AND (M0220_PRIOR_MEM_LOSS = \"0\" OR M0220_PRIOR_MEM_LOSS = \"0\") AND (M0220_PRIOR_NONE = \"0\" OR M0220_PRIOR_NONE = \"0\") AND (M0220_PRIOR_NOCHG_14D = \"0\" OR M0220_PRIOR_NOCHG_14D = \"0\") AND (M0220_PRIOR_UNKNOWN = \"0\" OR M0220_PRIOR_UNKNOWN = \"0\"))) <br /><br />All variables are defined.<br /><br />Contrast this with the following which is working...<br /><br /> ((M0100_ASSMT_REASON = \"01\") OR (M0100_ASSMT_REASON = \"03\") OR (M0100_ASSMT_REASON = \"04\") OR (M0100_ASSMT_REASON = \"05\") OR (M0100_ASSMT_REASON = \"06\") OR (M0100_ASSMT_REASON = \"07\") OR (M0100_ASSMT_REASON = \"08\") OR (M0100_ASSMT_REASON = \"09\")) <br /><br />QUESTION:<br /><br />Do you think there is an inherent limit in how long the expression can be? Or is there another issue that I can't see...?<br /><br /><br />Thank you.<br /><br />-a<br />",
+    "PostedDate": "2007-11-28T20:40:54.56-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "60530",
+    "ThreadId": "17660",
+    "Html": "\r\nJudging from the exception, it looks like a bug in the code that emits logical expressions.  I thought I was handling long logical expressions, but apparently I must have missed a case somewhere.<br /><br />I'll have a look and put in a fix over the weekend.<br />",
+    "PostedDate": "2007-11-29T18:50:57.677-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "60702",
+    "ThreadId": "17660",
+    "Html": "\r\nHi Eugene,<br /><br />that would be great!<br /><br />Thank you.<br /><br />-a<br />",
+    "PostedDate": "2007-12-01T02:00:20.967-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "61043",
+    "ThreadId": "17660",
+    "Html": "\r\nLooks like I'm running behind schedule.  I'll put in the fix tomorrow.<br />",
+    "PostedDate": "2007-12-03T19:20:55.35-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "61185",
+    "ThreadId": "17660",
+    "Html": "\r\nNo problem,<br /><br />I appreciate the heads up.<br /><br />-a<br />",
+    "PostedDate": "2007-12-04T12:13:32.957-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "61228",
+    "ThreadId": "17660",
+    "Html": "\r\nThis issue should be fixed in <a href=\"http://www.codeplex.com/Flee/Release/ProjectReleases.aspx?ReleaseId=8816\">Flee-0.9.14.0</a>.  I put in your expression as a unit test and passes and generates correct IL.  You should still check that it evaluates to the correct result as I can't test that since it is such a complex expression.<br />",
+    "PostedDate": "2007-12-04T18:10:35.96-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "103078",
+    "ThreadId": "17660",
+    "Html": "I'm having a similar [well, actually, the <em>same</em>] problem using 0.9.18.0.&nbsp; Deeply-nested IFs seems to be a problem, although even a depth of three is tanking.<br>\r\n<br>\r\nHere's one example (formatted for clarity): <br>\r\n<br>\r\n<code>\r\nIF(<br>\r\n&nbsp;&nbsp;&nbsp; MovementType = \\&quot;C\\&quot;, <br>\r\n&nbsp;&nbsp;&nbsp; RailFee * XctnQty , <br>\r\n&nbsp;&nbsp;&nbsp; IF(<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; MovementType = \\&quot;P\\&quot;, <br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; PipeFee * XctnQty , <br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; IF(<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; MovementType = \\&quot;R\\&quot;, <br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; TruckFee * XctnQty , <br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; IF(<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; MovementType = \\&quot;V\\&quot;, <br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; VesselFee * XctnQty , <br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; InFacilityFee * XctnQty<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; )<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; )<br>\r\n&nbsp;&nbsp;&nbsp; )<br>\r\n)<br>\r\n</code>\r\n<br>\r\nHere's the stack trace:<br>\r\n<pre>at System.Reflection.Emit.ILGenerator.BakeByteArray()<br>at System.Reflection.Emit.DynamicResolver..ctor(DynamicILGenerator ilGenerator)<br>at System.Reflection.Emit.DynamicILGenerator.GetCallableMethod(Void* module)<br>at System.Reflection.Emit.DynamicMethod.GetMethodDescriptor()<br>at System.Reflection.Emit.DynamicMethod.CreateDelegate(Type delegateType)<br>at Ciloci.Flee.Expression`1.Compile(String expression, Object owner, ExpressionOptions options)<br>at Ciloci.Flee.Expression`1..ctor(String expression, ExpressionContext context)<br>at Ciloci.Flee.ExpressionFactory.CreateDynamic(String expression, ExpressionContext context)<br>at [my code]</pre>\r\n<br>\r\nAny thoughts?<br>\r\n",
+    "PostedDate": "2008-07-07T08:28:48.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "861027",
+    "ThreadId": "363169",
+    "Html": "\r\n<pre><span>if(&nbsp;&nbsp;0&nbsp;=&nbsp;countof(&quot;LineItems&quot;),&nbsp;&quot;-5&nbsp;mins&quot;,</span>\n<span><span style=\"white-space:pre\">\t</span>if(&nbsp;1&nbsp;=&nbsp;countof(&quot;LineItems&quot;),&nbsp;&quot;20&nbsp;mins&quot;,</span>\n<span>\t\tif(&nbsp;2&nbsp;=&nbsp;countof(&quot;LineItems&quot;),&nbsp;&quot;1.5&nbsp;Hr&quot;,</span>\n<span>\t\t\tif(&nbsp;3&nbsp;=&nbsp;countof(&quot;LineItems&quot;),&nbsp;&quot;3&nbsp;Hr&quot;,</span>\n<span>\t\t\t\tif(&nbsp;4&nbsp;=&nbsp;countof(&quot;LineItems&quot;),&nbsp;&quot;5&nbsp;mins&quot;,&nbsp;&quot;none&quot;)</span>\n<span><span style=\"white-space:pre\">\t\t\t</span>)</span>\n<span><span style=\"white-space:pre\">\t\t</span>)</span>\n<span><span style=\"white-space:pre\">\t</span>)</span>\n<span>)</span></pre>\r\n<pre>We have the above expression and using the latest release of the library. When executed the exception &quot;Illegal one-byte branch at position: 80. Requested branch was: 131.&quot;</pre>\r\n<pre><span>is thrown. countof is a function that returns a simple integer and is a custom function. Noticed a few discussions that point our the error and indicates fixes, but still seem to happen in latest release. </span>Any workaround please suggest?</pre>\r\n",
+    "PostedDate": "2012-07-12T06:08:14.28-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

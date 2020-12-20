@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1458383",
+    "ThreadId": "649713",
+    "Html": "Hi,<br />\n<br />\nI'm trying to use Flee to evaluate expressions from within Ninjatrader, a C# based trading platform.<br />\n<br />\nI have a basic test working using the examples with an expressionowner.<br />\n<br />\nMy class is defined - <br />\n<pre><code>    public class ExpressionOwner \n    {\n        public int a;\n\n        public int myFunc(int i)\n        {\n            return(i);\n        }\n        public double getClose() {\n            return Close[0];\n        }\n    }\n</code></pre>\n\nThe compilation error (referring to the line : return Close[0]) is -<br />\n<br />\nCannot access a non-static member of outer type 'NinjaTrader.Indicator.IndicatorBase' via nested type 'NinjaTrader.Indicator.FleeTest.ExpressionOwner'<br />\n<br />\nI know I haven't provided a lot of detail here, particularly about Ninjatrader, but can anyone offer some suggestions? I'd be happy to provide more detail if anyone can help,<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2016-01-07T14:21:32.613-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

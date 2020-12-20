@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "175762",
+    "ThreadId": "52313",
+    "Html": "Hello :)<br>\r\nSeems like your library should work on .NET Framework 2.0, but you use DynamicMethod with signature:<br>\r\n<pre><strong><span>public</span> <span>DynamicMethod</span>(<br>\tstring <span>name</span>,<br>\tType <span>returnType</span>,<br>\tType[] <span>parameterTypes</span></strong><br>)</pre>\r\nthat was presented in Framework 3.5, so library don't works on PCs with installed .NET Framework 2.0 without service packs...<br>\r\nYou can found small hint about this situation in MSDN at DynamicMethod constructor page:<br>\r\n<p><em>&quot;This constructor was introduced in the .NET Framework version 3.5. For more\r\ninformation, see <span>.NET Framework 3.5\r\nArchitecture</span>.&quot;</em></p>\r\nIf you present one more boolean true parameter for the all constructors calls,<br>\r\nit makes compilation much faster (skipping JIT visibility checks) and FLEE will work at all .NET 2.0.<br>\r\n<br>\r\np.s. Sorry me my English...<br>\r\n",
+    "PostedDate": "2009-04-05T02:12:23.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "176914",
+    "ThreadId": "52313",
+    "Html": "Thanks for the tip.&nbsp; I switched to an anonymously hosted dynamic method a while ago and later realized (after some people posted some comments) that you needed .NET 2.0 SP1 for it to work.&nbsp; I think I'll put it back as nobody has yet had issues with running Flee in a partial-trust setting.<br>\r\n<br>\r\n&gt;it makes compilation much faster (skipping JIT visibility checks) <br>\r\nThis is what MSDN has to say about the skip visibility parameter:<br>\r\n<em>Skipping the JIT compiler's visibility checks allows the dynamic method\r\nto access private and protected members of all other types as well.\r\nThis is useful, for example, when writing code to serialize objects.</em><br>\r\n<br>\r\nBasically, this would enable Flee's expressions to have access to all members of all types.&nbsp; Right now, Flee only allows access to non-public members on the expression owner.&nbsp; I think it's a good idea to leave this flag to false so that even if Flee has a bug it's member access logic, the framework will catch it.&nbsp; I also didn't notice any compilation speed gains with this flag set when running through the demo.<br>\r\n",
+    "PostedDate": "2009-04-07T19:00:51.013-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

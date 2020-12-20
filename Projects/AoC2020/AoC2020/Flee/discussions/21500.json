@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "71628",
+    "ThreadId": "21500",
+    "Html": "\r\nGreat Library! I was wondering if there is a way to get a list of all the avialable functions that can be used in an expression based on the imported types. Maybe I am missing something and it is already there. What I am looking to do is create an \"expression builder\" type of UI control for my application where the user can select from a list of available method signatures, without having to just remember what is available.<br />",
+    "PostedDate": "2008-02-04T10:54:01.023-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "71982",
+    "ThreadId": "21500",
+    "Html": "\r\nSure, I can put some accessor methods on the Imports which will return all the available methods in a particular namespace.  I assume that you're fine with getting MethodInfo instances back?<br />",
+    "PostedDate": "2008-02-05T19:49:19.26-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "71985",
+    "ThreadId": "21500",
+    "Html": "\r\nYes, that would be great! <br /><br />On a related note, I am assuming you are using reflection to get type information for expression owners and variables?? We often have types in which we use a customtypedescriptor. This allows us to change the view of the instance in the propertygrid control. For instance, we can hide certain properties or add dynamic properties. It may be a good enhancement to use the Typedescriptor object to get the properties of the expression owner or variables. That way expressions can see this changed view of the object. The great thing about Typedescriptor is that if a customtypedescriptor is not found for the type info it will return is the same results as reflection. Of course, you may already be doing this, I haven't had a change to review the source on this. :)  <br />",
+    "PostedDate": "2008-02-05T20:33:12.753-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "72247",
+    "ThreadId": "21500",
+    "Html": "\r\nThanks for the tip.  That would allow lots of flexibility.  I just have to check out how you get the value of a dynamic property.  Is it just a static function call on the TypeDescriptor?<br />",
+    "PostedDate": "2008-02-06T19:23:40.963-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "72261",
+    "ThreadId": "21500",
+    "Html": "\r\nTypedescriptor works very much like refection. Actually .net databinding uses it. There isn't anything in particular needed to read dynamic properties per se. Dynamic properties can be created by implement a TypeDescriptonProvider for the type of a CustomTypeDescriptor. Once implemented on the class all is needed is a call to TypeDescriptor.GetProperties and the properties are provided to you as a propertydescriptor object (similar to PropertyInfo).  Even If you call Typedescriptor.GetProperties on a class that doesn't ahve a TypeDescriptionProvider it will just return the properties as reflection would. Here is a great article on implementing dynamic properties:<br /><br />http://msdn.microsoft.com/msdnmag/issues/05/05/NETMatters/<br />",
+    "PostedDate": "2008-02-06T21:16:38.09-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "75380",
+    "ThreadId": "21500",
+    "Html": "<a href=\"http://www.codeplex.com/Flee/Release/ProjectReleases.aspx?ReleaseId=10795\">Flee-0.9.17.1</a> now supports nested namespaces and also exposes the various imports of an expression.<br /><br />Essentially, all imports derive from ImportBase, have an IsContainer property that lets you know whether it contains other imports, and a GetMembers function that retrieves all of the imports' members.<br /><br />The ImportsCollection exposes the root import which you could pass to the following function to print out the imports tree:<br /><br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\nprivate void PrintImportMembers(ImportBase import, int level) \r\n{ \r\n    string indent = new string(\" \", level * 4); \r\n    \r\n    if (import.IsContainer == true) { \r\n        Console.Write(indent); \r\n        Console.WriteLine(\"===={0}===\", import.Name); \r\n    } \r\n    \r\n    MemberInfo[] members = import.GetMembers(MemberTypes.Method); \r\n    \r\n    foreach (MemberInfo mi in members) { \r\n        Console.Write(indent); \r\n        Console.WriteLine(mi); \r\n    } \r\n    \r\n    foreach (ImportBase childImport in import) { \r\n        PrintImportMembers(childImport, level + 1); \r\n    } \r\n}\r\n</pre><br />I haven't put in the doc comments yet but this should get you started<br />",
+    "PostedDate": "2008-02-20T19:20:16.54-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "75403",
+    "ThreadId": "21500",
+    "Html": "\r\nThanks!<br />That worked great! I have already updated my code.<br />",
+    "PostedDate": "2008-02-20T21:50:25.23-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

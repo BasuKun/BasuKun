@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "168028",
+    "ThreadId": "50185",
+    "Html": "This is great... I was drawing out a problem on a piece of paper today and knew I needed an expression evaluator. <br>\r\n<br>\r\nFinding a good one is hard... My first thought was nVelocity, but it is so heavy I hated to use it (although I did test it).<br>\r\n<br>\r\nThen I found FLEE and I'm pretty well satisfied.&nbsp; <br>\r\n<br>\r\nThere are a few things that have come out in testing though:<br>\r\n<ol>\r\n    <li>Support for nullable types (Nullable.GetBaseType)?</li>\r\n    <li>Support for decimals</li>\r\n</ol>\r\nIf I can get the code to convert to c#, I might can add some of this myself.<br>\r\n<br>\r\nOnce again, a great project!<br>\r\n<br>\r\nThanks,<br>\r\nDustin \r\n",
+    "PostedDate": "2009-03-13T22:11:51.633-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "168107",
+    "ThreadId": "50185",
+    "Html": "&gt;I was drawing out a problem on a piece of paper today and knew I needed an expression evaluator.<br>\r\nWhat kind of problem was it?&nbsp; I'm always interested in scenarios where Flee is useful.<br>\r\n<br>\r\n&gt;Support for decimals<br>\r\nFlee doesn't support decimals directly but it does recognize the overloaded and implicit operators defined on them and thus allows them to be used in expressions.&nbsp; It doesn't support decimal literals (ie: 100D + 200D) though, is that what you meant?<br>\r\n<br>\r\n&gt;Once again, a great project!<br>\r\nThanks!\r\n",
+    "PostedDate": "2009-03-14T11:27:25.697-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "168581",
+    "ThreadId": "50185",
+    "Html": "I'm designing an alert system for an inventory management / order manager system.&nbsp; Basically, the goal is to be able to dynamically declare &quot;Alerts&quot; or business rules and have them perform defined actions when the dynamic condition is met.<br>\r\n<br>\r\nSome example expressions I've put together:<br>\r\n<br>\r\n<strong>Test if price is appropriate based on cost and price:</strong><br>\r\nif(ToDouble(Object.Price)/ToDouble(Object.Cost) &lt; 1.49,&quot;true&quot;,&quot;false&quot;)<br>\r\n<div id=\":1d2\">\r\n<br>\r\n<strong>Test the total weight of the boxes is above 800 and isTruckOnly=false to see if shipping is appropriate:</strong><br>\r\nif(sum(Object.BoxesCollection,<wbr>&quot;Weight&quot;) &gt; 800 and ToBool(Object.IsTruckOnly,<wbr>false)=false,&quot;true&quot;,&quot;false&quot;)</div>\r\n<br>\r\nSo one final thing I'm dealing with is I want to compile these expressions and just pass in Object at runtime.&nbsp; Unfortunately, if I use the event handler method, then the original instance of the object is always used. So, I'm left with statically defining the event handlers and using a singleton style class to prevent anything from changing the static variable while the alert is processing... I might could do this by thread instead of a singleton class.<br>\r\n<br>\r\n<strong>Example</strong>:<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; static void Variables_ResolveVariableValue(object sender, ResolveVariableValueEventArgs e)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e.VariableValue = currentSavedObject;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; static void Variables_ResolveVariableType(object sender, ResolveVariableTypeEventArgs e)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e.VariableType = currentSavedObjectType;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n<br>\r\nAnd then for the work:<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IDynamicExpression dynE;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!expressionCache.TryGetValue(a.AlertID, out dynE))<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ExpressionContext context = new ExpressionContext();<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //helper types<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; context.Imports.AddType(typeof(AlwaysConvert));<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; context.Imports.AddType(typeof(Collections));<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; context.Variables.ResolveVariableType += new EventHandler&lt;ResolveVariableTypeEventArgs&gt;(Variables_ResolveVariableType);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; context.Variables.ResolveVariableValue += new EventHandler&lt;ResolveVariableValueEventArgs&gt;(Variables_ResolveVariableValue);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dynE = context.CompileDynamic(a.AlertCriteria);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; expressionCache.SafeAdd(a.AlertID, dynE);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; catch (Exception ex)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; log.ErrorFormat(&quot;Invalid expression for criteria on Alert ID {0} for Object Type {1} Criteria {2} Reason {3} Stack Trace {4}&quot;, a.AlertID, objectType.ToString(), a.AlertCriteria, ex.Message, ex.StackTrace);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string result = AlwaysConvert.ToString(dynE.Evaluate());<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; alertValid = AlwaysConvert.ToBool(result, false);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n<br>\r\n<br>\r\nIs there a better way?<br>\r\n<br>\r\nThanks,<br>\r\nDustin <br>\r\n<br>\r\n\r\n",
+    "PostedDate": "2009-03-16T08:46:38.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "169671",
+    "ThreadId": "50185",
+    "Html": "Why can't you just use the object instance as a variable?&nbsp; Then you can swap in another instance and re-evaluate.&nbsp; The Resolve events are usually used when you don't know what variables the expression will reference but in your case there seems to be only one main object.<br>\r\n",
+    "PostedDate": "2009-03-18T17:44:32.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "170147",
+    "ThreadId": "50185",
+    "Html": "Ah... I see, you are correct.&nbsp; I didn't realize that IDynamicExpression.Context was not readonly.<br>\r\n<br>\r\nThis works great with this method.<br>\r\n<br>\r\nI appreciate the help.&nbsp; Any other suggestions for maximum performance?<br>\r\n<br>\r\nThanks,<br>\r\nDustin<br>\r\n",
+    "PostedDate": "2009-03-20T03:43:31.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "170395",
+    "ThreadId": "50185",
+    "Html": "&gt;Ah... I see, you are correct.&nbsp; I didn't realize that IDynamicExpression.Context was not readonly.<br>\r\nYeah, most of it is read-only except the variables and the expression owner which are live.&nbsp; Being able to swap in new values for variables without having to re-compile the expression is a key requirement.<br>\r\n<br>\r\n&gt;Any other suggestions for maximum performance?<br>\r\nYou could put your main object as the expression owner.&nbsp; The expression then becomes like an instance method on the object.&nbsp; So instead of &quot;Object.Price&quot; you can write just &quot;Price&quot;.&nbsp; Loading the expression owner should be slightly faster than loading a variable.<br>\r\n<br>\r\nThe other tip would be to make the object properties strongly-typed so that you don't have to call your conversion functions on them during each evaluation. \r\n",
+    "PostedDate": "2009-03-21T11:20:38.413-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "170828",
+    "ThreadId": "50185",
+    "Html": "Loading the expression owner is faster, almost twice as fast... We're talking about arc seconds, but still.<br>\r\n<br>\r\nThe reason I have to call the conversion is because Price is a decimal.. So if Cost is a double, Flee throws an error:<br>\r\n<br>\r\n<em>ArithmeticElement: Operation 'Divide' is not defined for types 'Decimal' and 'Double'</em><br>\r\n<br>\r\nAlso, if I have a nullable property (i.e. Cost2 could be a nullable decimal or double), Flee throws this exception:<br>\r\n<br>\r\n<em>ArithmeticElement: Operation 'Divide' is not defined for types 'Decimal' and 'Nullable`1'</em><br>\r\n<br>\r\nSo, the only way I know to fix this is a conversion function that always returns a valid value even if the property is null...<br>\r\n<br>\r\nSo, ToDouble, ToDecimal, etc are all defined for that purpose...<br>\r\n<br>\r\nThoughts?<br>\r\n<br>\r\nThanks again!<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2009-03-23T06:09:44.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "170832",
+    "ThreadId": "50185",
+    "Html": "I could omit the ToDouble(Object.Cost) in the below example:<br>\r\n<br>\r\nif(ToDouble(Object.Price)/ToDouble(Object.Cost) &lt; 1.49,&quot;true&quot;,&quot;false&quot;)<br>\r\n<br>\r\nBut not on the Price<br>\r\n",
+    "PostedDate": "2009-03-23T06:15:09.86-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172101",
+    "ThreadId": "50185",
+    "Html": "There is an explicit conversion defined for double &lt;-&gt; decimal, so you could write the following:<br>\r\ncast(Object.Price, double) / Object.Cost<br>\r\nor<br>\r\nObject.Price / cast(Object.Cost, decimal)<br>\r\n<br>\r\nNullables also support an explicit conversion to their underlying type so the same trick would work.<br>\r\n",
+    "PostedDate": "2009-03-25T18:09:29.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "621662",
+    "ThreadId": "50185",
+    "Html": "<blockquote style=\"padding-bottom: 0px; font-style: italic; margin: 0.25em 1em 0px; padding-left: 0.25em; padding-right: 0.25em; padding-top: 0px; border: #ccc 0.1em solid;\"><strong>vivitron wrote:</strong><br />This is great... I was drawing out a problem on a piece of paper today and knew I needed an expression evaluator. <br /><br />Finding a good one is hard... My first thought was nVelocity, but it is so heavy I hated to use it (although I did test it).<br /><br />Then I found FLEE and I'm pretty well satisfied.&nbsp; <br /><br />There are a few things that have come out in testing though:<br /><ol>\r\n<li>Support for nullable types (Nullable.GetBaseType)? </li>\r\n<li>Support for decimals </li>\r\n</ol>If I can get the code to convert to c#, I might can add some of this myself.<br /><br />Once again, a great project!<br /><br />Thanks,<br />Dustin</blockquote>\r\n<p>I had the same issue today but I was able to make a change to the MemberElement class.&nbsp; Go to the GetMemebers function and change</p>\r\n<p>the return statement:</p>\r\n<p><br />Return MyPrevious.TargetType.FindMembers(targets, BindFlags, MyOptions.MemberFilter, MyName)</p>\r\n<p><br />TO:</p>\r\n<p><br />If Nullable.GetUnderlyingType(MyPrevious.TargetType) IsNot Nothing Then</p>\r\n<p>&nbsp; Return Nullable.GetUnderlyingType(MyPrevious.TargetType).FindMembers(targets, BindFlags, MyOptions.MemberFilter, MyName)</p>\r\n<p>Else</p>\r\n<p>&nbsp;Return MyPrevious.TargetType.FindMembers(targets, BindFlags, MyOptions.MemberFilter, MyName)</p>\r\n<p>End If</p>\r\n<p>--&nbsp;Shayne</p>",
+    "PostedDate": "2011-06-01T13:50:59.68-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "669088",
+    "ThreadId": "50185",
+    "Html": "<blockquote style=\"border: solid .1em #ccc; font-style: italic; margin: .25em 1em 0 1em; padding: 0 .25em 0 .25em;\"><strong>vivitron wrote:</strong><br /> I could omit the ToDouble(Object.Cost) in the below example:<br /> <br /> if(ToDouble(Object.Price)/ToDouble(Object.Cost) &lt; 1.49,\"true\",\"false\")<br /> <br /> But not on the Price<br /></blockquote>\r\n<p>Just in case it helps:</p>\r\n<p>You can use the 'm' suffix to get a literal decimal and avoid the cast, so ...&nbsp;&lt; 1.49m ...</p>\r\n<p>That defo works for me.</p>\r\n<p>Actually, while I'm here, setting this doesn't seem to work<br />context.Options.RealLiteralDataType = RealLiteralDataType.Decimal</p>\r\n<p>Not an issue as the 'm' works fine but thought I'd let you know.</p>\r\n<p>Cheers,</p>\r\n<p>Rob.</p>",
+    "PostedDate": "2011-09-08T06:44:05.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

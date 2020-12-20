@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Thanks for the marvelous library! Alas, I have an issue using it.\n\nCurrently the only way to add a function is to make it public static in a class. This prevents from passing runtime-dependent arguments in case several Flee engines are running. It'd be more flexible to allow adding instance methods (e.g. with MethodInfo and Object).",
+    "LastUpdatedDate": "2015-01-27T23:26:31.35-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2015-01-27T08:12:05.66-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Allow adding instance methods",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 17329
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Or even better, allow adding a delegate / lambda.",
+      "PostedDate": "2015-01-27T23:19:13.67-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Or even better, allow adding a delegate / lambda.",
+      "PostedDate": "2015-01-27T23:26:31.35-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

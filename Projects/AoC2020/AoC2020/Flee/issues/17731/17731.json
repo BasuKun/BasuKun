@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Certain expressions containing a long condition in an IF statement give an exception in BranchManager:\n```\nSystem.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.\nParameter name: index\n   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)\n   at System.Collections.Generic.List`1.get_Item(Int32 index)\n   at Ciloci.Flee.BranchManager.IsLongBranch(FleeILGenerator ilg, Label target) in D:\\Projects\\Flee\\Flee-0.9.26.0\\src\\Lib\\InternalTypes\\BranchManager.vb:line 112\n   at Ciloci.Flee.ConditionalElement.EmitConditional(FleeILGenerator ilg, IServiceProvider services, BranchManager bm) in D:\\Projects\\Flee\\Flee-0.9.26.0\\src\\Lib\\ExpressionElements\\Conditional.vb:line 84\n   at Ciloci.Flee.ConditionalElement.Emit(FleeILGenerator ilg, IServiceProvider services) in D:\\Projects\\Flee\\Flee-0.9.26.0\\src\\Lib\\ExpressionElements\\Conditional.vb:line 70\n   at Ciloci.Flee.RootExpressionElement.Emit(FleeILGenerator ilg, IServiceProvider services) in D:\\Projects\\Flee\\Flee-0.9.26.0\\src\\Lib\\ExpressionElements\\Root.vb:line 37\n   at Ciloci.Flee.Expression`1.Compile(String expression, ExpressionOptions options) in D:\\Projects\\Flee\\Flee-0.9.26.0\\src\\Lib\\InternalTypes\\Expression.vb:line 96\n   at Ciloci.Flee.Expression`1..ctor(String expression, ExpressionContext context, Boolean isGeneric) in D:\\Projects\\Flee\\Flee-0.9.26.0\\src\\Lib\\InternalTypes\\Expression.vb:line 58\n   at Ciloci.Flee.ExpressionContext.CompileDynamic(String expression) in D:\\Projects\\Flee\\Flee-0.9.26.0\\src\\Lib\\PublicTypes\\ExpressionContext.vb:line 186\n   at FleeTest.Program.CompileExpression(Object expressionOwner, String expression, Dictionary`2 variables) in D:\\Projects\\Test\\FleeTest\\FleeTest\\Program.cs:line 43\n   at FleeTest.Program.Evaluate[T](Object expressionOwner, String expression, Boolean defaultIfNull, Dictionary`2 variables) in D:\\Projects\\Test\\FleeTest\\FleeTest\\Program.cs:line 63\n   at FleeTest.Program.RunExpression(Program t, String expression, Dictionary`2 customExpressions) in D:\\Projects\\Test\\FleeTest\\FleeTest\\Program.cs:line 180\n```\nThis error was generated from the expression:\n```\nif(\\\"1\\\" in ( \\\"1\\\"; \\\"2\\\"; \\\"3\\\"; \\\"4\\\"; \\\"5\\\"; \\\"6\\\"; \\\"7\\\"; \\\"8\\\"; \\\"9\\\"; \\\"10\\\"; \\\"11\\\"; \\\"12\\\"; \\\"13\\\"; \\\"14\\\"; \\\"15\\\"; \\\"16\\\"; \\\"17\\\"; \\\"18\\\"; \\\"19\\\"; \\\"20\\\" ); \\\"Test\\\"; null)\n```\nA bit convoluted but we have seen these errors in production with real expressions.\n\nThe exception seems to be related to Flee being unable to figure out one of the endpoints at the time it tries to decide if we want a long or short branch. I've applied a work-around that defaults to a long branch if it can't find the endpoint. This isn't as efficient as a short jump but it also doesn't crash.",
+    "LastUpdatedDate": "2016-12-20T05:05:52.343-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2016-12-20T05:05:04.587-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Certain long if statements crash the compiler",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 17731
+  },
+  "FileAttachments": [
+    {
+      "FileId": 6183,
+      "FileName": "IsLongBranch issue.patch",
+      "DownloadUrl": ".\\6183"
+    }
+  ],
+  "Comments": []
+}

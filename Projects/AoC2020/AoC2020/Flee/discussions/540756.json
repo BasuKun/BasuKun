@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1228843",
+    "ThreadId": "540756",
+    "Html": "Hi All,\r<br />\n<br />\nWonderful utility.\r<br />\n<br />\nHowever I have a need to match against a string with a wildcard within it, so a Contains search will not work, so\r<br />\n<br />\n&quot;dog:cat:sheep&quot; as the input string to return true against &quot;dog*sheep&quot;\r<br />\n<br />\nI am not sure how to do the wildcard bit in FLEE, but I know I can use Regular Expressions, and it seems a nice way to extend FLEE's power.\r<br />\n<br />\nI import the type:<br />\n<pre><code>context.Imports.AddType(typeof(Regex)); // Regex is known via using statement in this file.\n</code></pre>\n\nThe rule that FLEE processes is:\r<br />\n<br />\nRegex.IsMatch(s, <a href=\"mailto:@&quot;dog.*sheep&quot;)\r\n\r\nwhere\" rel=\"nofollow\">@\"dog.*sheep\")\r\n\r\nwhere</a> s= &quot;dog:cat:sheep&quot;\r<br />\n<br />\nThis expression works outside FLEE fine.\r<br />\n<br />\nIs the above possible? \r<br />\n<br />\nAt present always get false. I have a feeling that the Regex.Ismatch is not working, basically crashing out in FLEE.\r<br />\n<br />\nThoughts appreciated.\r<br />\n<br />\nThanks,\r<br />\n<br />\nSam<br />\n",
+    "PostedDate": "2014-03-31T18:28:18.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

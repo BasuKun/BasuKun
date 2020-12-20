@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1308218",
+    "ThreadId": "568390",
+    "Html": "I've just used Flee to parse math functions to use for Simpson's Rule integration, just to see if I could get it to work. It turned out to be pretty simple and worked great. The code is in my comment at <a href=\"http://www.codeproject.com/Articles/334308/Numerical-Integration-with-Simpsons-Rule\" rel=\"nofollow\">http://www.codeproject.com/Articles/334308/Numerical-Integration-with-Simpsons-Rule</a>.\r<br />\n<br />\nOne thing to watch for is that Flee is written in VisualBasic.Net. VB is case insensitive while C# isn't. \r<br />\nSo something like IDynamicExpression eDynamic = context.CompileDynamic(&quot;sqrt(a)&quot;), like int the flee examples fails in c# , because the method there is Math.Sqrt. Same for other Math. methods, like Cos, Abs, etc.\r<br />\n<br />\nSo remember to capitalize if you are using c#.<br />\n",
+    "PostedDate": "2014-09-25T16:07:49.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "hi; i got this exception \"SyntaxError: Unexpected character: I Line: 1, Column: 1\" when i am using \"I\" charachter.\n\n```\n\n ExpressionContext EC = new ExpressionContext();\n //ectx.Options.ParseCulture = System.Globalization.CultureInfo.GetCultureInfo(\"en-US\");          \n            \n EC.Variables.Add(\"I\", 1);\nEC.Variables.Add(\"b\", 4);\nEC.Variables.Add(\"p\", new Point(0, 0, 0));\n           \n string exp = \"I > b\";\n            \nIDynamicExpression DE = EC.CompileDynamic(exp);\n\nbool o = (bool)DE.Evaluate();\n\n //SyntaxError: Unexpected character: I Line: 1, Column: 1\n\n```",
+    "LastUpdatedDate": "2014-04-09T06:15:21.98-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2014-04-09T05:50:34.857-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "SyntaxError: Unexpected character: I Line: 1, Column: 1",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 16803
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

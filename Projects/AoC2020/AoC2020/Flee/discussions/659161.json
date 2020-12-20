@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1487348",
+    "ThreadId": "659161",
+    "Html": "Hi,\r<br />\n<br />\nDo you have a full list of the functions available to the parser?  The list in the documentation and the list on the codeplex page are missing quite a few: sin, cos, tan, log and so on.  I've managed to guess quite a few but i can imagine there are others I can't guess.  Would be very helpful to have a full list.\r<br />\n<br />\nMany thanks.\r<br />\n<br />\nTim<br />\n",
+    "PostedDate": "2016-11-03T09:46:37.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1488215",
+    "ThreadId": "659161",
+    "Html": "There is a code snippet here that will print out the functions in flee.\r<br />\n<br />\n<a href=\"http://flee.codeplex.com/discussions/21500\" rel=\"nofollow\">http://flee.codeplex.com/discussions/21500</a><br />\n",
+    "PostedDate": "2016-11-17T15:24:08.95-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

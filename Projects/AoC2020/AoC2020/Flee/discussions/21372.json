@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "71225",
+    "ThreadId": "21372",
+    "Html": "\r\nFirst of all, this is a great library.  I want to use Flee for a small project but I’m facing some problem.  This is want I want to achieve:<br />I have a CSV file with data from different channel:<br />Eg: <br />Speed, RPM, P1,P2,  …<br />100,2500, 34, 657<br />110,2700,45, 56<br />…<br />I have another file that contains the definition of my equation<br />Eg: <br />Ch1 = Speed * P1 / P2<br />Ch2 = RPM * P3<br />…<br />My application load the equation definition and then I need to detect what will be the variables.  I would like to be able to pre-evaluate the equation to be able to detect the variable.<br />Eg: <br />If my application read the equation ch1=Speed*P1/P2 then Flee will be able to tell me that my variables are Speed, P1 and P2.  After that I will be able to load those values from the data file and evaluate them with Flee.<br />After that I will do something like<br /><br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\nExpressionContext MyContext2 = new ExpressionContext();\r\nMyContext2.Imports.ImportStaticMembers(typeof(System.Math));\r\nMyContext2.Imports.ImportStaticMembers(typeof(CustomFunctions));\r\n                        \r\nMyContext2.Variables[\"Speed\"] = SpeedArray[0];\r\nMyContext2.Variables[\"P1\"] P1Array[P1];\r\nMyContext2.Variables[\"P2\"] P2Array[P1];\r\n \r\nIGenericExpression&lt;double&gt; eGeneric = ExpressionFactory.CreateGeneric&lt;double&gt;(\" Speed*P1/P2\", MyContext2);\r\nfor (int i = 0; i &lt; SpeedArray.Length(); i++)\r\n{\r\n    MyContext2.Variables[\"Speed\"] = SpeedArray[0];\r\n    MyContext2.Variables[\"P1\"] P1Array[P1];\r\n    MyContext2.Variables[\"P2\"] P2Array[P2];\r\n \r\n    Ch1[i] = eGeneric.Evaluate();\r\n}\r\n</pre>",
+    "PostedDate": "2008-02-01T06:19:50.03-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "71259",
+    "ThreadId": "21372",
+    "Html": "\r\nI think you can use <a href=\"http://www.codeplex.com/Flee/Wiki/View.aspx?title=OnDemandVariables\">on demand</a> variables to solve your problem.  Basically, Flee will raise an event every time it encounters a variable that isn't in the VariableCollection of the expression.  Inside the event, you have access to the variable's name and type.  You can then lookup its value, set it on the event arguments, and flee will use the value when evaluating the expression.<br />",
+    "PostedDate": "2008-02-01T09:21:56.613-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

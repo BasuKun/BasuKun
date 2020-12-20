@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have a formula : E or (A And (B Or C Or D))\nAnd  I pass boolean values to all parameters\nBut I get a expressionCompile exception and an indication that a double and a boolean cannot be evaluated.\n\n{\"AndOrElement: Operation 'Or' is not defined for types 'Double' and 'Boolean'\"}\nTypeMismatch\n\n   at Ciloci.Flee.ExpressionElement.ThrowCompileException(String messageKey, CompileExceptionReason reason, Object[] arguments)\n   at Ciloci.Flee.BinaryExpressionElement.ThrowOperandTypeMismatch(Object operation, Type leftType, Type rightType)\n   at Ciloci.Flee.BinaryExpressionElement.ValidateInternal(Object op)\n   at Ciloci.Flee.BinaryExpressionElement.Configure(ExpressionElement leftChild, ExpressionElement rightChild, Object op)\n   at Ciloci.Flee.BinaryExpressionElement.CreateElement(IList childValues, Type elementType)\n   at Ciloci.Flee.FleeExpressionAnalyzer.AddBinaryOp(Production node, Type elementType)\n   at Ciloci.Flee.FleeExpressionAnalyzer.ExitOrExpression(Production node)\n   at Ciloci.Flee.ExpressionAnalyzer.Exit(Node node)\n   at Ciloci.Flee.PerCederberg.Grammatica.Runtime.Parser.ExitNode(Node node)\n   at Ciloci.Flee.PerCederberg.Grammatica.Runtime.RecursiveDescentParser.ParseAlternative(ProductionPatternAlternative alt)\n   at Ciloci.Flee.PerCederberg.Grammatica.Runtime.RecursiveDescentParser.ParsePattern(ProductionPattern pattern)\n   at Ciloci.Flee.PerCederberg.Grammatica.Runtime.RecursiveDescentParser.ParseElement(Production node, ProductionPatternElement elem)\n   at Ciloci.Flee.PerCederberg.Grammatica.Runtime.RecursiveDescentParser.ParseAlternative(ProductionPatternAlternative alt)\n   at Ciloci.Flee.PerCederberg.Grammatica.Runtime.RecursiveDescentParser.ParsePattern(ProductionPattern pattern)\n   at Ciloci.Flee.PerCederberg.Grammatica.Runtime.RecursiveDescentParser.ParseElement(Production node, ProductionPatternElement elem)\n   at Ciloci.Flee.PerCederberg.Grammatica.Runtime.RecursiveDescentParser.ParseAlternative(ProductionPatternAlternative alt)\n   at Ciloci.Flee.PerCederberg.Grammatica.Runtime.RecursiveDescentParser.ParsePattern(ProductionPattern pattern)\n   at Ciloci.Flee.PerCederberg.Grammatica.Runtime.RecursiveDescentParser.ParseStart()\n   at Ciloci.Flee.PerCederberg.Grammatica.Runtime.Parser.Parse()\n   at Ciloci.Flee.ExpressionContext.DoParse()\n   at Ciloci.Flee.ExpressionContext.Parse(String expression, IServiceProvider services)\n   at Ciloci.Flee.Expression`1.Compile(String expression, ExpressionOptions options)\n   at Ciloci.Flee.Expression`1..ctor(String expression, ExpressionContext context, Boolean isGeneric)\n   at Ciloci.Flee.ExpressionContext.CompileGeneric[TResultType](String expression)\n   at ICeTechControlLibrary.Converters.BoolExpressionConverter.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture) in c:\\Users\\stuyckp\\Documents\\Visual Studio 2013\\Projects\\WPF\\ICeTechControlLibrary\\ICeTechControlLibrary\\Converters\\ExpressionConverter.cs:line 27\n   at System.Windows.Data.MultiBindingExpression.TransferValue()\n   at System.Windows.Data.MultiBindingExpression.Transfer()\n   at System.Windows.Data.MultiBindingExpression.UpdateTarget(Boolean includeInnerBindings)\n   at System.Windows.Data.MultiBindingExpression.AttachToContext(Boolean lastChance)\n   at System.Windows.Data.MultiBindingExpression.MS.Internal.Data.IDataBindEngineClient.AttachToContext(Boolean lastChance)\n   at MS.Internal.Data.DataBindEngine.Task.Run(Boolean lastChance)\n   at MS.Internal.Data.DataBindEngine.Run(Object arg)\n   at MS.Internal.Data.DataBindEngine.OnLayoutUpdated(Object sender, EventArgs e)\n   at System.Windows.ContextLayoutManager.fireLayoutUpdateEvent()\n   at System.Windows.ContextLayoutManager.UpdateLayout()\n   at System.Windows.ContextLayoutManager.UpdateLayoutCallback(Object arg)\n   at System.Windows.Media.MediaContext.InvokeOnRenderCallback.DoWork()\n   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()\n   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)\n   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)\n   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)\n   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)",
+    "LastUpdatedDate": "2016-06-26T09:05:45.957-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2016-06-26T09:05:45.957-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Logical operation gives expressionCompile Exception",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 17684
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

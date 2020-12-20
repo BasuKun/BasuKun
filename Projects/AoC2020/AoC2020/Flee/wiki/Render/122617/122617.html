@@ -1,0 +1,55 @@
+<div class="wikidoc"><b>Using an expression owner</b><br /><br />An expression can optionally be attached to a class.  The class to which the expression is attached to is called the expression owner.  Once attached, an expression behaves like an instance method of the owner class and thus has access to all of its static, instance, public and non-public members.<br /><br />The main advantages of using an expression owner are:
+<ul><li>You can reference the owner&#39;s instance members</li>
+<li>Accessing fields and properties is faster than using variables</li>
+<li>You can access private members without the performance hit of reflection</li>
+<li>The owner class does not have to be public</li>
+<li>You can change the instance of the owner after an expression is compiled, thus allowing you to change the &quot;context&quot; of an expression</li>
+<li>An expression with an owner can also access the public members of internal types that are in the same module as the owner</li></ul>
+<br />We define a class which we will use as the expression owner:<br /><br /><pre>
+class ExpressionOwner
+{
+   private int MyField;
+        
+   public int Func(int i)
+   {
+      return i;        
+   }
+
+   public void SetFieldValue(int value)
+   {
+      MyField = value;
+   }
+
+   public int Property
+   {
+      get { return 100; }
+   }
+}
+</pre><br /><br />We can now define an expression, pass our class as the owner, and reference its members in the expression:<br /><br /><pre>
+ExpressionOwner owner = new ExpressionOwner();
+ExpressionContext context = new ExpressionContext(owner);
+// Allow access to private members
+context.Options.OwnerMemberAccess = System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic;
+
+// Create an expression and pass in our owner
+IDynamicExpression e = context.CompileDynamic(&quot;func(myfield + Property) + 100&quot;);
+object o = e.Evaluate();
+
+// Create another instance of the owner
+ExpressionOwner owner2 = new ExpressionOwner();
+owner2.SetFieldValue(16);
+// Set it on the expression
+e.Owner = owner2;
+
+// Re-evaluate
+o = e.Evaluate(); 
+</pre><br /><br /><b>Controlling owner member access</b><br /><br />By default, an expression will only allow access to the public members of its owner.  You can use the <span class="codeInline">ExpressionOptions.OwnerMemberAccess</span> property to grant/deny access to the public and non-public members of the owner.<br /><br />In case you need more fine-grained control, you can use the <span class="codeInline">ExpressionOwnerMemberAccessAttribute</span> to explicitly set the accessibility of  fields, properties, and methods on the owner.  The setting in the attribute overrides the setting in the <span class="codeInline">ExpressionOptions</span>.  This means that you can deny access to all non-public members <b>but</b> allow access to a specific non-public member by tagging it with the attribute.<br /><br />For example, the function &quot;Func1&quot; in the following class will never be accessible in an expresssion because the false setting on the attribute will override the setting in the ExpressionOptions:<br /><br /><pre>
+class ExpressionOwner
+{
+        [ExpressionOwnerMemberAccess(false)]
+        public int Func1()
+        {
+
+        }  
+}
+</pre><br /></div><div class="ClearBoth"></div>

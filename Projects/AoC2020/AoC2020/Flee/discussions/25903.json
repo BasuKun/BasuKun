@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "86697",
+    "ThreadId": "25903",
+    "Html": "\r\nHi Eugene,<br /><br />I am writting an Formula Solver  with Flee, that it's calling in two modes:<br /><br />A) From an desktop aplication <br />B) From an wrapper CLR Function (MS SQL Server 2005)<br /><br />work fine!! but...<br /><br />in mode \"A\"  the separator list arguments of functions must be \",\" (comma)  however for mode \"B\" the separator list arguments of functions must be \";\" (dot and comma)  ?? <br /><br />My regional setting it's \",\" for separator lists .<br /><br />Help!!<br /><br /><br />",
+    "PostedDate": "2008-04-14T07:15:00.687-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "86782",
+    "ThreadId": "25903",
+    "Html": "\r\nHi Eugene,<br /><br />I have set culture settings , with:<br /><br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\nCultureInfo ci = new CultureInfo(\"fr-FR\");\r\nci.NumberFormat.NumberDecimalSeparator = \".\";\r\nci.TextInfo.ListSeparator = \";\";\r\nci.DateTimeFormat.DateSeparator = \"/\";\r\nci.DateTimeFormat.ShortDatePattern = \"dd/MM/yyyy\"; \r\n \r\nExpressionFactory.SetParseCulture(ci);\r\n \r\n</pre><br />It's the correct procedure?<br />",
+    "PostedDate": "2008-04-14T16:18:12.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "86791",
+    "ThreadId": "25903",
+    "Html": "\r\nBy default, Flee will use the current culture on the thread to create its parser.  When using the SetParseCulture method, Flee will re-create the parser using the given culture.  The re-created parser will use the <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">CultureInfo.NumberFormat.NumberDecimalSeparator</span> as the decimal point and <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">CultureInfo.TextInfo.ListSeparator</span> as the function argument separator.  If both separators are the same (ie: \",\"), then it will use \",\" and \";\" respectively.<br />",
+    "PostedDate": "2008-04-14T18:56:08.81-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "902565",
+    "ThreadId": "25903",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>Wondering if your wrapped CalculationEngine. When i tried to do it, seems like the Dictionary objects in CalculationEngine are getting corrupted. I get NULL Value exception&nbsp;in &nbsp;CalculationEngine.Add method.</p>\r\n<p>Siva</p>\r\n",
+    "PostedDate": "2012-08-22T08:03:02.023-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "902690",
+    "ThreadId": "25903",
+    "Html": "<p>Hi,</p>\r\n<p>Wondering if your wrapped CalculationEngine. When i tried to do it, seems like the Dictionary objects in CalculationEngine are getting corrupted. I get NULL Value exception&nbsp;in &nbsp;CalculationEngine.Add method.</p>\r\n<p>Siva</p>",
+    "PostedDate": "2012-08-22T13:21:47.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

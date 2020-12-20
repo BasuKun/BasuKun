@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "480708",
+    "ThreadId": "223630",
+    "Html": "Hi Eugine, <br><br>\r\n\r\nMy approach in using FLEE is by On-demand variables. However during variable type resolution it requires me to specify the type :<br><br>\r\n<b>\r\nstatic void variables_ResolveVariableType(object sender, ResolveVariableTypeEventArgs e)<br>\r\n{<br>\r\n   &emsp; // Make all variables Doubles<br>\r\n   &emsp; e.VariableType = typeof(double);<br>\r\n}<br><br>\r\n</b>\r\n\r\nNow since conditional statement supports strings, then this would create problem if we use the following formulas:<br><br>\r\n\r\n  &emsp;<b> if (var1=&quot;One&quot;, result+1, result+2)<br><br></b>\r\n\r\nConsider   <b>var1</b> is expected to be a string, <b>result</b> is expected to be a double<br><br>\r\n\r\nQuestion : How can we dynamically give the <b>e.VariableType</b> during resolution of variable type?<br>\r\n<i>(so that var1 will be automatically identified as a string type and result is identified as double.)<br><br></i>\r\n\r\n<b>Thanks in advance</b>\r\n",
+    "PostedDate": "2010-08-15T09:06:15.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

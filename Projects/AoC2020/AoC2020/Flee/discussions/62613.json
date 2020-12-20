@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "212511",
+    "ThreadId": "62613",
+    "Html": "<p>Hi,</p>\r\n<p>I am using the following code in flee version 0.9.18.0 to evaluate string expressions passed to&nbsp;a function:</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; poExpContext = New ExpressionContext<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; poExpOptions = poExpContext.Options</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; poExpOptions.ResultType = GetType(Double)</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; poExpContext.Imports.AddType(GetType(Math))</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; poExp = ExpressionFactory.CreateGeneric(Of Double)(expression, poExpContext)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Evaluate = poExp.Evaluate</p>\r\n<p>I noticed&nbsp;a strange behaviour in the calculations:</p>\r\n<p>If I pass '8833 * 1016000 * 0.000023' it calculates 7687.86816</p>\r\n<p>If I pass '1.0 * 8833 * 1016000 * 0.000023' then it correctly calculates 179486.56</p>\r\n<p>The expressions are intended to be decimal/real calculations. Is there any way of forcing the engine to treat all numeric values as real?</p>\r\n<p>Or is there a fix in the later releases for this issue?</p>\r\n<p>Thanks</p>\r\n<p>Milesh</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-16T04:41:40.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "213251",
+    "ThreadId": "62613",
+    "Html": "<p>The product of the first two numbers is too large for an integer.&nbsp; This causes the product to overflow and product the incorrect result.</p>\r\n<p>You can use the context.Options.IntegersAsDoubles option to force the integer literals to be loaded as doubles.&nbsp; This produces the correct result of 206409.544.&nbsp; This option was put in in v0.9.24.0.</p>\r\n<p>You can also set the context.Options.Checked option to true so that integer overflows will cause an exception instead of being silently truncated.</p>",
+    "PostedDate": "2009-07-17T17:16:26.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "213727",
+    "ThreadId": "62613",
+    "Html": "<p>Many thanks for the support Eugene.</p>",
+    "PostedDate": "2009-07-20T02:17:19.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

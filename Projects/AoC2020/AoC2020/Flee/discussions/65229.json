@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "222176",
+    "ThreadId": "65229",
+    "Html": "<p>Hello,</p>\r\n<p>I have a situation where we create variables and equations in the admin section and variables will be set with the values when new proposal is created.</p>\r\n<p>&nbsp;For Eg: GEN1,GEN2,GEN3... will be created as boolean type and GEN4 = IF(GEN1=TRUE,1,2).</p>\r\n<p>As equations cannot be compiled with null values , I was setting&nbsp; boolean null variables with string &quot;BOOL&quot;. GEN1=\\&quot;BOOL\\&quot;,GEN2=\\&quot;BOOL\\&quot; and integers with 0. For integers I dont see any problem</p>\r\n<p>&nbsp;but for booleans when I use them in the equations like GEN4 = IF(GEN1=TRUE,1,2) its giving exception as string cannot be compared with boolean.</p>\r\n<p>Do you have any solution to solve the problem?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-11T12:34:55.017-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "223518",
+    "ThreadId": "65229",
+    "Html": "<p>try GEN4 = IF(GEN1==TRUE,1,2).</p>",
+    "PostedDate": "2009-08-14T07:31:47.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

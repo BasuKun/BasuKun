@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "537828",
+    "ThreadId": "238875",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>Suppose I have a class</p>\r\n<p>public class Animal</p>\r\n<p>{</p>\r\n<p>&nbsp;&nbsp; &nbsp; long Legs{</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;get; set;</p>\r\n<p>&nbsp;&nbsp; &nbsp;}</p>\r\n<p>}</p>\r\n<p>&nbsp;</p>\r\n<p>and I want to evaluate the expression &quot;animal.Legs == 2&quot; &nbsp;</p>\r\n<p>Is this possible with FLEE.</p>\r\n<p>Something like:</p>\r\n<p>Animal animal = new Animal();</p>\r\n<p>animal.Legs = 4;</p>\r\n<p>bool isBiped = Expression.Eval(&quot;animal.Legs == 2&quot;) ;</p>\r\n<p>Thanks!</p>\r\n<p>Aaron</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-12-18T18:17:20.553-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "537954",
+    "ThreadId": "238875",
+    "Html": "\r\n<p>Yes, it's possible; just read the documentation.</p>\r\n<p>FLEE's expression syntax is its own, similar to that of&nbsp;VB and the C languages, but identical to neither. In particlar, the expression you cited wouldn't evaluate, but &quot;animal.Legs = 2&quot; would.</p>\r\n",
+    "PostedDate": "2010-12-19T09:01:11.017-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "538075",
+    "ThreadId": "238875",
+    "Html": "Thanks, RichA. BTW, how does FLEE compare to embedding<br>\r\nIron Python? I am working with C#.",
+    "PostedDate": "2010-12-19T18:00:50.357-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

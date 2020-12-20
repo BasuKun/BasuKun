@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "516329",
+    "ThreadId": "233283",
+    "Html": "\r\n<p>Hi, great project!</p>\r\n<p>CalcEngine would fit perfectly to my needs.</p>\r\n<p>Test with a couple expressions however indicate that working aroung it manually</p>\r\n<p>using CompileGeneric&lt;T&gt; plus requiring natural order</p>\r\n<p>yields 6.6x speed improvement. EmitToIL shows boxing might be the reason. Does CalcEngine (BatchLoad) only use CompileDynamic under the hood and if so can this be fixed?</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2010-11-03T02:49:51.993-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

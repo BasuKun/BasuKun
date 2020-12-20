@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Library",
+      "DisplayName": "Library"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have specified the Owner property for the expression object, and the type of owner object has base type which is not Object. When I get the value of base type property, an runtime exception occurred. My related code is (C#):\npublic abstract class Constraint\n{\n        private string name = \"\";\n        public string Name\n        {\n            get { return name; }\n            set { name = value; }\n        }\n}\n \npublic class PrimaryKey : Constraint\n{\n}\n \nTemplate calculate code is:\nExpressionContext expressionContext = new ExpressionContext();\nexpressionContext.Options.StringComparison = StringComparison.InvariantCultureIgnoreCase;\nbool brs = ExpressionFactory.CreateGeneric<bool>(\"Name<>null\", new PrimaryKey(), expressionContext).Evaluate();\n \nWhen I was debugging into method ExpressionOptions.IsOwnerType(ByVal t As Type), I found that the value of Me.OwnerType is Constraint and t is PrimaryKey. So the IL code Ldarg_0 cannot be generated. And then I modified this method body to Return t.IsAssignableFrom(Me.OwnerType), It works well.",
+    "LastUpdatedDate": "2013-06-14T00:28:45.5-07:00",
+    "PlannedForRelease": "Flee-0.9.15.0",
+    "ReleaseVisibleToPublic": true,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2008-01-05T09:19:01.293-08:00",
+    "Status": {
+      "Name": "Resolved",
+      "Id": 7
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Owner base type property calling produce runtime error",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 3107
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Looks like a simple fix.  Thanks for reporting it.",
+      "PostedDate": "2008-01-08T19:50:30.33-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-01-11T20:48:56.547-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:54:06.47-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:24:08.47-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:24:08.613-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-06-14T00:28:45.5-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

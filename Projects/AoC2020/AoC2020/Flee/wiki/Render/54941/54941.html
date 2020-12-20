@@ -1,0 +1,50 @@
+<div class="wikidoc"><b>Basic Evaluation</b><br /><br />This page demonstrates the basic method of evaluating an expression.  You start by creating an &quot;expression owner&quot; class.  The expression will be attached to this class and will have access to <b>all</b> of its fields, properties, and methods.  You can also import static methods of other types into an expression.  Once the expression has been compiled, you obtain its Evaluator delegate and call it to get the expression&#39;s result.<br /><br /><pre>
+using ciloci.Flee;
+
+// The class that will host our expression&#39;s method
+class ExpressionOwner
+{
+    // This field will be accessible from the expression
+    public double X;
+
+    // so will this property
+    public int Prop
+    {
+        get { return 100; }
+    }
+
+    // as well as this function
+    public int Function()
+    {
+        return 200;
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {   
+        // Create the options to allow us to customize compilation
+        ExpressionOptions options = new ExpressionOptions();
+        // Import the Math class so we can use its functions
+        options.Imports.AddType(typeof(System.Math));
+        // Create the owner
+        ExpressionOwner owner = new ExpressionOwner();
+        owner.X = 16.0;
+
+        try
+        {
+            // Create the expression
+            Expression e = new Expression(&quot;sqrt(x)&quot;, owner, options);
+            // Get the delegate that allows us to evaluate the expression
+            ExpressionEvaluator&lt;double&gt; evaluator = (ExpressionEvaluator&lt;double&gt;)e.Evaluator;
+            // Call it to evaluate the expression
+            double result = evaluator();
+        }
+        catch (ExpressionCompileException e)
+        {
+            // This exception will be thrown if for any reason the expression cannot be compiled            
+        }
+    }
+}
+</pre></div><div class="ClearBoth"></div>

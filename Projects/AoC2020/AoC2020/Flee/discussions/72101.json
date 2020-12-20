@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "246067",
+    "ThreadId": "72101",
+    "Html": "<p>We use flee in our project. In our project, we have expressions with variables of nullable datatype. We get error when using flee to evaluate such expressions. For example, for expression (dtReportDate &gt;= DateTime.Parse(&quot;2008-11-01&quot;)), dtReportDate is a variable of type DateTime?(nullable datetime). When using flee to evaluate it, it reported error: Unhandled Exception: Ciloci.Flee.ExpressionCompileException: CompareElement: Operation 'GreaterThanOrEqual' is not defined for types 'Nullable'1' and 'DateTime'. Yet C# compiler has no problem to compile such nullable type.</p>\r\n<p>Is there a way to fix the parser in flee to solve this issue?</p>",
+    "PostedDate": "2009-10-15T07:46:14.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "621659",
+    "ThreadId": "72101",
+    "Html": "<p><strong><span style=\"font-family: Consolas; color: #707e77; font-size: x-small;\"><strong><span style=\"font-family: Consolas; color: #707e77; font-size: x-small;\"><strong><span style=\"font-family: Consolas; color: #707e77; font-size: x-small;\">\r\n<p>I had the same issue today but I was able to make a change to the MemberElement class.&nbsp; Go to the GetMemebers function and change</p>\r\n<p>the return statement:</p>\r\n<p>\r\n<p>\r\n<div>\r\n<div><span style=\"font-family: Consolas; color: #707e77; font-size: x-small;\">\r\n<div><span style=\"font-family: Consolas; color: #707e77; font-size: x-small;\">\r\n<div><span style=\"font-family: Consolas; color: #707e77; font-size: x-small;\">\r\n<p><span style=\"color: #000000;\">Return MyPrevious.TargetType.FindMembers(targets, BindFlags, MyOptions.MemberFilter, MyName)</span></p>\r\n<p><span style=\"color: #000000;\">TO:</span></p>\r\n</span></div>\r\n</span></div>\r\n</span></div>\r\n</div>\r\n</p>\r\n</p>\r\n<p>\r\n<p><span style=\"font-family: Consolas; color: #707e77; font-size: x-small;\">\r\n<p><span style=\"font-family: Consolas; color: #707e77; font-size: x-small;\">\r\n<p><span style=\"font-family: Consolas; color: #707e77; font-size: x-small;\">\r\n<p><span style=\"color: #000000;\">If Nullable.GetUnderlyingType(MyPrevious.TargetType) IsNot Nothing Then</span></p>\r\n</span></p>\r\n</span></p>\r\n</span></p>\r\n</p>\r\n<p><span style=\"color: #000000;\">&nbsp;&nbsp;Return Nullable.GetUnderlyingType(MyPrevious.TargetType).FindMembers(targets, BindFlags, MyOptions.MemberFilter, MyName)</span></p>\r\n<p><span style=\"color: #000000;\">Else</span><br /><span style=\"color: #000000;\"><br />&nbsp;Return MyPrevious.TargetType.FindMembers(targets, BindFlags, MyOptions.MemberFilter, MyName)<br /></span><br /><span style=\"color: #000000;\">End If</span></p>\r\n<strong><span style=\"font-family: Consolas; color: #707e77; font-size: x-small;\"><strong><span style=\"font-family: Consolas; color: #707e77; font-size: x-small;\"><strong><span style=\"font-family: Consolas; color: #707e77; font-size: x-small;\"><span style=\"color: #000000;\">﻿</span></span></strong></span></strong></span></strong></span></strong></span></strong></span></strong><span style=\"font-family: Consolas; color: #707e77; font-size: x-small;\"><span style=\"font-family: Consolas; color: #707e77; font-size: x-small;\"><span style=\"font-family: Consolas; color: #707e77; font-size: x-small;\">\r\n<p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"color: #000000;\">Good Luck.</span></p>\r\n</p>\r\n</span></span></span><span style=\"font-family: Consolas; color: #707e77; font-size: x-small;\"><span style=\"font-family: Consolas; color: #707e77; font-size: x-small;\"><span style=\"font-family: Consolas; color: #707e77; font-size: x-small;\">\r\n<p>\r\n<p><span style=\"font-family: Consolas; color: #707e77; font-size: x-small;\"><span style=\"font-family: Consolas; color: #707e77; font-size: x-small;\"><span style=\"font-family: Consolas; color: #707e77; font-size: x-small;\">﻿</span></span></span></p>\r\n</p>\r\n</span></span></span></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-06-01T13:49:21.373-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "982646",
+    "ThreadId": "72101",
+    "Html": "\r\n<p>The solution posted by spboyer doesn't seem to be working correctly for System.DateTime? (nullable System.DateTime).</p>\r\n",
+    "PostedDate": "2013-01-03T05:43:18.957-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1278804",
+    "ThreadId": "72101",
+    "Html": "This doesn't seem to work for me either. Has anyone found another way?<br />\n",
+    "PostedDate": "2014-07-29T08:58:16.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

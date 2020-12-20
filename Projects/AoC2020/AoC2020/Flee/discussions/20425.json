@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "67868",
+    "ThreadId": "20425",
+    "Html": "\r\nFirst of all, I like your program. It's very fast and easy to use. Maybe this is something I missed. Is there anyway you can do a boolean expression with \"contains\" operator? For example, if I pass in my datatype that contains a string[], can I do a \"contains\" check and returns a boolean value?<br />",
+    "PostedDate": "2008-01-14T12:44:37.873-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "68188",
+    "ThreadId": "20425",
+    "Html": "\r\nRight now, there is no contains operator.  I'm planning on putting one in in the next release.  I'm still debating what the syntax will look like (either \"var in (1, 2, 3)\" or \"in(a, 1, 2, 3)\").<br /><br />In the mean time, you can code a contains function and import it into the expression to get the same functionality:<br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\npublic static class CustomFunctions\r\n{\r\n   public static bool Contains(string[] arr, string value)\r\n   {\r\n       return System.Array.IndexOf(arr, value) != -1;\r\n   }\r\n}\r\n</pre><br />And then use it in an expression:<br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\nExpressionContext context = new ExpressionContext();\r\ncontext.Imports.ImportStaticMembers(typeof(CustomFunctions));\r\ncontext.Variables.Add(\"arr\", new string[] {\"a\", \"b\", \"c\"});\r\ncontext.Variables.Add(\"value\", \"flee!\");\r\n \r\nIDynamicExpression e = ExpressionFactory.CreateDynamic(\"contains(arr, value)\", context);\r\nbool result = (bool)e.Evaluate();\r\n</pre>",
+    "PostedDate": "2008-01-15T20:25:27.41-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "71979",
+    "ThreadId": "20425",
+    "Html": "\r\nThe In operator is implemented in <a href=\"http://www.codeplex.com/Flee/Release/ProjectReleases.aspx?ReleaseId=10470\">Flee-0.9.16.0</a>.  You can find the documentation <a href=\"http://www.codeplex.com/Flee/Wiki/View.aspx?title=LanguageReference&amp;ANCHOR#InOperator\">here</a><br />",
+    "PostedDate": "2008-02-05T19:34:01.933-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

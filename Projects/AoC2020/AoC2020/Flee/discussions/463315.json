@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1111260",
+    "ThreadId": "463315",
+    "Html": "Hello, \r<br />\nI have a simple question, but don't know if the answer is simple.\r<br />\n<br />\nConsider the following expression:\r<br />\nIDynamicExpression e = ruleContext.CompileDynamic(&quot;x + 2*x.value + x.multiply(2)&quot;);\r<br />\n<br />\nx will be defined as an object, with properties and functions.\r<br />\n<br />\nI would like to:<br />\n<ul>\n<li>be able to type only &quot;x&quot; -&gt; then I would like to use x.value</li>\n<li>\nbe able to use properties : x.value, or functions x.multiply(10)<br />\n</li>\n</ul>\nMy question <br />\n<ul>\n<li>In this case, the call to &quot;x&quot; does not work, as x is an object.</li>\n<li>\nIs there a way to make it work with a trick in the code, or should I make a REGEX query that would modify all &quot;x&quot; to &quot;x.value&quot; (may be tricky as x can have many names) ?<br />\n</li>\n</ul>\nI send the code in a 2nd post<br />\n",
+    "PostedDate": "2013-10-23T13:46:21.43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1111261",
+    "ThreadId": "463315",
+    "Html": "complete code:<br />\n<br />\n<br />\nruleContext = new ExpressionContext();<br />\nruleContext.Imports.AddType(typeof(FleeVariable));<br />\nruleContext.Variables.ResolveVariableType += new EventHandler&lt;ResolveVariableTypeEventArgs&gt;(Variables_ResolveVariableType);<br />\n<br />\nIDynamicExpression e = ruleContext.CompileDynamic(&quot;x + 2*x.value + x.multiply(2)&quot;);<br />\n<br />\ncalcRule.ruleContext.Variables[&quot;x&quot;] = new FleeVariable(10);<br />\n<br />\nint test = e.evaluate()<br />\n<br />\n<br />\nprivate void ResolveVariableType(object sender, ResolveVariableTypeEventArgs e)<br />\n{<br />\n<pre><code>e.VariableType = typeof (FleeVariable);</code></pre>\n\n}<br />\n<br />\npublic class FleeVariable<br />\n{<br />\n<pre><code>public int value;\npublic FleeVariable(int val)\n{\n    this.value = val;\n}\n\npublic double multiply(double a)\n{\n    return a * this.value;\n}</code></pre>\n\n}<br />\n",
+    "PostedDate": "2013-10-23T13:46:37.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1111319",
+    "ThreadId": "463315",
+    "Html": "you could just overload operator on your class<br />\n",
+    "PostedDate": "2013-10-23T16:47:36.223-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

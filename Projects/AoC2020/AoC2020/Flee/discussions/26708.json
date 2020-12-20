@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "89364",
+    "ThreadId": "26708",
+    "Html": "\r\nI am interested in other's suggestions on how to implement scoping for a collection of expressions.  A simple example of what I am talking about is how one can reference cells in other worksheets using MS Excel.  If I am in 'Sheet 1' I can reference cell A3 in 'Sheet 2' by typing ='Sheet 2'!A3.  If you think of each worksheet as a collection of expressions and each cell as an expression, it's not much different than Flee.<br /><br />In Flee, my thoughts are that you can get the same affect using a collection of CalcEngine classes, then extend the resolve events to grab results between the CalcEngines.  Of course, I could be over thinking this or there may already be functionality in the library that can do this. Let me know what you all think.<br />",
+    "PostedDate": "2008-04-28T07:07:20.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Library",
+      "DisplayName": "Library"
+    },
+    "ClosedComment": "The CreateDynamic method creates an expression which evaluates to an Object.  So the expression's result type is \"Dynamic\" as in it is not fixed as is the case with a generic expression.\n\nFlee itself is statically typed: It always needs to know the types of things in an expression.  If you want to be able to use variables without first defining them, you should look at \"on-demand\" variables (see the examples page).  Hook the Resolve events on the variable collection.  Flee will raise the events when it needs the types and values for each variable it encounters.",
+    "ClosedDate": "2008-11-30T15:45:09.62-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Okay,\n \nI have an express x+5 and x is not defined so when using the following code \n \nIDynamicExpression d = ExpressionFactory.CreateDynamic(strFormula, m_context);\n \nI get the following exception:\n \n\"ArithmeticOperator: Operation 'Add' is not defined for types 'Object' and 'Int32'\"\n \nNow if I predefine x and add it to m_context then it works fine.  Is there anyway to support dynamic varible creation if a variable does not already exist?\n \nbrian",
+    "LastUpdatedDate": "2013-05-16T04:24:07.5-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2008-07-02T11:55:14.947-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Create Dynamic",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 5480
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I have not heard any response in regards to the above issue?  I would think the CreateDynamic should support creting the variable required otherwise why would you have a CreateDynamic function.\r\n\r\nbrian",
+      "PostedDate": "2008-09-05T08:32:19.947-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-11-30T15:41:00.54-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-11-30T15:45:09.62-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:54:05.607-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:24:07.5-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

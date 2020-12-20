@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "172516",
+    "ThreadId": "51450",
+    "Html": "<p>I have created my own class to handle operations with complex numbers, but I have no idea how to override ^ operatior since it has been linked to Math.Pow method that doesn't accept anything except doubles.</p>\r\n<p>In my opinion, the ArithmeticElement should try to find any suitable &quot;power&quot; method before it raises an exception.</p>\r\n",
+    "PostedDate": "2009-03-26T14:26:10.89-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172599",
+    "ThreadId": "51450",
+    "Html": "Flee supports an overloaded power operator.&nbsp; The problem is that overloading that operator is only supported by VB.NET and IL; I don't know how you'd overload it in C#.<br>\r\n<br>\r\nFor example, the following expression will compile:<br>\r\n<pre>Public Class Complex<br>\tPublic Shared Operator ^(ByVal a As Complex, ByVal b As Complex) As Integer<br>\t\tReturn 100<br>\tEnd Operator<br>End Class<br><br>Dim context As New ExpressionContext()<br>context.Variables.Add(&quot;a&quot;, New Complex())<br>context.Variables.Add(&quot;b&quot;, New Complex())<br>Dim e As IDynamicExpression = context.CompileDynamic(&quot;a ^ b&quot;)</pre>\r\n",
+    "PostedDate": "2009-03-26T19:24:33.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172614",
+    "ThreadId": "51450",
+    "Html": "Actually, it turns out there's an indirect way to define an overloaded power operator in C#.&nbsp; The key is to put the SpecialName attribute onto a correctly named method:<br>\r\n<pre>public class Complex<br>{<br>        static void Main(string[] args)<br>        {<br>            ExpressionContext context = new ExpressionContext();<br>            context.Variables.Add(&quot;a&quot;, new Complex());<br>            context.Variables.Add(&quot;b&quot;, new Complex());<br><br>            IDynamicExpression e = context.CompileDynamic(&quot;a ^ b&quot;);<br>            object result = e.Evaluate();<br>        }<br><br>        [System.Runtime.CompilerServices.SpecialName()]<br>        public static int op_Exponent(Complex a, Complex b)<br>        {<br>            return 100;<br>        }<br>}</pre>\r\n",
+    "PostedDate": "2009-03-26T20:04:27.717-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172667",
+    "ThreadId": "51450",
+    "Html": "Thanks, Eugene!\r\n",
+    "PostedDate": "2009-03-27T01:44:46.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

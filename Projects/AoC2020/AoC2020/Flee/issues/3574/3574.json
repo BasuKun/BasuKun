@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Library",
+      "DisplayName": "Library"
+    },
+    "ClosedComment": "-Fixed in 0.9.17.1",
+    "ClosedDate": "2008-02-20T19:11:41.153-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Type 'Ciloci.Flee.ExpressionCompileException' in assembly 'Cicoli.Flee, Version=0.9.16.0, ...' is not marked serializable.  Please just add the attribute to all custom exceptions.  Thanks!",
+    "LastUpdatedDate": "2013-05-16T04:24:08.15-07:00",
+    "PlannedForRelease": "Flee-0.9.17.1",
+    "ReleaseVisibleToPublic": true,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2008-02-11T22:13:56.333-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Mark all custom exceptions as [serializable]",
+    "Type": {
+      "Name": "Task",
+      "Id": 2
+    },
+    "VoteCount": 1,
+    "Id": 3574
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Excellent, thanks for fixing this!!",
+      "PostedDate": "2008-02-23T20:34:40.077-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:54:06.13-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:24:08.15-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

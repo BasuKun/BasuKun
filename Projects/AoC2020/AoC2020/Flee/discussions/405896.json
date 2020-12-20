@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "952607",
+    "ThreadId": "405896",
+    "Html": "\r\n<p>Hi. Is FLEE able to run on iOS (via MonoTouch)?</p>\r\n<p>Thanks,&nbsp;Gareth.</p>\r\n",
+    "PostedDate": "2012-12-06T15:35:47.277-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "952747",
+    "ThreadId": "405896",
+    "Html": "\r\n<p>Hi Gareth.</p>\r\n<p>From what i know, Code Generation is not allowed by the iOS kernel, because of that MonoTouch doesn't include/support the Reflection.Emit namespace of .NET that flee heavily relies on.</p>\r\n<p>http://docs.xamarin.com/ios/about/limitations - see the &quot;No Dynamic Code Generation&quot; section.</p>\r\n<p>Flee will not work.</p>\r\n",
+    "PostedDate": "2012-12-07T00:04:57.883-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "954175",
+    "ThreadId": "405896",
+    "Html": "\r\n<p>Thanks very much potpockey.</p>\r\n",
+    "PostedDate": "2012-12-10T13:14:38.45-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

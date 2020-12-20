@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "91892",
+    "ThreadId": "27545",
+    "Html": "I want to extend Math class with simple function. My code look like:<br>\r\n<span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\"><br>\r\nnamespace </span></span><span style=\"font-size:13px\">MyNamespace<br>\r\n{<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">        public</span></span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">static</span></span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">class</span></span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">BHMath<br>\r\n</span></span><span style=\"font-size:13px\">         {<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">             public</span></span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">static</span></span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">double</span></span><span style=\"font-size:13px\"> PDiv(</span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">double</span></span><span style=\"font-size:13px\"> a1, </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">double</span></span><span style=\"font-size:13px\"> a2)<br>\r\n                        {<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">                            if</span></span><span style=\"font-size:13px\"> (a2 == 0)<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">                               return</span></span><span style=\"font-size:13px\"> 1.00;<br>\r\n                            </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">else<br>\r\n                               </span></span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">return</span></span><span style=\"font-size:13px\"> a1/a2;<br>\r\n                          }<br>\r\n         }<br>\r\n}<br>\r\n<br>\r\nThen code looks like:<br>\r\n<br>\r\n1: ExpressionContext context = new ExpressionContext();<br>\r\n2: context.Imports.AddType(typeof(<span style=\"font-size:13px;color:#2b91af\">BHMath</span>));<br>\r\n3: context.Variables.Add(&quot;a1&quot;, 1.0);<br>\r\n4: context.Variables.Add(&quot;a2&quot;, 2.0);<br>\r\n<br>\r\n5: IDynamicExpression e = ExpressionFactory.CreateDynamic(&quot;PDiv(a1,a2)&quot;, context); <br>\r\n6: double result = (double) e.Evaluate();<br>\r\n<br>\r\nException occurs IN LINE 5: <span style=\"font-size:13px\">-  Syntax Error: unexpected character ',', on line: 1 column: 9</span><br>\r\n<br>\r\nplease help !<br>\r\n<br>\r\nthank you.<br>\r\n<p> </p>\r\n<p> </p>\r\n</span>\r\n<p> </p>\r\n<p> </p>\r\n<p> </p>\r\n",
+    "PostedDate": "2008-05-12T05:24:40.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "91894",
+    "ThreadId": "27545",
+    "Html": "Sorry, this is culture issue. I found the solution in issue tracker.<br>\r\nthank you \r\n",
+    "PostedDate": "2008-05-12T05:32:45.29-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

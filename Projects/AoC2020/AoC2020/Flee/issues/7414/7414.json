@@ -1,0 +1,80 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Library",
+      "DisplayName": "Library"
+    },
+    "ClosedComment": "Not a bug",
+    "ClosedDate": "2009-04-25T18:50:02.187-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "This is a great library, but I ran into an issue where greater than, less than fail for DateTime values.\n \n            ExpressionContext ec = new ExpressionContext();\n            ec.Variables.Add(\"o\", new DateTime(2009, 4, 10) );\n            IGenericExpression<bool> e = ec.CompileGeneric<bool>(\"o >= #04/08/2009#\");\n            Assert.IsTrue(e.Evaluate());\n \nI had to get it working by using this syntax\n \n            ExpressionContext ec = new ExpressionContext();\n            ec.Variables.Add(\"o\", new DateTime(2009, 4, 10));\n            IGenericExpression<bool> e = ec.CompileGeneric<bool>(\"o.Year = 2009 And o.Month >= 4 And o.Day >= 8\");\n            Assert.IsTrue(e.Evaluate());",
+    "LastUpdatedDate": "2013-05-16T04:24:05.967-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2009-04-01T20:05:40.933-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DateTime evaluation fails",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 7414
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I think the problem is that, by default, date literals are interpreted as dd/MM/yyyy.  This makes #04/08/2009# become August 4, 2009.\r\n\r\nIf you change the format for date literals like so:\r\nExpressionContext ec = new ExpressionContext();\r\nec.ParserOptions.DateTimeFormat = \"MM/dd/yyyy\";\r\n\r\nthen the expression correctly evaluates to true.",
+      "PostedDate": "2009-04-03T08:15:28.12-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Would it be difficult to change the default format to the System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.ShortDateFormat ?\r\n\r\nEither way, I'll fix my code. Thanks for replying and thanks for a great library.",
+      "PostedDate": "2009-04-04T09:24:03.797-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": ">Would it be difficult to change the default format to the System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.ShortDateFormat ?\r\nI've made the other syntax customization properties have to be explicitly set, so making the format implicit to the current culture would make things inconsistent.",
+      "PostedDate": "2009-04-07T19:25:06.15-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Nevermind.  Due to some other bug fixes, I've made the default format for date literals be the short date format of the current culture.  The change is in v0.9.25.0.",
+      "PostedDate": "2009-04-25T18:49:16.187-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-25T18:49:50.517-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-25T18:50:02.187-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:54:04.213-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:24:05.967-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

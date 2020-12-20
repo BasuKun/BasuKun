@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1220106",
+    "ThreadId": "538238",
+    "Html": "Hi all,\r<br />\n<br />\nWonderful utility... so well done.\r<br />\n<br />\nAt present I use the variables collection to just store a string:\r<br />\n<br />\nvariables[&quot;a&quot;]= &quot;Hot&quot;\r<br />\n<br />\nso a=&quot;Hot&quot; would return true.\r<br />\n<br />\nHowever could I set up a variable of type object ie:\r<br />\n<br />\nvariables[&quot;a&quot;] = myobject;\r<br />\n<br />\nSo the rule could be:\r<br />\n<br />\nmyobject.value = &quot;Hot&quot;\r<br />\n<br />\nand taking this further, could one use this to access linked objects from EF like so:\r<br />\n<br />\na.Order.Supplier.Name = &quot;Microsoft&quot;;\r<br />\n<br />\nThoughts really appreciated, and thanks in advance for any help.\r<br />\n<br />\nEd<br />\n",
+    "PostedDate": "2014-03-06T15:58:41.087-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1337033",
+    "ThreadId": "538238",
+    "Html": "Hi ESSB,<br />\n<br />\nWe can set any object to flee variable. Please refer below code <br />\n<br />\nExpressionContext context = new ExpressionContext();<br />\ncontext.Variables.Add(&quot;xyz&quot;, new MyClass {Name = &quot;shiv&quot;});<br />\nvar expression = &quot;xyz.Name.equals(\\&quot;shiv\\&quot;)&quot;;<br />\nIGenericExpression&lt;bool&gt; e = context.CompileGeneric&lt;bool&gt;(expression);<br />\nbool result = e.Evaluate();<br />\n<br />\n&amp; a class<br />\n<br />\npublic class MyClass<br />\n<pre><code>{\n    public string Name { get; set; }\n}\n\n</code></pre>\n\nshiv<br />\n",
+    "PostedDate": "2014-12-24T09:03:38.063-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

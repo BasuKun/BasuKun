@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1021514",
+    "ThreadId": "438098",
+    "Html": "Hi,\r<br />\n<br />\nNew here, so hi.\r<br />\n<br />\nExcellent project.\r<br />\n<br />\nGot it working in MVC3, .NET4. C# environment to test rules against class objects. Looks good.\r<br />\nHowever I have found an issue, and that is I need to validate the expression to check it can compile before evaluating it, otherwise I will get a runtime exception. which crashes the application. I do not mind a graceful failure. Perhaps just wrapping the &quot;evaluate&quot; in a try catch block is enough. However is there a better method to do this, perhaps there is a method in FLEE.\r<br />\n<br />\nMany thanks,\r<br />\n<br />\nEd<br />\n",
+    "PostedDate": "2013-03-26T18:42:08.623-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

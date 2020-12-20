@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "642763",
+    "ThreadId": "265251",
+    "Html": "\r\n<p>Hi,<br>\r\n<br>\r\nWhile there is a way to specify culture through context.Options.ParseCulture, it is not getting used every where in the code.\r\n<br>\r\n<br>\r\nRecently I was trying to use Flee on a PC with Turkish culture setting, I had set context.Options.ParseCulture to en-US culture. The expression parsing still failed if variables in my expression had upper case letter.<br>\r\n<br>\r\nI found that in a few places in code, ToLower is used without using culture settings specified through context.Options.ParseCulture, as a result it takes the current culture settings of the PC for converting the characters to lower case (e.g. in Find method\r\n in Automaton.vb).<br>\r\n<br>\r\nI am not too familiar with flee code to dare and make changes myself. Can some with more knowledge of this code help?<br>\r\n<br>\r\nThanks,<br>\r\n<br>\r\nWarm Regards,<br>\r\n- Vikram Lele</p>\r\n",
+    "PostedDate": "2011-07-14T22:51:08.45-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

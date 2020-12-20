@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "456050",
+    "ThreadId": "216197",
+    "Html": "<p>Hi,</p>\r\n<p>I want to log all the values of evaluated dynamic variables &nbsp;so that I can trace them back later. Ex:</p>\r\n<p>Expression: MyObj1.A + MyObj2.B</p>\r\n<p>when evaluate the expression, what events should I listen so that I can capture the &quot;MyObj1.A&quot; and &quot;MyObj2.B&quot; to write log?</p>\r\n<p>As I know the lib dont have dynamic property events like variables and functions.</p>\r\n<p>Any clue ?</p>\r\n<p>Currently I have to replace the expression to somethings like : MyObj1.get_A() + MyObj2.get_B(), &nbsp;capture the events and reparse them.</p>\r\n<p>I think the Flee lib should raise InvokeFunction for unknown properties since a call to get value of property&nbsp;<strong>A</strong> actually a call to a method name <strong>get_A()</strong></p>\r\n<p>Thanks,</p>\r\n<p>Duc</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-06-16T02:49:17.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

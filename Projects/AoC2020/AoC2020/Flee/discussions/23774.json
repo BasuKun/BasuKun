@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "79701",
+    "ThreadId": "23774",
+    "Html": "\r\nDoes FLEE support LIKE operator? If not then is there any way we can implement it?<br />",
+    "PostedDate": "2008-03-11T07:16:03.313-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "79872",
+    "ThreadId": "23774",
+    "Html": "\r\nThere isn't one right now.<br /><br />I think if I were to implement one, it would use regular expressions instead of the more limited LIKE syntax (which can be replicated with regexes anyways).<br /><br />So you could write an expression like: <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">stringVar LIKE \".*\\.txt$\"</span> to return true if stringVar ends with \".txt\".<br /><br />Sounds good?<br />",
+    "PostedDate": "2008-03-11T17:52:36.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "79977",
+    "ThreadId": "23774",
+    "Html": "\r\nIf there is no overload or performance penalty for those that are not going to use \"LIKE\" in our expressions, it sounds very good. The problem could be to deal with RegEx options (ignore case...). Maybe it is easier to import RegEx and call its static method IsMatch()?<br />",
+    "PostedDate": "2008-03-12T05:09:26.253-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "79978",
+    "ThreadId": "23774",
+    "Html": "\r\n(deleted, it was dupped)<br />",
+    "PostedDate": "2008-03-12T05:09:27.047-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "80437",
+    "ThreadId": "23774",
+    "Html": "\r\n@nimittdesai: Like fernando said, you can achieve something similar to LIKE by importing the IsMatch method of the RegEx class and passing in the appropriate regular expression.<br /><br />@fernando: A LIKE operator would just be some syntactic sugar for the IsMatch method.  The RegExOptions would be put in the ExpressionOptions class and passed to the IsMatch method when the expression is evaluated.<br />",
+    "PostedDate": "2008-03-13T13:22:11.333-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "85080",
+    "ThreadId": "23774",
+    "Html": "\r\nRegex use can be taxing on performance. For now I just implemented a custom function with indexof method.<br />",
+    "PostedDate": "2008-04-04T12:21:11.187-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

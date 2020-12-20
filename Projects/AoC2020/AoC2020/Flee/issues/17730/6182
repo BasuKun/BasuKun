@@ -1,0 +1,74 @@
+--- src/Lib/Parsing/grammatica-1.5.alpha2/PerCederberg.Grammatica.Runtime/Automaton.vb	di okt 25 10:53:46 2016
++++ src/Lib/Parsing/grammatica-1.5.alpha2/PerCederberg.Grammatica.Runtime/Automaton.vb	di dec  6 10:39:01 2016
+@@ -182,12 +182,12 @@ Namespace PerCederberg.Grammatica.Runtime
+-            If lowerCase Then 
+-                c = [Char].ToLower(c) 
+-            End If 
+-            If value = Chr(0) OrElse value = c Then 
+-                Return state 
+-ElseIf value > c Then 
+-                Return left.Find(c, False) 
+-            Else 
+-                Return right.Find(c, False) 
+-            End If 
+-        End Function 
+-        
++            If lowerCase Then
++                c = [Char].ToLowerInvariant(c)
++            End If
++            If value = Chr(0) OrElse value = c Then
++                Return state
++            ElseIf value > c Then
++                Return left.Find(c, False)
++            Else
++                Return right.Find(c, False)
++            End If
++        End Function
++
+@@ -195,12 +195,12 @@ Namespace PerCederberg.Grammatica.Runtime
+-' * Adds a transition to this tree. If the lower-case flag is 
+-' * set, the character will be converted to lower-case before 
+-' * being added. 
+-' * 
+-' * @param c the character to transition for 
+-' * @param lowerCase the lower-case conversion flag 
+-' * @param state the state to transition to 
+-' 
+-        
+-        Public Sub Add(ByVal c As Char, ByVal lowerCase As Boolean, ByVal state As Automaton) 
+-            If lowerCase Then 
+-                c = [Char].ToLower(c) 
++        ' * Adds a transition to this tree. If the lower-case flag is 
++        ' * set, the character will be converted to lower-case before 
++        ' * being added. 
++        ' * 
++        ' * @param c the character to transition for 
++        ' * @param lowerCase the lower-case conversion flag 
++        ' * @param state the state to transition to 
++        ' 
++
++        Public Sub Add(ByVal c As Char, ByVal lowerCase As Boolean, ByVal state As Automaton)
++            If lowerCase Then
++                c = [Char].ToLowerInvariant(c)
+--- src/Lib/Parsing/grammatica-1.5.alpha2/PerCederberg.Grammatica.Runtime.RE/CharacterSetElement.vb	di okt 25 10:53:46 2016
++++ src/Lib/Parsing/grammatica-1.5.alpha2/PerCederberg.Grammatica.Runtime.RE/CharacterSetElement.vb	di dec  6 10:39:01 2016
+@@ -431 +431 @@
+-            If m.IsCaseInsensitive() Then 
++            If m.IsCaseInsensitive() Then
+@@ -433 +433 @@
+-				c = Convert.ToInt32([Char].ToLower(Convert.ToChar(c)))
++                c = Convert.ToInt32([Char].ToLowerInvariant(Convert.ToChar(c)))
+---  src/Lib/Parsing/grammatica-1.5.alpha2/PerCederberg.Grammatica.Runtime.RE/StringElement.vb	ma okt 24 11:54:09 2016
++++  src/Lib/Parsing/grammatica-1.5.alpha2/PerCederberg.Grammatica.Runtime.RE/StringElement.vb	di dec  6 10:39:01 2016
+@@ -119,2 +119,2 @@ Namespace PerCederberg.Grammatica.Runtime.RE
+-                If m.IsCaseInsensitive() Then 
+-					c = Convert.ToInt32([Char].ToLower(Convert.ToChar(c)))
++                If m.IsCaseInsensitive() Then
++                    c = Convert.ToInt32([Char].ToLowerInvariant(Convert.ToChar(c)))
+--- src/Lib/Parsing/grammatica-1.5.alpha2/PerCederberg.Grammatica.Runtime.RE/RegExp.vb	di okt 25 10:53:46 2016
++++ src/Lib/Parsing/grammatica-1.5.alpha2/PerCederberg.Grammatica.Runtime.RE/RegExp.vb	di dec  6 10:39:01 2016
+@@ -544,2 +544,2 @@ Namespace PerCederberg.Grammatica.Runtime.RE
+-			Return IIf(ignoreCase, [Char].ToLower(c), c)
+-		End Function
++            Return IIf(ignoreCase, [Char].ToLowerInvariant(c), c)
++        End Function

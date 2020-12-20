@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "198080",
+    "ThreadId": "58532",
+    "Html": "<p>hi eugene,</p>\r\n<p>IS it Posible to change the expression for a variable at runtime, or</p>\r\n<p>change the return value when evaluating an expression</p>\r\n<p>ie</p>\r\n<p>' first iteration of formula</p>\r\n<p>x = 2.5 , y =&nbsp; 3 , z = 1</p>\r\n<p>&nbsp;<span style=\"font-size:xx-small;color:#0000ff\"><span style=\"font-size:xx-small;color:#0000ff\">Dim</span></span><span style=\"font-size:xx-small\"> e </span><span style=\"font-size:xx-small;color:#0000ff\"><span style=\"font-size:xx-small;color:#0000ff\">As</span></span><span style=\"font-size:xx-small\"> IGenericExpression(</span><span style=\"font-size:xx-small;color:#0000ff\"><span style=\"font-size:xx-small;color:#0000ff\">Of</span></span><span style=\"font-size:xx-small\"> </span><span style=\"font-size:xx-small;color:#0000ff\"><span style=\"font-size:xx-small;color:#0000ff\">Double</span></span><span style=\"font-size:xx-small\">) = context.CompileGeneric(</span><span style=\"font-size:xx-small;color:#0000ff\"><span style=\"font-size:xx-small;color:#0000ff\">Of</span></span><span style=\"font-size:xx-small\"> </span><span style=\"font-size:xx-small;color:#0000ff\"><span style=\"font-size:xx-small;color:#0000ff\">Double</span></span><span style=\"font-size:xx-small\">)(x+y+z)\r\n<p>tmpexp = e</p>\r\n<p>vc.Add(sVarName, e)</p>\r\n<p>e.evaluate&nbsp;&nbsp; (returns 2.5+3+1) = 6.5</p>\r\n<p>second iteration</p>\r\n<p>I Need to overrride some how the e.evaluate result depending on a value read from database</p>\r\n<p>e.OverrideEvaluateResult = True</p>\r\n<p>e.OverrideResult = 1234.0</p>\r\n<p>e.evaluate&nbsp;&nbsp; (returns 1234.0) instead of 6.5</p>\r\n<p>How can I accomplish this behavior</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks For your help</p>\r\n<p>Arturo Ruvalcaba</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-04T23:51:23.743-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "199328",
+    "ThreadId": "58532",
+    "Html": "<p>You could always have the expression evaluate a function and inside the function you return the desired result based on a flag.</p>",
+    "PostedDate": "2009-06-08T20:43:02.743-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

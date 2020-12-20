@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Closing issue as per latest comment",
+    "ClosedDate": "2007-10-11T06:59:01.837-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When evaluting expressions that include (boolean) members whose names match those of constants in a public enum, the names are resolved to the enum's type, not to that the expression owner. For example:\n \npublic enum SomeEnum {\n    Red = 0,\n    Blue = 1\n}\n \npublic class MyClass : IMyInterface {\n    public bool Red { get { return true; } }\n    public bool Blue { get { return false; } }\n    ...\n}\n \nIMyInterface owner = new MyClass();\nExpression e = new Expression(\"Red or Blue\", owner);\n \nThe statement above throws an ExpressionCompileException that states, \"And/Or Operator: Operation 'Or' is not defined for types 'SomeEnum' and 'SomeEnum'\"\n \nThe enum (\"SomeEnum\") is in not in the same assembly (or namespace) where MyClass is defined, although the assembly that defines MyClass does reference SomeEnum's assembly. The behavior is unaffected by the value of ExpressionOptions.Imports.AllowGlobalImport. (I tried using fully qualified names in the expression, but that didn't help either.)\n \nIf it matters, the members that are resolving to enum values are properties of the interface that MyClass implements.",
+    "LastUpdatedDate": "2013-05-16T04:24:09.773-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2007-10-09T15:18:20.96-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Owner member resolves to enum constant with same name",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 1771
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Very strange.  Even if you did import the enum (which doesn't seem to be the case from your code), the properties on the owner should take priority.\r\n\r\nI will look into it.",
+      "PostedDate": "2007-10-09T19:31:02.177-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Sorry, my mistake. Turns out that the class (a rather large one) had a few private members tucked away whose names (but not types) matched the public properties. Some judicious renaming fixed things, but left me wanting more; see issue 1783. :)",
+      "PostedDate": "2007-10-10T07:17:02.903-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2007-10-11T06:59:01.837-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:54:07.673-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:24:09.773-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

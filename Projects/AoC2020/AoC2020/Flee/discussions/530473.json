@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1205370",
+    "ThreadId": "530473",
+    "Html": "giving the equation a Y and not an X?\r<br />\n<br />\nI have a bunch of equations that I need to be able to evaluate both ways.  The documentation I am working from gives the formula for getting the Y, but I need to reverse it to get the X.\r<br />\n<br />\nso I have Y= x<em>2+5, and I put in X=2, I get 9.\r<br />\nWhat I want to do is put in Y=9 (9=x</em>2+5) and get 2...\r<br />\n<br />\nAny help is greatly appreciated.\r<br />\nJ<br />\n",
+    "PostedDate": "2014-02-08T22:19:06.017-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

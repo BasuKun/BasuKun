@@ -1,0 +1,24 @@
+<div class="wikidoc"><b>Evaluation using dynamic variables</b><br /><br />This method uses a predefined expression owner that allows you to define variables dynamically instead of using hard-coded fields.<br /><br /><pre>
+// Use the DynamicExpressionOwner so we can use variables
+DynamicExpressionOwner owner = new DynamicExpressionOwner();
+// Define variables &quot;a&quot; and &quot;b&quot; and specify their type
+owner.DefineVariable(&quot;a&quot;, typeof(int));
+owner.DefineVariable(&quot;b&quot;, typeof(double));
+
+// Set the values of the variables
+owner.SetVariableValue(&quot;a&quot;, 2);
+owner.SetVariableValue(&quot;b&quot;, 16.0);
+
+// Create an expression that uses the variables
+Expression e = new Expression(&quot;a ^ b&quot;, owner);            
+ExpressionEvaluator&lt;double&gt; evaluator = (ExpressionEvaluator&lt;double&gt;) e.Evaluator;
+// Evaluate the expression and get the result
+double result = evaluator();
+
+// Change the values of the variables
+owner.SetVariableValue(&quot;a&quot;, 4);
+owner.SetVariableValue(&quot;b&quot;, 3.4);
+
+// Re-evaluate to get the updated result
+result = evaluator();
+</pre></div><div class="ClearBoth"></div>

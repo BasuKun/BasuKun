@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "457248",
+    "ThreadId": "216513",
+    "Html": "<p>For example:</p>\r\n<p>ExpressionContext context = new ExpressionContext();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>IGenericExpression&lt;bool&gt; eDynamic = context.CompileGeneric&lt;bool&gt;(&quot;!\\&quot;Yankee\\&quot;.Equals(\\&quot;Yankee\\&quot;)&quot;);</p>\r\n<p>Throws &quot;SyntaxError: Unexpected character: !&quot;</p>\r\n<p>There are workarounds for this specific example, but not for the use case I am struggling with, which I cannot post.</p>",
+    "PostedDate": "2010-06-18T06:17:03.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "457553",
+    "ThreadId": "216513",
+    "Html": "<p>FLEE uses &quot;not&quot; for boolean negation, as defined <a href=\"http://flee.codeplex.com/wikipage?title=LanguageReference&referringTitle=Home#AndOrXorNotOperators\">here</a>. &quot;<strong>!</strong>&quot; is C#'s operator for the same thing.</p>",
+    "PostedDate": "2010-06-19T05:52:41.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "528109",
+    "ThreadId": "216513",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>While I understand that Flee uses And, Or and Not for boolean and bitwise operators, is there a way that I can use &amp;&amp;, || and ! for the same? Is there way to support custom operators?</p>\r\n<p>Rgards,</p>\r\n<p>- Vikram</p>\r\n",
+    "PostedDate": "2010-11-29T02:14:17.257-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "528816",
+    "ThreadId": "216513",
+    "Html": "\r\n<p>&gt;&gt; ... is there a way that I can use &amp;&amp;, || and ! for the same? Is there way to support custom operators?</p>\r\n<p>No, not as Flee is currently designed. As the author <a href=\"http://flee.codeplex.com/wikipage?title=LanguageReference&referringTitle=Home\">\r\npoints out</a>, &quot;The expression language that Flee uses is a mix of elements of C# and VB.Net.&quot; It has no facility for defining custom operators.</p>\r\n<p>The original author appears to have abandoned the project, at least for the time being. (Eugene, are you out there?) So, what you see is what you get. :)</p>\r\n",
+    "PostedDate": "2010-11-30T07:49:32.827-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "529205",
+    "ThreadId": "216513",
+    "Html": "\r\n<p>I was trying to get uniformity with C# rather than a mix of C# and VB, that would have made the expression language learning curve a little shorter for my end users.</p>\r\n<p>Anyways, what I see and what I get is a lot and very impressive. Thanks to Eugene.</p>\r\n<p>Regards,</p>\r\n<p>- Vikram</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-11-30T20:38:23.49-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

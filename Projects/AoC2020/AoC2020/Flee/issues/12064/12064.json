@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Thank you. Flee works now.\n \nHow to modify flee to use Flee as c# scripting engine in Silverlight, eq. execute\n \nvar i=3;\nMessageBox.Show(\"Hello, world \"+ i.TosTring() );\n \nscript from C# application?\n \nAndrus.",
+    "LastUpdatedDate": "2013-02-21T16:54:02.417-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2010-10-02T11:42:55.35-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Using as C# scripting engine from Silverlight application",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 12064
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

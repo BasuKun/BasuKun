@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "56955",
+    "ThreadId": "17453",
+    "Html": "\r\nHi Eugene,<br /><br />If you have a minute, could you help me understand why Flee is so much faster than FormulaEngine? I don't understand why emitting your own IL is faster than letting the CLR emit IL. It seems like your FormulaEngine just passes off to the .NET Math libs anyway.<br /><br />Thanks,<br />Dustin<br />",
+    "PostedDate": "2007-11-06T08:21:21.937-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "56997",
+    "ThreadId": "17453",
+    "Html": "\r\n&gt;I don't understand why emitting your own IL is faster than letting the CLR emit IL.<br />The CLR is still emitting the IL, it's just that it's doing it at runtime to memory instead of at compile time to an assembly.<br /><br />&gt;could you help me understand why Flee is so much faster than FormulaEngine?<br />FormulaEngine is interpreted, which means that every time you evaluate an expression, code runs to unpack arguments, check their validity, choose an operation to perform (addition, function call), perform it (setup arguments, etc), and return the result.  This adds up to a lot of overhead that, no matter how much you optimize, will always be present.<br /><br />When a Flee expression is compiled, it generates IL which is then translated by the CLR into native processor instructions.  This means that an expression like <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">1 + 2</span> basically amounts to loading two registers and performing an ADD instruction.  The amount of overhead is the minimum required to run a program + the indirect call to the delegate pointing to the compiled expression.<br /><br />The method that Flee uses will basically give you the fastest evaluation speed possible in .NET.  The only ways to make it faster are to statically compile the code (thus losing the dynamic aspect) or optimize the emitted IL.<br />",
+    "PostedDate": "2007-11-06T13:04:38.67-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

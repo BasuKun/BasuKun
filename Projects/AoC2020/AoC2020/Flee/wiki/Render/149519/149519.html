@@ -1,0 +1,44 @@
+<div class="wikidoc"><b>Extending the functions available to an expression</b><br /><br />Flee allows you to extend the functions available for use in its expressions.  Because of Flee&#39;s design, you are not required to define adapter classes or use delegates.  You simply define your functions in a class or  use the functions of an existing class and Flee will do the rest.  Note that reflection is only used to lookup the functions when the expression is compiled.  When the expression is evaluated, the functions are called using IL instructions just like in a compiled assembly.<br /><br />The following is a guide to the various ways to add custom functions to an expression:<br /><br /><b>Importing public, static functions</b><br /><br />Define a class with all the public, static functions that you want to use:<br /><br /><pre>
+public static class CustomFunctions
+{
+   public static int Product(int a, int b)
+   {
+      return a * b;
+   }
+
+   public static int Sum(int a, int b)
+   {
+      return a + b;
+   }
+}
+</pre><br />Then use the Imports property of the ExpressionContext class to make them available for use in the expression:<br /><br /><pre>
+ExpressionContext context = new ExpressionContext();
+context.Imports.AddType(typeof(CustomFunctions));
+context.Variables.Add(&quot;a&quot;, 100);
+context.Variables.Add(&quot;b&quot;, 200);
+ 
+IDynamicExpression e = context.CompileDynamic(&quot;product(a,b) + sum(a,b)&quot;);
+int result = (int) e.Evaluate();
+</pre><br />You can also import all the functions into a namespace:<br /><br /><pre>
+context.Imports.AddType(typeof(CustomFunctions), &quot;functions&quot;);
+IDynamicExpression e = context.CompileDynamic(&quot;functions.product(a,b) + a - b&quot;);
+</pre><br />This also works for the built-in .NET types:<br /><br /><pre>
+ExpressionContext context = new ExpressionContext();
+context.Imports.AddType(typeof(Math));
+context.Variables.Add(&quot;a&quot;, 100);
+
+IDynamicExpression e = context.CompileDynamic(&quot;cos(a)&quot;);
+int result = (int) e.Evaluate();
+</pre><br /><b>Importing instance functions using variables</b><br /><br />Since variables act as instances of their type, you can call any public, instance functions defined on them.  Here&#39;s an example that demonstrates this:<br /><br /><pre>
+ExpressionContext context = new ExpressionContext();
+context.Variables.Add(&quot;rand&quot;, new Random());
+ 
+IDynamicExpression e = context.CompileDynamic(&quot;rand.nextDouble() + 100&quot;);
+double result = (double) e.Evaluate();
+</pre><br /><b>Importing function using an expression owner</b><br /><br />When you attach an expression to an <a href="https://flee.codeplex.com/wikipage?title=ExpressionOwner&referringTitle=ImportingTypes">expression owner</a>, you can use any public/non-public static/instance functions on the owner class.  The only limitation is that the functions cannot be put in a separate namespace.  Here&#39;s the previous example, using the Random class as the expression owner:<br /><br /><pre>
+Random rand = new Random();
+ExpressionContext context = new ExpressionContext(rand);
+
+IDynamicExpression e = context.CompileDynamic(&quot;nextDouble() + 100&quot;);
+double result = (double) e.Evaluate();
+</pre><br /><b>Type-safety</b><br /><br />Flee performs type-checking on the return type and parameters of all imported functions and will throw an ExpressionCompileException if either is not valid in the context of the expression.  Flee will also not allow calls to functions that do not return a value.</div><div class="ClearBoth"></div>

@@ -1,0 +1,22 @@
+<div class="wikidoc"><b>Calling functions with a variable number of arguments</b><br /><br />Flee supports calling functions with a variable number of arguments.  Flee will detect calls to functions marked with the <span class="codeInline">params</span> keyword and will package all given arguments into an array of the params type.<br /><br />Here&#39;s an example that shows how to do this:<br /><br /><pre>
+// Declare a class with some static functions
+public static class CustomFunctions
+{
+   // Declare a function that takes a variable number of arguments
+   public static int Sum(params int[] args)
+   {
+      int sum = 0;
+
+      foreach (int i in args)
+         sum += i;
+
+      return sum;
+   }
+}
+</pre><br /><br />Once we have declared the function, we can use it in an expression:<br /><br /><pre>
+ExpressionContext context = new ExpressionContext();
+context.Imports.AddType(typeof(CustomFunctions));
+
+IDynamicExpression e = context.CompileDynamic(&quot;sum(1,2,3,4,5,6)&quot;);
+int result = (int)e.Evaluate();
+</pre></div><div class="ClearBoth"></div>

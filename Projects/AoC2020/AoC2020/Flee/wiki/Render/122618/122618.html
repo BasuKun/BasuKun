@@ -1,0 +1,10 @@
+<div class="wikidoc"><b>Evaluating Boolean Expressions</b><br /><br />One popular use of Flee is to use expressions as filters or predicates by evaluating boolean conditions.  When using Flee in this way, we can create generic expressions since we know that the result is always a boolean .  This eliminates the need to cast the result of the expression and Flee will only compile the expression if evaluates to a boolean.<br /><br /><pre>
+ExpressionContext context = new ExpressionContext();
+VariableCollection variables = context.Variables;
+variables.Add(&quot;a&quot;, 100);
+variables.Add(&quot;b&quot;, 1);
+variables.Add(&quot;c&quot;, 24);
+            
+IGenericExpression&lt;bool&gt; e = context.CompileGeneric&lt;bool&gt;(&quot;(a = 100 OR b &gt; 0) AND c &lt;&gt; 2&quot;);
+bool result = e.Evaluate();
+</pre></div><div class="ClearBoth"></div>

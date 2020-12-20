@@ -1,0 +1,96 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Message: Index was out of range.  Must be non-negative and less than the size of the collection.  Parameter name: index.\n \nStack trace: \n   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)\n   at System.ThrowHelper.ThrowArgumentOutOfRangeException()\n   at System.Collections.Generic.List`1.get_Item(Int32 index)\n   at Ciloci.Flee.BranchManager.IsLongBranch(FleeILGenerator ilg, Label target)\n   at Ciloci.Flee.ConditionalElement.EmitConditional(FleeILGenerator ilg, IServiceProvider services, BranchManager bm)\n   at Ciloci.Flee.ConditionalElement.Emit(FleeILGenerator ilg, IServiceProvider services)\n   at Ciloci.Flee.RootExpressionElement.Emit(FleeILGenerator ilg, IServiceProvider services)\n   at Ciloci.Flee.Expression`1.Compile(String expression, ExpressionOptions options)\n   at Ciloci.Flee.Expression`1..ctor(String expression, ExpressionContext context, Boolean isGeneric)\n   at Ciloci.Flee.ExpressionContext.CompileDynamic(String expression)\n   at [my code]\n \nExpression being evaluated: \n \nIf( XctnHdrID = TaxLoadXHdrID ,If( TaxLoadProduct = TaxLoadProductGroup , If( TaxLoadQuantity > FromQuantity and TaxLoadQuantity <= ToQuantity , FlatFixed - ((Round( FlatFixed / TaxLoadXHdrCount, 2)) * ( TaxLoadXHdrCount-1)) , NoValue ) , If( TaxLoadQuantity > FromQuantity2 and TaxLoadQuantity <= ToQuantity2 , FlatFixed2 - ((Round(FlatFixed2 / TaxLoadXHdrCount,2)) * (TaxLoadXHdrCount-1)), NoValue) ), If(TaxLoadProduct = TaxLoadProductGroup , If( TaxLoadQuantity > FromQuantity and TaxLoadQuantity <= ToQuantity , FlatFixed / TaxLoadXHdrCount, NoValue ) , If( TaxLoadQuantity > FromQuantity2 and TaxLoadQuantity <= ToQuantity2 , FlatFixed2 / TaxLoadXHdrCount, NoValue ) ))\n \nRound() is implemented as a simple wrapper for Math.Round().\n \nA fix, obviously, would be ideal, but a workaround would also be helpful.  I can easily replicate this, so let me know if you need any other info.",
+    "LastUpdatedDate": "2013-12-13T03:33:07.627-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2009-12-23T09:50:01.777-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ArgumentOutOfRangeException in Ciloci.Flee.BranchManager.IsLongBranch()",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 5,
+    "Id": 9807
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3639,
+      "FileName": "flee-0.9.26.0.patch",
+      "DownloadUrl": ".\\3639"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "This is in 0.9.26.0.",
+      "PostedDate": "2009-12-23T09:53:47.03-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-04-06T20:57:44.1-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-11-27T03:07:19.033-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Here's a patch which will fix this issue, it defaults to creating a long branch instead of throwing an exception.",
+      "PostedDate": "2010-11-27T03:07:22.227-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-05-17T08:57:07.3-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-06-20T15:20:35.317-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:54:03.123-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi \r\n\r\nI'm having this same issue, has this patch been applied to the main source and is there any reason why I shouldn't use it? I'd rather not build my own fork if I can get just get the latest from the source tree.\r\n\r\nThanks\r\n\r\nAndy",
+      "PostedDate": "2013-12-08T10:10:33.3-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I've been using FLEE with this patch in production for a few years -- the FLEE developer is missing since late 2009, but it is mostly stable. Someone should fork it and apply all the patches, but I guess no one ever did it till now :-)",
+      "PostedDate": "2013-12-08T23:59:18.213-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-12-13T03:33:07.627-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

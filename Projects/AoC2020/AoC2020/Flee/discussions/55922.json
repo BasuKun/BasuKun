@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "188804",
+    "ThreadId": "55922",
+    "Html": "<p>Hi,</p>\r\n<p>first of all thanks for such a wonderful application.</p>\r\n<p>I want to use some functions from math, string,Datetime and DateAndTime this classes.</p>\r\n<p>I have added them in the following manner.</p>\r\n<p>context.Imports.AddType(typeof(Math));<br>context.Imports.AddType(typeof(bool));<br>context.Imports.AddType(typeof(DateTime));<br>context.Imports.AddType(typeof(String));<br>context.Imports.AddType(typeof(DateAndTime));</p>\r\n<p>I had expression like</p>\r\n<p>if(SomeDate&lt;Now.AddDays(-30),cast(0.250*SomeEvaluatedExpression,double),0.0)</p>\r\n<p>But I cant able to access Now.AddDays Method.</p>\r\n<p>Please Help me to come out of this problem.</p>\r\n<p>Thanx in Advance</p>\r\n<p>regards</p>\r\n<p>Amol</p>\r\n<p>India</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-05-11T05:52:35.18-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "190510",
+    "ThreadId": "55922",
+    "Html": "<p>I can compile and run the following expression:</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dim context As New ExpressionContext()<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; context.Imports.AddType(GetType(DateTime))<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; context.Imports.AddType(GetType(Boolean))<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; context.Imports.AddType(GetType(Math))<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; context.Imports.AddType(GetType(String))<br><br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; context.Variables.Add(&quot;somedate&quot;, DateTime.Now)</p>\r\n<p><br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Dim e As IDynamicExpression = context.CompileDynamic(&quot;if(SomeDate&gt;Now.AddDays(-30),cast(0.250*100,double),0.0)&quot;)&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Dim result As Object = e.Evaluate()</p>\r\n<p>You'll have to give me the error/exception details before I can narrow down the problem.</p>",
+    "PostedDate": "2009-05-14T18:32:11.413-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "190557",
+    "ThreadId": "55922",
+    "Html": "<p>Hi,</p>\r\n<p>The Problem is solved. It was because the context.import statement was getting called more than once so the DateTime.Now property was becoming ambigous in the parser.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-05-14T21:53:31.17-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

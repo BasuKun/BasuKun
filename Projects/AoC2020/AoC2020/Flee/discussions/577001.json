@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1339443",
+    "ThreadId": "577001",
+    "Html": "Hi,\r<br />\n<br />\nWhile evaluating a lengthy expression, i am getting below exception - \r<br />\n<br />\nIndex was out of range. Must be non-negative and less than the size of the collection.\r<br />\nParameter name: index\r<br />\n<br />\n   at System.ThrowHelper.ThrowArgumentOutOfRangeException()\r<br />\n   at System.Collections.Generic.List<code>1.get_Item(Int32 index)\r<br />   at Ciloci.Flee.BranchManager.IsLongBranch(FleeILGenerator ilg, Label target)\r<br />   at Ciloci.Flee.InElement.EmitBranchToTrueTerminal(FleeILGenerator ilg, Label trueTerminal, BranchManager bm)\r<br />   at Ciloci.Flee.InElement.EmitListIn(FleeILGenerator ilg, IServiceProvider services, BranchManager bm)\r<br />   at Ciloci.Flee.InElement.Emit(FleeILGenerator ilg, IServiceProvider services)\r<br />   at Ciloci.Flee.AndOrElement.EmitOperand(ExpressionElement operand, ShortCircuitInfo info, FleeILGenerator ilg, IServiceProvider services)\r<br />   at Ciloci.Flee.AndOrElement.EmitLogicalShortCircuit(FleeILGenerator ilg, ShortCircuitInfo info, IServiceProvider services)\r<br />   at Ciloci.Flee.AndOrElement.EmitLogical(FleeILGenerator ilg, ShortCircuitInfo info, IServiceProvider services)\r<br />   at Ciloci.Flee.AndOrElement.DoEmitLogical(FleeILGenerator ilg, IServiceProvider services)\r<br />   at Ciloci.Flee.AndOrElement.Emit(FleeILGenerator ilg, IServiceProvider services)\r<br />   at Ciloci.Flee.RootExpressionElement.Emit(FleeILGenerator ilg, IServiceProvider services)\r<br />   at Ciloci.Flee.Expression</code>1.Compile(String expression, ExpressionOptions options)\r<br />\n   at Ciloci.Flee.Expression`1..ctor(String expression, ExpressionContext context, Boolean isGeneric)\r<br />\n   at Ciloci.Flee.ExpressionContext.CompileGeneric[TResultType](String expression)\r<br />\n   at FleeConsole.ExpressionEvaluator.CheckForEtpPermission(Int32 assetMark)\r<br />\n   at FleeConsole.Program.Main(String[] args)\r<br />\n   at System.AppDomain._nExecuteAssembly(RuntimeAssembly assembly, String[] args)\r<br />\n   at System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args)\r<br />\n   at Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()\r<br />\n   at System.Threading.ThreadHelper.ThreadStart_Context(Object state)\r<br />\n   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean ignoreSyncCtx)\r<br />\n   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)\r<br />\n   at System.Threading.ThreadHelper.ThreadStart()\r<br />\n<br />\nPlease help with the way to evaluate lengthy expression.<br />\n",
+    "PostedDate": "2015-01-06T09:16:10.697-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1353916",
+    "ThreadId": "577001",
+    "Html": "I am experiencing a similar problem - and when tracing through the code I can see I'm getting a -1 coming back as 'index' in IsLongBranch in BranchManager.vb.\r<br />\n<br />\nThe actual problem seems to be that the comparison of Equals1 in the ILLocation class is not matching MyPosition with other.MyPosition.\r<br />\nYou then get a mismatch of location, a -1 index and pop.\r<br />\n<br />\nI changed the code for a test to be:<br />\n<pre><code>Public Function Equals1(ByVal other As ILLocation) As Boolean Implements System.IEquatable(Of ILLocation).Equals\n    Return MyPosition &lt;= other.MyPosition\nEnd Function\n</code></pre>\n\nBut I'm not confident that this is a solution, as it is more likely that the original calculation of branch distances is at fault.\r<br />\nAny comments, anyone?<br />\n",
+    "PostedDate": "2015-02-19T01:26:19.71-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1496788",
+    "ThreadId": "577001",
+    "Html": "Any fixes you guys found for lengthy expression evaluation using FLEE?<br />\n",
+    "PostedDate": "2017-05-29T00:54:31.063-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1101153",
+    "ThreadId": "459766",
+    "Html": "having the error: Syntax Error: unexpected token &quot;p&quot;\r<br />\n<br />\nhow can i achieve the following?<br />\n<pre><code>\nvar context = new ExpressionContext();\n            const string exp = @&quot;Person.Any(\n                        p=&gt; p.Gender == &quot;MALE&quot;)&quot;;\n\n            \n            context.Imports.AddType(typeof(Person));\n            context.Variables[&quot;Tracks&quot;] = new List&lt;Person&gt;() { new Person()\n                {\n                    Gender = &quot;MALE&quot;\n                },\n            new Person()\n                {\n                    Gender = &quot;FEMALE&quot;\n                }};\n            IDynamicExpression e = context.CompileDynamic(exp);</code></pre>\n\n",
+    "PostedDate": "2013-09-30T19:08:30.273-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

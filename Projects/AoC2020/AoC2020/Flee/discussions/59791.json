@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "202423",
+    "ThreadId": "59791",
+    "Html": "<p>I am using Flee to evaluate expression to call into custom functions.<br><br>For example:</p>\r\n<p><span style=\"color:#0000ff\">var </span>expression = context.CompileGeneric&lt;<span style=\"color:#0000ff\">Double</span>&gt;(<span style=\"color:#ff0000\">&quot;MyMethod(\\&quot;ABC\\&quot;)&quot;</span>);&nbsp;</p>\r\n<p>...</p>\r\n<p><span style=\"color:#0000ff\">public </span><span style=\"color:#0000ff\">static </span><span style=\"color:#0000ff\">Double </span>MyMethod(<span style=\"color:#0000ff\">S</span><span style=\"color:#0000ff\">tring </span>identifier)<br>{<br><span style=\"white-space:pre\"> </span><span style=\"color:#008000\">// retrieves value based on identifier&nbsp;</span><br><span style=\"white-space:pre\"> </span>...&nbsp;<br>}<br><br>I need a way to evaluate the expression to retrieve the identifiers without having to wait until the expression.Evaluate() method is called. This is because the expression are built in a UI separate from the context of where MyMethod can retrieve the actual values (they are in a db which I don't want the UI to have access to)<br><br>Is there anyway to retrieve the inputs for validation post expression compilation but before evaluation. They are not variables, these are actual inputs.&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>David</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-17T04:23:11.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "202976",
+    "ThreadId": "59791",
+    "Html": "<p>Just to make sure I'm clear on your question:</p>\r\n<p>If you have an expression such as &quot;MyMethod(&quot;a&quot;, 33)&quot;</p>\r\n<p>You'd like to have a way to pick out the literals from the expression (ie: &quot;a&quot; and 33).&nbsp; Correct?</p>",
+    "PostedDate": "2009-06-18T08:28:29.117-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "203292",
+    "ThreadId": "59791",
+    "Html": "<p>Spot on.<br><br>I know I could do it by parsing it myself but seeing Flee is already doing the parsing then it makes sense to expose the parsed expression tree (or something along those lines).</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>\r\n<p>David&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-19T03:27:21.863-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "204721",
+    "ThreadId": "59791",
+    "Html": "<p>Yeah, giving access to a parse tree seems like the only way.&nbsp; Once you have the root node, I'm guessing you just want to traverse the tree, know if a node is a literal, and to get its value.</p>\r\n<p>I'll try to put something in by the next release (couple of weeks to a month).</p>",
+    "PostedDate": "2009-06-23T17:30:34.497-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "205807",
+    "ThreadId": "59791",
+    "Html": "<p>Great,</p>\r\n<p>Let me know when this happens.</p>\r\n<p>Thank</p>\r\n<p>David</p>",
+    "PostedDate": "2009-06-26T01:54:02.407-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "232741",
+    "ThreadId": "59791",
+    "Html": "<p>Was wondering if you had any update?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>\r\n<p>David</p>",
+    "PostedDate": "2009-09-09T09:22:11.03-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "262087",
+    "ThreadId": "59791",
+    "Html": "<p>I had the same requirement last week and changed the Flee library to cater for this. Two issues had to be addressed:</p>\r\n<p>a) The expression tree that FLEE builds up during parsing is not accessible publicly</p>\r\n<p>b) The FLEE library is too strict about types for this usage pattern. In my case I don&rsquo;t know the type of the expression <span style=\"color:red\">&quot;MyMethod(\\&quot;ABC\\&quot;)&quot;</span> until later.</p>\r\n<p>To overcome these hurdles I modified the Flee library so that it exposes the AST (Abstract Syntax Tree) that it creates during parsing. In addition all expression elements are now public and support the visitor pattern in conjunction with an abstract ExpressionWalker class (the visitor). The ExpressionWalker is analogous to the TreeWalker that IronPython offers. Finally a flag controls whether type checks should be performed during parsing.</p>\r\n<p>Here is a sample code snippet that demonstrates the usage. The AstPrinter class derives from the new ExpressionWalker class and writes out information about the various expression elements.</p>\r\n<p><span style=\"font-size:10pt\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color:#2b91af\">ExpressionContext</span> expressionContext = <span style=\"color:blue\">new</span> <span style=\"color:#2b91af\">ExpressionContext</span>();</span></p>\r\n<p><span style=\"font-size:10pt\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; expressionContext.Imports.AddType(<span style=\"color:blue\">typeof</span>(<span style=\"color:#2b91af\">Math</span>));</span></p>\r\n<p><span style=\"font-size:10pt\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; expressionContext.Imports.AddType(<span style=\"color:blue\">typeof</span>(<span style=\"color:#2b91af\">FqnBasedFunctions</span>)); <br></span></p>\r\n<p><span style=\"font-size:10pt\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; expressionContext.ParserOptions.SkipTypeCheck = <span style=\"color:blue\">true</span>;</span></p>\r\n<p><span style=\"font-size:10pt\"><br></span></p>\r\n<p><span style=\"font-size:10pt\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color:#2b91af\">IDynamicExpression</span> expression = expressionContext.CompileDynamic(<span style=\"color:#a31515\">&quot;Value(\\&quot;..Blah\\&quot;) + Value(\\&quot;..Blah1\\&quot;, 15)&quot;</span>);</span></p>\r\n<p><span style=\"font-size:10pt\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color:#2b91af\">RootExpressionElement</span> rootElement = ((<span style=\"color:#2b91af\">Expression</span>&lt;<span style=\"color:blue\">object</span>&gt;)expression).RootElement; <br></span></p>\r\n<p><span style=\"font-size:10pt\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color:#2b91af\">AstPrinter</span> astPrinter = <span style=\"color:blue\">new</span> <span style=\"color:#2b91af\">AstPrinter</span>();</span></p>\r\n<p><span style=\"font-size:10pt\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rootElement.Walk(astPrinter);</span></p>\r\n<p><span style=\"font-size:10pt\"><br></span></p>\r\n<p><span style=\"font-size:10pt\">You can download the code from here: <a href=\"http://www.hessmer.org/dev/Flee/Flee-0.9.26.0_WithExpressionWalker.zip\">http://www.hessmer.org/dev/Flee/Flee-0.9.26.0_WithExpressionWalker.zip</a>. The solution contains an additional C# project called FleeLibraryPlayground that demonstrates the usage of the ExpressionWalker class.</span></p>\r\n<p><span style=\"font-size:10pt\">&nbsp;</span>Thank you, Eciloci, for sharing your great library! Without your source code I would have been stuck.</p>\r\n<p>Regards,</p>\r\n<p>Rainer</p>",
+    "PostedDate": "2009-11-30T17:11:25.953-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,13 @@
+diff -ur src.orig\Lib\InternalTypes\BranchManager.vb src\Lib\InternalTypes\BranchManager.vb
+--- src.orig\Lib\InternalTypes\BranchManager.vb	Wed Jun 17 22:25:50 2009
++++ src\Lib\InternalTypes\BranchManager.vb	Sat Nov 27 16:23:50 2010
+@@ -109,6 +109,9 @@
+ 		Dim bi As New BranchInfo(startLoc, target)
+ 
+ 		Dim index As Integer = MyBranchInfos.IndexOf(bi)
++		If index = -1 Then
++			Return True
++		End If
+ 		bi = MyBranchInfos.Item(index)
+ 
+ 		Return bi.IsLongBranch

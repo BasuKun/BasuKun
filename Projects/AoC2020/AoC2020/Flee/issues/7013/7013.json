@@ -1,0 +1,85 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Library",
+      "DisplayName": "Library"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Calling an indexer with more than one argument gives a parse exception on the list separator. \n \nUnit tests:\n \n        [TestMethod]\n        public void TestIndexerWithOneArgument() {\n            ExpressionContext context = new ExpressionContext(new IndexerContainer());\n            IGenericExpression<string> expr = ExpressionFactory.CreateGeneric<string>(\"Indexer[\\\"Bob\\\"]\", context);\n            Assert.AreEqual(\"name : Bob, selected : False\", expr.Evaluate());\n        }\n \n        [TestMethod]\n        public void TestIndexerWithTwoArguments() {\n            ExpressionContext context = new ExpressionContext(new IndexerContainer());\n            IGenericExpression<string> expr = ExpressionFactory.CreateGeneric<string>(\"Indexer[\\\"Bob\\\"; true]\", context);\n            Assert.AreEqual(\"name : Bob, selected : True\", expr.Evaluate());\n        }\n \n \n    public class IndexerContainer {\n        public IndexerClass Indexer = new IndexerClass();\n    }\n    public class IndexerClass {\n        public string this[string name] {\n            get {\n                return this[name, false];\n            }\n        }\n        public string this[string name, bool isSelected] {\n            get {\n                return string.Format(\"name : {0}, selected : {1}\", name, isSelected);\n            }\n        }\n    }\n \n \nThe first test succeeds, the second fails. I think it should succeed.\n \nCan you have a look at the issue? Thanks!\n \nBTW: I'm running these tests with a Dutch current culture, so I used ';' as list separator.",
+    "LastUpdatedDate": "2013-06-14T00:28:44.947-07:00",
+    "PlannedForRelease": "Flee-0.9.23.0",
+    "ReleaseVisibleToPublic": true,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2009-02-02T02:10:58.147-08:00",
+    "Status": {
+      "Name": "Resolved",
+      "Id": 7
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Indexer with more than one argument gives parser exception",
+    "Type": {
+      "Name": "Feature",
+      "Id": 1
+    },
+    "VoteCount": 1,
+    "Id": 7013
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I originally only put support in for one indexer and left out the less common case.  I'll implement multiple indexers in the next release.",
+      "PostedDate": "2009-02-06T18:44:47.08-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Couldn't you just use a function on the expression owner to achieve the same thing in this scenario?  The only thing you would need to change is using () instead of [].",
+      "PostedDate": "2009-02-12T17:42:19.697-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Writing it as a normal method would be possible, however using a indexer with an extra argument does make more sense in this situation. If it would be possible to support more arguments it would be nice.",
+      "PostedDate": "2009-02-13T00:02:02.32-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Fixed in 0.9.23.0",
+      "PostedDate": "2009-02-28T11:21:07.063-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-28T11:21:07.877-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:54:04.933-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:24:06.703-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:24:06.86-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-06-14T00:28:44.947-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

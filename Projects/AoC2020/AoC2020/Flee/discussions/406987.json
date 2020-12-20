@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "956902",
+    "ThreadId": "406987",
+    "Html": "\r\n<p>Hello, thanks for this great Evaluator.</p>\r\n<p>I'm still at the beginning of understanding the wide spectrum of possibilities of this Evaluator.</p>\r\n<p>I started use it in an Excel-like application. For this I took the CalculationEngine. Could you please add something like an update-function, please?</p>\r\n<p>At first I push all the expressions via the batchloader. But if the content of one of my cells is changing (e.g. from y &#43; 5 to r * 3), I only want to\r\n<span style=\"text-decoration:underline\">update</span> the engine. The only way I see at the moment is to .Remove(&quot;x&quot;) and .Add(&quot;x&quot;,&quot;r * 3&quot;) - but this destroys the dependencies. For this I wish for a .Update(&quot;x&quot;, &quot;r * 3&quot;) function.</p>\r\n<p>How do I update the whole CalcEngine at once? Let's say I put 5 expressions in the engine and I don't know about the dependencies, how can I recalculate the whole engine without defining the root?</p>\r\n<p>Then I change/update one expression (perhaps with chanching dependencies?) and recalc the engine again without knowing the root. How to do that?</p>\r\n<p>Or missed I something?</p>\r\n<p>Furthermore, is there a way to (public) BatchAdd? Because BatchLoad clears the CalcEngine.</p>\r\n<p>The last wish (for now) is a .Count function for the Batchloader, so I could count the entries (i added dynamic before)</p>\r\n<p>Thanks a lot in advance</p>\r\n<p>TuRRiCAN</p>\r\n",
+    "PostedDate": "2012-12-17T04:35:41.237-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

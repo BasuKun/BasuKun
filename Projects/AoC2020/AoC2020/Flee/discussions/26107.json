@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "87344",
+    "ThreadId": "26107",
+    "Html": "\r\nEugene - Great job on FLEE! I have to say that you've done an excellent job defining your goals and sticking to them.<br /><br />I would like to know if you could provide an example of how a developer would go about extending the parser.  From my reading, I see that you are using <i>grammatica</i>, a parser generator that takes a given grammar file and provides the code for the developer as a foundation. I believe that a really good example for this would be the inclusion of a <i>Date</i> type. I know that you could get the same result by including the System.Date method and in your expression using \"Date(2008,4,17)\" to get April 17, 2008, but I (and probably others) would like to see the steps to link functionality from the generated parser into the FLEE library.<br /><br />I would like to be able to evaluate an expression such as \"AddDay([20080417],1)\" or \"LastDayOfMonth([20080417])\" where the <i>Date</i> type is [yyyymmdd]. Due to cultural differences on the way dates are read and entered, I would assume that we would want to stay away from the mm/dd/yyyy and dd/mm/yyyy format unless you can think of a genius way to handle this. I'm just intrigued on how powerful this library can be.<br /><br />Thanks!  And again, great job on all your hard work.<br />",
+    "PostedDate": "2008-04-17T05:54:30.757-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "87773",
+    "ThreadId": "26107",
+    "Html": "\r\nThanks for your compliments.<br /><br />&gt;I believe that a really good example for this would be the inclusion of a Date type<br />Do you need an example of how to do this by modifying the source or how to do it by hooking into a general extension mechanism that would work at runtime?<br />",
+    "PostedDate": "2008-04-19T09:47:16.017-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "87775",
+    "ThreadId": "26107",
+    "Html": "\r\nI guess your question leads me to the more relevant question; does it make more sense to modify the parser's source to include such functionality or add an extension to accomplish this? I am leaning toward the extension as it would probably make my project easier to maintain. As you make updates to Flee, I would only have to modify my extension if there are breaking changes and not Flee's source.  What are your thoughts on this? Are there other ramifications that I'm missing that may impact performance or usability?<br /><br />Thanks!<br />",
+    "PostedDate": "2008-04-19T10:01:52.21-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "88173",
+    "ThreadId": "26107",
+    "Html": "\r\nI think an extension mechanism is also the best way to go but it would be tricky to implement.  Right now, grammatica generates an analyzer class from a grammar file.  I then create a derived class which overrides the base methods to build the parse tree.  If you modify the grammar and create a new analyzer class, I'm not sure how I can hook into your new analyzer class at runtime.<br /><br />Although, one of grammatica's features is that it allows parsers to be built at runtime.  So perhaps I can provide some hooks where you can add your own token (or production) to the parser as it's being built.  I'll also have to provide a way for you to emit the required IL for your extension.<br /><br />&gt;Are there other ramifications that I'm missing that may impact performance or usability?<br />Re-creating the parser won't be fast but it only has to be done once.  <br />",
+    "PostedDate": "2008-04-21T20:34:12.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

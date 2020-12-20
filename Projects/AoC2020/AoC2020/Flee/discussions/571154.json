@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1318604",
+    "ThreadId": "571154",
+    "Html": "How to get the list of used variables in an expression \r<br />\ne.g. \r<br />\n=10*(X+Y)\r<br />\n<br />\nis there any method or property which will list the variables X and Y as used and any other variable passed for evaluation as unused.\r<br />\n<br />\nI am concerned with the used variables.\r<br />\n<br />\nThanks in Advance\r<br />\najay<br />\n",
+    "PostedDate": "2014-11-03T04:19:31.2-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

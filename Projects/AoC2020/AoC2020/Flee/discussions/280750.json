@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "703063",
+    "ThreadId": "280750",
+    "Html": "<p>I want to give flee any math or logical expression I encounter, and I&nbsp;don't&nbsp;want to have to worry about types (i had a similar implementation using the JScript library that worked fantastically, although it was slow and used floating points which was critically  wrong for what I am doing).</p>\n<p>Here is my relevant code (0.9.26 of flee):</p>\n<p><span lang=\"en-ca\"><span style=\"font-family: Calibri;\">&nbsp;</span></span></p>\n<div style=\"color: black; background-color: white;\">\n<pre>context = <span style=\"color: blue;\">new</span> ExpressionContext();\n\ncontext.Options.RealLiteralDataType = RealLiteralDataType.Decimal;\n\ncontext.Options.IntegersAsDoubles = <span style=\"color: blue;\">true</span>;\n\ncontext.Options.ParseCulture = System.Globalization.CultureInfo.InvariantCulture;\n</pre>\n</div>\n<p><span lang=\"en-ca\"><span style=\"font-family: Calibri;\">&nbsp;</span></span></p>\n<p>&nbsp;</p>\n<p>Using these options, when I try to evaluate 2 = 2.0, I get an exception:</p>\n<p><span style=\"font-family: Calibri;\">&nbsp;</span></p>\n<div style=\"color: black; background-color: white;\">\n<pre>context.CompileDynamic(<span style=\"color: #a31515;\">\"(2 = 2.0)\"</span>).Evaluate();\n\n<span style=\"color: #a31515;\">'context.CompileDynamic(\"(2 = 2.0)\")'</span> threw an exception of type <span style=\"color: #a31515;\">'Ciloci.Flee.ExpressionCompileException'</span>\n</pre>\n</div>\n<p><span style=\"font-family: Calibri;\">&nbsp;</span></p>\n<p>&nbsp;</p>\n<p>Various combinations of these options give me what I need. In short, i need to be able to execute the following types of expressions without having to worry about data types:</p>\n<p>2.0 = 2 (works if either integersAsDoubles is off or i dont set the RealLiteralDataType to Decimal, not when i do both)</p>\n<p>1111111111 + 2222222222 &gt; 200000 (works when integersAsDoubles is on and RealLiteralDataType is set)</p>\n<p>1.1 + 2.2 = 3.3 (works when RealLiteralDataType is set)</p>\n<p>&nbsp;</p>\n<p>The options do not seem to play nice together (or, more likely, i dont fully understand the options).</p>\n<p>Any way to do what I need?</p>\n<p>Thanks,</p>\n<p>Andrew</p>",
+    "PostedDate": "2011-11-24T09:54:28.677-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "703091",
+    "ThreadId": "280750",
+    "Html": "<p>It seems as though there are differences whether or not the Flee library is compiled in release or debug mode.</p>\r\n<p>&nbsp;</p>\r\n<p>If I use the following options and compile in debug mode all of the above expressions evaluate with no exceptions:</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>context = <span style=\"color: blue;\">new</span> ExpressionContext();\r\n\r\ncontext.Options.RealLiteralDataType = RealLiteralDataType.Decimal;\r\n\r\ncontext.Options.ParseCulture = System.Globalization.CultureInfo.InvariantCulture;\r\n<br /></pre>\r\n<pre><br /></pre>\r\n<pre>If I compile the exact same thing in release mode, the following expression throws an overflow exception:</pre>\r\n<pre>1111111111 + 2222222222 &gt; 200000<br /></pre>\r\n<pre>\r\n\r\n</pre>\r\n</div>\r\n<pre><br /></pre>\r\n<p>Any reason for this difference?</p>",
+    "PostedDate": "2011-11-24T10:51:36.947-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

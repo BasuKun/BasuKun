@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1436298",
+    "ThreadId": "642046",
+    "Html": "Hi,\r<br />\n<br />\nis it possible to transform an expression from one Culture into another?\r<br />\n<br />\nWe use flee in a multi language application and the expression should displayed in the culture of the current user. For example the expression was created by an english user (&quot;sum(a,b,1.0)&quot;), the expression should be displayed as &quot;sum(a;b;1,0)&quot; for a german user.\r<br />\n<br />\nThanks a lot\r<br />\nLevi<br />\n",
+    "PostedDate": "2015-07-28T07:19:49.363-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

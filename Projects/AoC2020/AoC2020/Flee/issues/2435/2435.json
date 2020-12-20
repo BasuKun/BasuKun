@@ -1,0 +1,76 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "-Closing",
+    "ClosedDate": "2008-01-11T18:53:19.56-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'd like to obtain the 'resolved' expression, not only the 'Text'. \n \nI try to explain better... suppose i have this formula with a constant:\nF1(3;MyValue)\n \nI need to obtain this:\n--> '3+7+10'\n \nWhere F1 is declared in a class:\n \npublic class CustomFunctions\n{\n    public static int MyValue = 7;\n    public static int F1(int a, int b)\n    {\n        return (a + b + 10);\n    }\n}\n \nI attach you the simple project.",
+    "LastUpdatedDate": "2013-05-16T04:24:09.067-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2007-11-21T04:19:51.533-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "How obtaining the 'resolved' expression",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 2435
+  },
+  "FileAttachments": [
+    {
+      "FileId": 524,
+      "FileName": "TestFlee.zip",
+      "DownloadUrl": ".\\524"
+    },
+    {
+      "FileId": 537,
+      "FileName": "program.zip",
+      "DownloadUrl": ".\\537"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "I've attached a modified version of your example that hopefully does what you need.  The main change was defining \"MyValue\" as a variable so you can retrieve its value from the Variables collection.  The example only replaces variable names with their value.  Flee can't go inside a function's code and retrieve the \"a + b + 10\" to get your \"'3+7+10\".\r\n\r\nHope that helps.",
+      "PostedDate": "2007-11-22T18:16:33.91-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2007-11-22T18:16:35.13-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-01-11T18:53:19.56-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:54:07.007-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:24:09.067-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

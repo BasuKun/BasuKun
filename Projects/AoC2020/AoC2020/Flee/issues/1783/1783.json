@@ -1,0 +1,95 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Library",
+      "DisplayName": "Library"
+    },
+    "ClosedComment": "Fixed in 0.9.11.0",
+    "ClosedDate": "2007-11-05T18:05:38.953-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I've encountered a couple of reasons to wish for a way to restrict which members of the expression owner's class are resolved in the expression:\n \n1. C# classes can define two or more members that differ only in case, making the case-insensitive expression ambiguous.\n2. Certain members (e.g., private backing fields) cannot or should not be exposed for security or other practical reasons.\n \nAt least three approaches come to mind for dealing with this (ordered from most to least favorite):\n \n1. Provide an EvalIgnoreAttribute class. Expression terms would never resolve to members marked with [EvalIgnore].\n \n2. Provide an ExpressionOptions property to restrict the scope of members to which expression terms are resolved, e.g., PublicOnly=true|false or MinScope=public|protected|private.\n \n3. Try to resolve ambiguities algorithmically, e.g., favor public over private, properties over fields.\n \nMore than one approach could be useful, too. If you implemented #2, for example, it might make sense to implement #1 so that members restricted due to their non-public scope could be \"unignored\" via the [EvalIgnore] attribute.",
+    "LastUpdatedDate": "2013-05-16T04:24:09.623-07:00",
+    "PlannedForRelease": "Flee-0.9.11.0",
+    "ReleaseVisibleToPublic": true,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2007-10-10T07:11:44.953-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Provide means to restrict eligibility of owner members",
+    "Type": {
+      "Name": "Feature",
+      "Id": 1
+    },
+    "VoteCount": 1,
+    "Id": 1783
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I was thinking the same thing.  Being able to access all members of the expression owner is useful in some cases but needs to be restricted in others (especially when the expressions will come from user input).  I was thinking of the attribute based approach as well but #2 makes sense too.  It would be nice to be able to hide a whole range of members but pick out one to unhide.\r\n\r\nI'll implement a solution to this on the weekend.",
+      "PostedDate": "2007-10-11T07:04:53.85-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2007-10-11T07:05:28.083-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I've implemented owner member access control in release 0.9.10.0.  I haven't closed the issue because I still need to sort out handling of members whose names differ only in case.",
+      "PostedDate": "2007-10-14T17:39:54.507-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2007-10-14T17:45:16.043-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2007-10-14T17:46:07.84-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Thank you!\r\n\r\nI'm using the ExpressionOptions properties as well as the ExpressionOwnerMemberAccess attribute, and they're working as advertised.\r\n\r\nAs for multiple members with the same name but different case, my 2¢ is just throw an exception. With the ExpressionOwnerMemberAccess attribute, the developer can just clear up ambiguities explicitly.\r\n\r\nI'll post some random thoughts about the implementation in a Discussion thread, but there's one, barely-a-nit item I'll mention here: the help file (Flee.chm) displays another attribute's syntax when you click ExpressionOwnerMemberAccessAttribute in the help window's Contents tab.",
+      "PostedDate": "2007-10-15T09:46:06.377-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I think you are seeing the AttributeUsageAttribute applied to my attribute.  I'm limiting the ExpressionOwnerMemberAccessAttribute so that it can only be applied to fields, properties, and methods.",
+      "PostedDate": "2007-10-15T14:11:29.837-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2007-11-05T18:05:25.033-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2007-11-05T18:05:38.953-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:54:07.503-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:24:09.623-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

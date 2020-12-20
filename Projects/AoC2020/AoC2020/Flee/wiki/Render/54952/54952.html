@@ -1,0 +1,11 @@
+<div class="wikidoc"><b>Using the result type option</b><br /><br />You can use the ResultType option to make the result of an expression be of a particular type.  Setting the option will put an <b>implicit</b> conversion to that type at the end of an expression.  If the conversion is not possible, an ExpressionCompileException will be thrown.<br /><br />This sample shows how to use this property to make an expression always return a result of type Object<br /><br /><pre>
+ExpressionOptions options = new ExpressionOptions();
+// Put an implicit convert to object at end of the expression
+options.ResultType = typeof(object);
+ 
+Expression e = new Expression(&quot;1+1&quot;, owner, options);
+// The evaluator will now always be of the same type as the ResultType
+ExpressionEvaluator&lt;object&gt; evaluator = (ExpressionEvaluator&lt;object&gt;) e.Evaluator;
+// result will now contain the boxed integer 2
+object result = evaluator();
+</pre></div><div class="ClearBoth"></div>

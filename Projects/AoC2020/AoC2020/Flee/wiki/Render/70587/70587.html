@@ -1,0 +1,18 @@
+<div class="wikidoc"><b>Special functions in expressions</b><br /><br />Certain functions are treated specially by Flee and are built-in to all expressions.<br /><br /><b>Conditional Operator</b><br />Purpose: Returns one of two results based on a condition<br />Syntax: <span class="codeInline">If(condition, whenTrue, whenFalse)</span><br />Notes: The conditional operator is lazy: it will only evaluate the expression that corresponds to the result of the condition.<br /><br />Example:<br /><pre>
+ExpressionContext context = new ExpressionContext();
+VariableCollection variables = context.Variables;
+variables.Add(&quot;a&quot;, 100);
+
+// Return 123 if a is greater than 100; return -1 otherwise            
+IGenericExpression&lt;int&gt; e = ExpressionFactory.CreateGeneric&lt;int&gt;(&quot;if(a &gt; 100, 123, -1)&quot;, context);
+int result = e.Evaluate();
+</pre><br /><br /><b>Cast Operator</b><br />Purpose: Performs an implicit or explicit cast of one value to another<br />Syntax: <span class="codeInline">cast(value, type)</span><br /><br />Example:<br /><pre>
+ExpressionContext context = new ExpressionContext();
+VariableCollection variables = context.Variables;
+// Define a variable of type double
+variables.Add(&quot;a&quot;, 123.45);
+
+// Truncate it to an int
+IGenericExpression&lt;int&gt; e = ExpressionFactory.CreateGeneric&lt;int&gt;(&quot;cast(a, int)&quot;, context);
+int result = e.Evaluate();
+</pre></div><div class="ClearBoth"></div>

@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Due to the culture sensitive comparisons in the lexer setting a thread's CurrentCulture to tr-TR causes syntax errors when using capital letter I's in identifiers.\n\nFor example the expression \"THIS\" (without quotes) causes:\n   SyntaxError: Unexpected character: I\n   Line: 1, Column: 3\n\nWhile the expression \"this\" works as intended.\n\nI've provided a patch that replaces ToLower with ToLowerInvariant, which does not have this problem. It does not affect strings in any way as the results from ToLower aren't kept anywhere, the lexer only passes around indexes into the expression string.",
+    "LastUpdatedDate": "2016-12-20T04:43:55.98-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2016-12-20T04:43:54.833-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Turkish localization causes syntax errors",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 17730
+  },
+  "FileAttachments": [
+    {
+      "FileId": 6182,
+      "FileName": "turkish_i.patch",
+      "DownloadUrl": ".\\6182"
+    }
+  ],
+  "Comments": []
+}

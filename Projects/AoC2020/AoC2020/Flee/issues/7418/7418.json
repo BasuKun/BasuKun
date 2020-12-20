@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Library",
+      "DisplayName": "Library"
+    },
+    "ClosedComment": "Fixed in 0.9.24.0",
+    "ClosedDate": "2009-04-03T19:07:13.517-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have the following expression that give me the:\n \nSystem.NotSupportedException: Illegal one-byte branch at position: 118. Requested branch was: 143.\n   at System.Reflection.Emit.ILGenerator.BakeByteArray()\n   at System.Reflection.Emit.DynamicResolver..ctor(DynamicILGenerator ilGenerator)\n   at System.Reflection.Emit.DynamicILGenerator.GetCallableMethod(Void* module)\n   at System.Reflection.Emit.DynamicMethod.GetMethodDescriptor()\n   at System.Reflection.Emit.DynamicMethod.CreateDelegate(Type delegateType)\n   at Ciloci.Flee.Expression`1.Compile(String expression, Object owner, ExpressionOptions options)\n   at Ciloci.Flee.Expression`1..ctor(String expression, ExpressionContext context)\n   at Ciloci.Flee.ExpressionFactory.CreateGeneric[T](String expression, ExpressionContext context)\n   at ExpressionEval.CreateGenericExpression[T](String expression, ExpressionContext context)\n   at ExpressionEval.Evaluate(String expression)\n   at StrategyHelper.DoExpression(Guid modelEntityId, ClaimMaster claim)\n \n(((((402 >= 360 AND 402 <= 361))) OR (((402 >= 369 AND 402 <= 369))) OR (((402 >= 490 AND 402 <= 490))) OR (((402 >= 499 AND 402 <= 499)))) AND ((((\"76856\" = \"47562\" OR \"76830\" = \"47562\") OR (\"76856\" = \"47563\" OR \"76830\" = \"47563\") OR (\"76856\" = \"47564\" OR \"76830\" = \"47564\"))))) OR (((402 >= 360 AND 402 <= 361) OR (402 >= 369 AND 402 <= 369) OR (402 >= 490 AND 402 <= 490) OR (402 >= 499 AND 402 <= 499)) AND ((\"76856\" = \"47562\" OR \"76830\" = \"47562\") OR (\"76856\" = \"47563\" OR \"76830\" = \"47563\") OR (\"76856\" = \"47564\" OR \"76830\" = \"47564\")))\n \nIf I break the expression up like so and run each separately they work, but error out when run together:\n \n(((((402>=360 AND 402<=361))) OR (((402>=369 AND 402<=369))) OR (((402>=490 AND 402<=490))) OR (((402>=499 AND 402<=499)))) AND ((((\"76856\"=\"47562\" OR \"76830\"=\"47562\") OR (\"76856\"=\"47563\" OR \"76830\"=\"47563\") OR (\"76856\"=\"47564\" OR \"76830\"=\"47564\"))))) \n \nOR    \n \n(((((402>=360 AND 402<=361))) OR (((402>=369 AND 402<=369))) OR (((402>=490 AND 402<=490))) OR (((402>=499 AND 402<=499)))) AND ((((\"76856\"=\"47562\" OR \"76830\"=\"47562\") OR (\"76856\"=\"47563\" OR \"76830\"=\"47563\") OR (\"76856\"=\"47564\" OR \"76830\"=\"47564\"))))\n \nI have the latest code, version 0.9.23.0",
+    "LastUpdatedDate": "2013-05-16T04:24:05.803-07:00",
+    "PlannedForRelease": "Flee-0.9.24.0",
+    "ReleaseVisibleToPublic": true,
+    "Priority": {
+      "Name": "Medium",
+      "Severity": 100,
+      "Id": 2
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2009-04-02T11:53:38.017-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Illegal one-byte branch error in version 0.9.23.0",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 7418
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

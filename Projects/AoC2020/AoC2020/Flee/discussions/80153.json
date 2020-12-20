@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "274674",
+    "ThreadId": "80153",
+    "Html": "<p>Truly an awesome library, very performant and use to work with.</p>\r\n<p>Is there any way to declare / initialize variables within the expression.&nbsp;</p>\r\n<p>Pseudo Code</p>\r\n<p>let angle be something</p>\r\n<p><span>If (</span>something is true<span>, angle = 1, angle = 2)</span></p>\r\n<p><span>I can do this declaring variables and using calcengine (I think) but it would be great to be able to do this directly from the expression</span></p>\r\n<p><br>Thanks</p>\r\n<p>&nbsp;</p>\r\n<p>Steve Hayles</p>",
+    "PostedDate": "2010-01-08T01:09:52.683-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "79635",
+    "ThreadId": "23758",
+    "Html": "\r\nHello,<br /><br />Consider this Flee expression:<br /><br />\"x.b + y.b\"<br /><br />Let's say we added x and y as variables (they are objects). However, neither x or y have a method/field called 'b'.<br /><br />In that cases, I understand we can use the events ResolveVariableType/Value. But, those events are not \"parent-variable-sensitive\", so when called I got only \"b\" as information, but I don't know for which variable I should evaluate it.<br /><br />In my scenario I want to implement dynamic variables taken out of a HashTable. Both \"x\" and \"y\" objects implement some GetDynamicPropertyType and GetDynamicPropertyValue. If in the event I could get the object/variable (object \"x\" or \"y\"), I could call to my GetDynamic... functions. But, that information is missing.<br /><br />If it is not clear enough, let me know and I will produce a little sample project. Am I missing something? Is there any way to do what I want?<br /><br />Thank you!<br />",
+    "PostedDate": "2008-03-11T02:00:53.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "79890",
+    "ThreadId": "23758",
+    "Html": "\r\nCan you post the sample project?  I think I know what you need but I want to make sure we're on the same page.  I don't think you can attach a file to a discussion post so you might have to create a new issue.<br />",
+    "PostedDate": "2008-03-11T19:53:00.01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "79981",
+    "ThreadId": "23758",
+    "Html": "<pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\n    class MyClass\r\n    {\r\n        public void Do ()\r\n        {\r\n            ExpressionContext context = new ExpressionContext();\r\n            context.Variables.Add(\"x\", new MyInteger());\r\n            context.Variables.Add(\"y\", new MyString());\r\n            context.Variables.ResolveVariableType += new EventHandler&lt;ResolveVariableTypeEventArgs&gt; (Variables_ResolveVariableType);\r\n            context.Variables.ResolveVariableValue += new EventHandler&lt;ResolveVariableValueEventArgs&gt; (Variables_ResolveVariableValue);\r\n            IDynamicExpression eDynamic = ExpressionFactory.CreateDynamic(\"x.b + y.b\", context);\r\n            eDynamic.Evaluate();\r\n        }\r\n \r\n        void Variables_ResolveVariableType (object sender, ResolveVariableTypeEventArgs e)\r\n        {\r\n            // At this point:\r\n            // sender == VariableCollection\r\n            // e.VariableName == \"b\" &lt;--- which \"b\"????\r\n            //\r\n            // if \"e.ResolveContext\" was my object (either x or y), I could do:\r\n            // e.VariableType = ((IDynamicPropertyProvider) (e.ResolveContext)).GetDynamicPropertyType;\r\n        }\r\n        void Variables_ResolveVariableValue (object sender, ResolveVariableValueEventArgs e)\r\n        {\r\n            // see above\r\n        }\r\n \r\n    }\r\n \r\n    public interface IDynamicPropertyProvider\r\n    {\r\n        Type GetDynamicPropertyType (string propertyName);\r\n        object GetDynamicPropertyValue (string propertyName);\r\n    }\r\n \r\n    public class MyInteger : IDynamicPropertyProvider\r\n    {\r\n        public Type GetDynamicPropertyType (string propertyName)\r\n        {\r\n            if (propertyName == \"b\")\r\n            {\r\n                return typeof (int);\r\n            }\r\n            return null;\r\n        }\r\n \r\n        public object GetDynamicPropertyValue (string propertyName)\r\n        {\r\n            if (propertyName == \"b\")\r\n            {\r\n                return 3;\r\n            }\r\n            return null;\r\n        }\r\n \r\n    }\r\n \r\n    public class MyString : IDynamicPropertyProvider\r\n    {\r\n        public Type GetDynamicPropertyType (string propertyName)\r\n        {\r\n            if (propertyName == \"b\")\r\n            {\r\n                return typeof (string);\r\n            }\r\n            return null;\r\n        }\r\n \r\n        public object GetDynamicPropertyValue (string propertyName)\r\n        {\r\n            if (propertyName == \"b\")\r\n            {\r\n                return \"text\";\r\n            }\r\n            return null;\r\n        }\r\n    }\r\n</pre>",
+    "PostedDate": "2008-03-12T05:26:29.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "79982",
+    "ThreadId": "23758",
+    "Html": "\r\n&lt;deleted because it was dupped (again?)&gt;<br />",
+    "PostedDate": "2008-03-12T05:26:32.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "80449",
+    "ThreadId": "23758",
+    "Html": "\r\nIt looks like what you want is the ability to reference \"virtual\" properties in an expression.  I just implemented this in 0.9.17.2 from the <a href=\"http://www.codeplex.com/Flee/Thread/View.aspx?ThreadId=21500\">List of available functions</a> discussion.  It works by using the built-in .NET TypeDescriptor  framework.<br /><br />Here's the code that does the same thing as your sample.<br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\nusing System;\r\nusing System.ComponentModel;\r\nusing Ciloci.Flee;\r\nusing System.Collections.Generic;\r\n \r\nclass Module1\r\n{\r\n \r\n    public static void Main()\r\n    {\r\n        // Add our custom provider to the MyString and MyInteger types\r\n        FleeTypeDescriptionProvider provider = new FleeTypeDescriptionProvider(TypeDescriptor.GetProvider(typeof(MyString)));\r\n        TypeDescriptor.AddProvider(provider, typeof(MyString));\r\n        provider = new FleeTypeDescriptionProvider(TypeDescriptor.GetProvider(typeof(MyInteger)));\r\n        TypeDescriptor.AddProvider(provider, typeof(MyInteger));\r\n \r\n        ExpressionContext context = new ExpressionContext();\r\n        context.Variables.Add(\"x\", new MyInteger());\r\n        context.Variables.Add(\"y\", new MyString());\r\n        IDynamicExpression e = ExpressionFactory.CreateDynamic(\"x.b\", context);\r\n        object result = e.Evaluate();\r\n    }\r\n \r\n}\r\n \r\npublic class MyString\r\n{\r\n \r\n}\r\n \r\npublic class MyInteger\r\n{\r\n \r\n}\r\n \r\npublic class FleeTypeDescriptionProvider : TypeDescriptionProvider\r\n{\r\n \r\n    private TypeDescriptionProvider MyParent;\r\n \r\n    public FleeTypeDescriptionProvider(TypeDescriptionProvider parent)\r\n        : base(parent)\r\n    {\r\n        MyParent = parent;\r\n    }\r\n \r\n    public override System.ComponentModel.ICustomTypeDescriptor GetTypeDescriptor(System.Type objectType, object instance)\r\n    {\r\n        // Return our custom type descriptor\r\n        return new FleeCustomTypeDescriptor(MyParent.GetTypeDescriptor(objectType), objectType);\r\n    }\r\n}\r\n \r\npublic class FleeCustomTypeDescriptor : CustomTypeDescriptor\r\n{\r\n \r\n    private Type MyComponentType;\r\n \r\n    public FleeCustomTypeDescriptor(ICustomTypeDescriptor parent, Type componentType)\r\n        : base(parent)\r\n    {\r\n        MyComponentType = componentType;\r\n    }\r\n \r\n    public override System.ComponentModel.PropertyDescriptorCollection GetProperties()\r\n    {\r\n        PropertyDescriptorCollection props = base.GetProperties();\r\n        List&lt;PropertyDescriptor&gt; list = new List&lt;PropertyDescriptor&gt;();\r\n        foreach (PropertyDescriptor pd in props)\r\n        {\r\n            list.Add(pd);\r\n        }\r\n \r\n        // Add our custom property\r\n        list.Add(new FleeCustomProperty(\"b\", MyComponentType));\r\n \r\n        props = new PropertyDescriptorCollection(list.ToArray());\r\n        return props;\r\n    }\r\n}\r\n \r\npublic class FleeCustomProperty : PropertyDescriptor\r\n{\r\n \r\n    private Type MyObjectType;\r\n \r\n    public FleeCustomProperty(string name, Type objectType)\r\n        : base(name, null)\r\n    {\r\n        MyObjectType = objectType;\r\n    }\r\n \r\n    public override bool CanResetValue(object component)\r\n    {\r\n        return false;\r\n    }\r\n \r\n    public override System.Type ComponentType\r\n    {\r\n        get { return MyObjectType; }\r\n    }\r\n \r\n    // Could call GetDynamicPropertyValue here instead\r\n    public override object GetValue(object component)\r\n    {\r\n        if (object.ReferenceEquals(component.GetType(), typeof(MyString)))\r\n        {\r\n            return \"Flee!\";\r\n        }\r\n        else if (object.ReferenceEquals(component.GetType(), typeof(MyInteger)))\r\n        {\r\n            return 100;\r\n        }\r\n        else\r\n        {\r\n            return null;\r\n        }\r\n    }\r\n \r\n    public override bool IsReadOnly\r\n    {\r\n \r\n        get { return true; }\r\n    }\r\n \r\n    // Required by Flee\r\n    public override System.Type PropertyType\r\n    {\r\n        get\r\n        {\r\n            if (object.ReferenceEquals(MyObjectType, typeof(MyString)))\r\n            {\r\n                return typeof(string);\r\n            }\r\n            else if (object.ReferenceEquals(MyObjectType, typeof(MyInteger)))\r\n            {\r\n                return typeof(int);\r\n            }\r\n            else\r\n            {\r\n                return null;\r\n            }\r\n        }\r\n    }\r\n \r\n    public override void ResetValue(object component)\r\n    {\r\n \r\n    }\r\n \r\n    public override void SetValue(object component, object value)\r\n    {\r\n \r\n    }\r\n \r\n    public override bool ShouldSerializeValue(object component)\r\n    {\r\n        return false;\r\n    }\r\n}\r\n</pre><br />And, on a side note, Flee should only be allowing the ResolveVariableType/Value events to be called on a variable and not a property (ie: it shouldn't work for anyting after a <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">x.</span>).  I'll fix that in the next release.<br />",
+    "PostedDate": "2008-03-13T14:01:45.303-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "82659",
+    "ThreadId": "23758",
+    "Html": "\r\nSorry for answering this late.<br /><br />In your solution, you need to know exactly how many properties exist for every object (you need them at \"// Add our custom property\"). However, in my scenario I do not know how many properties exists, nor their types. All that I know is that the object can give me types/values on request, not <b>all</b> the types/values but <b>only</b> those that I ask for. So I just need to delegate the \"give-me-the-type\" and \"give-me-the-value\" functionality to the object.<br /><br />However with a little trick/workaround before sending the expression to Flee I managed to do what I wanted to, so this is not a problem for me anymore. However, just for the discussion, why don't you want the ResolveVariableType/Value events to be called on a property? Why is it that bad?<br />",
+    "PostedDate": "2008-03-25T06:22:31.753-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "83118",
+    "ThreadId": "23758",
+    "Html": "\r\n&gt;However, just for the discussion, why don't you want the ResolveVariableType/Value events to be called on a property? Why is it that bad?<br /><br />I'm looking at it from the way I originally implemented it (in which it was only meant to work on variables).  I thought that putting in the virtual properties would eliminate the need to have on-demand properties but it looks like both have their uses.<br /><br />I'm curious, what workaround did you use to solve your problem?<br />",
+    "PostedDate": "2008-03-26T18:09:17.4-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "83206",
+    "ThreadId": "23758",
+    "Html": "\r\nIn my project we make a pre-processing step with the expression, so I am able to change \"a.b\" to \"MyCall_a_b()\". In the execution step, I hook into the Resolve/Invoke-functions, and when I see the call to \"MyCall_a_b()\" I call \"a.GetDynamicPropertyxxxx(\"b\")\". This is valid in my situation because I know that variables will never have an underscore on them, but you get the point.<br /><br />It is very long workaround, and I still think that if ResolveVariable could give some kind of context it should be nicer and easier, but still, it works... well, it does <i>not</i> work now just because of <a href=\"http://www.codeplex.com/Flee/Thread/View.aspx?ThreadId=24657\">Common Language Runtime detected an invalid program</a> :-)<br />",
+    "PostedDate": "2008-03-27T05:00:21.203-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

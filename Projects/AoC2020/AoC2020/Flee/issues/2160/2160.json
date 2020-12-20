@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Library",
+      "DisplayName": "Library"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n \nGreat library, too bad the assemblies are not strongly signed. This prevents referencing the library from assemblies which have a strong key. \nAny chances of providing strongly signed versions of assemblies? I tried to add the strong key to the source, but it couldn't be compiled since the gramatica DLL is also not strongly signed, and there is no source code for it.\n \nBest regards,\nIgor",
+    "LastUpdatedDate": "2013-06-14T00:28:45.713-07:00",
+    "PlannedForRelease": "Flee-0.9.12.0",
+    "ReleaseVisibleToPublic": true,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2007-11-06T13:57:29.977-08:00",
+    "Status": {
+      "Name": "Resolved",
+      "Id": 7
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Strongly signed assemblies",
+    "Type": {
+      "Name": "Task",
+      "Id": 2
+    },
+    "VoteCount": 1,
+    "Id": 2160
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I will add a strong name to the Flee assembly and I'll compile a new, strong-named version of grammatica.  Look for it in the next release.",
+      "PostedDate": "2007-11-07T12:49:50.093-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2007-11-10T18:46:58.23-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "The 0.9.12.0 release features strong-named flee and grammatica assemblies.",
+      "PostedDate": "2007-11-10T18:48:28.93-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:54:07.173-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:24:09.213-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:24:09.34-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-06-14T00:28:45.713-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

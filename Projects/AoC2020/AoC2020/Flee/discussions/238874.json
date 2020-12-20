@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "537827",
+    "ThreadId": "238874",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>Suppose I have a class</p>\r\n<p>public class Animal</p>\r\n<p>{</p>\r\n<p>&nbsp;&nbsp; &nbsp; long Legs{</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;get; set;</p>\r\n<p>&nbsp;&nbsp; &nbsp;}</p>\r\n<p>}</p>\r\n<p>&nbsp;</p>\r\n<p>and I want to evaluate the expression &quot;animal.Legs == 2&quot; &nbsp;</p>\r\n<p>Is this possible with FLEE.</p>\r\n<p>Something like:</p>\r\n<p>Animal animal = new Animal();</p>\r\n<p>animal.Legs = 4;</p>\r\n<p>bool isBiped = Expression.Eval(&quot;animal.Legs == 2&quot;) ;</p>\r\n<p>Thanks!</p>\r\n<p>Aaron</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-12-18T18:17:19.82-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

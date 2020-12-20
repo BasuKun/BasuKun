@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "146373",
+    "ThreadId": "44011",
+    "Html": "Hi,<br>\r\n<br>\r\ni'm trying to use Flee with Visual Studio 2005 and 2008. I downloaded the FleeDataTableCompute example and with VS 2008 (after conversion of the Solution) everything went OK, but with VS 2005 i'm getting the run-time error Method not found for one of the System.Reflection methods. Does anyone know a solution? Is a .Net-Framework problem?<br>\r\n<br>\r\nThanks,<br>\r\nAlejandro \r\n",
+    "PostedDate": "2009-01-12T09:52:59.847-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "146746",
+    "ThreadId": "44011",
+    "Html": "I tried it in VS2005 on my machine and it runs fine.<br>\r\n<br>\r\nYou'll have to give me the exception details before I can track it down further.<br>\r\n",
+    "PostedDate": "2009-01-13T10:11:46.113-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "147420",
+    "ThreadId": "44011",
+    "Html": "Hi,<br>\r\n<br>\r\ni'm getting the following error:<br>\r\nMethod not found: 'Void System.Reflection.Emit.DynamicMethod..ctor(System.String, System.Type, System.Type[])'.<br>\r\n<br>\r\non line 46 (IDynamicExpression e = context.CompileDynamic(&quot;Format(\\&quot;The price of {0} is: {1:C2}\\&quot;, ItemName, price + (price * tax))&quot;); ) of Program.cs in FleeDataTableCompute solution. <br>\r\n<br>\r\nThanks,<br>\r\nAlejandro<br>\r\n",
+    "PostedDate": "2009-01-15T08:55:41.283-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "147521",
+    "ThreadId": "44011",
+    "Html": "Looks like that method was not in the original .NET 2.0 framework and was instead added as part of <a href=\"http://www.microsoft.com/Downloads/details.aspx?familyid=79BC3B77-E02C-4AD3-AACF-A7633F706BA5&displaylang=en\">Service Pack 1</a>.&nbsp; If you upgrade, then it should work.<br>\r\n",
+    "PostedDate": "2009-01-15T15:36:16.923-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

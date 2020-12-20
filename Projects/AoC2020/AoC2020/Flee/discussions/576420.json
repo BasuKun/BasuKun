@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1337604",
+    "ThreadId": "576420",
+    "Html": "Is it possible to use a variable with a whitespace in it's name as a valid expression value?\r<br />\n<br />\ni.e. my variable name is &quot;The variable&quot; and my expression is:\r<br />\n<code>The variable * 2</code>\r<br />\n<br />\nHow can I tell FLEE that &quot;The variable&quot; is one single value?\r<br />\n<br />\nI tried something like <code>{The variable} * 2</code> or <code>[The variable] * 2</code> but no avail.<br />\n",
+    "PostedDate": "2014-12-29T04:36:22.093-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1353915",
+    "ThreadId": "576420",
+    "Html": "I've had to do a similar thing to this, so in my code I enforced braces around field names, like {My Balance} so I could determine what was a field name, then I used a lookup table of GUIDs for each variable.\r<br />\n<br />\nSo when FLEE needed a variable it referred to it by something like var_6E211AC30BDF4E09BD8F5931591AEFAE which of course contains no spaces.\r<br />\nI didn't find the performance hit to be anything to worry about.\r<br />\n<br />\nHope this is of some use.<br />\n",
+    "PostedDate": "2015-02-19T01:20:53.123-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

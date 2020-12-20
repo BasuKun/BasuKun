@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Flee exposes methods for reflection via GetType, allowing access to things not exposed to Flee explicitly.\n\nFor example these expressions:\n```\n1.GetType()\nResult: \"System.Int32\" of type System.RuntimeType\n1.GetType().Module\nResult: \"CommonLanguageRuntimeLibrary\" of type System.Reflection.RuntimeModule\n1.GetType().Module.getType(\"System.Environment\")\nResult: \"System.Environment\" of type System.RuntimeType\n1.GetType().Module.getType(\"System.Environment\").GetMethods()[25].Invoke( null; null )\nResult: \"Microsoft Windows NT 6.2.9200.0\" of type System.OperatingSystem\n```\n\nThe limitations as far as I can tell are that you can't use anything with arguments, but you can still gather a lot of information and do things like shut down the host application.\n\nWe've applied a patch that modifies IsMemberAccessible to find anything that returns a subclass of System.Type to be not accessible.",
+    "LastUpdatedDate": "2016-12-20T05:41:21.323-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2016-12-20T05:41:20.533-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "It is possible to execute code not exposed in Flee via reflection",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 17732
+  },
+  "FileAttachments": [
+    {
+      "FileId": 6184,
+      "FileName": "Reflection attack.patch",
+      "DownloadUrl": ".\\6184"
+    }
+  ],
+  "Comments": []
+}

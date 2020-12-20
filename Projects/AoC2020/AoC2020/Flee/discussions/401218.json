@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "934134",
+    "ThreadId": "401218",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>When I try this code I am getting an exception. I am trying to insert &quot; (double quotes) within a string literal.</p>\r\n<p>This is the code:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>ExpressionContext fleeContext;\n\nfleeContext = GetFleeContext&lt;<span style=\"color:blue\">string</span>&gt;();\n\nfleeContext.CompileGeneric&lt;<span style=\"color:blue\">string</span>&gt;(<span style=\"color:#a31515\">&quot;\\&quot;&quot;</span>);\n</pre>\r\n</div>\r\n<p>this throws an exception which reads:&nbsp;<strong>Unexpected character: Unexpected character: \\&quot; Line: 1, Column: 1</strong></p>\r\n<p>Any idea how can I&nbsp;achieve&nbsp;this? i.e. being able to parse &quot; successfully by flee</p>\r\n<p>Regards,</p>\r\n",
+    "PostedDate": "2012-10-30T03:11:23.473-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1110301",
+    "ThreadId": "401218",
+    "Html": "it's like you're telling the parser only &quot;<br />\ndont forget you're passing a string containing a string litteral <br />\nand in your string every &quot; and \\ char must be escaped<br />\n<br />\nso <br />\n<pre><code>fleeContext.CompileGeneric&lt;string&gt;(&quot;\\&quot;\\\\\\&quot;\\&quot;&quot;);</code></pre>\n\n",
+    "PostedDate": "2013-10-21T16:45:56.133-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

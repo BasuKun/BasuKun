@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "112776",
+    "ThreadId": "34031",
+    "Html": "<p>We have been using FLEE for quite some time. Recently we encountered following exception on some expressions.</p>\r\n<p>Any idea what could be the reason for this exception?<br>\r\n<br>\r\nSystem.NotSupportedException: Illegal one-byte branch at position: 2624. Requested branch was: 138.<br>\r\n&nbsp;&nbsp; at System.Reflection.Emit.ILGenerator.BakeByteArray()<br>\r\n&nbsp;&nbsp; at System.Reflection.Emit.DynamicResolver..ctor(DynamicILGenerator ilGenerator)<br>\r\n&nbsp;&nbsp; at System.Reflection.Emit.DynamicILGenerator.GetCallableMethod(Void* module)<br>\r\n&nbsp;&nbsp; at System.Reflection.Emit.DynamicMethod.GetMethodDescriptor()<br>\r\n&nbsp;&nbsp; at System.Reflection.Emit.DynamicMethod.CreateDelegate(Type delegateType)<br>\r\n&nbsp;&nbsp; at Ciloci.Flee.Expression`1.Compile(String expression, Object owner, ExpressionOptions options)<br>\r\n&nbsp;&nbsp; at Ciloci.Flee.Expression`1..ctor(String expression, ExpressionContext context)<br>\r\n&nbsp;&nbsp; at Ciloci.Flee.ExpressionFactory.CreateGeneric[T](String expression, ExpressionContext context)<br>\r\n&nbsp;&nbsp; at Contextweb.Contextad.Libraries.ExpressionEvaluator.Expression.Evaluate(String strExpression, ExpEvalData objExpEvalData) in C:\\SVN\\Branches\\Sprint7HotFix\\Contextad\\Libraries\\ExpressionEvaluator\\Expression.cs:line 307<br>\r\n&nbsp;&nbsp; at Contextweb.Contextad.Libraries.ExpressionEvaluator.Expression.Evaluate(ExpEvalData objExpEvalData, String&amp; strExpression, String&amp; strKey) in C:\\SVN\\Branches\\Sprint7HotFix\\Contextad\\Libraries\\ExpressionEvaluator\\Expression.cs:line 192 </p>\r\n",
+    "PostedDate": "2008-08-21T14:37:28.797-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "131218",
+    "ThreadId": "34031",
+    "Html": "If the expression was using nested IFs, then it should be fixed in 0.9.19.0\r\n",
+    "PostedDate": "2008-11-09T14:41:30.937-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n\nThank you for this fabulous library... The most thing I love about, is the ability to add a custom functions easily.\n\nPlease, check the error (mentioned in the title)... Anyone knows where I can find the operator \"^\" implementation in the library source, please, tell me.... I may be able to fix it.\n\nBest regards.",
+    "LastUpdatedDate": "2013-02-21T16:53:59.68-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2012-12-22T02:13:33.49-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "No result for power higher than \"30\"!",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 15877
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

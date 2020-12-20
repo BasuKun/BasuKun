@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "169597",
+    "ThreadId": "50573",
+    "Html": "Something is going bad with this sample!!!<br>\r\n<br>\r\nI took your example from http://flee.codeplex.com/Wiki/View.aspx?title=CalculationEngine&amp;referringTitle=Examples:<br>\r\n<span id=\"ctl00_ctl00_MasterContent_Content_wikiSourceLabel\">\r\n<pre>// Create the calculation engine\r\nCalculationEngine engine = new CalculationEngine();\r\nExpressionContext context = new ExpressionContext();\r\nVariableCollection variables = context.Variables;\r\n \r\n// Add some variables\r\nvariables.Add(&quot;x&quot;, 100);            \r\nvariables.Add(&quot;y&quot;, 200);\r\n \r\n// Add an expression to the calculation engine as &quot;a&quot;\r\nengine.Add(&quot;a&quot;, &quot;x * 2&quot;, context);\r\n \r\n// Add an expression to the engine as &quot;b&quot;\r\nengine.Add(&quot;b&quot;, &quot;y + 100&quot;, context);\r\n            \r\n// Add an expression at &quot;c&quot; that uses the results of &quot;a&quot; and &quot;b&quot;\r\nengine.Add(&quot;c&quot;, &quot;a + b&quot;, context);\r\n            \r\n// Get the value of &quot;c&quot;\r\nint result = engine.GetResult&lt;int&gt;(&quot;c&quot;);\r\n \r\n// Update a variable on the &quot;a&quot; expression            \r\nvariables[&quot;x&quot;] = 200;\r\n \r\n// Recalculate it\r\nengine.Recalculate(&quot;a&quot;);\r\n \r\n// Get the updated result\r\nresult = engine.GetResult&lt;int&gt;(&quot;c&quot;);\r\n<br><br>I am getting a &quot;Ciloci.Flee.ExpressionCompileException: IdentifierElement: Could not find a field/property/variable with the name 'a'.&quot;... How can I solve that?<br>I am asking this cause I am implementing something really similar to this... this example is perfect to solve my problem!<br><br>Thanks in advance! </pre>\r\n</span><br>\r\n",
+    "PostedDate": "2009-03-18T14:27:56.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "169676",
+    "ThreadId": "50573",
+    "Html": "Hmm....If I paste the code you posted into a project and run it using the<span id=\"ctl00_ctl00_MasterContent_Content_wikiSourceLabel\"></span> 0.9.23.0 library it works fine and doesn't throw an exception.<br>\r\n<br>\r\nPerhaps you can post a sample project that reproduces the problem?<br>\r\n",
+    "PostedDate": "2009-03-18T17:56:58.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "174963",
+    "ThreadId": "50573",
+    "Html": "Hi!<br>\r\n<br>\r\nthanks for your answer... maybe that was some problem with my version, I was using an old one... my project as really dirty as well... now, everything is working fine!<br>\r\n<br>\r\ntks! \r\n",
+    "PostedDate": "2009-04-02T12:43:38.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

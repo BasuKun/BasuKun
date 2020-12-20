@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "165114",
+    "ThreadId": "49357",
+    "Html": "<p>I like the demos and I'm trying to get the library to work with ASP.Net (VB.Net). I basically dropped in the code from Sub Main in the demo and it compiles fine but throws</p>\r\n<p>System.IO.IOException: Access is denied. (Exception from HRESULT: 0x80070005 (E_ACCESSDENIED))</p>\r\n<p>[IOException: Access is denied. (Exception from HRESULT: 0x80070005 (E_ACCESSDENIED))]<br>\r\nSystem.Reflection.Module._InternalSavePEFile(String fileName, Int32 entryPoint, Int32 isExe, Boolean isManifestFile) +0<br>\r\nSystem.Reflection.Module.InternalSavePEFile(String fileName, MethodToken entryPoint, Int32 isExe, Boolean isManifestFile) +32<br>\r\nSystem.Reflection.Emit.ModuleBuilder.SaveNoLock(String fileName, Boolean isAssemblyFile, PortableExecutableKinds portableExecutableKind, ImageFileMachine imageFileMachine) +439<br>\r\nSystem.Reflection.Emit.ModuleBuilder.Save(String fileName, Boolean isAssemblyFile, PortableExecutableKinds portableExecutableKind, ImageFileMachine imageFileMachine) +103<br>\r\nSystem.Reflection.Emit.AssemblyBuilder.SaveNoLock(String assemblyFileName, PortableExecutableKinds portableExecutableKind, ImageFileMachine imageFileMachine) +3149<br>\r\nSystem.Reflection.Emit.AssemblyBuilder.Save(String assemblyFileName, PortableExecutableKinds portableExecutableKind, ImageFileMachine imageFileMachine) +97<br>\r\nCiloci.Flee.Expression`1.EmitToAssembly(ExpressionElement rootElement, IServiceContainer services) +312<br>\r\n</p>\r\n<p>when it gets to</p>\r\n<p> Dim e As IDynamicExpression = context.CompileDynamic(strIn)</p>\r\n<p>I have the source code and was hoping that someone would be able to give me a nudge in the right direction toward fixing this either with permission corrections in the filesystem or with permission changes in the actual code or whereever this error is being generated.</p>\r\n<p></p>\r\n<p>Thanks, Bobbie</p>\r\n",
+    "PostedDate": "2009-03-05T16:34:30.25-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "165384",
+    "ThreadId": "49357",
+    "Html": "Sounds like you have ExpressionOptions.EmitToAssembly set to true which will cause Flee to create an assembly on disk.&nbsp; Since, by default, ASP.NET applications don't have write access to the file system, you get an IO error.<br>\r\n<br>\r\nThe fix would be to leave the EmitToAsssembly option to its default value of false.&nbsp; It's mostly meant for debugging purposes anyways and setting it to true won't improve performance.<br>\r\n",
+    "PostedDate": "2009-03-06T08:34:18.28-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

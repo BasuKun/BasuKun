@@ -1,0 +1,98 @@
+[
+  {
+    "Id": "67366",
+    "ThreadId": "20290",
+    "Html": "\r\nIf I try to parse the following:<br /><br />MyFunc(a,b)<br /><br />Is there an event that I can hook into to tell me that this is custom function?  This why I can handle processing it.<br /><br />thanks<br /><br />brian<br />",
+    "PostedDate": "2008-01-11T07:17:23.057-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "67428",
+    "ThreadId": "20290",
+    "Html": "\r\nDefine a custom function class:<br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\npublic static class CustomFunctions\r\n{\r\n   public static int MyFunc(int a, int b)\r\n   {\r\n       return a + b;\r\n   }\r\n}\r\n</pre><br />Import it into the expression and it will be called just like a regular function:<br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\nExpressionContext context = new ExpressionContext();\r\ncontext.Imports.ImportStaticMembers(typeof(CustomFunctions));\r\n \r\nIDynamicExpression e = ExpressionFactory.CreateDynamic(\"myFunc(3,4)\", context);\r\nint result = (int)e.Evaluate();\r\n</pre>",
+    "PostedDate": "2008-01-11T13:18:56.333-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "71017",
+    "ThreadId": "20290",
+    "Html": "\r\nEugene,<br /><br />Will Flee throw an exception if it parses and expression with a function that does not exist either in Flee or the CustomFunctions context?<br /><br />brian<br />",
+    "PostedDate": "2008-01-31T04:15:36.767-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "71080",
+    "ThreadId": "20290",
+    "Html": "\r\nYes, it will throw an ExpressionCompileException if it can't resolve the function in the imports or expression owner.<br />",
+    "PostedDate": "2008-01-31T09:44:45.46-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "71832",
+    "ThreadId": "20290",
+    "Html": "\r\nThanks,<br /><br />It's just that I need to know when to fire the OnEvaluateCustomFunction in the FleeCalc implementation.<br /><br />brian<br />",
+    "PostedDate": "2008-02-05T09:01:03.06-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "72133",
+    "ThreadId": "20290",
+    "Html": "\r\nIs there any I can obtain the parsed expression?  I need this so that I can fire OnEvalCustomFunction event with ten function name and it paramater values.<br /><br />thanks,<br /><br />brian<br />",
+    "PostedDate": "2008-02-06T08:58:36.077-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "72237",
+    "ThreadId": "20290",
+    "Html": "\r\nIn Flee, all functions are essentially custom so the OnEvalCustomFunction event would basically be raised on every function call.<br /><br />Maybe you are looking more for something like on-demand variables but for functions?  This way, you don't import any functions and flee will raise an event when it needs to resolve a function call.<br /><br />",
+    "PostedDate": "2008-02-06T17:53:57.617-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "72423",
+    "ThreadId": "20290",
+    "Html": "\r\nYes something like the on-demand variable but for functions is what I'm looking for.  I have three events that need to be raised:<br /><br /><br />CheckCustom <br /><br />Fired when a formula containing custom function call is checked. The types of function arguments are passed in argTypes array. The event handler should check whether the custom function call contains the right number and types of arguments. The return value type of the custom function can be returned for further formula check. If the event is not handled the custom function is assumed to be in proper format with an empty return value type.<br /><br />ConstructCustomFunction<br /><br />This event is fired for all custom functions when the Culture property is changed. This event can be handled in order to update the custom function name for the specific culture.<br /><br />OnEvalCustomFunction<br /><br />Fired when a formula containing custom function call is evaluated. The values of function arguments are passed in argVals array. The return value of the custom function call can be returned. If the event is not handled, it is assumed that the result of the custom function evaluation is an empty value.<br /><br /><br />brian<br />",
+    "PostedDate": "2008-02-07T10:56:07.77-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "72433",
+    "ThreadId": "20290",
+    "Html": "\r\nYou indicated to us \"context.Imports.ImportStaticMembers\" to register the custom.  Has this changed since I'm unable to find this method within the instance of ExpressionContext.<br /><br />thanks<br /><br />brian<br />",
+    "PostedDate": "2008-02-07T11:47:30.873-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "72472",
+    "ThreadId": "20290",
+    "Html": "<div class=\"quote\" style=\"border: dotted .1em #aaa; border-left: none; border-right: none; font-style: italic; margin: 1em 0em 2.5em 3em;padding: .2em;\"><br />briviere wrote:<br />You indicated to us \"context.Imports.ImportStaticMembers\" to register the custom.  Has this changed since I'm unable to find this method within the instance of ExpressionContext.<br /><br />thanks<br /><br />brian<br /><br /></div><br />It's now <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">context.Imports.AddType(Type t)</span><br />",
+    "PostedDate": "2008-02-07T15:43:18.113-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "72504",
+    "ThreadId": "20290",
+    "Html": "\r\nI will try to implement on-demand functions for the next release.<br />",
+    "PostedDate": "2008-02-07T19:04:16.24-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "75382",
+    "ThreadId": "20290",
+    "Html": "\r\nOn-demand functions are implemented in <a href=\"http://www.codeplex.com/Flee/Release/ProjectReleases.aspx?ReleaseId=10795\">Flee-0.9.17.1</a>.  The VariableCollection.ResolveFunction event will be called to determine the return type of the function and the InvokeFunction event will be called to get the actual result.<br />",
+    "PostedDate": "2008-02-20T19:23:11.49-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1252352",
+    "ThreadId": "547400",
+    "Html": "Hi,\r<br />\nI tried to import 'system.Math' that I can use sin &amp; cos\r<br />\nbut got 2 errors:\r<br />\n'Math' is a type and cannot be used as an expression.\r<br />\n'Is' expected.<br />\n<pre><code>Imports Ciloci.Flee\nImports System.Math\n\nDim context As New Ciloci.Flee.ExpressionContext()\ncontext.Imports.AddType(typeof(system.Math))</code></pre>\n\nDid anyone got this issue solved for a VB version ??\r<br />\n<br />\nHave a sunny day ...\r<br />\n<br />\nOld Hurtz<br />\n",
+    "PostedDate": "2014-06-03T05:21:26.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1252360",
+    "ThreadId": "547400",
+    "Html": "Hi,\r<br />\n:]\r<br />\nits me again ...\r<br />\nsolved it myself<br />\n<pre><code>context.Imports.AddType(GetType(Math))</code></pre>\n\n",
+    "PostedDate": "2014-06-03T05:46:23.457-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,47 @@
+using System;
+using Ciloci.Flee;
+
+namespace FleeSandbox
+{
+    public class DoubleWrapper
+    {
+        private double aDouble;
+        public DoubleWrapper( double myDouble )
+        {
+            aDouble = myDouble;
+        }
+
+        public static implicit operator double( DoubleWrapper obj )
+        {
+            return obj.aDouble;
+        }
+    }
+    class Program
+    {
+        static void Main( string[] args )
+        {
+            FleeImplicitProblem();
+        }
+
+        private static void FleeImplicitProblem()
+        {
+            ExpressionContext context = new ExpressionContext();
+            ExpressionOptions options = context.Options;
+            options.EmitToAssembly = false;
+            options.IntegersAsDoubles = false;
+            context.Imports.AddType( typeof( Math ), "Math" );
+            context.Imports.AddType( typeof( DoubleWrapper ) );
+            DoubleWrapper aDouble = new DoubleWrapper( 3.2 );
+            context.Variables.Add( "aDouble", aDouble );
+
+            // This next line works in C#
+            double dResult = Math.Cos( aDouble );
+
+            // This throws an exception because it could not find Cos(DoubleWrapper)
+            IDynamicExpression expression = context.CompileDynamic( "Math.Cos( aDouble )" );
+            object result = expression.Evaluate();
+
+        }
+    }
+
+}

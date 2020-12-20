@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "620773",
+    "ThreadId": "259645",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>first of all, thanks for great prject!! I enjoy using it :)</p>\r\n<p>But I have one problem now:</p>\r\n<p>I have some class that has the following property(indexer)</p>\r\n<p>public MyClass</p>\r\n<p>{</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public object&nbsp;this[string name]</p>\r\n<p>&nbsp;&nbsp;&nbsp; {</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; get{}; set{};</p>\r\n<p>&nbsp;&nbsp;&nbsp; }</p>\r\n<p>}</p>\r\n<p>When I define MyClass to be Owner or the ExpressionContext, and then try to compile the expression like &quot;this[\\&quot;fieldName\\&quot;] = 77&quot;,</p>\r\n<p>I get the following&nbsp;ExpressionCompileException: &quot;Could not find a field/property/variable with the name 'this'.</p>\r\n<p>The exact code that throws this exceptions is: IGenericExpression&lt;bool&gt; expression = context.CompileGeneric&lt;bool&gt;(condition);</p>\r\n<p>Am I doing anything wrong?</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2011-05-31T06:24:57.203-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

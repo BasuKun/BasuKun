@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "560095",
+    "ThreadId": "244493",
+    "Html": "\r\n<p>Hi, I am looking for a way to take a string and create a Func/Action out of it. I have metadata that represent parameters for a method, and method body as a string. &nbsp;I need to create a Func/Action out of it. Would this library help me with that?</p>\r\n",
+    "PostedDate": "2011-02-03T05:39:15.76-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

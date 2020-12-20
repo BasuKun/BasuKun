@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "177535",
+    "ThreadId": "52775",
+    "Html": "Hi Eugene,<br>\r\nFirst of all, thank you for the wonderful library.<br>\r\n<br>\r\nWould it be possible for you to share how we could use the library to evaluate expressions from multiple threads when only variables change? We tried compiling new expressions per evaluation from multiple threads, but that seems to have performance issues. Now we create a single expression and using it from multiple threads. Only variables change per thread. Hence we had to lock the object for setting the variables and then evaluate the expression. This lock seems to be the bottle neck now. Is there a way to disassociate the compiled expression from the context and reuse it from multiple threads/expressions? Is there another way to do it?<br>\r\n<br>\r\nPlease advise. Thank you for your time.\r\n",
+    "PostedDate": "2009-04-09T03:39:24.717-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "177887",
+    "ThreadId": "52775",
+    "Html": "Maybe you use FLEE in wrong way - changing variable and recompiling expression every time takes a lot of time.<br>\r\nExpressionOwner should helps you.<br>\r\n",
+    "PostedDate": "2009-04-10T02:10:15.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "178604",
+    "ThreadId": "52775",
+    "Html": "I think the best way to implement this is to have a Clone method on an existing expression.&nbsp; That way, you avoid the parsing/compilation overhead and you get a new expression context with its own set of variables.&nbsp; If that sounds good, I'll try to implement it.<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2009-04-13T10:24:54.447-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "178799",
+    "ThreadId": "52775",
+    "Html": "Hi Eugene,<br>\r\nThat sounds great. If we can Clone the expression reusing the compiled expression, it can be used across multiple threads with its set of variables, it would definitely improve performance. Would it be possible to implement it?\r\n",
+    "PostedDate": "2009-04-13T22:00:57.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "182112",
+    "ThreadId": "52775",
+    "Html": "It will be in the next release (probably this weekend)<br>\r\n",
+    "PostedDate": "2009-04-21T19:56:47.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "182883",
+    "ThreadId": "52775",
+    "Html": "Hi Eugene,<br>\r\n<br>\r\nThank you. Will be waiting for the next update and try it out quickly.\r\n",
+    "PostedDate": "2009-04-23T10:02:42.48-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "183671",
+    "ThreadId": "52775",
+    "Html": "The clone method is now implemented in <span id=\"ctl00_ctl00_MasterContent_Content_TitleLabel\">v0.9.25.0</span>.<br>\r\n",
+    "PostedDate": "2009-04-25T18:50:36.117-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "184119",
+    "ThreadId": "52775",
+    "Html": "Hi Eugene,<br>\r\n<br>\r\nThats great. Will download and try out immediately. Thank you.\r\n",
+    "PostedDate": "2009-04-27T09:18:37.623-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

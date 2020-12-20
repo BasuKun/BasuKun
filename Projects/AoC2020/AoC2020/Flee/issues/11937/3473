@@ -1,0 +1,60 @@
+using System;
+using Ciloci.Flee;
+
+namespace NullableTest
+{
+    public class Owner
+    {
+        private int? mNullableInt;
+
+        public int? NullableInt
+        {
+            get { return mNullableInt; }
+            set { mNullableInt = value; }
+        }
+    }
+
+    class Program
+    {
+        static void Main( string[] args )
+        {
+
+            int? foo = 18;
+            if( foo == 2 )
+            {
+                Console.WriteLine( "In condition." );
+            }
+
+            foo = 2;
+            if( foo >= 2 )
+            {
+                Console.WriteLine( "In second condition." );
+            }
+
+            Owner owner = new Owner();
+            owner.NullableInt = 14;
+
+            ExpressionContext context = new ExpressionContext();
+            context.Variables.Add( "foo", foo );
+            context.Variables.Add( "owner", owner );
+            // These next four work.
+            EvaluateExpression( context, "foo = 10" );
+            EvaluateExpression( context, "foo < 10" );
+            EvaluateExpression( context, "foo > 10" );
+            EvaluateExpression( context, "foo = 2" );
+            // The following four lines fail.
+            EvaluateExpression( context, "owner.NullableInt = 10" );
+            EvaluateExpression( context, "owner.NullableInt < 10" );
+            EvaluateExpression( context, "owner.NullableInt > 10" );
+            EvaluateExpression( context, "owner.NullableInt = 14" );
+            Console.ReadKey();
+        }
+
+        private static void EvaluateExpression( ExpressionContext context, string expressionString )
+        {
+            IDynamicExpression expression = context.CompileDynamic( expressionString );
+            object result = expression.Evaluate();
+            Console.WriteLine( "The result (" + expressionString + ") is: " + result );
+        }
+    }
+}

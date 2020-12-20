@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "113229",
+    "ThreadId": "34163",
+    "Html": "I wrote the code as followings.<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; Private Function EvaluateExpression(ByVal Expression As String) As Object<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dim Result As Object<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Try<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MyExpression = ExpressionFactory.CreateGeneric(Of Double)(Expression, MyContext)<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Result = MyExpression.Evaluate()<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Catch ex As Exception<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Result = ex.Message<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End Try<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Return Result<br>\r\n&nbsp;&nbsp;&nbsp; End Function<br>\r\n<br>\r\nI tried to test this code by entering data but there is a sample return the wrong answer.<br>\r\n<br>\r\nI input '4*4/10' the result is '1'. It should be '1.6'. While I input '4.0*4.0/10.0', it return '1.6'. If it is 1.6 the first sample should be 2, right?<br>\r\n<br>\r\nThanks in advance.<br>\r\n<br>\r\n",
+    "PostedDate": "2008-08-24T03:32:14.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "113584",
+    "ThreadId": "34163",
+    "Html": "I would think that 1 would be the correct answer for your first example.<br>\r\n<br>\r\nINT x INT/INT = INT <br>\r\n<br>\r\n&nbsp;&nbsp; 4 &nbsp; x&nbsp; 4&nbsp; /&nbsp; 10&nbsp; =&nbsp; 1 &nbsp; &nbsp; &lt;=&nbsp; the integer portion of 1.6<br>\r\n<br>\r\nI could be wrong as I haven't played with this in a long while, but I don't believe Flee would explicitly round if all the values in the expression are integers.&nbsp; There are a couple of things you can try to determine the framework's behavior. <br>\r\n<br>\r\nFirst, you can try changing one of the numbers to an implicit double by adding '.0' at the end and leaving the other two as integers (i.e. 4*4.0/10). I would think that you would get the double answer of '1.6' under this scenario. This should force a cast to a double value and if not then there is probably a bug in the framework as an INT x DBL / INT = DBL.<br>\r\n<br>\r\nAnother thing to try is something that lands on the mid point between the integer values, such as 5 x 5 / 10 and see if you get 2 or 3. Again I would assume and integer of 2 as it's the integer portion of 2.5. And try something that lands below the midpoint between the integer values such as (8 x 8 / 10 = 6.4 =&gt; 6).<br>\r\n<br>\r\nIt's been a while since I've looked at this code, but in my implementation of Flee, I force all integer values to doubles during the parse and before the evaluation, but this solution may not be suitable for your needs.<br>\r\n<br>\r\n-MindCore<br>\r\n",
+    "PostedDate": "2008-08-25T13:13:29.99-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "113651",
+    "ThreadId": "34163",
+    "Html": "Thank you MindCore.<br>\r\n<br>\r\nI try as you suggest the results are as followings.<br>\r\n<br>\r\n<blockquote>5*5/10<br>\r\n2<br>\r\n8*8/10<br>\r\n6<br>\r\n4*4/10<br>\r\n1<br>\r\n4*4.1/100<br>\r\n0.164<br>\r\n4*4.0/10<br>\r\n1.6<br>\r\n5*5/10.0<br>\r\n2.5<br>\r\n8*8/10.0<br>\r\n6.4<br>\r\n</blockquote>You will see that if there is at least a variable to be double, the result will be double. If all numbers are integer, the result will be integer. I think, this is bug because my code is 'MyExpression = ExpressionFactory.CreateGeneric(Of Double)(Expression, MyContext)'. That is all number in the expression should be cast to double although user enter number as integer. If all numbers have to add '.0' for double, it is not practical for programming. What do you think?<br>\r\n<br>\r\nDusit<br>\r\n<br>\r\n",
+    "PostedDate": "2008-08-25T19:51:13.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "114008",
+    "ThreadId": "34163",
+    "Html": "Dusit,<br>\r\n<br>\r\n&nbsp;&nbsp; Unfortunately I don't think it's a bug in Flee, it's just the nature of the beast.&nbsp; The data type for the generic does not tell the parser that numbers are to be evaluated as doubles.&nbsp; It tells the ExpressionFactory that anything that's entered into the Expression must be of type double or evaluate to a double.&nbsp; I believe that the quickest way to solve your problem is to modify Flee to evaluate integers as doubles when parsing.<br>\r\n<br>\r\nTo confirm this, if you check out the Grammar file you will see the following lines:<br>\r\n<br>\r\n// Primitives<br>\r\nINTEGER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;= &lt;&lt;\\d+(u|l|ul|lu)?&gt;&gt;<br>\r\nREAL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= &lt;&lt;\\d*\\.\\d+([e][+-]\\d{1,3})?f?&gt;&gt;<br>\r\n<br>\r\nNotice that the regular expressions for integer would include patterns such as 4u for an unsigned integer, 4lu or 4ul for long unsigned integer, 4l for long integer and of course 4 for a standard integer. The real pattern includes floats such as 4.0f, doubles such as 4.0, and doubles in scientific notation such as 4e+1 &lt;= note that the sign is required and only up to three digits can follow the sign.<br>\r\n<br>\r\nWhen Grammatica is run against this Grammar file, it creates a few files, but the file with the pattern definitions is <span id=\"ctl00_ctl00_Content_TabContentPanel_Content_BreadCrumb_BreadCrumbRepeater_ctl04_BreadCrumbLabel\">ExpressionTokenizer.vb.&nbsp; One solution is to modify the patterns specified in this file to basically eliminate the integer pattern and then recompile Flee.&nbsp; Play around with this and let me know if this helps solve your problem.<br>\r\n<br>\r\nThis hasn't been tested and you will have to change some other code, but you can try these.<br>\r\n<br>\r\nINTEGER&nbsp; =&nbsp; </span>&lt;&lt;\\d*(i|u|l|ul|lu)+&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; now you must explicitly specify an integer<br>\r\n<span id=\"ctl00_ctl00_Content_TabContentPanel_Content_BreadCrumb_BreadCrumbRepeater_ctl04_BreadCrumbLabel\">REAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;&nbsp; &lt;&lt;\\d*.?\\d+([e][+-]?\\d+)?f?&gt;&gt;<br>\r\n<br>\r\nGood luck<br>\r\nMindcore<br>\r\n</span>\r\n",
+    "PostedDate": "2008-08-26T21:24:46.647-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "114030",
+    "ThreadId": "34163",
+    "Html": "Thank you Midcore.<br>\r\n<br>\r\nI do not see FLEE code, however, I will try to change and re-compile. Maybe, the next version, this point will be solved.<br>\r\n<br>\r\nDusit<br>\r\n",
+    "PostedDate": "2008-08-27T00:02:31.763-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "115148",
+    "ThreadId": "34163",
+    "Html": "Hi again,<br>\r\n<br>\r\nI have some more wrong results. The followings are my code.<br>\r\n<blockquote>Dim MyExpression As Ciloci.Flee.IGenericExpression(Of Double)<br>\r\nDim MyContext As Ciloci.Flee.ExpressionContext<br>\r\nDim Variables As Ciloci.Flee.VariableCollection<br>\r\n<br>\r\nMyContext = New Ciloci.Flee.ExpressionContext()<br>\r\nMyContext.Imports.AddType(GetType(Math))<br>\r\nVariables = MyContext.Variables<br>\r\n<br>\r\nPrivate Function EvaluateExpression(ByVal Expression As String) As Object<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dim Result As Object<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Try<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MyExpression = Ciloci.Flee.ExpressionFactory.CreateGeneric(Of Double)(Expression, MyContext)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Result = MyExpression.Evaluate<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Catch ex As Ciloci.Flee.ExpressionCompileException<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Result = ex.Message<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End Try<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Return Result<br>\r\nEnd Function<br>\r\n</blockquote>I call EvaluateExpression function for evaluating expression. I enter the previous questions and get the wrong answer. This time I got the wrong answer again. Please the result.<br>\r\n<blockquote>sin(30)<br>\r\n-0.988031624092862<br>\r\ncos(30)<br>\r\n0.154251449887584<br>\r\nsin(90)<br>\r\n0.893996663600558<br>\r\n</blockquote>You will see that the result is not true. Sin(30) should be 0.5 and Sin(90) should be 1. How wrong do I code?<br>\r\n<br>\r\nThanks,<br>\r\nDusit<br>\r\n",
+    "PostedDate": "2008-09-01T06:32:26.437-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "115156",
+    "ThreadId": "34163",
+    "Html": "Read the documentation for Math.Sin and Math.Cos (and so on):<br>\r\n<br>\r\n<a href=\"http://msdn.microsoft.com/en-us/library/system.math.sin.aspx\">http://msdn.microsoft.com/en-us/library/system.math.sin.aspx</a><br>\r\n<br>\r\na<br>\r\n&nbsp;&nbsp;&nbsp; Type: System..::.Double<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; An angle, <strong>measured in radians.</strong> <br>\r\n<br>\r\nSo, use radians, and it will work :)<br>\r\n",
+    "PostedDate": "2008-09-01T07:08:57.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "131217",
+    "ThreadId": "34163",
+    "Html": "MindCore is right.  When an arithmetic operation has two integers, the result is an integer.  If either operand is a double, then the result is a double.  I made it work just like in C#.<br>\r\n<br>\r\nHowever, this issue has come up a couple of times so I might put in a new option to force all numbers to doubles.\r\n",
+    "PostedDate": "2008-11-09T14:39:22.873-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

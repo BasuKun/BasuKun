@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "45381",
+    "ThreadId": "13942",
+    "Html": "\r\nShould all expression owners be required to derive from an ExpressionOwner class?  Right now, an expression owner can be any object.  If I force all expression owners to derive from a specific base class, then I can add fields to the base class for internal use to implement things like dynamic variables.<br /><br />What are your guys thoughts on this?  Is there any reason why doing this would limit usability?<br /><br />Thanks.<br />",
+    "PostedDate": "2007-08-16T19:31:21.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45419",
+    "ThreadId": "13942",
+    "Html": "\r\nMaybe you can have both worlds, i think you should keep the full liberty of pass any object and also have some AdvancedExpressionOwner class for more complex things.<br /><br />Anyway great tool.<br /><br />",
+    "PostedDate": "2007-08-17T05:38:00.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45792",
+    "ThreadId": "13942",
+    "Html": "\r\nI agree with efrreyra.<br /><br />The option to have any object own the expression is great, but it would be really nice to implement advanced functionality by creating a specialized owner. Since the owner may already be a business object that derives from something, a base class may not work. You could, however, create an interface (\"IOwnExpressionsAndImSmartAboutIt\") that advanced owners could implement.<br /><br />Better yet, create a bunch of interfaces that each support sets of functionality. <br /><br />\"IOwnExpressionsAndCanLookupVariables\"<br />\"ICanEmitMyOwnIL\"<br />\"IPreparseExpressions\"<br />etc.<br /><br />Advanced owners can implement one of more of these. Obviously, the names will have changed to protect the innocent :)<br />",
+    "PostedDate": "2007-08-20T19:51:14.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45879",
+    "ThreadId": "13942",
+    "Html": "\r\nYeah, it looks like allowing the owner to be any object is the way to go.  Like you said, I can always define interfaces to allow the owner to have special functionality.  Also, allowing the owner to be any object also lets you access non-public members of .NET types without the reflection performance hit.<br />",
+    "PostedDate": "2007-08-21T07:41:35.34-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "47640",
+    "ThreadId": "13942",
+    "Html": "\r\nBeing able to submit just an arbitrary object is very convenient, so I definitely am happy with that. However, if you want to get more fancy, I'd suggest attributes rather than interfaces:<br /><br />public class MyOwnerClass<br />{<br />  //decorating fields makes it easy for flee to determine variables, and also<br />  //provides means to submit further meta information<br />  [SomeFleeAttribute(SomeProperty = true)]<br />  private int x;<br />}<br /><br />Cheers,<br />Philipp<br />",
+    "PostedDate": "2007-09-03T07:55:14.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "47658",
+    "ThreadId": "13942",
+    "Html": "\r\nI think in the end, I'll wind up using both.  For example: with the calc engine, I have to use an interface since I need the owner to implement a property to allow me to store the calcEngine instance and then retrieve it during evaluation.<br />",
+    "PostedDate": "2007-09-03T12:18:44.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

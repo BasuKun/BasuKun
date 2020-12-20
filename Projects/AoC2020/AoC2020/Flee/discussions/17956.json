@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "58604",
+    "ThreadId": "17956",
+    "Html": "\r\nHi Eugene,<br /><br />Yet another question. This might be our final hurdle, but it's a major one and I think we won't be the only people who will run into it.<br /><br />We need to be able to load up a list of expressions and NOT compile them until we indicate. We are planning on having thousands of expressions, and having to organize the order of those will be pretty hard. Ideally we would load up all of them, and then tell the engine to compile.<br /><br />I'm not sure how difficult a problem this is, but I think for large-scale apps it's going to be pretty important. It seems like you could keep a dependency tree as items are loaded or something and then compile them in the order you derive from the tree.<br /><br />Thanks,<br />Dustin<br />",
+    "PostedDate": "2007-11-16T16:01:29.083-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "58618",
+    "ThreadId": "17956",
+    "Html": "\r\nBasically, you want to be able to add expressions to the calculation engine in any order.  Once you are finished, you then call a method on the engine that compiles all the expressions and links them together.<br /><br />I'm going to have to think over the weekend about how I would do this as my brain isn't working right now 80)<br />",
+    "PostedDate": "2007-11-16T18:23:34.107-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "58741",
+    "ThreadId": "17956",
+    "Html": "\r\nExactly. I imagine that as the expressions are added they'd be parsed and the tree would be searched to find where they go. It would make adding expressions much slower, but in our app we'd take an up-front hit to load everything at first.<br /><br />I think for any industrial use this is pretty important. I was thinking  at first that a user like me could add them to a data structure and order them myself, and then add them to Flee's calculation engine in the correct order. But then I'd have to parse, and it seems like a waste and potentially buggy for me to parse with my own parser and then hand it off to you for your parser.<br />",
+    "PostedDate": "2007-11-18T06:34:51.503-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

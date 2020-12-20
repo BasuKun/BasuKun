@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "79633",
+    "ThreadId": "23757",
+    "Html": "\r\nHello,<br /><br />Consider this example:<br /><br />public class a { public class b { public static bool doIt() { return true; } } }<br /><br />It is impossible to execute<br /><br />...Imports.AddMethod (\"doIt\", typeof (b), \"Functions\");<br /><br />because it says \"Type 'b' is not accessible to the expression.\"<br /><br />However,<br /><br />typeof(b).IsNestedPublic == true &amp;&amp; typeof(b).DeclaringType != null &amp;&amp; typeof(b).DeclaringType.IsPublic == true &amp;&amp; typeof(b).DeclaringType.DeclaringType == null;<br /><br />Does it make sense to consider this case? The DeclaringType chain can be long, and the check should be done through all the chain. But if everything is public... what do you think?<br />",
+    "PostedDate": "2008-03-11T01:52:40.3-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "79885",
+    "ThreadId": "23757",
+    "Html": "\r\nI didn't want to put in the restriction that the types available to an expression have to be public; especially if they don't have to be.  If an expression is compiled with an expression owner, then it can access all internal types in the same module as the owner.<br /><br />I think I just have to tweak the relevant code to handle nested types and I think it should be quick to compute.<br />",
+    "PostedDate": "2008-03-11T19:24:34.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "83632",
+    "ThreadId": "23757",
+    "Html": "\r\nThis has been fixed in <a href=\"http://www.codeplex.com/Flee/Release/ProjectReleases.aspx?ReleaseId=12077\">Flee-0.9.17.5</a><br />",
+    "PostedDate": "2008-03-28T19:14:58.643-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

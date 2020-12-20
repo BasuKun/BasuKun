@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "173373",
+    "ThreadId": "51683",
+    "Html": "<span style=\"font-size:10px;color:#ffffff\"><span style=\"font-size:10px;color:#ffffff\">\r\n<p> </p>\r\n</span>\r\n<p> </p>\r\n</span>\r\n<p><span style=\"font-size:10px;color:#2b91af\"><span style=\"font-size:10px;color:#2b91af\">\r\n<p> </p>\r\n<p style=\"margin:0cm 0cm 0pt;line-height:normal\"><span style=\"font-size:7pt;font-family:'verdana','sans-serif'\">Hi,<br>\r\n<br>\r\nAwesome library!<br>\r\n<br>\r\nI'm having a problem evaluating a formula with specified variables though.<br>\r\n<br>\r\nThis is the code:<br>\r\n<br>\r\nCalculationEngine engine = new CalculationEngine ( );</span></p>\r\n<p> </p>\r\n<p style=\"margin:0cm 0cm 0pt;line-height:normal\"><span style=\"font-size:7pt;font-family:'verdana','sans-serif'\">ExpressionContext context = new ExpressionContext ( );</span></p>\r\n<p style=\"margin:0cm 0cm 0pt;line-height:normal\"><span style=\"font-size:7pt;font-family:'verdana','sans-serif'\">VariableCollection variables = context.Variables;</span></p>\r\n<p style=\"margin:0cm 0cm 0pt;line-height:normal\"><span style=\"font-size:7pt;font-family:'verdana','sans-serif'\">context.Imports.AddType ( typeof ( Math ) );</span></p>\r\n<p style=\"margin:0cm 0cm 0pt;line-height:normal\"><span style=\"font-size:7pt;font-family:'verdana','sans-serif'\">variables.Add ( &quot;P&quot;, 20000 );</span></p>\r\n<p style=\"margin:0cm 0cm 0pt;line-height:normal\"><span style=\"font-size:7pt;font-family:'verdana','sans-serif'\">variables.Add ( &quot;A&quot;, 0.169 );</span></p>\r\n<p style=\"margin:0cm 0cm 0pt;line-height:normal\"><span style=\"font-size:7pt;font-family:'verdana','sans-serif'\">variables.Add ( &quot;T&quot;, 60 );</span></p>\r\n<p style=\"margin:0cm 0cm 0pt;line-height:normal\"><span style=\"font-size:7pt;font-family:'verdana','sans-serif'\">engine.Add ( &quot;result&quot;, &quot;(P*(((1+A)^(1/12))-1))/(1-(1+(((1+A)^(1/12))-1))^(-1*T))&quot;, context );</span></p>\r\n<p style=\"margin:0cm 0cm 0pt;line-height:normal\"><span style=\"font-size:7pt;font-family:'verdana','sans-serif'\"><span style=\"font-size:10px;font-family:verdana\">Double </span>result = engine.GetResult&lt;Double&gt; ( &quot;result&quot; );</span></p>\r\n<p style=\"margin:0cm 0cm 10pt\"><span style=\"font-size:7pt;line-height:115%;font-family:'verdana','sans-serif'\">this.textBoxOutput.Text = result.ToString ( );<br>\r\n<br>\r\nThe formula functions perfectly in microsoft excel but not in the above code snippet.  Is it something wrong with my code or formula?</span></p>\r\n</span>\r\n<p style=\"margin:0cm 0cm 10pt\"> </p>\r\n</span></p>\r\n<p>&nbsp;</p>\r\n<p> </p>\r\n<p> </p>\r\n<p> </p>\r\n<p style=\"margin:0cm 0cm 10pt\"> </p>\r\n",
+    "PostedDate": "2009-03-30T01:17:18.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "173401",
+    "ThreadId": "51683",
+    "Html": "In addition, <br>\r\n<br>\r\nif I pull out part of the formula and evaluate separatly:<br>\r\n<br>\r\n<p>&quot;CalculationEngine engine = new CalculationEngine ( );<br>\r\nExpressionContext context = new ExpressionContext ( );<br>\r\nVariableCollection variables = context.Variables;</p>\r\n<p>variables.Add ( &quot;P&quot;, 20000.0 );<br>\r\nvariables.Add ( &quot;A&quot;, 0.169 );<br>\r\nvariables.Add ( &quot;T&quot;, 60.0 );</p>\r\n<p>engine.Add ( &quot;Z&quot;, &quot;((1+A)^(1/12))&quot;, context );<br>\r\nthis.textBoxOutput.Text = engine.GetResult ( &quot;Z&quot; ).ToString ( );&quot;<br>\r\n<br>\r\n... The output is &quot;1&quot; when I expect &quot;1.01309742&quot;.<br>\r\n<br>\r\nAm I doing something wrong?<br>\r\n</p>\r\n",
+    "PostedDate": "2009-03-30T03:17:55.787-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "173407",
+    "ThreadId": "51683",
+    "Html": "Hi,<br>\r\n<br>\r\nsolved the problem I was having by adding the following:<br>\r\n<br>\r\ncontext.Options.IntegersAsDoubles = true;<br>\r\n<br>\r\nApologies for any inconvenience caused.<br>\r\n<br>\r\nCheers!\r\n",
+    "PostedDate": "2009-03-30T03:42:01.457-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

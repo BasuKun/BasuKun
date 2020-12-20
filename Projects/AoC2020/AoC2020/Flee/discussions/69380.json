@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "236025",
+    "ThreadId": "69380",
+    "Html": "<p>Hi</p>\r\n<p>Is it possible to initalize variables within the string, e.g. something like:</p>\r\n<pre>&quot;let a = 10; (cos(a) + sin(a))&quot;</pre>\r\n<p>Regards</p>\r\n<p>Lee</p>",
+    "PostedDate": "2009-09-18T06:29:15.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

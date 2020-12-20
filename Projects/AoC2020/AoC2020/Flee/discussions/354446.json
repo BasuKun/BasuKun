@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "831803",
+    "ThreadId": "354446",
+    "Html": "<p>Dim cls as new CustomFunctions</p>\n<p>?? how can we call \"Callme\" method of the instance cls</p>\n<p>.........</p>\n<p>........</p>\n<p>Public Class CustomFunctions</p>\n<p>Public ReadOnly Property Callme(ByVal a As Integer, ByVal b As Integer) As Integer &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Get&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</p>\n<p>&nbsp; &nbsp; Return Product(a, b)</p>\n<p>End Get&nbsp; &nbsp; &nbsp; &nbsp;</p>\n<p>End Property</p>\n<p>Private function Product(a as integer, b as integer)</p>\n<p>&nbsp;return a * b</p>\n<p>end function</p>\n<p>End Class</p>",
+    "PostedDate": "2012-05-03T11:18:48.363-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

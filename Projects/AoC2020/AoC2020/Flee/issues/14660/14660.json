@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Following expressions seems to fail even though value is very much within limit.\n \n3000000000L < 0\n3000000000L < 0L\nCAST( 3000000000, long ) < 0\n \nAll of the above throws an error that arithmetic overflow error occurred with callstack as below -\n \n \n System.OverflowException: Arithmetic operation resulted in an overflow.\n   at Ciloci.Flee.LiteralElement.EmitLoad(Int64 value, FleeILGenerator ilg)\n   at Ciloci.Flee.Int64LiteralElement.Emit(FleeILGenerator ilg, IServiceProvider services)\n   at Ciloci.Flee.BinaryExpressionElement.EmitChildWithConvert(ExpressionElement child, Type resultType, FleeILGenerator ilg, IServiceProvider services)\n   at Ciloci.Flee.CompareElement.Emit(FleeILGenerator ilg, IServiceProvider services)\n   at Ciloci.Flee.RootExpressionElement.Emit(FleeILGenerator ilg, IServiceProvider services)\n   at Ciloci.Flee.Expression`1.Compile(String expression, ExpressionOptions options)\n   at Ciloci.F...timeMethodHandle._InvokeMethodFast(IRuntimeMethodInfo method, Object target, Object[] arguments, SignatureStruct& sig, MethodAttributes methodAttributes, RuntimeType typeOwner)\n   at System.RuntimeMethodHandle.InvokeMethodFast(IRuntimeMethodInfo method, Object target, Object[] arguments, Signature sig, MethodAttributes methodAttributes, RuntimeType typeOwner)\n   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture, Boolean skipVisibilityChecks)\n   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)\n...\n \nAny workarounds possible?",
+    "LastUpdatedDate": "2013-02-21T16:54:01.013-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2012-01-20T06:14:45.867-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "int64 value parsing seems to fail for simple expressions with overflow error",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 14660
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Thanks for the source, found the following line at Lib\\ExpressionElements\\Base\\Literals\\LiteralElement.vb(42)...\r\n\r\n\tProtected Shared Sub EmitLoad(ByVal value As Int64, ByVal ilg As FleeILGenerator)\r\n              If value >= Int32.MinValue And value <= Int32.MaxValue Then\r\n        ...\r\n\r\nIt should compare against Int64 range values right?",
+      "PostedDate": "2012-01-20T07:49:11.743-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Sent comment, too early, moved to new version and all works. Above code check seems ok.",
+      "PostedDate": "2012-01-22T23:15:39.86-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:54:01.013-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

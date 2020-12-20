@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "60586",
+    "ThreadId": "18522",
+    "Html": "\r\nHi, im going to reimplement what i was doing with this release, i try to explain so you can tell me how to approach a solution:<br /><br />Simplifying my case, end users creates document with are templates with \"bookmarks\" for example:<br /><br /><ul><li>Mr &lt;FullName&gt;. *</li></ul><br /><ul><li>   We tell you must pay the amount of &lt;Debt&gt; before the day of &lt;LimitDay&gt; .... *</li></ul><br />So when they emit this document for a customer, the bookmarks should be resolved for the customer and replaced by customer properties, this example is trivial and in general there is no direct property to resolve a bookmark, instead the user makes an expression and i (flee) must resolve the expresion to replace the bookmark, in general to resolve all bookmarks users generate partial expressions and nested expressions, for example first make an expresion for the tax rate to a date, the this tax rate is used to calculate the debt, then according to ranges of the debt they put some message or other, etc.<br /><br />So when flee comes to action i have a bunch of expressions (name, expression)  like:<br /><br />\"FullName\"  --&gt;  \"Customer.FirstName + ' ' + Customer.LastName\"<br />\"TaxRate\"  --&gt;  \"Financial.CalculateTax( Customer.DebtDate )\"<br />\"Debt\"  --&gt;  \"TaxRate * Customer.OriginalDebt\"<br />...<br /><br />And a Customer object (must be resolved as \"Customer\" of the expressions)<br />Also some environment objects like \"Financial\" <br /><br />Ok, i think this is the general idea, flee must resolve the expressions, give me a result Object for each expression and i finally replace the bookmarks for the result objects.<br /><br />Can you point me on how to use the calculation engine and flee in general to acomplish this ?<br /><br />Many Thanks...<br />Pachu<br />",
+    "PostedDate": "2007-11-30T05:51:29.357-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "61045",
+    "ThreadId": "18522",
+    "Html": "\r\nSorry for the delayed response.  I'll look it over and give you a reply tomorrow or wednesday.<br />",
+    "PostedDate": "2007-12-03T19:26:25.507-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "61095",
+    "ThreadId": "18522",
+    "Html": "\r\nok, no problem below is how i doing it now, Concept are the class wich contains the expression to evaluate and a name to nested references. I dont know how to format source code in codeplex editor so if the code doesnt read well copy to a C# editor.<br /><br />Im sure that the contex and the variables are going to a private procedure and be parametrized in short, please tellme if im doing something wrong or can do better.<br /><br />----- Here starts C# code -----<br /><br />        public IDictionary&lt;Concept, Object&gt; Solve(IList&lt;Concept&gt; concepts)<br />        {<br /><br />            solvedConcepts = new Dictionary&lt;Concept, Object&gt;();<br /><br />            CalculationEngine engine = new CalculationEngine();<br />            ExpressionContext context = new ExpressionContext();<br /><br />            context.CalculationEngine = engine;<br /><br />            Customer customer = BaseFactory.Instance.InstanceOfCustomer(keyOfCustomer);<br /><br />            context.Imports.ImportStaticMembers(typeof(Environment), \"Env\");<br /><br />            context.Variables.DefineVariable(\"Customer\", typeof(Customer));<br />            context.Variables.SetVariableValue(\"Customer\", customer);<br /><br />            context.Options.Checked = true;<br /><br />            foreach (Concept concept in concepts)<br />            {<br />                if (logger.IsDebugEnabled)<br />                {<br />                    logger.Debug(\"Evaluating concept: \" + concept.ToString());<br />                    logger.Debug(\"Expression: (\" + concept.Name + \") -&gt; \" + concept.Expression);<br />                }<br /><br />                context.ExpressionName = concept.Name;<br />                ExpressionFactory.CreateDynamic(concept.Expression, context);<br /><br />                engine.Recalculate(concept.Name);<br /><br />                Object result = engine.GetResult(concept.Name);<br /><br />                if (logger.IsDebugEnabled)<br />                    logger.Debug(\"Result: \" + result.ToString());<br /><br />                solvedConcepts.Add(concept, result);<br /><br />            }<br /><br />            return solvedConcepts;<br /><br />        }<br />",
+    "PostedDate": "2007-12-04T03:36:28.677-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "61398",
+    "ThreadId": "18522",
+    "Html": "\r\nEverything in your code looks right.  You can remove the <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">engine.Recalculate(concept.Name);</span> line as a recalculate is automatically performed when an expression is added to the calculation engine.<br /><br />The only  problem I can see is that currently, you have to add concepts in a specific order (add a concept after all concepts it depends on) into the calculation engine.  I'm planning on fixing this when I refactor the calculation engine in the next release so you may want to wait until that happens.<br />",
+    "PostedDate": "2007-12-05T18:03:18.16-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "61457",
+    "ThreadId": "18522",
+    "Html": "\r\nOK, yes it be a safe if this feature is added.<br /><br />Thanks!<br />",
+    "PostedDate": "2007-12-06T04:22:38.277-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "67578",
+    "ThreadId": "18522",
+    "Html": "\r\nHave a look at the sample project attached to the calculation example <a href=\"http://www.codeplex.com/Flee/Wiki/View.aspx?title=CalculationEngine\">page</a>.  It shows how to use <a href=\"http://www.codeplex.com/Flee/Release/ProjectReleases.aspx?ReleaseId=9837\">Flee-0.9.15.0</a> to implement a simple templating system.<br />",
+    "PostedDate": "2008-01-12T18:20:20.147-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

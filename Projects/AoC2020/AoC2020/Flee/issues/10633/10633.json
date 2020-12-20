@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Used the above call to compile an boolean expression of the type NIGHT && DAY where NIGHT=false and DAY=true in c#. \n Sometimes I need to make the varaibale names NIGHT_$1, or DAY_$4, both set to false. When I compile the expression again it comes back with an exception, of \"Unexpected character $.... \".  I really need them in the variable names, as the $1 etc represent replacement variables where the $ variables are replaced by other values at a later date, for example NIGHT_$1 could become NIGHT_192.168.3.1.  Is it a case that $ is not allowed in variable names. if $ is not allowed in the variable name, is their some other special characters which can be used like % for instance, or £, or __1.",
+    "LastUpdatedDate": "2013-02-21T16:54:02.953-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2010-04-12T09:57:24.573-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "c# context.CompileGeneric<bool> call except when variable name has $ in it.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10633
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

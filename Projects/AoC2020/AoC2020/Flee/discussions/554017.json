@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1277369",
+    "ThreadId": "554017",
+    "Html": "I am hereby publicly proposing the creation of another CodePlex project named &quot;Fast Lightweight Expression Evaluator - 2&quot;, based on the source code provided by this project.\r<br />\n<br />\nI have professionally benefitted from this project, but have had to implement small changes to overcome some small deficiencies.\r<br />\n<br />\nI know that there other developers out there who have also made changes to this code for various purposes. My intensions in posting this notice is to gather feedback and find out how many people are interested and able to contribute to such a project.\r<br />\n<br />\nI have never lead a project on CodePlex before, so I could use advice from those who have this kind of experience. I'd even be happy if someone else decided to start the project themselves. \r<br />\n<br />\nI don't have much time to put into this project, so I am afraid I personally would not be able to handle the traffic this project has already demonstrated. Thus, I would need lots of help if I were a coordinator.\r<br />\n<br />\nSo, let me know of your interest, by responding to this discussion.<br />\n",
+    "PostedDate": "2014-07-24T08:23:11.333-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1278648",
+    "ThreadId": "554017",
+    "Html": "Hey, I have already created and ported the project to C# fleesharp.codeplex.com. feel free to contribute to it.<br />\n",
+    "PostedDate": "2014-07-29T01:51:57.937-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1278841",
+    "ThreadId": "554017",
+    "Html": "Excellent! I am moving my attention to your project. I have already tested it, and it works perfectly.\r<br />\n<br />\nThanks!<br />\n",
+    "PostedDate": "2014-07-29T10:20:37.71-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

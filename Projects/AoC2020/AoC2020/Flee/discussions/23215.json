@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "77700",
+    "ThreadId": "23215",
+    "Html": "\r\nIf I have an object model, and a piece of c# code using that object model, can I use Flee to parse the c# code to find out what properties of the object model are beeing \"referenced/used\" by the c# code?<br /><br />Best regards<br />Fredrik<br />",
+    "PostedDate": "2008-03-02T15:08:28.7-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "78231",
+    "ThreadId": "23215",
+    "Html": "\r\nThe expression language that Flee uses is different from C# so you can't use it to parse C# code.<br /><br />Fortunately, you can use a tool like <a href=\"http://www.antlr.org\" class=\"externalLink\">ANTLR<span class=\"externalLinkIcon\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\"></span></a> to generate a parser for C#.  Once you have the parser, you can feed it the C# code and be notified when it hits a certain language element.<br /><br />People have already written several grammars on this <a href=\"http://www.antlr.org/grammar/list\" class=\"externalLink\">page<span class=\"externalLinkIcon\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\"></span></a> and there are already several complete C# grammars like this <a href=\"http://www.antlr.org/grammar/1139567485993/CSharpParser.g\" class=\"externalLink\">one<span class=\"externalLinkIcon\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\"></span></a>.<br /><br />",
+    "PostedDate": "2008-03-04T18:08:00.407-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

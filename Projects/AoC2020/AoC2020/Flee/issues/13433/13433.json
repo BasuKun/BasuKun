@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Compilation \"PI * R * R = AREA\" expression raise Exception \"ArithmeticElement: Operation 'Multiply' is not defined for types 'Double' and 'Decimal\"\n \nIt it wrong because all variables (PI, R, AREA) are decimal.\n \nCode to reproduce exception\n \nvar eContext = new ExpressionContext();\neContext.Imports.AddType(typeof(Math));\n \nvar words = new string[] {\"PI\", \"R\", \"AREA\" };\nforeach (var word in words)\n  eContext.Variables[word] = 0m;\n \nvar evaluator = eContext.CompileGeneric<bool>(\"PI * R * R = AREA\");",
+    "LastUpdatedDate": "2013-02-21T16:54:01.823-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2011-04-28T02:54:56.457-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Compilation \"PI * R * R = AREA\" expression raise Exception",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 13433
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "try to convert decimals to double\r\nex:\r\ncontext.Variables.Add(\"price\", (double) (item.RurPrice * item.ExchangeRate));",
+      "PostedDate": "2012-06-09T03:32:40.317-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:54:01.823-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

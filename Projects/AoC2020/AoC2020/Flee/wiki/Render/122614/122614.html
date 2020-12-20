@@ -1,0 +1,12 @@
+<div class="wikidoc"><b>Culture Sensitive Expressions</b><br /><br />Flee allows you to specify the culture used to parse expressions.  This lets you enter expressions that use numbers in the format of a particular culture and have them be correctly parsed into an expression.<br /><br />When the parse culture is set, Flee will use the <span class="codeInline">CultureInfo.NumberFormat.NumberDecimalSeparator</span> as the decimal point for real numbers and the <span class="codeInline">CultureInfo.TextInfo.ListSeparator</span> as the function argument separator.<br /><br />The following example shows how to set this up:<br /><br /><pre>
+// Set the culture of Flee&#39;s parser
+CultureInfo ci = new CultureInfo(&quot;fr-FR&quot;);            
+
+ExpressionContext context = new ExpressionContext();
+context.ParseCulture = ci
+context.Imports.AddType(typeof(Math));
+            
+// Create an expression that uses numbers in the culture&#39;s format
+IDynamicExpression e = context.CompileDynamic(&quot;round(100,75; 1)&quot;);
+object result = e.Evaluate();
+</pre></div><div class="ClearBoth"></div>

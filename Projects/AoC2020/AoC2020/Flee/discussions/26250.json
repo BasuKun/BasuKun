@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "87823",
+    "ThreadId": "26250",
+    "Html": "\r\nI want to build a report enginer. ds1.fld1[] is a list var, and i want to calc it by my method, but Irony consider it array. How can i do enter Variables_ResolveVariableValue, and e.VariableName=ds1.fld1[]? <br />",
+    "PostedDate": "2008-04-19T19:38:14.607-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "88178",
+    "ThreadId": "26250",
+    "Html": "\r\nSince the expression is a string, you can do some manipulations on it before passing it to flee.<br /><br />So you could have an expression like <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">ds1.fld1[]</span><br />Which you can transform into <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">ds1_fld1_list</span> to get the expression to compile and then map that name back to your original variable in the ResolveVariableValue event.<br /><br />It's not a perfect solution.  I'm currently discussing a possible improvement with another user which will provide a better alternative.<br />",
+    "PostedDate": "2008-04-21T20:58:22.893-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Demo",
+      "DisplayName": "Demo"
+    },
+    "ClosedComment": "-Fixed in 0.9.14.0",
+    "ClosedDate": "2007-12-04T18:00:49.463-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Consulte el final de este mensaje para obtener más detalles sobre cómo invocar a la depuración \nJust-In-Time (JIT) en lugar de a este cuadro de diálogo.\n \n************** Texto de la excepción **************\nCiloci.Flee.ExpressionCompileException: Syntax Error: unexpected token \"75\" <INTEGER>, expected <IDENTIFIER>, on line: 1 column: 17 ---> PerCederberg.Grammatica.Runtime.ParserLogException: unexpected token \"75\" <INTEGER>, expected <IDENTIFIER>, on line: 1 column: 17\n   en PerCederberg.Grammatica.Runtime.Parser.Parse()\n   en Ciloci.Flee.Expression`1.DoParse()\n   --- Fin del seguimiento de la pila de la excepción interna ---\n   en Ciloci.Flee.Expression`1.DoParse()\n   en Ciloci.Flee.Expression`1.Parse(String expression, IServiceContainer services)\n   en Ciloci.Flee.Expression`1.Compile(String expression, Object owner, ExpressionOptions options)\n   en Ciloci.Flee.Expression`1..ctor(String expression, Object owner, ExpressionContext context)\n   en Ciloci.Flee.ExpressionFactory.CreateGeneric[T](String expression, Object owner, ExpressionContext context)\n   en Demo.MainForm.CreateExpressionsFromPreset(PresetInfo preset)\n   en Demo.MainForm.ddPresets_SelectedIndexChanged(Object sender, EventArgs e)\n   en System.EventHandler.Invoke(Object sender, EventArgs e)\n   en System.Windows.Forms.ComboBox.OnSelectedIndexChanged(EventArgs e)\n   en System.Windows.Forms.ComboBox.WmReflectCommand(Message& m)\n   en System.Windows.Forms.ComboBox.WndProc(Message& m)\n   en System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)\n   en System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)\n   en System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)\n \n \n************** Ensamblados cargados **************\nmscorlib\n    Versión del ensamblado: 2.0.0.0\n    Versión Win32: 2.0.50727.42 (RTM.050727-4200)\n    Código base: file:///C:/WINDOWS/Microsoft.NET/Framework/v2.0.50727/mscorlib.dll\n----------------------------------------\nFleeDemo\n    Versión del ensamblado: 0.0.0.0\n    Versión Win32: 0.0.0.0\n    Código base: file:///C:/Utiles/DotNet/Flee/demo/FleeDemo.exe\n----------------------------------------\nSystem.Windows.Forms\n    Versión del ensamblado: 2.0.0.0\n    Versión Win32: 2.0.50727.42 (RTM.050727-4200)\n    Código base: file:///C:/WINDOWS/assembly/GAC_MSIL/System.Windows.Forms/2.0.0.0__b77a5c561934e089/System.Windows.Forms.dll\n----------------------------------------\nSystem\n    Versión del ensamblado: 2.0.0.0\n    Versión Win32: 2.0.50727.42 (RTM.050727-4200)\n    Código base: file:///C:/WINDOWS/assembly/GAC_MSIL/System/2.0.0.0__b77a5c561934e089/System.dll\n----------------------------------------\nSystem.Drawing\n    Versión del ensamblado: 2.0.0.0\n    Versión Win32: 2.0.50727.42 (RTM.050727-4200)\n    Código base: file:///C:/WINDOWS/assembly/GAC_MSIL/System.Drawing/2.0.0.0__b03f5f7f11d50a3a/System.Drawing.dll\n----------------------------------------\nMicrosoft.VisualBasic\n    Versión del ensamblado: 8.0.0.0\n    Versión Win32: 8.0.50727.42 (RTM.050727-4200)\n    Código base: file:///C:/WINDOWS/assembly/GAC_MSIL/Microsoft.VisualBasic/8.0.0.0__b03f5f7f11d50a3a/Microsoft.VisualBasic.dll\n----------------------------------------\nCiloci.Flee\n    Versión del ensamblado: 0.9.13.0\n    Versión Win32: 0.9.13.0\n    Código base: file:///C:/Utiles/DotNet/Flee/demo/Ciloci.Flee.DLL\n----------------------------------------\nSystem.Windows.Forms.resources\n    Versión del ensamblado: 2.0.0.0\n    Versión Win32: 2.0.50727.42 (RTM.050727-4200)\n    Código base: file:///C:/WINDOWS/assembly/GAC_MSIL/System.Windows.Forms.resources/2.0.0.0_es_b77a5c561934e089/System.Windows.Forms.resources.dll\n----------------------------------------\nmscorlib.resources\n    Versión del ensamblado: 2.0.0.0\n    Versión Win32: 2.0.50727.42 (RTM.050727-4200)\n    Código base: file:///C:/WINDOWS/Microsoft.NET/Framework/v2.0.50727/mscorlib.dll\n----------------------------------------\n \n************** Depuración JIT **************\nPara habilitar la depuración Just In Time (JIT), el archivo de configuración de esta\naplicación o equipo (machine.config) debe tener el\nvalor jitDebugging establecido en la sección system.windows.forms.\nLa aplicación también se debe compilar con la depuración\nhabilitada\n \nPor ejemplo:\n \n<configuration>\n    <system.windows.forms jitDebugging=\"true\" />\n</configuration>\n \nCuando esté habilitada la depuración JIT, cualquier excepción no controlada\nse enviará al depurador JIT registrado en el equipo\nen lugar de controlarlo mediante el cuadro de diálogo.\n \n \n---------------------------------------------------------------------------------------------------------------------\n \nConsulte el final de este mensaje para obtener más detalles sobre cómo invocar a la depuración \nJust-In-Time (JIT) en lugar de a este cuadro de diálogo.\n \n************** Texto de la excepción **************\nCiloci.Flee.ExpressionCompileException: Syntax Error: unexpected token \"5\" <INTEGER>, expected <IDENTIFIER>, on line: 1 column: 15 ---> PerCederberg.Grammatica.Runtime.ParserLogException: unexpected token \"5\" <INTEGER>, expected <IDENTIFIER>, on line: 1 column: 15\n   en PerCederberg.Grammatica.Runtime.Parser.Parse()\n   en Ciloci.Flee.Expression`1.DoParse()\n   --- Fin del seguimiento de la pila de la excepción interna ---\n   en Ciloci.Flee.Expression`1.DoParse()\n   en Ciloci.Flee.Expression`1.Parse(String expression, IServiceContainer services)\n   en Ciloci.Flee.Expression`1.Compile(String expression, Object owner, ExpressionOptions options)\n   en Ciloci.Flee.Expression`1..ctor(String expression, Object owner, ExpressionContext context)\n   en Ciloci.Flee.ExpressionFactory.CreateGeneric[T](String expression, Object owner, ExpressionContext context)\n   en Demo.MainForm.CreateExpressionsFromPreset(PresetInfo preset)\n   en Demo.MainForm.ddPresets_SelectedIndexChanged(Object sender, EventArgs e)\n   en System.Windows.Forms.ComboBox.OnSelectedIndexChanged(EventArgs e)\n   en System.Windows.Forms.ComboBox.WmReflectCommand(Message& m)\n   en System.Windows.Forms.ComboBox.WndProc(Message& m)\n   en System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)\n   en System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)\n   en System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)\n \n \n************** Ensamblados cargados **************\nmscorlib\n    Versión del ensamblado: 2.0.0.0\n    Versión Win32: 2.0.50727.42 (RTM.050727-4200)\n    Código base: file:///C:/WINDOWS/Microsoft.NET/Framework/v2.0.50727/mscorlib.dll\n----------------------------------------\nFleeDemo\n    Versión del ensamblado: 0.0.0.0\n    Versión Win32: 0.0.0.0\n    Código base: file:///C:/Utiles/DotNet/Flee/demo/FleeDemo.exe\n----------------------------------------\nSystem.Windows.Forms\n    Versión del ensamblado: 2.0.0.0\n    Versión Win32: 2.0.50727.42 (RTM.050727-4200)\n    Código base: file:///C:/WINDOWS/assembly/GAC_MSIL/System.Windows.Forms/2.0.0.0__b77a5c561934e089/System.Windows.Forms.dll\n----------------------------------------\nSystem\n    Versión del ensamblado: 2.0.0.0\n    Versión Win32: 2.0.50727.42 (RTM.050727-4200)\n    Código base: file:///C:/WINDOWS/assembly/GAC_MSIL/System/2.0.0.0__b77a5c561934e089/System.dll\n----------------------------------------\nSystem.Drawing\n    Versión del ensamblado: 2.0.0.0\n    Versión Win32: 2.0.50727.42 (RTM.050727-4200)\n    Código base: file:///C:/WINDOWS/assembly/GAC_MSIL/System.Drawing/2.0.0.0__b03f5f7f11d50a3a/System.Drawing.dll\n----------------------------------------\nMicrosoft.VisualBasic\n    Versión del ensamblado: 8.0.0.0\n    Versión Win32: 8.0.50727.42 (RTM.050727-4200)\n    Código base: file:///C:/WINDOWS/assembly/GAC_MSIL/Microsoft.VisualBasic/8.0.0.0__b03f5f7f11d50a3a/Microsoft.VisualBasic.dll\n----------------------------------------\nCiloci.Flee\n    Versión del ensamblado: 0.9.13.0\n    Versión Win32: 0.9.13.0\n    Código base: file:///C:/Utiles/DotNet/Flee/demo/Ciloci.Flee.DLL\n----------------------------------------\nSystem.Windows.Forms.resources\n    Versión del ensamblado: 2.0.0.0\n    Versión Win32: 2.0.50727.42 (RTM.050727-4200)\n    Código base: file:///C:/WINDOWS/assembly/GAC_MSIL/System.Windows.Forms.resources/2.0.0.0_es_b77a5c561934e089/System.Windows.Forms.resources.dll\n----------------------------------------\nmscorlib.resources\n    Versión del ensamblado: 2.0.0.0\n    Versión Win32: 2.0.50727.42 (RTM.050727-4200)\n    Código base: file:///C:/WINDOWS/Microsoft.NET/Framework/v2.0.50727/mscorlib.dll\n----------------------------------------\n \n************** Depuración JIT **************\nPara habilitar la depuración Just In Time (JIT), el archivo de configuración de esta\naplicación o equipo (machine.config) debe tener el\nvalor jitDebugging establecido en la sección system.windows.forms.\nLa aplicación también se debe compilar con la depuración\nhabilitada\n \nPor ejemplo:\n \n<configuration>\n    <system.windows.forms jitDebugging=\"true\" />\n</configuration>\n \nCuando esté habilitada la depuración JIT, cualquier excepción no controlada\nse enviará al depurador JIT registrado en el equipo\nen lugar de controlarlo mediante el cuadro de diálogo.",
+    "LastUpdatedDate": "2013-05-16T04:24:08.783-07:00",
+    "PlannedForRelease": "Flee-0.9.14.0",
+    "ReleaseVisibleToPublic": true,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2007-11-30T04:26:50.797-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Choosing \"Blinds\" or \"BullsEye\" in the Demos throws this Exceptions",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 2543
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "It looks like Flee is creating the parser in the current culture which I'm guessing does not have \".\" as the decimal separator.  Should be an easy fix.  Thanks for reporting it.",
+      "PostedDate": "2007-12-03T19:17:59.97-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2007-12-04T18:00:20.323-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2007-12-04T18:00:49.463-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "At the same time you should check that in some country the decimal separator is not dot but comma.",
+      "PostedDate": "2008-01-02T16:59:16.017-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:54:06.667-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:24:08.783-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

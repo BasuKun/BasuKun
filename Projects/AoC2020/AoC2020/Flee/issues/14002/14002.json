@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I changed two methods\n \n\t\tPublic Function TopologicalSort(ByVal sources As Queue(Of T)) As IList(Of T)\n\t\t\tDim output As IList(Of T) = New List(Of T)\n\t\t\tDim directDependents As IList(Of T) = New List(Of T)\n \n\t\t\tWhile sources.Count > 0\n\t\t\t\tDim n As T = sources.Dequeue()\n\t\t\t\toutput.Add(n)\n \n\t\t\t\tdirectDependents.Clear()\n\t\t\t\tMe.GetDirectDependents(n, directDependents)\n \n\t\t\t\tFor Each m As T In directDependents\n\t\t\t\t\tMe.RemoveDependency(n, m)\n \n\t\t\t\t\tIf Me.HasPrecedents(m) = False Then\n\t\t\t\t\t\tsources.Enqueue(m)\n\t\t\t\t\tEnd If\n\t\t\t\tNext\n\t\t\tEnd While\n \n\t\t\tIf output.Count <> Me.Count Then\n\t\t\t\tThrow New CircularReferenceException(Me.DependencyGraph)\n\t\t\tEnd If\n \n\t\t\tReturn output\n\t\tEnd Function\n \nand the \n \n\t\tFriend Function GetBachInfos() As BatchLoadInfo()\n\t\t\tDim tails As String() = MyDependencies.GetTails()\n\t\t\tDim sources As Queue(Of String) = MyDependencies.GetSources(tails)\n \n\t\t\tDim result As IList(Of String) = MyDependencies.TopologicalSort(sources)\n \n\t\t\tDim infos(result.Count - 1) As BatchLoadInfo\n \n\t\t\tFor i As Integer = 0 To result.Count - 1\n\t\t\t\tIf MyNameInfoMap.ContainsKey(result.Item(i)) Then\n\t\t\t\t\tinfos(i) = MyNameInfoMap.Item(result.Item(i))\n\t\t\t\tElse\n\t\t\t\t\tThrow New Exception(\"Item not found \" + result.Item(i))\n\t\t\t\tEnd If\n\t\t\tNext\n \n\t\t\tReturn infos\n\t\tEnd Function\n \n \nthis helped me find the errors in the expressions, i think that should have some of this in the new versions",
+    "LastUpdatedDate": "2013-02-21T16:54:01.61-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2011-07-28T14:10:14.093-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Changes I made to show more information in exceptions",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 14002
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

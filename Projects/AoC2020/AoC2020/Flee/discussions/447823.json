@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1059657",
+    "ThreadId": "447823",
+    "Html": "Hi, I am using the Flee library and its really easy to set up and use. However, I have hit a problem in that the library currently doesn't allow me to convert a string to an integer using the CAST method. The expression I'm trying to evaluate is:\r<br />\n<br />\ncast(xyz, int) * 20\r<br />\n<br />\nwhere xyz is a string data type set to &quot;29&quot;. When I enter this, the compiler fires the ResolveVariableType handler for xzy which returns a string data type and then it generates the  exception:\r<br />\n<br />\nCiloci.Flee.ExpressionCompileException: CastElement: Cannot convert type 'String' to 'Double' at Ciloci.Flee.ExpressionElement.ThrowCompileException(String messageKey, CompileExceptionReason reason, Object[] arguments) at Ciloci.Flee.CastElement.ThrowInvalidCastException() at Ciloci.Flee.Cas....\r<br />\n<br />\nAm I doing something wrong or is there a setting I've missed? If this is a limitation of Flee's CAST statement, can I cast the value any other way (I'm using vb.net)....\r<br />\n<br />\nThanks\r<br />\n<br />\nDom<br />\n",
+    "PostedDate": "2013-06-21T07:11:53.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1063124",
+    "ThreadId": "447823",
+    "Html": "Hey Dom,\r<br />\n<br />\nin .net you cannot cast a string to an int either,since Flee is based on the .net core,it cant handle that. You could use int.Parse tho :) flee lets you import any .net lib and use any method in any class.\r<br />\n<br />\nHope that helps you.\r<br />\n<br />\nYoni<br />\n",
+    "PostedDate": "2013-07-01T05:00:43.753-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1091741",
+    "ThreadId": "447823",
+    "Html": "I'm having a similar problem. I get the exception &quot;CastElement: Cannot convert type 'Int32' to 'String'&quot; when trying to cast an integer as a string.\r<br />\n<br />\npotpockey, I've tried importing Convert and am not able to make it work.  After adding Imports.AddType(typeof(Convert) and replacing cast with Convert.ToString(...), I get the exception &quot;IdentifierElement: Could not find a field/property/variable with the name 'Convert'&quot;\r<br />\n<br />\nAn example of what you're describing for int.Parse would go a long way to helping others, including myself, understand how to import and make use of other .Net data types.<br />\n",
+    "PostedDate": "2013-09-12T07:12:06.837-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1093993",
+    "ThreadId": "447823",
+    "Html": "if you imported convert you access its methods directly -- dont write Convert.ToString,but just ToString(yourintvariable)<br />\n",
+    "PostedDate": "2013-09-18T06:22:35.913-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1135518",
+    "ThreadId": "447823",
+    "Html": "Works great for casting to other types too...<br />\n<pre><code>            context.Imports.AddType(typeof(Convert));\n            context.Imports.AddType(typeof(Math));\n            context.Imports.AddVariable(&quot;thisValue&quot;, &quot;-100&quot;);\n            IDynamicExpression e = context.CompileDynamic(&quot;ABS(ToDouble(thisValue))&quot;);\n            double d = (double)e.Evaluate();</code></pre>\n\n",
+    "PostedDate": "2013-12-13T07:14:52.293-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1135524",
+    "ThreadId": "447823",
+    "Html": "I did get it to work following potpockey's advice of doing &quot;ToString(...)&quot; instead of &quot;Convert.ToString(...)&quot;.  I was also able to import it with a &quot;Convert&quot; namespace via &quot;Imports.AddType(typeof(Convert), &quot;Convert&quot;)&quot; which then enabled me to do Convert.ToString(...) within my expression. Thank you for the help potpockey!<br />\n",
+    "PostedDate": "2013-12-13T07:22:57.337-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

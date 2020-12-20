@@ -1,0 +1,35 @@
+<div class="wikidoc"><b>Getting Started</b><br /><br />This page demonstrates how to quickly get started in creating and evaluating expressions.  You&#39;ll need to add a reference to <span class="codeInline">Ciloci.Flee.dll</span> and import the <span class="codeInline">Ciloci.Flee</span> namespace to be able to compile the code.<br /><br /><pre>
+// Define the context of our expression
+ExpressionContext context = new ExpressionContext();
+// Allow the expression to use all static public methods of System.Math
+context.Imports.AddType(typeof(Math));
+
+// Define an int variable
+context.Variables[&quot;a&quot;] = 100;
+
+// Create a dynamic expression that evaluates to an Object
+IDynamicExpression eDynamic = context.CompileDynamic(&quot;sqrt(a) + pi&quot;);
+// Create a generic expression that evaluates to a double
+IGenericExpression&lt;double&gt; eGeneric = context.CompileGeneric&lt;double&gt;(&quot;sqrt(a) + pi&quot;);
+
+// Evaluate the expressions
+double result = (double)eDynamic.Evaluate();
+result = eGeneric.Evaluate();
+
+// Update the value of our variable
+context.Variables[&quot;a&quot;] = 144;
+// Evaluate again to get the updated result
+result = eGeneric.Evaluate();
+</pre><br /><br />The <span class="codeInline">ExpressionContext</span> holds all the information required for an expression (besides the expression text).  We use its <span class="codeInline">Imports</span> property to make all the static members of the System.Math class available to the expression and the <span class="codeInline">Variables</span> property to dynamically define some variables.  With the context defined, we compile the expression text to create a dynamic expression (evaluates to Object) or a generic expression (type-safe and fast) and finally call the Evaluate method on either expression to get its result.<br /><br /><b>Invalid expressions</b><br />Expressions can fail to compile if, for example, the syntax of the text is invalid.  An <span class="codeInline">ExpressionCompileExpression</span> will be thrown whenever an expression cannot be compiled.<br /><br /><pre>
+try
+{
+   ExpressionContext context = new ExpressionContext();
+   IDynamicExpression e = context.CompileDynamic(&quot;100 +* 200&quot;);
+}
+catch (ExpressionCompileException ex)
+{
+   // Handle expression compile error
+   if (ex.Reason == CompileExceptionReason.SyntaxError)
+      Console.WriteLine(&quot;Check your expression syntax&quot;);
+}
+</pre></div><div class="ClearBoth"></div>

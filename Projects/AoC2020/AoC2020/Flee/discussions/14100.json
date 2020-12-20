@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "45851",
+    "ThreadId": "14100",
+    "Html": "\r\nThanks for such a Wonderful Creation!!!<br />It is a new concept of Expression Evaluator.<br />I am using FLEE Library for my application which has an Expression consisting a string as an Input.<br />After the Expression is evaluated I would like to know which variables are used in the given Expression in the order of precedence.<br /><br />If my String may contain \"(a-b)*(c-a) then I would like to have the list like Array={a,b,c} after the Expression is evaluated.<br />Note that Variables in the Input String are NOT recognized when passed to the Expression.<br /><br />your Suggestion/guidance will be appreciated.<br /><br />Thanks in Advance for any help.<br /><br />Thanks &amp; regards,<br />DNS<br />",
+    "PostedDate": "2007-08-21T05:56:29.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45883",
+    "ThreadId": "14100",
+    "Html": "\r\n&gt;Note that Variables in the Input String are NOT recognized when passed to the Expression.<br />I'm not sure I understand what this means.  Are you saying that you just want to be able to take an expression and recognize what variables it uses without actually trying to compile and evaluate it?<br />",
+    "PostedDate": "2007-08-21T08:03:11.62-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "46064",
+    "ThreadId": "14100",
+    "Html": "\r\nThanks for Immediate Reply.<br /><br />In the Expression.vb Class,in Compile Function,after the following Stmt,ie<br />Dim topElement As ExpressionElement = Parse(expression, services)<br />and before emitting it to MSIL thru' DynamicMethod ie<br />Dim dm As New DynamicMethod(String.Empty, options.ResultType, New Type() {ownerType}, ownerType)<br />I would like to have the List of Variables used in the Expression in the order of precedence.<br />This will help me to select the variables for the Next Evaluation may or may not be for the same Expression.<br /><br />Your Help is appreciated.<br /><br />Thanks &amp; regards,<br />DNS<br />",
+    "PostedDate": "2007-08-22T06:17:18.417-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "46161",
+    "ThreadId": "14100",
+    "Html": "\r\nI think the thing I was trying to understand is whether you were saying that the variables aren't actually actually defined; you just want to get a list of the ones that the expression will use.<br /><br />The code you mentioned is in the constructor of the expression which cannot return anything.  Obviously, the expression won't compile if the variables don't actually exist.<br /><br />I'm just wondering if you what you need is to parse the expression text and pick out the variable names instead.  That is doable but requires a different approach.<br />",
+    "PostedDate": "2007-08-22T15:18:42.1-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "46278",
+    "ThreadId": "14100",
+    "Html": "\r\n.<br />",
+    "PostedDate": "2007-08-23T08:14:12.873-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "46283",
+    "ThreadId": "14100",
+    "Html": "\r\nHi,<br />Thanks for the clarification.<br />Can you elaborate on the approach how could I get the Variable List in the Order of Precence?<br />It will be Helpful for me to put in a different set of variables in the Next Evaluation.<br /><br />Thanks for Valuable Guidance<br /><br />Thanks &amp; regards,<br />DNS<br />",
+    "PostedDate": "2007-08-23T08:34:49.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "46332",
+    "ThreadId": "14100",
+    "Html": "\r\nWell, you have access to the grammar so you can use Grammatica to generate a parser for it.  You can then hook in to the parser and be notified when it hits a variable name.<br /><br />Your request is very similar to nanded's issue (see <a href=\"http://www.codeplex.com/Flee/Thread/View.aspx?ThreadId=14039\">Identify Variables</a>).  It was helpful for me when he told me what he was trying to accomplish so that I could come up with the best approach.<br /><br />Could you tell me what you are trying to accomplish?<br /><br />Thanks.<br />",
+    "PostedDate": "2007-08-23T13:38:01.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "47402",
+    "ThreadId": "14100",
+    "Html": "\r\nI've implemented a way to get the variables used in an expression in release 9.0.5.5.  Check out the <a href=\"http://www.codeplex.com/Flee/Thread/View.aspx?ThreadId=14039\">Identify Variables</a> discussion to see how to use it.<br />",
+    "PostedDate": "2007-08-31T09:18:22.893-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

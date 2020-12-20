@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "My C# application accesses FLEE from multiple simultaneous threads.  For some reason, calling the default ExpressionContext constructor occasionally throws an OutOfMemoryException.\n\nThe first time I saw this problem, one thread was inside ExpressionContext.Compile and the faulting thread was inside the ExpressionContext constructor.  Ok, so I figured that something in the constructor isn't thread-safe, so I put a lock around the constructor and Compile references (to prevent multiple threads from trying to execute those routines simultaneously).  That reduced the probability of getting this exception, but did not eliminate it.\n\nNow, looking at the stack traces of the 2 threads that are running when one thread throws this exception, I see that the exception is thrown from within the ExpressionContext default constructor, but the other thread is not in any FLEE code at all.  FWIW, both threads have constructed and kept references to many hundreds of ExpressionContext objects.\n\nHas anyone seen anything like this in their own use of FLEE?\n\n(I've finally gotten to the point with this issue that I'm going to download the source code and debug the darned thing.)",
+    "LastUpdatedDate": "2016-01-25T12:21:55.96-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2016-01-25T12:21:55.96-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "OutOfMemoryException in ExpressionContext()",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 17600
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

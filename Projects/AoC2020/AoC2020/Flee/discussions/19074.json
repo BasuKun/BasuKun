@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "62692",
+    "ThreadId": "19074",
+    "Html": "\r\nFirst, thank to Eciloci, it's amazing &amp; cool !<br /><br />I would like to use flee to design an ad-hoc stock scanning system. There're two types of data, one is real time stock quotation, the other is off-line data ( like Earnings Per Share, Gross Margin... etc, but may update weekly or monthly or quarterly).<br />There're about 2000 stocks. If I load all the off line information for each stock on application start, update stock quotation in real time. How to speed up the stock scan for all the stocks ? I think maybe distributed computing or using asynchronous programming model or query the database asynchronously .... any idea ?<br /><br />Regards,<br />AgiChen<br />",
+    "PostedDate": "2007-12-12T14:46:38.32-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "62942",
+    "ThreadId": "19074",
+    "Html": "\r\nI guess you could run the scan on multiple threads if there are no dependencies between stocks.<br />",
+    "PostedDate": "2007-12-13T19:26:29.257-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

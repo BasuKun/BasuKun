@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "290390",
+    "ThreadId": "85241",
+    "Html": "<p>Hi,</p>\r\n<p>I've been trying to use Flee for this type of problems: http://www.denismo.name/b2evolution/index.php?blog=5&amp;p=43&amp;more=1&amp;c=1&amp;tb=1&amp;pb=1</p>\r\n<p>Because Flee is used withing XAML, the default quote character cannot be used - XAML parser does not allow this character to be used withing an attribute expression. I had to change Flee to support different quote character:</p>\r\n<p>// Old string quote character<br>// STRING_LITERAL&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = &lt;&lt;&quot;([^&quot;\\r\\n\\\\]|\\\\u[0-9a-f]{4}|\\\\[\\\\&quot;'trn])*&quot;&gt;&gt;<br>STRING_LITERAL&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = &lt;&lt;`([^`\\r\\n\\\\]|\\\\u[0-9a-f]{4}|\\\\[\\\\`&quot;'trn])*`&gt;&gt;</p>\r\n<p>It may be hard to read - it is U+0060 instead of U+0022. At the moment, I've modified the source, but this creates the problem with licensing (I hope to be able to use it in a commercial project as well). I was wondering if you were planning to add an option to Flee (I can provide a patch if you want) ExpressionParserOptions which would allow specifying the character used for marking string literals?</p>\r\n<p>Thanks.</p>\r\n<p>Denis</p>",
+    "PostedDate": "2010-02-12T23:14:09.397-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

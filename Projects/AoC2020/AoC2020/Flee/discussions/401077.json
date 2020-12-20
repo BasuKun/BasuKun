@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "933655",
+    "ThreadId": "401077",
+    "Html": "\r\n<p>Hello, <br>\r\n<br>\r\nI'm using Flee for the first time to do some calculation, and I have a big number of variables, the issu is when some expression is wrong, I have the KeyNotFoundException of the Dictionary, but, it will be very helpful if I get\r\n<strong>what </strong>key was not found, because the end user of my application (<em>built in C#</em>) will be able to edit those expressions, and it will be nice to have some explicite error message.<br>\r\n<br>\r\nSo, how can I do that ? Thanks in advance.</p>\r\n",
+    "PostedDate": "2012-10-29T00:48:01.753-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

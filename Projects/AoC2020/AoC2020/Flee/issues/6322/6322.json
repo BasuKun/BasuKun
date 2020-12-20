@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Library",
+      "DisplayName": "Library"
+    },
+    "ClosedComment": "closing for now.",
+    "ClosedDate": "2009-02-06T19:05:17.407-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'm trying to support Excel-based expressions, which use 1-based indexes for strings and arrays. Flee seems to only support 0-based indexes for arrays. This is causing my functions to use 1-based indexes and my arrays to use 0-based indexes. It would be nice to have the BaseIndex as an option under ExpressionOptions so the the index base could be changed.\n \nOn a similar note, it would be nice to support string-based array indexes, eg: DataRow[\"SomeColumn\"].\n \nOverall, though, Flee is a top-notch package. Having written expression parsers myself in the past, it's amazing all the features it has.",
+    "LastUpdatedDate": "2013-05-16T04:24:07.17-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2008-09-30T20:04:50.397-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Ability to use 1-based vs 0-based indexes for arrays",
+    "Type": {
+      "Name": "Feature",
+      "Id": 1
+    },
+    "VoteCount": 1,
+    "Id": 6322
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Sorry for getting back to you so late.  Do you still need this feature implemented?\r\n\r\n>On a similar note, it would be nice to support string-based array indexes, eg: DataRow[\"SomeColumn\"].\r\nThere was a bug in my handling of default indexers.  I was only looking at the first one which for a DataRow is the integer one.  This has been fixed.",
+      "PostedDate": "2008-11-30T15:48:31.98-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-06T19:05:17.407-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:54:05.277-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:24:07.17-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

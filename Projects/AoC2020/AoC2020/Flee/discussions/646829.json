@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1450458",
+    "ThreadId": "646829",
+    "Html": "In the &quot;Literals&quot; section of the &quot;Language Reference&quot; page here:<br />\n<br />\n<a href=\"http://flee.codeplex.com/wikipage?title=LanguageReference&amp;referringTitle=Home#Literals\" rel=\"nofollow\">http://flee.codeplex.com/wikipage?title=LanguageReference&referringTitle=Home#Literals</a><br />\n<br />\nThe description of the DateTime literal contains the following:<br />\n<br />\n<em>Use the ExpressionOptions.DateTimeFormat property to control the format.</em><br />\n<br />\nAfter finding that the above property doesn't actually exist I dug through the code and found that the docs should have read:<br />\n<br />\n<em>Use the ParserOptions.DateTimeFormat property to control the format.</em><br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2015-10-30T07:07:25.307-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,80 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Closing the issue based on the last comment",
+    "ClosedDate": "2007-09-03T11:47:11.43-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "First of all: Nice work!\n \nA (somewhat artificial) unit test revealed a potential issue when using constant expressions: I have an owner class with double fields for x and y, and use a double evaluator:\n \nExpressionEvaluator<double> evaluator;\nevaluator = (ExpressionEvaluator<double>) expression.Evaluator;\nreturn evaluator();\n \nThis produced an issue with a division of two int values. My expression \"5 / 2\" returned a value of 2, which was not too surprising (it will be for my customers who will enter the expressions, but that's another story...).\nHowever, after adjusting my expression to \"5.0 / 2.0\", the returned value was still not the expected double value of 2.5. Flee still seems to work with int values rather than doubles.\n \nApart from this, everything works like a charm :)\n \nCheers,\nPhilipp",
+    "LastUpdatedDate": "2013-05-16T04:24:10.193-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2007-08-24T04:42:03.873-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Internal use of int rather than double",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 990
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hmm, very strange.\r\n\r\nI'll have a look at this tonight.  Thanks for posting it.",
+      "PostedDate": "2007-08-24T09:11:54.707-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I've investigated and I can't reproduce the issue.  An expression like \"5.0 / 2.0\" yields a double value of 2.5 and generates the correct IL.  I've also tried it using an expression owner with two double fields and it also produces the correct result.  I added two unit tests just in case, and they pass.\r\n\r\nMaybe you could send me your unit test?",
+      "PostedDate": "2007-08-24T18:56:54.913-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "This is really strange - it's easily reproducable here - perhaps it depends on the OS culture. I'll investigate this a little further and get back to you. Cheers!",
+      "PostedDate": "2007-09-02T06:05:33.18-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "You say that the unit test was somewhat artificial, so maybe other expression options are being set that I'm not using in my tests.",
+      "PostedDate": "2007-09-02T21:30:08.82-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Ouch, either I've posted my answer in the wrong thread (*doh*), or the post did not work. So here we go again: It was all my fault - as I said, the test was somewhat artificial and I didn't test the epxression directly and overlooked a type cast that was performed after expression evaluation. This is were the precision loss occurred. I'm really sorry I caused you some extra work!\r\n\r\nBestPhilipp",
+      "PostedDate": "2007-09-03T07:42:42.997-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2007-09-03T11:47:11.43-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:54:08.15-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:24:10.193-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

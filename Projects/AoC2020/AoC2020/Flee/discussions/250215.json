@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "582474",
+    "ThreadId": "250215",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I am using the following code snippet to check if the expression results in desired result type:</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>        <span style=\"color:blue\">public</span> <span style=\"color:blue\">bool</span> IsValidateExpression(<span style=\"color:blue\">string</span> sExpression, Type desiredResultType)\r\n        {\r\n            <span style=\"color:blue\">try</span>\r\n            {\r\n                m_context.Options.ResultType = desiredResultType;\r\n                IDynamicExpression es = m_context.CompileDynamic(sExpression);\r\n\t\t<span style=\"color:blue\">return</span> <span style=\"color:blue\">true</span>;\r\n            }\r\n            <span style=\"color:blue\">catch</span> (ExpressionCompileException ex)\r\n            {\r\n\t\t<span style=\"color:blue\">return</span> <span style=\"color:blue\">false</span>;\r\n            }\r\n        }\r\n</pre>\r\n</div>\r\n<p>The expressions that I am specifying typically result in a numeric value, and it should be possible to convert it to String. Unfortunately, if I specify the desired result type to be String, I get ExpressionCompilationError with the following message:</p>\r\n<p>&quot;RootExpressionElement: Cannot convert type 'Single' to expression result of 'String'&quot;</p>\r\n<p>Is there anyway I can avoid this? or is there a better way of checking if the specified expression will result in a value that could be assigned to an object of specified type?</p>\r\n<p>Thanks,</p>\r\n<p>Warm Regards,</p>\r\n<p>- Vikram Lele</p>\r\n<div id=\"x__mcePaste\" style=\"left:-10000px; top:16px; width:1px; height:1px; overflow:hidden\">\r\n<pre>ExpressionCompileException</pre>\r\n</div>\r\n",
+    "PostedDate": "2011-03-18T00:49:42.1-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

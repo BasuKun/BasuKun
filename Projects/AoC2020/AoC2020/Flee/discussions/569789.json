@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1313262",
+    "ThreadId": "569789",
+    "Html": "((a - b)*c) where a and b are data points and c is (a + b) where a and b have different values than the first a and b.  The values come from a database that holds the calculation(s) and there parameter values.\r<br />\n<br />\nMy thought is to do &quot;something&quot; to fill out the expression then finally add the original calc and GetResult. <br />\n\r<br />\nthoughts?<br />\n",
+    "PostedDate": "2014-10-14T12:17:19.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1247832",
+    "ThreadId": "546085",
+    "Html": "Hi, I would like to be able to define variables without any limitation as to the characters allowed. This could be achievable either via escape characters (i.e. [My\\ Variable]) or by delimiting variables using [] (i.e. [[My Variable]]). Is it possible to do this currently and if not can you point me to where I should make the change?<br />\n",
+    "PostedDate": "2014-05-21T03:18:39.603-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1247854",
+    "ThreadId": "546085",
+    "Html": "Hi - I don't want to cut across any reply the Flee guys might have, but I had to do a similar thing - so users could refer to data items with nice readable names including dashes, brackets and all sorts of 'banned' characters.\r<br />\n<br />\nI have a class defining each of my variables which contains amongst other things...<br />\n<pre><code>    MyClass.VarName = VariableName\n    MyClass.VarGUID = &quot;var_&quot; &amp; Guid.NewGuid.ToString.Replace(&quot;-&quot;, &quot;&quot;)\nSelect Case VariableType\n        Case &quot;String&quot; : MyClass.VarSystemType = GetType(String)\n    ...etc etc...\n</code></pre>\n\nSo, my variable &quot;DG Repeat Test 1.Inp-Account Status&quot; becomes referred to as var_55578b92a5c84b2598a67527afd11833.\r<br />\nI then have simple lookup functions to find name &amp; type info at run-time, and all expression functions occur using the var_GUID name.\r<br />\nWorks a treat and is very fast &amp; flexible.\r<br />\n<br />\nHope this gives some help.\r<br />\nCheers.<br />\n",
+    "PostedDate": "2014-05-21T03:58:14.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

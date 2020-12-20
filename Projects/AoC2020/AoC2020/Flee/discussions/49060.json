@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "163889",
+    "ThreadId": "49060",
+    "Html": "I used your old version and today I download your latest version to replace the old one. I got a problem about ExpressionFactory. I use IDynamicExpression and ExpressionFactory. I think, ExpressionFactory was removed. So, I want to know that how can I do. Because your demo source code do not use DynamicExpression.<br>\r\n<br>\r\nThank you very much in advance.<br>\r\n<br>\r\nDusit<br>\r\n",
+    "PostedDate": "2009-03-03T07:31:17.743-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "164276",
+    "ThreadId": "49060",
+    "Html": "From <a href=\"http://flee.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=19246\">http://flee.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=19246</a><br>\r\n<br>\r\nGot rid of ExpressionFactory type; use ExpressionContext.Compile method to create expressions<br>\r\n",
+    "PostedDate": "2009-03-04T04:52:56.89-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

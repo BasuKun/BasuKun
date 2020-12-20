@@ -1,0 +1,38 @@
+<div class="wikidoc">An expression can access all members of the expression owner.  By default, an expression will only allow access to the public members.  To control which members on the expression owner are accessible, you can use the <span class="codeInline">OwnerMemberAccess</span> property of the <span class="codeInline">ExpressionOptions</span> class.<br /><br />In case you need more find-grained control, you can use the <span class="codeInline">ExpressionOwnerMemberAccessAttribute</span> to explicitly set the accessibility of  fields, properties, and methods on the owner.  The setting in the attribute overrides the setting in the <span class="codeInline">ExpressionOptions</span>.  This means that you can deny access to all non-public members <b>but</b> allow access to a specific non-public member by tagging it with the attribute.<br /><br /><pre>
+using Ciloci.Flee;
+using System.Collections.Generic;
+
+namespace ConsoleApplication1
+{
+    class ExpressionOwner
+    {
+        [ExpressionOwnerMemberAccess(false)]
+        public int Func1()
+        {
+
+        }
+
+        public int Func2(int i)
+        {
+
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ExpressionContext context = new ExpressionContext();
+            // Only allow access to public members on the owner (the default)
+            context.Options.OwnerMemberAccess = System.Reflection.BindingFlags.Public;
+
+            // This expression will compile
+            IDynamicExpression e = ExpressionFactory.CreateDynamic(&quot;func2(100)&quot;, context);
+
+            // This expression will throw a compile exception because of the overriding attribute on the function
+            e = ExpressionFactory.CreateDynamic(&quot;func1()&quot;, context);
+        }
+    }
+}
+
+</pre></div><div class="ClearBoth"></div>

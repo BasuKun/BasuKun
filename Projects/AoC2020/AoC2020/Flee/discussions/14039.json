@@ -1,0 +1,146 @@
+[
+  {
+    "Id": "45671",
+    "ThreadId": "14039",
+    "Html": "\r\nThanks for the FLEE project,We are learning new concepts from this.<br /><br />We have one question regarding identifying the variaibles and operators of an expression.<br />In \"Expression.vb\" class ,in \"Compile\" function, \"topElement\" object has all the variables and operators of an expression.<br />Will u please tell how to identify these in the interface form?<br />Is there any other best way to identify variables of an expression?<br /><br />Please reply.<br />",
+    "PostedDate": "2007-08-20T05:29:24.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45690",
+    "ThreadId": "14039",
+    "Html": "\r\nHi,<br /><br />Can you could tell me what you want to accomplish so I can see if it is feasible and what the best approach is?  Why do you need to know the operators and variables of an expression?<br /><br />Thanks,<br /><br />Eugene<br />",
+    "PostedDate": "2007-08-20T07:46:53.183-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45702",
+    "ThreadId": "14039",
+    "Html": "<br />Hi,<br />Thanks for the prompt reply.<br /><br />We want to use these variables after compilation.So once they are identified they can be used in any custom expression and they will not be compiled again.<br />We do not want to recompile the code after identifying variables.Is this feasible?<br /><br />In \"Expression.vb\" class ,in \"Compile\" function, \"topElement\" object has all the variables and operators of an expression.<br />All the Topelement,Left Elements,Right Elements available in expression are to be identified in a form.<br />e.g a plus b ( \"plus\" top element , \"a\" Left Element , \"b\" Right Element ) This is to be identified in the form.<br /><br />Please suggest the best suitable solution for this?<br /><br />Please correct if there is  anything wrong in this.<br /><br />Thank you.<br /><br />With Best Regards,<br />Nanded<br /><br /><br />",
+    "PostedDate": "2007-08-20T08:53:21.813-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45726",
+    "ThreadId": "14039",
+    "Html": "\r\nHi,<br /><br />Sounds like you want to be able to define variables at runtime and use them in an expression. <br /><br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\n// Define the dynamic expression owner, strongly-typed to int\r\nDynamicExpressionOwner&lt;int&gt; owner = new DynamicExpressionOwner&lt;int&gt;();\r\n// Define some variables\r\nowner.Variables[\"a\"] = 100;\r\nowner.Variables[\"b\"] = 200;\r\n \r\n// Create an expression that uses the variables and is owned by our owner\r\nExpression e = new Expression(\"a+b\", owner);\r\nExpressionEvaluator&lt;int&gt; evaluator = (ExpressionEvaluator&lt;int&gt;) e.Evaluator;\r\n// Get the result\r\nint result = evaluator();\r\n \r\n// Change the value of a variable\r\nowner.Variables[\"a\"] = 222;\r\n// Re-evaluate to get the updated result\r\nresult = evaluator();\r\n</pre><br />I just implemented this over the weekend.  It is still in rough form and needs to be tweaked but the concept is there.<br />",
+    "PostedDate": "2007-08-20T10:50:28.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45784",
+    "ThreadId": "14039",
+    "Html": "\r\nHi,<br /><br />I've refactored how dynamic variables work.  You can now have multiple variables of different types.  See the <a href=\"http://www.codeplex.com/Flee/Wiki/View.aspx?title=examples\">examples</a> page for sample code.  You'll have to re-download 9.0.4.0 to get the changes.<br /><br />Thanks.<br />",
+    "PostedDate": "2007-08-20T18:50:10.927-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45829",
+    "ThreadId": "14039",
+    "Html": "<br />Hi,<br />Thank you very much for your reply.<br /><br />We are going through your suggestions and FLEE 9.0.4.0<br />These are really helpful.<br /><br /><br />Regards,<br />Nanded<br /><br />",
+    "PostedDate": "2007-08-21T02:13:11.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "46272",
+    "ThreadId": "14039",
+    "Html": "\r\nHi,<br /><br />That dynamic variable definition is very cool.  Is there a way to hook into your parser and retrieve a listing of the variables in a formula before the Dynamic ExpressionOwner is created? <br /><br />Regards,<br />Nanded<br />",
+    "PostedDate": "2007-08-23T08:03:35.823-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "46299",
+    "ThreadId": "14039",
+    "Html": "\r\nI thought I'd provide a little background as to what I was trying to do.  It might clarify my last posting.<br /><br />The FLEE framework is awesome!  I'm trying to use it in a computationally intensive time driven application.  The usage might be something like<br /><br />dim and set array a's values<br />dim and set array b's values<br />dim retval<br />For (int idx = 0 to 100000) {<br />  FleeClass.a = a<a href=\"http://www.codeplex.com/Flee/Wiki/View.aspx?title=idx\">idx</a><br />  FleeClass.b = b<a href=\"http://www.codeplex.com/Flee/Wiki/View.aspx?title=idx\">idx</a><br />  retval<a href=\"http://www.codeplex.com/Flee/Wiki/View.aspx?title=idx\">idx</a> = FleeClass.Evaluate<br />}<br /><br />Where the FleeClass uses the expression a<u>b.  Now if I have similiar expression appear, z</u>d, I'd like to be able to recognize this is really the same formula as a+b and reuse the already compiled FleeClass.  To do this, reusing your tokenizer logic to pick out the variables would be the first step in genericizing the formula.  I'd rather not bring another tokenizer into the project.<br /><br />Any thoughts?<br /><br />",
+    "PostedDate": "2007-08-23T09:30:32.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "46333",
+    "ThreadId": "14039",
+    "Html": "\r\nAhh, you are trying to cache expressions to minimize the overhead of compilation.<br /><br />In that case, knowing the variables won't help because the expressions <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">a + b</span> and <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">a * b</span> have the same variables but different results.  Also, if you are using fields as the variables, the expression <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">a + b</span> will be customized to use fields a and b and will not work for fields z and d (I'm guessing at the variable names as the formatting scrambled that part of your post).<br /><br />I'll have to think about how to achieve this.<br /><br />Have you tried it and experienced performance issues or are you trying to pre-optimize?<br /><br />Thanks,<br />",
+    "PostedDate": "2007-08-23T13:57:48.44-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "46347",
+    "ThreadId": "14039",
+    "Html": "<pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\ndim and set array a's values\r\ndim and set array b's values\r\ndim retval\r\nFor (int idx = 0 to 100000) {\r\nFleeClass.a = aidx\r\nFleeClass.b = bidx\r\nretvalidx = FleeClass.Evaluate\r\n}\r\n</pre><br />What happens in the <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">retvalidx = FleeClass.Evaluate</span> method?  Usually, by the time you get to the inner loop, the expressions are already defined and you are just looping through the values and evaluating.<br />",
+    "PostedDate": "2007-08-23T17:33:03.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "46918",
+    "ThreadId": "14039",
+    "Html": "\r\nForgetting the complexities of my instance, here is a simple reason why you might want to expose a method to return a listing of the variables used in an expression.<br /><br />In your DynamicExpressionOwner example above.  If 30 variables could be used in an expression and only 2 are used in the expression.  It's inefficient to loop over and set all 30 variables for each evaluate call.  It would be ideal to know that your method only used two of them and to only set those 2.<br /><br /><br />btw, I'm trying to pre-optimize.  If we can get this to work, we would be calling the evaluating method ~ 600 million times/run.  Cool stuff.<br />",
+    "PostedDate": "2007-08-28T09:27:04.56-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "46955",
+    "ThreadId": "14039",
+    "Html": "\r\nCool.  I will put in the ability to find out which variables an expression uses.<br /><br />&gt;we would be calling the evaluating method ~ 600 million times/run. <br />Since expressions generally run in the 1 million evaluations/sec, you are looking at 10 minutes for each run.  Is that good enough or are you aiming for real-time?<br />",
+    "PostedDate": "2007-08-28T15:18:45.123-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "47262",
+    "ThreadId": "14039",
+    "Html": "\r\nReal time would be kick ass, but I think I can live with 10 minutes. ;)  Any idea when it will be in?<br />",
+    "PostedDate": "2007-08-30T12:10:31.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "47263",
+    "ThreadId": "14039",
+    "Html": "\r\nbtw, Thanks a ton!<br />",
+    "PostedDate": "2007-08-30T12:10:47.2-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "47279",
+    "ThreadId": "14039",
+    "Html": "\r\n&gt;Real time would be kick ass, but I think I can live with 10 minutes. ;)<br />You could also have multiple threads evaluate the same expression as evaluation is thread-safe.  Your loop looks perfect for paralellization.<br /><br />&gt;Any idea when it will be in?<br />I'll see if I can get it in tonight<br />",
+    "PostedDate": "2007-08-30T13:14:33.55-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "47322",
+    "ThreadId": "14039",
+    "Html": "\r\nI've implemented the feature in release 0.9.5.5.  It is an interim release and so there is no documentation yet.<br /><br />Here's how to get the referenced variables:<br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\nExpression e = new Expression(\"a + b\", owner);\r\n// Get the referenced variables; not a property since it returns a new array each time\r\nstring[] variables = e.Info.GetReferencedVariables();\r\n</pre><br />",
+    "PostedDate": "2007-08-30T19:06:59.933-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "47422",
+    "ThreadId": "14039",
+    "Html": "\r\nawesome!  I'll try to play with it tonight.<br />",
+    "PostedDate": "2007-08-31T12:07:33.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "48067",
+    "ThreadId": "14039",
+    "Html": "<br />Hi,<br />Now referenced variables can be identified.<br />It is as per our requirement.<br /><br />Millions of Thanks!!!<br /><br />With Best Regards,<br />Nanded<br />",
+    "PostedDate": "2007-09-06T08:39:10.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

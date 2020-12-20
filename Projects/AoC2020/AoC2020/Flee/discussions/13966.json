@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "45447",
+    "ThreadId": "13966",
+    "Html": "\r\nHello,<br /><br />Before “Flee”, I compile dynamic code with .NET using CodeDOM and CSharpCompiler Provider, works well and is easy.<br /><br />Nevertheless, there are two problems:<br /><br /><ul><li>He is not efficient for small recurrent list of calculations.</li></ul><br /><ul><li>They remain in memory, does not have like unload them.</li></ul> In general the instances created by Reflection not can unload , if exists in the same AppDomain of your Component.<br /><br />It is possible to make some tricks ...<br /><br />It is here where “Flee” allows to close this GAP, this brilliant tool allows to both solve mentioned problems.<br /><br />My application allows to define rules of calculation user defined, I have one long financial class library of complex algorithms with “Flee” will be possible to get the potential.<br /><br />A  validation rule engine is simple with “Flee” ,   workflow engine requires an efficient interpreter, etc.<br /><br />Exists an lots of scenarios in where “Flee” removes complexity and have much advantage on Parser and Interprets.<br /><br />Thank you very much by this big tool.<br />",
+    "PostedDate": "2007-08-17T08:23:27.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45525",
+    "ThreadId": "13966",
+    "Html": "\r\nI agree with jmptrader, i like also is very simple and yet powerfull, remember me unix shell commands <br /><br />I would like you maintain FLEE as simple you can.<br /><br />I just need the nested expressions and im happy :-b<br />",
+    "PostedDate": "2007-08-18T04:14:31.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45786",
+    "ThreadId": "13966",
+    "Html": "\r\nThanks for your compliments and feedback.<br />",
+    "PostedDate": "2007-08-20T19:29:40.307-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

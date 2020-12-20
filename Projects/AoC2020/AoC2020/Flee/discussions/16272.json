@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "52705",
+    "ThreadId": "16272",
+    "Html": "\r\nJust wanted to pin down what files are needed when deploying an assembly that uses FLEE:<br /><ul><li>Obviously, Ciloci.Flee.dll must be present and referenced by any assembly that uses FLEE.</li><li>The grammatica DLL needs to be present, but is only referenced by the Flee DLL.</li><li>What, if anything, needs to be done with ciloci.Flee.xml?</li></ul><br />Great work, by the way.<br />",
+    "PostedDate": "2007-10-10T13:11:43.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "52833",
+    "ThreadId": "16272",
+    "Html": "\r\nThe only files required are Ciloci.Flee.dll and the grammatica dll.  The ciloci.Flee.xml file contains the doc comments you see in Intellisense.  It is only required for someone who is going to be developing against the library (such as yourself).  If it is not there, you won't see any intellisense comments.<br />",
+    "PostedDate": "2007-10-11T07:09:26.1-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "52881",
+    "ThreadId": "16272",
+    "Html": "\r\nBy the way, if you don't mind, what are you using Flee for?  I'm asking so I can get a better idea of the scenarios people use it in so I can better plan features.<br /><br />Thanks,<br /><br />Eugene<br />",
+    "PostedDate": "2007-10-11T11:30:33.48-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "52917",
+    "ThreadId": "16272",
+    "Html": "\r\nThe licensing for the product we sell is somewhat complex: over a dozen <i>features</i> control nearly 200 <i>functions</i>. These, in turn, control whether or not a screen or menu item appears in the UI, as well as (de)legitimizing various functions in the business layer. Customers pay for <i>features</i> (individually or in various bundles), and decisions about what functions are enabled by what features are sometimes made (by marketing/sales) rather late in the product cycle.<br /><br />Implementing the feature-to-function-to-UI-to-business-logic mapping today is a a bit of a hodge-podge, from lists of functions kept in embedded text resources to overly long switch statements. We're consolidating the logic into an XML database that associates functions and predicates (Flee expressions) that can easily be updated and, equally important, requires minimal programming skills. (The XML is protected against tampering.)<br />",
+    "PostedDate": "2007-10-11T14:56:05.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

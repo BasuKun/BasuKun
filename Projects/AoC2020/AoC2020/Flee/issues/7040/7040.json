@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Assuming issue is resolved",
+    "ClosedDate": "2009-02-28T11:21:45.547-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When any selection is made in the help file the following is displayed as if the addresses are absolute rather than relative.\n \nThe address is not valid \n   \n   Most likely causes:\nThere might be a typing error in the address. \nIf you clicked on a link, it may be out of date. \n \n   What you can try: \n     Retype the address.  \n \n     Go back to the previous page.",
+    "LastUpdatedDate": "2013-05-16T04:24:06.55-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2009-02-04T10:52:40.067-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "The Ciloci.Flee.chm Compiled help file displays \"Navigation to the webpage was canceled\"",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 7040
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hmm...it works on my machine (except if you click on links for things in the .NET framework and not in Flee)....\r\n\r\nMaybe it's a security issue, try the suggestions in this link: http://weblog.helpware.net/?p=36 to see if that solves it.",
+      "PostedDate": "2009-02-06T18:35:21.85-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-28T11:21:45.547-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:54:04.76-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:24:06.55-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

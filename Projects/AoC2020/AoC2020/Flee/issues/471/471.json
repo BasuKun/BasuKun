@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Library",
+      "DisplayName": "Library"
+    },
+    "ClosedComment": "implemented logical xor by separating it into its own class so that the short-circuit logic won't apply to it.",
+    "ClosedDate": "2007-07-28T20:19:05.413-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "While bitwise Xor is supported, logical Xor is not.  This is because I have to figure out how to fit it into the short-circuit evaluation.  It is a rarely used feature so I'll leave it for now.",
+    "LastUpdatedDate": "2013-05-16T04:24:10.77-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2007-07-22T11:30:34.05-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Logical Xor",
+    "Type": {
+      "Name": "Feature",
+      "Id": 1
+    },
+    "VoteCount": 1,
+    "Id": 471
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

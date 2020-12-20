@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1110295",
+    "ThreadId": "463057",
+    "Html": "is there any support for verbatim string as in c# using the @\r<br />\ni want to return string litterals representing path and I must double each backslash\r<br />\n<br />\nit would be more readable to write\r<br />\n<br />\n<a href=\"mailto:@&quot;folder\\folder2\\file.txt\" rel=\"nofollow\">@\"folder\\folder2\\file.txt</a>&quot;<br />\n",
+    "PostedDate": "2013-10-21T16:19:59.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

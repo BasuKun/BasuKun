@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Closing issue.",
+    "ClosedDate": "2008-04-11T14:04:45.807-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If the decimal point of the culture is the comma (,) like Greek for example, then you cannot call functions/methods which have multiple parameters. The parser thinks it is a decimal and tries to find an overload of the function which accepts a decimal.\ne.g. the expression: mystring.IndexOf(\"test\") >= 0 AND mystring.Substring(0,2) = \"11\" \nwill not be compiled due to the Substring function. If I manually set the culture and UICulture of the current thread to en-US it works fine",
+    "LastUpdatedDate": "2013-05-16T04:24:07.673-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2008-03-27T00:25:43.787-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Culture/Function w/ multiple parameters issue",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 4157
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Flee uses the culture's decimal separator for numbers and the list separator for function arguments.  For Greek, these are \",\" and \";\".  So for the en-US expression \"func(0.5, 1.2)\", the greek expression would be \"func(0,5;1,2)\".",
+      "PostedDate": "2008-03-28T07:56:22.807-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-04-11T14:04:45.807-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:54:05.78-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:24:07.673-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

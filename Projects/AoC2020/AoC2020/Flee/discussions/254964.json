@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "601613",
+    "ThreadId": "254964",
+    "Html": "\r\n<p>I get errors when expressions contain literals using exponential notation like &quot;1.5E&#43;09&quot;.&nbsp; Flee says 'E' is an invalid token.&nbsp; Is there anything I can do to get Flee to successfully parse such literals into doubles?&nbsp; I can intercept them and\r\n apply a &quot;cast&quot; or something before they are passed into flee.</p>\r\n",
+    "PostedDate": "2011-04-22T10:04:24.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "608013",
+    "ThreadId": "254964",
+    "Html": "<div id=\"_mcePaste\" class=\"mcePaste\" style=\"position: absolute; width: 1px; height: 1px; overflow: hidden; top: 0px; left: -10000px;\">﻿</div>\r\n<p>It&rsquo;s easy to fix but it took a while to find right regex which is supported by FLEE. The regex of REAL pattern is not perfect.</p>\r\n<ol>\r\n<li>Open ..\\src\\Lib\\Parsing\\ExpressionTokenizer.vb</li>\r\n<li>Find row 154</li>\r\n<li>Use this regex:&nbsp; \"([0-9]<span style=\"color: #ff0000;\">{0}</span>\\<span style=\"color: #0000ff;\">{1}</span>?[0-9]+|[0-9]+\\<span style=\"color: #0000ff;\">{1}</span>?[0-9]<span style=\"color: #ff0000;\">{0}</span>)([eE][+-]?[0-9]+)?\"</li>\r\n<li>Compile or run it.</li>\r\n<li>Done</li>\r\n</ol>\r\n<p>The above regex worked for me but maybe you can create a better one.</p>\r\n<p>Note: The placeholders <span style=\"color: #ff0000;\">{0}</span> and <span style=\"color: #0000ff;\">{1}</span> are for the digitsBeforePattern (&bdquo;*&rdquo; or &bdquo;+&rdquo;) and options.DecimalSeparator (&bdquo;,&rdquo; or &bdquo;.&rdquo;). They will be replaced in ...src\\Lib\\Parsing\\CustomTokenPatterns.vb by ComputeToken() function.</p>\r\n<p>Good luck!<br />Louis</p>",
+    "PostedDate": "2011-05-05T12:01:27.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

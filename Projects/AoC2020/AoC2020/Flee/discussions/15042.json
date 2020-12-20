@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "48926",
+    "ThreadId": "15042",
+    "Html": "\r\nIs there a Item changed event available in Flee.  I would like to be able to hook into a Flee event that will send me the item name everytime its value changed.  This will allow me to perform additional processing on a particarly item after the value has changed.<br /><br />brian<br />",
+    "PostedDate": "2007-09-12T06:58:39.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "49086",
+    "ThreadId": "15042",
+    "Html": "\r\nHi Brian,<br /><br />When you say \"item\" are you referring to the calculation engine?  I'm guessing you mean that when you call Recalulate() on the calculation engine, an event should be fired everytime a node is recalculated.<br /><br />Is this right or are you thinking of something else?<br /><br />Eugene<br />",
+    "PostedDate": "2007-09-13T06:24:39.913-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "50064",
+    "ThreadId": "15042",
+    "Html": "\r\n&lt;PRE lang=cs id=pre8 style=\"MARGIN-TOP: 0px\"&gt;// Create the calculation engine<br />CalculationEngine engine = new CalculationEngine();<br /><br />// Expressions used in the calculation engine require a specific type of owner.<br />// The DynamicExpressionOwner is compatible with this type of owner, so we can use it.<br />// Add an expression to the engine as \"a\"<br />DynamicExpressionOwner ownerA = new DynamicExpressionOwner();            <br />ownerA.DefineVariable(\"x\", typeof(int));<br />ownerA.SetVariableValue&lt;int&gt;(\"x\", 100);<br />engine.Add(\"x * 2\", ownerA, \"a\");<br /><br />// Add an expression to the engine as \"b\"<br />DynamicExpressionOwner ownerB = new DynamicExpressionOwner();            <br />ownerB.DefineVariable(\"y\", typeof(int));<br />ownerB.SetVariableValue&lt;int&gt;(\"y\", 200);<br />engine.Add(\"y + 100\", ownerB, \"b\");<br /><br />// Add an expression that references a and b<br />DynamicExpressionOwner ownerC = new DynamicExpressionOwner();<br />engine.Add(\"a + b\", ownerC, \"c\");<br /><br />// Recalculate a and b (which will also recalculate c)<br />engine.Recalculate(\"a\", \"b\");<br /><br />// Get the value of c<br />int result = engine.GetResult&lt;int&gt;(\"c\");<br /><br />// Update the a expression            <br />ownerA.SetVariableValue&lt;int&gt;(\"x\", 200);<br /><br />// Recalculate it<br />engine.Recalculate(\"a\");<br /><br />// Get the updated result<br />result = engine.GetResult&lt;int&gt;(\"c\");<br />&lt;/PRE&gt;<br /><br />In your above example we would like to know if an event gets fired when \"c\" changes based on the recalculation of \"a\".<br /><br />Brian<br /><div class=\"quote\" style=\"border: dotted .1em #aaa; border-left: none; border-right: none; font-style: italic; margin: 1em 0em 2.5em 3em;padding: .2em;\"><br />ECiloci wrote:<br />Hi Brian,<br /><br />When you say \"item\" are you referring to the calculation engine?  I'm guessing you mean that when you call Recalulate() on the calculation engine, an event should be fired everytime a node is recalculated.<br /><br />Is this right or are you thinking of something else?<br /><br />Eugene<br /><br /></div>",
+    "PostedDate": "2007-09-20T11:26:59.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "50105",
+    "ThreadId": "15042",
+    "Html": "\r\nThere isn't an event right now.  I will put one in this weekend.<br /><br />Eugene<br />",
+    "PostedDate": "2007-09-20T17:20:59.893-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "50400",
+    "ThreadId": "15042",
+    "Html": "\r\nThe CalculationEngine now has a NodeRecalculated event which fires for each recalculated node.<br /><br />It is in the 0.9.8.0 release.<br />",
+    "PostedDate": "2007-09-23T12:51:05.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "50573",
+    "ThreadId": "15042",
+    "Html": "\r\nEugene,<br /><br />Thanks for adding the recalculation event.  I'm currently working on building an interface to your calculation library which will allow me to swap out our third party calc engine (Inacalc.Net) and replaceit with Flee. Then I can see if our application performs better with Flee.  <br /><br />brian<br />",
+    "PostedDate": "2007-09-24T17:33:07.483-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "60211",
+    "ThreadId": "15042",
+    "Html": "\r\nEugene,<br /><br />As I indicated I was working on a replacement inface so that I could easily swap out my old calculation engine and implement the Flee calc engine  to see if it was faster.  I have the initial skeloton code complete but before I go any further I would like you to have a look at it.  The two really important parts are the events and the Custom Function support.  I have a zip file of my project but I'm not sure how to post it on codeplex.  Do you have an email address I can send the zip file to.<br /><br />thanks<br /><br />brian<br />",
+    "PostedDate": "2007-11-28T04:57:15.38-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "60355",
+    "ThreadId": "15042",
+    "Html": "\r\nHi Brian,<br /><br />If you are ok with the code being publicly visible, you can create an Issue and then attach your project to it.<br /><br />Thanks,<br /><br />Eugene<br />",
+    "PostedDate": "2007-11-28T19:14:08.173-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "61234",
+    "ThreadId": "15042",
+    "Html": "\r\nHi Brian,<br /><br />I've looked at your code and I think you've got everything right except there are some spots where you mix the name of variables with names of expressions.  <br /><br />I think I need to slightly refactor the calculation engine to make it more user friendly (based on your other comment) and maybe I can use InaCalc as a reference (since there don't seem to be any other calculation engines out there).<br />",
+    "PostedDate": "2007-12-04T19:25:40.013-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

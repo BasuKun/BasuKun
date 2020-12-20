@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "closing issue",
+    "ClosedDate": "2009-03-14T11:08:25.69-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "First of all: FLEE is really a brilliant piece of work!\n \nHowever, I get a strange parse exeption whenever I have a function with more than two arguments:\n \nCiloci.Flee.PerCederberg.Grammatica.Runtime.ParserLogException: Unexpected token \",1\" <REAL>; expected one of \")\"\n \nWith the expression: functions.MySampleFunction(1,2,1,2)\n \nI tried a function with a params argument and one with four 'real' arguments. Both give me the same exception. If I remove the last two arguments it does compile correctly. I'm using the latest release.",
+    "LastUpdatedDate": "2013-05-16T04:24:07.023-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2008-12-15T07:19:48.49-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Function calls with more than two arguments give parse error",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 6785
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Unit test to reproduce this issue:\r\n\r\n\r\n        [TestMethod]\r\n        public void TestFunctinos() {\r\n            ExpressionContext context = new ExpressionContext(GetBindingRoot());\r\n            context.Imports.AddType(typeof(Functions), \"fn\");\r\n            IGenericExpression<int> expr = context.CompileGeneric<int>(\"fn.Calc(1,2,3,4)\");\r\n            Assert.AreEqual(10, expr.Evaluate());\r\n        }\r\n\r\n\r\n    public static class Functions {\r\n        public static int Calc(int a, int b, int c, int d){\r\n            return a + b + c + d;\r\n        }\r\n    }\r\n",
+      "PostedDate": "2008-12-15T07:51:45.287-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I think this is due to the culture that is used when you compile the expression.  By default, Flee will use the current culture on the thread.  It looks like your culture uses ',' as the decimal separator in which case the delimiter for function arguments becomes the culture's list separator.\r\n\r\nSo if you change the expression to \"fn.Calc(1,2;3,4)\"), then Flee will parse it as a function call with two real number arguments.\r\n\r\nSee the culture sensitive expressions topic in the examples for more info.",
+      "PostedDate": "2008-12-18T11:26:21.247-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I'm actually making some enhancements that will let you have more control over Flee's parser.  This will eliminate the need for the ParseCulture since you will be able to set the tokens yourself.  One of the options is to require digits before the decimal point.  If set to true, it eliminates the grammar ambiguity and you can use \",\" for the decimal separator as well as for function arguments.",
+      "PostedDate": "2009-02-06T19:04:26.093-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-14T11:08:25.69-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:54:05.11-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:24:07.023-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

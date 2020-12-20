@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "440623",
+    "ThreadId": "212006",
+    "Html": "Hi, I really love this project. Thanks for sharing it.\r\n\r\nIs there any way I can use extension methods on an object? I have an extension method on DateTime named FirstDateOfMonth. I have added DateTime to the ExpressionContext using Imports.AddType(typeof(DateTime),&quot;DateTime&quot;) and can get at other datetime methods but can't get at the extension method. I realize that Extension Methods are really just a compiler trick but would love to get them working in Flee if possible.\r\n\r\n",
+    "PostedDate": "2010-05-08T06:47:41.827-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "58567",
+    "ThreadId": "17944",
+    "Html": "\r\nHI Eugene,<br /><br />We're scouring the code looking for a way to execute an \"unnamed\" expression. For instance, is it possible to just execute something like this:<br /><br /><span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\"> engine.GetResult(\"A + B\"); </span><br /><br />The only way we can see how to do it is to add a named expression (by setting the ExpressionName on the ExpressionContext object) and then removing it. We tried adding a temporary named expression with a random name. The problem is that adding and removing in a loop is super slow.<br /><br />Our experiments seem to indicate that a lot of the time is in parsing and checking dependencies, etc.<br /><br />Can you give us an idea of how to work around this, or consider adding a way to do it? It seems like the code should be able to access the table of expressions even if the expression doesn't have a name.<br /><br />We acknowledge that this might be an impossibility. You have to parse and compile the code to run it. We will likely change our application so the \"unnamed\" expressions are pre-loaded as \"named\" expressions.<br /><br />Thanks!<br />",
+    "PostedDate": "2007-11-16T10:17:50.157-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "58597",
+    "ThreadId": "17944",
+    "Html": "\r\nHi Dustin,<br /><br />Are you looking for a way to do quick evals using names in the calculation engine or a way to add expressions to the engine without giving them a name (similar to external references in the FormulaEngine)?<br />",
+    "PostedDate": "2007-11-16T14:45:52.76-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "58599",
+    "ThreadId": "17944",
+    "Html": "\r\nWe would like to add expressions to the engine without giving them a name. In our model, they could reference other named expressions, but nothing would ever <br />reference them.<br /><br />This is how I did it for now:<br /><br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\n            string temporaryName = Guid.NewGuid().ToString();\r\n \r\n            // wraps Eugene's code: creates an ExpressionContext, adds it to the engine, etc\r\n            AddExpression(temporaryName, expression.Value);\r\n            decimal result = Convert.ToDecimal(engine.GetResult(temporaryName));\r\n           // really just a call to engine.RemoveExpression(...)\r\n            RemoveExpression(temporaryName);\r\n \r\n            return result;\r\n</pre><br />What we really want is magic. We want to run many, many \"unnamed\" expressions quickly at runtime. The problem is that parsing and compiling takes time and we were trying to skip the step of pre-loading the engine so it compiles.<br /><br />As I mentioned, I think we're better off pre-loading all our expressions in advance and give them names. This isn't a problem for us I don't think. When I originally wrote my message we thought we were getting that for free with FormulaEngine. We traced your code and realized that ExpressionFactory.CreateDynamic compiles the code, and that's why calling it in a loop 10000 times doesn't give us nice results.<br /><br />Thanks for your patience.<br />",
+    "PostedDate": "2007-11-16T14:59:59.06-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

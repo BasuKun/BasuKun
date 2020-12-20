@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "490084",
+    "ThreadId": "226315",
+    "Html": "<p>I'd like to make InOperator&nbsp;expressions&nbsp;and&nbsp;I use the example:</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>ExpressionContext context = <span style=\"color:blue\">new</span> ExpressionContext();\r\n<span style=\"color:blue\">string</span> a = <span style=\"color:#a31515\">&quot;100 in (100,200,300)&quot;</span>;\r\n<span style=\"color:blue\">try</span>\r\n{\r\n    IGenericExpression&lt;<span style=\"color:blue\">bool</span>&gt; e = context.CompileGeneric&lt;<span style=\"color:blue\">bool</span>&gt;(a);\r\n    IDynamicExpression e2 = context.CompileDynamic(a);\r\n    eval = e.Evaluate();\r\n}\r\n<span style=\"color:blue\">catch</span> (Exception ex)\r\n{\r\n}\r\n</pre>\r\n</div>\r\n<p>It make and exception:</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>Ciloci.Flee.PerCederberg.Grammatica.Runtime.ParserLogException: Unexpected token <span style=\"color:#a31515\">&quot;,300&quot;</span> &lt;REAL&gt;; expected one of <span style=\"color:#a31515\">&quot;)&quot;</span>\r\n</pre>\r\n</div>\r\n<p>I use&nbsp;this other expression and it's all right.</p>\r\n<p>﻿<span style=\"color:blue\">string</span> a = <span style=\"color:#a31515\">&quot;100 in (100;200;300)&quot;</span></p>\r\n<p>I don't understand because I use the sintax of the example.</p>\r\n<p>﻿﻿﻿﻿﻿﻿Can someone tell me what's the problem??</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2010-09-07T07:00:45.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "491669",
+    "ThreadId": "226315",
+    "Html": "<p>You must set the correct culture.</p>\r\n<p>I.e. context.Options.ParseCulture = Globalization.CultureInfo.InvariantCulture</p>",
+    "PostedDate": "2010-09-10T02:02:04.053-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

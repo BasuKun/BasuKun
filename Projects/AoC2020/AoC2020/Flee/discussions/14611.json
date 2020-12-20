@@ -1,0 +1,106 @@
+[
+  {
+    "Id": "47534",
+    "ThreadId": "14611",
+    "Html": "\r\nHi there<br /><br />I'm loving flee - it makes a lot of things very easy. Kudos to you! However, I'm having a problem with the dynamic ExpressionOwner class. This is part of your sample:<br /><br />// Define variables \"a\" and \"b\" and specify their type<br />owner.DefineVariable(\"a\", typeof(int));<br />owner.DefineVariable(\"b\", typeof(double));<br /><br />// Change the values of the variables<br />owner.SetVariableValue&lt;int&gt;(\"a\", 4);<br />owner.SetVariableValue&lt;double&gt;(\"b\", 3.4);<br /><br /><br />These two blocks have a fundamental difference: The first part (definition of the variable) is truly dynamic: The DefineVariable() method takes just a type parameter, which I can determine at runtime. However, the SetVariableValue method expects the type declaration at compile time, which renders this potentially powerful feature useless. This code here doesn't work although everything the ExpressionOwner class receives at runtime is  of type int:<br /><br />    private void TestExpressionOwner()<br />    {<br />      CreateDynamicExpressionOwner(typeof(int), \"123\");<br />    }<br /><br />    public void CreateDynamicExpressionOwner(Type t, string value)<br />    {<br />      DynamicExpressionOwner o = new DynamicExpressionOwner();<br />      //this works fine, a variable of type int is being created<br />      o.DefineVariable(\"x\", t);<br /><br />      //the problem is here -  the type depends on what's submitted at runtime,<br />      //this does not work with generics<br />      o.SetVariableValue(\"x\", Convert.ChangeType(value, t));<br />    }<br /><br /><br />This is because Convert.ChangeType returns an object of type \"object\". At runtime, this would be an int, but that's the problem with generics - they are compile-time dependent. However, you already have the type so I guess you wouldn't need the generic type parameter anyway - any chance to get a fix (or non-generic overload) for this?<br /><br />Best<br />Philipp<br />",
+    "PostedDate": "2007-09-02T05:48:36.483-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "47571",
+    "ThreadId": "14611",
+    "Html": "\r\nHi Philipp,<br /><br />Internally, I implement dynamic variables using generics to keep everything as fast as possible and I think I got carried away.  It doesn't make sense to have dynamic variables whose type is static.<br /><br />I've removed the generic get/set methods and replaced them with object-based equivalents.  The changes are in release 0.9.6.0.<br /><br />Thanks,<br /><br />Eugene<br />",
+    "PostedDate": "2007-09-02T16:00:40.783-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "47602",
+    "ThreadId": "14611",
+    "Html": "\r\nHi Eugene<br /><br />Wow, that was fast and everything works as expected now - thank you very much :-)<br /><br />Keep up the great work!<br />Philipp<br /><br />ps: You ever considered putting on a PayPal account or Amazon wish list? I sure would like to donate a little something...<br />",
+    "PostedDate": "2007-09-03T01:03:34.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "47656",
+    "ThreadId": "14611",
+    "Html": "\r\n&gt;ps: You ever considered putting on a PayPal account or Amazon wish list? I sure would like to donate a little something...<br /><br />Hmm...never thought of that.  I'll have to look into CodePlex's policy on it.<br />",
+    "PostedDate": "2007-09-03T12:07:50.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "47674",
+    "ThreadId": "14611",
+    "Html": "\r\nOut of curiosity, what are you using Flee for?  What problems does it help you solve?  I'm trying to get a feel for the scenarios people are using it in.<br /><br />Thanks.<br />",
+    "PostedDate": "2007-09-03T18:52:19.313-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "47690",
+    "ThreadId": "14611",
+    "Html": "\r\nA somewhat short version:<br /><br />- The application I'm developing is used to monitor and control a piece of hardware (\"target\"). However, for testing and demo purposes, we need to be able to run the application without a real target<br />- The application is built upon plug-ins, so all we had to do was create a simulation plug-in that declares itself as a target device controller.<br />- Interaction with a target is primarily based on parameters of different data types (ints, doubles, strings etc.). However, changing a target's parameters is not an isolated thing, but may cause side-effects: E.g. opening a valve (parameter A) causes pressure (parameter B) to increase.<br /><br />For the demo plug-in, this behaviour is not hardcoded, but declaratively described using XML files. I've developed a generic rules engine (which I plan to release under the LGPL as well as soon as we're done) which allows me to declare actions (\"increase value\") and conditions (\"only if gate is open\"). I've developed a set of actions and conditions for this this demo plug-in, and there are some that use expressions. A sample declaration may look like this:<br /><br /><br />    &lt;!-- only allow changes if the context item (x) is within a given threshold   --&gt;<br />    &lt;rule id=\"threshold test\" item-id=\"105\"&gt;<br />      &lt;conditions&gt;<br />        &lt;condition id=\"tc\" type=\"ExpressionCondition\" var-y=\"110\"  var-z=\"120\" <br />                        expression=\"x &amp;gt;= y AND x &amp;lt;= z\"  /&gt; <br />      &lt;/conditions&gt;<br />      &lt;actions&gt;<br />        &lt;action id=\"inc\" type=\"IncrementDataPointAction\"  value=\"0.01\" condition=\"tc\" /&gt;<br />      &lt;/actions&gt;<br />    &lt;/rule&gt;<br /><br /><br />At runtime, I'm reading variable declarations (\"x\" is implicitely declared and represents item 105), and determine the data types of the evaluated parameters. This is were the DynamicExpressionOwner comes in VERY handy as both the number of variables and the underlying data types only depend on the markup :-)<br /><br />Cheers!<br />",
+    "PostedDate": "2007-09-04T00:56:55.193-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "47710",
+    "ThreadId": "14611",
+    "Html": "\r\nHi again :-)<br /><br />Another question: Wouldn't it be possible to make evaluation dynamic as well? Currently, I need to evaluate an expression like this:<br /><br />  ExpressionEvaluator&lt;int&gt; evaluator = (ExpressionEvaluator&lt;int&gt;)expression.Evaluator;<br />  int result = evaluator();<br /><br />Same as with variable declaration, this requires me to know at compile time what to expect, which is a loss of flexibility: I can declare my types dynamically thanks to the DynamicExpressionOwner, but the output must be of a given type. If possible, two variants would be great:<br /><br />- a generic one we have right know (type-safe, convenient if the expected type is known at compile time)<br />- a dynamic one (might expect a type parameter or even determine the returned type on its own) which just returns <i>object</i><br /><br />Cheers,<br />Philipp<br />",
+    "PostedDate": "2007-09-04T05:02:37.45-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "47727",
+    "ThreadId": "14611",
+    "Html": "\r\nTry the following:<br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\nExpressionOptions options = new ExpressionOptions();\r\n// Put an implicit convert to object at end of expression\r\noptions.ResultType = typeof(object);\r\n \r\nExpression e = new Expression(\"1+1\", owner, options);\r\n// The evaluator will now always be of the same type as the ResultType\r\nExpressionEvaluator&lt;object&gt; evaluator = (ExpressionEvaluator&lt;object&gt;) e.Evaluator;\r\nobject result = evaluator();\r\n</pre>",
+    "PostedDate": "2007-09-04T06:11:55.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "47797",
+    "ThreadId": "14611",
+    "Html": "\r\nHi Eugene<br /><br />Thanks (again) for your help - works like a charm! However, wouldn't it come handy to be able to set the required type at runtime?<br /><br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\nExpressionOptions options = new ExpressionOptions();\r\noptions.ResultType = typeof(int); //usually determined dynamically\r\n \r\nExpression e = new Expression(\"2 * 2\", owner, options);\r\n \r\n// Evaluate() returns object, but its the ResultType\r\nobject result = e.Evaluate();\r\nAssert.IsInstanceOfType(typeof(int), result);\r\n</pre><br /><br />While everything is hardcoded above, ResultType as well as the expression and variable types may vary with dynamic code. Setting a desired ResultType to something more specific than <i>object</i> might allow built-in type conversions, which - afaik - are not currently supported but sure would be nice when it comes to dynamic code. However, I have no idea about the impact on the architecture and there might also be valid arguments against this request.<br />Example: The fragment below compiles fine, but throws an ExpressionCompileException rather than returning an int-value of 5:<br /><br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\nExpressionOptions options = new ExpressionOptions();\r\noptions.ResultType = typeof (int);\r\n \r\n//double expression - throws exception (no type conversion)\r\nExpression e = new Expression(\"2 * 2.5\", new DynamicExpressionOwner(), options);\r\n</pre>",
+    "PostedDate": "2007-09-04T14:58:20.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "47952",
+    "ThreadId": "14611",
+    "Html": "\r\n&gt;Setting a desired ResultType to something more specific than object might allow built-in type conversions, which - afaik - are not currently supported but &gt;sure would be nice when it comes to dynamic code. <br />Type conversions are supported but they work differently than System.Convert.  The conversions are more low-level and work just like C#: conversions between numeric types, no conversions to/from boolean, cannot convert \"123\" to a number.<br /><br />The ResultType setting basically puts an <b>implicit</b> convert at the end of the expression.  So if you set the Result type to <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">double</span> and have an expression like <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">2 * 4</span>, then it will work since an integer can always be implicitly converted to a double.  Your example threw an exception because there is no implicit conversion from double to int.  You can force it using an explicit conversion: <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">cast(2 * 2.5, int)</span> which will truncate the double into an integer.<br /><br />I'll have to think about the two types of conversions and how they would mix.<br />",
+    "PostedDate": "2007-09-05T16:31:57.457-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "49159",
+    "ThreadId": "14611",
+    "Html": "\r\nHell, great tool. I was dealing with some of the issues mentioned above, and ended up deciding that Generics was the way to go. So, I ended up with this wrapper class. Note that the variables collection does not support the 'Contains' method, hence my use of the Arraylist. 'Contains' would be a welcome addition, and simplify my code somewhat.<br /><br />Any comments or suggestions on how I am using this would be welcome.<br /><br />===================================<br />Imports System<br />Imports System.Collections<br /><br />' for FLEE<br />Imports ciloci.Flee<br /><br />Namespace MiddleTier.ItemLogic<br />\tPublic Class CalcEngine(Of t)<br /><br />\t\tPrivate _expressionOwner As New DynamicExpressionOwner()<br />\t\tPrivate _expression As Expression<br />\t\tPrivate _expressionOptions As ExpressionOptions<br />\t\tPrivate _calculation As String<br />\t\tPrivate _variables As New ArrayList()<br /><br />\t\tPublic Sub New()<br />\t\t\t_expressionOptions = New ExpressionOptions()<br />\t\t\t_expressionOptions.Imports.AddType(GetType(Math))<br />\t\t\t_expressionOptions.Imports.AllowGlobalImport = True<br />\t\t\t_expressionOptions.Imports.ImportBuiltinTypes = True<br />\t\t\t_expressionOptions.ResultType = GetType(t)<br />\t\tEnd Sub<br /><br /><br />\t\tPublic Sub AddVariable(ByVal variableName As String, ByVal variableType As System.Type)<br />\t\t\t' make sure we do not already have it<br />\t\t\tIf Not _variables.Contains(variableName) Then<br />\t\t\t\t_expressionOwner.DefineVariable(variableName, variableType)<br />\t\t\t\t_variables.Add(variableName)<br />\t\t\tEnd If<br /><br />\t\tEnd Sub<br /><br />\t\tPublic Sub SetVariableValue(ByVal variableName As String, ByVal value As t)<br />\t\t\tIf _variables.Contains(variableName) Then<br />\t\t\t\t_expressionOwner.SetVariableValue(variableName, value)<br />\t\t\tEnd If<br />\t\tEnd Sub<br /><br />\t\tPublic Function GetVariableValue(ByVal variableName As String) As Object<br />\t\t\tIf _variables.Contains(variableName) Then<br />\t\t\t\tReturn _expressionOwner.GetVariableValue(variableName)<br />\t\t\tElse<br />\t\t\t\tReturn Nothing<br />\t\t\tEnd If<br />\t\tEnd Function<br /><br />\t\tPublic Sub ImportType(ByVal type As System.Type)<br />\t\t\t_expressionOptions.Imports.AddType(GetType(Type))<br />\t\tEnd Sub<br /><br />\t\tPublic Sub ImportNamespace(ByVal ns As String)<br />\t\t\t_expressionOptions.Imports.AddNamespace(ns)<br />\t\tEnd Sub<br /><br />\t\tPublic Property Calculation() As String<br />\t\t\tGet<br />\t\t\t\tReturn _calculation<br />\t\t\tEnd Get<br />\t\t\tSet(ByVal calc As String)<br />\t\t\t\t_calculation = calc<br /><i>expression = New Expression(</i>calculation, _expressionOwner, _expressionOptions)<br />\t\t\tEnd Set<br />\t\tEnd Property<br /><br />\t\t''' &lt;summary&gt;<br />\t\t''' evaluate the expression based on the values of<br />\t\t''' the current variables and return the result<br />\t\t''' &lt;/summary&gt;<br />\t\t''' &lt;remarks&gt;<br />\t\t''' &lt;/remarks&gt;<br />\t\t''' &lt;returns&gt;&lt;/returns&gt;<br />\t\tPublic ReadOnly Property Result() As t<br />\t\t\tGet<br />\t\t\t\tDim retval As t = Nothing<br />\t\t\t\tIf _calculation.Length &gt; 0 Then<br />\t\t\t\t\tDim eval As ExpressionEvaluator(Of t) = CType(_expression.Evaluator, ExpressionEvaluator(Of t))<br />\t\t\t\t\tretval = eval()<br />\t\t\t\tEnd If<br />\t\t\t\tReturn retval<br />\t\t\tEnd Get<br />\t\tEnd Property<br /><br />\tEnd Class<br />End Namespace<br />===================================<br /><br />In a nutshell, each time my object is accessed, I have to access other objects (by name) to get their values, and then apply the user-defined calculation based on the current value of other objects, so my class has an instance of this class that does the calculation work for me. If I am dealing with time series data, I loop through the dependent values, assign their value for a given row to the named variable, and calculate the new result, save that with the timestamp of the dependent values, then move to the next result. This works great for me. The use of Generics allows me to decide the result type based on runtime criteria, and the burden is on the consumer of the class to cast appropriately. The DynamicExpression class allows me to use the object name as the variable name. VERY nice!<br /><br />Noel<br />",
+    "PostedDate": "2007-09-13T13:28:23.18-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "49160",
+    "ThreadId": "14611",
+    "Html": "\r\npardon me, the first word should have been 'Hey, all!'. Dagnabbit bluetooth keyboard.<br />",
+    "PostedDate": "2007-09-13T13:29:17.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "49178",
+    "ThreadId": "14611",
+    "Html": "\r\nHi Noel,<br /><br />Glad to hear it's working for you.  I looked over your code and I don't see any problems with the way you are using the library.<br /><br />I will put in a Contains method in the next release.<br /><br />Thanks!<br /><br />ps: Codeplex lets you edit comments after posting them<br />",
+    "PostedDate": "2007-09-13T16:05:57.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

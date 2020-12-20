@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi.. I got this message \n\"Index was out of range. Must be non-negative and less than the size of the collection.Parameter name: index\"\n \nWhen I am trying to use a custom function with a params decimal[] datatype in one of its parameter on a if statement...\n \nThanks in advance!!",
+    "LastUpdatedDate": "2013-02-21T16:54:00.383-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2012-03-30T16:00:40.857-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Index was out of range. Must be non-negative and less than the size of the collection.Parameter name: index",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 14981
+  },
+  "FileAttachments": [
+    {
+      "FileId": 4313,
+      "FileName": "ExpressionConsole.zip",
+      "DownloadUrl": ".\\4313"
+    }
+  ],
+  "Comments": []
+}

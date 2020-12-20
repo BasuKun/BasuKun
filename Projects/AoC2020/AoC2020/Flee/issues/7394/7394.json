@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Library",
+      "DisplayName": "Library"
+    },
+    "ClosedComment": "duplicate of #7418",
+    "ClosedDate": "2009-04-03T19:06:11.907-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The following expression:\n \n(((((402 >= 360 AND 402 <= 361))) OR (((402 >= 369 AND 402 <= 369))) OR (((402 >= 490 AND 402 <= 490))) OR (((402 >= 499 AND 402 <= 499)))) AND ((((\"76856\" = \"47562\" OR \"76830\" = \"47562\") OR (\"76856\" = \"47563\" OR \"76830\" = \"47563\") OR (\"76856\" = \"47564\" OR \"76830\" = \"47564\"))))) OR (((402 >= 360 AND 402 <= 361) OR (402 >= 369 AND 402 <= 369) OR (402 >= 490 AND 402 <= 490) OR (402 >= 499 AND 402 <= 499)) AND ((\"76856\" = \"47562\" OR \"76830\" = \"47562\") OR (\"76856\" = \"47563\" OR \"76830\" = \"47563\") OR (\"76856\" = \"47564\" OR \"76830\" = \"47564\")))\n \nproduces the following exception when compiled:\nSystem.NotSupportedException: Illegal one-byte branch at position: 118. Requested branch was: 143.\n \nThe issue was reported in thread #51304",
+    "LastUpdatedDate": "2013-05-16T04:24:06.107-07:00",
+    "PlannedForRelease": "Flee-0.9.23.0",
+    "ReleaseVisibleToPublic": true,
+    "Priority": {
+      "Name": "Medium",
+      "Severity": 100,
+      "Id": 2
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2009-03-31T16:21:44.85-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Illegal one-byte branch error",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 7394
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

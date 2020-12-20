@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "205309",
+    "ThreadId": "60612",
+    "Html": "<p>Hi I've looked around but I can't see a way of doing it. Is there any equivalent to an Abs function?</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2009-06-25T02:17:43.487-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "205978",
+    "ThreadId": "60612",
+    "Html": "<p>You could use the IF operator to achieve the same thing:</p>\r\n<p>if(num &lt; 0, -num, num)</p>",
+    "PostedDate": "2009-06-26T10:19:35.317-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

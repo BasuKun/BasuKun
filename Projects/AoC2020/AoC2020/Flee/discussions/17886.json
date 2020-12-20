@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "58422",
+    "ThreadId": "17886",
+    "Html": "\r\nHowdy,<br /><br />Thanks again for all your answers so far.<br /><br />In your pre-Flee stuff, there is an AddFormula method which allows me to add a named expression (such as 1 + 1 or x - y). This is super useful to us, and FormulaEngine will give us a lovely error message if things are out of place.<br /><br />It looks like this: <br /><br /><span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">formulaEngine.AddFormula(\"X\", \"1 + 1\")</span><br /><br />It's not obvious to me whether or not I can do this with Flee. Is it possible? All your examples Flee use SetVariable.<br /><br />Thanks a lot,<br />Dustin<br />",
+    "PostedDate": "2007-11-15T10:41:21.007-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "58458",
+    "ThreadId": "17886",
+    "Html": "\r\nHi Dustin,<br /><br />The <a href=\"http://www.codeplex.com/Flee/Wiki/View.aspx?title=CalculationEngine\">CalculationEngine</a> lets you do this, you just go about it in a more indirect way due to the way Flee works:<br /><br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\n// Create the calculation engine\r\nCalculationEngine engine = new CalculationEngine();\r\nExpressionContext context = new ExpressionContext();\r\n// Set the calculation engine on the context\r\ncontext.CalculationEngine = engine;\r\n \r\n// Set the expression name\r\ncontext.ExpressionName = \"x\";\r\n// Compile it, at which point it will get added to the calculation engine at the name \"x\"\r\nExpressionFactory.CreateDynamic(\"1 + 1\", context);\r\n \r\nobject result = engine.GetResult(\"x\");\r\n</pre>",
+    "PostedDate": "2007-11-15T14:15:57.413-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "58464",
+    "ThreadId": "17886",
+    "Html": "\r\nHi Eugene,<br /><br />Thanks a lot. I didn't realize that the ExpressionContext works that way. So there is one expression context for each expression.<br /><br />I'm loving the framework, so please don't take this as criticism, but that seems like a lot of code to replace the old <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">AddFormula(\"x\", \"1 + 1\")</span><br /><br />With that said, much appreciated. I'm going to give that a whirl.<br />",
+    "PostedDate": "2007-11-15T15:00:26.973-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "58477",
+    "ThreadId": "17886",
+    "Html": "\r\nYeah, I agree that it's not an elegant way of doing it.  I was trying to come up with a more elegant method than the old way I was doing it, but I think just using an Add method on the calculation engine is the best way.<br /><br />I'll put in the change in the next release.<br /><br />&gt;So there is one expression context for each expression.<br />The expression context holds all the information required to create an expression: variables, imports, and options.<br />",
+    "PostedDate": "2007-11-15T19:42:06.34-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "58541",
+    "ThreadId": "17886",
+    "Html": "\r\nHi Eugene,<br /><br />Another way we were thinking that might be a nice blend between the two is to leave it the way it is for flexibility but add a new constructor to ExpressionContext.<br /><br />So this code:<br /><br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\nCalculationEngine engine = new CalculationEngine();\r\n \r\nExpressionContext contextA= new ExpressionContext();\r\n            \r\ncontextA.CalculationEngine = engine;\r\n            \r\ncontextA.ExpressionName = \"a\";\r\n            \r\nExpressionFactory.CreateDynamic(\"500\", contextA);\r\n</pre><br />Would turn into this code:<br /><br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\nCalculationEngine engine = new CalculationEngine();\r\n \r\nExpressionContext contextA= new ExpressionContext(engine, \"a\", \"500\");\r\n</pre><br />I think your engine is amazing and I have a feeling developers from the financial sector would find it very interesting. One thing you might want to consider if you get a large fan base is to keep the API somewhat backwards compatible so users don't have to change their code TOO often.<br /><br />Anyway, thanks.<br />",
+    "PostedDate": "2007-11-16T07:51:27.243-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "58543",
+    "ThreadId": "17886",
+    "Html": "\r\nHi Eugene,<br /><br />I take that back, what I said above. I don't think that constructor is a good idea. It's too hard to tell what it's doing in there.<br /><br />We've wrapped the code that adds an expression anyway, so if it takes a few lines to make it more flexible then who cares. A helper method somewhere might make sense, but only because I think the current code isn't that easy to figure out without help.<br />",
+    "PostedDate": "2007-11-16T08:00:19.737-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "58600",
+    "ThreadId": "17886",
+    "Html": "\r\nI think the current way is confusing as compiling an expression with a name has a hidden side-effect of adding it to the calculation engine.  I did it that way so that I wouldn't have to provide a CalculationEngine.Add method for all the ways of creating an expression (with/without owner, generic/dynamic).  It turns out in the end, the engine can only use one type of expression anyways, so I should just stick to the more intuitive Add method.<br />",
+    "PostedDate": "2007-11-16T15:00:36.46-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

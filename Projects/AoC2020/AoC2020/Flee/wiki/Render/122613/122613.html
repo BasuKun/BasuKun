@@ -1,0 +1,39 @@
+<div class="wikidoc"><b>Indexing arrays and collections in expressions</b><br /><br />Flee supports loading values from arrays and collections on the expression owner.  You simply use square brackets after the variable and specify an index (which can itself be another expression or variable).  If the variable being indexed is an array, Flee will emit IL optimized for loading array elements.  If the indexed variable is not an array, Flee will try to find a default indexer property and use it instead.  If the variable being indexed is not an array and does not have a default indexer, Flee will throw an ExpressionCompileException.<br /><br />Here is some code that demonstrates how to index array and collection variables on the expression owner.  We start by defining an expression owner class with some array and collection members:<br /><br /><pre>
+class ExpressionOwner
+{
+    public int[] MyArray;
+    public List&lt;int&gt; MyList;
+
+    public ExpressionOwner()
+    {
+        MyArray = new int[] { 10, 20, 30 };
+
+        MyList = new List&lt;int&gt;();
+        MyList.Add(100);
+        MyList.Add(200);
+    }
+}
+</pre><br /><br />We can now access the indexable members in an expression:<br /><br /><pre>
+ExpressionOwner owner = new ExpressionOwner();
+
+ExpressionContext context = new ExpressionContext(owner);
+// Define a variable that can be used as an index
+context.Variables.Add(&quot;index&quot;, 0);
+
+// Access an element in the array
+IGenericExpression&lt;int&gt; e = context.CompileGeneric&lt;int&gt;(&quot;MyArray[1+1]&quot;);
+int value = e.Evaluate();
+
+// Access an element in the collection using a variable as the index
+e = context.CompileGeneric&lt;int&gt;(&quot;MyList[index + 1]&quot;);
+
+value = e.Evaluate();
+</pre><br /><br />You can also define variables that are arrays.  Once defined, you index them in the same way as above.<br /><br /><pre>
+ExpressionContext context = new ExpressionContext();
+
+// Define an array variable
+context.Variables.Add(&quot;array&quot;, new int[] { 1, 2, 3 });
+
+IGenericExpression&lt;int&gt; e = context.CompileGeneric&lt;int&gt;(&quot;array[1+1]&quot;);
+int value = e.Evaluate();
+</pre></div><div class="ClearBoth"></div>

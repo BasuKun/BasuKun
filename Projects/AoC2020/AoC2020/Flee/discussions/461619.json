@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1105448",
+    "ThreadId": "461619",
+    "Html": "I do have easy equations like y=0.1*x stored as a string. Based on some logic I want to solve for y or for x, depending on which I know.\r<br />\n<br />\nEx1: x=5 --&gt; I want to get y=0.5\r<br />\n<br />\nEx2: y=2 --&gt; I want to get x=20\r<br />\n<br />\nCould someone tell me how to use this library to solve this issue?<br />\n",
+    "PostedDate": "2013-10-09T06:00:40.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1110291",
+    "ThreadId": "461619",
+    "Html": "y=0.1*x is not a valid expression<br />\n<br />\n you'll have to write it as 0.1*x and add an x variable<br />\n<br />\nexample<br />\n<pre><code>ExpressionContext context = new ExpressionContext();\ncontext.Variables[&quot;X&quot;] = 5;\n\nIDynamicExpression e = context.CompileDynamic(&quot;0.1*x&quot;);</code></pre>\n\n",
+    "PostedDate": "2013-10-21T16:13:20.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

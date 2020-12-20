@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "172020",
+    "ThreadId": "51304",
+    "Html": "I have the following expression that give me the:<br>\r\n<br>\r\nSystem.NotSupportedException: Illegal one-byte branch at position: 118. Requested branch was: 143.<br>\r\n   at System.Reflection.Emit.ILGenerator.BakeByteArray()<br>\r\n   at System.Reflection.Emit.DynamicResolver..ctor(DynamicILGenerator ilGenerator)<br>\r\n   at System.Reflection.Emit.DynamicILGenerator.GetCallableMethod(Void* module)<br>\r\n   at System.Reflection.Emit.DynamicMethod.GetMethodDescriptor()<br>\r\n   at System.Reflection.Emit.DynamicMethod.CreateDelegate(Type delegateType)<br>\r\n   at Ciloci.Flee.Expression`1.Compile(String expression, Object owner, ExpressionOptions options)<br>\r\n   at Ciloci.Flee.Expression`1..ctor(String expression, ExpressionContext context)<br>\r\n   at Ciloci.Flee.ExpressionFactory.CreateGeneric[T](String expression, ExpressionContext context)<br>\r\n   at ExpressionEval.CreateGenericExpression[T](String expression, ExpressionContext context)<br>\r\n   at ExpressionEval.Evaluate(String expression)<br>\r\n   at StrategyHelper.DoExpression(Guid modelEntityId, ClaimMaster claim)<br>\r\n<br>\r\n(((((402 &gt;= 360 AND 402 &lt;= 361))) OR (((402 &gt;= 369 AND 402 &lt;= 369))) OR (((402 &gt;= 490 AND 402 &lt;= 490))) OR (((402 &gt;= 499 AND 402 &lt;= 499)))) AND ((((&quot;76856&quot; = &quot;47562&quot; OR &quot;76830&quot; = &quot;47562&quot;) OR (&quot;76856&quot; = &quot;47563&quot; OR &quot;76830&quot; = &quot;47563&quot;) OR (&quot;76856&quot; = &quot;47564&quot; OR &quot;76830&quot; = &quot;47564&quot;))))) OR (((402 &gt;= 360 AND 402 &lt;= 361) OR (402 &gt;= 369 AND 402 &lt;= 369) OR (402 &gt;= 490 AND 402 &lt;= 490) OR (402 &gt;= 499 AND 402 &lt;= 499)) AND ((&quot;76856&quot; = &quot;47562&quot; OR &quot;76830&quot; = &quot;47562&quot;) OR (&quot;76856&quot; = &quot;47563&quot; OR &quot;76830&quot; = &quot;47563&quot;) OR (&quot;76856&quot; = &quot;47564&quot; OR &quot;76830&quot; = &quot;47564&quot;)))<br>\r\n<br>\r\nIf I break the expression up like so and run each separately they work, but error out when run together:<br>\r\n<br>\r\n(((((402&gt;=360 AND 402&lt;=361))) OR (((402&gt;=369 AND 402&lt;=369))) OR (((402&gt;=490 AND 402&lt;=490))) OR (((402&gt;=499 AND 402&lt;=499)))) AND ((((&quot;76856&quot;=&quot;47562&quot; OR &quot;76830&quot;=&quot;47562&quot;) OR (&quot;76856&quot;=&quot;47563&quot; OR &quot;76830&quot;=&quot;47563&quot;) OR (&quot;76856&quot;=&quot;47564&quot; OR &quot;76830&quot;=&quot;47564&quot;))))) <br>\r\n<br>\r\nOR    <br>\r\n<br>\r\n(((((402&gt;=360 AND 402&lt;=361))) OR (((402&gt;=369 AND 402&lt;=369))) OR (((402&gt;=490 AND 402&lt;=490))) OR (((402&gt;=499 AND 402&lt;=499)))) AND ((((&quot;76856&quot;=&quot;47562&quot; OR &quot;76830&quot;=&quot;47562&quot;) OR (&quot;76856&quot;=&quot;47563&quot; OR &quot;76830&quot;=&quot;47563&quot;) OR (&quot;76856&quot;=&quot;47564&quot; OR &quot;76830&quot;=&quot;47564&quot;))))<br>\r\n<br>\r\nI have the latest code, version 0.9.23.0  <br>\r\n<br>\r\nThanks,<br>\r\n<br>\r\nJason \r\n",
+    "PostedDate": "2009-03-25T13:26:03.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172602",
+    "ThreadId": "51304",
+    "Html": "Yeah, I can reproduce it and it looks like a bug.&nbsp; Can you log it in the issue tracker?<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2009-03-26T19:30:02.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "174943",
+    "ThreadId": "51304",
+    "Html": "Done.  Any idea on how hard it would be to fix?  \r\n",
+    "PostedDate": "2009-04-02T11:54:33.82-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "175557",
+    "ThreadId": "51304",
+    "Html": "&gt;Done.&nbsp; Any idea on how hard it would be to fix?&nbsp;\r\n<br>\r\nI had to do a medium re-write on how I compute branch lengths since the original version didn't account for a case that this expression has.<br>\r\n<br>\r\nThe above expression now compiles and evaluates on 0.9.24.0<br>\r\n",
+    "PostedDate": "2009-04-03T19:10:22.13-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

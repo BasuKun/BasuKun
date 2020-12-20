@@ -1,0 +1,69 @@
+<div class="wikidoc"><b>Using Variables</b><br /><br />The variables available to an expression can be accessed by the Variables property on the expression context.  The VariableCollection object that is returned is basically a dictionary of strings to objects.  The first character of a variable name must be a letter or underscore and the following characters can be either letters, underscores, or numbers.<br /><br /><pre>
+ExpressionContext context = new ExpressionContext();
+// Define some variables
+context.Variables[&quot;a&quot;] = 100;
+context.Variables[&quot;b&quot;] = 43.2;
+
+// Use the variables in the expression
+IDynamicExpression e = context.CompileDynamic(&quot;a + b * (a - b)&quot;);
+</pre><br />Once the expression is compiled and evaluated, the values of the variables can be changed and the expression re-evaluated to get the new result.<br /><br /><b>Variables act as instances of their type</b><br /><br />Because Flee is statically typed, it knows the type of each variable (it infers it by calling GetType() on the value).  You can use any public instance methods and properties defined on a variable just as you would in a regular program.<br /><br /><pre>
+ExpressionContext context = new ExpressionContext();
+context.Variables[&quot;s&quot;] = &quot;this is a string&quot;;
+IDynamicExpression e = context.CompileDynamic(&quot;s.length + s.Remove(0, 1).length&quot;);
+int length = (int) e.Evaluate();
+</pre><br /><b>Notes</b><br />Once a variable is defined, it has an associated type until it is undefined.  Creating a variable with an int value and then setting its value to a string will cause a cast exception.  Similarly, once an expression is compiled, it assumes that the variable will exist in the collection at evaluation time.  Compiling an expression that uses a variable, undefining the variable and then evaluating the expression will cause an error.<br /><br /><b>Expressions as variables</b><br />Expressions can also be used as variables in other expressions.  When the top-level expression is evaluated, each sub-expression will be evaluated to provide the variable&#39;s value.<br /><br /><pre>
+ExpressionContext context = new ExpressionContext();
+context.Imports.AddType(typeof(Math));
+context.Variables.Add(&quot;a&quot;, 3.14);
+IDynamicExpression e1 = context.CompileDynamic(&quot;cos(a) ^ 2&quot;);
+&#160; &#160; 
+context = new ExpressionContext();
+context.Imports.AddType(typeof(Math));
+context.Variables.Add(&quot;a&quot;, 3.14);
+&#160; &#160; 
+IDynamicExpression e2 = context.CompileDynamic(&quot;sin(a) ^ 2&quot;);
+
+// Use the two expressions as variables in another expression
+context = new ExpressionContext();
+context.Variables.Add(&quot;a&quot;, e1);
+context.Variables.Add(&quot;b&quot;, e2);
+IDynamicExpression e = context.CompileDynamic(&quot;a + b&quot;);
+&#160; &#160; 
+object result = e.Evaluate();
+</pre><br /><b>On-demand Variables</b><br /><br />There are situations where you may not be able to define an expression&#39;s variables when it is compiled.  In these cases, on-demand variables can be used.  If an expression references a variable that doesn&#39;t exist in the expression&#39;s variables, Flee will raise the ResolveVariableType event.  If the event is handled and a type is specified, Flee will then raise the ResolveVariableValue event every time the expression is evaluated.  In that event, you have access to the variable&#39;s name and type and it is up to you to provide a compatible value.<br /><br />Here&#39;s an example that asks the user to input an expression and then uses on-demand variables to ask the user for the value of each variable in their expression:<br /><br /><pre>
+static void Main()
+{
+   ExpressionContext context = new ExpressionContext();
+   VariableCollection variables = context.Variables;
+
+   // Hook up the required events
+   variables.ResolveVariableType += new EventHandler&lt;ResolveVariableTypeEventArgs&gt;(variables_ResolveVariableType);
+   variables.ResolveVariableValue += new EventHandler&lt;ResolveVariableValueEventArgs&gt;(variables_ResolveVariableValue);
+
+   // Get an expression from the user
+   Console.Write(&quot;Enter an expression: &quot;);
+   string s = Console.ReadLine();
+   
+   // Compile the expression; Flee will query for the types of any variables
+   IDynamicExpression e = context.CompileDynamic(s);
+
+   // Evaluate the expression; Flee will query for the values of each variable
+   object result = e.Evaluate();
+   Console.WriteLine(&quot;The result is: {0}&quot;, result);
+}
+
+// Called when Flee needs to know the type of a variable
+static void variables_ResolveVariableType(object sender, ResolveVariableTypeEventArgs e)
+{
+   // Make all variables Doubles
+   e.VariableType = typeof(double);
+}
+
+// Called when Flee needs the value of a variable
+static void variables_ResolveVariableValue(object sender, ResolveVariableValueEventArgs e)
+{
+   Console.Write(&quot;Enter value for variable &#39;{0}&#39; ({1}): &quot;, e.VariableName, e.VariableType.Name);
+   string value = Console.ReadLine();
+   e.VariableValue = Convert.ChangeType(value, e.VariableType);
+}
+</pre><br />Note that Flee raises the resolve events once for every occurrence of a variable in an expression.  This means an expression like <span class="codeInline">a + (a * 0.15)</span>, will raise both events twice.<br /><br /><b>Another example</b><br />This sample <a href=".\9f08801e-5ae4-4edb-a2a7-d9746bfd3fc1">project</a> shows how to use Flee and on-demand variables to compute an expression for each row of a data table where the expression can reference the columns in the current row.</div><div class="ClearBoth"></div>

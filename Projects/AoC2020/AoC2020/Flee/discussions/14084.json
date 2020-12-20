@@ -1,0 +1,106 @@
+[
+  {
+    "Id": "45789",
+    "ThreadId": "14084",
+    "Html": "\r\nHi!<br /><br />I have an application that contains a dynamic list of plugins. Each plugin supports a list of properties, although the properties vary by plugin. I would like to use your library to perform evaluations based on the values of the properties of these plugins.  Rather than using a DynamicExpressionOwner, is there any way to build a callback or delegate that will allow me to do my own lookup to get variable values? (Overriding EmitVariableLoad could get me a step in the right direction, I guess?)<br /><br />Also, the names of my plugins and their properties are not \".net compatible\" names. They may contain spaces and other characters, if that makes the user happy. For instance, I may have a plugin called \"System Clock\" with a property called \"Current Hour\". I'd like to write expression like:<br /><br />{System Clock:Current Hour} &lt; 12<br /><br />... that would evaluate to \"true\" if it's before noon. (I'm not married to the colon in the middle... Gramatically, I can make that anything.)<br />Internally to the application, the expression above roughly translates to this:<br /><br />Plugin p = PluginHost.GetPluginByName(\"System Clock\");<br />int currentHour = (int) p.GetPropertyValue(\"Current Hour\");<br />bool result = currentHour &lt; 12;<br /><br />Many thanks in advance, <br /><br />Peter<br />",
+    "PostedDate": "2007-08-20T19:43:22.367-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45891",
+    "ThreadId": "14084",
+    "Html": "\r\nHi,<br /><br />Creating a callback to lookup the value of a variable should be fairly straightfoward to implement.  The delegate would have to return the value as an object, so there would be a unbox/cast required to get the strongly-typed value in the expression so it won't be the fastest way to access variable values.<br /><br />&gt;Also, the names of my plugins and their properties are not \".net compatible\" names.  They may contain spaces and other characters<br />I don't know if I can support this as the grammar is currently setup to ignore whitespace.  I think a solution would be to take the user's expression string (ie: \"{System Clock:Current Hour} &lt; 12\") and replace the property lookup with a FLEE compatible lookup (ie: \"SystemClock.CurrentHour &lt; 12\"}, and then compile and evaluate.<br />",
+    "PostedDate": "2007-08-21T08:23:26.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45990",
+    "ThreadId": "14084",
+    "Html": "\r\nHi Eugene, <br /><br />Indeed. Not looking for fast, if I have to do bursts of 5 evals per second it's probably a lot. I actually hacked an override of the DynamicExpressionOwner together that works but there are some inefficiencies that cause the variable to have to get looked up multiple times (HasVariable, GetVariableType, etc). Plus it's a really ugly hack :)<br /><br />I can share with you, if you'd like. (how?)<br /><br />As for grammar: Could you specify an IDENTIFIER as <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">&lt;&lt;[a-z_]\\w*|{[a-z_ ]\\w*}&gt;&gt;</span>?<br />I'm sure I have that syntax wrong....<br /><br />Thanks!<br /><br />Peter<br />",
+    "PostedDate": "2007-08-21T19:44:26.497-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "46136",
+    "ThreadId": "14084",
+    "Html": "\r\nHi Peter,<br /><br />&gt;but there are some inefficiencies that cause the variable to have to get looked up multiple times <br />Yeah, variables are looked up twice during compilation.  I'll see if I can change the code around to only do it once.<br /><br />With the expression <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">{System Clock:Current Hour} &lt; 12</span>: How are you looking up the \"Current Hour\" property?  The variable callback would only work on the first variable (\"System Clock\").  After that, the second variable (\"Current Hour\") would be looked up on the type of the previous member and not using the callback.<br /><br />Couldn't you do something like this:<br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\npublic class PluginExpressionOwner\r\n{\r\n   private object GetPropertyValue(string pluginName, string propertyName)\r\n   {\r\n      Plugin p = PluginHost.GetPluginByName(pluginName);\r\n      return p.GetPropertyValue(propertyName);\r\n   }\r\n}\r\n</pre><br />Pass that owner to an expression and you could use an expression like: <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">cast(GetPropertyValue(\"System Clock\", \"Current Hour\"), int) &gt; 12</span> to achieve what you want.  The cast clutters up the expression but is required since the expression language is strongly-typed.  You could also pre-parse the expression, replace all property calls with the correct function call, and then pass the string to an expression.<br /><br />Maybe you could post your hack in a reply so I can see how you went about it.<br /><br />Thanks,<br /><br />Eugene<br />",
+    "PostedDate": "2007-08-22T13:12:09.85-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "46140",
+    "ThreadId": "14084",
+    "Html": "\r\nHi Eugene, <br /><br />Hadn't thought of doing THAT! It's certainly a pretty clean way of doing it, but, as you say, the cast does clutter up the expression. I'm envisioning the {plugin:value} as one \"fully qualified variable\" to my end user. For instance, I could have two instances of the clock plugin, each running at the different timezone. They'd both have a \"Current Hour\" property, but their fully qualified names would be different. Your idea is still valid, though.... I could do a something like: <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">cast(Variable(\"System Clock:Current Hour\"), int)</span> and simply do the split myself. Speaking of which, could I write the cast as <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">(int)(Variable(\"System Clock:Current Hour\")</span> ? Still... it looks ugly in the expression.<br /><br />As to how I actually do the lookup...<br />Each plugin exposes a list of PropertyDescriptors. The PropertyDescriptor contains things like the name of the property, type, read only, etc., but also a reflected PropertyInfo that points to the actual property that has the value. To the writer of the plugin, this is all abstracted by base classes and attributes. The clock actually looks something like this: <br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\npublic class ClockPlugin : Plugin\r\n{\r\n  [ExposedProperty(\"Current Time\", readonly=true)]\r\n  public DateTime CurrentTime\r\n  {\r\n    get{ return DateTime.Now; }\r\n  }\r\n \r\n  [ExposedProperty(\"Current Hour\", readonly=true)]\r\n  public int CurrentHour\r\n  {\r\n    get{ return DateTime.Now.Hour; }\r\n  }\r\n}\r\n</pre><br />The plugin host simple enumerates all the properties that have a ExposedPropertyAttribute and maintains a map.<br />",
+    "PostedDate": "2007-08-22T14:02:04.877-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "46141",
+    "ThreadId": "14084",
+    "Html": "\r\nHmm... How do I do the fancy formatting like you did?<br />",
+    "PostedDate": "2007-08-22T14:02:45.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "46157",
+    "ThreadId": "14084",
+    "Html": "<br /><div class=\"quote\" style=\"border: dotted .1em #aaa; border-left: none; border-right: none; font-style: italic; margin: 1em 0em 2.5em 3em;padding: .2em;\"><br />pzand wrote:<br />Hmm... How do I do the fancy formatting like you did?<br /><br /></div><br />See the <a href=\"http://www.codeplex.com/CodePlex/Wiki/View.aspx?title=CodePlex%20Wiki%20Markup%20Guide\" class=\"externalLink\">Guide<span class=\"externalLinkIcon\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\"></span></a><br />",
+    "PostedDate": "2007-08-22T15:10:48.997-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "46164",
+    "ThreadId": "14084",
+    "Html": "\r\n&gt;Still... it looks ugly in the expression.<br />Yeah, you're doing things dynamically while the expression language is statically typed.  The cast is required.<br />I could implement generic method calls and then the expression becomes <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">GetPropertyValue&lt;int&gt;(\"System Clock\", \"Current Hour\") &gt; 12</span>.  Is that a good compromise?<br /><br />Regardless of the approach, you will will always have to specify a type when you reference a property.  If the type is wrong, you will get an InvalidCastException when you evaluate the expression.  Or you can switch to a dynamic .NET language like IronPython which will eliminate the cast altogether.<br />",
+    "PostedDate": "2007-08-22T15:38:00.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "46174",
+    "ThreadId": "14084",
+    "Html": "\r\nGetting so close!<br />Remember that my plugin host already knows the type of the object that it would return from the GetValue call, so the end-user shouldn't have to specify it. <br />My ugly hack looks like this:<br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\nImports System.Reflection.Emit\r\nImports System.Reflection\r\n \r\nPublic MustInherit Class LookupExpressionOwner\r\n  Inherits DynamicExpressionOwner\r\n \r\n  Public Sub New()\r\n  End Sub\r\n \r\n  Friend Overrides Sub EmitVariableLoad(ByVal name As String, ByVal ilg As System.Reflection.Emit.ILGenerator, ByVal services As System.ComponentModel.Design.IServiceContainer)\r\n    Dim mi As MethodInfo = Me.GetType().GetMethod(\"GetValue\", BindingFlags.Instance Or BindingFlags.Public)\r\n    ilg.Emit(OpCodes.Ldstr, name)\r\n    ilg.Emit(OpCodes.Call, mi)\r\n \r\n    Dim nopElement As New NopExpressionElement(Type.GetType(\"System.Object\"))\r\n    Dim castElement As New CastOperator(nopElement, GetValueType(name))\r\n    castElement.Emit(ilg, services)\r\n  End Sub\r\n \r\n  Friend Overrides Function HasVariable(ByVal name As String) As Boolean\r\n    Return VariableExists(name)\r\n  End Function\r\n \r\n  Friend Overrides Function GetVariableValueType(ByVal name As String) As System.Type\r\n    Return GetValueType(name)\r\n  End Function\r\n \r\n  Public MustOverride Function GetValue(ByVal name As String) As Object\r\n  Public MustOverride Function VariableExists(ByVal name As String) As Boolean\r\n  Public MustOverride Function GetValueType(ByVal name As String) As Type\r\nEnd Class\r\n</pre><br />I'm a C# guy, so I struggled a little with how VB wants its overrides. Plus I didn't want to completely mess up your DynamicExpressionOwner and change Friends into Publics, since that causes all kinds of other bad things. Also, since I've never done anything directly in IL, I ran into some trouble there and just bluntly followed your pattern.<br /><br />What I wanted to do, but couldn't figure out:<br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\nFriend Overrides Sub EmitVariableLoad(ByVal name As String, ByVal ilg As System.Reflection.Emit.ILGenerator, ByVal services As System.ComponentModel.Design.IServiceContainer)\r\n  dim value as object\r\n  value = GetValue(name)\r\n  \r\n  '-- have ilg emit an object. How? OpCodes.Ldobj does something else?\r\n  '-- ilg.Emit( OpCodes.Ldobj, value )\r\n \r\n  Dim nopElement As New NopExpressionElement(Type.GetType(\"System.Object\"))\r\n  Dim castElement As New CastOperator(nopElement, value.GetType())\r\n  castElement.Emit(ilg, services)\r\nEnd Sub\r\n</pre><br />Now, if you can make anything between curly braces appear as one variable, I'm set :)<br /><br />Looked at grammatica, but couldn't figure out how to regenerate grammar. Or I would have tried it!<br /><br />Appreciate the quick replies, btw...<br />",
+    "PostedDate": "2007-08-22T18:41:32.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "46316",
+    "ThreadId": "14084",
+    "Html": "\r\nHi Peter,<br /><br />After sleeping on it, it dawned on me that the properties you are talking about represent real properties on an object.  In that case, Flee can just access them directly.<br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\nDynamicExpressionOwner owner = new DynamicExpressionOwner();\r\nowner.DefineVariable(\"SystemClock1\", typeof(Plugin));\r\nPlugin p = PluginHost.GetPluginByName(\"System Clock\");\r\nowner.SetVariableValue&lt;Plugin&gt;(\"SystemClock1\", p);\r\n \r\nExpression e = new Expression(\"SystemClock1.CurrentHour + 1\", owner);\r\n</pre><br />The only thing left is to map from friendly plugin names to flee names.  Same for properties.  The plugin host should be able to use the propertyDescriptor to get the actual name of a property given its friendly name.  Here's some pseudo-code to explain what I'm getting at:<br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\n// Get expression string entered by user\r\nstring userExpression = mytextbox.text;\r\n// Create a regex to manipulate the string and replace PluginName and PropertyName with flee-friendly equivalents\r\nRegex replacer = new Regex(\"{PluginName:PropertyName}\");\r\n// Replace all plugin names and properties with flee friendly names\r\nstring fleeExpression = replacer.Replace(userExpression, replaceCallback);\r\n// Create the expression using the flee-friendly text\r\nExpression e = new Expression(fleeExpression, owner);\r\n// Evaluate, etc\r\n</pre><br />This solution requires that you load all your plugins in to the owner's variable collection.  If you only want to load plugins on demand, we'll have to do some tweaks.<br />",
+    "PostedDate": "2007-08-23T12:00:22.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "46360",
+    "ThreadId": "14084",
+    "Html": "\r\nOh... DUHHH!! I never even considered the possibility of presenting one thing to the user, but presenting something completely different to flee! I could have the user write anything, as long as I can parse it and create something that flee can understand. The expression to flee can then be as complex or as simple as needed, including any \"ugly\" casts or method calls.<br /><br />I could take your concept one step further and replace the whole <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\"> {PluginName:PropertyName} </span> deal with something like <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\"> cast(LookupVariable(\"PluginName\", \"PropertyName\"), type) </span> before I give it to flee. After all, during the parse, I already know the type! All I'd have to do is give the expression owner a method like you described earlier in your post of Wed at 4:12 PM.<br /><br />I can't believe it took me this long....<br />",
+    "PostedDate": "2007-08-23T20:04:46.917-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "46364",
+    "ThreadId": "14084",
+    "Html": "\r\nSUCCESS!<br /><br />Figured I'd share the solution that works for me. YMMV.<br /><br />I created a \"GenericExpressionOwner\" that exposes a \"GetPluginPropertyValue\" method as described above. I've also added a couple of static methods that allow for easy usage in the main code. <br />Main code: <br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\nstring userExpr = \"{System Clock:Current Date Time}.Hour &gt; 12\";\r\nExpression expr = GenericExpressionOwner.CreateExpression(userExpr);\r\nExpressionEvaluator&lt;bool&gt; evaluator = (ExpressionEvaluator&lt;bool&gt;)expr.Evaluator;\r\nbool result = evaluator();\r\n</pre><br />And GenericExpressionOwner:<br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\nclass GenericExpressionOwner\r\n{\r\n  public object GetPluginPropertyValue(string PluginName, string PropertyName)\r\n  {\r\n    PluginBase plugin = PluginHost.GetPluginByInstanceName(PluginName);\r\n    return plugin.GetPropertyValue(PropertyName);\r\n  }\r\n \r\n  public static string PreparseExpression(string expr)\r\n  {\r\n    // Replace all instances of {Plugin Name:Property Name}\r\n    // with:\r\n    //   cast(GetPluginPropertyValue(\"Plugin Name\", \"Property Name), type)\r\n \r\n    string Result = expr;\r\n \r\n    Regex re = new Regex(@\"\\{([^:]*):([^:]*)\\}\");\r\n    MatchCollection matches = re.Matches(expr);\r\n    foreach (Match m in matches)\r\n    {\r\n      string MatchedString = m.Groups[0].Value;\r\n      string PluginName = m.Groups[1].Value;\r\n      string PropertyName = m.Groups[2].Value;\r\n \r\n      // we could iterate through the collection of properties and find the \r\n      // type that's defined for this property, but it's much easier\r\n      // to just get the value and determine the type this way.\r\n \r\n      PluginBase plugin = PluginHost.GetPluginByInstanceName(PluginName);\r\n      object Value = plugin.GetPropertyValue(PropertyName);\r\n      string PropertyType = Value.GetType().ToString();\r\n \r\n      string NewString = String.Format(\r\n        \"cast(GetPluginPropertyValue(\\\"{0}\\\",\\\"{1}\\\"),{2})\",\r\n        PluginName,\r\n        PropertyName,\r\n        PropertyType);\r\n \r\n      Result = Result.Replace(MatchedString, NewString);\r\n    }\r\n    return Result;\r\n  }\r\n \r\n  public static Expression CreateExpression(string expr)\r\n  {\r\n    string fleeExpr = GenericExpressionOwner.PreparseExpression(expr);\r\n \r\n    ExpressionOptions options = new ExpressionOptions();\r\n    options.Imports.AllowGlobalImport = true;\r\n    options.Imports.ImportBuiltinTypes = true;\r\n    options.Imports.AddNamespace(\"System\");\r\n \r\n    GenericExpressionOwner owner = new GenericExpressionOwner();\r\n    return new Expression(fleeExpr, owner, options);\r\n  }\r\n}\r\n</pre>I'm sure there's a better way to do the replace with the regex, but this is the easy way. Since the main app will cache the created expression anyway, the parsing and replacing only happens once per expression that the user defines. No need for much optimization.<br /><br />BTW, note how the property is actually of type DateTIme and I'm thus having flee do the call to the \"Hour\" property on the resulting DateTime object :)<br /><br />Thanks for all your help and a wonderful library, Eugene!<br /><br />Peter<br />",
+    "PostedDate": "2007-08-23T21:11:42.623-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "46452",
+    "ThreadId": "14084",
+    "Html": "\r\nHi Peter,<br /><br />Great!  Glad to see you got it working.<br /><br />Eugene<br />",
+    "PostedDate": "2007-08-24T09:20:13.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

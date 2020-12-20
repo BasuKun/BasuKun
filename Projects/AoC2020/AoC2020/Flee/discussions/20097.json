@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "66655",
+    "ThreadId": "20097",
+    "Html": "\r\nHi,<br /><br />I just found your library. I read many topics in this web site but there is no topics detail that match.<br /><br />I have one class to parse equation that user can create. In this equation will have any variable that user use. When this class parse until detected variable, program will ask use to input the value to that variable or I will write program to find the value fo variable in the form that I know that there is. This class will raise GetVariableValue event. That is I can write any code in this event. So, I would like to know that if I use FLEE, how can I get value of variable? Do you have GetVariableValue in FLEE?<br /><br />Because you write this library better than me, so, I would like to use yours instead of mine.<br /><br />Thanks in advance.<br />",
+    "PostedDate": "2008-01-07T23:20:48.417-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "67044",
+    "ThreadId": "20097",
+    "Html": "\r\nI think what you're basically asking for is on-demand variables.  Unfortunately, due to the way FLEE works, it needs to know the type of each variable while the expression is being compiled.  So there would need to be two events: GetVariableValue and GetVariableType.  But if the variables are coming from the user, I don't see how you would know their type.<br />",
+    "PostedDate": "2008-01-09T19:47:19.67-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "67063",
+    "ThreadId": "20097",
+    "Html": "\r\nThank you very much for your answer.<br /><br />It is useful for me to know that there are at least 2 events to get variable value. There is no problem for variable type because I can specify the type e.g. Double only. Then, I will check it before sending to FLEE. Is this possible? I have to declare variable in my program also. This means I can specify the exact variable type, right?<br /><br />I will try to use FLEE and if I have any problem, I will contact you again.<br /><br />Thank you very much for your time to do a good tool.<br />",
+    "PostedDate": "2008-01-09T23:06:25.337-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "67266",
+    "ThreadId": "20097",
+    "Html": "\r\nOh sorry, I guess I wasn't clear in my reply: There is no GetVariableEvent right now, I will put one in in the next release (this weekend).<br /><br />&gt; I have to declare variable in my program also. This means I can specify the exact variable type, right?<br />Yes, you specify the type of the variable when you define it.<br />",
+    "PostedDate": "2008-01-10T16:09:58.217-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "67565",
+    "ThreadId": "20097",
+    "Html": "\r\nOn-demand variables are implemented in <a href=\"http://www.codeplex.com/Flee/Release/ProjectReleases.aspx?ReleaseId=9837\">Flee-0.9.15.0</a>.  You can find the documentation <a href=\"http://www.codeplex.com/Flee/Wiki/View.aspx?title=OnDemandVariables\">here</a>.<br />",
+    "PostedDate": "2008-01-12T17:11:50.867-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "67725",
+    "ThreadId": "20097",
+    "Html": "\r\nThank you very much for your prompt update. I will learn and try. If there is any question, I will discuss with you in this forum.<br />",
+    "PostedDate": "2008-01-13T18:28:41.487-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

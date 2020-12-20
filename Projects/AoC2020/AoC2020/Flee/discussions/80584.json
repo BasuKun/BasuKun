@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "276289",
+    "ThreadId": "80584",
+    "Html": "<p>Eugene,</p>\r\n<p>Thank you for an excellent project.&nbsp; I do have one question.</p>\r\n<p>In the predecessor to FLEE -&nbsp;the Code Project article on implementing an Excel-Like formula engine - you make a point about operands being loosely typed and give an example like adding &quot;123&quot; + 10 resulting in 133.&nbsp; FLEE does not seem to support this (we get &quot;12310&quot;).&nbsp; Is there a way to implement this loose typing in FLEE?</p>\r\n<p>There are also variations of these that can be imagined as well:</p>\r\n<p>&quot;$123.00&quot; + 10</p>\r\n<p>&quot;$123,456.78&quot; + 10</p>\r\n<p>&quot;123,456.78&quot; + 10</p>\r\n<p>&quot;$37.45&quot; * (1 + &quot;9.5%&quot;)</p>\r\n<p>etc.</p>\r\n<p>This data is coming from textbox controls on UI - where the data is formatted for display, and can be updated by the user and include formatting - and that is why it is a text string.&nbsp;</p>\r\n<p>Any suggestion on where we could extend FLEE to implement this?</p>\r\n<p>Thanks,</p>\r\n<p>Razi</p>",
+    "PostedDate": "2010-01-12T10:13:17.683-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

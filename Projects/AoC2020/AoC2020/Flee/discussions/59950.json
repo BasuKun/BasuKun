@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "202938",
+    "ThreadId": "59950",
+    "Html": "<p>Hello,</p>\r\n<p>I'm using Flee to perform formatting of business objects and it does the job really nice. To avoid compiling the same expression multiple times, I cache the result of ExpressionContext.CompileDynamic.</p>\r\n<p>Recently I have noticed, that I forgot to remove the expression owner (which in my case is a reference to some business object). As a result, affected business objects are not garbage collected. I failed setting IDynamicExpression.Owner to null, so I tried a different workaround (by replacing the expression owner with an instance of the same type that has no outgoing references).</p>\r\n<p>But I don't feel comfortable with this and would like to ask, if there is a better way to cache the result of expression compilation without an expression owner or context?</p>\r\n<p>Regards,<br>Toby</p>\r\n<p>(Let me know if the above lines are not clear enough - I am happy to share some lines of code...)</p>",
+    "PostedDate": "2009-06-18T07:30:34.4-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "203051",
+    "ThreadId": "59950",
+    "Html": "<p>You could use the clone method on an expression.&nbsp; You create your source expression with an owner that has no outgoing references.&nbsp; You then clone that expression and set its owner to a real version of the business object, evaluate, and let the cloned expression get garbage collected.</p>\r\n<p>Cloning an expression skips the parsing and re-uses the compiled IL so it should be a fast operation.</p>\r\n<p>The ideal solution would be to be able to set the owner to null but I have to do some thinking about the implications.</p>",
+    "PostedDate": "2009-06-18T12:00:01.62-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "203244",
+    "ThreadId": "59950",
+    "Html": "<p>Thanks for your quick reply and your suggestion! Although I am very interested in the <em>ideal solution</em>, I can live with the clone-workaround for the time being.</p>",
+    "PostedDate": "2009-06-19T00:35:47.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

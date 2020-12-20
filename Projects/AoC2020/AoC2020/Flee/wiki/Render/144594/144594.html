@@ -1,0 +1,31 @@
+<div class="wikidoc"><b>Using the Calculation Engine</b><br /><br />The <span class="codeInline">CalculationEngine</span> allows you to create a network of expressions.  The engine allows expressions to reference the results of other expressions in the engine, tracks dependencies, and recalculates in natural order.<br /><br /><pre>
+// Create the calculation engine
+CalculationEngine engine = new CalculationEngine();
+ExpressionContext context = new ExpressionContext();
+VariableCollection variables = context.Variables;
+
+// Add some variables
+variables.Add(&quot;x&quot;, 100);            
+variables.Add(&quot;y&quot;, 200);
+
+// Add an expression to the calculation engine as &quot;a&quot;
+engine.Add(&quot;a&quot;, &quot;x * 2&quot;, context);
+
+// Add an expression to the engine as &quot;b&quot;
+engine.Add(&quot;b&quot;, &quot;y + 100&quot;, context);
+            
+// Add an expression at &quot;c&quot; that uses the results of &quot;a&quot; and &quot;b&quot;
+engine.Add(&quot;c&quot;, &quot;a + b&quot;, context);
+            
+// Get the value of &quot;c&quot;
+int result = engine.GetResult&lt;int&gt;(&quot;c&quot;);
+
+// Update a variable on the &quot;a&quot; expression            
+variables[&quot;x&quot;] = 200;
+
+// Recalculate it
+engine.Recalculate(&quot;a&quot;);
+
+// Get the updated result
+result = engine.GetResult&lt;int&gt;(&quot;c&quot;);
+</pre><br /><br /><b>Another example</b><br /><br />Here is an example <a href=".\d8711a21-f3a4-426d-9087-b32e9bbdaa2b">project</a> that shows how to use the CalculationEngine to implement a simple templating system.  It reads a template file which has marked up tags such as <span class="codeInline">Mr. &lt;FullName&gt;, you owe &lt;Debt&gt;</span>.  Once all the tags are loaded, it asks the user to enter an expression for each tag.  Since we are using the calculation engine, the expression for each tag can reference the result of other tag expressions.  Once all the expressions are entered, the CalculationEngine does a recalculate.  The program then substitutes the result of each tag into the template and outputs the result.</div><div class="ClearBoth"></div>

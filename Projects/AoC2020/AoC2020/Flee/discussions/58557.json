@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "198162",
+    "ThreadId": "58557",
+    "Html": "<p>Hi!</p>\r\n<p>Ran into problems evaluating expressions with three decimals...</p>\r\n<p>ExpressionContext context = new ExpressionContext();<br>context.Imports.AddType(typeof(Math));<br>IGenericExpression&lt;bool&gt; eGeneric = context.CompileGeneric&lt;bool&gt;(&quot;302,129=297,073+5,056&quot;);<br>eGeneric.Evaluate() //&lt;-- returns false<br><br>ExpressionContext context = new ExpressionContext();<br>context.Imports.AddType(typeof(Math));<br>IGenericExpression&lt;bool&gt; eGeneric = context.CompileGeneric&lt;bool&gt;(&quot;302,13=297,07+5,06&quot;);<br>eGeneric.Evaluate() //&lt;-- returns true<br><br>&quot;297,073+5,056&quot; returns 302.12899999999996<br><br>&quot;297,07+5,06&quot; returns 302.13<br><br><br>My guess is that some implicit type cast is done which gives float values.<br><br>How can this be fixed?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-05T04:22:20.503-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "199320",
+    "ThreadId": "58557",
+    "Html": "<p>If you declare those numbers as doubles in code and add them, you get the same result so it looks like it's a floating-point math thing.&nbsp; Changing the values to decimals fixes the problem.&nbsp; While Flee supports decimal variables, it doesn't support decimal literals.</p>\r\n<p>One solution would be to have an option to specify the data type that should be used to represent real literals so you could choose between float, double, and decimal.</p>",
+    "PostedDate": "2009-06-08T20:22:16.06-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "200475",
+    "ThreadId": "58557",
+    "Html": "<p>Hi</p>\r\n<p>How big is the problem to support Decimal literals pls ?</p>",
+    "PostedDate": "2009-06-11T09:46:51.53-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "200934",
+    "ThreadId": "58557",
+    "Html": "<p>I can probably have it in for the next release (which should be in a week or two).</p>\r\n<p>Do you think I should implement it so that it has to be explicitly specified with a suffix like in C# (ie: 123.44M + 456.56M)?</p>\r\n<p>Or just make it implicit based on a compile option:</p>\r\n<p>context.RealLiteralType = Decimal</p>\r\n<p>&quot;123.44 + 456.56&quot;</p>",
+    "PostedDate": "2009-06-12T11:22:06.277-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "201130",
+    "ThreadId": "58557",
+    "Html": "<p>Hi!</p>\r\n<p>That's great news. I would prefer the explicit (C#) way ...but it can be bice to have RealLiteralType option for default type used when literal is no marked the other way...</p>\r\n<p>Looking forward to nex release ;)</p>\r\n<p>Awesome job btw :)</p>",
+    "PostedDate": "2009-06-13T06:58:19.68-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "201620",
+    "ThreadId": "58557",
+    "Html": "<p>I think the implicit option would be a great addition. Very useful library, I'm going to be migrating a current project of mine to use the calculation engine.</p>",
+    "PostedDate": "2009-06-15T08:39:49.513-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "202742",
+    "ThreadId": "58557",
+    "Html": "<p>Release <span id=\"ctl00_ctl00_MasterContent_Content_TitleLabel\">0.9.26.0 now supports decimal literals and the RealLiteralDataType option.</span></p>\r\n<p><br>Decimal Literals: 123.45M + 45.6M</p>\r\n<p><span id=\"ctl00_ctl00_MasterContent_Content_TitleLabel\">RealLiteralDataType option:</span></p>\r\n<p><span>context.Options.</span><span id=\"ctl00_ctl00_MasterContent_Content_TitleLabel\">RealLiteralDataType = </span><span id=\"ctl00_ctl00_MasterContent_Content_TitleLabel\">RealLiteralDataType.Decimal</span></p>\r\n<p><span>now an expression such as &quot;123.45 + 45.6&quot; will evaluate to a Decimal.&nbsp; You can still override the type by using the d, f, or m suffixes.<br></span></p>",
+    "PostedDate": "2009-06-17T19:36:47.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "203247",
+    "ThreadId": "58557",
+    "Html": "<p>Very nice! Thx</p>\r\n<p>&nbsp;</p>\r\n<p>Liwoj</p>",
+    "PostedDate": "2009-06-19T00:38:36.61-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

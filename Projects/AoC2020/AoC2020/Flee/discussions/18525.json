@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "60591",
+    "ThreadId": "18525",
+    "Html": "\r\nHi, as i see in the examples section this code defines a new expression for the Calculation Engine:<br /><br />context.ExpressionName = \"a\";<br />ExpressionFactory.CreateDynamic(\"x * 2\", context);<br /><br />This defines a expression named \"a\" wich is definition is \"x * 2\"  ??<br /><br />This means that ExpressionFactory.CreateDynamic(exp, context);<br /><br />Creates and expression with the last name setted before in context.ExpressionName ?<br /><br />If this is like that, can i ask why ? i think is kind of ugly, i would like to code and read something like<br /><br />context.CreateDynamic(\"a\", \"x * 2\"); <br />or<br />engine.CreateDynamic(\"a\", \"x * 2\"); <br /><br />or any other that implies the name and the expression in the same sentence.<br /><br />And to avoid errors of overwrite expression and \"unnamed\" expressions <br /><br />There is something im missing ?<br /><br />",
+    "PostedDate": "2007-11-30T06:21:19.057-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "61044",
+    "ThreadId": "18525",
+    "Html": "\r\nYeah, it is ugly :)  I'm going to change it in the next release.<br />",
+    "PostedDate": "2007-12-03T19:22:22.1-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

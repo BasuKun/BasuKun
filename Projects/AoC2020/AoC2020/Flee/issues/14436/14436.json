@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Attached: Modified LiteralElement.vb file\n \nThere is a bug in the int64 specific method:\n \nProtected Shared Sub EmitLoad(ByVal value As Int64, ByVal ilg As FleeILGenerator)\n \nReproduction:\n \nTry evaluating a datetime expression with the following expression: > #11/14/2011# + ##00:07:00#\n \nResult:\n \nThe expression compilation fails with the following error:\n \nAn error occurred with the following error message: \"System.OverflowException: Arithmetic operation resulted in an overflow.\n\tat Ciloci.Flee.LiteralElement.EmitLoad(Int64 value, FleeILGenerator ilg)\n\tat Ciloci.Flee.TimeSpanLiteralElement.Emit(FleeILGenerator ilg, IServiceProvider services)\n\tat Ciloci.Flee.BinaryExpressionElement.EmitOverloadedOperatorCall(MethodInfo method, FleeILGenerator ilg, IServiceProvider services)\n\tat Ciloci.Flee.ArithmeticElement.Emit(FleeILGenerator ilg, IServiceProvider services)\n\tat Ciloci.Flee.BinaryExpressionElement.EmitOverloadedOperatorCall(MethodInfo method, FleeILGenerator ilg, IServiceProvider services)\n\tat Ciloci.Flee.CompareElement.Emit(FleeILGenerator ilg, IServiceProvider services)\n\tat Ciloci.Flee.RootExpressionElement.Emit(FleeILGenerator ilg, IServiceProvider services)\n\tat Ciloci.Flee.Expression`1.Compile(String expression, ExpressionOptions options)\n\tat Ciloci.Flee.Expression`1..ctor(String expression, ExpressionContext context, Boolean isGeneric)\n\tat Ciloci.Flee.ExpressionContext.CompileGeneric[TResultType](String expression)\n \nExpected Result:\nThe expression should evaluate properly.\n \nExplanation:\nThe code tries to optimize the emitted instruction by detecting the value can fit in UInt32. However the method handling the optimized generation is the method for handling Int32. This can overflow and in fact it that what happens.\n \nResolution:\n1. I modified the method as follows:\n \nProtected Shared Sub EmitLoad(ByVal value As Int64, ByVal ilg As FleeILGenerator)\n\tIf value >= Int32.MinValue And value <= Int32.MaxValue Then\n\t\tEmitLoad(CInt(value), ilg)\n\t\tilg.Emit(OpCodes.Conv_I8)\n\tElseIf value >= 0 And value <= UInt32.MaxValue Then\n\t\tEmitLoad(CUInt(value), ilg)\n\t\tilg.Emit(OpCodes.Conv_U8)\n\tElse\n\t\tilg.Emit(OpCodes.Ldc_I8, value)\n\tEnd If\nEnd Sub\n \n2. Included one additional method:\n \nPrivate Shared Sub EmitLoad(ByVal value As UInt32, ByVal ilg As FleeILGenerator)\n\tIf value >= 0 And value <= 8 Then\n\t\tEmitSuperShort(value, ilg)\n\tElseIf value >= 0 And value <= SByte.MaxValue Then\n\t\tilg.Emit(OpCodes.Ldc_I4_S, CSByte(value))\n\tElse\n\t\tilg.Emit(OpCodes.Ldc_I4, value)\n\tEnd If\nEnd Sub",
+    "LastUpdatedDate": "2013-02-21T16:54:01.23-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2011-11-15T07:52:19.197-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Bug in LiteralElement.EmitLoad method",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 14436
+  },
+  "FileAttachments": [
+    {
+      "FileId": 4171,
+      "FileName": "LiteralElement.vb",
+      "DownloadUrl": ".\\4171"
+    }
+  ],
+  "Comments": []
+}

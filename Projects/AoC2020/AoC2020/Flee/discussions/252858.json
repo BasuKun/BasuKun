@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "593130",
+    "ThreadId": "252858",
+    "Html": "\r\n<p>I'm having difficulty getting Flee to evaluate an expression that has been assigned to a variable.</p>\r\n<p>If I plug the expression into this statement:</p>\r\n<p>&nbsp;&nbsp; IGenericExpression&lt;bool&gt; e1 = context.CompileGeneric&lt;bool&gt;(&quot;LEFT(ehandle,1)=\\&quot;L\\&quot; AND (LEFT(ihandle,1)=\\&quot;L\\&quot; OR LEFT(ihandle,3)=\\&quot;NHI\\&quot;)&quot;);</p>\r\n<p>&nbsp;&nbsp; bool evalresult = e1.Evaluate();</p>\r\n<p>it works fine.</p>\r\n<p>If I assign the expression to a variable:</p>\r\n<p>string fixedformula = &quot;\\&quot;LEFT(ehandle,1)=\\&quot;L\\&quot; AND (LEFT(ihandle,1)=\\&quot;L\\&quot; OR LEFT(ihandle,3)=\\&quot;NHI\\&quot;)\\&quot;&quot;;</p>\r\n<p>and then do this:</p>\r\n<p>&nbsp;&nbsp; IGenericExpression&lt;bool&gt; e1 = context.CompileGeneric&lt;bool&gt;(fixedformula);</p>\r\n<p>&nbsp;&nbsp; bool evalresult = e1.Evaluate();</p>\r\n<p>I receive the error:</p>\r\n<h2><em><em>Cannot convert type 'String' to expression result of 'Boolean'</em></em></h2>\r\n<p><span style=\"color:#000000\">Do I need to define fixedformula differently? I'm sure there is a simple answer but I'm not homing right in on it.</span></p>\r\n<p><span style=\"color:#000000\"><br>\r\n</span></p>\r\n",
+    "PostedDate": "2011-04-06T14:48:13.863-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "596057",
+    "ThreadId": "252858",
+    "Html": "<p>Problem solved.</p>\r\n<p>When being passed to Flee via variable, Flee likes to see: LEFT(ehandle,1)=\"L\" AND (LEFT(ihandle,1)=\"L\" OR LEFT(ihandle,3)=\"NHI\")</p>",
+    "PostedDate": "2011-04-12T10:04:52.787-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

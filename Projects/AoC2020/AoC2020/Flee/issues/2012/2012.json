@@ -1,0 +1,90 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Library",
+      "DisplayName": "Library"
+    },
+    "ClosedComment": "Fixed in 0.9.11.0",
+    "ClosedDate": "2007-11-05T18:04:43.457-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If you try to evaluate an expression on a system where the culture is non-US, it might fail. On a system set for French culture, where the decimal separator is a coma instead of a dot, it does fail. Setting the Culture to en-US for the current thread solves the problem, although it is not a good solution. The parsing of expressions should use the current culture.",
+    "LastUpdatedDate": "2013-05-16T04:24:09.477-07:00",
+    "PlannedForRelease": "Flee-0.9.11.0",
+    "ReleaseVisibleToPublic": true,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2007-10-27T08:16:00.96-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Evaluation on different cultures",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 2012
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Yeah, this issue has come up before and I unsucessfully tried to come up with a solution to it.  The problem with my previous approach was that I was relying on the Culture of the current thread.  Your comment gave me an idea: create a culture property on the ExpressionOptions, you then set it to the culture you want used to parse the expression.  This way I always know the culture that the expression was parsed with.\r\n\r\nIf this approach works for you, then I will try to implement it in the next couple of days.",
+      "PostedDate": "2007-10-27T16:04:49.217-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2007-10-27T16:05:09.14-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2007-10-29T05:48:13.617-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "The main problem with this is that the comma makes certain expressions ambiguous.  Is func(1,2) a function call with one argument (1.2) or two arguments (1 and 2)?  The only way to resolve this is to have different decimal point and function argument separators.  So, in French, you would write func(1;2).  I can't think of another solution so let me know if this works for you.",
+      "PostedDate": "2007-11-01T18:32:17.97-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2007-11-05T18:03:58.503-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2007-11-05T18:04:14.08-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2007-11-05T18:04:43.457-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi,\r\n\r\nWhile ECiloci has provided a way to specify culture  through context.Options.ParseCulture, it is not getting used every where in the code. \r\n\r\nRecently I was trying to use Flee on a PC with Turkish culture setting, I had set context.Options.ParseCulture to en-US culture. The expression parcing still failed if variables in my expression had upper case later.\r\n\r\nI found that in a few places in code, ToLower is used without using culture settings specified through context.Options.ParseCulture, as a result it takes the current culture for converting the characters to lower case (e.g. in Find method in Automaton.vb).\r\n\r\nI am not too familiar with flee code to dare and make changes myself. Can some with more knowledge of this code help?\r\n\r\nThanks,\r\n\r\nWarm Regards,\r\n- Vikram Lele",
+      "PostedDate": "2011-07-13T08:43:18.243-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:54:07.34-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:24:09.477-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

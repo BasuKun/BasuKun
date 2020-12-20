@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "53362",
+    "ThreadId": "16458",
+    "Html": "\r\nNice job getting member access control in place. A couple thoughts that crosssed my mind as I was exploiting the feature in my project:<br /><ul><li>Instead of the two boolean properties on ExpressionOptions, did you consider a single property of type System.Reflection.BindingFlags? Not every BindingFlags value is relevant to Flee, but the semantics of those that are match the intent of member access control well enough. Should you get (even more) ambitious and decide to allow, say, static vs. instance member filtering, your interface wouldn't change a bit. Your documentation could simply state which flags Flee recognizes, and just ignore the rest.</li><li>&lt;nit&gt;The two new ExpressionOptions properties default to true. Even though it might break existing deployments of Flee, I'd vote for disallowing non-public members by default. In any case, documenting the defaults wouldn't be a bad idea.&lt;/nit&gt;</li></ul>",
+    "PostedDate": "2007-10-15T10:09:06.797-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "53387",
+    "ThreadId": "16458",
+    "Html": "\r\nYeah, I didn't like the two property approach either, but I wanted to put something in and refine it later.  I like the BindingFlags approach better as it is more flexible and compact.<br /><br />I agree that only allowing public members should be the default.  Most people use the DynamicExpressionOwner, so the decision won't even affect them and, in the end, it will prevent a lot of problems.<br />",
+    "PostedDate": "2007-10-15T12:01:22.85-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "56828",
+    "ThreadId": "16458",
+    "Html": "\r\nI've implemented the OwnerMemberAccess property using BindingFlags and set the default to Public <br />in <a href=\"http://www.codeplex.com/Flee/Release/ProjectReleases.aspx?ReleaseId=8188\">Flee-0.9.11.0</a><br />",
+    "PostedDate": "2007-11-05T18:10:24.373-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

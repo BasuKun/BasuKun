@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "108098",
+    "ThreadId": "32594",
+    "Html": "I would like to have chained or nested expressions. That is I want expression to use other expressions for the calculations. The Calculation engine comes close so far as I understand, but it prepends the '$'. Is there a way to not require that prepended '$'? Also is there a way to have the expression be interchangeable with the concept of a typed variable?<br>\r\n<br>\r\nWe are thinking of using Flee for our WF properties. The built in stuff will not work for us. We want the users to be able to either specify a value for the property OR an expression. Then the expression engine would resolve the value at execution.<br>\r\n<br>\r\nThanks.<br>\r\n",
+    "PostedDate": "2008-07-30T16:19:45.503-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "146920",
+    "ThreadId": "32594",
+    "Html": " Hi,<br>\r\n Im also bump into the same dilema, <br>\r\n <br>\r\n I solved it by like this<br>\r\n<br>\r\n 1) define your variables first<br>\r\n _employee_name = &quot;Jane Doe&quot;<br>\r\n ...<br>\r\n _employee_salary = 60.00<br>\r\n _days_worked  = 6<br>\r\n<br>\r\n 2) define your expressions with the IGenericExpression Interface <br>\r\n<br>\r\n<span style=\"font-size:13px;color:#0000ff\">      Dim</span><span style=\"font-size:13px\"> e </span><span style=\"font-size:13px;color:#0000ff\">As</span><span style=\"font-size:13px\"> IGenericExpression(</span><span style=\"font-size:13px;color:#0000ff\">Of</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">Double</span><span style=\"font-size:13px\">) = context.CompileGeneric(</span><span style=\"font-size:13px;color:#0000ff\">Of</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">Double</span><span style=\"font-size:13px\">)(oValue.ToString())   </span> <br>\r\n<br>\r\n 3) Go though a loop of all of your expression names and value collections<br>\r\n     and if you bump into a IGenericExpression then do the generic evaluate for it<br>\r\n     ....<br>\r\n as far as i know there is no class for using epressions with the '$'<br>\r\n but that's what i did in my case  see my thread on the subject &quot;<a href=\"http://www.codeplex.com/Flee/Thread/View.aspx?ThreadId=44053\" id=\"ctl00_ctl00_MasterContent_Content_ThreadList_ctl01_ThreadLink\"><strong><span style=\"color:#3e62a6\">Custom Expression Engine for Payroll</span></strong></a>&quot;<br>\r\n letme know if you need to post some sample code to clarify it<br>\r\n<br>\r\n   Best Regards, and Happy New Year<br>\r\n  Arturo Ruvalcaba<br>\r\n <br>\r\n<br>\r\n    \r\n",
+    "PostedDate": "2009-01-13T23:37:30.047-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

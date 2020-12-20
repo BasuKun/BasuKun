@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "54894",
+    "ThreadId": "16918",
+    "Html": "\r\nIs flee supports expression with indexed member? if yes, Can you show me an example of expression with indexed member access?<br /><br />Is it possible to compile once an expression then use it with more than one instance of a class. For example :<br />Expression e = new Expression(\"sqrt(x)\", typeof(MyType), options);<br />ExpressionEvaluator&lt;double&gt; evaluator = (ExpressionEvaluator&lt;double&gt;)e.Evaluator;<br />MyType owner1 = new MyType();<br />MyType owner2 = new MyType();<br />double result = evaluator(owner1);<br />double result = evaluator(owner2);<br />",
+    "PostedDate": "2007-10-25T06:00:21.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "54992",
+    "ThreadId": "16918",
+    "Html": "\r\n&gt;Is flee supports expression with indexed member? if yes, Can you show me an example of expression with indexed member access?<br /><br />If you mean indexing arrays and collections then the answer is yes.  I've added an <a href=\"http://www.codeplex.com/Flee/Wiki/View.aspx?title=IndexedMembers\">example</a> page that shows how to do this.<br /><br />&gt;Is it possible to compile once an expression then use it with more than one instance of a class.<br />Right now, no.  I never really thought about being able to do that but it does seem pretty useful if you want to evaluate different sets of data.  Unfortunately, this would require some code changes as the owner parameter to the delegate is fixed when the delegate is created.<br /><br />Let me know if it is a critical requirement and I will see what I can do.<br /><br />Thanks.<br />",
+    "PostedDate": "2007-10-25T16:55:30.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "55032",
+    "ThreadId": "16918",
+    "Html": "\r\nThank you for your fast reply.<br /><br />Yes it is an important feature for me for performance reason<br /><br />I have another problem, i would like to mix expression based on owner members and custom variables. In my case the owner is not  a DynamicExpressionOwner but an instance of my application. Is it possible?<br />Here is an example of expression<br />DynamicExpressionOwner deo = new DynamicExpressionOwner();<br />deo.DefineVariable(\"MyCustomVariable\", typeof(int));<br />deo.SetVariable(\"MyCustomVariable\". 1);<br />Expression e = new Expression(\"MyMethod() = MyCustomVariable + 5\", owner, options, deo);<br />",
+    "PostedDate": "2007-10-26T03:20:23.683-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "55207",
+    "ThreadId": "16918",
+    "Html": "\r\nI think I've thought up of a way to implement your requests while at the same time making Flee more flexible.  It will take me a couple of days as it requires major changes in the code. <br />",
+    "PostedDate": "2007-10-27T16:13:06.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "56829",
+    "ThreadId": "16918",
+    "Html": "\r\nYou can now change the instance of an expression's owner and mix owner members and variables in <a href=\"http://www.codeplex.com/Flee/Release/ProjectReleases.aspx?ReleaseId=8188\">Flee-0.9.11.0</a><br />",
+    "PostedDate": "2007-11-05T18:14:42.77-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "84537",
+    "ThreadId": "25212",
+    "Html": "\r\nHi Eugene,<br /><br />How can set an search case sensitive into members of the ExpressionOwner ?<br /><br />Thanks for you attention.<br /><br />",
+    "PostedDate": "2008-04-02T10:03:11.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "84906",
+    "ThreadId": "25212",
+    "Html": "\r\nRight now, everything is case-insensitive......I'd have to implement support for matching with regard to case.<br />",
+    "PostedDate": "2008-04-03T17:57:17.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "86558",
+    "ThreadId": "25212",
+    "Html": "<a href=\"http://www.codeplex.com/Flee/Release/ProjectReleases.aspx?ReleaseId=12533\">Flee-0.9.18.0</a>  now supports matching variable and member names case sensitively<br />",
+    "PostedDate": "2008-04-13T11:24:09.367-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "86691",
+    "ThreadId": "25212",
+    "Html": "\r\nVery Thanks !!! <br />",
+    "PostedDate": "2008-04-14T06:52:31.483-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

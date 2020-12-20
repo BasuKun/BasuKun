@@ -1,0 +1,949 @@
+[
+  {
+    "Id": "0",
+    "Name": "Flee-0.9.25.0",
+    "DevelopmentStatus": "Stable",
+    "Description": "*New features*\n* Can now clone an expression (cloned expression gets its own set of variables; avoids parsing/compilation overhead) (discussion #52775)\n\n*Breaking Changes*\n* ParserOptions are now initialized based on current culture\n** The format for date literals now defaults to the short pattern of the current culture (issue #7414)\n\n*Bug fixes*\n* no longer creating anonymously hosted dynamic method so that Flee will work with pre-SP1 .NET 2.0\n* fixed culture parsing bug in demo (discussion #53702)\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2009-04-25T18:47:35.507-07:00",
+    "Files": [
+      {
+        "Id": "1707d442-fa63-4a37-8f41-726c5b1d5edf",
+        "FileName": "Flee-0.9.25.0-src.zip",
+        "Url": "./0/1707d442-fa63-4a37-8f41-726c5b1d5edf",
+        "Type": "Source Code",
+        "UploadDate": "2009-04-25T18:47:35.38-07:00"
+      },
+      {
+        "Id": "f9fe360a-715c-484f-93b3-a6a75ae99b2d",
+        "FileName": "Flee-0.9.25.0-demo.zip",
+        "Url": "./0/f9fe360a-715c-484f-93b3-a6a75ae99b2d",
+        "Type": "Application",
+        "UploadDate": "2009-04-25T18:47:35.147-07:00"
+      },
+      {
+        "Id": "3b8d09f6-853c-4219-9ff9-b7e4afb94bea",
+        "FileName": "Flee-0.9.25.0-lib.zip",
+        "Url": "./0/3b8d09f6-853c-4219-9ff9-b7e4afb94bea",
+        "Type": "Application",
+        "UploadDate": "2009-04-25T18:47:35.273-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "1",
+    "Name": "Flee-0.9.24.0",
+    "DevelopmentStatus": "Stable",
+    "Description": "*New features*\n* None\n\n*Breaking Changes*\n* None\n\n*Bug fixes*\n* Fixed bug #7418 (Illegal one-byte branch error)\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2009-04-03T19:05:35.5-07:00",
+    "Files": [
+      {
+        "Id": "7872e15a-76d5-4232-be59-dc225f3cca16",
+        "FileName": "Flee-0.9.24.0-src.zip",
+        "Url": "./1/7872e15a-76d5-4232-be59-dc225f3cca16",
+        "Type": "Source Code",
+        "UploadDate": "2009-04-03T19:05:35-07:00"
+      },
+      {
+        "Id": "ba9716b6-19f4-4da2-a6a7-89b9ab4ebcf4",
+        "FileName": "Flee-0.9.24.0-lib.zip",
+        "Url": "./1/ba9716b6-19f4-4da2-a6a7-89b9ab4ebcf4",
+        "Type": "Application",
+        "UploadDate": "2009-04-03T19:05:34.813-07:00"
+      },
+      {
+        "Id": "346458db-100b-49ba-85f9-a1bcfc8457a9",
+        "FileName": "Flee-0.9.24.0-demo.zip",
+        "Url": "./1/346458db-100b-49ba-85f9-a1bcfc8457a9",
+        "Type": "Application",
+        "UploadDate": "2009-04-03T19:05:35.25-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "2",
+    "Name": "Flee-0.9.23.0",
+    "DevelopmentStatus": "Stable",
+    "Description": "*New features*\n* ExpressionContext.ParserOptions: allows customization of Flee's parser\n** Decimal separator\n** Function argument separator\n** Whether real literals require digits before the decimal point (ie: 0.45 instead of .45)\n* SimpleCalcEngine: Calc engine which does not do topological sorting for better performance\n* CalcEngine: referencing other expressions no longer requires a $ before the expression name\n* Index expressions for non-arrays now support more than one argument (issue #7013)\n\n*Breaking Changes*\n* None\n\n*Bug fixes*\n* Fixed bug #7048 (implicit convert from reference type to value type)\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2009-02-28T11:22:29.233-08:00",
+    "Files": [
+      {
+        "Id": "83d1b23e-8701-450e-9caa-ded0640f8453",
+        "FileName": "Flee-0.9.23.0-src.zip",
+        "Url": "./2/83d1b23e-8701-450e-9caa-ded0640f8453",
+        "Type": "Source Code",
+        "UploadDate": "2009-02-28T11:18:32.647-08:00"
+      },
+      {
+        "Id": "1caa75de-6dc6-4c90-8194-67512b037c75",
+        "FileName": "Flee-0.9.23.0-lib.zip",
+        "Url": "./2/1caa75de-6dc6-4c90-8194-67512b037c75",
+        "Type": "Application",
+        "UploadDate": "2009-02-28T11:18:32.943-08:00"
+      },
+      {
+        "Id": "1d0664b9-682e-4896-81fb-de7753caf17e",
+        "FileName": "Flee-0.9.23.0-demo.zip",
+        "Url": "./2/1d0664b9-682e-4896-81fb-de7753caf17e",
+        "Type": "Application",
+        "UploadDate": "2009-02-28T11:18:33.223-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "3",
+    "Name": "Flee-0.9.22.0",
+    "DevelopmentStatus": "Stable",
+    "Description": "*New features*\n* Expressions can now have DateTime and TimeSpan literals\n\n*Breaking Changes*\n* None\n\n*Bug fixes*\n* Setting explicit culture for unit tests so that they will work on systems with other cultures\n* Variable collection: fixed bug in TryGetValue where it would always return false (thanks booolean)\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2009-01-21T19:13:19.993-08:00",
+    "Files": [
+      {
+        "Id": "c1e0dcc5-6171-4ea9-a5bb-5363ab5c79f8",
+        "FileName": "Flee-0.9.22.0-src.zip",
+        "Url": "./3/c1e0dcc5-6171-4ea9-a5bb-5363ab5c79f8",
+        "Type": "Source Code",
+        "UploadDate": "2009-01-21T19:13:19.523-08:00"
+      },
+      {
+        "Id": "e4d1e354-d927-4f6f-b82e-0fdb4a7f749f",
+        "FileName": "Flee-0.9.22.0-lib.zip",
+        "Url": "./3/e4d1e354-d927-4f6f-b82e-0fdb4a7f749f",
+        "Type": "Application",
+        "UploadDate": "2009-01-21T19:13:19.29-08:00"
+      },
+      {
+        "Id": "372a7eab-d63b-4a3a-8912-b2ea15504af4",
+        "FileName": "Flee-0.9.22.0-demo.zip",
+        "Url": "./3/372a7eab-d63b-4a3a-8912-b2ea15504af4",
+        "Type": "Application",
+        "UploadDate": "2009-01-21T19:13:19.76-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "4",
+    "Name": "Flee-0.9.21.0",
+    "DevelopmentStatus": "Stable",
+    "Description": "*New features*\n* Expressions can now be used as variables in other expressions\n\n*Breaking Changes*\n* All CalcEngine classes are now located in the Ciloci.Flee.CalcEngine namespace\n\n*Bug fixes*\n* Slightly faster variable set\n* Better name for assembly when emitting to assembly\n* Fixed bug where result type of original expression context was modified during compiles.  This would lead to an error if a dynamic expression was compiled after a generic Int32 expression\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2008-12-12T18:56:26.747-08:00",
+    "Files": [
+      {
+        "Id": "180a21ab-b28c-485e-86d8-50cc9171441a",
+        "FileName": "Flee-0.9.21.0-lib.zip",
+        "Url": "./4/180a21ab-b28c-485e-86d8-50cc9171441a",
+        "Type": "Application",
+        "UploadDate": "2008-12-12T18:56:26.167-08:00"
+      },
+      {
+        "Id": "aba7df96-9997-4df0-b5a2-e83f49bb586c",
+        "FileName": "Flee-0.9.21.0-demo.zip",
+        "Url": "./4/aba7df96-9997-4df0-b5a2-e83f49bb586c",
+        "Type": "Application",
+        "UploadDate": "2008-12-12T18:56:25.823-08:00"
+      },
+      {
+        "Id": "fc9daead-f579-4c85-a739-608c619ea1b5",
+        "FileName": "Flee-0.9.21.0-src.zip",
+        "Url": "./4/fc9daead-f579-4c85-a739-608c619ea1b5",
+        "Type": "Source Code",
+        "UploadDate": "2008-12-12T18:56:26.48-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "5",
+    "Name": "Flee-0.9.20.0",
+    "DevelopmentStatus": "Stable",
+    "Description": "*New features*\n* Put all error messages in resource files so that they can be localized\n* Creating anonymously hosted dynamic method if an expression owner is not being used (requires less permissions)\n\n*Breaking Changes:*\n* None\n\n*Bug fixes:*\n* Removed superfluous name and type validation on variables to make them much faster\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2008-11-28T18:04:03.32-08:00",
+    "Files": [
+      {
+        "Id": "8eebb1af-6116-492a-9e8a-4c388a598dec",
+        "FileName": "Flee-0.9.20.0-src.zip",
+        "Url": "./5/8eebb1af-6116-492a-9e8a-4c388a598dec",
+        "Type": "Source Code",
+        "UploadDate": "2008-11-28T18:04:02.617-08:00"
+      },
+      {
+        "Id": "d0249075-bbe6-4e54-84d1-31686e004362",
+        "FileName": "Flee-0.9.20.0-lib.zip",
+        "Url": "./5/d0249075-bbe6-4e54-84d1-31686e004362",
+        "Type": "Application",
+        "UploadDate": "2008-11-28T18:04:02.833-08:00"
+      },
+      {
+        "Id": "b5683707-9edb-4fc8-b7fc-a9dc22423e8e",
+        "FileName": "Flee-0.9.20.0-demo.zip",
+        "Url": "./5/b5683707-9edb-4fc8-b7fc-a9dc22423e8e",
+        "Type": "Application",
+        "UploadDate": "2008-11-28T18:04:03.07-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "6",
+    "Name": "Flee-0.9.19.0",
+    "DevelopmentStatus": "Beta",
+    "Description": "*New features*\n* Parser is no longer shared.  Each expression context now has its own parser and is responsible for compiling expressions (ie: myContext.CompileDynamic(\"cos(a) + 100\"))\n\n*Breaking Changes:*\n* Got rid of ExpressionFactory type; use ExpressionContext.Compile method to create expressions\n\n*Bug fixes:*\n* Fixed ilegal branch exception when compiling an expression with deep nested IFs\n* Indexers on types with multiple indexers should now work properly\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2008-11-09T14:24:21.833-08:00",
+    "Files": [
+      {
+        "Id": "faa02970-2d9f-4acd-866a-2a01854dcf1f",
+        "FileName": "Flee-0.9.19.0-src.zip",
+        "Url": "./6/faa02970-2d9f-4acd-866a-2a01854dcf1f",
+        "Type": "Source Code",
+        "UploadDate": "2008-11-09T14:24:21.52-08:00"
+      },
+      {
+        "Id": "1dd7e23b-8a1c-4313-9e97-1f3577c8541d",
+        "FileName": "Flee-0.9.19.0-demo.zip",
+        "Url": "./6/1dd7e23b-8a1c-4313-9e97-1f3577c8541d",
+        "Type": "Application",
+        "UploadDate": "2008-11-09T14:24:20.833-08:00"
+      },
+      {
+        "Id": "ef8fd48f-f937-4b50-b957-fdf1fcd5bd36",
+        "FileName": "Flee-0.9.19.0-lib.zip",
+        "Url": "./6/ef8fd48f-f937-4b50-b957-fdf1fcd5bd36",
+        "Type": "Application",
+        "UploadDate": "2008-11-09T14:24:21.19-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "7",
+    "Name": "Flee-0.9.18.0",
+    "DevelopmentStatus": "None",
+    "Description": "*New features*\n* Flee can now match variable and member names case-sensitively (ExpressionOptions.CaseSensitive flag)\n\n*Breaking Changes:*\nNone\n\n*Bug fixes:*\nNone\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2008-04-13T11:22:12.353-07:00",
+    "Files": [
+      {
+        "Id": "36b9a5fe-0449-431d-8d72-ef7e3e69788f",
+        "FileName": "Flee-0.9.18.0-src.zip",
+        "Url": "./7/36b9a5fe-0449-431d-8d72-ef7e3e69788f",
+        "Type": "Source Code",
+        "UploadDate": "2008-04-13T11:18:03.713-07:00"
+      },
+      {
+        "Id": "b8a69c2f-3f28-4b09-a72f-45a10a6a88c0",
+        "FileName": "Flee-0.9.18.0-lib.zip",
+        "Url": "./7/b8a69c2f-3f28-4b09-a72f-45a10a6a88c0",
+        "Type": "Application",
+        "UploadDate": "2008-04-13T11:18:03.73-07:00"
+      },
+      {
+        "Id": "556c634c-12f8-40c5-82ac-56b09f9d1a2a",
+        "FileName": "Flee-0.9.18.0-demo.zip",
+        "Url": "./7/556c634c-12f8-40c5-82ac-56b09f9d1a2a",
+        "Type": "Application",
+        "UploadDate": "2008-04-13T11:18:03.777-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "8",
+    "Name": "Flee-0.9.17.5",
+    "DevelopmentStatus": "None",
+    "Description": "*New features*\nNone\n\n*Breaking Changes:*\nNone\n\n*Bug fixes:*\n* Fixed bug where invalid IL was being generated for an on-demand function in a logical expression (see [discussion:24657])\n* Fixed bug where calling a paramArray function inside another paramArray function was throwing an exception (see [discussion:24843])\n* Fixed bug with using nested types as imports (see [discussion:23757])\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2008-03-28T19:13:47.127-07:00",
+    "Files": [
+      {
+        "Id": "c32f89c9-6687-4096-97ed-202fecc4b72c",
+        "FileName": "Flee-0.9.17.5-src.zip",
+        "Url": "./8/c32f89c9-6687-4096-97ed-202fecc4b72c",
+        "Type": "Source Code",
+        "UploadDate": "2008-03-28T19:10:34.443-07:00"
+      },
+      {
+        "Id": "65dde4d5-dc90-4923-b779-991039069218",
+        "FileName": "Flee-0.9.17.5-lib.zip",
+        "Url": "./8/65dde4d5-dc90-4923-b779-991039069218",
+        "Type": "Application",
+        "UploadDate": "2008-03-28T19:10:35.723-07:00"
+      },
+      {
+        "Id": "74a813cf-b933-4ba9-8fe9-41479115f8d3",
+        "FileName": "Flee-0.9.17.5-demo.zip",
+        "Url": "./8/74a813cf-b933-4ba9-8fe9-41479115f8d3",
+        "Type": "Application",
+        "UploadDate": "2008-03-28T19:10:35.74-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "9",
+    "Name": "Flee-0.9.17.2",
+    "DevelopmentStatus": "None",
+    "Description": "*New features*\n* Properties of an object can now come from a TypeDescriptor (only works for type-level properties, not instance-based ones)\n\n*Breaking Changes:*\nNone\n\n*Bug fixes:*\n* Implemented ISerializable methods for custom exceptions to make them work with Serialization\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2008-02-28T20:15:27.59-08:00",
+    "Files": [
+      {
+        "Id": "3a2400a8-344d-443f-a0fc-fa484140e6d7",
+        "FileName": "Flee-0.9.17.2-src.zip",
+        "Url": "./9/3a2400a8-344d-443f-a0fc-fa484140e6d7",
+        "Type": "Source Code",
+        "UploadDate": "2008-02-28T20:12:02.727-08:00"
+      },
+      {
+        "Id": "c1752ff2-4c94-4b34-9b74-d0aa23cf14fe",
+        "FileName": "Flee-0.9.17.2-lib.zip",
+        "Url": "./9/c1752ff2-4c94-4b34-9b74-d0aa23cf14fe",
+        "Type": "Application",
+        "UploadDate": "2008-02-28T20:12:02.743-08:00"
+      },
+      {
+        "Id": "a588ef33-6fc6-4514-a530-b434fb648176",
+        "FileName": "Flee-0.9.17.2-demo.zip",
+        "Url": "./9/a588ef33-6fc6-4514-a530-b434fb648176",
+        "Type": "Application",
+        "UploadDate": "2008-02-28T20:12:02.757-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "10",
+    "Name": "Flee-0.9.17.1",
+    "DevelopmentStatus": "None",
+    "Description": "*New features*\n* Imports can now handle nested namespaces\n* Exposing imports hierarchy and the members available to an expression\n* Feature request #3574: Made all custom exceptions Serializable\n* Implemented on-demand functions\n\n*Breaking Changes:*\nNone\n\n*Bug fixes:*\n* No longer using reflection on ILGenerator for deciding long/short branches (should fix compatibility problems with Mono)\n* Bug #3552: comparison with two values of the same enum wasn't allowed\n* Fixed regression bug where implicit convert of enum to integer was allowed\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2008-02-20T19:12:44.013-08:00",
+    "Files": [
+      {
+        "Id": "4b11727c-bfbf-4e29-8986-e30ddb020739",
+        "FileName": "Flee-0.9.17.1-src.zip",
+        "Url": "./10/4b11727c-bfbf-4e29-8986-e30ddb020739",
+        "Type": "Source Code",
+        "UploadDate": "2008-02-20T19:08:34.147-08:00"
+      },
+      {
+        "Id": "8bc8de1d-2bde-441e-8d25-59df2ab1b969",
+        "FileName": "Flee-0.9.17.1-lib.zip",
+        "Url": "./10/8bc8de1d-2bde-441e-8d25-59df2ab1b969",
+        "Type": "Application",
+        "UploadDate": "2008-02-20T19:08:34.163-08:00"
+      },
+      {
+        "Id": "fe882138-2f79-4edc-ab4b-2c6aa7c0a744",
+        "FileName": "Flee-0.9.17.1-demo.zip",
+        "Url": "./10/fe882138-2f79-4edc-ab4b-2c6aa7c0a744",
+        "Type": "Application",
+        "UploadDate": "2008-02-20T19:08:34.18-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "11",
+    "Name": "Flee-0.9.16.0",
+    "DevelopmentStatus": "None",
+    "Description": "*New features*\n* Refactored imports to now use true namespaces so that multiple types can be imported into a namespace\n* Can now import an individual static, public method into an expression instead of a whole type\n* New \"In\" operator (ie: if(100 in (1, 2, 3), true, false))\n* You can now use non-public types as imports and variables as long as they are in the same module as the expression owner\n\n*Breaking Changes:*\n* Renamed ExpressionImports.ImportStaticMembers to AddType\n* Assigning an owner to an expression is now done through the context rather instead of ExpressionFactory.Create\n* ExpressionContext.Variables property is now read-only\n* VariableCollection constructor is no longer public\n\n*Bug fixes:*\n* Put back ExpressionContext.CalculationEngine property that was causing calc engine expressions to not work\n* Put back VariableCollection.DefineVariable so that you can explicitly set the type of a variable\n* Fixed bug where VariableCollection indexer was returning variable instead of its value\n* Fixed bug where accessing a non-public member would compile because the member had the same name as a variable\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2008-02-05T19:51:16.393-08:00",
+    "Files": [
+      {
+        "Id": "b9f787fd-b43d-4ff7-84f1-86a9c8c5afef",
+        "FileName": "Flee-0.9.16.0-src.zip",
+        "Url": "./11/b9f787fd-b43d-4ff7-84f1-86a9c8c5afef",
+        "Type": "Source Code",
+        "UploadDate": "2008-02-05T19:51:16.41-08:00"
+      },
+      {
+        "Id": "ee82bae0-dce2-4b82-8475-708c1db64c1c",
+        "FileName": "Flee-0.9.16.0-lib.zip",
+        "Url": "./11/ee82bae0-dce2-4b82-8475-708c1db64c1c",
+        "Type": "Application",
+        "UploadDate": "2008-02-05T19:51:16.44-08:00"
+      },
+      {
+        "Id": "7360df36-2e47-4d3f-96c2-5f28c1bdffc1",
+        "FileName": "Flee-0.9.16.0-demo.zip",
+        "Url": "./11/7360df36-2e47-4d3f-96c2-5f28c1bdffc1",
+        "Type": "Application",
+        "UploadDate": "2008-02-05T19:20:15.317-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "12",
+    "Name": "Flee-0.9.15.5",
+    "DevelopmentStatus": "None",
+    "Description": "*New features*\n* Can now use a value type as an expression owner\n* Added Contains method to calculation engine\n* Removed source control bindings from source package\n\n*Breaking Changes:*\n* None\n\n*Bug fixes:*\n* Documentation\n* Faster lookup of precedents in calc engine\n* Bug fixes to changes in previous release\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2008-01-24T17:27:08.467-08:00",
+    "Files": [
+      {
+        "Id": "0c774b95-7089-4350-bcde-ce6d299904e5",
+        "FileName": "Flee-0.9.15.5-src.zip",
+        "Url": "./12/0c774b95-7089-4350-bcde-ce6d299904e5",
+        "Type": "Source Code",
+        "UploadDate": "2008-01-24T17:27:08.48-08:00"
+      },
+      {
+        "Id": "723cfb30-a23f-41e5-be52-7198b15dcb70",
+        "FileName": "Flee-0.9.15.5-lib.zip",
+        "Url": "./12/723cfb30-a23f-41e5-be52-7198b15dcb70",
+        "Type": "Application",
+        "UploadDate": "2008-01-22T18:17:59.573-08:00"
+      },
+      {
+        "Id": "10bdeffb-3af6-446a-8fe5-44171a2ff9f1",
+        "FileName": "Flee-0.9.15.5-demo.zip",
+        "Url": "./12/10bdeffb-3af6-446a-8fe5-44171a2ff9f1",
+        "Type": "Application",
+        "UploadDate": "2008-01-22T18:17:59.603-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "13",
+    "Name": "Flee-0.9.15.0",
+    "DevelopmentStatus": "None",
+    "Description": "*New features*\n* Implemented on-demand variables (ResolveVariableType and ResolveVariableValue events on VariableCollection)\n* Can now add expressions to calculation engine in any order (batch loading)\n\n*Breaking Changes:*\n* Refactored variable collection: now implements IDictionary<string, object>, uses collection semantics, and infers type of variable from given value (no more DefineVariable)\n* Adding expressions to the calculation engine now uses the more intuitive Add method (no more ExpressionContext.ExpressionName)\n* References to calc engine atoms must now be prefixed with a '$'\n\n*Bug fixes:*\n* Fixed referencing a member on the base class of an owner (bug #3107)\n* An expression can now be assigned an owner that is derived from the original owner\n\n*Todo:*\n* Documentation\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2008-01-12T17:18:15.403-08:00",
+    "Files": [
+      {
+        "Id": "8b883de1-79f3-4734-b9b5-efe39b7152ba",
+        "FileName": "Flee-0.9.15.0-src.zip",
+        "Url": "./13/8b883de1-79f3-4734-b9b5-efe39b7152ba",
+        "Type": "Source Code",
+        "UploadDate": "2008-01-12T16:22:47.89-08:00"
+      },
+      {
+        "Id": "a02373a3-0e4c-4867-b19c-7657758cda23",
+        "FileName": "Flee-0.9.15.0-lib.zip",
+        "Url": "./13/a02373a3-0e4c-4867-b19c-7657758cda23",
+        "Type": "Application",
+        "UploadDate": "2008-01-12T16:22:47.92-08:00"
+      },
+      {
+        "Id": "843617e8-ab79-4118-a6ae-7dec7ad97103",
+        "FileName": "Flee-0.9.15.0-demo.zip",
+        "Url": "./13/843617e8-ab79-4118-a6ae-7dec7ad97103",
+        "Type": "Application",
+        "UploadDate": "2008-01-12T16:22:47.937-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "14",
+    "Name": "Flee-0.9.14.0",
+    "DevelopmentStatus": "None",
+    "Description": "*New features*\nNone\n\n*Breaking Changes:*\nNone\n\n*Bug fixes:*\n* Fixed calling GetType() on owner\n* Cleaned up member resolution (resolving on owner first, then imports) \n* Adjusting subsequent label positions after a long branch is emitted for short-circuited logical ops\n* Demo: Adjusting preset expressions for current culture\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2007-12-04T18:02:43.38-08:00",
+    "Files": [
+      {
+        "Id": "0c4638d0-6514-4953-927e-3cbf8d58e3b6",
+        "FileName": "Flee-0.9.14.0-src.zip",
+        "Url": "./14/0c4638d0-6514-4953-927e-3cbf8d58e3b6",
+        "Type": "Source Code",
+        "UploadDate": "2007-12-04T17:58:44.137-08:00"
+      },
+      {
+        "Id": "d1f1e0b0-e6a6-47db-8e25-df3d5ac01cd1",
+        "FileName": "Flee-0.9.14.0-lib.zip",
+        "Url": "./14/d1f1e0b0-e6a6-47db-8e25-df3d5ac01cd1",
+        "Type": "Application",
+        "UploadDate": "2007-12-04T17:58:44.15-08:00"
+      },
+      {
+        "Id": "d7e9cdfc-eae6-4d79-a771-29b80c7afe4d",
+        "FileName": "Flee-0.9.14.0-demo.zip",
+        "Url": "./14/d7e9cdfc-eae6-4d79-a771-29b80c7afe4d",
+        "Type": "Application",
+        "UploadDate": "2007-12-04T17:58:44.167-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "15",
+    "Name": "Flee-0.9.13.0",
+    "DevelopmentStatus": "None",
+    "Description": "*New features*\n* Grammatica parser is now embedded in Flee assembly so only Ciloci.Flee.dll needs to be deployed\n* Can now create instances of VariableCollection and set it on the ExpressionContext\n* Can now clone a VariableCollection instance\n* Made loading variable values faster when evaluating\n* Validating that types imported into an expression are public\n\n*Breaking Changes:*\n* Removed VariableCollection.GetVariableValueGeneric\n* Removed ExpressionOptions.CloneVariables\n\n*Bug fixes:*\n* Fixed bug where method generated for EmitToAssembly had wrong return type for DynamicMethods\n* Cleaned up emit of call to methods on value types\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2007-11-25T18:54:16.923-08:00",
+    "Files": [
+      {
+        "Id": "90840488-5f58-44d4-944b-c807f0f46fa5",
+        "FileName": "Flee-0.9.13.0-src.zip",
+        "Url": "./15/90840488-5f58-44d4-944b-c807f0f46fa5",
+        "Type": "Source Code",
+        "UploadDate": "2007-11-25T18:41:06.717-08:00"
+      },
+      {
+        "Id": "f244d1fb-e18a-43cc-8732-a4682e0509b4",
+        "FileName": "Flee-0.9.13.0-lib.zip",
+        "Url": "./15/f244d1fb-e18a-43cc-8732-a4682e0509b4",
+        "Type": "Application",
+        "UploadDate": "2007-11-25T18:41:06.747-08:00"
+      },
+      {
+        "Id": "38be835f-2497-45ae-a2b9-050c95d4dae8",
+        "FileName": "Flee-0.9.13.0-demo.zip",
+        "Url": "./15/38be835f-2497-45ae-a2b9-050c95d4dae8",
+        "Type": "Application",
+        "UploadDate": "2007-11-25T18:41:06.78-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "16",
+    "Name": "Flee-0.9.12.0",
+    "DevelopmentStatus": "None",
+    "Description": "*New features*\n* Implemented paramArray method calls.  This means expressions can call functions with a variable number of arguments.\n* Added GetDependents, GetPrecedents, and HasDependents functions to CalculationEngine\n* Strong named Flee assembly and used new, strong-named build of grammatica\n\n*Breaking Changes:*\nNone\n\n*Bug fixes:*\n* Fixed bug where an implicit conversion from a value type to an enum was allowed\n* Fixed bug where I wasn't emiting a ldelem instruction for a U8 element\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2007-11-10T18:53:05.557-08:00",
+    "Files": [
+      {
+        "Id": "17b8b958-e4e9-4473-a390-fb8c43e4ddb3",
+        "FileName": "Flee-0.9.12.0-src.zip",
+        "Url": "./16/17b8b958-e4e9-4473-a390-fb8c43e4ddb3",
+        "Type": "Source Code",
+        "UploadDate": "2007-11-10T18:45:07.54-08:00"
+      },
+      {
+        "Id": "183a0ed8-8129-4469-8ec0-3c116cc34ba0",
+        "FileName": "Flee-0.9.12.0-demo.zip",
+        "Url": "./16/183a0ed8-8129-4469-8ec0-3c116cc34ba0",
+        "Type": "Application",
+        "UploadDate": "2007-11-10T18:46:00.807-08:00"
+      },
+      {
+        "Id": "de718e84-e772-4622-9221-d1811ef22c6c",
+        "FileName": "Flee-0.9.12.0-lib.zip",
+        "Url": "./16/de718e84-e772-4622-9221-d1811ef22c6c",
+        "Type": "Application",
+        "UploadDate": "2007-11-10T18:46:00.93-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "17",
+    "Name": "Flee-0.9.11.0",
+    "DevelopmentStatus": "None",
+    "Description": "Incorporates some major refactoring to make Flee easier to use and more flexible.\n\n*New features*\n* Can now choose to create a dynamic or generic expression\n* Can define an expression without specifying an owner\n* Can change the instance of an owner after an expression is created\n* Can mix variables and expression owner members\n* Can specify a prefix when importing a static type\n* Can specify culture that expressions are parsed in\n* Internal: Implemented custom method overload resolution instead of using the .NET DefaultBinder\n* Due to the above, only members that are accessible are considered in a bind.  This allows ambiguous matches to be resolved in languages that have case-sensitive members\n\n*Breaking Changes:*\n* Refactored how expressions are created and exposed\n* Removed Serialization support\n* Removed global import option\n* Member access on the expression owner: Removed boolean properties and replaced them with OwnerMemberAccess property which uses the BindingFlags enumeration\n* Member access on the expression owner: Changed default so that only public members of the ExpressionOwner are accessible\n* Changed CompileExceptionReason.AmbiguousCall to AmbiguousMatch\n\n*Bug fixes:*\n* Fixed bug with method call of non-overriden method on valuetype\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2007-11-08T18:12:29.063-08:00",
+    "Files": [
+      {
+        "Id": "4980ea30-c3d5-4634-a173-57e0c28836bd",
+        "FileName": "Flee-0.9.11.0-src.zip",
+        "Url": "./17/4980ea30-c3d5-4634-a173-57e0c28836bd",
+        "Type": "Source Code",
+        "UploadDate": "2007-11-08T18:12:29.11-08:00"
+      },
+      {
+        "Id": "1cc5ba2d-cbc9-458d-a209-f44cdfd32ba5",
+        "FileName": "Flee-0.9.11.0-demo.zip",
+        "Url": "./17/1cc5ba2d-cbc9-458d-a209-f44cdfd32ba5",
+        "Type": "Application",
+        "UploadDate": "2007-11-08T18:11:54.15-08:00"
+      },
+      {
+        "Id": "c4f89ebf-7b4c-4286-9430-61ddf8199170",
+        "FileName": "Flee-0.9.11.0-lib.zip",
+        "Url": "./17/c4f89ebf-7b4c-4286-9430-61ddf8199170",
+        "Type": "Application",
+        "UploadDate": "2007-11-08T18:11:20.407-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "18",
+    "Name": "Flee-0.9.10.0",
+    "DevelopmentStatus": "None",
+    "Description": "*New features*:\n* Added AccessDenied field to CompileExceptionReason enum\n* Implemented control of access to expression owner members (see [MemberAccess])\n\n*Changes*\n* Trying to access a non-public member on a class other than the expression owner now uses a CompileExceptionReason of AccessDenied rather than TypeMismatch\n\n*Bug fixes*:\n* Fixed namespace casing problem in doc comments which was invalidating all links\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2007-10-14T17:31:28.743-07:00",
+    "Files": [
+      {
+        "Id": "0f256930-fc4e-4adc-9731-c3e5f0d2bb83",
+        "FileName": "Flee-0.9.10.0-lib.zip",
+        "Url": "./18/0f256930-fc4e-4adc-9731-c3e5f0d2bb83",
+        "Type": "Application",
+        "UploadDate": "2007-10-14T16:57:40.807-07:00"
+      },
+      {
+        "Id": "ab530297-6a0d-4297-8d99-47c6c564542a",
+        "FileName": "Flee-0.9.10.0-src.zip",
+        "Url": "./18/ab530297-6a0d-4297-8d99-47c6c564542a",
+        "Type": "Source Code",
+        "UploadDate": "2007-10-14T16:57:40.76-07:00"
+      },
+      {
+        "Id": "e9cc28dd-f7e6-4af4-a53b-b825f554e03f",
+        "FileName": "Flee-0.9.10.0-demo.zip",
+        "Url": "./18/e9cc28dd-f7e6-4af4-a53b-b825f554e03f",
+        "Type": "Application",
+        "UploadDate": "2007-10-14T16:57:40.793-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "19",
+    "Name": "Flee-0.9.9.0",
+    "DevelopmentStatus": "None",
+    "Description": "*New features*:\n* Added method to DynamicExpressionOwner to get type of a variable\n* DynamicExpressionOwner now implements IEnumerable and IEnumerable(of String)\n\n*Changes*\n* None\n\n*Bug fixes*:\n* None\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2007-10-07T19:59:39.897-07:00",
+    "Files": [
+      {
+        "Id": "28d17043-ee59-4fad-8b19-3461885952b0",
+        "FileName": "Flee-0.9.9.0-src.zip",
+        "Url": "./19/28d17043-ee59-4fad-8b19-3461885952b0",
+        "Type": "Source Code",
+        "UploadDate": "2007-10-07T19:58:39.003-07:00"
+      },
+      {
+        "Id": "773c7d21-9a58-4ee1-8665-222a6df34ddd",
+        "FileName": "Flee-0.9.9.0-demo.zip",
+        "Url": "./19/773c7d21-9a58-4ee1-8665-222a6df34ddd",
+        "Type": "Application",
+        "UploadDate": "2007-10-07T19:58:39.02-07:00"
+      },
+      {
+        "Id": "9927dac4-3441-4d63-8460-eb56ef30de38",
+        "FileName": "Flee-0.9.9.0-lib.zip",
+        "Url": "./19/9927dac4-3441-4d63-8460-eb56ef30de38",
+        "Type": "Application",
+        "UploadDate": "2007-10-07T19:58:39.033-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "20",
+    "Name": "Flee-0.9.8.0",
+    "DevelopmentStatus": "None",
+    "Description": "*New features*:\n* Added a NodeRecalculated event to the CalculationEngine\n*Changes*:\n* None\n\n*Bug fixes*:\n* None\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2007-09-23T12:47:12.577-07:00",
+    "Files": [
+      {
+        "Id": "11abbf4b-1b99-47a3-aadc-c29db5af6e2a",
+        "FileName": "Flee-0.9.8.0-src.zip",
+        "Url": "./20/11abbf4b-1b99-47a3-aadc-c29db5af6e2a",
+        "Type": "Source Code",
+        "UploadDate": "2007-09-23T12:47:12.593-07:00"
+      },
+      {
+        "Id": "699ac1ae-7a47-487e-bc7d-ed9ebd35499c",
+        "FileName": "Flee-0.9.8.0-demo.zip",
+        "Url": "./20/699ac1ae-7a47-487e-bc7d-ed9ebd35499c",
+        "Type": "Application",
+        "UploadDate": "2007-09-23T12:47:12.657-07:00"
+      },
+      {
+        "Id": "b2042def-9a45-4aa9-af4b-10d39a794087",
+        "FileName": "Flee-0.9.8.0-lib.zip",
+        "Url": "./20/b2042def-9a45-4aa9-af4b-10d39a794087",
+        "Type": "Application",
+        "UploadDate": "2007-09-23T12:47:12.657-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "21",
+    "Name": "Flee-0.9.7.0",
+    "DevelopmentStatus": "None",
+    "Description": "*New features*:\n* Added check for defining duplicate variable in DynamicExpressionOwner\n* Added method to determine whether a DynamicExpressionOwner contains a variable\n\n*Changes*:\n* Changed namespace and assembly names from ciloci.Flee to Ciloci.Flee to fit with .NET conventions\n\n*Bug fixes*:\n* Fixed grammar to allow for real numbers with a leading decimal point (ie: .25)\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2007-09-18T16:57:59.573-07:00",
+    "Files": [
+      {
+        "Id": "efa8f623-cb58-470f-8094-c9380ecf7f65",
+        "FileName": "Flee-0.9.7.0-src.zip",
+        "Url": "./21/efa8f623-cb58-470f-8094-c9380ecf7f65",
+        "Type": "Source Code",
+        "UploadDate": "2007-09-18T16:57:20.763-07:00"
+      },
+      {
+        "Id": "51b02b86-16d7-431f-ab50-bf92e1a18f6a",
+        "FileName": "Flee-0.9.7.0-demo.zip",
+        "Url": "./21/51b02b86-16d7-431f-ab50-bf92e1a18f6a",
+        "Type": "Application",
+        "UploadDate": "2007-09-18T16:57:20.777-07:00"
+      },
+      {
+        "Id": "a863c0e5-c547-4e9d-9484-023a17cdea45",
+        "FileName": "Flee-0.9.7.0-lib.zip",
+        "Url": "./21/a863c0e5-c547-4e9d-9484-023a17cdea45",
+        "Type": "Application",
+        "UploadDate": "2007-09-18T16:57:20.793-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "22",
+    "Name": "Flee-0.9.6.0",
+    "DevelopmentStatus": "None",
+    "Description": "*New features*:\n* Added validation for adding an expression to the calculation engine at an already mapped name\n* Removed EmitToAssembly method and replaced it with property on ExpressionOptions since it works better\n* Put in documentation for ExpressionInfo\n\n*Changes*:\n* Ditched generic Set/Get variable methods on DynamicExpressionOwner and replaced them with object equivalents so that everything is truly dynamic\n\n*Bug fixes*:\n* Fixed bug where the loading of value type dynamic variables wasn't being handled like normal field loads\n* Fixed bug where temp locals weren't being reset for emit to assembly\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2007-09-02T21:27:29.02-07:00",
+    "Files": [
+      {
+        "Id": "085a7ec3-5f7c-4575-b463-365d1e17aa66",
+        "FileName": "Flee-0.9.6.0-src.zip",
+        "Url": "./22/085a7ec3-5f7c-4575-b463-365d1e17aa66",
+        "Type": "Source Code",
+        "UploadDate": "2007-09-02T21:27:29.067-07:00"
+      },
+      {
+        "Id": "3bbffe1e-c596-45a5-b1d9-7356bf0e09a2",
+        "FileName": "Flee-0.9.6.0-demo.zip",
+        "Url": "./22/3bbffe1e-c596-45a5-b1d9-7356bf0e09a2",
+        "Type": "Application",
+        "UploadDate": "2007-09-02T21:27:29.1-07:00"
+      },
+      {
+        "Id": "b48e671c-43fd-4663-b24e-97144ea61a68",
+        "FileName": "Flee-0.9.6.0-lib.zip",
+        "Url": "./22/b48e671c-43fd-4663-b24e-97144ea61a68",
+        "Type": "Application",
+        "UploadDate": "2007-09-02T21:27:29.113-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "23",
+    "Name": "Flee-0.9.5.5",
+    "DevelopmentStatus": "None",
+    "Description": "This is an interim release that hasn't been fully documented and tested\n\n*New features*:\n* Added a CalculationEngine.GetResult method that returns an object and doesn't require a type argument\n* Added ExpressionInfo class and method to get variables referenced in an expression\n\n*Bug fixes*:\n\n*Release files*\nThe release consists of the following packages:\n* *Library*: The compiled assembly with chm documentation.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2007-08-30T19:02:31.137-07:00",
+    "Files": [
+      {
+        "Id": "efe7df7c-bcdf-4ec4-801c-44ae14a2253c",
+        "FileName": "Flee-0.9.5.5-lib.zip",
+        "Url": "./23/efe7df7c-bcdf-4ec4-801c-44ae14a2253c",
+        "Type": "Application",
+        "UploadDate": "2007-08-30T19:02:31.153-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "24",
+    "Name": "Flee-0.9.5.0",
+    "DevelopmentStatus": "None",
+    "Description": "*New features*:\n* Reference Equality\n* Null literal\n* Validation of arguments to DynamicExpressionOwner methods\n* Validation of arguments to calculation engine\n* Added method to remove an expression from calculation engine\n\n*Bug fixes*:\n* No longer keeping track of variable type vs. variable value type; the type that the variable was defined with is what is used in the expression\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2007-08-26T14:20:23.857-07:00",
+    "Files": [
+      {
+        "Id": "b0f28cc5-2af8-4b0d-8dc0-14c30e1db852",
+        "FileName": "Flee-0.9.5.0-src.zip",
+        "Url": "./24/b0f28cc5-2af8-4b0d-8dc0-14c30e1db852",
+        "Type": "Source Code",
+        "UploadDate": "2007-08-26T14:18:33.317-07:00"
+      },
+      {
+        "Id": "6c5dd6b0-ac9e-4f0f-a508-ac061a0b0e65",
+        "FileName": "Flee-0.9.5.0-demo.zip",
+        "Url": "./24/6c5dd6b0-ac9e-4f0f-a508-ac061a0b0e65",
+        "Type": "Application",
+        "UploadDate": "2007-08-26T14:18:33.333-07:00"
+      },
+      {
+        "Id": "46422d43-4a45-4728-913d-e53da78b18fe",
+        "FileName": "Flee-0.9.5.0-lib.zip",
+        "Url": "./24/46422d43-4a45-4728-913d-e53da78b18fe",
+        "Type": "Application",
+        "UploadDate": "2007-08-26T14:18:33.35-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "25",
+    "Name": "Flee-0.9.4.0",
+    "DevelopmentStatus": "None",
+    "Description": "*New features*:\n* Parsing now uses SyncLock on internal object as Microsoft recommends\n* Reverted to simple EmitToAssembly for better performance\n* DynamicExpressionOwner: Allows you to define and use dynamically created variables instead of hard-coded fields/properties\n* CalculationEngine: Allows you to reference other expressions in an expression and enables natural order recalculation\n\n*Bug fixes*:\n* None\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2007-08-21T18:48:28.783-07:00",
+    "Files": [
+      {
+        "Id": "cb30512a-fc15-4e86-b3c1-dd933bd9ca7d",
+        "FileName": "Flee-0.9.4.0-src.zip",
+        "Url": "./25/cb30512a-fc15-4e86-b3c1-dd933bd9ca7d",
+        "Type": "Source Code",
+        "UploadDate": "2007-08-21T18:48:29.813-07:00"
+      },
+      {
+        "Id": "9b6248d0-39cd-4dbe-81f7-f388dc3c92c8",
+        "FileName": "Flee-0.9.4.0-demo.zip",
+        "Url": "./25/9b6248d0-39cd-4dbe-81f7-f388dc3c92c8",
+        "Type": "Application",
+        "UploadDate": "2007-08-21T18:49:07.843-07:00"
+      },
+      {
+        "Id": "ad0a3501-0826-4e4e-aa75-86270d72ff2c",
+        "FileName": "Flee-0.9.4.0-lib.zip",
+        "Url": "./25/ad0a3501-0826-4e4e-aa75-86270d72ff2c",
+        "Type": "Application",
+        "UploadDate": "2007-08-21T18:49:08.157-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "26",
+    "Name": "Flee-0.9.3.0",
+    "DevelopmentStatus": "None",
+    "Description": "*New features*:\n* String and char literals now use C# style escapes (ie: \"a \\\"quoted\\\" \\r\\n line\")\n* No conv opcode is emitted for a conversion of int<->uint and long<->ulong when in unchecked mode\n* Arithmetic, comparison, implicit, and explicit overloaded operators are now supported\n\n*Bug fixes*:\n* None\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2007-08-12T18:40:28.477-07:00",
+    "Files": [
+      {
+        "Id": "dec3f5a9-89ce-4958-9736-f1b9f0c80164",
+        "FileName": "Flee-0.9.3.0-src.zip",
+        "Url": "./26/dec3f5a9-89ce-4958-9736-f1b9f0c80164",
+        "Type": "Source Code",
+        "UploadDate": "2007-08-11T17:47:43.54-07:00"
+      },
+      {
+        "Id": "ca491a67-77ce-4bc2-aab4-a080811a9792",
+        "FileName": "Flee-0.9.3.0-demo.zip",
+        "Url": "./26/ca491a67-77ce-4bc2-aab4-a080811a9792",
+        "Type": "Application",
+        "UploadDate": "2007-08-11T17:47:43.57-07:00"
+      },
+      {
+        "Id": "73d6511d-61fa-47a3-b5dc-e6aba9d94faa",
+        "FileName": "Flee-0.9.3.0-lib.zip",
+        "Url": "./26/73d6511d-61fa-47a3-b5dc-e6aba9d94faa",
+        "Type": "Application",
+        "UploadDate": "2007-08-11T17:47:43.587-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "27",
+    "Name": "Flee-0.9.2.0",
+    "DevelopmentStatus": "None",
+    "Description": "*New features*:\n* Expressions are now serializable\n* Added option to import builtin types (so you can say \"1 + long.maxvalue\" without having to import the System namespace)\n* EmitToAssembly now runs in a separate AppDomain\n* And/Or short-circuited elements now emit long branches when necessary\n\n*Bug fixes*:\n* Fixed bug in demo where red and blue components were being set in wrong order in image bytes\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2007-08-08T17:47:07.28-07:00",
+    "Files": [
+      {
+        "Id": "26144b71-113a-4edd-a0fa-25b8b57141d1",
+        "FileName": "Flee-0.9.2.0-src.zip",
+        "Url": "./27/26144b71-113a-4edd-a0fa-25b8b57141d1",
+        "Type": "Source Code",
+        "UploadDate": "2007-08-05T20:01:16.37-07:00"
+      },
+      {
+        "Id": "74149be5-c85f-48a9-bb3e-2e7614448f17",
+        "FileName": "Flee-0.9.2.0-demo.zip",
+        "Url": "./27/74149be5-c85f-48a9-bb3e-2e7614448f17",
+        "Type": "Application",
+        "UploadDate": "2007-08-05T20:01:16.383-07:00"
+      },
+      {
+        "Id": "483f3611-8324-4f44-a66d-f562a0ea9440",
+        "FileName": "Flee-0.9.2.0-lib.zip",
+        "Url": "./27/483f3611-8324-4f44-a66d-f562a0ea9440",
+        "Type": "Application",
+        "UploadDate": "2007-08-05T20:01:16.4-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "28",
+    "Name": "Flee-0.9.1.0",
+    "DevelopmentStatus": "None",
+    "Description": "Minor release that implements the following new features:\n\n* You can now customize how string comparsions are performed.  See the ExpressionOptions.StringComparison property.\n* If operator now emits long branches when required\n* Implemented Logical Xor\n\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly and chm documentation.\n* *Demo*: A demo application showing how to use the library and what it can do.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2007-07-31T17:52:56.97-07:00",
+    "Files": [
+      {
+        "Id": "5efc6949-4c68-4d95-83cc-fec68c6421aa",
+        "FileName": "Flee-0.9.1.0-src.zip",
+        "Url": "./28/5efc6949-4c68-4d95-83cc-fec68c6421aa",
+        "Type": "Source Code",
+        "UploadDate": "2007-07-31T17:52:57.017-07:00"
+      },
+      {
+        "Id": "81158ab3-abc6-4e0f-a0b0-8d9182a5a91c",
+        "FileName": "Flee-0.9.1.0-lib.zip",
+        "Url": "./28/81158ab3-abc6-4e0f-a0b0-8d9182a5a91c",
+        "Type": "Application",
+        "UploadDate": "2007-07-31T17:52:57.047-07:00"
+      },
+      {
+        "Id": "84910206-4563-478c-9a19-45569ec8f3ea",
+        "FileName": "Flee-0.9.1.0-demo.zip",
+        "Url": "./28/84910206-4563-478c-9a19-45569ec8f3ea",
+        "Type": "Application",
+        "UploadDate": "2007-07-31T17:52:57.08-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "29",
+    "Name": "Flee-0.9.0.0",
+    "DevelopmentStatus": "None",
+    "Description": "This is the initial beta release.  It implements major functionality so that people can get a feel for what the library can do and give feedback.  It consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly and chm documentation.\n* *Demo*: A demo application showing how to use the library and what it can do.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2007-07-26T16:21:21.65-07:00",
+    "Files": [
+      {
+        "Id": "51041278-7c8e-46c5-8bf0-4dd18ec93454",
+        "FileName": "Flee-0.9.0.0-src.zip",
+        "Url": "./29/51041278-7c8e-46c5-8bf0-4dd18ec93454",
+        "Type": "Source Code",
+        "UploadDate": "2007-07-23T17:31:32.757-07:00"
+      },
+      {
+        "Id": "3ff3a718-579c-4b17-b5d8-87003942695e",
+        "FileName": "Flee-0.9.0.0-lib.zip",
+        "Url": "./29/3ff3a718-579c-4b17-b5d8-87003942695e",
+        "Type": "Application",
+        "UploadDate": "2007-07-23T17:49:41.707-07:00"
+      },
+      {
+        "Id": "4ab7089b-0b68-4199-9095-38914d52674d",
+        "FileName": "Flee-0.9.0.0-demo.zip",
+        "Url": "./29/4ab7089b-0b68-4199-9095-38914d52674d",
+        "Type": "Application",
+        "UploadDate": "2007-07-26T16:21:23.697-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "30",
+    "Name": "Flee-0.9.26.0",
+    "DevelopmentStatus": "Stable",
+    "Description": "*New features*\n* ExpressionOptions.RealLiteralDataType: Specify the data type used to store real literals\n* Decimal literals (ie: 123.45M + 3.45M)\n* Optimization: A number raised to a constant integral power (ie: num1 ^ 2) will be optimized to a sequence of multiplications instead of a call to the Pow function\n\n*Breaking Changes*\n* The result of the power operator is now of the same type as its first argument.  Example: 100 ^ 2 will return an integer; 1.5 ^ 2 will return a double.  Previously, the power operator always returned a double.\n\n*Bug fixes*\n* None\n\n*Release files*\nThe release consists of the following packages:\n* *Source*: The source code for the library, demo, and test projects.\n* *Library*: The compiled assembly with chm documentation.\n* *Demo*: An [application|demo] that uses the library to generate images from expressions.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2009-06-17T19:29:23.957-07:00",
+    "Files": [
+      {
+        "Id": "3b098483-0b9e-4572-9ebb-2aade9414d21",
+        "FileName": "Flee-0.9.26.0-src.zip",
+        "Url": "./30/3b098483-0b9e-4572-9ebb-2aade9414d21",
+        "Type": "Source Code",
+        "UploadDate": "2009-06-17T19:27:49.15-07:00"
+      },
+      {
+        "Id": "7afb9f8f-97bf-402c-bf15-9e21951a6b7f",
+        "FileName": "Flee-0.9.26.0-lib.zip",
+        "Url": "./30/7afb9f8f-97bf-402c-bf15-9e21951a6b7f",
+        "Type": "Application",
+        "UploadDate": "2009-06-17T19:27:49.12-07:00"
+      },
+      {
+        "Id": "4081801c-d913-469d-a4c4-4b906277cf9f",
+        "FileName": "Flee-0.9.26.0-demo.zip",
+        "Url": "./30/4081801c-d913-469d-a4c4-4b906277cf9f",
+        "Type": "Application",
+        "UploadDate": "2009-06-17T19:27:49.18-07:00"
+      }
+    ]
+  }
+]

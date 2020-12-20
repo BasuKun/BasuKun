@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "47238",
+    "ThreadId": "14530",
+    "Html": "\r\nHi ! <br /><br />At CalculationEngine.Add the  parameter for the name of the expression, is not allowing names with dots or other symbols:<br /><br />Calculation.Engine.Add(\"CarpetaEstudio.Ficha\", owner, \"Carpeta.Ficha\")   // runs OK<br /><br />next expression:<br /><br />Calculation.Engine.Add(\"\"\\\"<b>\\\" + Carpeta.Ficha + \\\"</b>\\\"\"\", owner, \"Carpeta.CodBarra\")   // returns<br /><br />Invocation List: Could not resolve the name 'Carpeta'<br /><br />Other try:<br /><br />Calculation.Engine.Add(\"CarpetaEstudio.Ficha\", owner, \"Carpeta:Ficha\")   // runs OK<br /><br />next expression:<br /><br />Calculation.Engine.Add(\"\"\\\"<b>\\\" + Carpeta:Ficha + \\\"</b>\\\"\"\", owner, \"Carpeta.CodBarra\")   // returns<br /><br />Syntax Error: unexpected character ':', on line: 1 column: 14<br /><br />Finally if i remove the separator char works:<br /><br />Calculation.Engine.Add(\"CarpetaEstudio.Ficha\", owner, \"CarpetaFicha\")   // runs OK<br />Calculation.Engine.Add(\"\"\\\"<b>\\\" + CarpetaFicha + \\\"</b>\\\"\"\", owner, \"CarpetaCodBarra\")   // runs OK<br /><br /><br />But removing the character is dangerous for the application context, those names are auto-generated, there is any way or any character i can use for replace dot notation in expression names ?<br /><br /><br />",
+    "PostedDate": "2007-08-30T09:27:02.153-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "47283",
+    "ThreadId": "14530",
+    "Html": "\r\nUnderscores are allowed in names so you could replace Carpeta:Ficha with Carpeta_Ficha<br />",
+    "PostedDate": "2007-08-30T13:23:18.98-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "47370",
+    "ThreadId": "14530",
+    "Html": "\r\nThanks, that should work.<br />",
+    "PostedDate": "2007-08-31T06:10:20.763-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

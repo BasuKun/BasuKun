@@ -1,0 +1,96 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Library",
+      "DisplayName": "Library"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have implemented an implicit conversion to a double in a class (DoubleWrapper) that is used as a variable. When I use this class in C#, it works as expected:\n            double dResult = Math.Cos( aDouble );\nHowever the same expression does not work in FLEE.\n            IDynamicExpression expression = context.CompileDynamic( \"Math.Cos( aDouble )\" );\nIt throws an exception indicating it cannot find Cos(DoubleWrapper)\n \nIt seems to me that FLEE should behave the same as C#. Perhaps when it does not find the initial method signature, try to find the first method with a signature that can be used via implicit conversion of the parameter.\n \nThe attached file contains example code to better explain the problem.",
+    "LastUpdatedDate": "2013-06-14T00:28:44.22-07:00",
+    "PlannedForRelease": "Flee-0.9.23.0",
+    "ReleaseVisibleToPublic": true,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2009-02-05T14:03:06.347-08:00",
+    "Status": {
+      "Name": "Resolved",
+      "Id": 7
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Implicit castor is not used in FLEE expression",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 7048
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1724,
+      "FileName": "FLEE Implicit Problem.cs",
+      "DownloadUrl": ".\\1724"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Flee already supports implicit conversion operators (they're used for Decimals for example).  I think the code must not be finding the one you declared on your class for some reason.  I'll have a look.",
+      "PostedDate": "2009-02-06T18:59:09.223-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-06T18:59:34.723-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-07T13:57:08.667-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-28T11:19:30.643-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Fixed in 0.9.23.0",
+      "PostedDate": "2009-02-28T11:20:05.97-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "If i have the IntegersAsDoubles option on and i feed Flee \"25 = 25.0\" it explodes.  Any way around this?",
+      "PostedDate": "2011-11-24T09:11:44.753-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:54:04.613-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:24:06.26-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:24:06.387-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-06-14T00:28:44.22-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

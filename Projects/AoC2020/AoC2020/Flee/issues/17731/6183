@@ -1,0 +1,19 @@
+--- Flee/src/Lib/InternalTypes/BranchManager.vb	di okt 25 10:53:46 2016
++++ Flee/src/Lib/InternalTypes/BranchManager.vb	di okt 25 14:43:14 2016
+@@ -111,2 +111,8 @@ Friend Class BranchManager
+-		Dim index As Integer = MyBranchInfos.IndexOf(bi)
+-		bi = MyBranchInfos.Item(index)
++        Dim index As Integer = MyBranchInfos.IndexOf(bi)
++        If index = -1 Then
++            '' If we can't find the matching branch info it won't have been created yet for reasons.
++            '' By returning true here we always making a "Long branch", meaning the emitted intermediate language can move to *any* point in the function, but is a bit bigger.
++            '' Because we don't know for *sure* how far we need to jump
++            Return True
++        Else
++            bi = MyBranchInfos.Item(index)
+@@ -114,2 +120,3 @@ Friend Class BranchManager
+-		Return bi.IsLongBranch
+-	End Function
++            Return bi.IsLongBranch
++        End If
++    End Function

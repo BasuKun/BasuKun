@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "56930",
+    "ThreadId": "17446",
+    "Html": "\r\nHi Eugene,<br /><br />We're trying to replace Formula Engine with Flee. We have a case where we need to do a calculation on 2 formulas that have a circular reference. In Formula Engine we seed one value with something and then go back and forth until the result converges.<br /><br />Our code that does this is at the bottom of this message.<br /><br />In Flee, can we write a custom function that has hooks into the engine, like Formula Engine lets us do?<br /><br />Thanks a lot,<br />Dustin Aleksiuk<br /><br /><br /><br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\n        [FixedArgumentFormulaFunction(2, new OperandType[] {OperandType.String, OperandType.String})]\r\n        public void Converge(Argument[] args, FunctionResult result, FormulaEngine engine)\r\n        {\r\n            decimal seed = 0;\r\n            string lhs = args[0].ValueAsString;\r\n            string rhs = args[1].ValueAsString;\r\n \r\n            INamedReference lhsRef = engine.ReferenceFactory.Named(lhs);\r\n            INamedReference rhsRef = engine.ReferenceFactory.Named(rhs);\r\n \r\n            Formula lhsFormula = engine.GetFormulaAt(lhsRef);\r\n            Formula rhsFormula = engine.GetFormulaAt(rhsRef);\r\n \r\n            engine.RemoveFormulaAt(lhsRef);\r\n            engine.AddFormula(seed.ToString(), lhsRef);\r\n            engine.Recalculate(lhsRef);\r\n            double rhsResult = 0;\r\n            double lhsResult = 0;\r\n            for (int i = 0; i &lt; 10; i++)\r\n            {\r\n                if (i%2 == 0)\r\n                {\r\n                    rhsResult = Convert.ToDouble(engine.Evaluate(rhs));\r\n                    engine.RemoveFormulaAt(rhsRef);\r\n                    engine.RemoveFormulaAt(lhsRef);\r\n                    engine.AddFormula(rhsResult.ToString(), rhsRef);\r\n                    engine.AddFormula(lhsFormula, lhsRef);\r\n                    engine.Recalculate(rhsRef);\r\n                }\r\n                else\r\n                {\r\n                    lhsResult = Convert.ToDouble(engine.Evaluate(lhs));\r\n                    engine.RemoveFormulaAt(rhsRef);\r\n                    engine.RemoveFormulaAt(lhsRef);\r\n                    engine.AddFormula(lhsResult.ToString(), lhsRef);\r\n                    engine.AddFormula(rhsFormula, rhsRef);\r\n                    engine.Recalculate(lhsRef);\r\n                }\r\n            }\r\n \r\n            result.SetValue(lhsResult);\r\n        }\r\n</pre>",
+    "PostedDate": "2007-11-06T07:22:37.773-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "57001",
+    "ThreadId": "17446",
+    "Html": "\r\nYou have two options:<br />-Declare a variable of type CalculationEngine and pass it as an argument to a static function that you import: <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">Converge(calcEngine, \"arg1\", \"arg2\")</span><br />-Use an expression owner: this is an instance of any class to which an expression will be attached.  Once attached, the expression has access to all its fields, properties, and methods.  Thus you can declare a class, set a field with the calculation engine, and define your converge method.  You can then use an expression like <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">converge(\"arg1\", \"arg2\")</span> and inside the convege method, access any members you need.<br />",
+    "PostedDate": "2007-11-06T13:17:18.55-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "57013",
+    "ThreadId": "17446",
+    "Html": "\r\nThanks a lot for the reply in this topic and the other one. <br /><br />I had some trouble this morning getting a smooth transition to your new changes this morning, but I'll get back to it and try again before long.<br /><br />Regards,<br />Dustin Aleksiuk<br />",
+    "PostedDate": "2007-11-06T14:28:43.79-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

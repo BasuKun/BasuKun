@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "54993",
+    "ThreadId": "16950",
+    "Html": "\r\nHey guys,<br /><br />I've been thinking about the current way that expressions are evaluated (using the ExpressionEvaluator delegate) and I want to find a way to improve it and make it cleaner.  I don't like exposing the expression's delegate and requiring two steps for evaluation.<br /><br />The problem is that you have to be able to evaluate an expression to a strongly typed result (for performance) as well as to an Object (for dynamic scenarios).  The best way I can think of doing this is to have a base Expression class that has an Evaluate method which returns an Object and then have a derived generic class that would have a strongly typed Evaluate.<br /><br />What do you guys think?  Is there a better way or is the current method good enough?<br />",
+    "PostedDate": "2007-10-25T17:11:51.733-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "55033",
+    "ThreadId": "16950",
+    "Html": "\r\nI think that it is important to keep 2 steps: one step for expression compilation and one step for evaluation.<br /><br />You can create a generic class Expression&lt;TOwnerType, TResultType&gt; with a Method TResultType Eval(TOwnerType owner)<br />",
+    "PostedDate": "2007-10-26T03:39:30.547-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "55210",
+    "ThreadId": "16950",
+    "Html": "\r\nYour other post has given me an idea of how to refactor Flee to make it better.  It will be a big change and will break old code but in the end Flee will be much more powerfull and flexible.<br />",
+    "PostedDate": "2007-10-27T16:16:01.117-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "56061",
+    "ThreadId": "16950",
+    "Html": "\r\nHi, after a couple of moths i go back to my (flee-dependent) project...<br /><br />I like the words -&gt; \"refactor\"-&gt;\"make it better\" of course they are relatives but flee is stable enough to do this, if some people have some implementation with the old code they can continue with this until can migrate to a new Flee.<br /><br />At least is my case i will be happy to see good refactoring and implement it in my project.<br /><br />Just support words ;-)<br /><br />Enrique<br />",
+    "PostedDate": "2007-11-01T06:46:57.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "56231",
+    "ThreadId": "16950",
+    "Html": "\r\nThanks!<br />",
+    "PostedDate": "2007-11-01T18:25:12.487-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "56830",
+    "ThreadId": "16950",
+    "Html": "\r\nI've made the changes in <a href=\"http://www.codeplex.com/Flee/Release/ProjectReleases.aspx?ReleaseId=8188\">Flee-0.9.11.0</a>.  Hopefully they will make Flee easier to use while also making it more flexible and dynamic.<br />",
+    "PostedDate": "2007-11-05T18:16:47.707-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "60236",
+    "ThreadId": "16950",
+    "Html": "\r\nHaving a way to create flee object as follows would be great:<br /><br />CalcEngine calc = new CalcEngine();<br /><br />FleeAtom  atomAB = calc.Atoms.get_atom(\"AB\");<br /><br />FleeAtom  atomA = calc.Atoms.get_atom(\"A\");<br /><br />FleeAtom  atomB = calc.Atoms.get_atom(\"B\");<br /><br />atomA.EnterValue = 1;<br /><br />atomB.EnterValue = 1;<br /><br />atomAB.Formula = \"A+B\";<br /><br />//<br />// If we check atomAB.Value it will be 2<br />//<br /><br />AtomA.EnterValue = 3;<br /><br />//<br />// If we check atomAB.Value it will be 3<br />//<br /><br />This would make Flee very easy to work with.<br /><br />brian<br />",
+    "PostedDate": "2007-11-28T07:19:40.05-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "60326",
+    "ThreadId": "16950",
+    "Html": "\r\nSorry,<br /><br />The last comment should have been:<br /><br /><br />//<br />// If we check atomAB.Value it will be 4<br />//<br /><br />",
+    "PostedDate": "2007-11-28T13:09:32.037-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "61230",
+    "ThreadId": "16950",
+    "Html": "\r\nGood to see a different way of approaching it.  Thanks.<br />",
+    "PostedDate": "2007-12-04T18:31:53.37-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

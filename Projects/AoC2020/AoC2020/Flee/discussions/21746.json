@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "72457",
+    "ThreadId": "21746",
+    "Html": "\r\nFirst, this is a great library!  I was wondering if it was possible to use enum types in an expression evaluation.  I can't seem to find a precedent/example for this.  I'm using Flee 0.9.16.0.  I'm trying to do something like:<br /><br />OrderAcceptExpressionOwner owner = new OrderAcceptExpressionOwner();<br />ExpressionContext context = new ExpressionContext(owner);<br />// add enum types<br />context.Imports.AddType(typeof(PaymentTypeEnum));<br />// variable creation omitted...<br />// assume availability of a variable x of type PaymentTypeEnum<br /><br />//   evaluate individual rule<br />IGenericExpression&lt;bool&gt; e = ExpressionFactory.CreateGeneric&lt;bool&gt;(\"x = PaymentTypeEnum.CreditCard\");<br />bool evalresult = e.Evaluate();<br /><br /><br />PaymentTypeEnum is not recognized in the above expression.  I think I could get this to work using some form of dynamic variable evaluation, or by doing something creative within the expression owner to simulate returning a variable with the name PaymentTypeEnum and properties representing the enum values, but was hoping there was a more straightforward approach that I was missing.<br /><br />Thanks in advance!<br /><br />Eric<br />",
+    "PostedDate": "2008-02-07T14:13:34.09-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "72468",
+    "ThreadId": "21746",
+    "Html": "\r\nAha!  I closer reading of the error messages suggested the following, which seems to work:<br /><br />OrderAcceptExpressionOwner owner = new OrderAcceptExpressionOwner();<br />ExpressionContext context = new ExpressionContext(owner);<br />// add enum types<br />context.Imports.AddType(typeof(PaymentTypeEnum), \"PaymentTypeEnum\");<br />// variable creation omitted...<br />//  assume availability of a variable x of type PaymentTypeEnum<br /><br />// evaluate individual rule<br />IGenericExpression&lt;bool&gt; e = ExpressionFactory.CreateGeneric&lt;bool&gt;(\"Cast(x, int) = Cast(PaymentTypeEnum.CreditCard, int)\");<br />bool evalresult = e.Evaluate();<br /><br /><br />Based on the return messages, it looks like the primary problem wasn't handling enums, it was more in a) importing it with a namespace so it could be referenced with that name, and b) casting both values to something that Flee could do an equality test on.  If there is a better recommended approach, I'd love to hear it, though!<br /><br />Eric<br />",
+    "PostedDate": "2008-02-07T15:14:27.997-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "72497",
+    "ThreadId": "21746",
+    "Html": "\r\nActually, in this case it seems you found a bug.  Comparing an enum against an integer requires a cast but comparing two enums (of the same type) should work.<br /><br />I've added this as an issue to be fixed in the next release.<br />",
+    "PostedDate": "2008-02-07T18:32:19.577-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "75381",
+    "ThreadId": "21746",
+    "Html": "\r\nIn <a href=\"http://www.codeplex.com/Flee/Release/ProjectReleases.aspx?ReleaseId=10795\">Flee-0.9.17.1</a>, you should now be able to compare two variables of the same enum without requiring a cast.<br />",
+    "PostedDate": "2008-02-20T19:21:12.803-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

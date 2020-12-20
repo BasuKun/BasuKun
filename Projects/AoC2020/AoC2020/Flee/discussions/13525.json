@@ -1,0 +1,114 @@
+[
+  {
+    "Id": "44098",
+    "ThreadId": "13525",
+    "Html": "\r\nSome extensions to Flee, <br /><br /><ul><li>handle variables of Datetime type </li><li>create variables dynamically </li><li>handle assign of variables ; var = expr</li><li>allow to evaluate a list of Expressions </li><li>allow to obtain results from the context of the evaluator </li><li>allow for,while,repeat</li></ul><br />Thanks,<br />",
+    "PostedDate": "2007-08-07T13:31:59.3-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "44290",
+    "ThreadId": "13525",
+    "Html": "<i>handle variables of Datetime type</i><br />Do you mean support the predefined operators on the DateTime type?  I've been meaning to add support for predefined operators for all types.<br /><br /><i>create variables dynamically</i><br />Ahh yes, the new operator.  It's also on my list.<br /><br /><i>handle assign of variables ; var = expr</i><br /><i>allow for,while,repeat</i><br />I think these features break away from expressions and towards full-blown programming language.  Can you give me a use case?<br /><br /><i>allow to obtain results from the context of the evaluator</i><br />You can access any members of the ExpressionOwner.  Can you clarify what this means?<br /><br />Thanks!<br />",
+    "PostedDate": "2007-08-08T17:31:12.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45417",
+    "ThreadId": "13525",
+    "Html": "\r\nHi i like to add:<br /><br />allow to evaluate a list of nested Expressions, something like<br /><br />Expression IVApct = new Expression('0.21')<br /><br />Expression SubTotal = new Expression('100')<br /><br />Expression Total = new Expression('SubTotal * IVApct')<br /><br />Total.Evaluate()<br /><br />Maybe a new high level class to handle this...<br />",
+    "PostedDate": "2007-08-17T05:28:06.793-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45424",
+    "ThreadId": "13525",
+    "Html": "\r\nI'm going to implement something like this on the weekend.  It will also track dependencies between the expressions and allow you to recalculate in natural order.<br />",
+    "PostedDate": "2007-08-17T06:31:46.16-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45440",
+    "ThreadId": "13525",
+    "Html": "\r\nHi,<br /><br />Probably the idea of dynamic Variables and assign to those variables, tends to a language of script.<br /><br />Nevertheless it would be highly valuable to count thus on an extension that allows to evaluate expressions list:<br /><br />By example;<br /><br />A=sin(10)<br />B=Cos(A)+1<br />C=A+B<br /><br />Where: A , B, C are variable dynamics they do not come from  an ExpressionOwner instance.<br /><br />After;<br /><br />valueA = ExprEngine&lt;double&gt;.GetValue(\"A\");<br />valueB = ExprEngine&lt;double&gt;.GetValue(\"B\");<br />valueC = ExprEngine&lt;double&gt;.GetValue(\"C\");<br /><br /><br />I hope that it is not much to request.<br /><br />Thank you very much;<br />",
+    "PostedDate": "2007-08-17T08:02:57.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45628",
+    "ThreadId": "13525",
+    "Html": "\r\nHi guys,<br /><br />The 0.9.4.0 release has just been posted.  It implements dynamic variables and a calculation engine that allows you to reference other expressions in an expression.  It isn't documented yet but there is an example on the Examples page that shows how to use it.<br /><br />Thanks,<br />",
+    "PostedDate": "2007-08-19T18:00:19.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45680",
+    "ThreadId": "13525",
+    "Html": "\r\nHello,<br /><br />Excellent improvement, thank you very much.<br /><br />I thought about an extension like the following one:<br /><br />ExpressionOwnerDynamic exprVars ;<br /><br />exprVars.AddVariable( \"X\", typeof(double) );<br />exprVars.AddVariable( \"Y\", typeof(int) );<br /><br /><br /><b>In the background , do its:</b><br /><br />Type baseClass = typeof ( ExpressionOwner ) ;<br />TypeBuilder typeBuilder = moduleBuilder.DefineType( <br />    \"ExpressionOwnerVariable\", <br />    TypeAttributes.Public | TypeAttributes.Class | <br />    TypeAttributes.BeforeFieldInit, baseClass ) ;<br /><br /><br />DefineType allows you to specify type attributes for the generated type. In this case, the new type is a class; it has public visibility  (and static members can be called without forcing the runtime to initialize the class).<br /><br />The name, type, and attributes are specified in a single call. The following code snippet shows how it looks: <br /><br />// Create a public field for variables<br />FieldBuilder doubleField = typeBuilder.DefineField( <br />    \"X\", typeof( double ) , <br />    FieldAttributes.Public ) ;<br /><br />FieldBuilder doubleField = typeBuilder.DefineField( <br />    \"Y\", typeof( int ) , <br />    FieldAttributes.Public ) ;<br /><br />---<br /><br />This allows to create a class/structure, dynamically accessible by Flee. <br /><br />An idea is single, as soon as can put it in practices, I inform to him.<br /><br />In addition, it does not change the architecture of Flee.<br /><br />Thank you very much.<br /><br /><br />",
+    "PostedDate": "2007-08-20T06:54:44.757-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45708",
+    "ThreadId": "13525",
+    "Html": "\r\nHi,<br /><br />You're right.  It's more useful to be able to have variables of various types in one owner.  I will make the change tonight (if I have time).<br /><br />Thanks.<br />",
+    "PostedDate": "2007-08-20T09:15:07.153-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45710",
+    "ThreadId": "13525",
+    "Html": "\r\nHi,<br /><br />Thank you very much, by your attention. <br /><br />If you it makes this improvement, would be to me very useful for a scenario in where from metadata into the database, I can describe user algorithms of calculations.<br /><br />Thanks.<br />",
+    "PostedDate": "2007-08-20T09:31:34.86-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45782",
+    "ThreadId": "13525",
+    "Html": "\r\nHi,<br /><br />I've refactored the DynamicExpressionOwner to support variables of different types.  I updated the files in 9.0.4.0 instead of creating a new release so you can just re-download to get the changes.<br /><br />Thanks.<br />",
+    "PostedDate": "2007-08-20T18:48:24.16-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45793",
+    "ThreadId": "13525",
+    "Html": "\r\nHi Eugene,<br /><br /><b>Excellent refactroing, thank you very much</b><br /><br />I think about the following :<br /><br />I can to persist IL Generated in a file (in raw bytecode), this could be reloaded by Flee without reparsing ?<br /><br />Or <br /><br />I can be serialize the AST to XML (by example), after recover it and save  parsing time ?<br /><br />I think in an long set of calculations.<br /><br />Thanks.<br />",
+    "PostedDate": "2007-08-20T19:52:45.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45881",
+    "ThreadId": "13525",
+    "Html": "\r\nSaving the raw IL has two problems:<br />-There is no straightforward way to get the IL of a dynamic method once created<br />-The IL contains tokens whose values are determined at runtime.  So the saved value of a token is meaningless when the IL is recreated and would have to be patched.<br /><br />This leaves us with two options:<br />-Serialize only the expression text and re-parse on deserialization.  This is what the .NET Regex class does and this is how saving expressions works now.  The serialized data is small but the expression has to be re-parsed on load.<br />-Serialize the whole AST.  This would take up more space but would not require re-parsing.  This is more work to implement.<br /><br />I've already implemented serialization support in expressions and in my experience parsing is not slow.  Try serializing all of your expressions and let me know if it is very slow.<br />",
+    "PostedDate": "2007-08-21T07:58:32.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45899",
+    "ThreadId": "13525",
+    "Html": "\r\nHi,<br /><br />OK, thanks for you comments.<br /><br />Questions<br /><br />a.- Flee support Date datatype without predefined operators (only definition variable). ?<br />b.- Flee support Date literals , by example: #25/12/2005# ?<br /><br />uses:<br /><br />anyDate = DateSerial(1971, 1, 9) <br /><br />days = DateDiff(DateInterval.Day, Now, anyDate)<br /><br />//<br />Thanks,<br />",
+    "PostedDate": "2007-08-21T08:46:14.893-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45939",
+    "ThreadId": "13525",
+    "Html": "\r\n&gt;a.- Flee support Date datatype without predefined operators (only definition variable). ?<br />Are you saying that you don't want the overloaded operators on the Date type?  The only ones defined are addition, subtraction, and comparison.  You don't have to use them; you can create your own custom functions that manipulate or create datetimes.<br /><br />&gt;b.- Flee support Date literals , by example: #25/12/2005# ?<br />This is tricky because how the date is interpreted depends on the current culture.  I got into trouble trying to implement a culture-sensitive decimal point so I'm wary of doing this.<br />",
+    "PostedDate": "2007-08-21T12:46:48.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

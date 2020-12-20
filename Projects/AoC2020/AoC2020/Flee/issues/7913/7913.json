@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Library",
+      "DisplayName": "Library"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n \nI want to use your parser together with XAML, by implementing a markup extension which would execute Flee expressions. The expressions are going to be specified in XAML, inside of markup extension like this:\nValue=\"{Expression '123+456'}\"\nBecause the markup expression is already enclosed in double-quotes, and single quotes are used for surrounding Flee expression, I need another character to be used as the string separator. Escaping every character doesn't seem nice in this case. \nI quickly modified the source and it seems to work if I change double-quotes to tilde ` character. \nSo XAML looks like this now:\n<TextBlock Text=\"{ex:Expression '`123` + 456'}\"/>\nIt would be nice if there was simply an option in ParserOptions that would allow to change that on-the-fly, instead of recompiling the source.\n \nThanks.\n \nDenis",
+    "LastUpdatedDate": "2017-11-27T17:47:01.513-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "Flee",
+    "ReportedDate": "2009-06-21T05:23:22.4-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Configurable string separator",
+    "Type": {
+      "Name": "Feature",
+      "Id": 1
+    },
+    "VoteCount": 2,
+    "Id": 7913
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Looks like a straightforward parser option.  I'll try to have it in the next release (couple of weeks to a month)",
+      "PostedDate": "2009-06-23T17:33:30.317-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-08-10T08:29:10.623-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:54:03.673-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2017-11-27T17:47:01.513-08:00",
+      "Id": -2147483648
+    }
+  ]
+}
