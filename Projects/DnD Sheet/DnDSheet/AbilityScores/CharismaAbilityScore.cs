@@ -20,6 +20,7 @@ namespace DnDSheet
         public static void SetModifier()
         {
             charismaModifier = (charismaValue - 10) / 2;
+
             if (charismaValue == 9 || charismaValue == 7 || charismaValue == 5 || charismaValue == 3 || charismaValue == 1)
             {
                 charismaModifier -= 1;

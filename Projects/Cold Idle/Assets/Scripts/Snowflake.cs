@@ -63,7 +63,10 @@ public class Snowflake : MonoBehaviour
 
         if (collision.gameObject.tag == "MouseRadius" && !isSelectedByCollector)
         {
-            GameManager.Instance.collectSnowflakes(GameManager.Instance.snowflakeValue, isDouble ? true : false, false, this.transform.position);
+            GameManager.Instance.collectSnowflakes(GameManager.Instance.GMData.snowflakeValue, isDouble ? true : false, false, this.transform.position);
+            AudioManager.Instance.PlaySound(AudioManager.Instance.snowflakeCollectRealSFX[Random.Range(0, AudioManager.Instance.snowflakeCollectRealSFX.Count - 1)], 0.9f, 1.1f);
+            AudioManager.Instance.PlayPopSound(AudioManager.Instance.popSFX, 0.5f, 1.5f);
+
             isBursting = true;
         }
 
@@ -73,7 +76,7 @@ public class Snowflake : MonoBehaviour
 
             float tile = ((int)(transform.position.x / 0.25f)) * 0.25f + 0.125f;
 
-            for (float y = -4.38f; y < GameManager.Instance.snowpileHeightLimit; y += 0.25f)
+            for (float y = -4.38f; y < GameManager.Instance.GMData.snowpileHeightLimit; y += 0.25f)
             {
                 if (!PileHandler.Instance.pileDict.ContainsKey(new Vector3(tile, y, 0)))
                 {
@@ -103,7 +106,7 @@ public class Snowflake : MonoBehaviour
     {
         isBeingDestroyed = true;
 
-        if(isBursting)
+        if (isBursting)
         {
             ParticleSystem burst = Instantiate(isDouble ? doubleSnowBurst : snowBurst, transform.position, Quaternion.identity, SnowflakeSpawner.Instance.gameObject.transform);
         }

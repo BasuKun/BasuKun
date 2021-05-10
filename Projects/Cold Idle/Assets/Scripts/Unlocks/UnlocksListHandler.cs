@@ -16,10 +16,7 @@ public class UnlocksListHandler : MonoBehaviour
         {
             Instance = this;
         }
-    }
 
-    void Start()
-    {
         UnlocksButtonsList = unlocksContent.GetComponentsInChildren<UnlocksButton>(true).ToList();
     }
 
@@ -27,7 +24,7 @@ public class UnlocksListHandler : MonoBehaviour
     {
         foreach (var unlock in UnlocksButtonsList)
         {
-            if (GameManager.Instance.intelligencePointsAmount >= unlock.appearCost)
+            if (GameManager.Instance.GMData.intelligencePointsAmount >= unlock.appearCost && unlock.unlockRequirement.activeSelf)
             {
                 unlock.gameObject.SetActive(true);
             }

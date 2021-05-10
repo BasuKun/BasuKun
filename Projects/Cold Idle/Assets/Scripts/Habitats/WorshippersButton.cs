@@ -16,7 +16,7 @@ public class WorshippersButton : MonoBehaviour
 
     void Update()
     {
-        if (isLeft ? GameManager.Instance.worshippersAmount > 0 : GameManager.Instance.idlePopulationAmount > 0)
+        if (isLeft ? GameManager.Instance.GMData.worshippersAmount > 0 : GameManager.Instance.GMData.idlePopulationAmount > 0)
         {
             button.interactable = true;
         }

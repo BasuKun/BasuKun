@@ -16,7 +16,7 @@ public class TransplantersButtons : MonoBehaviour
 
     void Update()
     {
-        if (isLeft ? GameManager.Instance.transplantersAmount > 0 : GameManager.Instance.idlePopulationAmount > 0)
+        if (isLeft ? GameManager.Instance.GMData.transplantersAmount > 0 : GameManager.Instance.GMData.idlePopulationAmount > 0)
         {
             button.interactable = true;
         }

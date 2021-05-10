@@ -54,54 +54,54 @@ public class Shop : MonoBehaviour
 
     public void MoreSnow(float defaultBonus, float bonusPerTier, int tier)
     {
-        GameManager.Instance.spawnSpeed += defaultBonus + (bonusPerTier * (tier - 1));
+        GameManager.Instance.GMData.spawnSpeed += defaultBonus + (bonusPerTier * (tier - 1));
     }
 
     public void BetterValue(float defaultBonus, float bonusPerTier, int tier)
     {
-        GameManager.Instance.snowflakeValue += defaultBonus + GameManager.Instance.snowflakeExtraValue + (bonusPerTier * (tier - 1));
+        GameManager.Instance.GMData.snowflakeValue += defaultBonus + GameManager.Instance.GMData.snowflakeExtraValue + (bonusPerTier * (tier - 1));
     }
 
     public void BiggerRadius(float defaultBonus, float bonusPerTier, int tier)
     {
-        GameManager.Instance.radius += defaultBonus + (bonusPerTier * (tier - 1));
+        GameManager.Instance.GMData.radius += defaultBonus + (bonusPerTier * (tier - 1));
         mouseRadius.UpdateRadius();
     }
 
     public void FasterShovel(float defaultBonus, float bonusPerTier, int tier)
     {
-        GameManager.Instance.shovelSpeed -= ((defaultBonus + (bonusPerTier * (tier - 1))) / 100f * GameManager.Instance.shovelSpeed);
+        GameManager.Instance.GMData.shovelSpeed -= ((defaultBonus + (bonusPerTier * (tier - 1))) / 100f * GameManager.Instance.GMData.shovelSpeed);
     }
 
     public void MoreHabitat(float defaultBonus, float bonusPerTier, int tier)
     {
-        GameManager.Instance.habitatsAmount += defaultBonus + (bonusPerTier * (tier - 1));
-        GameManager.Instance.idlePopulationAmount += defaultBonus + (bonusPerTier * (tier - 1));
+        GameManager.Instance.GMData.habitatsAmount += defaultBonus + GameManager.Instance.GMData.habitatsExtraAmount + ConquerRewards.Instance.data.habitatReward + (bonusPerTier * (tier - 1));
+        GameManager.Instance.GMData.idlePopulationAmount += defaultBonus + GameManager.Instance.GMData.habitatsExtraAmount + ConquerRewards.Instance.data.habitatReward + (bonusPerTier * (tier - 1));
         GameUI.Instance.populationUpdateText();
         GameUI.Instance.idlePopulationUpdateText();
     }
 
     public void HigherSnowPile(float defaultBonus, float bonusPerTier, int tier)
     {
-        GameManager.Instance.snowpileHeightLimit += defaultBonus + (bonusPerTier * (tier - 1));
+        GameManager.Instance.GMData.snowpileHeightLimit += defaultBonus + (bonusPerTier * (tier - 1));
         PileHandler.Instance.MovePileHeightLimitArrow();
     }
 
     public void MoreShinySnowflakes(float defaultBonus, float bonusPerTier, int tier)
     {
-        GameManager.Instance.doubleValueChance += (int)(defaultBonus + (bonusPerTier * (tier - 1)));
+        GameManager.Instance.GMData.doubleValueChance += (int)(defaultBonus + (bonusPerTier * (tier - 1)));
     }
 
     public void MorePowerupSlots(float defaultBonus, float bonusPerTier, int tier)
     {
-        GameManager.Instance.maxPowerups += (int)(defaultBonus + (bonusPerTier * (tier - 1)));
+        GameManager.Instance.GMData.maxPowerups += (int)(defaultBonus + (bonusPerTier * (tier - 1)));
         GameUI.Instance.CheckForMaxEquippedPowerups();
         GameUI.Instance.equippedPowerupUpdateText();
     }
 
     public void BetterAbsorbRatio(float defaultBonus, float bonusPerTier, int tier)
     {
-        GameManager.Instance.absorbedSnowflakesAmount++;
-        GameManager.Instance.obtainedIntelligenceAmount += (int)(defaultBonus + (bonusPerTier * (tier - 1)));
+        GameManager.Instance.GMData.absorbedSnowflakesAmount++;
+        GameManager.Instance.GMData.obtainedIntelligenceAmount += (int)(defaultBonus + (bonusPerTier * (tier - 1)));
     }
 }

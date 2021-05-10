@@ -33,7 +33,7 @@ public class SpendBPButton : MonoBehaviour
     {
         foreach (PowerupsButton powerup in Powerups.Instance.PowerupsButtonsList)
         {
-            if (powerup.isBought)
+            if (powerup.data.isBought)
             {
                 powerup.gameObject.GetComponentInChildren<EquipButton>(true).gameObject.SetActive(!isClicked);
                 powerup.gameObject.GetComponentInChildren<PowerupsNodes>(true).gameObject.SetActive(isClicked);
@@ -50,6 +50,7 @@ public class SpendBPButton : MonoBehaviour
     public void OnButtonPress()
     {
         isClicked = !isClicked;
+        GameUI.Instance.hasClickedBP = isClicked;
         UpdateButtonText();
         ActivateNodes();
         ActivateHeaderText();

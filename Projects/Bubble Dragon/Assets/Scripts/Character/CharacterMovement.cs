@@ -175,5 +175,6 @@ public class CharacterMovement : MonoBehaviour
         animator.SetBool("IsRunningLeft", Input.GetAxis("Horizontal") > 0 ? false : true);
         animator.SetBool("IsCharging", bubbleLaunch.isCharging);
         animator.SetInteger("ChargeDirection", mouseAngleFinder.mouseAngle);
+        animator.SetFloat("yVelocity", rig.velocity.y);
     }
 }

@@ -19,6 +19,9 @@ public class PileHandler : MonoBehaviour
     public GameObject limitLineText;
     public Dictionary<Vector3, GameObject> pileDict = new Dictionary<Vector3, GameObject>();
 
+    public AudioSource audioSource;
+    public AudioClip shovelSFX;
+
     public static PileHandler Instance;
 
     void Awake()
@@ -105,7 +108,7 @@ public class PileHandler : MonoBehaviour
 
     public void MovePileHeightLimitArrow()
     {
-        pileLimitArrow.transform.position = Camera.main.WorldToScreenPoint(new Vector2(transform.position.x + 8.75f, GameManager.Instance.snowpileHeightLimit));
+        pileLimitArrow.transform.position = Camera.main.WorldToScreenPoint(new Vector2(transform.position.x + 8.75f, GameManager.Instance.GMData.snowpileHeightLimit));
     }
 
     public void DisplayLimitLine()

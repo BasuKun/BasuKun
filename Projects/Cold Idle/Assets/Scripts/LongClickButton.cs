@@ -28,7 +28,7 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         {
             InfoPopupHandler.Instance.DespawnInfoPopup();
             pointerDownTimer += Time.deltaTime;
-            if (pointerDownTimer >= GameManager.Instance.shovelSpeed * Powerups.Instance.ShovelMaster())
+            if (pointerDownTimer >= GameManager.Instance.GMData.shovelSpeed / Powerups.Instance.ShovelMaster())
             {
                 if (onLongClick != null)
                     onLongClick.Invoke();
@@ -42,7 +42,7 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
                     Reset();
                 }
             }
-            fillImage.fillAmount = pointerDownTimer / (GameManager.Instance.shovelSpeed * Powerups.Instance.ShovelMaster());
+            fillImage.fillAmount = pointerDownTimer / (GameManager.Instance.GMData.shovelSpeed / Powerups.Instance.ShovelMaster());
         }
     }
 
@@ -50,7 +50,6 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     {
         pointerDown = false;
         pointerDownTimer = 0;
-        fillImage.fillAmount = pointerDownTimer / (GameManager.Instance.shovelSpeed * Powerups.Instance.ShovelMaster());
+        fillImage.fillAmount = pointerDownTimer / (GameManager.Instance.GMData.shovelSpeed * Powerups.Instance.ShovelMaster());
     }
-
 }

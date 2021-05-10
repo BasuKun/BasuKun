@@ -26,7 +26,7 @@ public class ShovelButton : MonoBehaviour
         }
     }
 
-    public void ShovelSnow()
+    public void ShovelSnow(bool isPlayer)
     {
         System.Random rand = new System.Random();
         int index = rand.Next(0, PileHandler.Instance.pileDict.Count);
@@ -34,11 +34,18 @@ public class ShovelButton : MonoBehaviour
             PileHandler.Instance.pileDict.ElementAt(index).Value.transform.position.x, 
             PileHandler.Instance.pileDict.ElementAt(index).Value.transform.position.y,
             PileHandler.Instance.pileDict.ElementAt(index).Value.transform.position.z);
+
+        if (isPlayer)
+        {
+            AudioManager.Instance.PlaySound(AudioManager.Instance.snowpileShovelRealSFX[Random.Range(0, AudioManager.Instance.snowpileShovelRealSFX.Count - 1)], 0.9f, 1.1f);
+            AudioManager.Instance.PlayPopSound(AudioManager.Instance.popSFX, 0.5f, 1.5f);
+        }
+
         Destroy(PileHandler.Instance.pileDict.ElementAt(index).Value);
         ParticleSystem burst = Instantiate(snowBurst, indexVector, Quaternion.identity);
 
-        GameManager.Instance.collectSnowflakes((int)(GameManager.Instance.snowflakeValue / 2), false, true, new Vector3(burst.transform.position.x, burst.transform.position.y + 0.15f, burst.transform.position.z));
-        GameManager.Instance.collectIceBlocks((int)(GameManager.Instance.snowflakeValue / 2) + 1, burst.transform.position);
+        GameManager.Instance.collectSnowflakes((int)(GameManager.Instance.GMData.snowflakeValue / 2), false, true, new Vector3(burst.transform.position.x, burst.transform.position.y + 0.15f, burst.transform.position.z));
+        GameManager.Instance.collectIceBlocks((int)(GameManager.Instance.GMData.snowflakeValue / 2) + 1, burst.transform.position);
 
         PileHandler.Instance.pileDict.Remove(indexVector);
 

@@ -26,7 +26,7 @@ public class PowerupsNodes : MonoBehaviour
     {
         for (int i = 0; i < nodesArray.Length; i++)
         {
-            nodesImageArray[i].sprite = i >= powerup.level ? availableNode : boughtNode;
+            nodesImageArray[i].sprite = i >= powerup.data.level ? availableNode : boughtNode;
         }
     }
 
@@ -36,7 +36,7 @@ public class PowerupsNodes : MonoBehaviour
         {
             nodesArray[i].interactable = false;
 
-            if (i < powerup.level)
+            if (i < powerup.data.level)
             {
                 var disabledColors = nodesArray[i].colors;
                 disabledColors.disabledColor = Color.white;
@@ -44,16 +44,16 @@ public class PowerupsNodes : MonoBehaviour
             }
         }
 
-        if (powerup.level < nodesArray.Length)
+        if (powerup.data.level < nodesArray.Length)
         {
-            nodesArray[powerup.level].interactable = GameManager.Instance.blessingPointsAmount > powerup.level ? true : false;
+            nodesArray[powerup.data.level].interactable = GameManager.Instance.GMData.blessingPointsAmount > powerup.data.level ? true : false;
         }
     }
 
     public void BuyNode()
     {
-        powerup.level++;
-        GameManager.Instance.blessingPointsAmount -= powerup.level;
+        powerup.data.level++;
+        GameManager.Instance.GMData.blessingPointsAmount -= powerup.data.level;
         GameUI.Instance.BlessingPointsUpdateText();
         AssignImages();
 

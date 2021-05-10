@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class CurrencyTypes
 {
-    public enum currencies { SF, IB, IP };
+    public enum currencies { SF, IB, IP, BP };
 }

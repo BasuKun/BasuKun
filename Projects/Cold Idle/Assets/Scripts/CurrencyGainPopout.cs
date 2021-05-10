@@ -30,10 +30,16 @@ public class CurrencyGainPopout : MonoBehaviour
         FloatUp();
     }
 
-    public void UpdateText(double value, string currency, Color color)
+    public void UpdateText(char sign, double value, string currency, Color color)
     {
         text.color = color;
-        text.text = "+" + GameUI.Instance.CurrencyLetterFormatting(value) + " " + currency;
+        text.text = sign + GameUI.Instance.CurrencyLetterFormatting(value) + " " + currency;
+    }
+
+    public void UpdateTextNoDigit(string info, Color color)
+    {
+        text.color = color;
+        text.text = info;
     }
 
     void FloatUp()

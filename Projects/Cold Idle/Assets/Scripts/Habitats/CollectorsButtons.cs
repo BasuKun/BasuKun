@@ -16,7 +16,7 @@ public class CollectorsButtons : MonoBehaviour
 
     void Update()
     {
-        if (isLeft ? GameManager.Instance.collectorsAmount > 0 : GameManager.Instance.idlePopulationAmount > 0)
+        if (isLeft ? GameManager.Instance.GMData.collectorsAmount > 0 : GameManager.Instance.GMData.idlePopulationAmount > 0)
         {
             button.interactable = true;
         }

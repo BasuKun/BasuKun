@@ -7,8 +7,15 @@ public class MouseRadius : MonoBehaviour
     private Transform sphere;
     public new CircleCollider2D collider;
 
-    void Start()
+    public static MouseRadius Instance;
+
+    void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+
         sphere = gameObject.GetComponent<Transform>();
         collider = gameObject.GetComponent<CircleCollider2D>();
     }
@@ -21,6 +28,6 @@ public class MouseRadius : MonoBehaviour
 
     public void UpdateRadius()
     {
-        collider.radius = GameManager.Instance.radius;
+        collider.radius = GameManager.Instance.GMData.radius;
     }
 }

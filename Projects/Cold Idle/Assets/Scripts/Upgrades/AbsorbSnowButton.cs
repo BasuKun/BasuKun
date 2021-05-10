@@ -16,7 +16,7 @@ public class AbsorbSnowButton : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.Instance.snowflakesAmount >= GameManager.Instance.absorbedSnowflakesAmount)
+        if (GameManager.Instance.GMData.snowflakesAmount >= GameManager.Instance.GMData.absorbedSnowflakesAmount)
         {
             button.interactable = true;
         }
@@ -28,16 +28,17 @@ public class AbsorbSnowButton : MonoBehaviour
 
     public void AbsorbSnow()
     {
-        GameManager.Instance.snowflakesAmount -= GameManager.Instance.absorbedSnowflakesAmount;
-        GameManager.Instance.absorbedSnowflakes++;
+        GameManager.Instance.GMData.snowflakesAmount -= GameManager.Instance.GMData.absorbedSnowflakesAmount;
+        GameManager.Instance.GMData.absorbedSnowflakes++;
         GameUI.Instance.snowflakesUpdateText();
 
-        if (GameManager.Instance.absorbedSnowflakes == 10)
+        if (GameManager.Instance.GMData.absorbedSnowflakes == 10)
         {
-            GameManager.Instance.absorbedSnowflakes = 0;
-            GameManager.Instance.intelligencePointsAmount += GameManager.Instance.obtainedIntelligenceAmount;
+            GameManager.Instance.GMData.absorbedSnowflakes = 0;
+            double valueToAdd = Mathf.Round(GameManager.Instance.GMData.obtainedIntelligenceAmount * ConquerRewards.Instance.data.ipReward * GameManager.Instance.GMData.tempMultiplier);
+            GameManager.Instance.GMData.intelligencePointsAmount += valueToAdd;
             GameUI.Instance.IntelligencePointsUpdateText();
-            GameManager.Instance.currencyPopout(Camera.main.ScreenToWorldPoint(button.transform.position), GameManager.Instance.obtainedIntelligenceAmount, "IP", GameUI.Instance.intelligencePointsColor);
+            GameManager.Instance.currencyPopout('+', Camera.main.ScreenToWorldPoint(button.transform.position), valueToAdd, "IP", GameUI.Instance.intelligencePointsColor);
             UnlocksListHandler.Instance.CheckForUnlocks();
         }
     }

@@ -16,7 +16,7 @@ public class ShovelersButtons : MonoBehaviour
 
     void Update()
     {
-        if (isLeft ? GameManager.Instance.shovelersAmount > 0 : GameManager.Instance.idlePopulationAmount > 0)
+        if (isLeft ? GameManager.Instance.GMData.shovelersAmount > 0 : GameManager.Instance.GMData.idlePopulationAmount > 0)
         {
             button.interactable = true;
         }

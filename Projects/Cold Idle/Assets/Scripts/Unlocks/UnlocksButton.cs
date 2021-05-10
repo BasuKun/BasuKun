@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class UnlocksButton : MonoBehaviour
 {
@@ -19,19 +20,52 @@ public class UnlocksButton : MonoBehaviour
     public TextMeshProUGUI costText;
     public Color logsColor;
 
+    public UnlData data = new UnlData();
+
     void Start()
     {
+        SetData();
         UpdateText();
         SetButtonToUninteractable();
+        SaveManager.OnSavedGame += Save;
+    }
+
+    public void SetData()
+    {
+        if (!PlayerPrefs.HasKey(name))
+        {
+            data.isUnlocked = false;
+            data.isBought = false;
+            this.gameObject.SetActive(data.isUnlocked);
+        }
+        else
+        {
+            string jData = PlayerPrefs.GetString(name);
+            data = JsonUtility.FromJson<UnlData>(jData);
+
+            if (data.isBought)
+            {
+                data.isUnlocked = false;
+                UnlocksListHandler.Instance.UnlocksButtonsList.Remove(this);
+            }       
+            this.gameObject.SetActive(data.isUnlocked);
+        }
+    }
+
+    public void Save()
+    {
+        data.isUnlocked = this.gameObject.activeSelf;
+        string jData = JsonUtility.ToJson(data);
+        PlayerPrefs.SetString(name, jData);
     }
 
     void Update()
     {
-        if (GameManager.Instance.intelligencePointsAmount >= cost && !button.interactable && unlockRequirement.activeSelf)
+        if (GameManager.Instance.GMData.intelligencePointsAmount >= cost && !button.interactable)
         {
             SetButtonToInteractable();
         }
-        else if (GameManager.Instance.intelligencePointsAmount < cost && button.interactable || !unlockRequirement.activeSelf)
+        else if (GameManager.Instance.GMData.intelligencePointsAmount < cost && button.interactable)
         {
             SetButtonToUninteractable();
         }
@@ -39,12 +73,15 @@ public class UnlocksButton : MonoBehaviour
 
     public void OnBuyButtonClick()
     {
-        GameManager.Instance.intelligencePointsAmount -= cost;
+        GameManager.Instance.GMData.intelligencePointsAmount -= Math.Round(cost * (1 - Powerups.Instance.ResourcesRecovery()));
         GameUI.Instance.IntelligencePointsUpdateText();
         Logs.Instance.AddLog(logsText, logsColor);
         Unlocks.Instance.BuyUnlock(ID, bonus);
         UnlocksListHandler.Instance.UnlocksButtonsList.Remove(this);
         this.gameObject.GetComponent<OnMouseOverHandler>().DespawnPopup();
+        UnlocksListHandler.Instance.CheckForUnlocks();
+
+        data.isBought = true;
         this.gameObject.SetActive(false);
     }
 
@@ -63,4 +100,16 @@ public class UnlocksButton : MonoBehaviour
     {
         button.interactable = true;
     }
+
+    private void OnDestroy()
+    {
+        SaveManager.OnSavedGame -= Save;
+    }
+}
+
+[Serializable]
+public struct UnlData
+{
+    public bool isUnlocked;
+    public bool isBought;
 }

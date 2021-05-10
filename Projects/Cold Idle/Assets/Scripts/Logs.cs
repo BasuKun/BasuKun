@@ -23,6 +23,7 @@ public class Logs : MonoBehaviour
 
     public void AddLog(string text, Color color)
     {
+        AudioManager.Instance.PlayNoPitchSound(AudioManager.Instance.logsWriteSFX);
         GameObject prefab = Instantiate(logsPrefabTwo, scrollView.transform);
         TextMeshProUGUI prefabText = prefab.gameObject.GetComponentInChildren<TextMeshProUGUI>();
         prefabText.text = text;
