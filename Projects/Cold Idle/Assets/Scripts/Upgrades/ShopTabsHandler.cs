@@ -75,6 +75,7 @@ public class ShopTabsHandler : MonoBehaviour
                 break;
             case "unlocks":
                 UnlocksMenu.SetActive(true);
+                UnlocksListHandler.Instance.CheckForUnlocks();
                 UnlocksTabButton.interactable = false;
                 UnlocksTabText.color = Color.white;
                 break;

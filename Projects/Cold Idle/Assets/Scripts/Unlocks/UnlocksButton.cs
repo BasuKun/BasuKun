@@ -22,7 +22,7 @@ public class UnlocksButton : MonoBehaviour
 
     public UnlData data = new UnlData();
 
-    void Start()
+    void Awake()
     {
         SetData();
         UpdateText();

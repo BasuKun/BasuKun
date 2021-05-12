@@ -25,11 +25,11 @@ public class PowerupsButton : MonoBehaviour
     public TextMeshProUGUI equipButtonText;
     public PowerupsNodes powerupsNodes;
 
-    void Start()
+    void Awake()
     {
         SetData();
         AddToPowerupsLists();
-        UpdateText();     
+        UpdateText();
         button.interactable = false;
         SaveManager.OnSavedGame += Save;
     }

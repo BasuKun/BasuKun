@@ -26,6 +26,11 @@ public class UnlocksListHandler : MonoBehaviour
         {
             if (GameManager.Instance.GMData.intelligencePointsAmount >= unlock.appearCost && unlock.unlockRequirement.activeSelf)
             {
+                unlock.data.isUnlocked = true;
+            }
+
+            if (unlock.data.isUnlocked)
+            {
                 unlock.gameObject.SetActive(true);
             }
         }
