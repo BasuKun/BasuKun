@@ -52,6 +52,7 @@ public class EraseSaveButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
     public void DeleteSaveFile()
     {
+        this.gameObject.GetComponent<OnMouseOverHandler>().DespawnPopup();
         PlayerPrefs.DeleteAll();
         SceneManager.LoadScene(0);
     }

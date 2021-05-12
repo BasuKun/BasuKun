@@ -75,7 +75,7 @@ public class UnlocksButton : MonoBehaviour
     {
         GameManager.Instance.GMData.intelligencePointsAmount -= Math.Round(cost * (1 - Powerups.Instance.ResourcesRecovery()));
         GameUI.Instance.IntelligencePointsUpdateText();
-        Logs.Instance.AddLog(logsText, logsColor);
+        Logs.Instance.AddLog(logsText, logsColor, true);
         Unlocks.Instance.BuyUnlock(ID, bonus);
         UnlocksListHandler.Instance.UnlocksButtonsList.Remove(this);
         this.gameObject.GetComponent<OnMouseOverHandler>().DespawnPopup();

@@ -138,7 +138,7 @@ public class UpgradesButton : MonoBehaviour
         Shop.Instance.BuyUpgrade(name, defaultBonus, bonusPerTier, data.tier);
         GetComponent<OnMouseOverHandler>().RefreshText();
 
-        if (data.level == 2) Logs.Instance.AddLog(logsText, logsColor);
+        if (data.level == 2) Logs.Instance.AddLog(logsText, logsColor, true);
     }
 
     private bool CheckIfMaxLevel()

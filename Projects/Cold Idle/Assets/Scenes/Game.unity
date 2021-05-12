@@ -3120,9 +3120,9 @@ RectTransform:
   m_Father: {fileID: 1931308578}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 110.46, y: -19.755001}
   m_SizeDelta: {x: 200.92, y: 19.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &142015349
@@ -4695,9 +4695,9 @@ RectTransform:
   m_Father: {fileID: 1931308578}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 110.46, y: -170.1}
   m_SizeDelta: {x: 200.92, y: 28.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &222086637
@@ -4717,6 +4717,7 @@ MonoBehaviour:
   isUnlock: 0
   isPowerupButton: 0
   isHabitat: 1
+  isTemperature: 0
   isSimpleText: 0
   isBeingChecked: 0
 --- !u!1 &223829559
@@ -6679,6 +6680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7c2911a7efa76e4eb447976ad1fddd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLoadedGame: 0
   snowflakeSpawner: {fileID: 271455696}
   currencyGainPopout: {fileID: 1013759747657651302, guid: a609f85dc6f48714a9b0539e0edadfae,
     type: 3}
@@ -10124,6 +10126,7 @@ MonoBehaviour:
   isUnlock: 0
   isPowerupButton: 0
   isHabitat: 0
+  isTemperature: 0
   isSimpleText: 1
   isBeingChecked: 0
 --- !u!1 &477920749
@@ -10602,13 +10605,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e9503fe4ca61543aece143ec910ab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: Provides a multiplicative bonus to SFs and IBs gains based on how low
-    the temperature is.
+  description: "Provides a multiplicative bonus to SFs, IBs and IPs gains, \nbased
+    on how low the temperature is."
   isUpgradeButton: 0
   isUnlock: 0
   isPowerupButton: 0
   isHabitat: 0
-  isSimpleText: 1
+  isTemperature: 1
+  isSimpleText: 0
   isBeingChecked: 0
 --- !u!1 &497910319
 GameObject:
@@ -11427,6 +11431,7 @@ MonoBehaviour:
   isUnlock: 0
   isPowerupButton: 0
   isHabitat: 0
+  isTemperature: 0
   isSimpleText: 1
   isBeingChecked: 0
 --- !u!1 &504348930
@@ -11802,6 +11807,7 @@ MonoBehaviour:
   isUnlock: 0
   isPowerupButton: 0
   isHabitat: 0
+  isTemperature: 0
   isSimpleText: 1
   isBeingChecked: 0
 --- !u!1001 &535043280
@@ -13776,9 +13782,9 @@ RectTransform:
   m_Father: {fileID: 1931308578}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 110.46, y: -43.265003}
   m_SizeDelta: {x: 200.92, y: 19.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &579119897
@@ -14474,9 +14480,9 @@ RectTransform:
   m_Father: {fileID: 1931308578}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 110.46, y: -104.340004}
   m_SizeDelta: {x: 200.92, y: 28.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &625360486
@@ -14496,6 +14502,7 @@ MonoBehaviour:
   isUnlock: 0
   isPowerupButton: 0
   isHabitat: 1
+  isTemperature: 0
   isSimpleText: 0
   isBeingChecked: 0
 --- !u!1001 &636970155
@@ -15097,6 +15104,7 @@ MonoBehaviour:
   isUnlock: 0
   isPowerupButton: 0
   isHabitat: 0
+  isTemperature: 0
   isSimpleText: 1
   isBeingChecked: 0
 --- !u!1 &650947579
@@ -17609,6 +17617,7 @@ MonoBehaviour:
   isUnlock: 0
   isPowerupButton: 0
   isHabitat: 0
+  isTemperature: 0
   isSimpleText: 1
   isBeingChecked: 0
 --- !u!1 &792365574
@@ -21684,9 +21693,9 @@ RectTransform:
   m_Father: {fileID: 1931308578}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 110.46, y: -202.98001}
   m_SizeDelta: {x: 200.92, y: 28.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &915920118
@@ -21707,6 +21716,7 @@ MonoBehaviour:
   isUnlock: 0
   isPowerupButton: 0
   isHabitat: 1
+  isTemperature: 0
   isSimpleText: 0
   isBeingChecked: 0
 --- !u!1 &919887207
@@ -23204,6 +23214,7 @@ MonoBehaviour:
   isUnlock: 0
   isPowerupButton: 0
   isHabitat: 0
+  isTemperature: 0
   isSimpleText: 1
   isBeingChecked: 0
 --- !u!1 &1025713953
@@ -24761,6 +24772,7 @@ MonoBehaviour:
   isUnlock: 0
   isPowerupButton: 0
   isHabitat: 0
+  isTemperature: 0
   isSimpleText: 1
   isBeingChecked: 0
 --- !u!1 &1109751083
@@ -24942,6 +24954,7 @@ MonoBehaviour:
   isUnlock: 0
   isPowerupButton: 0
   isHabitat: 0
+  isTemperature: 0
   isSimpleText: 1
   isBeingChecked: 0
 --- !u!1001 &1121225144
@@ -27171,6 +27184,7 @@ MonoBehaviour:
   isUnlock: 0
   isPowerupButton: 0
   isHabitat: 0
+  isTemperature: 0
   isSimpleText: 1
   isBeingChecked: 0
 --- !u!114 &1275683486
@@ -29360,7 +29374,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 338, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1319144934
 MonoBehaviour:
@@ -29918,6 +29932,7 @@ MonoBehaviour:
   isUnlock: 0
   isPowerupButton: 0
   isHabitat: 0
+  isTemperature: 0
   isSimpleText: 1
   isBeingChecked: 0
 --- !u!114 &1340449521
@@ -32652,9 +32667,9 @@ RectTransform:
   m_Father: {fileID: 1931308578}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 110.46, y: -137.22}
   m_SizeDelta: {x: 200.92, y: 28.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1452390229
@@ -32674,6 +32689,7 @@ MonoBehaviour:
   isUnlock: 0
   isPowerupButton: 0
   isHabitat: 1
+  isTemperature: 0
   isSimpleText: 0
   isBeingChecked: 0
 --- !u!1 &1458032641
@@ -34630,6 +34646,7 @@ MonoBehaviour:
   isUnlock: 0
   isPowerupButton: 0
   isHabitat: 0
+  isTemperature: 0
   isSimpleText: 1
   isBeingChecked: 0
 --- !u!114 &1536921323
@@ -35219,6 +35236,7 @@ MonoBehaviour:
   isUnlock: 0
   isPowerupButton: 0
   isHabitat: 0
+  isTemperature: 0
   isSimpleText: 1
   isBeingChecked: 0
 --- !u!1 &1610744648
@@ -37032,6 +37050,7 @@ MonoBehaviour:
   isUnlock: 0
   isPowerupButton: 0
   isHabitat: 0
+  isTemperature: 0
   isSimpleText: 1
   isBeingChecked: 0
 --- !u!1 &1658440725
@@ -37409,6 +37428,7 @@ MonoBehaviour:
   isUnlock: 0
   isPowerupButton: 0
   isHabitat: 0
+  isTemperature: 0
   isSimpleText: 1
   isBeingChecked: 0
 --- !u!1 &1672692343
@@ -39016,6 +39036,7 @@ MonoBehaviour:
   isUnlock: 0
   isPowerupButton: 0
   isHabitat: 0
+  isTemperature: 0
   isSimpleText: 1
   isBeingChecked: 0
 --- !u!1 &1741063468
@@ -40741,6 +40762,7 @@ MonoBehaviour:
   isUnlock: 0
   isPowerupButton: 0
   isHabitat: 0
+  isTemperature: 0
   isSimpleText: 1
   isBeingChecked: 0
 --- !u!224 &1831556120 stripped
@@ -42769,9 +42791,9 @@ RectTransform:
   m_Father: {fileID: 1931308578}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 110.46, y: -71.46001}
   m_SizeDelta: {x: 200.92, y: 28.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1888114770
@@ -42791,6 +42813,7 @@ MonoBehaviour:
   isUnlock: 0
   isPowerupButton: 0
   isHabitat: 1
+  isTemperature: 0
   isSimpleText: 0
   isBeingChecked: 0
 --- !u!1 &1896388489
@@ -45297,6 +45320,7 @@ MonoBehaviour:
   isUnlock: 0
   isPowerupButton: 0
   isHabitat: 0
+  isTemperature: 0
   isSimpleText: 1
   isBeingChecked: 0
 --- !u!1001 &2022179847
@@ -46948,6 +46972,7 @@ MonoBehaviour:
   isUnlock: 0
   isPowerupButton: 0
   isHabitat: 0
+  isTemperature: 0
   isSimpleText: 1
   isBeingChecked: 0
 --- !u!1001 &658327432900303930

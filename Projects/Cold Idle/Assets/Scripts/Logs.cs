@@ -21,9 +21,10 @@ public class Logs : MonoBehaviour
         }
     }
 
-    public void AddLog(string text, Color color)
+    public void AddLog(string text, Color color, bool isGameplayLog)
     {
-        AudioManager.Instance.PlayNoPitchSound(AudioManager.Instance.logsWriteSFX);
+        if (isGameplayLog) AudioManager.Instance.PlayNoPitchSound(AudioManager.Instance.logsWriteSFX);
+
         GameObject prefab = Instantiate(logsPrefabTwo, scrollView.transform);
         TextMeshProUGUI prefabText = prefab.gameObject.GetComponentInChildren<TextMeshProUGUI>();
         prefabText.text = text;
@@ -31,9 +32,12 @@ public class Logs : MonoBehaviour
         logsList.Add(prefab);
         CheckForMaxLogs();
 
-        if (!Unlocks.Instance.hasLogsHighlight && !Unlocks.Instance.logsContainer.isOpened)
+        if (isGameplayLog)
         {
-            Unlocks.Instance.SpawnHighlight(Unlocks.Instance.logsTabX, false, false, false, false, true);
+            if (!Unlocks.Instance.hasLogsHighlight && !Unlocks.Instance.logsContainer.isOpened)
+            {
+                Unlocks.Instance.SpawnHighlight(Unlocks.Instance.logsTabX, false, false, false, false, true);
+            }
         }
     }
 

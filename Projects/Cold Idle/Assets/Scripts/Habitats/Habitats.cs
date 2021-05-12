@@ -44,6 +44,8 @@ public class Habitats : MonoBehaviour
     {
         newPowerupCooldown = GameManager.Instance.GMData.newPowerupUnlockChance / 4;
         newPowerupMaxChance = GameManager.Instance.GMData.newPowerupUnlockChance;
+
+        if (GameManager.Instance.GMData.tempMultiplier > 1f) GameUI.Instance.temperatureUpdateText();
     }
 
     void Update()
@@ -237,7 +239,7 @@ public class Habitats : MonoBehaviour
                     powerup.GetComponent<PowerupsButton>().data.isUnlocked = true;
                     GameUI.Instance.CheckForMaxEquippedPowerups();
                     Logs.Instance.AddLog(powerup.GetComponent<PowerupsButton>().logsText,
-                        powerup.GetComponent<PowerupsButton>().logsColor);
+                        powerup.GetComponent<PowerupsButton>().logsColor, true);
 
                     Unlocks.Instance.SpawnHighlight(powerup, false, false, false, false, false);
 

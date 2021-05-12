@@ -352,7 +352,7 @@ public class Unlocks : MonoBehaviour
         iceBlocksAmount.SetActive(true);
         data.hasIceBlocks = true;
         GameUI.OnIBObtained -= IceBlockAmountUnlock;
-        Logs.Instance.AddLog("Seems like snow freezes when piling up on the ground. Shovelling piles returns around half their value in Snowflakes as well as half their value in Ice Blocks.", Color.white);
+        Logs.Instance.AddLog("Seems like snow freezes when piling up on the ground. Shovelling piles returns around half their value in Snowflakes as well as half their value in Ice Blocks.", Color.white, true);
     }
 
     public void IntelligencePointsAmountUnlock()
@@ -369,7 +369,7 @@ public class Unlocks : MonoBehaviour
                 SpawnHighlight(shopTabX, false, true, false, false, false);
             }
             SpawnHighlight(unlocksTab, false, false, false, false, false);
-            Logs.Instance.AddLog("Your body has absorbed your collected snowflakes like it was a natural thing for you. Doing so has shaken up your lost memories a bit, granting you Intelligence Points.", Color.white);
+            Logs.Instance.AddLog("Your body has absorbed your collected snowflakes like it was a natural thing for you. Doing so has shaken up your lost memories a bit, granting you Intelligence Points.", Color.white, true);
         }
 
         GameUI.OnIPObtained -= IntelligencePointsAmountUnlock;

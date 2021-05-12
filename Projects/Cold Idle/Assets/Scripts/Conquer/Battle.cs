@@ -194,24 +194,24 @@ public class Battle : MonoBehaviour
         switch (Player.Instance.data.wonContinents)
         {
             case 1:
-                Logs.Instance.AddLog("As you seize your first continent, you realize humans had more firepower than expected. But no matter, the cold will conquer it all.", Color.white);
+                Logs.Instance.AddLog("As you seize your first continent, you realize humans had more firepower than expected. But no matter, the cold will conquer it all.", Color.white, true);
                 break;
             case 2:
                 Logs.Instance.AddLog("Now that you have vanquished your second continent, the penguins and polar bears will have more space to live. \n" +
-                    "They are the superior species for they thrive in the cold.", Color.white);
+                    "They are the superior species for they thrive in the cold.", Color.white, true);
                 break;
             case 3:
-                Logs.Instance.AddLog("You have blessed half of this world with the gift of winter. This knowledge motivates you further.", Color.white);
+                Logs.Instance.AddLog("You have blessed half of this world with the gift of winter. This knowledge motivates you further.", Color.white, true);
                 break;
             case 4:
-                Logs.Instance.AddLog("Having conquered your fourth continent, you gaze upon the tall mountain peaks which are snowy once more.", Color.white);
+                Logs.Instance.AddLog("Having conquered your fourth continent, you gaze upon the tall mountain peaks which are snowy once more.", Color.white, true);
                 break;
             case 5:
-                Logs.Instance.AddLog("Oh, how breathtaking this world will look once every land will be in your frozen embrace, you wonder. Almost there!", Color.white);
+                Logs.Instance.AddLog("Oh, how breathtaking this world will look once every land will be in your frozen embrace, you wonder. Almost there!", Color.white, true);
                 break;
             case 6:
                 Logs.Instance.AddLog("At last, the missing piece has been put into place. The entire planet has now been put into a neverending, freezing winter. How peaceful. How beautiful. \n" +
-                    "But your job doesn't end there. The humans were conducting research on parallel universes. Intrigued, you decide to give this a go. If there are more universes out there begging to be conquered, who are you to say no?", Color.white);
+                    "But your job doesn't end there. The humans were conducting research on parallel universes. Intrigued, you decide to give this a go. If there are more universes out there begging to be conquered, who are you to say no?", Color.white, true);
                 break;
             case 7:
                 break;

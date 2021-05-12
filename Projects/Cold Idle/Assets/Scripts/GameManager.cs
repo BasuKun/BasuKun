@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public bool isLoadedGame = false;
     public SnowflakeSpawner snowflakeSpawner;
     public GameObject currencyGainPopout;
     public Canvas popoutsCanvas;
@@ -23,7 +24,15 @@ public class GameManager : MonoBehaviour
 
     public void SetData()
     {
-        if (!PlayerPrefs.HasKey("GameManager"))
+        if (PlayerPrefs.HasKey("GameManager"))
+        {
+            string data = PlayerPrefs.GetString("GameManager");
+            GMData = JsonUtility.FromJson<Data>(data);
+            MouseRadius.Instance.UpdateRadius();
+
+            isLoadedGame = true;
+        }
+        else
         {
             GMData.spawnSpeed = 3f;
             GMData.snowflakeValue = 1;
@@ -55,15 +64,18 @@ public class GameManager : MonoBehaviour
             GMData.maxPowerups = 1;
             GMData.equippedPowerups = 0;
             GMData.initialSpawnInterval = 8.5f;
+            MouseRadius.Instance.UpdateRadius();
 
             string data = JsonUtility.ToJson(GMData);
             PlayerPrefs.SetString("GameManager", data);
         }
-        else
+    }
+
+    void Start()
+    {
+        if (isLoadedGame)
         {
-            string data = PlayerPrefs.GetString("GameManager");
-            GMData = JsonUtility.FromJson<Data>(data);
-            MouseRadius.Instance.UpdateRadius();
+            Logs.Instance.AddLog("Game loaded!", Color.grey, false);
         }
     }
 

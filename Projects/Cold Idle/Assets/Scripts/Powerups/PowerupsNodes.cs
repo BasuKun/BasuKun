@@ -16,7 +16,7 @@ public class PowerupsNodes : MonoBehaviour
 
     void Start()
     {
-        Habitats.OnBPObtained += CheckForAvailability;
+        GameUI.OnBPObtained += CheckForAvailability;
         OnBPSpent += CheckForAvailability;
         AssignImages();
         CheckForAvailability();
@@ -62,5 +62,11 @@ public class PowerupsNodes : MonoBehaviour
             OnBPSpent();
         }
         powerup.gameObject.GetComponent<OnMouseOverHandler>().RefreshText();
+    }
+
+    private void OnDestroy()
+    {
+        GameUI.OnBPObtained -= CheckForAvailability;
+        OnBPSpent -= CheckForAvailability;
     }
 }

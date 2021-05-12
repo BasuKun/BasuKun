@@ -30,4 +30,9 @@ public class MouseRadius : MonoBehaviour
     {
         collider.radius = GameManager.Instance.GMData.radius;
     }
+
+    void OnApplicationFocus(bool hasFocus)
+    {
+        collider.enabled = hasFocus;
+    }
 }

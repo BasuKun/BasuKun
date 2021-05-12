@@ -13,6 +13,7 @@ public class OnMouseOverHandler : MonoBehaviour, IPointerEnterHandler, IPointerE
     public bool isUnlock;
     public bool isPowerupButton;
     public bool isHabitat;
+    public bool isTemperature;
     public bool isSimpleText;
     public bool isBeingChecked;
 
@@ -23,26 +24,12 @@ public class OnMouseOverHandler : MonoBehaviour, IPointerEnterHandler, IPointerE
 
     public void UpdateText()
     {
-        if (isUpgradeButton)
-        {
-            textToSend = UpgradeText();
-        }
-        if (isPowerupButton)
-        {
-            textToSend = PowerupText();
-        }
-        if (isHabitat)
-        {
-            textToSend = HabitatText();
-        }
-        if (isSimpleText)
-        {
-            textToSend = description;
-        }
-        if (isUnlock)
-        {
-            textToSend = description;
-        }
+        if (isUpgradeButton) textToSend = UpgradeText();
+        if (isPowerupButton) textToSend = PowerupText();
+        if (isHabitat) textToSend = HabitatText();
+        if (isTemperature) textToSend = TempText();
+        if (isSimpleText) textToSend = description;
+        if (isUnlock) textToSend = description;
     }
 
     string UpgradeText()
@@ -147,6 +134,7 @@ public class OnMouseOverHandler : MonoBehaviour, IPointerEnterHandler, IPointerE
         string text;
         double currentBonus = 0;
         double nextBonus = 0;
+        bool isFateConqueror = false;
 
         switch (powerupsButton.name)
         {
@@ -179,6 +167,7 @@ public class OnMouseOverHandler : MonoBehaviour, IPointerEnterHandler, IPointerE
                 nextBonus = Mathf.Round((powerupsButton.bonus + powerupsButton.bonusPerLevel * (powerupsButton.data.level + 1)) * 1000.00f) / 1000.00f + 1;
                 break;
             case "Fate Conqueror":
+                isFateConqueror = true;
                 currentBonus = Mathf.Round((powerupsButton.bonus + powerupsButton.bonusPerLevel * powerupsButton.data.level) * 1000.00000f) / 1000.00000f;
                 nextBonus = Mathf.Round((powerupsButton.bonus + powerupsButton.bonusPerLevel * (powerupsButton.data.level + 1)) * 1000.00000f) / 1000.00000f;
                 break;
@@ -192,17 +181,35 @@ public class OnMouseOverHandler : MonoBehaviour, IPointerEnterHandler, IPointerE
 
         if (powerupsButton.data.level < 5)
         {
-            text = description + "\n" +
-                "Current: " + currentBonus.ToString() + "" + powerupsButton.infoPopupSuffix + "\n" +
-                "Next: " + nextBonus.ToString() + "" + powerupsButton.infoPopupSuffix;
+            if (!isFateConqueror)
+            {
+                text = description + "\n" +
+                    "Current: " + currentBonus.ToString() + "" + powerupsButton.infoPopupSuffix + "\n" +
+                    "Next: " + nextBonus.ToString() + "" + powerupsButton.infoPopupSuffix;
+            }
+            else
+            {
+                text = description + "\n" +
+                    "Current: way too small to display, trust me" + "\n" +
+                    "Next: still way too small, but better";
+            }
 
             return text;
         }
         else
         {
-            text = description + "\n" +
-                "Current: " + currentBonus.ToString() + "" + powerupsButton.infoPopupSuffix + "\n" +
-                "MAX LEVEL";
+            if (!isFateConqueror)
+            {
+                text = description + "\n" +
+                    "Current: " + currentBonus.ToString() + "" + powerupsButton.infoPopupSuffix + "\n" +
+                    "MAX LEVEL";
+            }
+            else
+            {
+                text = description + "\n" +
+                    "Current: way too small to display, trust me" + "\n" +
+                    "MAX LEVEL";
+            }
 
             return text;
         }        
@@ -256,6 +263,14 @@ public class OnMouseOverHandler : MonoBehaviour, IPointerEnterHandler, IPointerE
             text = description + "\n" +
                 prefix + currentBonus.ToString() + suffix;
         }
+
+        return text;
+    }
+
+    string TempText()
+    {
+        string text = description + "\n" +
+            "Currently: x" + GameManager.Instance.GMData.tempMultiplier.ToString("F2");
 
         return text;
     }

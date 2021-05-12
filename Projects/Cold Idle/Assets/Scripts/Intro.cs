@@ -21,7 +21,7 @@ public class Intro : MonoBehaviour
         if (GameManager.Instance.GMData.snowflakesAmount > 0 && !data.hasCollectedFirstSnowflake)
         {
             Unlocks.Instance.currenciesContainer.gameObject.SetActive(true);
-            Logs.Instance.AddLog("Seems you can collect those snowflakes. You wonder what use could it have.", Color.white);
+            Logs.Instance.AddLog("Seems you can collect those snowflakes. You wonder what use could it have.", Color.white, true);
 
             data.hasCollectedFirstSnowflake = true;
         }
@@ -33,7 +33,7 @@ public class Intro : MonoBehaviour
             Unlocks.Instance.LogsTab.gameObject.SetActive(true);
             Unlocks.Instance.SettingsTab.gameObject.SetActive(true);
 
-            Logs.Instance.AddLog("You can definitely power yourself up in some various ways using those Snowflakes. Maybe this will help you get back your memories in the process?", Color.white);
+            Logs.Instance.AddLog("You can definitely power yourself up in some various ways using those Snowflakes. Maybe this will help you get back your memories in the process?", Color.white, true);
 
             data.hasWatchedIntro = true;
             Save();
@@ -104,15 +104,15 @@ public class Intro : MonoBehaviour
     {
         Unlocks.Instance.logsContainer.gameObject.SetActive(true);
 
-        Logs.Instance.AddLog("... You wake up in a cold, empty valley.", Color.white);
+        Logs.Instance.AddLog("... You wake up in a cold, empty valley.", Color.white, true);
         yield return new WaitForSeconds(4f);
-        Logs.Instance.AddLog("Twinkling stars high in the sky are shining upon the snowy ground and mountains around you. You find the scenery beautiful.", Color.white);
+        Logs.Instance.AddLog("Twinkling stars high in the sky are shining upon the snowy ground and mountains around you. You find the scenery beautiful.", Color.white, true);
         yield return new WaitForSeconds(6f);
-        Logs.Instance.AddLog("Why were you sleeping there, you wonder. You try to think but cannot remember anything prior to waking up.", Color.white);
+        Logs.Instance.AddLog("Why were you sleeping there, you wonder. You try to think but cannot remember anything prior to waking up.", Color.white, true);
         yield return new WaitForSeconds(4f);
         Unlocks.Instance.snowflakeSpawner.SetActive(true);
         yield return new WaitForSeconds(4f);
-        Logs.Instance.AddLog("Oh? It's snowing.", Color.white);
+        Logs.Instance.AddLog("Oh? It's snowing.", Color.white, true);
         yield return new WaitForSeconds(1.5f);
 
         Unlocks.Instance.logsTabX.gameObject.SetActive(true);
