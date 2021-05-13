@@ -65,6 +65,7 @@ public class LongClickInstantButton : MonoBehaviour, IPointerDownHandler, IPoint
                     fillImage.fillAmount = (float)GameManager.Instance.GMData.absorbedSnowflakes / 10f;
                     timeNeeded = Mathf.Clamp(timeNeeded / (acceleration + Powerups.Instance.AbsorbantBody()), maxAcceleration - (Powerups.Instance.AbsorbantBody() / 10f), 0.5f);
                 }
+
                 if (GameManager.Instance.GMData.snowflakesAmount >= GameManager.Instance.GMData.absorbedSnowflakesAmount)
                 {
                     pointerDownTimer = 0;

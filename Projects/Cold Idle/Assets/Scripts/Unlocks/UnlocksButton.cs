@@ -80,6 +80,7 @@ public class UnlocksButton : MonoBehaviour
         UnlocksListHandler.Instance.UnlocksButtonsList.Remove(this);
         this.gameObject.GetComponent<OnMouseOverHandler>().DespawnPopup();
         UnlocksListHandler.Instance.CheckForUnlocks();
+        GameUI.Instance.unlocksRemainingUpdateText();
 
         data.isBought = true;
         this.gameObject.SetActive(false);

@@ -246,7 +246,7 @@ public class OnMouseOverHandler : MonoBehaviour, IPointerEnterHandler, IPointerE
             case "Cryogenics":
                 prefix = "Current speed: -";
                 suffix = "°C / s";
-                currentBonus = Mathf.Round((float)(GameManager.Instance.GMData.cryogenicsAmount / 1000f / (GameManager.Instance.GMData.tempMultiplier * 2)) * 1000.000f) / 1000.000f;
+                currentBonus = Mathf.Round((float)(GameManager.Instance.GMData.cryogenicsAmount / 1000f / (GameManager.Instance.GMData.tempMultiplier * (3 + (GameManager.Instance.GMData.tempMultiplier / 3)))) * 1000.0000f) / 1000.0000f;
                 populationAmount = GameManager.Instance.GMData.cryogenicsAmount;
                 break;
             default:

@@ -143,6 +143,12 @@ public class UpgradesButton : MonoBehaviour
 
     private bool CheckIfMaxLevel()
     {
+        if (name == "More Blessings Slots" && data.level == 9)
+        {
+            ReachNewTierUnlock();
+            return true;
+        }
+
         if (data.level == GameManager.Instance.GMData.maxTierAllowed * levelsPerTier)
         {
             ReachNewTierUnlock();

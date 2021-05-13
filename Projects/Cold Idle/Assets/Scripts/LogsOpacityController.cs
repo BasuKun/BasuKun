@@ -7,7 +7,10 @@ using TMPro;
 public class LogsOpacityController : MonoBehaviour
 {
     private Image image;
+    public Image newTag;
     private TextMeshProUGUI text;
+    public bool hasFadedIn = false;
+    public bool hasFadedBackOut = false;
 
     void Start()
     {
@@ -17,12 +20,29 @@ public class LogsOpacityController : MonoBehaviour
         StartCoroutine("TextFadeIn");
     }
 
+    void Update()
+    {
+        if (!hasFadedBackOut)
+        {
+            if (hasFadedIn && Unlocks.Instance.logsContainer.isOpened)
+            {
+                StartCoroutine("PanelFadeOut");
+                StartCoroutine("NewTagFadeOut");
+            }
+        }
+    }
+
     private void GetPanelColor()
     {
         image = GetComponent<Image>();
         Color color = image.color;
         color.a = 0f;
         image.color = color;
+
+        Color newTagColor = newTag.color;
+        newTagColor.a = 0f;
+        newTag.color = newTagColor;
+
     }
 
     private void GetTextColor()
@@ -35,13 +55,21 @@ public class LogsOpacityController : MonoBehaviour
 
     IEnumerator PanelFadeIn()
     {
-        for (float i = 0f; i < 0.235f; i += 0.02f)
+        for (float i = 0f; i < 0.435f; i += 0.02f)
         {
             Color color = image.color;
             color.a = i;
             image.color = color;
+
+            Color newTagColor = newTag.color;
+            newTagColor.a = i * 2;
+            newTag.color = newTagColor;
+
             yield return new WaitForSeconds(0.05f);
         }
+
+        hasFadedIn = true;
+        yield return null;
     }
 
     IEnumerator TextFadeIn()
@@ -53,5 +81,39 @@ public class LogsOpacityController : MonoBehaviour
             text.color = color;
             yield return new WaitForSeconds(0.05f);
         }
+        yield return null;
+    }
+
+    IEnumerator NewTagFadeOut()
+    {
+        hasFadedBackOut = true;
+        yield return new WaitForSeconds(4f);
+
+        for (float i = 0.870f; i >= -0.04f; i -= 0.04f)
+        {
+            Color newTagColor = newTag.color;
+            newTagColor.a = i;
+            newTag.color = newTagColor;
+
+            yield return new WaitForSeconds(0.05f);
+        }
+
+        yield return null;
+    }
+
+    IEnumerator PanelFadeOut()
+    {
+        yield return new WaitForSeconds(4f);
+
+        for (float i = 0.435f; i > 0.235f; i -= 0.01f)
+        {
+            Color color = image.color;
+            color.a = i;
+            image.color = color;
+
+            yield return new WaitForSeconds(0.05f);
+        }
+
+        yield return null;
     }
 }

@@ -370,6 +370,7 @@ public class Unlocks : MonoBehaviour
             }
             SpawnHighlight(unlocksTab, false, false, false, false, false);
             Logs.Instance.AddLog("Your body has absorbed your collected snowflakes like it was a natural thing for you. Doing so has shaken up your lost memories a bit, granting you Intelligence Points.", Color.white, true);
+            Logs.Instance.AddLog("(If your Unlocks list is empty, simply collect more IPs. Unlocks appear when having gathered 50% of their cost.)", Color.grey, false);
         }
 
         GameUI.OnIPObtained -= IntelligencePointsAmountUnlock;

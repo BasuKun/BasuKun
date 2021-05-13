@@ -29,6 +29,7 @@ public class Logs : MonoBehaviour
         TextMeshProUGUI prefabText = prefab.gameObject.GetComponentInChildren<TextMeshProUGUI>();
         prefabText.text = text;
         prefabText.color = color;
+
         logsList.Add(prefab);
         CheckForMaxLogs();
 

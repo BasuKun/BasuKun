@@ -212,6 +212,7 @@ public class Battle : MonoBehaviour
             case 6:
                 Logs.Instance.AddLog("At last, the missing piece has been put into place. The entire planet has now been put into a neverending, freezing winter. How peaceful. How beautiful. \n" +
                     "But your job doesn't end there. The humans were conducting research on parallel universes. Intrigued, you decide to give this a go. If there are more universes out there begging to be conquered, who are you to say no?", Color.white, true);
+                Logs.Instance.AddLog("(You have reached the post-game loop. Congratulations on beating the game!)", Color.grey, false);
                 break;
             case 7:
                 break;

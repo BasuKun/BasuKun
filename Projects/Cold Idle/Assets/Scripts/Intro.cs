@@ -34,6 +34,7 @@ public class Intro : MonoBehaviour
             Unlocks.Instance.SettingsTab.gameObject.SetActive(true);
 
             Logs.Instance.AddLog("You can definitely power yourself up in some various ways using those Snowflakes. Maybe this will help you get back your memories in the process?", Color.white, true);
+            Logs.Instance.AddLog("(Hover on buttons for tooltips. This can be useful to learn more about the mechanics and whatnots.)", Color.grey, false);
 
             data.hasWatchedIntro = true;
             Save();
@@ -113,6 +114,7 @@ public class Intro : MonoBehaviour
         Unlocks.Instance.snowflakeSpawner.SetActive(true);
         yield return new WaitForSeconds(4f);
         Logs.Instance.AddLog("Oh? It's snowing.", Color.white, true);
+        Logs.Instance.AddLog("(Collect snowflakes by hovering your cursor over it.)", Color.grey, false);
         yield return new WaitForSeconds(1.5f);
 
         Unlocks.Instance.logsTabX.gameObject.SetActive(true);

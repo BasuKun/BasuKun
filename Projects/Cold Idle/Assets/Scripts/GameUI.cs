@@ -26,6 +26,7 @@ public class GameUI : MonoBehaviour
 
     [Header("OTHERS")]
     public TextMeshProUGUI temperatureText;
+    public TextMeshProUGUI unlocksRemainingText;
     public bool hasClickedBP = false;
 
     [Header("COLORS")]
@@ -60,6 +61,7 @@ public class GameUI : MonoBehaviour
     {
         equippedPowerupUpdateText();
         populationUpdateText();
+        unlocksRemainingUpdateText();
         if (GameManager.Instance.GMData.snowflakesAmount > 0) snowflakesUpdateText();
 
         snowflakesAmountText.color = snowflakesColor;
@@ -170,6 +172,11 @@ public class GameUI : MonoBehaviour
     public void currentUniverseUpdateText()
     {
         LocationSelection.Instance.currentUniverseText.text = "Universe: " + Player.Instance.data.currentUniverse;
+    }
+
+    public void unlocksRemainingUpdateText()
+    {
+        unlocksRemainingText.text = "Unlocks remaining: " + UnlocksListHandler.Instance.UnlocksButtonsList.Count;
     }
 
     public void CheckForMaxEquippedPowerups()
