@@ -74,16 +74,16 @@ public class PlayerStatsButton : MonoBehaviour
         switch (currency)
         {
             case CurrencyTypes.currencies.SF:
-                valueText.text = stat + ": " + GameUI.Instance.CurrencyLetterFormatting(Player.Instance.data.hitPoints);
+                valueText.text = GameUI.Instance.CurrencyLetterFormatting(Player.Instance.data.hitPoints);
                 break;
             case CurrencyTypes.currencies.IB:
-                valueText.text = stat + ": " + GameUI.Instance.CurrencyLetterFormatting(Player.Instance.data.defense);
+                valueText.text = GameUI.Instance.CurrencyLetterFormatting(Player.Instance.data.defense);
                 break;
             case CurrencyTypes.currencies.IP:
-                valueText.text = stat + ": " + GameUI.Instance.CurrencyLetterFormatting(Player.Instance.data.attack);
+                valueText.text = GameUI.Instance.CurrencyLetterFormatting(Player.Instance.data.attack);
                 break;
             case CurrencyTypes.currencies.BP:
-                valueText.text = stat + ": " + GameUI.Instance.CurrencyLetterFormatting(Player.Instance.data.healing);
+                valueText.text = GameUI.Instance.CurrencyLetterFormatting(Player.Instance.data.healing);
                 break;
             default:
                 break;

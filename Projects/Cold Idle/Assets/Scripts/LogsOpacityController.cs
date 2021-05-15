@@ -6,6 +6,8 @@ using TMPro;
 
 public class LogsOpacityController : MonoBehaviour
 {
+    public Button settingsButton;
+    public Button logsButton;
     private Image image;
     public Image newTag;
     private TextMeshProUGUI text;
@@ -14,6 +16,8 @@ public class LogsOpacityController : MonoBehaviour
 
     void Start()
     {
+        settingsButton = Unlocks.Instance.SettingsTab.GetComponent<Button>();
+        logsButton = Unlocks.Instance.LogsTab.GetComponent<Button>();
         GetPanelColor();
         GetTextColor();
         StartCoroutine("PanelFadeIn");
@@ -24,7 +28,7 @@ public class LogsOpacityController : MonoBehaviour
     {
         if (!hasFadedBackOut)
         {
-            if (hasFadedIn && Unlocks.Instance.logsContainer.isOpened)
+            if (hasFadedIn && !logsButton.interactable && Unlocks.Instance.logsContainer.isOpened)
             {
                 StartCoroutine("PanelFadeOut");
                 StartCoroutine("NewTagFadeOut");
@@ -55,6 +59,8 @@ public class LogsOpacityController : MonoBehaviour
 
     IEnumerator PanelFadeIn()
     {
+        settingsButton.interactable = false;
+
         for (float i = 0f; i < 0.435f; i += 0.02f)
         {
             Color color = image.color;
@@ -98,6 +104,7 @@ public class LogsOpacityController : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
         }
 
+        settingsButton.interactable = true;
         yield return null;
     }
 

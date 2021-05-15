@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class Habitats : MonoBehaviour
 {
@@ -86,36 +87,37 @@ public class Habitats : MonoBehaviour
 
     public void AddOccupation(string occupation)
     {
-        GameManager.Instance.GMData.idlePopulationAmount -= PopulationMoveAmount.Instance.moveAmount;
+        var populationToMove = Math.Min(GameManager.Instance.GMData.idlePopulationAmount, PopulationMoveAmount.Instance.moveAmount);
+        GameManager.Instance.GMData.idlePopulationAmount -= populationToMove;
 
         switch (occupation)
         {
             case "shoveler":
-                GameManager.Instance.GMData.shovelersAmount += PopulationMoveAmount.Instance.moveAmount;
+                GameManager.Instance.GMData.shovelersAmount += populationToMove;
                 GameManager.Instance.GMData.autoShovelSpeed = (float)(GameManager.Instance.GMData.shovelersAmount / 10f);
                 GameUI.Instance.shovelersUpdateText();
                 shovelerOMOH.RefreshText();
                 break;
             case "collector":
-                GameManager.Instance.GMData.collectorsAmount += PopulationMoveAmount.Instance.moveAmount;
+                GameManager.Instance.GMData.collectorsAmount += populationToMove;
                 GameManager.Instance.GMData.autoCollectSpeed = (float)(GameManager.Instance.GMData.collectorsAmount / 10f);
                 GameUI.Instance.collectorsUpdateText();
                 collectorOMOH.RefreshText();
                 break;
             case "transplanter":
-                GameManager.Instance.GMData.transplantersAmount += PopulationMoveAmount.Instance.moveAmount;
+                GameManager.Instance.GMData.transplantersAmount += populationToMove;
                 GameManager.Instance.GMData.autoAbsorbSpeed = (float)(GameManager.Instance.GMData.transplantersAmount / 10f);
                 GameUI.Instance.transplantersUpdateText();
                 transplanterOMOH.RefreshText();
                 break;
             case "worshipper":
-                GameManager.Instance.GMData.worshippersAmount += PopulationMoveAmount.Instance.moveAmount;
+                GameManager.Instance.GMData.worshippersAmount += populationToMove;
                 GameManager.Instance.GMData.newPowerupCurrentChance = (float)(GameManager.Instance.GMData.worshippersAmount / 1000f);
                 GameUI.Instance.worshippersUpdateText();
                 worshipperOMOH.RefreshText();
                 break;
             case "cryogenic":
-                GameManager.Instance.GMData.cryogenicsAmount += PopulationMoveAmount.Instance.moveAmount;
+                GameManager.Instance.GMData.cryogenicsAmount += populationToMove;
                 GameUI.Instance.cryogenicsUpdateText();
                 cryogenicsOMOH.RefreshText();
                 break;
@@ -125,36 +127,41 @@ public class Habitats : MonoBehaviour
 
     public void RemoveOccupation(string occupation)
     {
-        GameManager.Instance.GMData.idlePopulationAmount += PopulationMoveAmount.Instance.moveAmount;
+
 
         switch (occupation)
         {
             case "shoveler":
-                GameManager.Instance.GMData.shovelersAmount -= PopulationMoveAmount.Instance.moveAmount;
+                GameManager.Instance.GMData.idlePopulationAmount += Math.Min(GameManager.Instance.GMData.shovelersAmount, PopulationMoveAmount.Instance.moveAmount);
+                GameManager.Instance.GMData.shovelersAmount -= Math.Min(GameManager.Instance.GMData.shovelersAmount, PopulationMoveAmount.Instance.moveAmount);
                 GameManager.Instance.GMData.autoShovelSpeed = (float)(GameManager.Instance.GMData.shovelersAmount / 10f);
                 GameUI.Instance.shovelersUpdateText();
                 shovelerOMOH.RefreshText();
                 break;
             case "collector":
-                GameManager.Instance.GMData.collectorsAmount -= PopulationMoveAmount.Instance.moveAmount;
+                GameManager.Instance.GMData.idlePopulationAmount += Math.Min(GameManager.Instance.GMData.collectorsAmount, PopulationMoveAmount.Instance.moveAmount);
+                GameManager.Instance.GMData.collectorsAmount -= Math.Min(GameManager.Instance.GMData.collectorsAmount, PopulationMoveAmount.Instance.moveAmount);
                 GameManager.Instance.GMData.autoCollectSpeed = (float)(GameManager.Instance.GMData.collectorsAmount / 10f);
                 GameUI.Instance.collectorsUpdateText();
                 collectorOMOH.RefreshText();
                 break;
             case "transplanter":
-                GameManager.Instance.GMData.transplantersAmount -= PopulationMoveAmount.Instance.moveAmount;
+                GameManager.Instance.GMData.idlePopulationAmount += Math.Min(GameManager.Instance.GMData.transplantersAmount, PopulationMoveAmount.Instance.moveAmount);
+                GameManager.Instance.GMData.transplantersAmount -= Math.Min(GameManager.Instance.GMData.transplantersAmount, PopulationMoveAmount.Instance.moveAmount);
                 GameManager.Instance.GMData.autoAbsorbSpeed = (float)(GameManager.Instance.GMData.transplantersAmount / 10f);
                 GameUI.Instance.transplantersUpdateText();
                 transplanterOMOH.RefreshText();
                 break;
             case "worshipper":
-                GameManager.Instance.GMData.worshippersAmount -= PopulationMoveAmount.Instance.moveAmount;
+                GameManager.Instance.GMData.idlePopulationAmount += Math.Min(GameManager.Instance.GMData.worshippersAmount, PopulationMoveAmount.Instance.moveAmount);
+                GameManager.Instance.GMData.worshippersAmount -= Math.Min(GameManager.Instance.GMData.worshippersAmount, PopulationMoveAmount.Instance.moveAmount);
                 GameManager.Instance.GMData.newPowerupCurrentChance = (float)(GameManager.Instance.GMData.worshippersAmount / 1000f);
                 GameUI.Instance.worshippersUpdateText();
                 worshipperOMOH.RefreshText();
                 break;
             case "cryogenic":
-                GameManager.Instance.GMData.cryogenicsAmount -= PopulationMoveAmount.Instance.moveAmount;
+                GameManager.Instance.GMData.idlePopulationAmount += Math.Min(GameManager.Instance.GMData.cryogenicsAmount, PopulationMoveAmount.Instance.moveAmount);
+                GameManager.Instance.GMData.cryogenicsAmount -= Math.Min(GameManager.Instance.GMData.cryogenicsAmount, PopulationMoveAmount.Instance.moveAmount);
                 GameUI.Instance.cryogenicsUpdateText();
                 cryogenicsOMOH.RefreshText();
                 break;
@@ -221,7 +228,7 @@ public class Habitats : MonoBehaviour
 
         if (worshippersInterval <= 0)
         {
-            float unlockAttempt = Random.Range(newPowerupCooldown, newPowerupMaxChance);
+            float unlockAttempt = UnityEngine.Random.Range(newPowerupCooldown, newPowerupMaxChance);
 
             if (unlockAttempt < (GameManager.Instance.GMData.newPowerupCurrentChance + Powerups.Instance.FateConqueror()))
             {

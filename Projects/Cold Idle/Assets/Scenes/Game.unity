@@ -6161,6 +6161,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 782815433}
+        m_MethodName: PlayUIClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &253419245
@@ -11955,7 +11966,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 98.1, y: 25}
+  m_SizeDelta: {x: 98, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &504010809
 MonoBehaviour:
@@ -18134,7 +18145,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 98.1, y: 25}
+  m_SizeDelta: {x: 98, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &792185823
 MonoBehaviour:
@@ -19896,7 +19907,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 27.895, y: 0.9}
-  m_SizeDelta: {x: 118.66, y: 20}
+  m_SizeDelta: {x: 118, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &845079343
 MonoBehaviour:
@@ -30469,7 +30480,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 98.1, y: 25}
+  m_SizeDelta: {x: 98, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1340449517
 MonoBehaviour:
@@ -35935,7 +35946,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 87, y: 44.9}
+  m_SizeDelta: {x: 87, y: 44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1589015284
 MonoBehaviour:
@@ -37750,7 +37761,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 87, y: 44.9}
+  m_SizeDelta: {x: 87, y: 44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1653064699
 MonoBehaviour:
@@ -47834,7 +47845,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 87, y: 44.9}
+  m_SizeDelta: {x: 87, y: 44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2145293943
 MonoBehaviour:
