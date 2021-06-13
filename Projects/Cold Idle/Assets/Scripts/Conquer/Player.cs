@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public int currentHP;
+    public float currentHP;
     public Slider hpBar;
     public GameObject playerObject;
     public Image appearance;
@@ -64,10 +64,10 @@ public class Player : MonoBehaviour
 [Serializable]
 public struct PlyrData
 {
-    public int hitPoints;
-    public int attack;
-    public int defense;
-    public int healing;
+    public float hitPoints;
+    public float attack;
+    public float defense;
+    public float healing;
     public int wonContinents;
     public int currentUniverse;
 }

@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    public int hitPoints;
-    public int currentHP;
-    public int attack;
+    public double hitPoints;
+    public double currentHP;
+    public double attack;
     public Slider hpBar;
 
     public Image appearance;

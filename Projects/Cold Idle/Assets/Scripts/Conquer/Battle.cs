@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -45,7 +46,7 @@ public class Battle : MonoBehaviour
             width += 0.7f;
             background.sizeDelta = new Vector2(width, background.rect.height);
 
-            enemy.transform.position -= new Vector3(0.7f, 0f, 0f);
+            enemy.transform.position -= new Vector3(0.7f, 0f, 0f) * 150 * Time.deltaTime;
 
             scrollTime -= Time.deltaTime;
 
@@ -58,7 +59,7 @@ public class Battle : MonoBehaviour
 
     public IEnumerator Fight(GameObject e)
     {
-        int damageToDeal;
+        double damageToDeal;
         Enemy enemy = e.GetComponent<Enemy>();
         yield return new WaitForSeconds(1f);
 
@@ -66,7 +67,7 @@ public class Battle : MonoBehaviour
         {
             Player.Instance.playerObject.transform.position += new Vector3(8f, 0f, 0);
             yield return new WaitForSeconds(0.1f);
-            damageToDeal = Player.Instance.data.attack + Random.Range(0, 4);
+            damageToDeal = Player.Instance.data.attack + UnityEngine.Random.Range(0, 4);
             enemy.currentHP -= damageToDeal;
             enemy.hpBar.value = (float)enemy.currentHP / (float)enemy.hitPoints;
             GameManager.Instance.currencyPopout('-', Camera.main.ScreenToWorldPoint(enemy.hpBar.gameObject.transform.position), damageToDeal, "", new Color(1f, 0.54f, 0.53f));
@@ -78,8 +79,8 @@ public class Battle : MonoBehaviour
 
             enemy.gameObject.transform.position -= new Vector3(8f, 0f, 0);
             yield return new WaitForSeconds(0.1f);
-            damageToDeal = enemy.attack * enemy.attack / (enemy.attack + Player.Instance.data.defense) + Random.Range(0, 4);
-            Player.Instance.currentHP -= damageToDeal;
+            damageToDeal = enemy.attack * enemy.attack / (enemy.attack + Player.Instance.data.defense) + UnityEngine.Random.Range(0, 4);
+            Player.Instance.currentHP -= (float)damageToDeal;
             Player.Instance.hpBar.value = (float)Player.Instance.currentHP / (float)Player.Instance.data.hitPoints;
             GameManager.Instance.currencyPopout('-', Camera.main.ScreenToWorldPoint(Player.Instance.hpBar.gameObject.transform.position), damageToDeal, "", new Color(1f, 0.54f, 0.53f));
             enemy.gameObject.transform.position += new Vector3(8f, 0f, 0);
@@ -106,9 +107,9 @@ public class Battle : MonoBehaviour
 
             if (round < 5)
             {
-                int amountToHeal = !Unlocks.Instance.data.hasBetterHealing ? Player.Instance.data.healing : Player.Instance.data.healing * Player.Instance.data.currentUniverse;
+                float amountToHeal = !Unlocks.Instance.data.hasBetterHealing ? Player.Instance.data.healing : Player.Instance.data.healing * Player.Instance.data.currentUniverse;
                 Player.Instance.currentHP = Mathf.Clamp(Player.Instance.currentHP + amountToHeal, 0, Player.Instance.data.hitPoints);
-                Player.Instance.hpBar.value = (float)Player.Instance.currentHP / (float)Player.Instance.data.hitPoints;
+                Player.Instance.hpBar.value = (float)(Player.Instance.currentHP / Player.Instance.data.hitPoints);
                 GameManager.Instance.currencyPopout('+', Camera.main.ScreenToWorldPoint(Player.Instance.hpBar.gameObject.transform.position), amountToHeal, "", new Color(0.28f, 0.94f, 0.66f));
                 StartCoroutine(DamageColor(Player.Instance.appearance, new Color(0.28f, 0.94f, 0.66f)));
 
@@ -225,13 +226,13 @@ public class Battle : MonoBehaviour
         LocationSelection.Instance.ResetUI();
     }
 
-    public GameObject SpawnEnemy(int hp, int atk, int appearanceID)
+    public GameObject SpawnEnemy(double hp, double atk, int appearanceID)
     {
         GameObject enemy = Instantiate(enemyPrefab, enemyStartingPosition, Quaternion.identity, actionScene.transform);
         Enemy stats = enemy.GetComponent<Enemy>();
-        stats.hitPoints = (int)(hp * ((round - 1) * roundMultiplier + 1) * (int)((Player.Instance.data.wonContinents + 1) * Player.Instance.data.wonContinents + 1 - Player.Instance.data.wonContinents));
+        stats.hitPoints = Math.Round(hp * ((round - 1) * roundMultiplier + 1) * ((Player.Instance.data.wonContinents + 1) * Player.Instance.data.wonContinents + 1 - Player.Instance.data.wonContinents));
         stats.currentHP = stats.hitPoints;
-        stats.attack = (int)(atk * ((round - 1) * roundMultiplier + 1) * (int)((Player.Instance.data.wonContinents + 1) * Player.Instance.data.wonContinents + 1 - Player.Instance.data.wonContinents));
+        stats.attack = Math.Round(atk * ((round - 1) * roundMultiplier + 1) * ((Player.Instance.data.wonContinents + 1) * Player.Instance.data.wonContinents + 1 - Player.Instance.data.wonContinents));
         stats.appearance.sprite = stats.possibleAppearances[appearanceID];
         stats.appearance.SetNativeSize();
 

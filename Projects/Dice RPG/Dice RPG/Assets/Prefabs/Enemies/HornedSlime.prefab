@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5047809493078570473
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5099567965459867389, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.244
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387345149803296394, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_Name
+      value: HornedSlime
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387345149803296395, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: dice
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387345149803296395, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387345149803296395, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: hurtAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 7ba065651087c6940b0e2ca7605e8f5b, type: 2}
+    - target: {fileID: 8387345149803296395, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: idleAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 86566d28ee2ace5468620743181313dd, type: 2}
+    - target: {fileID: 8387345149803296395, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: moveAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 86566d28ee2ace5468620743181313dd, type: 2}
+    - target: {fileID: 8387345149803296395, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: deathAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: d10252e5ddd4f9e4caf651e09b95d9c6, type: 2}
+    - target: {fileID: 8387345149803296395, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: enemyName
+      value: Horned Slime
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387345149803296395, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: hitPoints
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387345149803296395, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: diceAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387345149803296395, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: attackAnim01
+      value: 
+      objectReference: {fileID: 7400000, guid: 65a36c9615238724596e060bfe1157a2, type: 2}
+    - target: {fileID: 8387345149803296396, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387345149803296396, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387345149803296396, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387345149803296396, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387345149803296396, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387345149803296396, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387345149803296396, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387345149803296396, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387345149803296396, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387345149803296396, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387345149803296396, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387345150479981921, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c12e7ca79581e4645b5a90e3b72bd1ef, type: 3}
+    - target: {fileID: 8387345150479981921, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387345150479981935, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.006
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
