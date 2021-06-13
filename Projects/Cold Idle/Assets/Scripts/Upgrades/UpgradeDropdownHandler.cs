@@ -20,7 +20,7 @@ public class UpgradeDropdownHandler : MonoBehaviour
     {
         RectTransform rect = this.gameObject.GetComponent<RectTransform>();
         float size = isOpened ? rect.rect.width : -rect.rect.width;
-        transform.position = new Vector2(transform.position.x + size, transform.position.y);
+        transform.position = new Vector2(transform.position.x + (size * ScreenSize.Instance.multiplier), transform.position.y);
         expandButtonText.text = isOpened ? "<<" : ">>";
         isOpened = !isOpened;
     }

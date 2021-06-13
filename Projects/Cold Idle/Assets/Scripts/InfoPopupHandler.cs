@@ -12,6 +12,8 @@ public class InfoPopupHandler : MonoBehaviour
     public GameObject infoPopup;
     public RectTransform rect;
     public TextMeshProUGUI infoText;
+    public float screenWidth = 1280;
+    public float screenHeight = 720;
 
     public static InfoPopupHandler Instance;
 
@@ -25,7 +27,7 @@ public class InfoPopupHandler : MonoBehaviour
 
     public IEnumerator SpawnInfoPopup(Transform pos, string info)
     {
-        infoPopup.transform.position = new Vector3(-1000, 1000);
+        infoPopup.transform.position = new Vector3(-1000 * ScreenSize.Instance.multiplier, 1000 * ScreenSize.Instance.multiplier);
         infoText.text = "";
         this.isStillHoveringButton = true;
 
@@ -42,19 +44,19 @@ public class InfoPopupHandler : MonoBehaviour
 
                 Vector3 attemptedPos = new Vector3(pos.position.x, pos.position.y + 50, pos.position.z);
 
-                if (attemptedPos.x + rect.rect.width > canvasRect.rect.width)
+                if (attemptedPos.x + rect.rect.width > screenWidth)
                 {
-                    attemptedPos.x = canvasRect.rect.width - rect.rect.width / 2 - 5;
+                    attemptedPos.x = screenWidth - rect.rect.width / 2 - (5 * ScreenSize.Instance.multiplier);
                 }
 
                 if (attemptedPos.x - rect.rect.width / 2 <= 0)
                 {
-                    attemptedPos.x = rect.rect.width / 2 + 25;
+                    attemptedPos.x = rect.rect.width / 2 + (25 * ScreenSize.Instance.multiplier);
                 }
 
-                if (attemptedPos.y + rect.rect.height > canvasRect.rect.height)
+                if (attemptedPos.y + rect.rect.height > screenHeight)
                 {
-                    attemptedPos.y = canvasRect.rect.height - rect.rect.height;
+                    attemptedPos.y = screenHeight - rect.rect.height;
                 }
 
                 yield return new WaitForEndOfFrame();

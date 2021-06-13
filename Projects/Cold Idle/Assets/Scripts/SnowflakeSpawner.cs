@@ -8,6 +8,8 @@ public class SnowflakeSpawner : MonoBehaviour
     public List<GameObject> currentSnowflakesList = new List<GameObject>();
     public GameObject spawner;
     public float spawnInterval = 8.5f;
+    public float screenWidth = 1280;
+    public float screenHeight = 720;
 
     public static SnowflakeSpawner Instance;
 
@@ -28,8 +30,8 @@ public class SnowflakeSpawner : MonoBehaviour
             int index = RollForGleamingSnowflake();
 
             GameObject sf = Instantiate(snowflakesTypes[index].gameObject, new Vector2(
-                Random.Range(-Screen.width / 150f, Screen.width / 150f), 
-                Random.Range(Screen.height / 142f, Screen.height / 144f)), 
+                Random.Range(-screenWidth / 150f, screenWidth / 150f), 
+                Random.Range(screenHeight / 142f, screenHeight / 144f)), 
                 transform.rotation);
             sf.transform.parent = spawner.transform;
 
