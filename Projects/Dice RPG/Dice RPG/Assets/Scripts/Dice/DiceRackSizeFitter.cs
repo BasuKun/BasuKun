@@ -8,11 +8,10 @@ public class DiceRackSizeFitter : MonoBehaviour
     private int diceAmount;
     private List<Dice> dicesTotal = new List<Dice>();
 
-    public void ResizeRack(List<Dice> permDices, List<Dice> tempDices)
+    public void ResizeRack(List<Dice> permDices)
     {
         dicesTotal.Clear();
         foreach (var dice in permDices) dicesTotal.Add(dice);
-        foreach (var dice in tempDices) dicesTotal.Add(dice);
         diceAmount = dicesTotal.Count;
 
         int dicePerLine = 5 + (diceAmount / 10);

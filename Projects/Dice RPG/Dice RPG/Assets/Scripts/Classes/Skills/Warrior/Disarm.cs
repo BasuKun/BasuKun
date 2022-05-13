@@ -19,7 +19,7 @@ public class Disarm : MonoBehaviour, IEffectSkill
     {
         if (dices[dices.Count - 1].value == enemyDices[enemyDices.Count - 1].value)
         {
-            StartCoroutine(dices[dices.Count - 1].TriggerSkillAnimation(0f, skillName, true, skillType));
+            StartCoroutine(dices[dices.Count - 1].TriggerSkillAnimation(0f, skillName, true, Player.Instance.character.transform, skillType));
             for (int i = 0; i < enemyDices.Count / 2; i++)
             {
                 enemyDices[i].LockDice(dices[dices.Count - 1].value);

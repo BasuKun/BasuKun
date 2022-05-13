@@ -26,6 +26,12 @@ public class Class : MonoBehaviour
     public AnimationClip attackAnim01;
     public AnimationClip attackAnim02;
     public AnimationClip attackAnim03;
+    public AnimationClip attackSuppressiveFireAnim;
+    public AnimationClip attackSeismicDiveAnim;
+    public AnimationClip attackWhirlwindSlashAnim;
+    public AnimationClip attackEclipseRushAnim;
+    public AnimationClip attackTripleSlashAnim;
+    public AnimationClip summonAnim;
     public AnimationClip returnToIdleAnim;
     public AnimationClip hurtAnim;
     public AnimationClip hurtSideStepAnim;
@@ -53,6 +59,12 @@ public class Class : MonoBehaviour
         AOC["Attack01"] = attackAnim01;
         if (attackAnim02 != null) AOC["Attack02"] = attackAnim02;
         if (attackAnim03 != null) AOC["Attack03"] = attackAnim03;
+        if (attackSuppressiveFireAnim != null) AOC["Attack_SuppressiveFire"] = attackSuppressiveFireAnim;
+        if (attackSeismicDiveAnim != null) AOC["Attack_SeismicDive"] = attackSeismicDiveAnim;
+        if (attackWhirlwindSlashAnim != null) AOC["Attack_WhirlwindSlash"] = attackWhirlwindSlashAnim;
+        if (attackEclipseRushAnim != null) AOC["Attack_EclipseRush"] = attackEclipseRushAnim;
+        if (attackTripleSlashAnim != null) AOC["Attack_TripleSlash"] = attackTripleSlashAnim;
+        if (summonAnim != null) AOC["Summon"] = summonAnim;
         if (returnToIdleAnim != null) AOC["ReturnToIdle"] = returnToIdleAnim;
         AOC["Hurt"] = hurtAnim;
         if (hurtSideStepAnim != null) AOC["Hurt_SideStep"] = hurtSideStepAnim;

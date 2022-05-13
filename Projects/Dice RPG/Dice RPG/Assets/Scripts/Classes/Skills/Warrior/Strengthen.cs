@@ -25,7 +25,7 @@ public class Strengthen : MonoBehaviour, IBuffSkill
             {
                 Player.Instance.tempDamageBonus += 1;
                 amount++;
-                StartCoroutine(dice.TriggerSkillAnimation(0f, skillName, false, skillType));
+                StartCoroutine(dice.TriggerSkillAnimation(0f, skillName, false, Player.Instance.character.transform, skillType));
             }
         }
 

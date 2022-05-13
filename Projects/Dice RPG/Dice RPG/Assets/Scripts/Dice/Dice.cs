@@ -6,22 +6,32 @@ using UnityEngine.UI;
 public class Dice : MonoBehaviour
 {
     public int value { get; set; }
+    public bool isBerserkDice { get; set; }
+    public bool isPlayerDice { get; set; }
+    public bool isTemporary { get; set; }
+    public int tempTurns { get; set; }
     public bool isLocked { get; set; }
     public int lockedTurns { get; set; }
+    public bool isSelected { get; set; }
     public List<Sprite> sides = new List<Sprite>();
     public SpriteRenderer appearance;
     public SpriteRenderer overlay;
+    public SpriteRenderer highlight;
     public GameObject diceTriggerAnim;
     public Animator animator;
 
     private void Start()
     {
-        value = 1;
+        value = 1; 
+        animator.SetInteger("StartValue", value);
+        animator.SetInteger("EndValue", value);
         animator.SetTrigger("isAppearing");
     }
 
     public IEnumerator Roll()
     {
+        if (isTemporary && tempTurns <= 0) RemoveDice();
+
         if (lockedTurns <= 0) UnlockDice();
 
         if (!isLocked)
@@ -38,19 +48,31 @@ public class Dice : MonoBehaviour
         }
         else
         {
-            lockedTurns -= 1;
+            lockedTurns--;
+        }
+        if (isTemporary)
+        {
+            tempTurns--;
         }
 
         yield return null;
     }
 
-    public IEnumerator TriggerSkillAnimation(float time, string skillName, bool triggersSkillName, SkillTypes.types skillType)
+    public void Swap(int newValue)
+	{
+        value = newValue;
+        animator.SetInteger("EndValue", newValue);
+        animator.SetInteger("StartValue", newValue); 
+        animator.SetTrigger("isAppearing");
+    }
+
+    public IEnumerator TriggerSkillAnimation(float time, string skillName, bool triggersSkillName, Transform character, SkillTypes.types skillType)
     {
         if (!isLocked)
         {
             yield return new WaitForSeconds(time);
             GameObject diceTrigger = Instantiate(diceTriggerAnim, this.gameObject.transform.position, Quaternion.identity);
-            if (triggersSkillName) Battle.Instance.SkillNamePopout(skillName, Player.Instance.character.transform, skillType);
+            if (triggersSkillName) Battle.Instance.SkillNamePopout(skillName, character, skillType);
 
             yield return null;
         }
@@ -70,4 +92,35 @@ public class Dice : MonoBehaviour
         isLocked = false;
         overlay.enabled = false;
     }
+
+    public void RemoveDice()
+    {
+        Destroy(this.gameObject);
+    }
+
+    public void RemoveHighlight()
+	{
+		if (isSelected)
+		{
+            isSelected = false;
+            highlight.enabled = false; 
+            Battle.Instance.curSelectedDices--;
+            DiceButtons.Instance.CheckForInteractableConditions();
+        }
+    }
+
+	public void OnMouseOver()
+	{
+		if (Input.GetMouseButtonDown(0) && isPlayerDice && !isLocked && Battle.Instance.canModifyDices)
+		{
+            if (!isSelected && Battle.Instance.curSelectedDices == Battle.Instance.maxSelectedDices) return;
+
+            isSelected = !isSelected;
+            highlight.enabled = isSelected;
+
+            Battle.Instance.curSelectedDices += isSelected ? 1 : -1;
+
+            DiceButtons.Instance.CheckForInteractableConditions();
+        }
+	}
 }

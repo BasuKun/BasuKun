@@ -19,6 +19,9 @@ public class GameUI : MonoBehaviour
     public TextMeshProUGUI soulsCurrencyAmountText;
     public MostRolledDigit playerMostRolledDigitObject;
     public MostRolledDigit enemyMostRolledDigitObject;
+    public Slider idleSlider;
+    public Image idleSliderImage;
+    public List<Sprite> idleSliderSprites = new List<Sprite>();
 
     public static GameUI Instance;
 
@@ -50,5 +53,12 @@ public class GameUI : MonoBehaviour
     public void UpdateSoulsCurrencyText()
     {
         soulsCurrencyAmountText.text = Player.Instance.soulsCurrency.ToString();
+    }
+
+    public void OnIdleSliderChange()
+	{
+        Battle.Instance.isAutoAttacking = idleSlider.value == 1 ? true : false;
+        idleSliderImage.sprite = idleSliderSprites[(int)idleSlider.value];
+        DiceButtons.Instance.CheckForInteractableConditions();
     }
 }

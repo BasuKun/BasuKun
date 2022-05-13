@@ -45,7 +45,7 @@ public class EllipsePositions : MonoBehaviour
         else currentSelected += currentSelected == 6 ? -5 : 1;
         selectedText.text = ((CurrentClass.classes)currentSelected).ToString();
 
-        colorFilter.sharedProfile.GetSetting<ColorGrading>().gamma.value = ClassesObjects.Instance.characters[(CurrentClass.classes)currentSelected].gamma;
+        ColorGradingChanger.Instance.ChangeColor(currentSelected);
 
         while (IsInSpotlight(isClockwise))
         {

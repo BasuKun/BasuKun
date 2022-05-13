@@ -19,7 +19,7 @@ public class Inspire : MonoBehaviour, IBuffSkill
         if (dices[0].value == 6)
         {
             Player.Instance.damageToDeal += dices.Count;
-            StartCoroutine(dices[0].TriggerSkillAnimation(0f, skillName, true, skillType));
+            StartCoroutine(dices[0].TriggerSkillAnimation(0f, skillName, true, Player.Instance.character.transform, skillType));
         }
     }
 }

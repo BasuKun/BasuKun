@@ -38,6 +38,11 @@ public class Enemy : MonoBehaviour
     public GameObject dicePrefab;
     public int mostRolledDigit;
 
+    [Header("BATTLE STATUSES")]
+    public bool isBleeding = false;
+    public int bleedingDamage = 0;
+    public int bleedingTurns = 0;
+
     public GameObject soulCurrencyPrefab;
 
     void Awake()
@@ -103,7 +108,7 @@ public class Enemy : MonoBehaviour
 
         foreach (var soul in souls)
         {
-            soul.gameObject.GetComponentInChildren<Animator>().SetTrigger("isAppearing");
+            soul.GetComponent<HPSoulFloating>().appearAnimator.SetTrigger("isAppearing");
             yield return new WaitForSeconds(0.3f);
             soul.gameObject.GetComponent<SpriteRenderer>().enabled = true;
         }
@@ -136,10 +141,10 @@ public class Enemy : MonoBehaviour
             {
                 ParticleSystem hpSoulHurtFX = Instantiate(hpSoulHurtAnimation, soul.transform.position, hpSoulHurtAnimation.transform.rotation);
                 var animEmission = hpSoulHurtFX.emission;
-                animEmission.rateOverTime = (soul.currentStage - previousStage) * 6;
+                animEmission.rateOverTime = (soul.currentStage - previousStage) * 30;
             }
 
-            soulSprite.sprite = soul.stages[soul.currentStage];
+            soul.animator.SetInteger("Stage", soul.currentStage);
 
             offset -= 20f;
         }

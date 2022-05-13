@@ -17,9 +17,11 @@ public class SelectedClassConfirmButton : MonoBehaviour
         GameObject groundSmoke = Instantiate(groundSmokeFX, new Vector2(selectedCharacter.transform.position.x, selectedCharacter.transform.position.y - 0.06f), Quaternion.identity);
 
         StartCoroutine(SetPlayerStats(selectedCharacter));
+        AddSkills();
         StartCoroutine(EraseOtherClasses());
         StartCoroutine(PlaceCamera(ClassesObjects.Instance.characters[(CurrentClass.classes)EllipsePositions.Instance.currentSelected].soulsPosition));
         StartCoroutine(StartMoving());
+        SelectMusic();
     }
 
     private IEnumerator EraseOtherClasses()
@@ -51,11 +53,11 @@ public class SelectedClassConfirmButton : MonoBehaviour
         float time = 0f;
         while (time < 2f)
         {
-            character.gameObject.transform.position = Vector2.Lerp(character.gameObject.transform.position, currentSoul.transform.position - new Vector3(-0.01f, 0.04f, 0f), Time.deltaTime * 3f);
+            character.gameObject.transform.position = Vector2.Lerp(character.gameObject.transform.position, currentSoul.transform.position - new Vector3(-0.01f, 0.01f, 0f), Time.deltaTime * 3f);
             time += Time.deltaTime;
             yield return new WaitForFixedUpdate();
         }
-        currentSoul.GetComponentInChildren<Animator>().SetTrigger("isAppearing");
+        currentSoul.GetComponent<HPSoulFloating>().appearAnimator.SetTrigger("isAppearing");
         currentSoul.GetComponent<HPSoulFloating>().currentStage = 0;
 
         yield return new WaitForSeconds(0.4f);
@@ -67,13 +69,13 @@ public class SelectedClassConfirmButton : MonoBehaviour
 
     private IEnumerator PlaceCamera(Transform soulsPosition)
     {
-        while (Camera.main.transform.position.x < 0.299f)
+        while (Camera.main.transform.position.x < 0.669f)
         {
             playerSouls.transform.position = soulsPosition.position;
-            Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, new Vector3(0.3f, -0.33f, -10f), Time.deltaTime);
+            Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, new Vector3(0.67f, -0.33f, -10f), Time.deltaTime);
             yield return new WaitForFixedUpdate();
         }
-        Camera.main.transform.position = new Vector3(0.3f, -0.33f, -10f);
+        Camera.main.transform.position = new Vector3(0.67f, -0.33f, -10f);
         yield return null;
     }
 
@@ -82,6 +84,82 @@ public class SelectedClassConfirmButton : MonoBehaviour
         yield return new WaitForSeconds(2f);
         StartCoroutine(Player.Instance.Move());
         yield return null;
+    }
+
+    private void SelectMusic()
+    {
+        switch (Player.Instance.currentClass)
+        {
+            case CurrentClass.classes.Warrior:
+                AudioManager.Instance.PlayMusic(AudioManager.Instance.warriorThemeMusic);
+                break;
+            case CurrentClass.classes.Ronin:
+                AudioManager.Instance.PlayMusic(AudioManager.Instance.roninThemeMusic);
+                break;
+            case CurrentClass.classes.Gunslinger:
+                AudioManager.Instance.PlayMusic(AudioManager.Instance.gunslingerThemeMusic);
+                break;
+            case CurrentClass.classes.Technomancer:
+                break;
+            case CurrentClass.classes.Warlock:
+                AudioManager.Instance.PlayMusic(AudioManager.Instance.warlockThemeMusic);
+                break;
+            case CurrentClass.classes.Healer:
+                break;
+        }
+    }
+
+    private void AddSkills()
+    {
+        switch (Player.Instance.currentClass)
+        {
+            case CurrentClass.classes.Warrior:
+                Player.Instance.damageSkills.Add(DamageSkillsDictionary.Instance.damageSkillsDictionary["Pierce"]);
+                Player.Instance.damageSkills.Add(DamageSkillsDictionary.Instance.damageSkillsDictionary["Whirlwind Slash"]);
+                Player.Instance.damageSkills.Add(DamageSkillsDictionary.Instance.damageSkillsDictionary["Seismic Dive"]);
+                Player.Instance.buffSkills.Add(BuffSkillsDictionary.Instance.buffSkillsDictionary["Strengthen"]);
+                Player.Instance.buffSkills.Add(BuffSkillsDictionary.Instance.buffSkillsDictionary["Critical Hit"]);
+                Player.Instance.buffSkills.Add(BuffSkillsDictionary.Instance.buffSkillsDictionary["Inspire"]);
+                Player.Instance.defenseSkills.Add(DefenseSkillsDictionary.Instance.defenseSkillsDictionary["Counter"]);
+                Player.Instance.effectSkills.Add(EffectSkillsDictionary.Instance.effectSkillsDictionary["Disarm"]);
+                Player.Instance.reactionSkills.Add(ReactionSkillsDictionary.Instance.reactionSkillsDictionary["Last Breath"]);
+                Player.Instance.reactionSkills.Add(ReactionSkillsDictionary.Instance.reactionSkillsDictionary["Berserk"]);
+                break;
+            case CurrentClass.classes.Ronin:
+                Player.Instance.buffSkills.Add(BuffSkillsDictionary.Instance.buffSkillsDictionary["Skillful"]);
+                Player.Instance.defenseSkills.Add(DefenseSkillsDictionary.Instance.defenseSkillsDictionary["Shadow Retreat"]);
+                Player.Instance.defenseSkills.Add(DefenseSkillsDictionary.Instance.defenseSkillsDictionary["Side Step"]);
+                Player.Instance.damageSkills.Add(DamageSkillsDictionary.Instance.damageSkillsDictionary["Double Slash"]);
+                Player.Instance.damageSkills.Add(DamageSkillsDictionary.Instance.damageSkillsDictionary["Triple Slash"]);
+                Player.Instance.damageSkills.Add(DamageSkillsDictionary.Instance.damageSkillsDictionary["Eclipse Rush"]);
+                Player.Instance.damageSkills.Add(DamageSkillsDictionary.Instance.damageSkillsDictionary["Assassinate"]);
+                Player.Instance.buffSkills.Add(BuffSkillsDictionary.Instance.buffSkillsDictionary["Karma"]);
+                Player.Instance.buffSkills.Add(BuffSkillsDictionary.Instance.buffSkillsDictionary["Pickpocket"]);
+                Player.Instance.buffSkills.Add(BuffSkillsDictionary.Instance.buffSkillsDictionary["Bandage"]);
+                break;
+            case CurrentClass.classes.Gunslinger:
+                Player.Instance.buffSkills.Add(BuffSkillsDictionary.Instance.buffSkillsDictionary["Distanced Advantage"]);
+                Player.Instance.buffSkills.Add(BuffSkillsDictionary.Instance.buffSkillsDictionary["Bullseye"]);
+                Player.Instance.buffSkills.Add(BuffSkillsDictionary.Instance.buffSkillsDictionary["Accuracy"]);
+                Player.Instance.buffSkills.Add(BuffSkillsDictionary.Instance.buffSkillsDictionary["Gunman's Instinct"]);
+                Player.Instance.damageSkills.Add(DamageSkillsDictionary.Instance.damageSkillsDictionary["Rebound"]);
+                Player.Instance.damageSkills.Add(DamageSkillsDictionary.Instance.damageSkillsDictionary["Suppressive Fire"]);
+                Player.Instance.effectSkills.Add(EffectSkillsDictionary.Instance.effectSkillsDictionary["Bleeding Shot"]);
+                Player.Instance.effectSkills.Add(EffectSkillsDictionary.Instance.effectSkillsDictionary["Crippling Shot"]);
+                break;
+            case CurrentClass.classes.Technomancer:
+                break;
+            case CurrentClass.classes.Warlock:
+                Player.Instance.damageSkills.Add(DamageSkillsDictionary.Instance.damageSkillsDictionary["Hydra's Rush"]);
+                Player.Instance.damageSkills.Add(DamageSkillsDictionary.Instance.damageSkillsDictionary["Satan's Wrath"]);
+                Player.Instance.summonSkills.Add(SummonSkillsDictionary.Instance.summonSkillsDictionary["Summon Bat"]);
+                Player.Instance.summonSkills.Add(SummonSkillsDictionary.Instance.summonSkillsDictionary["Summon Skull"]);
+                Player.Instance.summonSkills.Add(SummonSkillsDictionary.Instance.summonSkillsDictionary["Summon Golem"]);
+                Player.Instance.summonSkills.Add(SummonSkillsDictionary.Instance.summonSkillsDictionary["Summon Demon"]);
+                break;
+            case CurrentClass.classes.Healer:
+                break;
+        }
     }
 
     private IEnumerator SetPlayerStats(GameObject character)
@@ -103,7 +181,7 @@ public class SelectedClassConfirmButton : MonoBehaviour
         yield return new WaitForSeconds(1.9f);
         for (int i = 0; i < Player.Instance.diceAmount; i++)
         {
-            Player.Instance.AddDice(true);
+            Player.Instance.AddDice(false, true, 0);
         }
 
         yield return null;

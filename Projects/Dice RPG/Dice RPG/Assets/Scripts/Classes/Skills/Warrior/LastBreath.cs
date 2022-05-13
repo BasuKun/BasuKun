@@ -31,7 +31,7 @@ public class LastBreath : MonoBehaviour, IReactionSkill
         {
             Battle.Instance.isLastBreathing = true;
             Player.Instance.curHitPoints = 1;
-            StartCoroutine(dices[dices.Count - 1].TriggerSkillAnimation(0f, skillName, true, skillType));
+            StartCoroutine(dices[dices.Count - 1].TriggerSkillAnimation(0f, skillName, true, Player.Instance.character.transform, skillType));
             Player.Instance.UpdateHP(0, true);
         }
     }

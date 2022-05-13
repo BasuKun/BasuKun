@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 221.2944, y: 34.2166}
+  m_SizeDelta: {x: 296.3186, y: 34.2166}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8634215922714939225
 CanvasRenderer:
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Strengthen!
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dcced4b5efa4e6042b67722b3e433449, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: bf303a2cf31b60f449c3f3a6159891f0, type: 2}
@@ -223,4 +223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b150310469aec44c85679b0f02ccf5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  posOffset: 0
   skillNameText: {fileID: 8634215922714939227}
+  skillType: 0

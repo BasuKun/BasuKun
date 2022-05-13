@@ -25,9 +25,9 @@ public class Bandage : MonoBehaviour, IBuffSkill
                 if (dices[i - 1].value == dices[i + 1].value)
                 {
                     Player.Instance.skillsActivated++;
-                    StartCoroutine(dices[i - 1].TriggerSkillAnimation(0f, skillName, false, skillType));
-                    StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillName, true, skillType));
-                    StartCoroutine(dices[i + 1].TriggerSkillAnimation(0f, skillName, false, skillType));
+                    StartCoroutine(dices[i - 1].TriggerSkillAnimation(0f, skillName, false, Player.Instance.character.transform, skillType));
+                    StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillName, true, Player.Instance.character.transform, skillType));
+                    StartCoroutine(dices[i + 1].TriggerSkillAnimation(0f, skillName, false, Player.Instance.character.transform, skillType));
                     StartCoroutine(Player.Instance.UpdateHP(dices[i].value * 2, true));
                 }
             }

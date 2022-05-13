@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     public List<IEffectSkill> effectSkills = new List<IEffectSkill>();
     public List<IReactionSkill> reactionSkills = new List<IReactionSkill>();
     public List<IDefenseSkill> defenseSkills = new List<IDefenseSkill>();
+    public List<ISummonSkill> summonSkills = new List<ISummonSkill>();
 
     [Header("OTHER STATS")]
     public int level;
@@ -32,12 +33,24 @@ public class Player : MonoBehaviour
 
     [Header("DICE STUFF")]
     public List<Dice> dices = new List<Dice>();
-    public List<Dice> tempDices = new List<Dice>();
     public GameObject dicePrefab;
     public GameObject diceRack;
+    public int maxRerolls = 1;
+    public int maxSwaps = 1;
+    public int curRerolls = 0;
+    public int curSwaps = 0;
+
+    [Header("SUMMONS")]
+    public bool hasBat;
+    public bool hasSkull;
+    public bool hasGolem;
+    public bool hasDemon;
+    public List<Summon> summonsToActivate = new List<Summon>();
+    public Dictionary<string, Summon> activeSummons = new Dictionary<string, Summon>();
 
     public bool hasReturnToIdle = false;
     public bool isMoving;
+    public bool isSummoning;
     public Class character = null;
     public List<HPSoulFloating> souls = new List<HPSoulFloating>();
     public ParticleSystem hpSoulHurtAnimation;
@@ -51,55 +64,38 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Start()
+    public void AddDice(bool isBerserkDice, bool isPermanentDice, int permTurnAmount)
     {
-        buffSkills.Add(BuffSkillsDictionary.Instance.buffSkillsDictionary["Skillful"]);
-        defenseSkills.Add(DefenseSkillsDictionary.Instance.defenseSkillsDictionary["Shadow Retreat"]);
-        defenseSkills.Add(DefenseSkillsDictionary.Instance.defenseSkillsDictionary["Side Step"]);
-        damageSkills.Add(DamageSkillsDictionary.Instance.damageSkillsDictionary["Double Slash"]);
-        damageSkills.Add(DamageSkillsDictionary.Instance.damageSkillsDictionary["Assassinate"]);
-        buffSkills.Add(BuffSkillsDictionary.Instance.buffSkillsDictionary["Karma"]);
-        buffSkills.Add(BuffSkillsDictionary.Instance.buffSkillsDictionary["Pickpocket"]);
-        buffSkills.Add(BuffSkillsDictionary.Instance.buffSkillsDictionary["Bandage"]);
-        /*
-        damageSkills.Add(DamageSkillsDictionary.Instance.damageSkillsDictionary["Pierce"]);
-        buffSkills.Add(BuffSkillsDictionary.Instance.buffSkillsDictionary["Strengthen"]);
-        buffSkills.Add(BuffSkillsDictionary.Instance.buffSkillsDictionary["Critical Hit"]);
-        buffSkills.Add(BuffSkillsDictionary.Instance.buffSkillsDictionary["Inspire"]);
-        defenseSkills.Add(DefenseSkillsDictionary.Instance.defenseSkillsDictionary["Counter"]);
-        effectSkills.Add(EffectSkillsDictionary.Instance.effectSkillsDictionary["Disarm"]);
-        reactionSkills.Add(ReactionSkillsDictionary.Instance.reactionSkillsDictionary["Last Breath"]);
-        reactionSkills.Add(ReactionSkillsDictionary.Instance.reactionSkillsDictionary["Berserk"]);
-        */
-    }
+        GameObject dice = Instantiate(dicePrefab, diceRack.transform.position, Quaternion.identity, diceRack.transform);
+        Dice diceStats = dice.GetComponent<Dice>(); 
+        diceStats.isPlayerDice = true;
+        diceStats.isBerserkDice = isBerserkDice;
+        diceStats.isTemporary = !isPermanentDice;
+        if (!isPermanentDice) diceStats.tempTurns = permTurnAmount;
 
-    public void AddDice(bool isPermanentDice)
-    {
-        GameObject dice = Instantiate(dicePrefab, diceRack.transform.position + new Vector3(0f, 0f, 0f), Quaternion.identity, diceRack.transform);
-        if (isPermanentDice) dices.Add(dice.GetComponent<Dice>());
-        else tempDices.Add(dice.GetComponent<Dice>());
+        dices.Add(diceStats);
 
-        diceRack.GetComponent<DiceRackSizeFitter>().ResizeRack(dices, tempDices);
+        diceRack.GetComponent<DiceRackSizeFitter>().ResizeRack(dices);
     }
 
     public IEnumerator Attack()
     {
         damageToDeal = 0;
-        foreach (Dice dice in dices)
-        {
-            StartCoroutine(dice.Roll());
-            damageToDeal += dice.value;
-        }
-        foreach (Dice dice in tempDices)
-        {
-            StartCoroutine(dice.Roll());
-            damageToDeal += dice.value;
-        }
-
+        foreach (Dice dice in dices) StartCoroutine(dice.Roll());
         yield return new WaitForSeconds(0.95f);
 
+        Battle.Instance.canModifyDices = true;
+        DiceButtons.Instance.okButton.interactable = true;
+        while (!Battle.Instance.isReadyToAttack && !Battle.Instance.isAutoAttacking) yield return null;
+        Battle.Instance.canModifyDices = false;
+        foreach (Dice dice in dices) dice.RemoveHighlight();
+
+        foreach (Dice dice in dices) damageToDeal += dice.value;
         mostRolledDigit = Battle.Instance.CalculateMostRolledDigit(dices);
         GameUI.Instance.playerMostRolledDigitObject.UpdateAppearance(mostRolledDigit);
+
+        damageToDeal += damageBonus;
+        damageToDeal += tempDamageBonus;
 
         foreach (var skill in buffSkills)
         {
@@ -107,12 +103,10 @@ public class Player : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.05f);
-        damageToDeal += damageBonus;
-        damageToDeal += tempDamageBonus;
 
         character.animator.SetTrigger("isAttacking01");
-        yield return new WaitForSeconds(0.02f);
-        yield return new WaitForSeconds(character.animator.GetCurrentAnimatorClipInfo(0)[0].clip.length);
+        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(character.animator.GetCurrentAnimatorClipInfo(0)[0].clip.length - 0.01f);
 
         foreach (var skill in damageSkills)
         {
@@ -121,12 +115,54 @@ public class Player : MonoBehaviour
             if (skill.hasSkillPattern(dices))
             {
                 skill.PerformSkill(character.animator);
-                yield return new WaitForSeconds(0.02f);
-                yield return new WaitForSeconds(character.animator.GetCurrentAnimatorClipInfo(0)[0].clip.length);
+                yield return new WaitForSeconds(0.01f);
+
+                if (!skill.hasSeparateAnim) yield return new WaitForSeconds(character.animator.GetCurrentAnimatorClipInfo(0)[0].clip.length - 0.01f);
+                else yield return new WaitForSeconds(skill.GetAnimLength() - 0.01f);
             }
         }
 
         if (hasReturnToIdle) character.animator.SetTrigger("ReturnToIdle");
+
+        if (hasBat)
+        {
+            activeSummons["Bat"].Attack();
+            yield return new WaitForSeconds(0.7f);
+        }
+        if (hasSkull)
+        {
+            activeSummons["Skull"].Attack();
+            yield return new WaitForSeconds(0.7f);
+        }
+        if (hasGolem)
+        {
+            activeSummons["Golem"].Attack();
+            yield return new WaitForSeconds(0.7f);
+        }
+        if (hasDemon)
+        {
+            activeSummons["Demon"].Attack();
+            yield return new WaitForSeconds(0.7f);
+        }
+
+        foreach (var skill in summonSkills)
+        {
+            if (Battle.Instance.curEnemy.isDying) break;
+
+            if (skill.hasSkillPattern(dices))
+            {
+                skill.PerformSkill(character.animator);
+                isSummoning = true;
+            }
+        }
+        if (isSummoning)
+        {
+            yield return new WaitForSeconds(0.3f);
+            character.animator.SetTrigger("isSummoning");
+            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(character.animator.GetCurrentAnimatorClipInfo(0)[0].clip.length);
+            isSummoning = false;
+        }
 
         Battle.Instance.hasFinishedAttacking = true;
         yield return null;
@@ -136,6 +172,17 @@ public class Player : MonoBehaviour
     {
         character.animator.SetTrigger(animToTrigger);
         StartCoroutine(UpdateHP(receivedDamage, false));
+    }
+
+    public void ActivateSummons()
+    {
+        foreach (var summon in summonsToActivate)
+        {
+            summon.gameObject.SetActive(true);
+            StartCoroutine(summon.Appear());
+            activeSummons.Add(summon.summonName, summon);
+        }
+        summonsToActivate.Clear();
     }
 
     public IEnumerator UpdateHP(int amount, bool isHealing)
@@ -171,10 +218,10 @@ public class Player : MonoBehaviour
             {
                 ParticleSystem hpSoulHurtFX = Instantiate(hpSoulHurtAnimation, soul.transform.position, hpSoulHurtAnimation.transform.rotation);
                 var animEmission = hpSoulHurtFX.emission;
-                animEmission.rateOverTime = (soul.currentStage - previousStage) * 6;
+                animEmission.rateOverTime = (soul.currentStage - previousStage) * 30;
             }
 
-            soulSprite.sprite = soul.stages[soul.currentStage];
+            soul.animator.SetInteger("Stage", soul.currentStage);
 
             //if (curHitPoints <= 0) Die();
 

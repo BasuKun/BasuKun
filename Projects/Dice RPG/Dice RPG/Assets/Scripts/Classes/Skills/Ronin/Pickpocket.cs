@@ -23,8 +23,8 @@ public class Pickpocket : MonoBehaviour, IBuffSkill
             {
                 Player.Instance.skillsActivated++;
                 Player.Instance.soulCurrencyBonus++;
-                StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillName, true, skillType));
-                StartCoroutine(dices[i + 1].TriggerSkillAnimation(0f, skillName, false, skillType));
+                StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillName, true, Player.Instance.character.transform, skillType));
+                StartCoroutine(dices[i + 1].TriggerSkillAnimation(0f, skillName, false, Player.Instance.character.transform, skillType));
                 break;
             }
         }

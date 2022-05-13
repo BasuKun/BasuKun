@@ -7,6 +7,7 @@ public class DoubleSlash : MonoBehaviour, IDamageSkill
     public string skillName { get; set; }
     public CurrentClass.classes skillClass { get; set; }
     public SkillTypes.types skillType { get; set; }
+    public bool hasSeparateAnim { get; set; }
     public int damageToDeal { get; set; }
 
     public void SetData()
@@ -14,21 +15,17 @@ public class DoubleSlash : MonoBehaviour, IDamageSkill
         skillName = "Double Slash";
         skillClass = CurrentClass.classes.Ronin;
         skillType = SkillTypes.types.Damage;
+        hasSeparateAnim = false;
     }
 
     public bool hasSkillPattern(List<Dice> dices)
     {
         damageToDeal = 0;
-        int firstRoll = dices[0].value;
-        if (firstRoll == 1) return false;
 
-        foreach (var dice in dices)
+        if (dices[1].value < dices[0].value)
         {
-            if (dice.value < firstRoll)
-            {
-                damageToDeal += dice.value;
-                StartCoroutine(dice.TriggerSkillAnimation(0f, skillName, false, skillType));
-            }
+            damageToDeal += dices[1].value * 3;
+            StartCoroutine(dices[1].TriggerSkillAnimation(0f, skillName, false, Player.Instance.character.transform, skillType));
         }
 
         return damageToDeal > 0;
@@ -40,5 +37,10 @@ public class DoubleSlash : MonoBehaviour, IDamageSkill
         Player.Instance.damageToDeal = damageToDeal + Player.Instance.damageBonus + Player.Instance.tempDamageBonus;
         Battle.Instance.SkillNamePopout(skillName, Player.Instance.character.transform, skillType);
         animator.SetTrigger("isAttacking03");
+    }
+
+    public float GetAnimLength()
+    {
+        return 0;
     }
 }

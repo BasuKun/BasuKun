@@ -27,8 +27,8 @@ public class Berserk : MonoBehaviour, IReactionSkill
         {
             Battle.Instance.isBerserking = true;
             Battle.Instance.SkillNamePopout("Berserk", Player.Instance.character.transform, SkillTypes.types.Reaction);
-            Player.Instance.AddDice(false);
-            Player.Instance.AddDice(false);
+            Player.Instance.AddDice(true, false, int.MaxValue);
+            Player.Instance.AddDice(true, false, int.MaxValue);
         }
 
         if (((float)curHitPoints / (float)maxHitPoints > 0.25f && Battle.Instance.isBerserking))
@@ -40,8 +40,16 @@ public class Berserk : MonoBehaviour, IReactionSkill
     public void ResetSkill()
     {
         Battle.Instance.isBerserking = false;
-        foreach (var dice in Player.Instance.tempDices) Destroy(dice.gameObject);
-        Player.Instance.tempDices.Clear();
-        Player.Instance.diceRack.GetComponent<DiceRackSizeFitter>().ResizeRack(Player.Instance.dices, Player.Instance.tempDices);
+
+        foreach (var dice in Player.Instance.dices)
+        {
+            if (dice.isBerserkDice)
+            {
+                Player.Instance.dices.Remove(dice);
+                Destroy(dice.gameObject);
+            }
+        }
+
+        Player.Instance.diceRack.GetComponent<DiceRackSizeFitter>().ResizeRack(Player.Instance.dices);
     }
 }

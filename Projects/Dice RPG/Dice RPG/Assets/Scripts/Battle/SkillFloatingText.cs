@@ -46,6 +46,9 @@ public class SkillFloatingText : MonoBehaviour
             case SkillTypes.types.Defense:
                 posOffset = 0.08f * DefenseSkillsDictionary.Instance.namePopouts.Count;
                 break;
+            case SkillTypes.types.Summon:
+                posOffset = 0.08f * SummonSkillsDictionary.Instance.namePopouts.Count;
+                break;
             default:
                 break;
         }
@@ -68,6 +71,9 @@ public class SkillFloatingText : MonoBehaviour
                 break;
             case SkillTypes.types.Defense:
                 DefenseSkillsDictionary.Instance.namePopouts.Remove(this.gameObject);
+                break;
+            case SkillTypes.types.Summon:
+                SummonSkillsDictionary.Instance.namePopouts.Remove(this.gameObject);
                 break;
             default:
                 break;

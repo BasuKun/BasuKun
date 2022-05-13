@@ -27,7 +27,7 @@ public class SideStep : MonoBehaviour, IDefenseSkill
             {
                 Battle.Instance.isSideStepping = true;
                 Player.Instance.damageToAvoid += dices[i].value;
-                StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillName, false, skillType));
+                StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillName, false, Player.Instance.character.transform, skillType));
                 amountTriggered++;
             }
         }
