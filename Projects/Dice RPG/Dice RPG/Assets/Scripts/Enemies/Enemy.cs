@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class Enemy : MonoBehaviour
 {
@@ -44,6 +45,7 @@ public class Enemy : MonoBehaviour
     public int bleedingTurns = 0;
 
     public GameObject soulCurrencyPrefab;
+    public Light2D spotlight;
 
     void Awake()
     {
@@ -110,7 +112,10 @@ public class Enemy : MonoBehaviour
         {
             soul.GetComponent<HPSoulFloating>().appearAnimator.SetTrigger("isAppearing");
             yield return new WaitForSeconds(0.3f);
-            soul.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+
+            SpriteRenderer soulSprite = soul.gameObject.GetComponent<SpriteRenderer>();
+            soulSprite.color = ColorGradingChanger.Instance.soulsColor;
+            soulSprite.enabled = true;
         }
 
         yield return null;
@@ -186,6 +191,8 @@ public class Enemy : MonoBehaviour
         {
             GameObject soulCurrency = Instantiate(soulCurrencyPrefab, this.gameObject.transform.position, Quaternion.identity);
         }
+
+        Destroy(spotlight.gameObject);
 
         foreach (var dice in dices)
         {

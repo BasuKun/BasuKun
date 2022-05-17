@@ -78,6 +78,7 @@ public class Battle : MonoBehaviour
                 StartCoroutine(enemy.Attack());
                 yield return new WaitForSeconds(1f);
             }
+
             turn++;
         }
 
@@ -86,6 +87,7 @@ public class Battle : MonoBehaviour
         turn = 0;
         ResetSkills();
 
+        ChatBoxHandler.Instance.Speak(ChatBoxHandler.DialogTypes.Win);
         StartCoroutine(Player.Instance.Move());
         yield return null;
     }

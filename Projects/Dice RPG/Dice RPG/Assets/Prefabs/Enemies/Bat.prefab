@@ -7,6 +7,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5099567965459867389, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.039
+      objectReference: {fileID: 0}
+    - target: {fileID: 5099567965459867389, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.269
+      objectReference: {fileID: 0}
+    - target: {fileID: 5937444566197796392, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.045
+      objectReference: {fileID: 0}
+    - target: {fileID: 5937444566197796392, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.053
+      objectReference: {fileID: 0}
+    - target: {fileID: 8085056950775864499, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.055
+      objectReference: {fileID: 0}
     - target: {fileID: 8387345149803296394, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
       propertyPath: m_Name
       value: Bat
@@ -96,8 +116,16 @@ PrefabInstance:
       value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 8387345150479981921, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1640663baded5c54c99d5de51ab5e913, type: 3}
+    - target: {fileID: 8387345150479981921, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8387345150479981921, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 26b8f8ca92383da45801c2e69e2d8fe9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}

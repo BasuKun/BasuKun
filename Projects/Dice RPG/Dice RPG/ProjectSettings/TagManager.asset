@@ -12,7 +12,7 @@ TagManager:
   - Water
   - UI
   - Background
-  - 
+  - Moon
   - 
   - 
   - 
@@ -38,6 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Moon
+    uniqueID: 2778640569
+    locked: 0
   - name: Background
     uniqueID: 1966606435
     locked: 0

@@ -18,6 +18,9 @@ public class Class : MonoBehaviour
     [DisplayName("Gamma")]
     [Trackball(TrackballAttribute.Mode.Gamma)]
     public Vector4Parameter gamma;
+    public Color lightShaftColor;
+    public Color lightShaftColor2;
+    public Color soulsColor;
 
     [Header("ANIMATION")]
     public Animator animator;
@@ -42,6 +45,7 @@ public class Class : MonoBehaviour
 
     [Header("OTHER")]
     public Transform soulsPosition;
+    public Transform chatBoxPosition;
 
     void Awake()
     {

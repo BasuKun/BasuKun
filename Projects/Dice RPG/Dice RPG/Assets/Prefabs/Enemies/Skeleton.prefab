@@ -86,6 +86,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.272
       objectReference: {fileID: 0}
+    - target: {fileID: 5937444566197796392, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.034
+      objectReference: {fileID: 0}
+    - target: {fileID: 5937444566197796392, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.006
+      objectReference: {fileID: 0}
     - target: {fileID: 8387345149803296394, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
       propertyPath: m_Name
       value: Skeleton
@@ -108,7 +116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8387345149803296395, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
       propertyPath: hitPoints
-      value: 500
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8387345149803296395, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
       propertyPath: diceAmount
@@ -178,6 +186,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8387345150479981921, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 26b8f8ca92383da45801c2e69e2d8fe9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
 --- !u!1 &6850495974656748288 stripped
