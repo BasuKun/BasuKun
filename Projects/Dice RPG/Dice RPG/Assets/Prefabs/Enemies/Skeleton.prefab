@@ -116,7 +116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8387345149803296395, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
       propertyPath: hitPoints
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8387345149803296395, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
       propertyPath: diceAmount

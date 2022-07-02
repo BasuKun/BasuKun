@@ -70,8 +70,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dcced4b5efa4e6042b67722b3e433449, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 9d7aa975cf66938458a02321a9f7f0a3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f15ef57e12d33347ba661ec9093f811, type: 2}
+  m_sharedMaterial: {fileID: -4066099350656287604, guid: 8f15ef57e12d33347ba661ec9093f811, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -95,17 +95,17 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
-  m_fontSizeBase: 32
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: -15
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -166,7 +166,9 @@ MonoBehaviour:
   triggerAnimPlayerOnChange: 0
   effectIntensityMultiplier: 50
   appearancesContainer:
-    tags:
+    tagsFallback_Appearances:
+    - size
+    tagsFallback_Disappearances:
     - size
     values:
       defaults:
@@ -184,6 +186,8 @@ MonoBehaviour:
         offsetAmplitude: 1
         rotationDuration: 0.3
         rotationStartAngle: 180
+        randomDirDuration: 0.3
+        randomDirAmplitude: 1
       presets: []
   tags_fallbackBehaviors: []
   behaviorValues:
@@ -225,6 +229,7 @@ MonoBehaviour:
   scriptable_globalAppearancesValues: {fileID: 0}
   useDynamicScaling: 0
   referenceFontSize: -1
+  isResettingEffectsOnNewText: 1
   timeScale: 0
 --- !u!50 &7571423315845634755
 Rigidbody2D:

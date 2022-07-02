@@ -173,8 +173,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a6a24eada5d9e6d419243af70198ed0a, type: 2}
-  m_sharedMaterial: {fileID: -6411149073248659516, guid: a6a24eada5d9e6d419243af70198ed0a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f15ef57e12d33347ba661ec9093f811, type: 2}
+  m_sharedMaterial: {fileID: -4066099350656287604, guid: 8f15ef57e12d33347ba661ec9093f811, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -198,8 +198,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 8
+  m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -208,9 +208,9 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: -4.5
-  m_wordSpacing: 0
-  m_lineSpacing: 4.5
+  m_characterSpacing: -15
+  m_wordSpacing: 20
+  m_lineSpacing: 50
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -283,9 +283,9 @@ MonoBehaviour:
     defaults:
       wiggleAmplitude: 0.02
       wiggleFrequency: 6.67
-      waveFrequency: 4.78
-      waveAmplitude: 0.09
-      waveWaveSize: 0.22
+      waveFrequency: 5.78
+      waveAmplitude: 0.07
+      waveWaveSize: 0.4
       angleSpeed: 180
       angleDiffBetweenChars: 10
       swingAmplitude: 27.5
@@ -463,10 +463,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 10
-    m_Right: 10
-    m_Top: 5
-    m_Bottom: 15
+    m_Left: 7
+    m_Right: 7
+    m_Top: 10
+    m_Bottom: 12
   m_ChildAlignment: 4
   m_Spacing: 0
   m_ChildForceExpandWidth: 1

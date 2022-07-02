@@ -67,17 +67,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Suppressive Fire!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dcced4b5efa4e6042b67722b3e433449, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: bf303a2cf31b60f449c3f3a6159891f0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f15ef57e12d33347ba661ec9093f811, type: 2}
+  m_sharedMaterial: {fileID: -4066099350656287604, guid: 8f15ef57e12d33347ba661ec9093f811, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -94,18 +94,18 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: -10
-  m_wordSpacing: 0
+  m_characterSpacing: -15
+  m_wordSpacing: 10
   m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
@@ -151,7 +151,9 @@ MonoBehaviour:
   triggerAnimPlayerOnChange: 0
   effectIntensityMultiplier: 50
   appearancesContainer:
-    tags:
+    tagsFallback_Appearances:
+    - size
+    tagsFallback_Disappearances:
     - size
     values:
       defaults:
@@ -169,6 +171,8 @@ MonoBehaviour:
         offsetAmplitude: 1
         rotationDuration: 0.3
         rotationStartAngle: 180
+        randomDirDuration: 0.3
+        randomDirAmplitude: 1
       presets: []
   tags_fallbackBehaviors: []
   behaviorValues:
@@ -210,6 +214,7 @@ MonoBehaviour:
   scriptable_globalAppearancesValues: {fileID: 0}
   useDynamicScaling: 0
   referenceFontSize: -1
+  isResettingEffectsOnNewText: 1
   timeScale: 0
 --- !u!114 &8634215922714939222
 MonoBehaviour:

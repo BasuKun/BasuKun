@@ -70,13 +70,13 @@ public class SelectedClassConfirmButton : MonoBehaviour
 
     private IEnumerator PlaceCamera(Transform soulsPosition)
     {
-        while (Camera.main.transform.position.x < 0.669f)
+        while (Camera.main.transform.position.x < 0.489f)
         {
             playerSouls.transform.position = soulsPosition.position;
-            Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, new Vector3(0.67f, -0.33f, -10f), Time.deltaTime);
+            Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, new Vector3(0.49f, -0.33f, -10f), Time.deltaTime);
             yield return new WaitForFixedUpdate();
         }
-        Camera.main.transform.position = new Vector3(0.67f, -0.33f, -10f);
+        Camera.main.transform.position = new Vector3(0.49f, -0.33f, -10f);
         yield return null;
     }
 

@@ -7,8 +7,8 @@ public class BackgroundParallax : MonoBehaviour
     public bool hasProp;
     public bool willParallax;
     public float parallaxAmount;
-    private float length = 3.41f;
-    private float cameraOffset = 0.67f;
+    private float length = 4.26f;
+    private float cameraOffset = 0.49f;
     private PropsGenerator prop = null;
 
     private void Start()

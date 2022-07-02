@@ -48,20 +48,24 @@ public class ChatBoxHandler : MonoBehaviour
 
 	public void PopulateLists()
 	{   
-		//Warrior SELECT HOVER
+		// Warrior SELECT HOVER
 		WarriorSelectHoverDialog.Add("Pick me! This sword of mine is gonna make <wave>MINCED MEAT</wave> out of these creatures!");
 		WarriorSelectHoverDialog.Add("Come on, you <wave>KNOW</wave> I'm the right choice here!");
 		WarriorSelectHoverDialog.Add("Don't look more, I'm the strongest for sure!");
 		WarriorSelectHoverDialog.Add("You see that sword? You see how big it is? It's a no brainer!");
 		WarriorSelectHoverDialog.Add("I'm itching for <wiggle>ADVENTURE</wiggle>, for <wave>GREATNESS</wave>, for <shake>GLORRYYYYYYY</shake>!");
 		WarriorSelectHoverDialog.Add("<wiggle>OBSERVE ME</wiggle>!... or whatever the line is.");
-		//Ronin SELECT HOVER
+		WarriorSelectHoverDialog.Add("In the case of swords, size DOES matter. Can't go wrong with picking me!");
+		WarriorSelectHoverDialog.Add("Trust me, I'm pretty much Easy difficulty!");
+		// Ronin SELECT HOVER
 		RoninSelectHoverDialog.Add("I would be honoured to be picked for this task.");
 		RoninSelectHoverDialog.Add("I am ready, just say the word and I shall begin.");
 		RoninSelectHoverDialog.Add("Choose me if you must, for I do not fear death.");
 		RoninSelectHoverDialog.Add("I shall remain calm towards the face of danger, I promise you that.");
 		RoninSelectHoverDialog.Add("I will stand proudly and fight alongside you, if you do wish for it.");
 		RoninSelectHoverDialog.Add("I shall never turn down new challenges.");
+		RoninSelectHoverDialog.Add("I do not have a master, but I do have a duty to use my abilities for the greater good.");
+		RoninSelectHoverDialog.Add("If destiny brings you to me, then so be it.");
 		// Gunslinger SELECT HOVER
 		GunslingerSelectHoverDialog.Add("Ooh they're looking at me! Look cool now. Should I strike a pose? I should strike a pose.");
 		GunslingerSelectHoverDialog.Add("Think about it, I have guns. The guy next to me has a sword. Who do you think wins here?... No really, who does? Please say I do.");
@@ -69,6 +73,8 @@ public class ChatBoxHandler : MonoBehaviour
 		GunslingerSelectHoverDialog.Add("Am I gonna get picked? Am I not? <wiggle>The suspense is killing me</wiggle>! Figuratively, of course.");
 		GunslingerSelectHoverDialog.Add("I wonder if getting a horse would increase my chances of getting selected... I'd look so cool with a horse.");
 		GunslingerSelectHoverDialog.Add("I heard every gun makes its own tune. Hope you get to listen to mine one day, it's pretty catchy!");
+		GunslingerSelectHoverDialog.Add("Oh god this feels like a job interview... Wait, did I need to bring a CV?");
+		GunslingerSelectHoverDialog.Add("Why does everyone here look like they skipped legs day? I mean, I do too but that's beside the point.");
 		// Technomancer SELECT HOVER
 		TechnomancerSelectHoverDialog.Add("<shake>Nyehehe</shake>, and what do we have here? Ready to choose yet?");
 		TechnomancerSelectHoverDialog.Add("I'm <wiggle>shockingly</wiggle> strong, despite the appearances! Get it?");
@@ -76,6 +82,8 @@ public class ChatBoxHandler : MonoBehaviour
 		TechnomancerSelectHoverDialog.Add("Hehe<wiggle>HEHEHE</wiggle><shake>NYAHAHAH</shake>- no wait we got guests, not the time to go crazy just yet.");
 		TechnomancerSelectHoverDialog.Add("All <wave>wired up</wave> and ready to go! Hehehe, good one. <wiggle>Oh, thank you</wiggle>!"); 
 		TechnomancerSelectHoverDialog.Add("Don't mind the fried birds and rats around me... Just passing the time.");
+		TechnomancerSelectHoverDialog.Add("Fun fact, I <shake>know</shake> what happens to the others when they don't get selected. But don't tell them! <wiggle>Hehehe</wiggle>");
+		TechnomancerSelectHoverDialog.Add("Don't let the others steal my thunder! <shake>Nyehehe</shake> I'm on point today!");
 		// Warlock SELECT HOVER
 		WarlockSelectHoverDialog.Add("Please no...");
 		WarlockSelectHoverDialog.Add("This looks like it'll take effort? Sorry, putting in effort goes against my culture...");
@@ -83,6 +91,8 @@ public class ChatBoxHandler : MonoBehaviour
 		WarlockSelectHoverDialog.Add("Don't you wanna go with the big sword guy or the lightning dude instead? I don't even have a weapon on me...");
 		WarlockSelectHoverDialog.Add("<wiggle>Uugh</wiggle> I should have called in sick..");
 		WarlockSelectHoverDialog.Add("Don't you <wiggle>dare</wiggle>.");
+		WarlockSelectHoverDialog.Add("Oh no, they're looking my way... Must. not. make. eye contact.");
+		WarlockSelectHoverDialog.Add("No. No no no no. <wave>Noooooope</wave>.");
 		// Healer SELECT HOVER
 		HealerSelectHoverDialog.Add("I'm ready if you do choose me, but no hard feelings either way!");
 		HealerSelectHoverDialog.Add("Whatever your decision may be, I will pray for you and your partner!");
@@ -90,35 +100,49 @@ public class ChatBoxHandler : MonoBehaviour
 		HealerSelectHoverDialog.Add("This must be a hard decision to make. You have all my support!");
 		HealerSelectHoverDialog.Add("Evil awaits, and I have the power to let them pass peacefully and painlessly. This is the least we can do for these unfortunate souls!");
 		HealerSelectHoverDialog.Add("Everyone here is formidable, despite some interesting personalities. You can't go wrong with anyone!");
+		HealerSelectHoverDialog.Add("Undecided? That's okay, just follow your heart!");
+		HealerSelectHoverDialog.Add("I will help however I can!");
 
 
-		//Warrior WELCOME
+		// Warrior WELCOME
 		WarriorWelcomeDialog.Add("YES! Great choice! Let's go kick some <shake>BUTTS</shake>!");
 		WarriorWelcomeDialog.Add("HAH! You've got taste my friend! <shake>LET'S DO THIS!</shake>");
 		WarriorWelcomeDialog.Add("This. Is. Gonna. Be. <shake>EPIC</shake>!!! Ready to slay some monsters? I AM!");
-		//Ronin WELCOME
+		WarriorWelcomeDialog.Add("Funny, I would've made the SAME choice!");
+		WarriorWelcomeDialog.Add("ONTO ADVENTURE! Follow me, I know the way!");
+		// Ronin WELCOME
 		RoninWelcomeDialog.Add("I am honoured to have been chosen. I shall not disappoint you.");
 		RoninWelcomeDialog.Add("You have my thanks. This blade of mine is yours to command.");
 		RoninWelcomeDialog.Add("You have my gratitude for selecting me. I will carry out this mission until death itself comes banging at my door.");
+		RoninWelcomeDialog.Add("To think you would hold me in such high regard. I will not let you down.");
+		RoninWelcomeDialog.Add("I am humbled. I shall not tarnish your trust.");
 		// Gunslinger WELCOME
 		GunslingerWelcomeDialog.Add("Heya partner! Should I call you partner? I'm calling you partner.");
-		GunslingerWelcomeDialog.Add("Perfect, these guns of mine were beginning to get <wave>thirsty for blood</wave>!... Ok that sounded better in my head.");
+		GunslingerWelcomeDialog.Add("Perfect, these guns of mine were beginning to get <wave>thirsty for blood</wave>!... Too cringe? Yeah, too cringe.");
 		GunslingerWelcomeDialog.Add("You've just partnered up with the fastest gunner in the west!... Wait are we in the west? Where even are we anyway?");
+		GunslingerWelcomeDialog.Add("Wait, what just happened to the others?? Is no one gonna talk about that?");
+		GunslingerWelcomeDialog.Add("Don't worry, this isn't my first rodeo!... Okay I lied, this is totally my first rodeo.");
 		// Technomancer WELCOME
 		TechnomancerWelcomeDialog.Add("Oh, we got ourselves a fan of frying enemies' brains? We'll get along just great then!");
 		TechnomancerWelcomeDialog.Add("You ready for the smell of fried zombie corpses? I never get tired of it!");
 		TechnomancerWelcomeDialog.Add("Good timing, I was just getting bored of zapping nearby crows, I'm ready for bigger stuff!");
+		TechnomancerWelcomeDialog.Add("<shake>Nyehehe</shake>, <wiggle>VERY</wiggle> interesting choice. I'm noting that one down!");
+		TechnomancerWelcomeDialog.Add("Oh? This is a surprise. I wonder, was it the dead crows around me, or my beautiful eyes? <wiggle>Nyehehe</wiggle>");
 		// Warlock WELCOME
 		WarlockWelcomeDialog.Add("<wiggle>Uuuugh</wiggle>, why did it have to be me?");
 		WarlockWelcomeDialog.Add("Me? Of all people? I was just getting ready for my 4th mid-evening nap...");
 		WarlockWelcomeDialog.Add("<wiggle>Uuuugh</wiggle> this is gonna take so much effort... I'm already tired just thinking about it.");
+		WarlockWelcomeDialog.Add("<wiggle>Uugh</wiggle>, how unlucky can I get? I even made sure not to make eye contact.");
+		WarlockWelcomeDialog.Add("For future reference, I did NOT consent to this.");
 		// Healer WELCOME
-		HealerWelcomeDialog.Add("Is this faith that brought us together? Well, let's get started!");
+		HealerWelcomeDialog.Add("Is this fate that brought us together? Well, let's get started!");
 		HealerWelcomeDialog.Add("Thank you for believing in me. Together we shall cleanse this world from all evil!");
 		HealerWelcomeDialog.Add("I am delighted to meet you! Now let's pray for our safety.");
+		HealerWelcomeDialog.Add("I'm touched! This will be a long journey but as long as we have faith, everything is possible!");
+		HealerWelcomeDialog.Add("I am moved by your choice. Shall we ask the divinities for their protection?");
 
 
-		//Warrior WIN
+		// Warrior WIN
 		WarriorWinDialog.Add("Got any more like this?");
 		WarriorWinDialog.Add("HAH, didn't even break a sweat!");
 		WarriorWinDialog.Add("Come on, gimme an actual challenge!");
@@ -136,7 +160,11 @@ public class ChatBoxHandler : MonoBehaviour
 		WarriorWinDialog.Add("I can already hear the chants and tales of our accomplishments!");
 		WarriorWinDialog.Add("Glad you chose me yet? Because I would be!");
 		WarriorWinDialog.Add("FACE, MEET SWORD.");
-		//Ronin WIN
+		WarriorWinDialog.Add("Another triumph for the <wave>UNSTOPPABLE</wave> warrior!");
+		WarriorWinDialog.Add("And the crowd goes <shake>WILD</shake>!");
+		WarriorWinDialog.Add("There's just no end to it... I LOVE IT!");
+		WarriorWinDialog.Add("Alright! Let's go this way next!");
+		// Ronin WIN
 		RoninWinDialog.Add("And so the win is ours.");
 		RoninWinDialog.Add("We have won this battle, but we have yet to win the war.");
 		RoninWinDialog.Add("I thank you for this fight.");
@@ -149,11 +177,15 @@ public class ChatBoxHandler : MonoBehaviour
 		RoninWinDialog.Add("The more we win, the more humbly we should walk.");
 		RoninWinDialog.Add("I have learned a lot from this encounter, you have my thanks.");
 		RoninWinDialog.Add("I took no pleasure in stealing your life away, but it had to be done.");
-		RoninWinDialog.Add("I may not have an army of 47 ronins, but I vow to get the job done.");
+		RoninWinDialog.Add("I may not have an army of 47 ronins, but I vow to get the job done regardless.");
 		RoninWinDialog.Add("True strength does not prey on the weak.");
 		RoninWinDialog.Add("When this ends, let's meet once more around a cup of sake.");
 		RoninWinDialog.Add("There will be no rest until we have fulfilled our journey.");
 		RoninWinDialog.Add("Your fighting spirit was commendable. Farewell.");
+		RoninWinDialog.Add("This was a great learning experience.");
+		RoninWinDialog.Add("Sayonara.");
+		RoninWinDialog.Add("Nothing personal.");
+		RoninWinDialog.Add("Their technique needed work, but I respect the attempt.");
 		// Gunslinger WIN
 		GunslingerWinDialog.Add("Did you see that headshot just now? Tell me I did good!");
 		GunslingerWinDialog.Add("Did you doubt me partner? Because I did, I really thought I was a goner.");
@@ -172,6 +204,10 @@ public class ChatBoxHandler : MonoBehaviour
 		GunslingerWinDialog.Add("Let's keep <wiggle>gunning</wiggle> for victory!");
 		GunslingerWinDialog.Add("Should I start writing a diary of our victories? Okay, I'll buy the diary, you get to the writing!");
 		GunslingerWinDialog.Add("Maybe the real victory is the friendship we built along the way!");
+		GunslingerWinDialog.Add("Booyah!... Do cool kids still say that? They do right?");
+		GunslingerWinDialog.Add("That one totally felt like an action movie!");
+		GunslingerWinDialog.Add("Hasta la vista, <wave>baby</wave>!");
+		GunslingerWinDialog.Add("<wiggle>Pft</wiggle>, imagine not bringing a gun to a gunfight. Their mistake, not mine!");
 		// Technomancer WIN
 		TechnomancerWinDialog.Add("<shake>Nyehehe</shake>, that was easier than expected.");
 		TechnomancerWinDialog.Add("<shake>ZAP</shake> goes its head. That was a nice sound!");
@@ -189,7 +225,11 @@ public class ChatBoxHandler : MonoBehaviour
 		TechnomancerWinDialog.Add("Ah, medium rare, just how I like it!");
 		TechnomancerWinDialog.Add("Smells like barbecue in here!");
 		TechnomancerWinDialog.Add("<shake>Nyehe</shake>, your hair looks funny! Oh, that must be all the static.");
-		TechnomancerWinDialog.Add("Wanna listen to some DC/AC on the way to the next bad guy?"); // TO CHECK IF I CAN DO THIS
+		TechnomancerWinDialog.Add("Wanna listen to some AC/DC on the way to the next bad guy?");
+		TechnomancerWinDialog.Add("I <wiggle>dread</wiggle> the day where one of these creatures comes at me with a full rubber bodysuit.");
+		TechnomancerWinDialog.Add("Did you see the look on its face when the lightning hit? <wiggle>Goosebumps</wiggle>!");
+		TechnomancerWinDialog.Add("Your attacks were pitiful!.. Are you even listening to m- oh right they're dead. <shake>Hehe</shake>");
+		TechnomancerWinDialog.Add("I had lab rats that fought back more than this.");
 		// Warlock WIN
 		WarlockWinDialog.Add("That was tiring... Is it nap time yet?");
 		WarlockWinDialog.Add("Please let's just go back home and sleep. I even have an extra bed for you.");
@@ -208,6 +248,10 @@ public class ChatBoxHandler : MonoBehaviour
 		WarlockWinDialog.Add("Why are all the bad guys monsters? Where are the bad humans for a change?");
 		WarlockWinDialog.Add("Could these souls fly a bit higher? They keep hitting my horns.");
 		WarlockWinDialog.Add("My life aspiration is to do nothing. You're not helping with that.");
+		WarlockWinDialog.Add("... So how long is this road anyway?");
+		WarlockWinDialog.Add("There's just no end to it... Who in their right mind would be crazy enough to enjoy this?");
+		WarlockWinDialog.Add("Wake me up when something interesting happens...");
+		WarlockWinDialog.Add("Are we there yet?");
 		// Healer WIN
 		HealerWinDialog.Add("May your soul rest in peace, and your sins be forgiven.");
 		HealerWinDialog.Add("We are doing good here, let's keep going!");
@@ -226,6 +270,10 @@ public class ChatBoxHandler : MonoBehaviour
 		HealerWinDialog.Add("Life and death are two sides of the same coin.");
 		HealerWinDialog.Add("Your mortal journey may end here, but fear not; much awaits for you in the afterlife.");
 		HealerWinDialog.Add("Fun fact: I very much dislike apples! Not sure why.");
+		HealerWinDialog.Add("My favorite verse is 1 Corinthians 15:42-44, but of course you'd know that one already!");
+		HealerWinDialog.Add("They had no one for them up until now. I'm glad we could be there to help them pass over in company.");
+		HealerWinDialog.Add("If only we could just talk things out...");
+		HealerWinDialog.Add("Prayer time! Yes, you pray too.");
 
 		// lose ideas:
 		// Technomancer: Hang on, I've got some spare batteries.
