@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class Dice : MonoBehaviour
 {
     public int value { get; set; }
+    public int attackValue { get; set; }
+    public int skillValue { get; set; }
     public bool isBerserkDice { get; set; }
     public bool isPlayerDice { get; set; }
     public bool isTemporary { get; set; }
@@ -39,6 +41,8 @@ public class Dice : MonoBehaviour
             animator.SetInteger("StartValue", value);
             animator.SetBool("isRolling", true);
             value = Random.Range(1, 7);
+            attackValue = Balancing.GetAttackValue(value, false);
+            skillValue = Balancing.GetSkillValue(value, false);
 
             yield return new WaitForFixedUpdate();
             animator.SetInteger("EndValue", value);
@@ -84,6 +88,8 @@ public class Dice : MonoBehaviour
         overlay.enabled = true;
         overlay.sortingOrder = appearance.sortingOrder + 1;
         value = 0;
+        attackValue = 0;
+        skillValue = 0;
         lockedTurns = amountOfTurns;
     }
 

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class DiceRackSizeFitter : MonoBehaviour
 {
+    public GameObject Container;
+
     private int diceAmount;
     private List<Dice> dicesTotal = new List<Dice>();
 

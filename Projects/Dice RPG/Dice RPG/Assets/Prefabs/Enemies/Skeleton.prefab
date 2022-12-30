@@ -99,6 +99,10 @@ PrefabInstance:
       value: Skeleton
       objectReference: {fileID: 0}
     - target: {fileID: 8387345149803296395, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: exp
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387345149803296395, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
       propertyPath: hurtAnim
       value: 
       objectReference: {fileID: 7400000, guid: c3e99b9a46a99f445896def0df82b397, type: 2}
@@ -115,6 +119,10 @@ PrefabInstance:
       value: Skeleton
       objectReference: {fileID: 0}
     - target: {fileID: 8387345149803296395, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: expPrefab
+      value: 
+      objectReference: {fileID: 5518152897895864372, guid: 9f50b37c41ef2f1429956183f0f4cdda, type: 3}
+    - target: {fileID: 8387345149803296395, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
       propertyPath: hitPoints
       value: 100
       objectReference: {fileID: 0}
@@ -126,6 +134,10 @@ PrefabInstance:
       propertyPath: attackAnim01
       value: 
       objectReference: {fileID: 7400000, guid: 9021e971d0b0c234ab3b0c6f2f6d0e36, type: 2}
+    - target: {fileID: 8387345149803296395, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: soulCurrencies
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8387345149803296396, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -186,10 +198,6 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8387345150479981921, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 26b8f8ca92383da45801c2e69e2d8fe9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
 --- !u!1 &6850495974656748288 stripped

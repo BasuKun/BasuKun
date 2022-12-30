@@ -8,11 +8,12 @@ public class Class : MonoBehaviour
     [Header("STATS")]
     public string className;
     public CurrentClass.classes curClass;
-    public int hitPoints;
-    public int damage;
+    public int vitality;
+    public int strength;
+    public int finesse;
+    public int recovery;
+    public int greed;
     public int dice;
-    public int looting;
-    public int healing;
     public float selectionScreenAngle;
 
     [DisplayName("Gamma")]
@@ -20,6 +21,7 @@ public class Class : MonoBehaviour
     public Vector4Parameter gamma;
     public Color lightShaftColor;
     public Color lightShaftColor2;
+    public Color backgroundFilterColor;
     public Color soulsColor;
 
     [Header("ANIMATION")]
@@ -34,6 +36,8 @@ public class Class : MonoBehaviour
     public AnimationClip attackWhirlwindSlashAnim;
     public AnimationClip attackEclipseRushAnim;
     public AnimationClip attackTripleSlashAnim;
+    public AnimationClip attackDynamiteAnim;
+    public AnimationClip attackRifleAnim;
     public AnimationClip summonAnim;
     public AnimationClip returnToIdleAnim;
     public AnimationClip hurtAnim;
@@ -68,6 +72,8 @@ public class Class : MonoBehaviour
         if (attackWhirlwindSlashAnim != null) AOC["Attack_WhirlwindSlash"] = attackWhirlwindSlashAnim;
         if (attackEclipseRushAnim != null) AOC["Attack_EclipseRush"] = attackEclipseRushAnim;
         if (attackTripleSlashAnim != null) AOC["Attack_TripleSlash"] = attackTripleSlashAnim;
+		if (attackDynamiteAnim != null) AOC["Attack_Dynamite"] = attackDynamiteAnim;
+        if (attackRifleAnim != null) AOC["Attack_Rifle"] = attackRifleAnim;
         if (summonAnim != null) AOC["Summon"] = summonAnim;
         if (returnToIdleAnim != null) AOC["ReturnToIdle"] = returnToIdleAnim;
         AOC["Hurt"] = hurtAnim;

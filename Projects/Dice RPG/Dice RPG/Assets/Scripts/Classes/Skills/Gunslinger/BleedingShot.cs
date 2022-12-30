@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class BleedingShot : MonoBehaviour, IEffectSkill
 {
+    public int currentLevel { get; set; }
+    public int maxLevel { get; set; }
     public string skillName { get; set; }
     public CurrentClass.classes skillClass { get; set; }
     public SkillTypes.types skillType { get; set; }
 
     public void SetData()
     {
+        currentLevel = 0;
+        maxLevel = 1;
         skillName = "Bleeding Shot";
         skillClass = CurrentClass.classes.Gunslinger;
         skillType = SkillTypes.types.Effect;

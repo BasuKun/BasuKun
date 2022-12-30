@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Pierce : MonoBehaviour, IDamageSkill
 {
+    public int currentLevel { get; set; }
+    public int maxLevel { get; set; }
     public string skillName { get; set; }
     public CurrentClass.classes skillClass { get; set; }
     public SkillTypes.types skillType { get; set; }
@@ -12,6 +14,8 @@ public class Pierce : MonoBehaviour, IDamageSkill
 
     public void SetData()
     {
+        currentLevel = 0;
+        maxLevel = 1;
         skillName = "Pierce";
         skillClass = CurrentClass.classes.Warrior;
         skillType = SkillTypes.types.Damage;
@@ -24,7 +28,7 @@ public class Pierce : MonoBehaviour, IDamageSkill
         {
             if (dices[i].value == 1 && dices[i + 1].value == 1)
             {
-                damageToDeal = dices[i + 2].value * 3;
+                damageToDeal = dices[i + 2].skillValue * 3;
                 StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillName, true, Player.Instance.character.transform, skillType));
                 StartCoroutine(dices[i + 1].TriggerSkillAnimation(0f, skillName, false, Player.Instance.character.transform, skillType));
                 StartCoroutine(dices[i + 2].TriggerSkillAnimation(0f, skillName, false, Player.Instance.character.transform, skillType));

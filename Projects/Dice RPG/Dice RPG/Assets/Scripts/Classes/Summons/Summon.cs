@@ -58,7 +58,7 @@ public class Summon : MonoBehaviour
 
     public void Attack()
     {
-        Player.Instance.damageToDeal = linkedDice.value + Player.Instance.damageBonus + Player.Instance.tempDamageBonus;
+        Player.Instance.damageToDeal = linkedDice.skillValue + Player.Instance.damageBonus + Player.Instance.tempDamageBonus;
         animator.SetTrigger("isAttacking01");
 
         if (linkedDice.value == linkDigit)

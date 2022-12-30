@@ -32,6 +32,10 @@ PrefabInstance:
       value: Bat
       objectReference: {fileID: 0}
     - target: {fileID: 8387345149803296395, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: exp
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387345149803296395, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
       propertyPath: damage
       value: 0
       objectReference: {fileID: 0}
@@ -52,6 +56,10 @@ PrefabInstance:
       value: Bat
       objectReference: {fileID: 0}
     - target: {fileID: 8387345149803296395, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: expPrefab
+      value: 
+      objectReference: {fileID: 5518152897895864372, guid: 9f50b37c41ef2f1429956183f0f4cdda, type: 3}
+    - target: {fileID: 8387345149803296395, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
       propertyPath: hitPoints
       value: 30
       objectReference: {fileID: 0}
@@ -63,6 +71,10 @@ PrefabInstance:
       propertyPath: attackAnim01
       value: 
       objectReference: {fileID: 7400000, guid: c3d6b65ce9ff19b4c86d0736d922bcd9, type: 2}
+    - target: {fileID: 8387345149803296395, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
+      propertyPath: soulCurrencies
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8387345149803296396, guid: 96ddba66643b20a4c8b53d5512074194, type: 3}
       propertyPath: m_RootOrder
       value: 0

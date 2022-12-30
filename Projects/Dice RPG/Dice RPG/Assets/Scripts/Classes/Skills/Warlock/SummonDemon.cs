@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SummonDemon : MonoBehaviour, ISummonSkill
 {
+    public int currentLevel { get; set; }
+    public int maxLevel { get; set; }
     public string skillName { get; set; }
     public CurrentClass.classes skillClass { get; set; }
     public SkillTypes.types skillType { get; set; }
@@ -11,6 +13,8 @@ public class SummonDemon : MonoBehaviour, ISummonSkill
 
     public void SetData()
     {
+        currentLevel = 0;
+        maxLevel = 1;
         skillName = "Summon Demon";
         skillClass = CurrentClass.classes.Warlock;
         skillType = SkillTypes.types.Summon;

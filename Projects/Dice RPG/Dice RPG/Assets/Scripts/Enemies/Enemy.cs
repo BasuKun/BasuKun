@@ -15,6 +15,12 @@ public class Enemy : MonoBehaviour
     public int damageToDeal = 0;
     public int diceAmount;
 
+    [Header("LOOT")]
+    public GameObject soulCurrencyPrefab;
+    public GameObject expPrefab;
+    public int soulCurrencies;
+    public int exp;
+
     [Header("ANIMATION")]
     public Animator animator;
     public AnimationClip idleAnim;
@@ -44,7 +50,6 @@ public class Enemy : MonoBehaviour
     public int bleedingDamage = 0;
     public int bleedingTurns = 0;
 
-    public GameObject soulCurrencyPrefab;
     public Light2D spotlight;
 
     void Awake()
@@ -187,9 +192,13 @@ public class Enemy : MonoBehaviour
         isDying = true;
         animator.SetTrigger("isDying");
 
-        for (int i = 0; i < 2 + Player.Instance.soulCurrencyBonus; i++)
+        for (int i = 0; i < soulCurrencies + Player.Instance.soulCurrencyBonus; i++)
         {
             GameObject soulCurrency = Instantiate(soulCurrencyPrefab, this.gameObject.transform.position, Quaternion.identity);
+        }
+        for (int i = 0; i < exp; i++)
+        {
+            GameObject expBall = Instantiate(expPrefab, this.gameObject.transform.position, Quaternion.identity);
         }
 
         Destroy(spotlight.gameObject);

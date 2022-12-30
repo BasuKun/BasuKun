@@ -14,6 +14,7 @@ public class ColorGradingChanger : MonoBehaviour
     public Color shaftLightColor;
     public Color shaftLightColor2;
     public List<LightColorChanger> shaftLights = new List<LightColorChanger>();
+    public List<SpriteRenderer> backgroundFilters = new List<SpriteRenderer>();
 
     private void Awake()
     {
@@ -35,6 +36,11 @@ public class ColorGradingChanger : MonoBehaviour
             lights.lightShaft.color = shaftLightColor;
             lights.lightShaft2.color = shaftLightColor2;
 		}
+
+        foreach (var filter in backgroundFilters)
+        {
+            filter.color = ClassesObjects.Instance.characters[(CurrentClass.classes)currentSelected].backgroundFilterColor;
+        }
 
         soulsColor = ClassesObjects.Instance.characters[(CurrentClass.classes)currentSelected].soulsColor;
 		foreach (var soul in Player.Instance.souls)

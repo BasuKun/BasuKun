@@ -3,8 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IShopCustomer
 {
+    [Header("MAIN STATS")]
+    public int vitality;
+    public int strength;
+    public int finesse;
+    public int recovery;
+    public int greed;
+
     [Header("BATTLE STATS")]
     public CurrentClass.classes currentClass;
     public int maxHitPoints;
@@ -14,6 +21,7 @@ public class Player : MonoBehaviour
     public int skillsActivated;
     public int soulCurrencyBonus;
     public int damageToDeal;
+    public int skilldamageToDeal;
     public int damageToAvoid;
     public int mostRolledDigit;
     public int diceAmount;
@@ -25,9 +33,14 @@ public class Player : MonoBehaviour
     public List<ISummonSkill> summonSkills = new List<ISummonSkill>();
 
     [Header("OTHER STATS")]
-    public int level;
-    public long experience;
-    public long soulsCurrency;
+    public int level = 1;
+    public long experience = 0;
+    public long experienceNeeded = 10;
+    public long soulsCurrency = 0;
+    public int statPoints = 0;
+    public int skillPoints = 0;
+    public int[] attackRange = { 1, 2, 3, 4, 5, 6 };
+    public int[] skillRange = { 1, 2, 3, 4, 5, 6 };
     public int looting;
     public int healing;
 
@@ -67,7 +80,7 @@ public class Player : MonoBehaviour
     public void AddDice(bool isBerserkDice, bool isPermanentDice, int permTurnAmount)
     {
         GameObject dice = Instantiate(dicePrefab, diceRack.transform.position, Quaternion.identity, diceRack.transform);
-        Dice diceStats = dice.GetComponent<Dice>(); 
+        Dice diceStats = dice.GetComponent<Dice>();
         diceStats.isPlayerDice = true;
         diceStats.isBerserkDice = isBerserkDice;
         diceStats.isTemporary = !isPermanentDice;
@@ -259,4 +272,24 @@ public class Player : MonoBehaviour
         isMoving = false;
         character.animator.SetTrigger("isIdle");
     }
+
+	public void BoughtItem(Item.ItemType itemType)
+	{
+        //TO IMPLEMENT ACUTALLY BUYING THE ITEM
+        Debug.Log("BOUGHT " + itemType);
+	}
+
+	public bool TrySpendSoulAmount(int soulAmount)
+	{
+		if (soulsCurrency >= soulAmount)
+		{
+            soulsCurrency -= soulAmount;
+            GameUI.Instance.UpdateSoulsCurrencyText();
+            return true;
+		}
+		else
+		{
+            return false;
+		}
+	}
 }

@@ -18,7 +18,7 @@ public class SelectedClassConfirmButton : MonoBehaviour
         GameObject groundSmoke = Instantiate(groundSmokeFX, new Vector2(selectedCharacter.transform.position.x, selectedCharacter.transform.position.y - 0.06f), Quaternion.identity);
 
         StartCoroutine(SetPlayerStats(selectedCharacter));
-        AddSkills();
+        //AddSkills();
         StartCoroutine(EraseOtherClasses());
         StartCoroutine(PlaceCamera(ClassesObjects.Instance.characters[(CurrentClass.classes)EllipsePositions.Instance.currentSelected].soulsPosition));
         StartCoroutine(StartMoving());
@@ -146,6 +146,8 @@ public class SelectedClassConfirmButton : MonoBehaviour
                 Player.Instance.buffSkills.Add(BuffSkillsDictionary.Instance.buffSkillsDictionary["Gunman's Instinct"]);
                 Player.Instance.damageSkills.Add(DamageSkillsDictionary.Instance.damageSkillsDictionary["Rebound"]);
                 Player.Instance.damageSkills.Add(DamageSkillsDictionary.Instance.damageSkillsDictionary["Suppressive Fire"]);
+                Player.Instance.damageSkills.Add(DamageSkillsDictionary.Instance.damageSkillsDictionary["Dynamite"]);
+                Player.Instance.damageSkills.Add(DamageSkillsDictionary.Instance.damageSkillsDictionary["Rifle"]);
                 Player.Instance.effectSkills.Add(EffectSkillsDictionary.Instance.effectSkillsDictionary["Bleeding Shot"]);
                 Player.Instance.effectSkills.Add(EffectSkillsDictionary.Instance.effectSkillsDictionary["Crippling Shot"]);
                 break;
@@ -170,15 +172,25 @@ public class SelectedClassConfirmButton : MonoBehaviour
         Player.Instance.character = characterStats;
         Player.Instance.hasReturnToIdle = characterStats.hasReturnToIdleAnim;
         Player.Instance.currentClass = characterStats.curClass;
-        Player.Instance.maxHitPoints = characterStats.hitPoints;
+
+        Player.Instance.vitality = characterStats.vitality;
+        Player.Instance.strength = characterStats.strength;
+        Player.Instance.finesse = characterStats.finesse;
+        Player.Instance.recovery = characterStats.recovery;
+        Player.Instance.greed = characterStats.greed;
+
+        Player.Instance.maxHitPoints = characterStats.vitality * (int)Balancing.vitalityMod;
         Player.Instance.curHitPoints = Player.Instance.maxHitPoints;
-        Player.Instance.damageBonus = characterStats.damage;
         Player.Instance.diceAmount = characterStats.dice;
-        Player.Instance.looting = characterStats.looting;
-        Player.Instance.healing = characterStats.healing;
+        Player.Instance.looting = characterStats.greed * (int)Balancing.greedGoldMod;
+        Player.Instance.healing = characterStats.recovery * (int)Balancing.recoveryMod;
         Player.Instance.level = 1;
         Player.Instance.experience = 0;
         Player.Instance.soulsCurrency = 0;
+
+        StatsMenu.Instance.UpdatePoints();
+        StatsMenu.Instance.UpdateStats();
+        StatsMenu.Instance.UpdateDamageRanges();
 
         yield return new WaitForSeconds(1.9f);
         for (int i = 0; i < Player.Instance.diceAmount; i++)

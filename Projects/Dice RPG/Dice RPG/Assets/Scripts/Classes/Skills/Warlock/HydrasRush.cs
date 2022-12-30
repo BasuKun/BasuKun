@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HydrasRush : MonoBehaviour, IDamageSkill
 {
+    public int currentLevel { get; set; }
+    public int maxLevel { get; set; }
     public string skillName { get; set; }
     public CurrentClass.classes skillClass { get; set; }
     public SkillTypes.types skillType { get; set; }
@@ -14,6 +16,8 @@ public class HydrasRush : MonoBehaviour, IDamageSkill
 
     public void SetData()
     {
+        currentLevel = 0;
+        maxLevel = 1;
         skillName = "Hydra's Rush";
         skillClass = CurrentClass.classes.Warlock;
         skillType = SkillTypes.types.Damage;
@@ -26,7 +30,7 @@ public class HydrasRush : MonoBehaviour, IDamageSkill
         {
             if (dices[i].value + dices[i + 1].value == 9)
             {
-                damageToDeal = (dices[i].value * 3) + Player.Instance.damageBonus + Player.Instance.tempDamageBonus;
+                damageToDeal = (dices[i].skillValue * 3) + Player.Instance.damageBonus + Player.Instance.tempDamageBonus;
                 StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillName, true, Player.Instance.character.transform, skillType));
                 StartCoroutine(dices[i + 1].TriggerSkillAnimation(0f, skillName, false, Player.Instance.character.transform, skillType));
                 return true;

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TripleSlash : MonoBehaviour, IDamageSkill
 {
+    public int currentLevel { get; set; }
+    public int maxLevel { get; set; }
     public string skillName { get; set; }
     public CurrentClass.classes skillClass { get; set; }
     public SkillTypes.types skillType { get; set; }
@@ -12,6 +14,8 @@ public class TripleSlash : MonoBehaviour, IDamageSkill
 
     public void SetData()
     {
+        currentLevel = 0;
+        maxLevel = 1;
         skillName = "Triple Slash";
         skillClass = CurrentClass.classes.Ronin;
         skillType = SkillTypes.types.Damage;
@@ -24,7 +28,7 @@ public class TripleSlash : MonoBehaviour, IDamageSkill
 
         if (dices[1].value < dices[0].value && dices[2].value < dices[1].value)
         {
-            damageToDeal += dices[2].value * 3;
+            damageToDeal += dices[2].skillValue * 3;
             StartCoroutine(dices[2].TriggerSkillAnimation(0f, skillName, false, Player.Instance.character.transform, skillType));
         }
 

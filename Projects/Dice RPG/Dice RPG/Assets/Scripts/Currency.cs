@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Currency : MonoBehaviour
 {
+    public enum CurrencyTypes
+	{
+        Soul,
+        Exp
+	}
+
+    public CurrencyTypes currencyType;
     public Rigidbody2D rig;
 
     void Awake()
@@ -22,10 +29,54 @@ public class Currency : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
 
+		switch (currencyType)
+		{
+			case CurrencyTypes.Soul:
+                ObtainSoulsCurrency();
+                break;
+			case CurrencyTypes.Exp:
+                ObtainExp();
+                break;
+			default:
+				break;
+		}
+
+		Destroy(this.gameObject);
+        yield return null;
+    }
+
+    private void ObtainSoulsCurrency()
+	{
         Player.Instance.soulsCurrency++;
         GameUI.Instance.UpdateSoulsCurrencyText();
+    }
 
-        Destroy(this.gameObject);
-        yield return null;
+    private void ObtainExp()
+	{
+        Player.Instance.experience++;
+
+		if (Player.Instance.experience >= Player.Instance.experienceNeeded)
+		{
+            Player.Instance.level++;
+            Player.Instance.experience = 0;
+            Player.Instance.experienceNeeded *= 2;
+            GameUI.Instance.UpdateLevelText();
+
+            Player.Instance.statPoints += 3;
+            Player.Instance.strength++;
+            Player.Instance.finesse++;
+            Player.Instance.vitality++;
+            Player.Instance.recovery++;
+            Player.Instance.greed++;
+            Player.Instance.skillPoints += 10;
+
+            StatsMenu.Instance.UpdatePoints();
+            StatsMenu.Instance.UpdateStats();
+            StatsMenu.Instance.UpdateDamageRanges();
+
+            PlayerSkills.Instance.UpdateSkillPointsText();
+            PlayerSkills.Instance.CheckForUnlockedButtons();
+        }
+        GameUI.Instance.UpdateExpBar();
     }
 }

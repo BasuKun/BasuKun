@@ -21,33 +21,33 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: 374cb943d5d1a8342bef6c3c3a30a14d, type: 3}
-    - time: 0.071428575
+    - time: 0.0625
       value: {fileID: 21300000, guid: 1650933b106d18c47937d83b80b97584, type: 3}
-    - time: 0.14285715
+    - time: 0.125
       value: {fileID: 21300000, guid: 862642bd787940d42bcc2597393460c9, type: 3}
-    - time: 0.21428572
+    - time: 0.1875
       value: {fileID: 21300000, guid: fb0d3135ff29fba42855125caf175352, type: 3}
-    - time: 0.2857143
+    - time: 0.25
       value: {fileID: 21300000, guid: eb6da0bcd58ac024f8f5e9d193f53b32, type: 3}
-    - time: 0.35714287
+    - time: 0.3125
       value: {fileID: 21300000, guid: 04d7485778d5b55448fdccf8fc4eb1f3, type: 3}
-    - time: 0.42857143
+    - time: 0.375
       value: {fileID: 21300000, guid: 21ed4fe52a96b7945a0576d2190c7b97, type: 3}
-    - time: 0.5
+    - time: 0.4375
       value: {fileID: 21300000, guid: a8888a599f2c59a4ea38915568d5ede9, type: 3}
-    - time: 0.5714286
+    - time: 0.5
       value: {fileID: 21300000, guid: c3b60fae4a8842540ad2349424dbd332, type: 3}
-    - time: 0.64285713
+    - time: 0.5625
       value: {fileID: 21300000, guid: 44f13a26976941c478a1150641a92b16, type: 3}
-    - time: 0.71428573
+    - time: 0.625
       value: {fileID: 21300000, guid: aacac32f7e49ad9438857d95967be3ee, type: 3}
-    - time: 0.78571427
+    - time: 0.6875
       value: {fileID: 21300000, guid: 463fe1dd63d9c524199666d465687b4c, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 14
+  m_SampleRate: 16
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -79,7 +79,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.85714287
+    m_StopTime: 0.75
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -99,7 +99,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.5714286
+  - time: 0.5
     functionName: DealDamage
     data: 
     objectReferenceParameter: {fileID: 0}

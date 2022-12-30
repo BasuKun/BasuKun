@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class Bandage : MonoBehaviour, IBuffSkill
 {
+    public int currentLevel { get; set; }
+    public int maxLevel { get; set; }
     public string skillName { get; set; }
     public CurrentClass.classes skillClass { get; set; }
     public SkillTypes.types skillType { get; set; }
 
     public void SetData()
     {
+        currentLevel = 0;
+        maxLevel = 1;
         skillName = "Bandage";
         skillClass = CurrentClass.classes.Ronin;
         skillType = SkillTypes.types.Buff;
@@ -28,7 +32,7 @@ public class Bandage : MonoBehaviour, IBuffSkill
                     StartCoroutine(dices[i - 1].TriggerSkillAnimation(0f, skillName, false, Player.Instance.character.transform, skillType));
                     StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillName, true, Player.Instance.character.transform, skillType));
                     StartCoroutine(dices[i + 1].TriggerSkillAnimation(0f, skillName, false, Player.Instance.character.transform, skillType));
-                    StartCoroutine(Player.Instance.UpdateHP(dices[i].value * 2, true));
+                    StartCoroutine(Player.Instance.UpdateHP(dices[i].skillValue * 2, true));
                 }
             }
         }

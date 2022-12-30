@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WhirlwindSlash : MonoBehaviour, IDamageSkill
 {
+    public int currentLevel { get; set; }
+    public int maxLevel { get; set; }
     public string skillName { get; set; }
     public CurrentClass.classes skillClass { get; set; }
     public SkillTypes.types skillType { get; set; }
@@ -12,6 +14,8 @@ public class WhirlwindSlash : MonoBehaviour, IDamageSkill
 
     public void SetData()
     {
+        currentLevel = 0;
+        maxLevel = 4;
         skillName = "Whirlwind Slash";
         skillClass = CurrentClass.classes.Warrior;
         skillType = SkillTypes.types.Damage;
@@ -24,7 +28,7 @@ public class WhirlwindSlash : MonoBehaviour, IDamageSkill
         {
             if (dices[i].value < dices[i + 1].value && dices[i + 1].value < dices[i + 2].value && dices[i + 2].value < dices[i + 3].value)
             {
-                damageToDeal = (dices[i].value + dices[i + 1].value + dices[i + 2].value + dices[i + 3].value) * 2;
+                damageToDeal = (dices[i].skillValue + dices[i + 1].skillValue + dices[i + 2].skillValue + dices[i + 3].skillValue) * 2;
                 StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillName, true, Player.Instance.character.transform, skillType));
                 StartCoroutine(dices[i + 1].TriggerSkillAnimation(0f, skillName, false, Player.Instance.character.transform, skillType));
                 StartCoroutine(dices[i + 2].TriggerSkillAnimation(0f, skillName, false, Player.Instance.character.transform, skillType));

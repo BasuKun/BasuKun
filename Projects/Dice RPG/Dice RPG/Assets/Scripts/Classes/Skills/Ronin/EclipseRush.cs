@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EclipseRush : MonoBehaviour, IDamageSkill
 {
+    public int currentLevel { get; set; }
+    public int maxLevel { get; set; }
     public string skillName { get; set; }
     public CurrentClass.classes skillClass { get; set; }
     public SkillTypes.types skillType { get; set; }
@@ -14,6 +16,8 @@ public class EclipseRush : MonoBehaviour, IDamageSkill
 
     public void SetData()
     {
+        currentLevel = 0;
+        maxLevel = 1;
         skillName = "Eclipse Rush";
         skillClass = CurrentClass.classes.Ronin;
         skillType = SkillTypes.types.Damage;
@@ -38,7 +42,7 @@ public class EclipseRush : MonoBehaviour, IDamageSkill
     public void PerformSkill(Animator animator)
     {
         Player.Instance.skillsActivated++;
-        damageToDeal = (int)(Player.Instance.diceAmount / 5f);
+        damageToDeal = GetSkillValue((int)(Player.Instance.diceAmount / 5f));
         Player.Instance.damageToDeal = damageToDeal + Player.Instance.damageBonus + Player.Instance.tempDamageBonus;
         Battle.Instance.SkillNamePopout(skillName, Player.Instance.character.transform, skillType);
 
@@ -53,5 +57,11 @@ public class EclipseRush : MonoBehaviour, IDamageSkill
     public float GetAnimLength()
     {
         return 0;
+    }
+
+    public int GetSkillValue(int value)
+    {
+        int moddedValue = (int)(value * (Player.Instance.finesse * Balancing.finesseSkillMod)) + (int)(value * (Player.Instance.strength * Balancing.strengthSkillMod));
+        return moddedValue;
     }
 }
