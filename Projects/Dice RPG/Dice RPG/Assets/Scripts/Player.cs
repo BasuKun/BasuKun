@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour, IShopCustomer
+public class Player : MonoBehaviour
 {
     [Header("MAIN STATS")]
     public int vitality;
@@ -272,24 +272,4 @@ public class Player : MonoBehaviour, IShopCustomer
         isMoving = false;
         character.animator.SetTrigger("isIdle");
     }
-
-	public void BoughtItem(Item.ItemType itemType)
-	{
-        //TO IMPLEMENT ACUTALLY BUYING THE ITEM
-        Debug.Log("BOUGHT " + itemType);
-	}
-
-	public bool TrySpendSoulAmount(int soulAmount)
-	{
-		if (soulsCurrency >= soulAmount)
-		{
-            soulsCurrency -= soulAmount;
-            GameUI.Instance.UpdateSoulsCurrencyText();
-            return true;
-		}
-		else
-		{
-            return false;
-		}
-	}
 }

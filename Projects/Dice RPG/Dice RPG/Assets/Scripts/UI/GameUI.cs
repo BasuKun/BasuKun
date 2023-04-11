@@ -55,6 +55,9 @@ public class GameUI : MonoBehaviour
 	public void UpdateSoulsCurrencyText()
 	{
 		soulsCurrencyAmountText.text = Player.Instance.soulsCurrency.ToString();
+
+		foreach (var item in Shop.Instance.ItemsInShop)
+			item.CheckAffordability();
 	}
 
 	public void UpdateLevelText()
