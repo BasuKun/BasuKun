@@ -1,0 +1,690 @@
+Using pre-set license
+Built from '2021.1/staging' branch; Version is '2021.1.7f1 (d91830b65d9b) revision 14227504'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19045.4291; Version 2009; 64bit' Language: 'fr' Physical Memory: 32716 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+D:\Outerminds\Unity Editors\2021.1.7f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/_GITHUB/Root/Projects/Personal Projects/In Progress/Dice RPG/Dice RPG
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+53359
+Successfully changed project path to: D:/_GITHUB/Root/Projects/Personal Projects/In Progress/Dice RPG/Dice RPG
+D:/_GITHUB/Root/Projects/Personal Projects/In Progress/Dice RPG/Dice RPG
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 174.71 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.7f1 (d91830b65d9b)
+[Subsystems] Discovering subsystems at path D:/Outerminds/Unity Editors/2021.1.7f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/_GITHUB/Root/Projects/Personal Projects/In Progress/Dice RPG/Dice RPG/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3060 Ti (ID=0x2486)
+    Vendor:   NVIDIA
+    VRAM:     8038 MB
+    Driver:   31.0.15.3623
+Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Initialize mono
+Mono path[0] = 'D:/Outerminds/Unity Editors/2021.1.7f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Outerminds/Unity Editors/2021.1.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'D:/Outerminds/Unity Editors/2021.1.7f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56692
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Outerminds/Unity Editors/2021.1.7f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: D:/Outerminds/Unity Editors/2021.1.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001794 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 179.20 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.033 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.005455 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 186.42 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.707 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 1.24 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5665 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 297.0 MB.
+System memory in use after: 297.3 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 6120.
+Total: 5.207200 ms (FindLiveObjects: 0.609000 ms CreateObjectMapping: 0.383000 ms MarkObjects: 4.018200 ms  DeleteObjects: 0.195500 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scripts/Classes/Class.cs
+  artifactKey: Guid(4a6aedcba28486542addde05d6d98651) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Classes/Class.cs using Guid(4a6aedcba28486542addde05d6d98651) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cd5851578ccfecbbfa6d72c79e0a278') in 0.031818 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004766 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.25 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.323 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
+Refreshing native plugins compatible for Editor in 1.31 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5496 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 284.5 MB.
+System memory in use after: 284.8 MB.
+
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 6123.
+Total: 4.584000 ms (FindLiveObjects: 0.559500 ms CreateObjectMapping: 0.239600 ms MarkObjects: 3.640500 ms  DeleteObjects: 0.142900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 77.916727 seconds.
+  path: Assets/Scripts/Data/ClassData.cs
+  artifactKey: Guid(2c034edd9a38af14785d8fb9ecaf4f00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Data/ClassData.cs using Guid(2c034edd9a38af14785d8fb9ecaf4f00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e6d20e771d6c8d432b5652347df2acd') in 0.009686 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004818 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.57 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.417 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
+Refreshing native plugins compatible for Editor in 1.42 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5497 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 284.6 MB.
+System memory in use after: 284.9 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6128.
+Total: 5.485600 ms (FindLiveObjects: 0.647400 ms CreateObjectMapping: 0.236700 ms MarkObjects: 4.416500 ms  DeleteObjects: 0.182800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004793 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.32 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.314 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
+Refreshing native plugins compatible for Editor in 1.31 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5497 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 284.7 MB.
+System memory in use after: 285.0 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6132.
+Total: 5.150500 ms (FindLiveObjects: 0.562600 ms CreateObjectMapping: 0.216300 ms MarkObjects: 4.195700 ms  DeleteObjects: 0.174700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 55.672615 seconds.
+  path: Assets/Scripts/Data/ClassData.cs
+  artifactKey: Guid(2c034edd9a38af14785d8fb9ecaf4f00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Data/ClassData.cs using Guid(2c034edd9a38af14785d8fb9ecaf4f00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0e6eb543e2de8c0657a8330a4ef6931') in 0.017421 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.703067 seconds.
+  path: Assets/Data/Stats/Classes/Warrior.asset
+  artifactKey: Guid(4f871236dd7d8bf43a4b54b8e6c06504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Stats/Classes/Warrior.asset using Guid(4f871236dd7d8bf43a4b54b8e6c06504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c31dde360c7eccdafd81dee46f72081e') in 0.024188 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004775 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.26 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.315 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
+Refreshing native plugins compatible for Editor in 1.48 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5497 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 284.7 MB.
+System memory in use after: 285.0 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6136.
+Total: 3.779200 ms (FindLiveObjects: 0.473000 ms CreateObjectMapping: 0.143300 ms MarkObjects: 3.017200 ms  DeleteObjects: 0.144400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 48.431266 seconds.
+  path: Assets/Data/Stats/Classes/Warrior.asset
+  artifactKey: Guid(4f871236dd7d8bf43a4b54b8e6c06504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Stats/Classes/Warrior.asset using Guid(4f871236dd7d8bf43a4b54b8e6c06504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5674a788924b6475299cc13a87ec64f') in 0.030991 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.219424 seconds.
+  path: Assets/Data/Stats/Classes/Warrior 1.asset
+  artifactKey: Guid(1d75807e0240b1f46a672b3bac375bf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Stats/Classes/Warrior 1.asset using Guid(1d75807e0240b1f46a672b3bac375bf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee9f69d2574de447e2faeb711eb568d6') in 0.009759 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.433539 seconds.
+  path: Assets/Data/Stats/Classes/Ronin.asset
+  artifactKey: Guid(1d75807e0240b1f46a672b3bac375bf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Stats/Classes/Ronin.asset using Guid(1d75807e0240b1f46a672b3bac375bf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '467efa361e2354e402146f7b7f016de0') in 0.009629 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.027030 seconds.
+  path: Assets/Data/Stats/Classes/Ronin.asset
+  artifactKey: Guid(1d75807e0240b1f46a672b3bac375bf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Stats/Classes/Ronin.asset using Guid(1d75807e0240b1f46a672b3bac375bf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '455aaa54d91d7f3e96e35960fa0430e3') in 0.003198 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.419602 seconds.
+  path: Assets/Data/Stats/Classes/Ronin.asset
+  artifactKey: Guid(1d75807e0240b1f46a672b3bac375bf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Stats/Classes/Ronin.asset using Guid(1d75807e0240b1f46a672b3bac375bf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8429ea70d1cd84ad0b89e0d40054a2e9') in 0.003315 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.225959 seconds.
+  path: Assets/Data/Stats/Classes/Ronin 1.asset
+  artifactKey: Guid(d5619c8fd629d52449ce77f984aee683) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Stats/Classes/Ronin 1.asset using Guid(d5619c8fd629d52449ce77f984aee683) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9dbb928456a34000e9a42c20aa9d81e5') in 0.008839 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.298231 seconds.
+  path: Assets/Data/Stats/Classes/Gunslinger.asset
+  artifactKey: Guid(d5619c8fd629d52449ce77f984aee683) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Stats/Classes/Gunslinger.asset using Guid(d5619c8fd629d52449ce77f984aee683) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adc5b54a2563eb62a32c2a204c2fd15c') in 0.011555 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.578959 seconds.
+  path: Assets/Data/Stats/Classes/Gunslinger.asset
+  artifactKey: Guid(d5619c8fd629d52449ce77f984aee683) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Stats/Classes/Gunslinger.asset using Guid(d5619c8fd629d52449ce77f984aee683) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2b219ece422f5698459eb8cc1c78e6d') in 0.004057 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.846440 seconds.
+  path: Assets/Data/Stats/Classes/Gunslinger 1.asset
+  artifactKey: Guid(f837f3e491faf5c44a806936a30b4c39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Stats/Classes/Gunslinger 1.asset using Guid(f837f3e491faf5c44a806936a30b4c39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '711eb52a7da0247793fccb767f547471') in 0.008986 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.342046 seconds.
+  path: Assets/Data/Stats/Classes/Technomancer.asset
+  artifactKey: Guid(f837f3e491faf5c44a806936a30b4c39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Stats/Classes/Technomancer.asset using Guid(f837f3e491faf5c44a806936a30b4c39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '227fbebaa434880d729b1549ba43ba44') in 0.010020 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.746648 seconds.
+  path: Assets/Data/Stats/Classes/Technomancer.asset
+  artifactKey: Guid(f837f3e491faf5c44a806936a30b4c39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Stats/Classes/Technomancer.asset using Guid(f837f3e491faf5c44a806936a30b4c39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45b44963b84708e885bf7370ab55a602') in 0.003466 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.778279 seconds.
+  path: Assets/Data/Stats/Classes/Technomancer 1.asset
+  artifactKey: Guid(fb0154b539a3dad418a711df0197b7bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Stats/Classes/Technomancer 1.asset using Guid(fb0154b539a3dad418a711df0197b7bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f860eafb75458569c1e5d37b347af13f') in 0.008486 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.665852 seconds.
+  path: Assets/Data/Stats/Classes/Warlock.asset
+  artifactKey: Guid(fb0154b539a3dad418a711df0197b7bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Stats/Classes/Warlock.asset using Guid(fb0154b539a3dad418a711df0197b7bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11c49c2ea530a8354bc63c091ca5c961') in 0.008878 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.563521 seconds.
+  path: Assets/Data/Stats/Classes/Technomancer.asset
+  artifactKey: Guid(f837f3e491faf5c44a806936a30b4c39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Stats/Classes/Technomancer.asset using Guid(f837f3e491faf5c44a806936a30b4c39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8cb8eb63e57b38753bca32ca7f8b151e') in 0.003336 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.923380 seconds.
+  path: Assets/Data/Stats/Classes/Ronin 1.asset
+  artifactKey: Guid(428e2f48c647f1e4fb9d167adbd13ce6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Stats/Classes/Ronin 1.asset using Guid(428e2f48c647f1e4fb9d167adbd13ce6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd68e913682f564324feceb744bce13db') in 0.003168 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.678725 seconds.
+  path: Assets/Data/Stats/Classes/Healer.asset
+  artifactKey: Guid(428e2f48c647f1e4fb9d167adbd13ce6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Stats/Classes/Healer.asset using Guid(428e2f48c647f1e4fb9d167adbd13ce6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '986de59fdca01d043be6f0586b705cc1') in 0.009164 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.013738 seconds.
+  path: Assets/Data/Stats/Classes/Healer.asset
+  artifactKey: Guid(428e2f48c647f1e4fb9d167adbd13ce6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Stats/Classes/Healer.asset using Guid(428e2f48c647f1e4fb9d167adbd13ce6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62ec495521970741bb4788d6e3a70e93') in 0.003560 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004881 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.291 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
+Refreshing native plugins compatible for Editor in 1.34 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5497 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 284.7 MB.
+System memory in use after: 285.1 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6140.
+Total: 4.117000 ms (FindLiveObjects: 0.653200 ms CreateObjectMapping: 0.262600 ms MarkObjects: 3.055000 ms  DeleteObjects: 0.144600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 147.762232 seconds.
+  path: Assets/Data/Stats/Classes/Warlock.asset
+  artifactKey: Guid(fb0154b539a3dad418a711df0197b7bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Stats/Classes/Warlock.asset using Guid(fb0154b539a3dad418a711df0197b7bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b26500cfa5e382ab782d88810a65fd45') in 0.029858 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 360.280883 seconds.
+  path: Assets/Scripts/Data/ClassData.cs
+  artifactKey: Guid(2c034edd9a38af14785d8fb9ecaf4f00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Data/ClassData.cs using Guid(2c034edd9a38af14785d8fb9ecaf4f00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9ebfff11da6011aaf538d9d5002c4f6') in 0.002975 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.707419 seconds.
+  path: Assets/Scripts/Data/ClassGraphicsData.cs
+  artifactKey: Guid(1a27517312996fd428c24a27fd1ccb98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Data/ClassGraphicsData.cs using Guid(1a27517312996fd428c24a27fd1ccb98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b7c27ed004888325ee36ca343c44656') in 0.009770 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005008 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.23 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.282 seconds
+Platform modules already initialized, skipping
+Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.27 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5498 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 284.8 MB.
+System memory in use after: 285.1 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6145.
+Total: 3.838000 ms (FindLiveObjects: 0.445500 ms CreateObjectMapping: 0.141400 ms MarkObjects: 3.095400 ms  DeleteObjects: 0.154300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004803 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.302 seconds
+Platform modules already initialized, skipping
+Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.24 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5498 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 284.8 MB.
+System memory in use after: 285.1 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6149.
+Total: 3.723500 ms (FindLiveObjects: 0.472600 ms CreateObjectMapping: 0.170800 ms MarkObjects: 2.937500 ms  DeleteObjects: 0.141600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 90.364693 seconds.
+  path: Assets/Scripts/Data/ClassGraphicsData.cs
+  artifactKey: Guid(1a27517312996fd428c24a27fd1ccb98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Data/ClassGraphicsData.cs using Guid(1a27517312996fd428c24a27fd1ccb98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a2b125cf2f3b1210a502b7a2abeb187') in 0.009193 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005119 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.26 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.281 seconds
+Platform modules already initialized, skipping
+Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.59 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 284.8 MB.
+System memory in use after: 285.2 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6154.
+Total: 5.115600 ms (FindLiveObjects: 0.577500 ms CreateObjectMapping: 0.285700 ms MarkObjects: 4.086700 ms  DeleteObjects: 0.163900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 61.299131 seconds.
+  path: Assets/Data/NewBehaviourScript.cs
+  artifactKey: Guid(69c536552c17bf24fbe8f306bf51725f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/NewBehaviourScript.cs using Guid(69c536552c17bf24fbe8f306bf51725f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88926736bb875e0646c9dbf346d90616') in 0.009434 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004813 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.25 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.289 seconds
+Platform modules already initialized, skipping
+Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.52 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5498 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 284.8 MB.
+System memory in use after: 285.2 MB.
+
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 6157.
+Total: 5.590500 ms (FindLiveObjects: 0.640300 ms CreateObjectMapping: 0.367500 ms MarkObjects: 4.394900 ms  DeleteObjects: 0.185400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.408035 seconds.
+  path: Assets/Data/Graphics
+  artifactKey: Guid(2d7b4e1315bb8354fafcd088fc22f378) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Graphics using Guid(2d7b4e1315bb8354fafcd088fc22f378) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '795d6e7e167b3a66efbb4c24d6e0cd89') in 0.014634 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.083847 seconds.
+  path: Assets/Data/Graphics/WarriorGraphics.asset
+  artifactKey: Guid(26cc19442b47f6e45b6a33400614d29d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Graphics/WarriorGraphics.asset using Guid(26cc19442b47f6e45b6a33400614d29d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9e6a9886266a314fa133e58fc1b59d1') in 0.020118 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 86.000200 seconds.
+  path: Assets/Data/Graphics/WarriorGraphics.asset
+  artifactKey: Guid(26cc19442b47f6e45b6a33400614d29d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Graphics/WarriorGraphics.asset using Guid(26cc19442b47f6e45b6a33400614d29d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b068602a06e17bbf998b717a1265d52a') in 0.002995 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.997653 seconds.
+  path: Assets/Data/Graphics/WarriorGraphics 1.asset
+  artifactKey: Guid(016d8d9c9aeda93479886d39581e328f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Graphics/WarriorGraphics 1.asset using Guid(016d8d9c9aeda93479886d39581e328f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98e9aabf22f85473310d463abedfd755') in 0.009431 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.242246 seconds.
+  path: Assets/Data/Graphics/RoninGraphics.asset
+  artifactKey: Guid(016d8d9c9aeda93479886d39581e328f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Graphics/RoninGraphics.asset using Guid(016d8d9c9aeda93479886d39581e328f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26afa7bfe9be36faf4def21b3e966353') in 0.008839 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004789 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.32 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.315 seconds
+Platform modules already initialized, skipping
+Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5498 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 284.8 MB.
+System memory in use after: 285.2 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6161.
+Total: 3.773900 ms (FindLiveObjects: 0.453300 ms CreateObjectMapping: 0.145800 ms MarkObjects: 3.023100 ms  DeleteObjects: 0.150600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 68.018086 seconds.
+  path: Assets/Data/Graphics/RoninGraphics.asset
+  artifactKey: Guid(016d8d9c9aeda93479886d39581e328f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Graphics/RoninGraphics.asset using Guid(016d8d9c9aeda93479886d39581e328f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f46bf21fcc5d92772d5ebeda9eb2f48c') in 0.033937 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.245220 seconds.
+  path: Assets/Data/Graphics/WarriorGraphics 1.asset
+  artifactKey: Guid(8d163d54818668e489a529f2c0048844) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Graphics/WarriorGraphics 1.asset using Guid(8d163d54818668e489a529f2c0048844) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0858ebf472002bceb9f8a1595be35c25') in 0.008578 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.453051 seconds.
+  path: Assets/Data/Graphics/GunslingerGraphics.asset
+  artifactKey: Guid(8d163d54818668e489a529f2c0048844) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Graphics/GunslingerGraphics.asset using Guid(8d163d54818668e489a529f2c0048844) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '131c1983c7432089af18d20b908986ff') in 0.009068 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 39.752156 seconds.
+  path: Assets/Data/Graphics/GunslingerGraphics.asset
+  artifactKey: Guid(8d163d54818668e489a529f2c0048844) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Graphics/GunslingerGraphics.asset using Guid(8d163d54818668e489a529f2c0048844) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92a474ba558c308211b4302704bb95f8') in 0.003585 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2210.622254 seconds.
+  path: Assets/Data/Graphics/GunslingerGraphics 1.asset
+  artifactKey: Guid(04c33e45cd7998149bcc85d488bbd23c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Graphics/GunslingerGraphics 1.asset using Guid(04c33e45cd7998149bcc85d488bbd23c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d3373eb8709fb7e734acc4b47856968') in 0.010243 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.842617 seconds.
+  path: Assets/Data/Graphics/TechnomancerGraphics.asset
+  artifactKey: Guid(04c33e45cd7998149bcc85d488bbd23c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Graphics/TechnomancerGraphics.asset using Guid(04c33e45cd7998149bcc85d488bbd23c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b55404c7fea7392120e2bdb70996610') in 0.009588 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 33.812362 seconds.
+  path: Assets/Data/Graphics/TechnomancerGraphics.asset
+  artifactKey: Guid(04c33e45cd7998149bcc85d488bbd23c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Graphics/TechnomancerGraphics.asset using Guid(04c33e45cd7998149bcc85d488bbd23c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04c11d841733dddf262a8738641c4efa') in 0.003620 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.832836 seconds.
+  path: Assets/Data/Graphics/TechnomancerGraphics 1.asset
+  artifactKey: Guid(9da6176dd271b7e45ba9344c0b785cf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Graphics/TechnomancerGraphics 1.asset using Guid(9da6176dd271b7e45ba9344c0b785cf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2da0e0622fa69bde4968179194c6394f') in 0.009720 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.341515 seconds.
+  path: Assets/Data/Graphics/WarlockGraphics.asset
+  artifactKey: Guid(9da6176dd271b7e45ba9344c0b785cf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Graphics/WarlockGraphics.asset using Guid(9da6176dd271b7e45ba9344c0b785cf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcabc311285e3c8cb6c91c5ea30c12be') in 0.009773 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.242507 seconds.
+  path: Assets/Data/Graphics/TechnomancerGraphics.asset
+  artifactKey: Guid(04c33e45cd7998149bcc85d488bbd23c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Graphics/TechnomancerGraphics.asset using Guid(04c33e45cd7998149bcc85d488bbd23c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '182a642210e39c1eb74436e09b185ff5') in 0.003868 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.697591 seconds.
+  path: Assets/Data/Graphics/WarlockGraphics.asset
+  artifactKey: Guid(9da6176dd271b7e45ba9344c0b785cf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Graphics/WarlockGraphics.asset using Guid(9da6176dd271b7e45ba9344c0b785cf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e64bbc10c3d355355d4482930bbae480') in 0.003613 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.391699 seconds.
+  path: Assets/Data/Graphics/WarlockGraphics.asset
+  artifactKey: Guid(9da6176dd271b7e45ba9344c0b785cf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Graphics/WarlockGraphics.asset using Guid(9da6176dd271b7e45ba9344c0b785cf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e5581c1554a09b9fee47d9787df7aee') in 0.004006 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.467102 seconds.
+  path: Assets/Data/Graphics/WarlockGraphics.asset
+  artifactKey: Guid(9da6176dd271b7e45ba9344c0b785cf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Graphics/WarlockGraphics.asset using Guid(9da6176dd271b7e45ba9344c0b785cf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2afedf6fc330fc5793b06799d0a8c41') in 0.008807 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.959032 seconds.
+  path: Assets/Data/Graphics/WarlockGraphics 1.asset
+  artifactKey: Guid(14349a55d92538e46861a9848a14b7c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Graphics/WarlockGraphics 1.asset using Guid(14349a55d92538e46861a9848a14b7c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd26dbd18a79bc6ee8cb58008a3393e1') in 0.010124 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.197390 seconds.
+  path: Assets/Data/Graphics/HealerGraphics.asset
+  artifactKey: Guid(14349a55d92538e46861a9848a14b7c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Graphics/HealerGraphics.asset using Guid(14349a55d92538e46861a9848a14b7c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2488164f872bed1a8b031dfb2eb07fd') in 0.009324 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.428369 seconds.
+  path: Assets/Data/Graphics/HealerGraphics.asset
+  artifactKey: Guid(14349a55d92538e46861a9848a14b7c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Graphics/HealerGraphics.asset using Guid(14349a55d92538e46861a9848a14b7c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89b8e05719789a20f1a35044287d6713') in 0.009045 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 26.032095 seconds.
+  path: Assets/Data/Graphics/HealerGraphics.asset
+  artifactKey: Guid(14349a55d92538e46861a9848a14b7c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Graphics/HealerGraphics.asset using Guid(14349a55d92538e46861a9848a14b7c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c12176e38d2e8dbed5299c22296bd82') in 0.004053 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005296 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.55 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.379 seconds
+Platform modules already initialized, skipping
+Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.27 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5498 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 284.8 MB.
+System memory in use after: 285.2 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6165.
+Total: 3.596300 ms (FindLiveObjects: 0.453700 ms CreateObjectMapping: 0.201300 ms MarkObjects: 2.794100 ms  DeleteObjects: 0.146100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1723.827485 seconds.
+  path: Assets/Prefabs/Character.prefab
+  artifactKey: Guid(f6652d8ea5c7a9c47a1a72424f3a4c32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Character.prefab using Guid(f6652d8ea5c7a9c47a1a72424f3a4c32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '813a9eb6e9f24425230356889250d99e') in 0.051200 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 153.345886 seconds.
+  path: Assets/Scripts/Classes/Skills/Gunslinger/Rifle.cs
+  artifactKey: Guid(10407059cf7539f49a31ed2330e3fb90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Classes/Skills/Gunslinger/Rifle.cs using Guid(10407059cf7539f49a31ed2330e3fb90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a23e07c4391bd47fa547d468a36b6f5') in 0.008067 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2364.312887 seconds.
+  path: Assets/Animations/Warrior/Warrior_Attack01.anim
+  artifactKey: Guid(55b28367ff54b3d469034071a0cc7dc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Warrior/Warrior_Attack01.anim using Guid(55b28367ff54b3d469034071a0cc7dc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e377ec043482996af7603ef19b5d51ef') in 0.014624 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.297775 seconds.
+  path: Assets/Animations/Warrior/Warrior_Attack02.anim
+  artifactKey: Guid(38cdb1a7af9076449b3f1931015299d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Warrior/Warrior_Attack02.anim using Guid(38cdb1a7af9076449b3f1931015299d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '282cb6b441e7e94995c1f6f38c4fb2b3') in 0.009687 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004769 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.24 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.327 seconds
+Platform modules already initialized, skipping
+Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.26 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5498 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 284.9 MB.
+System memory in use after: 285.2 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6169.
+Total: 3.432700 ms (FindLiveObjects: 0.446700 ms CreateObjectMapping: 0.142500 ms MarkObjects: 2.700200 ms  DeleteObjects: 0.142300 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

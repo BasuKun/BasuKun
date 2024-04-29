@@ -5,24 +5,9 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class Class : MonoBehaviour
 {
-    [Header("STATS")]
-    public string className;
-    public CurrentClass.classes curClass;
-    public int vitality;
-    public int strength;
-    public int finesse;
-    public int recovery;
-    public int greed;
-    public int dice;
-    public float selectionScreenAngle;
-
-    [DisplayName("Gamma")]
-    [Trackball(TrackballAttribute.Mode.Gamma)]
-    public Vector4Parameter gamma;
-    public Color lightShaftColor;
-    public Color lightShaftColor2;
-    public Color backgroundFilterColor;
-    public Color soulsColor;
+	[Header("DATA")]
+	public ClassData classData;
+	public ClassGraphicsData classGraphicsData;
 
     [Header("ANIMATION")]
     public Animator animator;
@@ -88,7 +73,7 @@ public class Class : MonoBehaviour
 
     void AddToClassesDictionary()
     {
-        ClassesObjects.Instance.characters.Add(curClass, this);
+        ClassesObjects.Instance.characters.Add(classData.curClass, this);
     }
 
     public void Attack()

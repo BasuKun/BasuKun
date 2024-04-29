@@ -55,8 +55,8 @@ public class EllipsePositions : MonoBehaviour
                 character.Value.gameObject.GetComponentInChildren<SpriteMask>().enabled = true;
                 if (character.Key == (CurrentClass.classes)currentSelected) character.Value.gameObject.GetComponentInChildren<SpriteMask>().enabled = false;
 
-                posX = rotationCenter.position.x + Mathf.Cos(angle - character.Value.selectionScreenAngle) * rotationRadius;
-                posY = rotationCenter.position.y + Mathf.Sin(angle - character.Value.selectionScreenAngle) * rotationRadius / 4f;
+                posX = rotationCenter.position.x + Mathf.Cos(angle - character.Value.classGraphicsData.selectionScreenAngle) * rotationRadius;
+                posY = rotationCenter.position.y + Mathf.Sin(angle - character.Value.classGraphicsData.selectionScreenAngle) * rotationRadius / 4f;
 
                 characterSprite = character.Value.gameObject.GetComponentInChildren<SpriteRenderer>();
                 character.Value.gameObject.transform.position = new Vector2(posX, posY);

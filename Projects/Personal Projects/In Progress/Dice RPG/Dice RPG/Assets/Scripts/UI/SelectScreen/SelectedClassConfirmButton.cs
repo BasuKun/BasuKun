@@ -171,19 +171,19 @@ public class SelectedClassConfirmButton : MonoBehaviour
         Class characterStats = character.GetComponent<Class>();
         Player.Instance.character = characterStats;
         Player.Instance.hasReturnToIdle = characterStats.hasReturnToIdleAnim;
-        Player.Instance.currentClass = characterStats.curClass;
+        Player.Instance.currentClass = characterStats.classData.curClass;
 
-        Player.Instance.vitality = characterStats.vitality;
-        Player.Instance.strength = characterStats.strength;
-        Player.Instance.finesse = characterStats.finesse;
-        Player.Instance.recovery = characterStats.recovery;
-        Player.Instance.greed = characterStats.greed;
+        Player.Instance.vitality = characterStats.classData.vitality;
+        Player.Instance.strength = characterStats.classData.strength;
+        Player.Instance.finesse = characterStats.classData.finesse;
+        Player.Instance.recovery = characterStats.classData.recovery;
+        Player.Instance.greed = characterStats.classData.greed;
 
-        Player.Instance.maxHitPoints = characterStats.vitality * (int)Balancing.vitalityMod;
+        Player.Instance.maxHitPoints = characterStats.classData.vitality * (int)Balancing.vitalityMod;
         Player.Instance.curHitPoints = Player.Instance.maxHitPoints;
-        Player.Instance.diceAmount = characterStats.dice;
-        Player.Instance.looting = characterStats.greed * (int)Balancing.greedGoldMod;
-        Player.Instance.healing = characterStats.recovery * (int)Balancing.recoveryMod;
+        Player.Instance.diceAmount = characterStats.classData.dice;
+        Player.Instance.looting = characterStats.classData.greed * (int)Balancing.greedGoldMod;
+        Player.Instance.healing = characterStats.classData.recovery * (int)Balancing.recoveryMod;
         Player.Instance.level = 1;
         Player.Instance.experience = 0;
         Player.Instance.soulsCurrency = 0;

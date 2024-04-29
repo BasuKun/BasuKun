@@ -27,10 +27,10 @@ public class ColorGradingChanger : MonoBehaviour
     public void ChangeColor(int currentSelected)
     {
         volume.profile.TryGet(out colorGrading);
-        colorGrading.gamma.Override(ClassesObjects.Instance.characters[(CurrentClass.classes)currentSelected].gamma);
+        colorGrading.gamma.Override(ClassesObjects.Instance.characters[(CurrentClass.classes)currentSelected].classGraphicsData.gamma);
 
-        shaftLightColor = ClassesObjects.Instance.characters[(CurrentClass.classes)currentSelected].lightShaftColor;
-        shaftLightColor2 = ClassesObjects.Instance.characters[(CurrentClass.classes)currentSelected].lightShaftColor2;
+        shaftLightColor = ClassesObjects.Instance.characters[(CurrentClass.classes)currentSelected].classGraphicsData.lightShaftColor;
+        shaftLightColor2 = ClassesObjects.Instance.characters[(CurrentClass.classes)currentSelected].classGraphicsData.lightShaftColor2;
         foreach (var lights in shaftLights)
 		{
             lights.lightShaft.color = shaftLightColor;
@@ -39,10 +39,10 @@ public class ColorGradingChanger : MonoBehaviour
 
         foreach (var filter in backgroundFilters)
         {
-            filter.color = ClassesObjects.Instance.characters[(CurrentClass.classes)currentSelected].backgroundFilterColor;
+            filter.color = ClassesObjects.Instance.characters[(CurrentClass.classes)currentSelected].classGraphicsData.backgroundFilterColor;
         }
 
-        soulsColor = ClassesObjects.Instance.characters[(CurrentClass.classes)currentSelected].soulsColor;
+        soulsColor = ClassesObjects.Instance.characters[(CurrentClass.classes)currentSelected].classGraphicsData.soulsColor;
 		foreach (var soul in Player.Instance.souls)
             soul.gameObject.GetComponent<SpriteRenderer>().color = soulsColor;
     }

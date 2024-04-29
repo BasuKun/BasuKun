@@ -3976,6 +3976,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3234005789300605421, guid: f6652d8ea5c7a9c47a1a72424f3a4c32, type: 3}
+      propertyPath: classData
+      value: 
+      objectReference: {fileID: 11400000, guid: fb0154b539a3dad418a711df0197b7bb, type: 2}
+    - target: {fileID: 3234005789300605421, guid: f6652d8ea5c7a9c47a1a72424f3a4c32, type: 3}
       propertyPath: className
       value: Warlock
       objectReference: {fileID: 0}
@@ -4051,6 +4055,10 @@ PrefabInstance:
       propertyPath: soulsPosition
       value: 
       objectReference: {fileID: 307145978}
+    - target: {fileID: 3234005789300605421, guid: f6652d8ea5c7a9c47a1a72424f3a4c32, type: 3}
+      propertyPath: classGraphicsData
+      value: 
+      objectReference: {fileID: 11400000, guid: 9da6176dd271b7e45ba9344c0b785cf3, type: 2}
     - target: {fileID: 3234005789300605421, guid: f6652d8ea5c7a9c47a1a72424f3a4c32, type: 3}
       propertyPath: lightShaftColor.a
       value: 1
@@ -9577,6 +9585,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3234005789300605421, guid: f6652d8ea5c7a9c47a1a72424f3a4c32, type: 3}
+      propertyPath: classData
+      value: 
+      objectReference: {fileID: 11400000, guid: f837f3e491faf5c44a806936a30b4c39, type: 2}
+    - target: {fileID: 3234005789300605421, guid: f6652d8ea5c7a9c47a1a72424f3a4c32, type: 3}
       propertyPath: className
       value: Technomancer
       objectReference: {fileID: 0}
@@ -9648,6 +9660,10 @@ PrefabInstance:
       propertyPath: soulsPosition
       value: 
       objectReference: {fileID: 950681874}
+    - target: {fileID: 3234005789300605421, guid: f6652d8ea5c7a9c47a1a72424f3a4c32, type: 3}
+      propertyPath: classGraphicsData
+      value: 
+      objectReference: {fileID: 11400000, guid: 04c33e45cd7998149bcc85d488bbd23c, type: 2}
     - target: {fileID: 3234005789300605421, guid: f6652d8ea5c7a9c47a1a72424f3a4c32, type: 3}
       propertyPath: lightShaftColor.a
       value: 1
@@ -12109,6 +12125,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9bc0c656f63588a4a9a25729875d76cb, type: 2}
   - {fileID: 11400000, guid: 993b88687c372dd41a765c4c0937779b, type: 2}
   - {fileID: 11400000, guid: ef2c83e2d7ea1dc4180d47d2cd7bfd00, type: 2}
+  ItemsInShop: []
   ShopContainer: {fileID: 186809330}
   ShopItemPrefab: {fileID: 5003543537016482057, guid: f40d253bc223c544aacaea2dfb2c6e31, type: 3}
 --- !u!1 &337582455
@@ -25366,6 +25383,10 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3234005789300605421, guid: f6652d8ea5c7a9c47a1a72424f3a4c32, type: 3}
+      propertyPath: classData
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f871236dd7d8bf43a4b54b8e6c06504, type: 2}
+    - target: {fileID: 3234005789300605421, guid: f6652d8ea5c7a9c47a1a72424f3a4c32, type: 3}
       propertyPath: className
       value: Warrior
       objectReference: {fileID: 0}
@@ -25441,6 +25462,10 @@ PrefabInstance:
       propertyPath: soulsPosition
       value: 
       objectReference: {fileID: 8482055}
+    - target: {fileID: 3234005789300605421, guid: f6652d8ea5c7a9c47a1a72424f3a4c32, type: 3}
+      propertyPath: classGraphicsData
+      value: 
+      objectReference: {fileID: 11400000, guid: 26cc19442b47f6e45b6a33400614d29d, type: 2}
     - target: {fileID: 3234005789300605421, guid: f6652d8ea5c7a9c47a1a72424f3a4c32, type: 3}
       propertyPath: lightShaftColor.a
       value: 1
@@ -55808,6 +55833,10 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3234005789300605421, guid: f6652d8ea5c7a9c47a1a72424f3a4c32, type: 3}
+      propertyPath: classData
+      value: 
+      objectReference: {fileID: 11400000, guid: 428e2f48c647f1e4fb9d167adbd13ce6, type: 2}
+    - target: {fileID: 3234005789300605421, guid: f6652d8ea5c7a9c47a1a72424f3a4c32, type: 3}
       propertyPath: className
       value: Healer
       objectReference: {fileID: 0}
@@ -55879,6 +55908,10 @@ PrefabInstance:
       propertyPath: soulsPosition
       value: 
       objectReference: {fileID: 889873758}
+    - target: {fileID: 3234005789300605421, guid: f6652d8ea5c7a9c47a1a72424f3a4c32, type: 3}
+      propertyPath: classGraphicsData
+      value: 
+      objectReference: {fileID: 11400000, guid: 14349a55d92538e46861a9848a14b7c6, type: 2}
     - target: {fileID: 3234005789300605421, guid: f6652d8ea5c7a9c47a1a72424f3a4c32, type: 3}
       propertyPath: lightShaftColor.a
       value: 1
@@ -61495,6 +61528,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3234005789300605421, guid: f6652d8ea5c7a9c47a1a72424f3a4c32, type: 3}
+      propertyPath: classData
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d75807e0240b1f46a672b3bac375bf0, type: 2}
+    - target: {fileID: 3234005789300605421, guid: f6652d8ea5c7a9c47a1a72424f3a4c32, type: 3}
       propertyPath: className
       value: Ronin
       objectReference: {fileID: 0}
@@ -61578,6 +61615,10 @@ PrefabInstance:
       propertyPath: returnToIdleAnim
       value: 
       objectReference: {fileID: 7400000, guid: fd1f385624ee6fe498b4fd2702ed61b1, type: 2}
+    - target: {fileID: 3234005789300605421, guid: f6652d8ea5c7a9c47a1a72424f3a4c32, type: 3}
+      propertyPath: classGraphicsData
+      value: 
+      objectReference: {fileID: 11400000, guid: 016d8d9c9aeda93479886d39581e328f, type: 2}
     - target: {fileID: 3234005789300605421, guid: f6652d8ea5c7a9c47a1a72424f3a4c32, type: 3}
       propertyPath: lightShaftColor.a
       value: 1
@@ -77052,6 +77093,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3234005789300605421, guid: f6652d8ea5c7a9c47a1a72424f3a4c32, type: 3}
+      propertyPath: classData
+      value: 
+      objectReference: {fileID: 11400000, guid: d5619c8fd629d52449ce77f984aee683, type: 2}
+    - target: {fileID: 3234005789300605421, guid: f6652d8ea5c7a9c47a1a72424f3a4c32, type: 3}
       propertyPath: className
       value: Gunslinger
       objectReference: {fileID: 0}
@@ -77127,6 +77172,10 @@ PrefabInstance:
       propertyPath: attackRifleAnim
       value: 
       objectReference: {fileID: 7400000, guid: 6d253cd6de5c91d4ea797907fd5311d3, type: 2}
+    - target: {fileID: 3234005789300605421, guid: f6652d8ea5c7a9c47a1a72424f3a4c32, type: 3}
+      propertyPath: classGraphicsData
+      value: 
+      objectReference: {fileID: 11400000, guid: 8d163d54818668e489a529f2c0048844, type: 2}
     - target: {fileID: 3234005789300605421, guid: f6652d8ea5c7a9c47a1a72424f3a4c32, type: 3}
       propertyPath: lightShaftColor.a
       value: 1
