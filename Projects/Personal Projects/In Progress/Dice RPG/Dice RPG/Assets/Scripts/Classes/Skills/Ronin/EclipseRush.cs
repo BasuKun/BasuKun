@@ -4,24 +4,14 @@ using UnityEngine;
 
 public class EclipseRush : MonoBehaviour, IDamageSkill
 {
-    public int currentLevel { get; set; }
-    public int maxLevel { get; set; }
-    public string skillName { get; set; }
-    public CurrentClass.classes skillClass { get; set; }
-    public SkillTypes.types skillType { get; set; }
-    public bool hasSeparateAnim { get; set; }
     public int damageToDeal { get; set; }
+	[field: SerializeField] public Skill skillData { get; set; }
 
-    private Dictionary<int, Dice> diceReqs = new Dictionary<int, Dice>();
+	private Dictionary<int, Dice> diceReqs = new Dictionary<int, Dice>();
 
     public void SetData()
     {
-        currentLevel = 0;
-        maxLevel = 1;
-        skillName = "Eclipse Rush";
-        skillClass = CurrentClass.classes.Ronin;
-        skillType = SkillTypes.types.Damage;
-        hasSeparateAnim = false;
+		skillData.currentLevel = 0;
     }
 
     public bool hasSkillPattern(List<Dice> dices)
@@ -44,17 +34,17 @@ public class EclipseRush : MonoBehaviour, IDamageSkill
         Player.Instance.skillsActivated++;
         damageToDeal = GetSkillValue((int)(Player.Instance.diceAmount / 5f));
         Player.Instance.damageToDeal = damageToDeal + Player.Instance.damageBonus + Player.Instance.tempDamageBonus;
-        Battle.Instance.SkillNamePopout(skillName, Player.Instance.character.transform, skillType);
+        Battle.Instance.SkillNamePopout(skillData.skillName, Player.Instance.character.transform, skillData.skillType);
 
         foreach (var dice in diceReqs)
         {
-            StartCoroutine(dice.Value.TriggerSkillAnimation(0f, skillName, false, Player.Instance.character.transform, skillType));
+            StartCoroutine(dice.Value.TriggerSkillAnimation(0f, skillData.skillName, false, Player.Instance.character.transform, skillData.skillType));
         }
 
-        animator.SetTrigger("isEclipseRushing");
-    }
+		animator.Play(skillData.stateName);
+	}
 
-    public float GetAnimLength()
+	public float GetAnimLength()
     {
         return 0;
     }

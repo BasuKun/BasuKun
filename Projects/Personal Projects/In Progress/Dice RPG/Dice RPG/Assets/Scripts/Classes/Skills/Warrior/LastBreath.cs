@@ -4,19 +4,11 @@ using UnityEngine;
 
 public class LastBreath : MonoBehaviour, IReactionSkill
 {
-    public int currentLevel { get; set; }
-    public int maxLevel { get; set; }
-    public string skillName { get; set; }
-    public CurrentClass.classes skillClass { get; set; }
-    public SkillTypes.types skillType { get; set; }
+	[field: SerializeField] public Skill skillData { get; set; }
 
-    public void SetData()
+	public void SetData()
     {
-        currentLevel = 0;
-        maxLevel = 2;
-        skillName = "Last Breath";
-        skillClass = CurrentClass.classes.Warrior;
-        skillType = SkillTypes.types.Reaction;
+		skillData.currentLevel = 0;
     }
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices, int curHitPoints, int maxHitPoints)
@@ -28,14 +20,14 @@ public class LastBreath : MonoBehaviour, IReactionSkill
             Battle.Instance.usedLastBreath = true;
             Battle.Instance.isLastBreathing = true;
             Player.Instance.curHitPoints = 1;
-            Battle.Instance.SkillNamePopout(skillName, Player.Instance.character.transform, skillType);
+            Battle.Instance.SkillNamePopout(skillData.skillName, Player.Instance.character.transform, skillData.skillType);
             Player.Instance.UpdateHP(0, true);
         }
         else if (Battle.Instance.usedLastBreath && dices[dices.Count - 1].value > 5)
         {
             Battle.Instance.isLastBreathing = true;
             Player.Instance.curHitPoints = 1;
-            StartCoroutine(dices[dices.Count - 1].TriggerSkillAnimation(0f, skillName, true, Player.Instance.character.transform, skillType));
+            StartCoroutine(dices[dices.Count - 1].TriggerSkillAnimation(0f, skillData.skillName, true, Player.Instance.character.transform, skillData.skillType));
             Player.Instance.UpdateHP(0, true);
         }
     }

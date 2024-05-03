@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15f972debdac6b3478dc40fddc1c009c, type: 3}
+  m_Name: Pierce
+  m_EditorClassIdentifier: 
+  skillName: Pierce
+  stateName: Attack_Pierce
+  currentLevel: 0
+  maxLevel: 4
+  skillCooldown: 2
+  skillType: 2
+  skillClass: 1
+  sprites:
+  - {fileID: 21300000, guid: 33bb826084f8dca40acdb347d88f7369, type: 3}
+  - {fileID: 21300000, guid: ef2e0840744044d4f83a7174ff990579, type: 3}
+  - {fileID: 21300000, guid: bf8d3214f501aee499c7058c4e4de01d, type: 3}
+  - {fileID: 21300000, guid: ee48b9edcd5c0374d9cb01311fc0559f, type: 3}
+  - {fileID: 21300000, guid: 47572579566022549896deee32eb6d64, type: 3}
+  - {fileID: 21300000, guid: 17b84d3815548be41a6c3af6e3a6c84b, type: 3}
+  - {fileID: 21300000, guid: 9466a5cd93376c5499d00a792ae0a2db, type: 3}
+  - {fileID: 21300000, guid: 176a3bbd5175eec40922c811a786c235, type: 3}
+  frameDuration: 0.2
+  createdAnimationClip: {fileID: 7400000, guid: a1777325198421641bc14846c1b0dfcd, type: 2}

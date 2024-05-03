@@ -21,7 +21,7 @@ public class DefenseSkillsDictionary : MonoBehaviour
         foreach (var skill in defenseSkillsList)
         {
             skill.SetData();
-            defenseSkillsDictionary.Add(skill.skillName, skill);
+            defenseSkillsDictionary.Add(skill.skillData.skillName, skill);
         }
     }
 }

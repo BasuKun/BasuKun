@@ -4,7 +4,5 @@ using UnityEngine;
 
 public interface ISkill
 {
-	public int currentLevel { get; set; }
-	public int maxLevel { get; set; }
-	public SkillTypes.types skillType { get; set; }
+	public Skill skillData { get; set; }
 }

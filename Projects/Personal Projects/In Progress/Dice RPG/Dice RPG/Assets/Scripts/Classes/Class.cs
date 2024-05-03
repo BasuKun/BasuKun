@@ -8,29 +8,10 @@ public class Class : MonoBehaviour
 	[Header("DATA")]
 	public ClassData classData;
 	public ClassGraphicsData classGraphicsData;
+	public ClassAnimationData classAnimData;
 
-    [Header("ANIMATION")]
+	[Header("ANIMATION")]
     public Animator animator;
-    public AnimationClip idleAnim;
-    public AnimationClip moveAnim;
-    public AnimationClip attackAnim01;
-    public AnimationClip attackAnim02;
-    public AnimationClip attackAnim03;
-    public AnimationClip attackSuppressiveFireAnim;
-    public AnimationClip attackSeismicDiveAnim;
-    public AnimationClip attackWhirlwindSlashAnim;
-    public AnimationClip attackEclipseRushAnim;
-    public AnimationClip attackTripleSlashAnim;
-    public AnimationClip attackDynamiteAnim;
-    public AnimationClip attackRifleAnim;
-    public AnimationClip summonAnim;
-    public AnimationClip returnToIdleAnim;
-    public AnimationClip hurtAnim;
-    public AnimationClip hurtSideStepAnim;
-    public AnimationClip hurtShadowRetreatAnim;
-    public AnimationClip deathAnim;
-    public AnimationClip soulTransformAnim;
-    public bool hasReturnToIdleAnim;
 
     [Header("OTHER")]
     public Transform soulsPosition;
@@ -47,28 +28,43 @@ public class Class : MonoBehaviour
         AnimatorOverrideController AOC = new AnimatorOverrideController(animator.runtimeAnimatorController);
         animator.runtimeAnimatorController = AOC;
 
-        AOC["Idle"] = idleAnim;
-        AOC["Move"] = moveAnim;
-        AOC["Attack01"] = attackAnim01;
-        if (attackAnim02 != null) AOC["Attack02"] = attackAnim02;
-        if (attackAnim03 != null) AOC["Attack03"] = attackAnim03;
-        if (attackSuppressiveFireAnim != null) AOC["Attack_SuppressiveFire"] = attackSuppressiveFireAnim;
-        if (attackSeismicDiveAnim != null) AOC["Attack_SeismicDive"] = attackSeismicDiveAnim;
-        if (attackWhirlwindSlashAnim != null) AOC["Attack_WhirlwindSlash"] = attackWhirlwindSlashAnim;
-        if (attackEclipseRushAnim != null) AOC["Attack_EclipseRush"] = attackEclipseRushAnim;
-        if (attackTripleSlashAnim != null) AOC["Attack_TripleSlash"] = attackTripleSlashAnim;
-		if (attackDynamiteAnim != null) AOC["Attack_Dynamite"] = attackDynamiteAnim;
-        if (attackRifleAnim != null) AOC["Attack_Rifle"] = attackRifleAnim;
-        if (summonAnim != null) AOC["Summon"] = summonAnim;
-        if (returnToIdleAnim != null) AOC["ReturnToIdle"] = returnToIdleAnim;
-        AOC["Hurt"] = hurtAnim;
-        if (hurtSideStepAnim != null) AOC["Hurt_SideStep"] = hurtSideStepAnim;
-        if (hurtShadowRetreatAnim != null) AOC["Hurt_ShadowRetreat"] = hurtShadowRetreatAnim;
-        AOC["Death"] = deathAnim;
-        AOC["SoulTransform"] = soulTransformAnim;
+		//GLOBAL
+        AOC["Idle"] = classAnimData.idleAnim;
+        AOC["Move"] = classAnimData.moveAnim;
+        AOC["Attack"] = classAnimData.basicAttackAnim;
+		AOC["Hurt"] = classAnimData.hurtAnim;
+		AOC["Death"] = classAnimData.deathAnim;
+		AOC["SoulTransform"] = classAnimData.soulTransformAnim;
 
-        animator.runtimeAnimatorController = AOC;
-        animator.SetBool("hasReturnToIdle", hasReturnToIdleAnim);
+		//OPTIONAL
+		if (classAnimData.returnToIdleAnim != null) AOC["ReturnToIdle"] = classAnimData.returnToIdleAnim;
+
+		//WARRIOR
+		if (classAnimData.attackSeismicDiveAnim != null) AOC["Attack_SeismicDive"] = classAnimData.attackSeismicDiveAnim;
+		if (classAnimData.attackWhirlwindSlashAnim != null) AOC["Attack_WhirlwindSlash"] = classAnimData.attackWhirlwindSlashAnim;
+
+		//RONIN
+		if (classAnimData.attackEclipseRushAnim != null) AOC["Attack_EclipseRush"] = classAnimData.attackEclipseRushAnim;
+		if (classAnimData.attackTripleSlashAnim != null) AOC["Attack_TripleSlash"] = classAnimData.attackTripleSlashAnim;
+		if (classAnimData.hurtSideStepAnim != null) AOC["Hurt_SideStep"] = classAnimData.hurtSideStepAnim;
+		if (classAnimData.hurtShadowRetreatAnim != null) AOC["Hurt_ShadowRetreat"] = classAnimData.hurtShadowRetreatAnim;
+
+		//GUNSLINGER
+		if (classAnimData.attackSuppressiveFireAnim != null) AOC["Attack_SuppressiveFire"] = classAnimData.attackSuppressiveFireAnim;
+		if (classAnimData.attackDynamiteAnim != null) AOC["Attack_Dynamite"] = classAnimData.attackDynamiteAnim;
+		if (classAnimData.attackRifleAnim != null) AOC["Attack_Rifle"] = classAnimData.attackRifleAnim;
+
+		//TECHNOMANCER
+		//nothing for now
+
+		//WARLOCK
+		if (classAnimData.summonAnim != null) AOC["Summon"] = classAnimData.summonAnim;
+
+		//HEALER
+		//nothing for now
+
+		animator.runtimeAnimatorController = AOC;
+        animator.SetBool("hasReturnToIdle", classAnimData.hasReturnToIdle);
     }
 
     void AddToClassesDictionary()
@@ -78,11 +74,6 @@ public class Class : MonoBehaviour
 
     public void Attack()
     {
-        animator.SetTrigger("isAttacking01");
-    }
-
-    public void AttackTwo()
-    {
-        animator.SetTrigger("isAttacking02");
+        animator.Play("Attack");
     }
 }

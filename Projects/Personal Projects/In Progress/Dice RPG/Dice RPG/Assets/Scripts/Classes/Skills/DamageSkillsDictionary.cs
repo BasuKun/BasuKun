@@ -19,7 +19,7 @@ public class DamageSkillsDictionary : MonoBehaviour
         foreach (var skill in damageSkillsList) 
         {
             skill.SetData();
-            damageSkillsDictionary.Add(skill.skillName, skill);
+            damageSkillsDictionary.Add(skill.skillData.skillName, skill);
         }
     }
 }

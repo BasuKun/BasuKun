@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cdf45e4c6add9247b9ea0df26d5a125, type: 3}
+  m_Name: WarlockAnimations
+  m_EditorClassIdentifier: 
+  idleAnim: {fileID: 7400000, guid: da3ba676b7d57dd4caaac40dabba6a0f, type: 2}
+  moveAnim: {fileID: 7400000, guid: f977754856078774eaf5a124fb13b8b1, type: 2}
+  basicAttackAnim: {fileID: 7400000, guid: c6bd26c65be0d274981dc33e0c30bd8f, type: 2}
+  hurtAnim: {fileID: 7400000, guid: f9fe60b5d1435cd468af14a47cf02d71, type: 2}
+  deathAnim: {fileID: 7400000, guid: 89243a4770721904e915aa55103ac4f2, type: 2}
+  soulTransformAnim: {fileID: 7400000, guid: b9d3113771964aa47a8d99ee8b6d1ca5, type: 2}
+  hasReturnToIdle: 0
+  returnToIdleAnim: {fileID: 0}
+  attackPierceAnim: {fileID: 0}
+  attackSeismicDiveAnim: {fileID: 0}
+  attackWhirlwindSlashAnim: {fileID: 0}
+  hurtParryAnim: {fileID: 0}
+  attackEclipseRushAnim: {fileID: 0}
+  attackDoubleSlashAnim: {fileID: 0}
+  attackTripleSlashAnim: {fileID: 0}
+  attackAssassinate: {fileID: 0}
+  hurtSideStepAnim: {fileID: 0}
+  hurtShadowRetreatAnim: {fileID: 0}
+  attackSuppressiveFireAnim: {fileID: 0}
+  attackDynamiteAnim: {fileID: 0}
+  attackRifleAnim: {fileID: 0}
+  summonAnim: {fileID: 7400000, guid: df9cbff8281335243b1d576c86686290, type: 2}

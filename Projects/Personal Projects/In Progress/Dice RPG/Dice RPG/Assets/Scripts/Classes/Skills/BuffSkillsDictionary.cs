@@ -21,7 +21,7 @@ public class BuffSkillsDictionary : MonoBehaviour
         foreach (var skill in buffSkillsList) 
         {
             skill.SetData();
-            buffSkillsDictionary.Add(skill.skillName, skill);
+            buffSkillsDictionary.Add(skill.skillData.skillName, skill);
         }
     }
 }

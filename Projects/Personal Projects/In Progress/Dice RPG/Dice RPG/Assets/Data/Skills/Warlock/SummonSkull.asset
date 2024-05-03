@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15f972debdac6b3478dc40fddc1c009c, type: 3}
+  m_Name: SummonSkull
+  m_EditorClassIdentifier: 
+  skillName: Summon Skull
+  stateName: 
+  currentLevel: 0
+  maxLevel: 3
+  skillCooldown: 0
+  skillType: 6
+  skillClass: 5
+  hasSeparateAnim: 0
+  sprites: []
+  frameDuration: 0
+  createdAnimationClip: {fileID: 0}
+  separateAnim: {fileID: 0}
+  summon: {fileID: 8083943819038104611, guid: 705de789696bae241a1111545641ea92, type: 3}

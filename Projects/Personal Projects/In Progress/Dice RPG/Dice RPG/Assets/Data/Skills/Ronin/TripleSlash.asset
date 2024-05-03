@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15f972debdac6b3478dc40fddc1c009c, type: 3}
+  m_Name: TripleSlash
+  m_EditorClassIdentifier: 
+  skillName: Triple Slash
+  stateName: Attack_TripleSlash
+  currentLevel: 0
+  maxLevel: 5
+  skillCooldown: 0
+  skillType: 2
+  skillClass: 2
+  sprites:
+  - {fileID: 21300000, guid: 3569ff0c932aaf247bbd3fc3db59dda4, type: 3}
+  - {fileID: 21300000, guid: 9dbdf855e23a19f448404d84ffbbbce7, type: 3}
+  - {fileID: 21300000, guid: 6ddafa233f61e5345a04e97b4d5a2c1d, type: 3}
+  - {fileID: 21300000, guid: fdbe37b0b992fd049b30cf83543b1b46, type: 3}
+  - {fileID: 21300000, guid: 116a949eb14a5134bbebfb7cd0443a86, type: 3}
+  - {fileID: 21300000, guid: 967adcd5514441f4a85117f51dcf60f6, type: 3}
+  - {fileID: 21300000, guid: ab075bdaf5cec604aa8e35784fdcb4dd, type: 3}
+  - {fileID: 21300000, guid: c5b4c2ab6bde56a4286a9947541035bf, type: 3}
+  - {fileID: 21300000, guid: e6f6d8d6f9f483f49a52ca48868e7908, type: 3}
+  - {fileID: 21300000, guid: d26e5d8845c491f4381a2811fc9822e8, type: 3}
+  - {fileID: 21300000, guid: 8be8b22f92c3d2f4cacb19566a15107e, type: 3}
+  - {fileID: 21300000, guid: 3d42566ef7a7325428e3d0df658fd1ea, type: 3}
+  - {fileID: 21300000, guid: f6d730f09c2bda44fa786a4bdcc7b51f, type: 3}
+  - {fileID: 21300000, guid: 80301849b65f05946b7b846cbfd22849, type: 3}
+  frameDuration: 0.2
+  createdAnimationClip: {fileID: 7400000, guid: 23509d67ef5717a40bdd73eddc0f84c0, type: 2}

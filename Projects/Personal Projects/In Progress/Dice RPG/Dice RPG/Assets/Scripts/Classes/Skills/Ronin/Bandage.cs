@@ -4,19 +4,11 @@ using UnityEngine;
 
 public class Bandage : MonoBehaviour, IBuffSkill
 {
-    public int currentLevel { get; set; }
-    public int maxLevel { get; set; }
-    public string skillName { get; set; }
-    public CurrentClass.classes skillClass { get; set; }
-    public SkillTypes.types skillType { get; set; }
+	[field: SerializeField] public Skill skillData { get; set; }
 
-    public void SetData()
+	public void SetData()
     {
-        currentLevel = 0;
-        maxLevel = 1;
-        skillName = "Bandage";
-        skillClass = CurrentClass.classes.Ronin;
-        skillType = SkillTypes.types.Buff;
+		skillData.currentLevel = 0;
     }
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
@@ -29,9 +21,9 @@ public class Bandage : MonoBehaviour, IBuffSkill
                 if (dices[i - 1].value == dices[i + 1].value)
                 {
                     Player.Instance.skillsActivated++;
-                    StartCoroutine(dices[i - 1].TriggerSkillAnimation(0f, skillName, false, Player.Instance.character.transform, skillType));
-                    StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillName, true, Player.Instance.character.transform, skillType));
-                    StartCoroutine(dices[i + 1].TriggerSkillAnimation(0f, skillName, false, Player.Instance.character.transform, skillType));
+                    StartCoroutine(dices[i - 1].TriggerSkillAnimation(0f, skillData.skillName, false, Player.Instance.character.transform, skillData.skillType));
+                    StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillData.skillName, true, Player.Instance.character.transform, skillData.skillType));
+                    StartCoroutine(dices[i + 1].TriggerSkillAnimation(0f, skillData.skillName, false, Player.Instance.character.transform, skillData.skillType));
                     StartCoroutine(Player.Instance.UpdateHP(dices[i].skillValue * 2, true));
                 }
             }

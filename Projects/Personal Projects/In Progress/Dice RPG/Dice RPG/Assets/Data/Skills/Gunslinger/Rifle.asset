@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15f972debdac6b3478dc40fddc1c009c, type: 3}
+  m_Name: Rifle
+  m_EditorClassIdentifier: 
+  skillName: Rifle
+  stateName: Attack_Rifle
+  currentLevel: 0
+  maxLevel: 3
+  skillCooldown: 2
+  skillType: 2
+  skillClass: 3
+  sprites:
+  - {fileID: 21300000, guid: 2a76f27caeb7fdc47936f86d33ecd53f, type: 3}
+  - {fileID: 21300000, guid: 0959f5894edbcee47991b90e1224417c, type: 3}
+  - {fileID: 21300000, guid: eef252cdab944da4b852f2db0c1c9f38, type: 3}
+  - {fileID: 21300000, guid: ae5b1751a7448e44f9ce7f71917d99f8, type: 3}
+  - {fileID: 21300000, guid: 623369b6af7d8044f8223967482fbe4a, type: 3}
+  - {fileID: 21300000, guid: a436dffce56390849a8d4f4f5e4e9f14, type: 3}
+  - {fileID: 21300000, guid: c98fc8eb2b05daf4baf10cb42e4d9d33, type: 3}
+  - {fileID: 21300000, guid: 46a0ef6dd5909d041abc7441009f8d33, type: 3}
+  - {fileID: 21300000, guid: a340bfef345495b4c864577112e82b6a, type: 3}
+  - {fileID: 21300000, guid: 172ec3e34ea5b8f44b74b0a321b79721, type: 3}
+  - {fileID: 21300000, guid: 412d95bd320fe48428bdd9545614592b, type: 3}
+  - {fileID: 21300000, guid: 52f57e7ac1ee2ce47a52e0ecc2dfcf9c, type: 3}
+  - {fileID: 21300000, guid: 26d01eccb7477ad43b1245b7db870271, type: 3}
+  - {fileID: 21300000, guid: 0405cac32af2d644cb80b5412da1a120, type: 3}
+  - {fileID: 21300000, guid: cc6668e95067caf4fa6095c65692c121, type: 3}
+  frameDuration: 0.2
+  createdAnimationClip: {fileID: 7400000, guid: b6ef78064136fd142b20c3b4a87f3bc2, type: 2}

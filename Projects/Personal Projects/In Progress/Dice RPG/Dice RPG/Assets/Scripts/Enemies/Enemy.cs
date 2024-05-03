@@ -64,7 +64,7 @@ public class Enemy : MonoBehaviour
 
         AOC["Idle"] = idleAnim;
         AOC["Move"] = moveAnim;
-        AOC["Attack01"] = attackAnim01;
+        AOC["Attack"] = attackAnim01;
         if (attackAnim02 != null) AOC["Attack02"] = attackAnim02;
         if (attackAnim03 != null) AOC["Attack03"] = attackAnim03;
         if (returnToIdleAnim != null) AOC["ReturnToIdle"] = returnToIdleAnim;

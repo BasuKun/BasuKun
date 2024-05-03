@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cdf45e4c6add9247b9ea0df26d5a125, type: 3}
+  m_Name: WarriorAnimations
+  m_EditorClassIdentifier: 
+  idleAnim: {fileID: 7400000, guid: bdca5c63e1051c54ab55751aa07d376e, type: 2}
+  moveAnim: {fileID: 7400000, guid: 5e4ab1397149a1944983d9026de77854, type: 2}
+  basicAttackAnim: {fileID: 7400000, guid: 55b28367ff54b3d469034071a0cc7dc3, type: 2}
+  hurtAnim: {fileID: 7400000, guid: 005a11fc786241047a8997c705c6a17b, type: 2}
+  deathAnim: {fileID: 7400000, guid: e61cd7a237f6929458e7b71346b02962, type: 2}
+  soulTransformAnim: {fileID: 7400000, guid: 0f709c7eaa5b075479feb673b1825f89, type: 2}
+  hasReturnToIdle: 0
+  returnToIdleAnim: {fileID: 0}
+  attackPierceAnim: {fileID: 7400000, guid: a1777325198421641bc14846c1b0dfcd, type: 2}
+  attackSeismicDiveAnim: {fileID: 7400000, guid: 4aa4f129a4cff874d9fc18c0af2c46b7, type: 2}
+  attackWhirlwindSlashAnim: {fileID: 7400000, guid: 57bfc17d79889b144939854aefe901b3, type: 2}
+  hurtParryAnim: {fileID: 7400000, guid: 314806315d6fc154fac6a11328696a3b, type: 2}
+  attackEclipseRushAnim: {fileID: 0}
+  attackDoubleSlashAnim: {fileID: 0}
+  attackTripleSlashAnim: {fileID: 0}
+  attackAssassinate: {fileID: 0}
+  hurtSideStepAnim: {fileID: 0}
+  hurtShadowRetreatAnim: {fileID: 0}
+  attackSuppressiveFireAnim: {fileID: 0}
+  attackDynamiteAnim: {fileID: 0}
+  attackRifleAnim: {fileID: 0}
+  summonAnim: {fileID: 0}

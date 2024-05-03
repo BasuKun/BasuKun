@@ -9,18 +9,22 @@ public class Skill : ScriptableObject
 {
     [Header("SkillData")]
     public string skillName;
-    public int currentLevel;
+	public string stateName;
+	public int currentLevel;
     public int maxLevel;
     public int skillCooldown;
     public SkillTypes.types skillType;
     public CurrentClass.classes skillClass;
+	public bool hasSeparateAnim;
 
     [Header("AnimationData")]
     public Sprite[] sprites;
     public float frameDuration;
     public AnimationClip createdAnimationClip;
+	public GameObject separateAnim;
+	public Summon summon;
 
-    [ContextMenu("Create Animation Clip")]
+	[ContextMenu("Create Animation Clip")]
     public void CreateAnimationClip()
     {
         if (sprites == null || sprites.Length == 0)
@@ -29,8 +33,11 @@ public class Skill : ScriptableObject
             return;
         }
 
-        string folderPath = "Assets/Animations/" + Enum.GetName(typeof(CurrentClass.classes), skillClass);
-        string filePath = Path.Combine(folderPath, skillName + ".anim");
+		string skillNameNoSpaces = skillName.Replace(" ", "");
+		string fileName = skillClass.ToString() + "_" + skillType.ToString() + "_" + skillNameNoSpaces;
+
+		string folderPath = "Assets/Animations/" + Enum.GetName(typeof(CurrentClass.classes), skillClass);
+        string filePath = Path.Combine(folderPath, fileName + ".anim");
         AnimationClip existingAnimationClip = AssetDatabase.LoadAssetAtPath<AnimationClip>(filePath);
 
         if (existingAnimationClip != null)
@@ -47,12 +54,12 @@ public class Skill : ScriptableObject
 
             existingAnimationClip.wrapMode = WrapMode.Once;
 
-            Debug.Log("Updated existing AnimationClip: " + skillName);
+            Debug.Log("Updated existing AnimationClip: " + fileName);
         }
         else
         {
             AnimationClip animationClip = new AnimationClip();
-            animationClip.name = skillName;
+            animationClip.name = fileName;
 
             ObjectReferenceKeyframe[] frames = new ObjectReferenceKeyframe[sprites.Length];
             for (int i = 0; i < sprites.Length; i++)
@@ -73,7 +80,7 @@ public class Skill : ScriptableObject
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
 
-            Debug.Log("Created new AnimationClip: " + skillName);
+            Debug.Log("Created new AnimationClip: " + fileName);
         }
 
         createdAnimationClip = AssetDatabase.LoadAssetAtPath<AnimationClip>(filePath);

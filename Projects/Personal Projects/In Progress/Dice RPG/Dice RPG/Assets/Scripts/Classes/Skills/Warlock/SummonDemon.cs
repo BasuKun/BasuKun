@@ -10,8 +10,9 @@ public class SummonDemon : MonoBehaviour, ISummonSkill
     public CurrentClass.classes skillClass { get; set; }
     public SkillTypes.types skillType { get; set; }
     public Summon summon;
+	[field: SerializeField] public Skill skillData { get; set; }
 
-    public void SetData()
+	public void SetData()
     {
         currentLevel = 0;
         maxLevel = 1;

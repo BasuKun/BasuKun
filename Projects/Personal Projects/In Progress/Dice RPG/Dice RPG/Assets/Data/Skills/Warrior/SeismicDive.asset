@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15f972debdac6b3478dc40fddc1c009c, type: 3}
+  m_Name: SeismicDive
+  m_EditorClassIdentifier: 
+  skillName: Seismic Dive
+  stateName: Attack_SeismicDive
+  currentLevel: 0
+  maxLevel: 4
+  skillCooldown: 2
+  skillType: 2
+  skillClass: 1
+  sprites:
+  - {fileID: 21300000, guid: a95f47fe9ec95c34d80be1886be39b83, type: 3}
+  - {fileID: 21300000, guid: 1d4f823198ad2c74a91529f243605fe4, type: 3}
+  - {fileID: 21300000, guid: 2a1ea3d1e07cf844e8471109ac078073, type: 3}
+  - {fileID: 21300000, guid: 99a8d9cefc016bd409b51f7037707731, type: 3}
+  - {fileID: 21300000, guid: 23a19e8397e297441b5cddd1d2b479e4, type: 3}
+  - {fileID: 21300000, guid: 6ef2cb4a3229a1a45ab8bbaab811e8ac, type: 3}
+  - {fileID: 21300000, guid: 5551f8bbf107ceb4f922d8de8e410832, type: 3}
+  - {fileID: 21300000, guid: 932e3143610128b4cbaeb45daffd0b1d, type: 3}
+  - {fileID: 21300000, guid: e85f8d868229d854a839cb292d8845fb, type: 3}
+  - {fileID: 21300000, guid: 4a6e4a0f118ae0044a8e735a6cab1c6a, type: 3}
+  - {fileID: 21300000, guid: afe161041bad53c408c1b444ca9d8ea4, type: 3}
+  - {fileID: 21300000, guid: a319c7365c4ebd442886f0033c961407, type: 3}
+  - {fileID: 21300000, guid: e3bf770f8b92cd746bcd37b1eadc921c, type: 3}
+  - {fileID: 21300000, guid: 2b493843539d06545a055b3e5e64877d, type: 3}
+  - {fileID: 21300000, guid: a4688cba854eb2349b348052fbc975df, type: 3}
+  - {fileID: 21300000, guid: 3f92fad61b778f2459dcec00ebea3966, type: 3}
+  - {fileID: 21300000, guid: 401daf3291866ea47b31fd3858be04a3, type: 3}
+  - {fileID: 21300000, guid: 2fd4faea32e71fd458a82b19e5b80bc7, type: 3}
+  - {fileID: 21300000, guid: 0ce7d9178df3119449b79b85b66514b1, type: 3}
+  - {fileID: 21300000, guid: 133e3ee851516fd4196d0221cc76c05a, type: 3}
+  - {fileID: 21300000, guid: 6265914401b4d004091214019b5fd949, type: 3}
+  frameDuration: 0.2
+  createdAnimationClip: {fileID: 7400000, guid: 4aa4f129a4cff874d9fc18c0af2c46b7, type: 2}

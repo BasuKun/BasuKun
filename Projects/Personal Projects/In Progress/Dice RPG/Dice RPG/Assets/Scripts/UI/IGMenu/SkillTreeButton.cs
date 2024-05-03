@@ -104,15 +104,15 @@ public class SkillTreeButton : MonoBehaviour
 
     private void UpdateInfo()
 	{
-        currentLevel = skill.currentLevel;
-        maxLevel = skill.maxLevel;
+        currentLevel = skill.skillData.currentLevel;
+        maxLevel = skill.skillData.maxLevel;
 
         maxLevelText.text = maxLevel.ToString();
     }
 
     public void UpdateCurrentLevel()
 	{
-        currentLevel = skill.currentLevel;
+        currentLevel = skill.skillData.currentLevel;
         currentLevelText.text = currentLevel.ToString();
 
         if (currentLevel == maxLevel)
@@ -128,7 +128,7 @@ public class SkillTreeButton : MonoBehaviour
         if (currentLevel == 0)
             PlayerSkills.Instance.UnlockSkill(skillName);
 
-        skill.currentLevel++;
+        skill.skillData.currentLevel++;
         UpdateCurrentLevel();
 
         Player.Instance.skillPoints -= currentLevel;

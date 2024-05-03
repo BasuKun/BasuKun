@@ -4,26 +4,18 @@ using UnityEngine;
 
 public class CripplingShot : MonoBehaviour, IEffectSkill
 {
-    public int currentLevel { get; set; }
-    public int maxLevel { get; set; }
-    public string skillName { get; set; }
-    public CurrentClass.classes skillClass { get; set; }
-    public SkillTypes.types skillType { get; set; }
+	[field: SerializeField] public Skill skillData { get; set; }
 
-    public void SetData()
+	public void SetData()
     {
-        currentLevel = 0;
-        maxLevel = 1;
-        skillName = "Crippling Shot";
-        skillClass = CurrentClass.classes.Gunslinger;
-        skillType = SkillTypes.types.Buff;
+		skillData.currentLevel = 0;
     }
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
     {
         if (dices[dices.Count - 1].value == 1)
         {
-            StartCoroutine(dices[dices.Count - 1].TriggerSkillAnimation(0f, skillName, true, Player.Instance.character.transform, skillType));
+            StartCoroutine(dices[dices.Count - 1].TriggerSkillAnimation(0f, skillData.skillName, true, Player.Instance.character.transform, skillData.skillType));
             int random = Random.Range(0, enemyDices.Count - 1);
             enemyDices[random].LockDice(dices[dices.Count - 2].value);
         }

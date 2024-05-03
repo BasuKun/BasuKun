@@ -4,36 +4,27 @@ using UnityEngine;
 
 public class SummonSkull : MonoBehaviour, ISummonSkill
 {
-    public int currentLevel { get; set; }
-    public int maxLevel { get; set; }
-    public string skillName { get; set; }
-    public CurrentClass.classes skillClass { get; set; }
-    public SkillTypes.types skillType { get; set; }
-    public Summon summon;
+	[field: SerializeField] public Skill skillData { get; set; }
 
-    public void SetData()
+	public void SetData()
     {
-        currentLevel = 0;
-        maxLevel = 1;
-        skillName = "Summon Skull";
-        skillClass = CurrentClass.classes.Warlock;
-        skillType = SkillTypes.types.Summon;
+		skillData.currentLevel = 0;
     }
 
     public bool hasSkillPattern(List<Dice> dices)
     {
-        if (summon.isActive) return false;
+        if (skillData.summon.isActive) return false;
 
         for (int i = 0; i < dices.Count; i++)
         {
             if (dices[i].value == 2 && !dices[i].isTemporary)
             {
-                StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillName, true, Player.Instance.character.transform, skillType));
-                Player.Instance.summonsToActivate.Add(summon);
+                StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillData.skillName, true, Player.Instance.character.transform, skillData.skillType));
+                Player.Instance.summonsToActivate.Add(skillData.summon);
                 Player.Instance.hasSkull = true;
-                summon.isActive = true;
-                summon.linkedDice = dices[i];
-                summon.turnsActive = 5;
+				skillData.summon.isActive = true;
+				skillData.summon.linkedDice = dices[i];
+				skillData.summon.turnsActive = 5;
 
                 return true;
             }

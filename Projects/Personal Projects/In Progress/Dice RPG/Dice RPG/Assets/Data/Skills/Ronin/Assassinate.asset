@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15f972debdac6b3478dc40fddc1c009c, type: 3}
+  m_Name: Assassinate
+  m_EditorClassIdentifier: 
+  skillName: Assassinate
+  stateName: Attack_Assassinate
+  currentLevel: 0
+  maxLevel: 2
+  skillCooldown: 0
+  skillType: 2
+  skillClass: 2
+  sprites:
+  - {fileID: 21300000, guid: 89bb23bf3951c4642bbf7ccdf645bca3, type: 3}
+  - {fileID: 21300000, guid: 8f6f8fdb546895f419325ad425a11453, type: 3}
+  - {fileID: 21300000, guid: 668e42a71ad54c74c9afba735fa3f058, type: 3}
+  - {fileID: 21300000, guid: 0f8770e4195cc6440bfacda4df334cc8, type: 3}
+  - {fileID: 21300000, guid: b917697929c30ca48b2429df418dcf3e, type: 3}
+  - {fileID: 21300000, guid: ea1e3763661565140b5e8929e17be501, type: 3}
+  - {fileID: 21300000, guid: ec416b06e0970184c8dabd1dce85a80f, type: 3}
+  - {fileID: 21300000, guid: ca2aee33151ef1745844ebfef082569f, type: 3}
+  - {fileID: 21300000, guid: 137e427e79dfb5c4a98dc1cf36e42d42, type: 3}
+  - {fileID: 21300000, guid: cae5e7a18a0981840a0ea091c8c2a60e, type: 3}
+  - {fileID: 21300000, guid: e5494b1062b08da43b9d038621189615, type: 3}
+  - {fileID: 21300000, guid: 83e3e7b34ac9b5d4685be69d5f14578c, type: 3}
+  - {fileID: 21300000, guid: e2dc24575ad36e04aa807784ac00b325, type: 3}
+  - {fileID: 21300000, guid: 297bed0cc7a711146811b98facc87719, type: 3}
+  - {fileID: 21300000, guid: c4a5cd6810b3a1248831227917d9f842, type: 3}
+  - {fileID: 21300000, guid: cec89d9de27c0134e95d8b0273e741cf, type: 3}
+  - {fileID: 21300000, guid: 07798be27b5d2bb46ac48574a6ef95aa, type: 3}
+  - {fileID: 21300000, guid: 27962815c9a6f324ba2b67283835146f, type: 3}
+  - {fileID: 21300000, guid: c28ce84e9f2f37b4cab10d3e0d3abea6, type: 3}
+  - {fileID: 21300000, guid: 194a1ba05dc23ce4f8bbbe62c1dffbcf, type: 3}
+  - {fileID: 21300000, guid: 6a75960075c6bcf4c8d319f860228973, type: 3}
+  - {fileID: 21300000, guid: 4e4d46ec0e4bc6346b67063917c992a9, type: 3}
+  - {fileID: 21300000, guid: 18b27967041c4ea479033829206590d1, type: 3}
+  - {fileID: 21300000, guid: 4d2c02cd5d3e6dd44be32b3d68dc44fa, type: 3}
+  - {fileID: 21300000, guid: 036cce9ad1240da4cb4aa00890d2caf9, type: 3}
+  - {fileID: 21300000, guid: 3cd0e12734b8cf6459056560ca57b05f, type: 3}
+  - {fileID: 21300000, guid: ddece05f9a935bf41b73dff1c3057a7d, type: 3}
+  - {fileID: 21300000, guid: 0ec77e27df0fa334d915ccf76d5a2f4d, type: 3}
+  - {fileID: 21300000, guid: e3b1c21391863f340bf48fc647b45af6, type: 3}
+  - {fileID: 21300000, guid: 5f362ce1a196c974794a49ce83fb9da6, type: 3}
+  - {fileID: 21300000, guid: 084f773f29bb71748a1507003ba49fd5, type: 3}
+  - {fileID: 21300000, guid: d0eca7381910a75459e6f895663f56fa, type: 3}
+  frameDuration: 0.2
+  createdAnimationClip: {fileID: 7400000, guid: 22f45fa3a90a45149a82c214735f1bdf, type: 2}

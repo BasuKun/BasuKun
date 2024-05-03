@@ -117,7 +117,7 @@ public class Player : MonoBehaviour
 
         yield return new WaitForSeconds(0.05f);
 
-        character.animator.SetTrigger("isAttacking01");
+        character.animator.Play("Attack");
         yield return new WaitForSeconds(0.01f);
         yield return new WaitForSeconds(character.animator.GetCurrentAnimatorClipInfo(0)[0].clip.length - 0.01f);
 
@@ -130,7 +130,7 @@ public class Player : MonoBehaviour
                 skill.PerformSkill(character.animator);
                 yield return new WaitForSeconds(0.01f);
 
-                if (!skill.hasSeparateAnim) yield return new WaitForSeconds(character.animator.GetCurrentAnimatorClipInfo(0)[0].clip.length - 0.01f);
+                if (!skill.skillData.hasSeparateAnim) yield return new WaitForSeconds(character.animator.GetCurrentAnimatorClipInfo(0)[0].clip.length - 0.01f);
                 else yield return new WaitForSeconds(skill.GetAnimLength() - 0.01f);
             }
         }
@@ -171,7 +171,7 @@ public class Player : MonoBehaviour
         if (isSummoning)
         {
             yield return new WaitForSeconds(0.3f);
-            character.animator.SetTrigger("isSummoning");
+            character.animator.Play("Summon");
             yield return new WaitForSeconds(0.02f);
             yield return new WaitForSeconds(character.animator.GetCurrentAnimatorClipInfo(0)[0].clip.length);
             isSummoning = false;
@@ -183,7 +183,7 @@ public class Player : MonoBehaviour
 
     public void GetHurt(int receivedDamage, string animToTrigger)
     {
-        character.animator.SetTrigger(animToTrigger);
+        character.animator.Play(animToTrigger);
         StartCoroutine(UpdateHP(receivedDamage, false));
     }
 
@@ -247,7 +247,7 @@ public class Player : MonoBehaviour
     public IEnumerator Move()
     {
         isMoving = true;
-        character.animator.SetTrigger("isMoving");
+        character.animator.Play("Move");
 
         foreach (Dice dice in dices) dice.animator.SetBool("isMoving", true);
 
@@ -270,6 +270,6 @@ public class Player : MonoBehaviour
         foreach (Dice dice in dices) dice.animator.SetBool("isMoving", false);
 
         isMoving = false;
-        character.animator.SetTrigger("isIdle");
+        character.animator.SetTrigger("Idle");
     }
 }

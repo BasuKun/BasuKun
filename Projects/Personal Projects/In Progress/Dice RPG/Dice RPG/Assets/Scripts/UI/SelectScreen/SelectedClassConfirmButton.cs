@@ -35,7 +35,7 @@ public class SelectedClassConfirmButton : MonoBehaviour
         {
             if (character.Key == (CurrentClass.classes)EllipsePositions.Instance.currentSelected) continue;
 
-            character.Value.animator.SetTrigger("isSoulTransforming");
+            character.Value.animator.Play("SoulTransform");
             order++;
             StartCoroutine(FlyTowardsSelectedCharacter(character.Value.gameObject, order));
 
@@ -170,7 +170,7 @@ public class SelectedClassConfirmButton : MonoBehaviour
     {
         Class characterStats = character.GetComponent<Class>();
         Player.Instance.character = characterStats;
-        Player.Instance.hasReturnToIdle = characterStats.hasReturnToIdleAnim;
+        Player.Instance.hasReturnToIdle = characterStats.classAnimData.hasReturnToIdle;
         Player.Instance.currentClass = characterStats.classData.curClass;
 
         Player.Instance.vitality = characterStats.classData.vitality;

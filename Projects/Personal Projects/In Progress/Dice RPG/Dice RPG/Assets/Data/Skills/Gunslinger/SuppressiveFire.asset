@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15f972debdac6b3478dc40fddc1c009c, type: 3}
+  m_Name: SuppressiveFire
+  m_EditorClassIdentifier: 
+  skillName: Suppressive Fire
+  stateName: Attack_SuppressiveFire
+  currentLevel: 0
+  maxLevel: 5
+  skillCooldown: 3
+  skillType: 2
+  skillClass: 3
+  sprites:
+  - {fileID: 21300000, guid: 521b395fc4a3d7944869d3836232be31, type: 3}
+  - {fileID: 21300000, guid: aa259b250f095b44ab19a3716e171e6b, type: 3}
+  - {fileID: 21300000, guid: 6dee1dc579ce7514b9a1f53640248882, type: 3}
+  - {fileID: 21300000, guid: 87518e05d81647747808a97db723ea0b, type: 3}
+  - {fileID: 21300000, guid: 4725fc8cdb8129c498eca5dc9a4fee0f, type: 3}
+  - {fileID: 21300000, guid: 0a81241f6491b3b4bb89d1f43a46b6f4, type: 3}
+  - {fileID: 21300000, guid: 2a715e245e4270543bd9d5e77b74ae4a, type: 3}
+  - {fileID: 21300000, guid: 5ca89b0668f6fc44eacb8e9f1cc47d32, type: 3}
+  - {fileID: 21300000, guid: 775b62dc1e1c4834685498d3e6a8b461, type: 3}
+  - {fileID: 21300000, guid: d2a3a5d884a318e4c87b62852b9ef1fd, type: 3}
+  - {fileID: 21300000, guid: 42adabecdf5c115448bf9c635de93e51, type: 3}
+  - {fileID: 21300000, guid: 3326d6ae5eae5594baead284652e3786, type: 3}
+  - {fileID: 21300000, guid: 2e457cdfac398b8458c34a5464a764dd, type: 3}
+  - {fileID: 21300000, guid: f08c1e8bc04f38b43bd1b070c4a96505, type: 3}
+  - {fileID: 21300000, guid: 3913dcf429306124bbdcf28cff379790, type: 3}
+  - {fileID: 21300000, guid: 54f8c7e50e63b684f8a2a39cb7ad783d, type: 3}
+  frameDuration: 0.2
+  createdAnimationClip: {fileID: 7400000, guid: c2688ed1b318bcc49a76f437eebe60e1, type: 2}

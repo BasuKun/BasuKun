@@ -4,19 +4,11 @@ using UnityEngine;
 
 public class Strengthen : MonoBehaviour, IBuffSkill
 {
-    public int currentLevel { get; set; }
-    public int maxLevel { get; set; }
-    public string skillName { get; set; }
-    public CurrentClass.classes skillClass { get; set; }
-    public SkillTypes.types skillType { get; set; }
+	[field: SerializeField] public Skill skillData { get; set; }
 
-    public void SetData()
+	public void SetData()
     {
-        currentLevel = 0;
-        maxLevel = 1;
-        skillName = "Strengthen";
-        skillClass = CurrentClass.classes.Warrior;
-        skillType = SkillTypes.types.Buff;
+		skillData.currentLevel = 0;
     }
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
@@ -29,13 +21,13 @@ public class Strengthen : MonoBehaviour, IBuffSkill
             {
                 Player.Instance.tempDamageBonus += 1;
                 amount++;
-                StartCoroutine(dice.TriggerSkillAnimation(0f, skillName, false, Player.Instance.character.transform, skillType));
+                StartCoroutine(dice.TriggerSkillAnimation(0f, skillData.skillName, false, Player.Instance.character.transform, skillData.skillType));
             }
         }
 
         if (amount > 0)
         {
-            Battle.Instance.SkillNamePopout(skillName + " x" + amount, Player.Instance.character.transform, skillType);
+            Battle.Instance.SkillNamePopout(skillData.skillName + " x" + amount, Player.Instance.character.transform, skillData.skillType);
         }
     }
 }

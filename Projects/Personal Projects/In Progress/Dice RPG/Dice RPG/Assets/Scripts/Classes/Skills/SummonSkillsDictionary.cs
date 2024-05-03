@@ -21,7 +21,7 @@ public class SummonSkillsDictionary : MonoBehaviour
         foreach (var skill in summonSkillsList) 
         {
             skill.SetData();
-            summonSkillsDictionary.Add(skill.skillName, skill);
+            summonSkillsDictionary.Add(skill.skillData.skillName, skill);
         }
     }
 }

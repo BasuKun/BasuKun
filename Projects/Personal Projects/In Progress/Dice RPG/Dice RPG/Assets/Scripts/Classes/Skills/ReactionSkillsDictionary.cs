@@ -21,7 +21,7 @@ public class ReactionSkillsDictionary : MonoBehaviour
         foreach (var skill in reactionSkillsList)
         {
             skill.SetData();
-            reactionSkillsDictionary.Add(skill.skillName, skill);
+            reactionSkillsDictionary.Add(skill.skillData.skillName, skill);
         }
     }
 }

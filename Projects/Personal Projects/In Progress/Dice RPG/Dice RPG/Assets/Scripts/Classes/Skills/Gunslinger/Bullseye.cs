@@ -4,19 +4,11 @@ using UnityEngine;
 
 public class Bullseye : MonoBehaviour, IBuffSkill
 {
-    public int currentLevel { get; set; }
-    public int maxLevel { get; set; }
-    public string skillName { get; set; }
-    public CurrentClass.classes skillClass { get; set; }
-    public SkillTypes.types skillType { get; set; }
+	[field: SerializeField] public Skill skillData { get; set; }
 
-    public void SetData()
+	public void SetData()
     {
-        currentLevel = 0;
-        maxLevel = 1;
-        skillName = "Bullseye";
-        skillClass = CurrentClass.classes.Gunslinger;
-        skillType = SkillTypes.types.Buff;
+		skillData.currentLevel = 0;
     }
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
@@ -24,9 +16,9 @@ public class Bullseye : MonoBehaviour, IBuffSkill
         int diceAmount = dices.Count;
         if (dices[diceAmount - 3].value > dices[diceAmount - 2].value && dices[diceAmount - 2].value > dices[diceAmount - 1].value)
         {
-            StartCoroutine(dices[diceAmount - 3].TriggerSkillAnimation(0f, skillName, true, Player.Instance.character.transform, skillType));
-            StartCoroutine(dices[diceAmount - 2].TriggerSkillAnimation(0f, skillName, false, Player.Instance.character.transform, skillType));
-            StartCoroutine(dices[diceAmount - 1].TriggerSkillAnimation(0f, skillName, false, Player.Instance.character.transform, skillType));
+            StartCoroutine(dices[diceAmount - 3].TriggerSkillAnimation(0f, skillData.skillName, true, Player.Instance.character.transform, skillData.skillType));
+            StartCoroutine(dices[diceAmount - 2].TriggerSkillAnimation(0f, skillData.skillName, false, Player.Instance.character.transform, skillData.skillType));
+            StartCoroutine(dices[diceAmount - 1].TriggerSkillAnimation(0f, skillData.skillName, false, Player.Instance.character.transform, skillData.skillType));
 
             Player.Instance.damageToDeal += (int)(Player.Instance.damageToDeal * diceAmount * 0.1f);
         }

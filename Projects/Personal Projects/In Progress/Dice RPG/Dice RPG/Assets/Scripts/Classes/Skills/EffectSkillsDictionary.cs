@@ -21,7 +21,7 @@ public class EffectSkillsDictionary : MonoBehaviour
         foreach (var skill in effectSkillsList)
         {
             skill.SetData();
-            effectSkillsDictionary.Add(skill.skillName, skill);
+            effectSkillsDictionary.Add(skill.skillData.skillName, skill);
         }
     }
 }

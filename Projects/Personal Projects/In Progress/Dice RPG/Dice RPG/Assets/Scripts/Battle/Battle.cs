@@ -123,16 +123,16 @@ public class Battle : MonoBehaviour
             Player.Instance.skillsActivated++;
             SkillNamePopout("Shadow Retreat", Player.Instance.character.transform, SkillTypes.types.Defense);
             DamagePopout(curPlayer.character.gameObject, 0);
-            curPlayer.GetHurt(0, "isShadowRetreating");
+            curPlayer.GetHurt(0, "Hurt_ShadowRetreat");
         }
         else if (isCountering)
         {
             Player.Instance.skillsActivated++;
-            StartCoroutine(curPlayer.dices[curPlayer.dices.Count - 1].TriggerSkillAnimation(0, "Counter", true, Player.Instance.character.transform, SkillTypes.types.Reaction));
-            StartCoroutine(curPlayer.dices[curPlayer.dices.Count - 2].TriggerSkillAnimation(0, "Counter", false, Player.Instance.character.transform, SkillTypes.types.Reaction));
+            StartCoroutine(curPlayer.dices[curPlayer.dices.Count - 1].TriggerSkillAnimation(0, "Parry", true, Player.Instance.character.transform, SkillTypes.types.Reaction));
+            StartCoroutine(curPlayer.dices[curPlayer.dices.Count - 2].TriggerSkillAnimation(0, "Parry", false, Player.Instance.character.transform, SkillTypes.types.Reaction));
 
             DamagePopout(curPlayer.character.gameObject, curEnemy.damageToDeal / 2);
-            curPlayer.GetHurt(curEnemy.damageToDeal / 2, "isAttacking03");
+            curPlayer.GetHurt(curEnemy.damageToDeal / 2, "Hurt_Parry");
 
             DamagePopout(curEnemy.gameObject, curEnemy.damageToDeal / 2);
             curEnemy.GetHurt(curEnemy.damageToDeal / 2);
@@ -142,12 +142,12 @@ public class Battle : MonoBehaviour
             Player.Instance.skillsActivated++;
             SkillNamePopout("Side Step", Player.Instance.character.transform, SkillTypes.types.Defense);
             DamagePopout(curPlayer.character.gameObject, curEnemy.damageToDeal - curPlayer.damageToAvoid);
-            curPlayer.GetHurt(curEnemy.damageToDeal - curPlayer.damageToAvoid, "isSideStepping");
+            curPlayer.GetHurt(curEnemy.damageToDeal - curPlayer.damageToAvoid, "Hurt_SideStep");
         }
         else
         {
             DamagePopout(curPlayer.character.gameObject, curEnemy.damageToDeal);
-            curPlayer.GetHurt(curEnemy.damageToDeal, "isHurt");
+            curPlayer.GetHurt(curEnemy.damageToDeal, "Hurt");
         }
     }
 

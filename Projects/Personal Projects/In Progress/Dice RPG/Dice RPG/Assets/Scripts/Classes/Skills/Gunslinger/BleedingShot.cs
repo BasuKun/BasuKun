@@ -4,19 +4,11 @@ using UnityEngine;
 
 public class BleedingShot : MonoBehaviour, IEffectSkill
 {
-    public int currentLevel { get; set; }
-    public int maxLevel { get; set; }
-    public string skillName { get; set; }
-    public CurrentClass.classes skillClass { get; set; }
-    public SkillTypes.types skillType { get; set; }
+	[field: SerializeField] public Skill skillData { get; set; }
 
-    public void SetData()
+	public void SetData()
     {
-        currentLevel = 0;
-        maxLevel = 1;
-        skillName = "Bleeding Shot";
-        skillClass = CurrentClass.classes.Gunslinger;
-        skillType = SkillTypes.types.Effect;
+		skillData.currentLevel = 0;
     }
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
@@ -27,8 +19,8 @@ public class BleedingShot : MonoBehaviour, IEffectSkill
         {
             if (dices[i].value == 3 && dices[i + 1].value == 5)
             {
-                StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillName, true, Player.Instance.character.transform, skillType));
-                StartCoroutine(dices[i + 1].TriggerSkillAnimation(0f, skillName, false, Player.Instance.character.transform, skillType));
+                StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillData.skillName, true, Player.Instance.character.transform, skillData.skillType));
+                StartCoroutine(dices[i + 1].TriggerSkillAnimation(0f, skillData.skillName, false, Player.Instance.character.transform, skillData.skillType));
                 Battle.Instance.curEnemy.isBleeding = true;
                 Battle.Instance.curEnemy.bleedingDamage = 3;
                 Battle.Instance.curEnemy.bleedingTurns = 5;
