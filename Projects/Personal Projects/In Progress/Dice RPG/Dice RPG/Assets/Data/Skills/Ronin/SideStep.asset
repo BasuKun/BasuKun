@@ -19,10 +19,13 @@ MonoBehaviour:
   skillCooldown: 0
   skillType: 5
   skillClass: 2
+  hasSeparateAnim: 0
   sprites:
   - {fileID: 21300000, guid: 799988843c044db40bc07b89620f959d, type: 3}
   - {fileID: 21300000, guid: 138a8ea6fab30eb42807bd6b951df47e, type: 3}
   - {fileID: 21300000, guid: 3d5a609b1f9b4cc48a19e993e40fcd60, type: 3}
   - {fileID: 21300000, guid: 78099f1e248bd19488f7c07e2b31a924, type: 3}
-  frameDuration: 0.2
-  createdAnimationClip: {fileID: 7400000, guid: c8dbc475452de094183c2a3e452f080c, type: 2}
+  frameDuration: 0.07
+  createdAnimationClip: {fileID: 7400000, guid: 7f3acb5ccf6d3624f9aa1c5ed23e7d2a, type: 2}
+  separateAnim: {fileID: 0}
+  summon: {fileID: 0}

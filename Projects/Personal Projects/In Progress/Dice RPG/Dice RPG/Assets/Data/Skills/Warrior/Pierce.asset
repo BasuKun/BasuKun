@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Pierce
   stateName: Attack_Pierce
-  currentLevel: 0
+  currentLevel: 1
   maxLevel: 4
   skillCooldown: 2
   skillType: 2
   skillClass: 1
+  hasSeparateAnim: 0
   sprites:
   - {fileID: 21300000, guid: 33bb826084f8dca40acdb347d88f7369, type: 3}
   - {fileID: 21300000, guid: ef2e0840744044d4f83a7174ff990579, type: 3}
@@ -28,5 +29,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 17b84d3815548be41a6c3af6e3a6c84b, type: 3}
   - {fileID: 21300000, guid: 9466a5cd93376c5499d00a792ae0a2db, type: 3}
   - {fileID: 21300000, guid: 176a3bbd5175eec40922c811a786c235, type: 3}
-  frameDuration: 0.2
+  frameDuration: 0.07
   createdAnimationClip: {fileID: 7400000, guid: a1777325198421641bc14846c1b0dfcd, type: 2}
+  separateAnim: {fileID: 0}
+  summon: {fileID: 0}

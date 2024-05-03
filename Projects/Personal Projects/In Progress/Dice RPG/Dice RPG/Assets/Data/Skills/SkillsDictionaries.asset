@@ -12,10 +12,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2927afe237780ec48992f00fa122cf1c, type: 3}
   m_Name: SkillsDictionaries
   m_EditorClassIdentifier: 
-  buffs: []
-  damages: []
-  defenses: []
-  effects: []
-  reactions:
+  buffs:
+  - {fileID: 11400000, guid: 338f3337408dcf1409b48d7e12c06f01, type: 2}
+  - {fileID: 11400000, guid: 8655a85aed959234ca4cefcf15e2d049, type: 2}
+  - {fileID: 11400000, guid: d20f7ff49a01a69439a419a9f99a0f1f, type: 2}
+  - {fileID: 11400000, guid: fee3dd6b618698e4fa4ee7cdcd09bc7c, type: 2}
+  - {fileID: 11400000, guid: 01183644c5e92d84ba15714fca247c4c, type: 2}
+  - {fileID: 11400000, guid: 80ae28062562ceb4abc4c359a21c291b, type: 2}
+  - {fileID: 11400000, guid: 4ef0a74ca00c7374090811e94caffeeb, type: 2}
+  - {fileID: 11400000, guid: e63e28eaa45a0aa46a35d69a40f020ff, type: 2}
+  - {fileID: 11400000, guid: dd5639f9816d3d6499815cd3dd2812b8, type: 2}
+  - {fileID: 11400000, guid: 30abd13998a5fcd448b9a2013fbbfcd3, type: 2}
+  - {fileID: 11400000, guid: eabf13cf43685ec45a5d7403cfb89e7b, type: 2}
+  damages:
+  - {fileID: 11400000, guid: 0bbdcc6f2113c8a46a162a95fcf71e43, type: 2}
+  - {fileID: 11400000, guid: a4f6db6889a97654d8754035be506a5c, type: 2}
+  - {fileID: 11400000, guid: 0e9878af89867ff4eaead790d694b8bf, type: 2}
+  - {fileID: 11400000, guid: 340101889350ad34683af2297f7bbc70, type: 2}
+  - {fileID: 11400000, guid: 3015f660212243440a059150e3417352, type: 2}
+  - {fileID: 11400000, guid: ccff88f741366f24dba2a7a16e285116, type: 2}
+  - {fileID: 11400000, guid: a2733e8d303ae2d4484fa60fd0485559, type: 2}
+  - {fileID: 11400000, guid: 9408a64f5cb5b9f4abda00ebea156158, type: 2}
+  - {fileID: 11400000, guid: 754b53dd47d211846b71fbbc00459f57, type: 2}
+  - {fileID: 11400000, guid: 5a798eca0f12f814da9d21cbfdac86d2, type: 2}
+  - {fileID: 11400000, guid: 13cb257ce82ec69448cff2dede6b0221, type: 2}
+  - {fileID: 11400000, guid: 8ee65561f5c956c47bf1080076a02280, type: 2}
+  - {fileID: 11400000, guid: e857c302343404f4a83864d43af09806, type: 2}
+  defenses:
+  - {fileID: 11400000, guid: 51b497ebe93ccad45ad00ea182803e1e, type: 2}
+  - {fileID: 11400000, guid: d1d46f1fbba4fd147bc010b9bb59d234, type: 2}
   - {fileID: 11400000, guid: 48273483e1c027e4fba8cdf1e701db13, type: 2}
-  summons: []
+  effects:
+  - {fileID: 11400000, guid: 4743fddd5bb91a448949d0f1c22cbe11, type: 2}
+  - {fileID: 11400000, guid: 5c6055ffe5921b049a8a18ef078ce687, type: 2}
+  - {fileID: 11400000, guid: 5f9d48b0de83f464c96efac3f927e8d3, type: 2}
+  reactions:
+  - {fileID: 11400000, guid: 95b3ecfe75f83d2439d68734679681c2, type: 2}
+  - {fileID: 11400000, guid: 07d6ecd70b8a30c48b94561f49d371f9, type: 2}
+  summons:
+  - {fileID: 11400000, guid: 67391edc98a92c141aaddea5c0e651f7, type: 2}
+  - {fileID: 11400000, guid: 291680274d426b8489e2fc16ad21bbae, type: 2}
+  - {fileID: 11400000, guid: a16dc6f06bc65824d801a13ff14a179c, type: 2}

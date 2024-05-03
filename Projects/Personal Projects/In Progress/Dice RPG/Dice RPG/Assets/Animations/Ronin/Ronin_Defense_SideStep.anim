@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Warrior_Reaction_Parry
+  m_Name: Ronin_Defense_SideStep
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,17 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: ab8d2ba9a651faa43960f8f6b4d35dfb, type: 3}
-    - time: 0.2
-      value: {fileID: 21300000, guid: 9cb64b2d6daa22543b29c2e80ce24318, type: 3}
-    - time: 0.4
-      value: {fileID: 21300000, guid: 6750451f7d6a4c5449880662db1a6c7f, type: 3}
-    - time: 0.6
-      value: {fileID: 21300000, guid: 6cd1debbc4f825c44a3f57b6145b4f5e, type: 3}
-    - time: 0.8
-      value: {fileID: 21300000, guid: 54c507d1854a09e48afa40720bc19f20, type: 3}
-    - time: 1
-      value: {fileID: 21300000, guid: 6327df7ed0c5b914d8a9373897a43698, type: 3}
+      value: {fileID: 21300000, guid: 799988843c044db40bc07b89620f959d, type: 3}
+    - time: 0.07
+      value: {fileID: 21300000, guid: 138a8ea6fab30eb42807bd6b951df47e, type: 3}
+    - time: 0.14
+      value: {fileID: 21300000, guid: 3d5a609b1f9b4cc48a19e993e40fcd60, type: 3}
+    - time: 0.21000001
+      value: {fileID: 21300000, guid: 78099f1e248bd19488f7c07e2b31a924, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -50,18 +46,16 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: ab8d2ba9a651faa43960f8f6b4d35dfb, type: 3}
-    - {fileID: 21300000, guid: 9cb64b2d6daa22543b29c2e80ce24318, type: 3}
-    - {fileID: 21300000, guid: 6750451f7d6a4c5449880662db1a6c7f, type: 3}
-    - {fileID: 21300000, guid: 6cd1debbc4f825c44a3f57b6145b4f5e, type: 3}
-    - {fileID: 21300000, guid: 54c507d1854a09e48afa40720bc19f20, type: 3}
-    - {fileID: 21300000, guid: 6327df7ed0c5b914d8a9373897a43698, type: 3}
+    - {fileID: 21300000, guid: 799988843c044db40bc07b89620f959d, type: 3}
+    - {fileID: 21300000, guid: 138a8ea6fab30eb42807bd6b951df47e, type: 3}
+    - {fileID: 21300000, guid: 3d5a609b1f9b4cc48a19e993e40fcd60, type: 3}
+    - {fileID: 21300000, guid: 78099f1e248bd19488f7c07e2b31a924, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.0166667
+    m_StopTime: 0.22666667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

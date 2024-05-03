@@ -3,27 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class SkillTreeButton : MonoBehaviour
 {
-    public int currentLevel = 0;
-    public int maxLevel = 0;
-    public string skillName;
-    public ISkill skill;
-    public bool isUnlocked;
-    public Button button;
+	[Header("DATA")]
+    public Skill skillData;
+
+	[Header("COMPONENTS")]
+	public Button button;
     public Image outline;
-    public Color outlineDefaultColor;
+	public TextMeshProUGUI currentLevelText;
+	public TextMeshProUGUI levelSlashText;
+	public TextMeshProUGUI maxLevelText;
+
+	[Header("VISUALS")]
+	public Color outlineDefaultColor;
     public Color outlineBoughtColor;
     public Color outlineMaxedColor;
     public Color skillMaxedColor;
-    public TextMeshProUGUI currentLevelText;
-    public TextMeshProUGUI levelSlashText;
-    public TextMeshProUGUI maxLevelText;
-    public List<Image> lines = new List<Image>();
+
+	[Header("REQUIREMENTS")]
+	public List<Image> lines = new List<Image>();
     public List<SkillTreeButton> unlockRequirements = new List<SkillTreeButton>();
 
-    private Transform startLineTransform;
+	[NonSerialized] public int currentLevel = 0;
+	[NonSerialized] public int maxLevel = 0;
+	[NonSerialized] public ISkill skill;
+	[NonSerialized] public bool isUnlocked;
+
+	private Transform startLineTransform;
     private Transform endLineTransform;
 
     private void Awake()
@@ -80,23 +89,23 @@ public class SkillTreeButton : MonoBehaviour
 
     private void LinkSkillToButton()
     {
-		if (BuffSkillsDictionary.Instance.buffSkillsDictionary.ContainsKey(skillName))
-            skill = BuffSkillsDictionary.Instance.buffSkillsDictionary[skillName];
+		if (BuffSkillsDictionary.Instance.buffSkillsDictionary.ContainsKey(skillData.skillName))
+            skill = BuffSkillsDictionary.Instance.buffSkillsDictionary[skillData.skillName];
 
-        else if (DamageSkillsDictionary.Instance.damageSkillsDictionary.ContainsKey(skillName))
-            skill = DamageSkillsDictionary.Instance.damageSkillsDictionary[skillName];
+        else if (DamageSkillsDictionary.Instance.damageSkillsDictionary.ContainsKey(skillData.skillName))
+            skill = DamageSkillsDictionary.Instance.damageSkillsDictionary[skillData.skillName];
 
-        else if (DefenseSkillsDictionary.Instance.defenseSkillsDictionary.ContainsKey(skillName))
-            skill = DefenseSkillsDictionary.Instance.defenseSkillsDictionary[skillName];
+        else if (DefenseSkillsDictionary.Instance.defenseSkillsDictionary.ContainsKey(skillData.skillName))
+            skill = DefenseSkillsDictionary.Instance.defenseSkillsDictionary[skillData.skillName];
 
-        else if (EffectSkillsDictionary.Instance.effectSkillsDictionary.ContainsKey(skillName))
-            skill = EffectSkillsDictionary.Instance.effectSkillsDictionary[skillName];
+        else if (EffectSkillsDictionary.Instance.effectSkillsDictionary.ContainsKey(skillData.skillName))
+            skill = EffectSkillsDictionary.Instance.effectSkillsDictionary[skillData.skillName];
 
-        else if (ReactionSkillsDictionary.Instance.reactionSkillsDictionary.ContainsKey(skillName))
-            skill = ReactionSkillsDictionary.Instance.reactionSkillsDictionary[skillName];
+        else if (ReactionSkillsDictionary.Instance.reactionSkillsDictionary.ContainsKey(skillData.skillName))
+            skill = ReactionSkillsDictionary.Instance.reactionSkillsDictionary[skillData.skillName];
 
-        else if (SummonSkillsDictionary.Instance.summonSkillsDictionary.ContainsKey(skillName))
-            skill = SummonSkillsDictionary.Instance.summonSkillsDictionary[skillName];
+        else if (SummonSkillsDictionary.Instance.summonSkillsDictionary.ContainsKey(skillData.skillName))
+            skill = SummonSkillsDictionary.Instance.summonSkillsDictionary[skillData.skillName];
 
         UpdateInfo();
         UpdateCurrentLevel();
@@ -126,7 +135,7 @@ public class SkillTreeButton : MonoBehaviour
     public void BuySkillLevel()
     {
         if (currentLevel == 0)
-            PlayerSkills.Instance.UnlockSkill(skillName);
+            PlayerSkills.Instance.UnlockSkill(skillData.skillName);
 
         skill.skillData.currentLevel++;
         UpdateCurrentLevel();

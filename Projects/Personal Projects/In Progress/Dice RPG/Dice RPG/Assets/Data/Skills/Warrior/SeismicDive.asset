@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Seismic Dive
   stateName: Attack_SeismicDive
-  currentLevel: 0
+  currentLevel: 1
   maxLevel: 4
   skillCooldown: 2
   skillType: 2
   skillClass: 1
+  hasSeparateAnim: 0
   sprites:
   - {fileID: 21300000, guid: a95f47fe9ec95c34d80be1886be39b83, type: 3}
   - {fileID: 21300000, guid: 1d4f823198ad2c74a91529f243605fe4, type: 3}
@@ -41,5 +42,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0ce7d9178df3119449b79b85b66514b1, type: 3}
   - {fileID: 21300000, guid: 133e3ee851516fd4196d0221cc76c05a, type: 3}
   - {fileID: 21300000, guid: 6265914401b4d004091214019b5fd949, type: 3}
-  frameDuration: 0.2
+  frameDuration: 0.07
   createdAnimationClip: {fileID: 7400000, guid: 4aa4f129a4cff874d9fc18c0af2c46b7, type: 2}
+  separateAnim: {fileID: 0}
+  summon: {fileID: 0}
