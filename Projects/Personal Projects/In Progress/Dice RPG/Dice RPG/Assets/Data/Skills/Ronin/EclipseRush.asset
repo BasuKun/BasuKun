@@ -20,6 +20,7 @@ MonoBehaviour:
   skillType: 2
   skillClass: 2
   hasSeparateAnim: 0
+  icon: {fileID: 2782630884183401540, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
   sprites:
   - {fileID: 21300000, guid: 78ccb97eebe5c3f4dbee54e96c0c7eec, type: 3}
   - {fileID: 21300000, guid: f7628d9ac4d01e64cae1152c74f67c66, type: 3}
@@ -42,6 +43,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: afc93fd48dc3fde4d92e121e04caee6d, type: 3}
   - {fileID: 21300000, guid: 060d13d4abe8d864f87173fcab565ddd, type: 3}
   frameDuration: 0.07
+  eventFrames: 080000000a0000000c0000000e000000
   createdAnimationClip: {fileID: 7400000, guid: 11ebdf6d4a872da408369fd0666dae34, type: 2}
   separateAnim: {fileID: 0}
   summon: {fileID: 0}

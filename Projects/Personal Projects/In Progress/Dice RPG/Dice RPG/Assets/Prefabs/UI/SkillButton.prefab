@@ -700,19 +700,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9f2ce949e7c6db46b376cc5cf7a6a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLevel: 0
-  maxLevel: 0
-  skillName: Seismic Dive
-  isUnlocked: 0
+  skillData: {fileID: 0}
   button: {fileID: 402627711130920595}
+  icon: {fileID: 402627711130920684}
   outline: {fileID: 3569885775404765179}
+  currentLevelText: {fileID: 1004668857}
+  levelSlashText: {fileID: 31294025}
+  maxLevelText: {fileID: 188500709}
   outlineDefaultColor: {r: 0, g: 0, b: 0, a: 1}
   outlineBoughtColor: {r: 1, g: 1, b: 1, a: 1}
   outlineMaxedColor: {r: 0.98039216, g: 1, b: 0.5254902, a: 1}
   skillMaxedColor: {r: 0.9335299, g: 1, b: 0.5801887, a: 1}
-  currentLevelText: {fileID: 1004668857}
-  levelSlashText: {fileID: 31294025}
-  maxLevelText: {fileID: 188500709}
   lines:
   - {fileID: 402627711321610733}
   - {fileID: 6586927409414584770}

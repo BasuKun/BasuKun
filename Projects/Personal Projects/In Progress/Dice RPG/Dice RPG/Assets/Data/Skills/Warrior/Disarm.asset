@@ -19,6 +19,10 @@ MonoBehaviour:
   skillCooldown: 5
   skillType: 3
   skillClass: 1
+  hasSeparateAnim: 0
+  icon: {fileID: 4805335499060298388, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
   sprites: []
   frameDuration: 0
   createdAnimationClip: {fileID: 0}
+  separateAnim: {fileID: 0}
+  summon: {fileID: 0}

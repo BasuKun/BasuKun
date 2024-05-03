@@ -3,11 +3,12 @@ using UnityEditor;
 using System.IO;
 using System.Linq;
 using System;
+using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "Skill", menuName = "Dice RPG/Skill")]
 public class Skill : ScriptableObject
 {
-    [Header("SkillData")]
+    [Header("DATA")]
     public string skillName;
 	public string stateName;
 	public int currentLevel;
@@ -17,79 +18,81 @@ public class Skill : ScriptableObject
     public CurrentClass.classes skillClass;
 	public bool hasSeparateAnim;
 
-    [Header("AnimationData")]
+	[Header("VISUALS")]
+	public Sprite icon;
+
+	[Header("ANIMATIONS")]
     public Sprite[] sprites;
-    public float frameDuration;
-    public AnimationClip createdAnimationClip;
+	public float frameDuration;
+	public int[] eventFrames;
+	public AnimationClip createdAnimationClip;
 	public GameObject separateAnim;
 	public Summon summon;
 
 	[ContextMenu("Create Animation Clip")]
-    public void CreateAnimationClip()
-    {
-        if (sprites == null || sprites.Length == 0)
-        {
-            Debug.LogError("No sprites found for animation clip creation.");
-            return;
-        }
+	public void CreateAnimationClip()
+	{
+		if (sprites == null || sprites.Length == 0)
+		{
+			Debug.LogError("No sprites found for animation clip creation.");
+			return;
+		}
 
 		string skillNameNoSpaces = skillName.Replace(" ", "");
 		string fileName = skillClass.ToString() + "_" + skillType.ToString() + "_" + skillNameNoSpaces;
 
 		string folderPath = "Assets/Animations/" + Enum.GetName(typeof(CurrentClass.classes), skillClass);
-        string filePath = Path.Combine(folderPath, fileName + ".anim");
-        AnimationClip existingAnimationClip = AssetDatabase.LoadAssetAtPath<AnimationClip>(filePath);
+		string filePath = Path.Combine(folderPath, fileName + ".anim");
+		AnimationClip targetClip = AssetDatabase.LoadAssetAtPath<AnimationClip>(filePath) ?? new AnimationClip { name = fileName };
+		targetClip.frameRate = 100f;
 
-        if (existingAnimationClip != null)
-        {
-            ObjectReferenceKeyframe[] frames = new ObjectReferenceKeyframe[sprites.Length];
-            for (int i = 0; i < sprites.Length; i++)
-            {
-                frames[i] = new ObjectReferenceKeyframe();
-                frames[i].time = i * frameDuration;
-                frames[i].value = sprites[i];
-            }
+		ObjectReferenceKeyframe[] frames = new ObjectReferenceKeyframe[sprites.Length];
+		List<AnimationEvent> animationEventsList = new List<AnimationEvent>();  // Using a List to handle events dynamically
 
-            AnimationUtility.SetObjectReferenceCurve(existingAnimationClip, EditorCurveBinding.PPtrCurve("", typeof(SpriteRenderer), "m_Sprite"), frames);
+		for (int i = 0; i < sprites.Length; i++)
+		{
+			float exactTime = Mathf.Round(i * frameDuration * 1000f) / 1000f;  // Round to three decimal places
+			frames[i] = new ObjectReferenceKeyframe { time = exactTime, value = sprites[i] };
 
-            existingAnimationClip.wrapMode = WrapMode.Once;
+			// Check if this frame index is listed in eventFrames, and add an event if it is
+			if (eventFrames != null && eventFrames.Contains(i))
+			{
+				AnimationEvent animationEvent = new AnimationEvent
+				{
+					time = exactTime, // Use the exact same time as the frame
+					functionName = "DealSkillDamage"
+				};
+				animationEventsList.Add(animationEvent); // Add the new event to the list
+			}
+		}
 
-            Debug.Log("Updated existing AnimationClip: " + fileName);
-        }
-        else
-        {
-            AnimationClip animationClip = new AnimationClip();
-            animationClip.name = fileName;
+		AnimationUtility.SetObjectReferenceCurve(targetClip, EditorCurveBinding.PPtrCurve("", typeof(SpriteRenderer), "m_Sprite"), frames);
+		if (animationEventsList.Count > 0)
+		{
+			AnimationUtility.SetAnimationEvents(targetClip, animationEventsList.ToArray());
+		}
+		targetClip.wrapMode = WrapMode.Once;
 
-            ObjectReferenceKeyframe[] frames = new ObjectReferenceKeyframe[sprites.Length];
-            for (int i = 0; i < sprites.Length; i++)
-            {
-                frames[i] = new ObjectReferenceKeyframe();
-                frames[i].time = i * frameDuration;
-                frames[i].value = sprites[i];
-            }
+		if (!AssetDatabase.Contains(targetClip))
+		{
+			if (!Directory.Exists(folderPath))
+				Directory.CreateDirectory(folderPath);
 
-            AnimationUtility.SetObjectReferenceCurve(animationClip, EditorCurveBinding.PPtrCurve("", typeof(SpriteRenderer), "m_Sprite"), frames);
+			AssetDatabase.CreateAsset(targetClip, filePath);
+		}
 
-            animationClip.wrapMode = WrapMode.Once;
+		AssetDatabase.SaveAssets();
+		AssetDatabase.Refresh();
 
-            if (!Directory.Exists(folderPath))
-                Directory.CreateDirectory(folderPath);
+		createdAnimationClip = targetClip;
+		Debug.Log(AssetDatabase.Contains(targetClip) ? "Updated existing Animation Clip: " + fileName : "Created new Animation Clip: " + fileName);
 
-            AssetDatabase.CreateAsset(animationClip, filePath);
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
+		EditorUtility.SetDirty(this);
+		AssetDatabase.SaveAssets();
+	}
 
-            Debug.Log("Created new AnimationClip: " + fileName);
-        }
 
-        createdAnimationClip = AssetDatabase.LoadAssetAtPath<AnimationClip>(filePath);
-
-        EditorUtility.SetDirty(this);
-        AssetDatabase.SaveAssets();
-    }
-
-    [ContextMenu("Search for Sprites")]
+	[ContextMenu("Search for Sprites")]
     void SearchForSprites()
     {
         sprites = new Sprite[0];

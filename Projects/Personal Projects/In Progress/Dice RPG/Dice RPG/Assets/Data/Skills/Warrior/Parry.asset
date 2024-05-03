@@ -20,6 +20,7 @@ MonoBehaviour:
   skillType: 5
   skillClass: 1
   hasSeparateAnim: 0
+  icon: {fileID: -4732283008299991042, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
   sprites:
   - {fileID: 21300000, guid: ab8d2ba9a651faa43960f8f6b4d35dfb, type: 3}
   - {fileID: 21300000, guid: 9cb64b2d6daa22543b29c2e80ce24318, type: 3}

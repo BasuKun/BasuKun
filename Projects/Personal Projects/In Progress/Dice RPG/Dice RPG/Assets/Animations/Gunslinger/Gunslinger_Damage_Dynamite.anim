@@ -25,13 +25,13 @@ AnimationClip:
       value: {fileID: 21300000, guid: 839d177f6f16e2a4b89d51dcd4734ac7, type: 3}
     - time: 0.14
       value: {fileID: 21300000, guid: 7a2ac414b59aae04990440913a370499, type: 3}
-    - time: 0.21000001
+    - time: 0.21
       value: {fileID: 21300000, guid: b98f5c02b14607d4ba49e1339bfdb8e5, type: 3}
     - time: 0.28
       value: {fileID: 21300000, guid: 7e4d97a3acc5f6f4e85e30a784b952b7, type: 3}
     - time: 0.35
       value: {fileID: 21300000, guid: 7dbb785ac2308c14b925db867b0729ca, type: 3}
-    - time: 0.42000002
+    - time: 0.42
       value: {fileID: 21300000, guid: fe2c4066bdd7ff74f848b6de4e431dba, type: 3}
     - time: 0.49
       value: {fileID: 21300000, guid: 78cbdc66ccfc1c646aff1d5ecc596dfb, type: 3}
@@ -43,7 +43,7 @@ AnimationClip:
       value: {fileID: 21300000, guid: 00698196afe71c84282ad88d5b180e6b, type: 3}
     - time: 0.77
       value: {fileID: 21300000, guid: 0d5ac6c5d97a8f24f89f03b7d4f2ceaf, type: 3}
-    - time: 0.84000003
+    - time: 0.84
       value: {fileID: 21300000, guid: 2b33d08c81a68a540a2fb5ee3ef9ae07, type: 3}
     - time: 0.91
       value: {fileID: 21300000, guid: 04d685f17c6ab784ea4bd042bd717a9a, type: 3}
@@ -67,7 +67,7 @@ AnimationClip:
       value: {fileID: 21300000, guid: f4040b62c8cb7724ebbf2618f2b5b72e, type: 3}
     - time: 1.61
       value: {fileID: 21300000, guid: 9a06f0ee2cc444e4085bac9a584d5873, type: 3}
-    - time: 1.6800001
+    - time: 1.68
       value: {fileID: 21300000, guid: b19137a21c127504fbf4f5692aa9d5c5, type: 3}
     - time: 1.75
       value: {fileID: 21300000, guid: 964290e7da84b3d489c6782ae2715044, type: 3}
@@ -75,7 +75,7 @@ AnimationClip:
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 60
+  m_SampleRate: 100
   m_WrapMode: 1
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -121,7 +121,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.7666667
+    m_StopTime: 1.76
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -140,4 +140,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 1.12
+    functionName: DealSkillDamage
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

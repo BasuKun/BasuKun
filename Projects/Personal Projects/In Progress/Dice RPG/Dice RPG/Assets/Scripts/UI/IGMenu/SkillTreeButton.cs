@@ -12,7 +12,8 @@ public class SkillTreeButton : MonoBehaviour
 
 	[Header("COMPONENTS")]
 	public Button button;
-    public Image outline;
+	public Image icon;
+	public Image outline;
 	public TextMeshProUGUI currentLevelText;
 	public TextMeshProUGUI levelSlashText;
 	public TextMeshProUGUI maxLevelText;
@@ -38,7 +39,9 @@ public class SkillTreeButton : MonoBehaviour
     private void Awake()
     {
         GenerateLine();
-    }
+		SetVisuals();
+
+	}
 
 	private void Start()
 	{
@@ -46,6 +49,11 @@ public class SkillTreeButton : MonoBehaviour
         PlayerSkills.Instance.skillTreeButtonsList.Add(this);
         UpdateOutlineColor();
     }
+
+	private void SetVisuals()
+	{
+		icon.sprite = skillData.icon;
+	}
 
     private void UpdateOutlineColor()
 	{
