@@ -20,9 +20,12 @@ MonoBehaviour:
   skillType: 2
   skillClass: 5
   hasSeparateAnim: 0
+  description: Deal Skill Damage and trigger any status Damage the enemy is affected
+    by.
   icon: {fileID: 7407760534142086491, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
   sprites: []
   frameDuration: 0
+  eventFrames: 
   createdAnimationClip: {fileID: 0}
   separateAnim: {fileID: 82825175776015312, guid: f39849dc03674d34688f282f54218fd1, type: 3}
   summon: {fileID: 0}

@@ -17,6 +17,7 @@ public class SkillTreeButton : MonoBehaviour
 	public TextMeshProUGUI currentLevelText;
 	public TextMeshProUGUI levelSlashText;
 	public TextMeshProUGUI maxLevelText;
+	public TooltipTrigger tooltip;
 
 	[Header("VISUALS")]
 	public Color outlineDefaultColor;
@@ -117,6 +118,7 @@ public class SkillTreeButton : MonoBehaviour
 
         UpdateInfo();
         UpdateCurrentLevel();
+		tooltip.SetInfo(skillData);
     }
 
     private void UpdateInfo()

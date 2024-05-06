@@ -20,9 +20,11 @@ MonoBehaviour:
   skillType: 1
   skillClass: 3
   hasSeparateAnim: 0
+  description: Start the fight with an extra turn.
   icon: {fileID: 6679564900334302133, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
   sprites: []
   frameDuration: 0
+  eventFrames: 
   createdAnimationClip: {fileID: 0}
   separateAnim: {fileID: 0}
   summon: {fileID: 0}

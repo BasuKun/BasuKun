@@ -20,9 +20,11 @@ MonoBehaviour:
   skillType: 4
   skillClass: 1
   hasSeparateAnim: 0
+  description: Obtain 2 Dice when HP goes below 30%.
   icon: {fileID: 5049066651769987006, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
   sprites: []
   frameDuration: 0
+  eventFrames: 
   createdAnimationClip: {fileID: 0}
   separateAnim: {fileID: 0}
   summon: {fileID: 0}

@@ -20,9 +20,11 @@ MonoBehaviour:
   skillType: 6
   skillClass: 5
   hasSeparateAnim: 0
+  description: Summon a Bat for 5 turns which can Lifesteal HP.
   icon: {fileID: 9192114618937037860, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
   sprites: []
   frameDuration: 0
+  eventFrames: 
   createdAnimationClip: {fileID: 0}
   separateAnim: {fileID: 0}
   summon: {fileID: 3577658545651690221, guid: 323657acf6dfae24a947cc17613ccc6e, type: 3}

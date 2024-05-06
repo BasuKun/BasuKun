@@ -20,9 +20,11 @@ MonoBehaviour:
   skillType: 2
   skillClass: 5
   hasSeparateAnim: 0
+  description: Deal 666 Skill Damage.
   icon: {fileID: 7839962000633924148, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
   sprites: []
   frameDuration: 0
+  eventFrames: 
   createdAnimationClip: {fileID: 0}
   separateAnim: {fileID: 8727823482813782692, guid: e38fb7901e1088c439703fe5f5c9971f, type: 3}
   summon: {fileID: 0}

@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 402627711130920684}
   - component: {fileID: 402627711130920595}
   m_Layer: 5
-  m_Name: SkillButton
+  m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -657,6 +657,7 @@ GameObject:
   m_Component:
   - component: {fileID: 402627711743428449}
   - component: {fileID: 402627711743428450}
+  - component: {fileID: 311095439919432358}
   m_Layer: 5
   m_Name: SkillButton
   m_TagString: Untagged
@@ -707,6 +708,7 @@ MonoBehaviour:
   currentLevelText: {fileID: 1004668857}
   levelSlashText: {fileID: 31294025}
   maxLevelText: {fileID: 188500709}
+  tooltip: {fileID: 311095439919432358}
   outlineDefaultColor: {r: 0, g: 0, b: 0, a: 1}
   outlineBoughtColor: {r: 1, g: 1, b: 1, a: 1}
   outlineMaxedColor: {r: 0.98039216, g: 1, b: 0.5254902, a: 1}
@@ -715,6 +717,18 @@ MonoBehaviour:
   - {fileID: 402627711321610733}
   - {fileID: 6586927409414584770}
   unlockRequirements: []
+--- !u!114 &311095439919432358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402627711743428448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8cf0f6a76fc2604d81433aa3b3f4e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4242006712101778754
 GameObject:
   m_ObjectHideFlags: 0

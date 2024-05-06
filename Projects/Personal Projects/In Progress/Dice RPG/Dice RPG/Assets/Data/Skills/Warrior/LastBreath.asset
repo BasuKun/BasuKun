@@ -20,9 +20,11 @@ MonoBehaviour:
   skillType: 4
   skillClass: 1
   hasSeparateAnim: 0
+  description: Survive an attack that would otherwise kill you.
   icon: {fileID: -716482718086281803, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
   sprites: []
   frameDuration: 0
+  eventFrames: 
   createdAnimationClip: {fileID: 0}
   separateAnim: {fileID: 0}
   summon: {fileID: 0}

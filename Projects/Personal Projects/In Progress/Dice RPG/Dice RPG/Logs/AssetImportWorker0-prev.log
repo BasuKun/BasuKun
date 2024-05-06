@@ -15,11 +15,11 @@ D:/_GITHUB/Root/Projects/Personal Projects/In Progress/Dice RPG/Dice RPG
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-62706
+51349
 Successfully changed project path to: D:/_GITHUB/Root/Projects/Personal Projects/In Progress/Dice RPG/Dice RPG
 D:/_GITHUB/Root/Projects/Personal Projects/In Progress/Dice RPG/Dice RPG
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 192.68 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 178.07 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.7f1 (d91830b65d9b)
 [Subsystems] Discovering subsystems at path D:/Outerminds/Unity Editors/2021.1.7f1/Editor/Data/Resources/UnitySubsystems
@@ -37,600 +37,352 @@ Initialize mono
 Mono path[0] = 'D:/Outerminds/Unity Editors/2021.1.7f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Outerminds/Unity Editors/2021.1.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/Outerminds/Unity Editors/2021.1.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56764
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56656
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Outerminds/Unity Editors/2021.1.7f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: D:/Outerminds/Unity Editors/2021.1.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001823 seconds.
+Registered in 0.001719 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 181.68 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 171.94 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.067 seconds
+- Completed reload, in  2.234 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.004877 seconds.
+Registered in 0.004849 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 182.43 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 174.62 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.675 seconds
+- Completed reload, in  1.619 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 1.28 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 1.34 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5667 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 297.3 MB.
 System memory in use after: 297.6 MB.
 
 Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 6122.
-Total: 3.977900 ms (FindLiveObjects: 0.522600 ms CreateObjectMapping: 0.153700 ms MarkObjects: 3.138800 ms  DeleteObjects: 0.161500 ms)
+Total: 4.087700 ms (FindLiveObjects: 0.581900 ms CreateObjectMapping: 0.195000 ms MarkObjects: 3.141300 ms  DeleteObjects: 0.168300 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Prefabs/Skills/SatansWrathAnim.prefab
-  artifactKey: Guid(e38fb7901e1088c439703fe5f5c9971f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Skills/SatansWrathAnim.prefab using Guid(e38fb7901e1088c439703fe5f5c9971f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe5aa981c4cbeaae6879a948c893de20') in 0.063356 seconds 
+  path: Assets/Animations/Gunslinger/Gunslinger_Damage_Dynamite.anim
+  artifactKey: Guid(4b7c5991b9046be4bb13283f7f8a2dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Gunslinger/Gunslinger_Damage_Dynamite.anim using Guid(4b7c5991b9046be4bb13283f7f8a2dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8625d42cdf2fd4ada133e276ab3ca8da') in 0.051060 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 35.995939 seconds.
+  path: Assets/Animations/Gunslinger/Gunslinger_Damage_Rifle.anim
+  artifactKey: Guid(b6ef78064136fd142b20c3b4a87f3bc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Gunslinger/Gunslinger_Damage_Rifle.anim using Guid(b6ef78064136fd142b20c3b4a87f3bc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b553f7d9e12322679c89dcf6d04b710') in 0.009043 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 482.624814 seconds.
+  path: Assets/Data/Skills/Gunslinger/Accuracy.asset
+  artifactKey: Guid(338f3337408dcf1409b48d7e12c06f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/Accuracy.asset using Guid(338f3337408dcf1409b48d7e12c06f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ceca48221fd6ac819d83c21d3f3399ed') in 0.011827 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.004961 seconds.
+Registered in 0.004700 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.32 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 2.27 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.375 seconds
+- Completed reload, in  1.320 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Refreshing native plugins compatible for Editor in 1.43 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.38 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 284.6 MB.
 System memory in use after: 284.9 MB.
 
 Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6126.
-Total: 3.879100 ms (FindLiveObjects: 0.464600 ms CreateObjectMapping: 0.166600 ms MarkObjects: 3.102700 ms  DeleteObjects: 0.143000 ms)
+Total: 4.186400 ms (FindLiveObjects: 0.518900 ms CreateObjectMapping: 0.283800 ms MarkObjects: 3.233200 ms  DeleteObjects: 0.149400 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 132.215196 seconds.
-  path: Assets/Scripts/Classes/Skills/IDamageSkill.cs
-  artifactKey: Guid(e38e056c858fa174e9e9898a434c4ded) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Classes/Skills/IDamageSkill.cs using Guid(e38e056c858fa174e9e9898a434c4ded) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57d1d88d5a2299728d0be9adefb4ec4b') in 0.025635 seconds 
+  Time since last request: 201.221322 seconds.
+  path: Assets/Data/Skills/Gunslinger/BleedingShot.asset
+  artifactKey: Guid(4743fddd5bb91a448949d0f1c22cbe11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/BleedingShot.asset using Guid(4743fddd5bb91a448949d0f1c22cbe11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '203364b9b02ea3a340ae4aa92379d19c') in 0.038940 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 4.779705 seconds.
-  path: Assets/Scripts/Classes/Skills/ISkill.cs
-  artifactKey: Guid(4131eb26a446fba49b78bddeca181ccf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Classes/Skills/ISkill.cs using Guid(4131eb26a446fba49b78bddeca181ccf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6de76c22898d6d1c00ae04385c5055bb') in 0.009293 seconds 
+  Time since last request: 0.402083 seconds.
+  path: Assets/Data/Skills/Gunslinger/Bullseye.asset
+  artifactKey: Guid(8655a85aed959234ca4cefcf15e2d049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/Bullseye.asset using Guid(8655a85aed959234ca4cefcf15e2d049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbaeb8573167537b1809d46d7b3b56dd') in 0.008893 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 5.530620 seconds.
-  path: Assets/Scripts/Classes/Skills/ReactionSkillsDictionary.cs
-  artifactKey: Guid(0a7a906e73adf3642a2d219122f945e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Classes/Skills/ReactionSkillsDictionary.cs using Guid(0a7a906e73adf3642a2d219122f945e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12ade909de21ebf7e3153266502bfbf6') in 0.008873 seconds 
+  Time since last request: 0.375128 seconds.
+  path: Assets/Data/Skills/Gunslinger/DistancedAdvantage.asset
+  artifactKey: Guid(d20f7ff49a01a69439a419a9f99a0f1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/DistancedAdvantage.asset using Guid(d20f7ff49a01a69439a419a9f99a0f1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8de3ed61e2f240d4ac36db1dc7e888bd') in 0.009247 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.398047 seconds.
+  path: Assets/Data/Skills/Gunslinger/CripplingShot.asset
+  artifactKey: Guid(5c6055ffe5921b049a8a18ef078ce687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/CripplingShot.asset using Guid(5c6055ffe5921b049a8a18ef078ce687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '323f0c2f9e65503970cdbfc05df4ef19') in 0.008825 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.683373 seconds.
+  path: Assets/Data/Skills/Gunslinger/Dynamite.asset
+  artifactKey: Guid(0bbdcc6f2113c8a46a162a95fcf71e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/Dynamite.asset using Guid(0bbdcc6f2113c8a46a162a95fcf71e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '580e466b6cac5d1ca29b451b91b40900') in 0.020149 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 26.052302 seconds.
+  path: Assets/Data/Skills/Gunslinger/Dynamite.asset
+  artifactKey: Guid(0bbdcc6f2113c8a46a162a95fcf71e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/Dynamite.asset using Guid(0bbdcc6f2113c8a46a162a95fcf71e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ea4eeebeb96fc25dcaac5089877ca8c') in 0.019505 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.005780 seconds.
+Registered in 0.004797 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.29 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.30 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.324 seconds
+- Completed reload, in  1.312 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Refreshing native plugins compatible for Editor in 1.44 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.33 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 284.7 MB.
 System memory in use after: 285.0 MB.
 
 Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6130.
-Total: 4.021400 ms (FindLiveObjects: 0.483300 ms CreateObjectMapping: 0.165300 ms MarkObjects: 3.230500 ms  DeleteObjects: 0.140800 ms)
+Total: 3.931400 ms (FindLiveObjects: 0.529100 ms CreateObjectMapping: 0.192000 ms MarkObjects: 3.055500 ms  DeleteObjects: 0.153800 ms)
 
+========================================================================
+Received Import Request.
+  Time since last request: 98.933246 seconds.
+  path: Assets/Data/Skills/Gunslinger/Dynamite.asset
+  artifactKey: Guid(0bbdcc6f2113c8a46a162a95fcf71e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/Dynamite.asset using Guid(0bbdcc6f2113c8a46a162a95fcf71e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ff781b8feb5f9528dc96c979d7ca935') in 0.043281 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.169823 seconds.
+  path: Assets/Animations/Gunslinger/Gunslinger_Damage_Dynamite.anim
+  artifactKey: Guid(4b7c5991b9046be4bb13283f7f8a2dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Gunslinger/Gunslinger_Damage_Dynamite.anim using Guid(4b7c5991b9046be4bb13283f7f8a2dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d89bafefe23452a4b07b74bc0f8a977') in 0.009992 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.004968 seconds.
+Registered in 0.004966 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.33 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.30 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.330 seconds
+- Completed reload, in  1.312 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Refreshing native plugins compatible for Editor in 1.64 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.93 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 284.7 MB.
 System memory in use after: 285.0 MB.
 
 Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6134.
-Total: 4.299200 ms (FindLiveObjects: 0.508400 ms CreateObjectMapping: 0.248300 ms MarkObjects: 3.389100 ms  DeleteObjects: 0.151700 ms)
+Total: 4.313300 ms (FindLiveObjects: 0.493200 ms CreateObjectMapping: 0.188000 ms MarkObjects: 3.460500 ms  DeleteObjects: 0.170600 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.004931 seconds.
+Registered in 0.005028 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.34 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.35 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.301 seconds
+- Completed reload, in  1.328 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Refreshing native plugins compatible for Editor in 1.37 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.96 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 284.7 MB.
 System memory in use after: 285.1 MB.
 
 Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6138.
-Total: 3.429900 ms (FindLiveObjects: 0.443100 ms CreateObjectMapping: 0.143200 ms MarkObjects: 2.704300 ms  DeleteObjects: 0.138500 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004874 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.31 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.299 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Refreshing native plugins compatible for Editor in 1.34 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 284.8 MB.
-System memory in use after: 285.1 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6142.
-Total: 4.011800 ms (FindLiveObjects: 0.501800 ms CreateObjectMapping: 0.161400 ms MarkObjects: 3.198900 ms  DeleteObjects: 0.147800 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004822 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.47 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.312 seconds
-Platform modules already initialized, skipping
-Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.44 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 284.8 MB.
-System memory in use after: 285.1 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6146.
-Total: 7.547900 ms (FindLiveObjects: 0.745300 ms CreateObjectMapping: 0.379300 ms MarkObjects: 6.173500 ms  DeleteObjects: 0.248000 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004894 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.31 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.340 seconds
-Platform modules already initialized, skipping
-Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.41 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 284.8 MB.
-System memory in use after: 285.1 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6150.
-Total: 4.557300 ms (FindLiveObjects: 0.576000 ms CreateObjectMapping: 0.173200 ms MarkObjects: 3.647100 ms  DeleteObjects: 0.159200 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004820 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.32 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.290 seconds
-Platform modules already initialized, skipping
-Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.38 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 284.8 MB.
-System memory in use after: 285.1 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6154.
-Total: 4.809300 ms (FindLiveObjects: 0.517900 ms CreateObjectMapping: 0.169000 ms MarkObjects: 3.963800 ms  DeleteObjects: 0.157100 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004790 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.32 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.309 seconds
-Platform modules already initialized, skipping
-Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.57 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 284.8 MB.
-System memory in use after: 285.2 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6158.
-Total: 4.046900 ms (FindLiveObjects: 0.502000 ms CreateObjectMapping: 0.195600 ms MarkObjects: 3.188500 ms  DeleteObjects: 0.159500 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004816 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.44 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.397 seconds
-Platform modules already initialized, skipping
-Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.31 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 284.8 MB.
-System memory in use after: 285.2 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6162.
-Total: 3.761200 ms (FindLiveObjects: 0.475400 ms CreateObjectMapping: 0.144500 ms MarkObjects: 2.968900 ms  DeleteObjects: 0.171000 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.008899 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.59 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.394 seconds
-Platform modules already initialized, skipping
-Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.54 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 284.8 MB.
-System memory in use after: 285.2 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6166.
-Total: 4.574900 ms (FindLiveObjects: 0.598700 ms CreateObjectMapping: 0.282400 ms MarkObjects: 3.495500 ms  DeleteObjects: 0.196300 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004925 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.37 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.302 seconds
-Platform modules already initialized, skipping
-Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 2.14 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 284.8 MB.
-System memory in use after: 285.2 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6170.
-Total: 4.581900 ms (FindLiveObjects: 0.538700 ms CreateObjectMapping: 0.264000 ms MarkObjects: 3.607000 ms  DeleteObjects: 0.170400 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004916 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.95 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.309 seconds
-Platform modules already initialized, skipping
-Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.44 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 284.9 MB.
-System memory in use after: 285.2 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6174.
-Total: 3.972900 ms (FindLiveObjects: 0.505900 ms CreateObjectMapping: 0.158200 ms MarkObjects: 3.151100 ms  DeleteObjects: 0.156600 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004888 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.99 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.298 seconds
-Platform modules already initialized, skipping
-Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.34 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 284.9 MB.
-System memory in use after: 285.2 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6178.
-Total: 4.519600 ms (FindLiveObjects: 0.552100 ms CreateObjectMapping: 0.266400 ms MarkObjects: 3.539500 ms  DeleteObjects: 0.160200 ms)
+Total: 4.854400 ms (FindLiveObjects: 0.527000 ms CreateObjectMapping: 0.197100 ms MarkObjects: 3.951100 ms  DeleteObjects: 0.177600 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 2004.997335 seconds.
-  path: Assets/Data/Skills/Ronin/ShadowRetreat.asset
-  artifactKey: Guid(51b497ebe93ccad45ad00ea182803e1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Ronin/ShadowRetreat.asset using Guid(51b497ebe93ccad45ad00ea182803e1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99b99cb3386e9d9eb7a9ce5695745ff3') in 0.029102 seconds 
+  Time since last request: 280.234546 seconds.
+  path: Assets/Animations/Gunslinger/Gunslinger_Damage_Dynamite.anim
+  artifactKey: Guid(4b7c5991b9046be4bb13283f7f8a2dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Gunslinger/Gunslinger_Damage_Dynamite.anim using Guid(4b7c5991b9046be4bb13283f7f8a2dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51a48580a411f2742de2c381acfb1dc3') in 0.020291 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 57.010085 seconds.
+  path: Assets/Data/Skills/Gunslinger/Dynamite.asset
+  artifactKey: Guid(0bbdcc6f2113c8a46a162a95fcf71e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/Dynamite.asset using Guid(0bbdcc6f2113c8a46a162a95fcf71e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c23952469381bef6380382457057289a') in 0.015894 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.267371 seconds.
+  path: Assets/LeanTween/Examples/Models/2dText.fbx
+  artifactKey: Guid(c0f35ff1d23074af5bcd82d9caa31ebe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LeanTween/Examples/Models/2dText.fbx using Guid(c0f35ff1d23074af5bcd82d9caa31ebe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13c5f685eba9a5e585225ea9e04aa1ed') in 0.295509 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/LeanTween/Examples/Models/LeanTweenHD-Icon.fbx
+  artifactKey: Guid(7d6f6aee277594029851a7cc81d550d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LeanTween/Examples/Models/LeanTweenHD-Icon.fbx using Guid(7d6f6aee277594029851a7cc81d550d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81df04e2b6ea8528f0df788786610cca') in 0.048852 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000209 seconds.
+  path: Assets/LeanTween/Examples/Models/SimpleAvatarPieces.fbx
+  artifactKey: Guid(f9f32fdb4bc7744849a33427aedb8702) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LeanTween/Examples/Models/SimpleAvatarPieces.fbx using Guid(f9f32fdb4bc7744849a33427aedb8702) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95e07d441efea2819dfc521e69a15866') in 0.410441 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/LeanTween/Examples/Models/AdvancedExamplesText.fbx
+  artifactKey: Guid(47a7c1f40f5df413fbc8bf1c01c011a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LeanTween/Examples/Models/AdvancedExamplesText.fbx using Guid(47a7c1f40f5df413fbc8bf1c01c011a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '453f64060df64e74b12ab2ca2b0b30ff') in 0.061578 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Assets/LeanTween/Examples/Models/CurvePathsText.fbx
+  artifactKey: Guid(9256e250ab62647109679d3cbbaf6f04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LeanTween/Examples/Models/CurvePathsText.fbx using Guid(9256e250ab62647109679d3cbbaf6f04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86d8199f3f6290e290bf691c96e5fc98') in 0.033404 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000241 seconds.
+  path: Assets/LeanTween/Examples/Models/LeanTween-Icon.fbx
+  artifactKey: Guid(6fc4240da91ab4747a411a8313faed53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LeanTween/Examples/Models/LeanTween-Icon.fbx using Guid(6fc4240da91ab4747a411a8313faed53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e76989bf54870d4aa70e1495b3908658') in 0.048774 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Feel/FeelDemos/Tactical/Animations/FeelTactical@Idle.fbx
+  artifactKey: Guid(ae6eb209df497b846a8d698d0d2c07c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Feel/FeelDemos/Tactical/Animations/FeelTactical@Idle.fbx using Guid(ae6eb209df497b846a8d698d0d2c07c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d17a40a089a08810eeb86f892a0c742') in 0.013008 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/LeanTween/Examples/Models/EndlessDrivingText.fbx
+  artifactKey: Guid(6311d891eea1c406c941c23f9dfa5265) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LeanTween/Examples/Models/EndlessDrivingText.fbx using Guid(6311d891eea1c406c941c23f9dfa5265) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aead23eed45ceb4fc62d91e2b1d1f29d') in 0.027881 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/LeanTween/Examples/Models/CameraShakeText.fbx
+  artifactKey: Guid(f4d8d07c107904cdfb54156450f020f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LeanTween/Examples/Models/CameraShakeText.fbx using Guid(f4d8d07c107904cdfb54156450f020f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fafe43cd518e441c6e17fe3334f6ebc') in 0.030638 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/Feel/FeelDemos/Tactical/Animations/FeelTactical@Reloading.fbx
+  artifactKey: Guid(3cc72561b9a8f1742888abad55b726e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Feel/FeelDemos/Tactical/Animations/FeelTactical@Reloading.fbx using Guid(3cc72561b9a8f1742888abad55b726e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5cd94c6051e4cf6e9be4a684c44447f') in 0.013232 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/Feel/MMFeedbacks/Demos/MMFeedbacksDemo/Models/Dude/MMFeedbackDemoDude@Idle.fbx
+  artifactKey: Guid(b2fccabcb9892894a8720b37575d77ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Feel/MMFeedbacks/Demos/MMFeedbacksDemo/Models/Dude/MMFeedbackDemoDude@Idle.fbx using Guid(b2fccabcb9892894a8720b37575d77ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eeeda15010158e853a6d1aba22bc141e') in 0.011908 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/LeanTween/Examples/Models/SimpleAvatar.fbx
+  artifactKey: Guid(c8c942998fe7e4845bed23e105bd031f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LeanTween/Examples/Models/SimpleAvatar.fbx using Guid(c8c942998fe7e4845bed23e105bd031f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b47a9701fbcb63b343ef8a6870077a5') in 0.033404 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/Feel/MMFeedbacks/Demos/MMFeedbacksDemo/Models/Dude/MMFeedbackDemoDude@Jump.fbx
+  artifactKey: Guid(14309b80c23b62044b2e4d8e4017ed68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Feel/MMFeedbacks/Demos/MMFeedbacksDemo/Models/Dude/MMFeedbackDemoDude@Jump.fbx using Guid(14309b80c23b62044b2e4d8e4017ed68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e8428d922978bcec7f92cee19929649') in 0.012817 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000239 seconds.
+  path: Assets/LeanTween/Examples/Models/DirectionalArrow.fbx
+  artifactKey: Guid(d47ae0396110840289d47476d8289fbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LeanTween/Examples/Models/DirectionalArrow.fbx using Guid(d47ae0396110840289d47476d8289fbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8596c53ca6fe2f13db6433bb13b4fb7c') in 0.045672 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000225 seconds.
+  path: Assets/Feel/FeelDemos/Barbarians/Models/FeelBarbarianBackground.fbx
+  artifactKey: Guid(2e5dc414d2e25404ca15e4d9d6dda78d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Feel/FeelDemos/Barbarians/Models/FeelBarbarianBackground.fbx using Guid(2e5dc414d2e25404ca15e4d9d6dda78d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b3e0b2c00ea07365b86a4c385fcea13') in 0.404716 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000257 seconds.
+  path: Assets/LeanTween/Examples/Models/ExampleFirTree.fbx
+  artifactKey: Guid(26daae648a43e4db88d0a47a293d545c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LeanTween/Examples/Models/ExampleFirTree.fbx using Guid(26daae648a43e4db88d0a47a293d545c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6776d7cd6b09d515cc5dd15da3508519') in 0.034662 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/LeanTween/Examples/Models/Grid.fbx
+  artifactKey: Guid(cf8dd6c08e9ac4507bbbd1468b530d48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LeanTween/Examples/Models/Grid.fbx using Guid(cf8dd6c08e9ac4507bbbd1468b530d48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f367eb57909f15351775d8d49cd4118') in 0.027111 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/LeanTween/Examples/Models/BasicExamplesText.fbx
+  artifactKey: Guid(803bfbdea65eb4ebe96e481875403860) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LeanTween/Examples/Models/BasicExamplesText.fbx using Guid(803bfbdea65eb4ebe96e481875403860) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3cbf7fe2840817e9d8d0fd8e4207a1a5') in 0.066942 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/Feel/FeelDemos/Tactical/Animations/FeelTactical@Gunplay.fbx
+  artifactKey: Guid(709af496d33710a4fb05154e7b926384) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Feel/FeelDemos/Tactical/Animations/FeelTactical@Gunplay.fbx using Guid(709af496d33710a4fb05154e7b926384) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6dbc8c807a9b26cb148c544a6df3ee37') in 0.011644 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/LeanTween/Examples/Models/ExampleCar.fbx
+  artifactKey: Guid(00046df2e01964c4cbb764131f0c85e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LeanTween/Examples/Models/ExampleCar.fbx using Guid(00046df2e01964c4cbb764131f0c85e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9e031c9e939a7192b3946e88df05c98') in 0.031069 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.407919 seconds.
+  path: Assets/Animations/Gunslinger/Gunslinger_Damage_Dynamite.anim
+  artifactKey: Guid(4b7c5991b9046be4bb13283f7f8a2dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Gunslinger/Gunslinger_Damage_Dynamite.anim using Guid(4b7c5991b9046be4bb13283f7f8a2dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a17cfe85c3bd3b700a3c4eda4cc8405') in 0.003235 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.005562 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 2.66 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.509 seconds
-Platform modules already initialized, skipping
-Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.35 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 284.9 MB.
-System memory in use after: 285.2 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6182.
-Total: 3.537800 ms (FindLiveObjects: 0.506100 ms CreateObjectMapping: 0.147600 ms MarkObjects: 2.732100 ms  DeleteObjects: 0.150500 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004802 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.94 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.307 seconds
-Platform modules already initialized, skipping
-Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.53 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 284.9 MB.
-System memory in use after: 285.2 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6186.
-Total: 4.163900 ms (FindLiveObjects: 0.514600 ms CreateObjectMapping: 0.159800 ms MarkObjects: 3.335300 ms  DeleteObjects: 0.152400 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004909 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.31 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.307 seconds
-Platform modules already initialized, skipping
-Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.47 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 284.9 MB.
-System memory in use after: 285.2 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6190.
-Total: 4.193700 ms (FindLiveObjects: 0.648200 ms CreateObjectMapping: 0.170800 ms MarkObjects: 3.071100 ms  DeleteObjects: 0.301600 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 174.802861 seconds.
-  path: Assets/Prefabs/Skills/Summons
-  artifactKey: Guid(1af6dadf94af8c94cb4a76b524534f4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Skills/Summons using Guid(1af6dadf94af8c94cb4a76b524534f4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6e07e5de9f136480704a9808e02172b') in 0.014292 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 14.889556 seconds.
-  path: Assets/Prefabs/Skills/ExternalAnims
-  artifactKey: Guid(1a4ca1e6333d1824d9fca7c590067b9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Skills/ExternalAnims using Guid(1a4ca1e6333d1824d9fca7c590067b9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06b3832b7c72eb62673764b222dceeb9') in 0.008591 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.500744 seconds.
-  path: Assets/Prefabs/Skills/HydrasRush.prefab
-  artifactKey: Guid(f39849dc03674d34688f282f54218fd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Skills/HydrasRush.prefab using Guid(f39849dc03674d34688f282f54218fd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a7fbb391da0592a2097a4e1025e44a8') in 0.031485 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.058268 seconds.
-  path: Assets/Prefabs/Skills/Hellfire.prefab
-  artifactKey: Guid(e38fb7901e1088c439703fe5f5c9971f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Skills/Hellfire.prefab using Guid(e38fb7901e1088c439703fe5f5c9971f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77ecc6295a914be0ceb7dcd049762421') in 0.010022 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.326360 seconds.
-  path: Assets/Prefabs/Skills/Summons/BatSummon.prefab
-  artifactKey: Guid(323657acf6dfae24a947cc17613ccc6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Skills/Summons/BatSummon.prefab using Guid(323657acf6dfae24a947cc17613ccc6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5639a923e1b99eee91219457cf31cd9') in 0.011337 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.265577 seconds.
-  path: Assets/Prefabs/Skills/Summons/SkullSummon.prefab
-  artifactKey: Guid(705de789696bae241a1111545641ea92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Skills/Summons/SkullSummon.prefab using Guid(705de789696bae241a1111545641ea92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce0bb85f0e6eef000f91c9e8241b8088') in 0.011096 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.087334 seconds.
-  path: Assets/Prefabs/Skills/Summons/GolemSummon.prefab
-  artifactKey: Guid(242f294ccdb5f15438e7f201cf50f819) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Skills/Summons/GolemSummon.prefab using Guid(242f294ccdb5f15438e7f201cf50f819) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32b3839856b717df8de70910b8ec3bc3') in 0.010665 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 23.922320 seconds.
-  path: Assets/Data/Skills/Warlock/Hellfire.asset
-  artifactKey: Guid(754b53dd47d211846b71fbbc00459f57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warlock/Hellfire.asset using Guid(754b53dd47d211846b71fbbc00459f57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b69b254d028169c48dca081dac7bb7a') in 0.003904 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 24.513594 seconds.
-  path: Assets/Data/Skills/Warlock/Hydra.asset
-  artifactKey: Guid(5a798eca0f12f814da9d21cbfdac86d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warlock/Hydra.asset using Guid(5a798eca0f12f814da9d21cbfdac86d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56f5e6d5c84d87b24549eb7cd64ff484') in 0.009393 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.277602 seconds.
-  path: Assets/Prefabs/Skills/ExternalAnims/Hydra.prefab
-  artifactKey: Guid(f39849dc03674d34688f282f54218fd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Skills/ExternalAnims/Hydra.prefab using Guid(f39849dc03674d34688f282f54218fd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57564713f165d6d997cfdb507c59ae09') in 0.004399 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 17.398719 seconds.
-  path: Assets/Data/Skills/Warlock/SummonBat.asset
-  artifactKey: Guid(67391edc98a92c141aaddea5c0e651f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warlock/SummonBat.asset using Guid(67391edc98a92c141aaddea5c0e651f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b34bb5b7aa2ce8407a0452e57ba52608') in 0.010595 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 25.809823 seconds.
-  path: Assets/Data/Skills/Warlock/SummonSkull.asset
-  artifactKey: Guid(a16dc6f06bc65824d801a13ff14a179c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warlock/SummonSkull.asset using Guid(a16dc6f06bc65824d801a13ff14a179c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7930008a544c63626527a53e788fcb6d') in 0.010885 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004824 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.31 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.317 seconds
-Platform modules already initialized, skipping
-Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.36 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 284.9 MB.
-System memory in use after: 285.2 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6194.
-Total: 4.747800 ms (FindLiveObjects: 0.789400 ms CreateObjectMapping: 0.611300 ms MarkObjects: 3.192400 ms  DeleteObjects: 0.153300 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004897 seconds.
+Registered in 0.004918 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
@@ -639,1420 +391,275 @@ Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 1.33 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.417 seconds
+- Completed reload, in  1.383 seconds
 Platform modules already initialized, skipping
 Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 2.41 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 284.9 MB.
-System memory in use after: 285.2 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6198.
-Total: 7.853500 ms (FindLiveObjects: 0.953700 ms CreateObjectMapping: 0.601800 ms MarkObjects: 6.066300 ms  DeleteObjects: 0.229500 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 276.130074 seconds.
-  path: Assets/Data/Stats/Classes/GunslingerStats.asset
-  artifactKey: Guid(d5619c8fd629d52449ce77f984aee683) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Stats/Classes/GunslingerStats.asset using Guid(d5619c8fd629d52449ce77f984aee683) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '283937e9a3b0757885e3b28ca6ec52ba') in 0.047994 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006252 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.29 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.371 seconds
-Platform modules already initialized, skipping
-Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.95 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 284.9 MB.
-System memory in use after: 285.3 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6202.
-Total: 4.394600 ms (FindLiveObjects: 0.476300 ms CreateObjectMapping: 0.161200 ms MarkObjects: 3.567300 ms  DeleteObjects: 0.188400 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 465.852811 seconds.
-  path: Assets/Data/Skills/SkillsDictionaries.asset
-  artifactKey: Guid(77334615a31a49f45a593a1291c12cb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/SkillsDictionaries.asset using Guid(77334615a31a49f45a593a1291c12cb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b03c704fab67ee99c7d76bd0b622e218') in 0.144520 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004740 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.37 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.295 seconds
-Platform modules already initialized, skipping
-Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.44 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 285.0 MB.
-System memory in use after: 285.4 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6206.
-Total: 4.792500 ms (FindLiveObjects: 0.487900 ms CreateObjectMapping: 0.230500 ms MarkObjects: 3.912000 ms  DeleteObjects: 0.159900 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004768 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.45 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.295 seconds
-Platform modules already initialized, skipping
-Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 2.14 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 285.0 MB.
-System memory in use after: 285.4 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6210.
-Total: 4.295400 ms (FindLiveObjects: 0.496200 ms CreateObjectMapping: 0.209900 ms MarkObjects: 3.435500 ms  DeleteObjects: 0.152300 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004928 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.28 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.404 seconds
-Platform modules already initialized, skipping
-Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.31 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 285.0 MB.
-System memory in use after: 285.4 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6214.
-Total: 3.980600 ms (FindLiveObjects: 0.504700 ms CreateObjectMapping: 0.150700 ms MarkObjects: 3.165600 ms  DeleteObjects: 0.158400 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 694.866390 seconds.
-  path: Assets/Data/Skills/Warrior/SeismicDive.asset
-  artifactKey: Guid(8ee65561f5c956c47bf1080076a02280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warrior/SeismicDive.asset using Guid(8ee65561f5c956c47bf1080076a02280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8118bf842894c8cd343d387e82f03404') in 0.032936 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004883 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.30 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.317 seconds
-Platform modules already initialized, skipping
-Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.31 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 285.1 MB.
-System memory in use after: 285.4 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6218.
-Total: 3.460000 ms (FindLiveObjects: 0.455300 ms CreateObjectMapping: 0.140100 ms MarkObjects: 2.721700 ms  DeleteObjects: 0.142000 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 70.392140 seconds.
-  path: Assets/Data/Skills/Warrior/SeismicDive.asset
-  artifactKey: Guid(8ee65561f5c956c47bf1080076a02280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warrior/SeismicDive.asset using Guid(8ee65561f5c956c47bf1080076a02280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c913bbf1a9a7b43f8ee3c8b83d22bd11') in 0.041931 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005194 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 1.34 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.341 seconds
-Platform modules already initialized, skipping
-Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 2.41 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 285.1 MB.
-System memory in use after: 285.4 MB.
+System memory in use before: 291.7 MB.
+System memory in use after: 292.1 MB.
 
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6222.
-Total: 5.030600 ms (FindLiveObjects: 0.574400 ms CreateObjectMapping: 0.281800 ms MarkObjects: 4.021800 ms  DeleteObjects: 0.150500 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 42.674131 seconds.
-  path: Assets/Data/Skills/Warrior/SeismicDive.asset
-  artifactKey: Guid(8ee65561f5c956c47bf1080076a02280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warrior/SeismicDive.asset using Guid(8ee65561f5c956c47bf1080076a02280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88de41003a0a864b647a2f46932c7eb5') in 0.038455 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004919 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.44 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.460 seconds
-Platform modules already initialized, skipping
-Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.47 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 285.1 MB.
-System memory in use after: 285.4 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6226.
-Total: 5.231400 ms (FindLiveObjects: 0.609700 ms CreateObjectMapping: 0.429200 ms MarkObjects: 4.031400 ms  DeleteObjects: 0.159400 ms)
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6227.
+Total: 3.682800 ms (FindLiveObjects: 0.491700 ms CreateObjectMapping: 0.147800 ms MarkObjects: 2.887300 ms  DeleteObjects: 0.155000 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 66.564750 seconds.
-  path: Assets/Data/Skills/Gunslinger/Dynamite.asset
-  artifactKey: Guid(0bbdcc6f2113c8a46a162a95fcf71e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Gunslinger/Dynamite.asset using Guid(0bbdcc6f2113c8a46a162a95fcf71e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e83ef4f97c8801689f1be2000dba8238') in 0.048767 seconds 
+  Time since last request: 280.135867 seconds.
+  path: Assets/Animations/Gunslinger/Gunslinger_Damage_Dynamite.anim
+  artifactKey: Guid(4b7c5991b9046be4bb13283f7f8a2dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Gunslinger/Gunslinger_Damage_Dynamite.anim using Guid(4b7c5991b9046be4bb13283f7f8a2dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a4cb4c16ebbafae19316300f2cd14e5') in 0.031535 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 10.310815 seconds.
+  Time since last request: 25.205739 seconds.
+  path: Assets/Data/Skills/Gunslinger/GunsmansInstinct.asset
+  artifactKey: Guid(fee3dd6b618698e4fa4ee7cdcd09bc7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/GunsmansInstinct.asset using Guid(fee3dd6b618698e4fa4ee7cdcd09bc7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e413c6ae910f48fbf2c5bc43285290b') in 0.011124 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.601422 seconds.
+  path: Assets/Data/Skills/Gunslinger/Rebound.asset
+  artifactKey: Guid(a4f6db6889a97654d8754035be506a5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/Rebound.asset using Guid(a4f6db6889a97654d8754035be506a5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd5e19596e8d037444ba8446fad8f4c4') in 0.009364 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.341865 seconds.
   path: Assets/Data/Skills/Gunslinger/Rifle.asset
   artifactKey: Guid(0e9878af89867ff4eaead790d694b8bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Gunslinger/Rifle.asset using Guid(0e9878af89867ff4eaead790d694b8bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e772ca22e3e5360bce747711d361a11c') in 0.015591 seconds 
+Start importing Assets/Data/Skills/Gunslinger/Rifle.asset using Guid(0e9878af89867ff4eaead790d694b8bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76fd7631fbd6591b3f13cb6f78671eed') in 0.017101 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 5.112952 seconds.
+  Time since last request: 35.225085 seconds.
+  path: Assets/Data/Skills/Gunslinger/Rifle.asset
+  artifactKey: Guid(0e9878af89867ff4eaead790d694b8bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/Rifle.asset using Guid(0e9878af89867ff4eaead790d694b8bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35922e1e23901b2a620c8b9f41ab5d6c') in 0.009726 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.251283 seconds.
+  path: Assets/Animations/Gunslinger/Gunslinger_Damage_Rifle.anim
+  artifactKey: Guid(b6ef78064136fd142b20c3b4a87f3bc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Gunslinger/Gunslinger_Damage_Rifle.anim using Guid(b6ef78064136fd142b20c3b4a87f3bc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24136755d58ae93c51664a54bbcc96d0') in 0.003770 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 173.291303 seconds.
   path: Assets/Data/Skills/Gunslinger/SuppressiveFire.asset
   artifactKey: Guid(340101889350ad34683af2297f7bbc70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Gunslinger/SuppressiveFire.asset using Guid(340101889350ad34683af2297f7bbc70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '645667508c6abc4065ce775352b9b61d') in 0.019650 seconds 
+Start importing Assets/Data/Skills/Gunslinger/SuppressiveFire.asset using Guid(340101889350ad34683af2297f7bbc70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'add6e78fda8b62096093a2a5acae3521') in 0.016414 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 6.931101 seconds.
+  Time since last request: 1.889350 seconds.
+  path: Assets/Animations/Gunslinger/Gunslinger_Damage_SuppressiveFire.anim
+  artifactKey: Guid(c2688ed1b318bcc49a76f437eebe60e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Gunslinger/Gunslinger_Damage_SuppressiveFire.anim using Guid(c2688ed1b318bcc49a76f437eebe60e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '433124c94ae1f168849bfb0f124af2ee') in 0.008884 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.954725 seconds.
   path: Assets/Data/Skills/Ronin/Assassinate.asset
   artifactKey: Guid(3015f660212243440a059150e3417352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Ronin/Assassinate.asset using Guid(3015f660212243440a059150e3417352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2251221af5d620ad28791ee1efab40a') in 0.028347 seconds 
+Start importing Assets/Data/Skills/Ronin/Assassinate.asset using Guid(3015f660212243440a059150e3417352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '117a9f196f2fefcf0451c4ff9a22b63f') in 0.023270 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 4.544383 seconds.
+  Time since last request: 29.796609 seconds.
+  path: Assets/Data/Skills/Ronin/Assassinate.asset
+  artifactKey: Guid(3015f660212243440a059150e3417352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Ronin/Assassinate.asset using Guid(3015f660212243440a059150e3417352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9dcd6c0773a8bba28e9f8527d6fd8782') in 0.016835 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.371778 seconds.
   path: Assets/Data/Skills/Ronin/DoubleSlash.asset
   artifactKey: Guid(ccff88f741366f24dba2a7a16e285116) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Ronin/DoubleSlash.asset using Guid(ccff88f741366f24dba2a7a16e285116) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8399c63eee20002c618cff5de950ce98') in 0.011190 seconds 
+Start importing Assets/Data/Skills/Ronin/DoubleSlash.asset using Guid(ccff88f741366f24dba2a7a16e285116) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6390d87a776f1e14026ecd72aaa101e2') in 0.010747 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.945722 seconds.
+  Time since last request: 22.028729 seconds.
+  path: Assets/Data/Skills/Ronin/DoubleSlash.asset
+  artifactKey: Guid(ccff88f741366f24dba2a7a16e285116) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Ronin/DoubleSlash.asset using Guid(ccff88f741366f24dba2a7a16e285116) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '680617462a442d1e10571e513bb592e4') in 0.005183 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.796359 seconds.
   path: Assets/Data/Skills/Ronin/EclipseRush.asset
   artifactKey: Guid(a2733e8d303ae2d4484fa60fd0485559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Ronin/EclipseRush.asset using Guid(a2733e8d303ae2d4484fa60fd0485559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c59a0e166c6752a07d84b9d7411a3b98') in 0.018650 seconds 
+Start importing Assets/Data/Skills/Ronin/EclipseRush.asset using Guid(a2733e8d303ae2d4484fa60fd0485559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ff8f97126eba9c315e47fa41bbc3952') in 0.019513 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 7.660351 seconds.
-  path: Assets/Data/Skills/Ronin/ShadowRetreat.asset
-  artifactKey: Guid(51b497ebe93ccad45ad00ea182803e1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Ronin/ShadowRetreat.asset using Guid(51b497ebe93ccad45ad00ea182803e1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd985ca0dac402d7500c9bae63f6abd30') in 0.005424 seconds 
+  Time since last request: 62.627527 seconds.
+  path: Assets/Data/Skills/Ronin/EclipseRush.asset
+  artifactKey: Guid(a2733e8d303ae2d4484fa60fd0485559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Ronin/EclipseRush.asset using Guid(a2733e8d303ae2d4484fa60fd0485559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87ccb7415055affa202a5aff569be865') in 0.012328 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 11.536469 seconds.
-  path: Assets/Data/Skills/Ronin/SideStep.asset
-  artifactKey: Guid(d1d46f1fbba4fd147bc010b9bb59d234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Ronin/SideStep.asset using Guid(d1d46f1fbba4fd147bc010b9bb59d234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '849d6e415501d07d6dfa4c7b3a3f3e0a') in 0.012297 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.942441 seconds.
+  Time since last request: 6.836046 seconds.
   path: Assets/Data/Skills/Ronin/Skillful.asset
   artifactKey: Guid(e63e28eaa45a0aa46a35d69a40f020ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Ronin/Skillful.asset using Guid(e63e28eaa45a0aa46a35d69a40f020ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5406e2fd2e5b6569a6859dd53abba24a') in 0.008995 seconds 
+Start importing Assets/Data/Skills/Ronin/Skillful.asset using Guid(e63e28eaa45a0aa46a35d69a40f020ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd98c6fd9c0101d2a338d230b49566c00') in 0.008892 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 4.793545 seconds.
+  Time since last request: 3.832273 seconds.
+  path: Assets/Data/Skills/Ronin/SideStep.asset
+  artifactKey: Guid(d1d46f1fbba4fd147bc010b9bb59d234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Ronin/SideStep.asset using Guid(d1d46f1fbba4fd147bc010b9bb59d234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02c4e50f6ad0db3b823d6dea92aea8f7') in 0.005342 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 26.427972 seconds.
   path: Assets/Data/Skills/Ronin/TripleSlash.asset
   artifactKey: Guid(9408a64f5cb5b9f4abda00ebea156158) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Ronin/TripleSlash.asset using Guid(9408a64f5cb5b9f4abda00ebea156158) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77693d804a89dc1d25287aa61c40a2ec') in 0.016449 seconds 
+Start importing Assets/Data/Skills/Ronin/TripleSlash.asset using Guid(9408a64f5cb5b9f4abda00ebea156158) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf106fe70a0226d296e9c14b27f03218') in 0.010034 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 8.616654 seconds.
+  Time since last request: 16.778604 seconds.
+  path: Assets/Data/Skills/Warlock/Hellfire.asset
+  artifactKey: Guid(754b53dd47d211846b71fbbc00459f57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warlock/Hellfire.asset using Guid(754b53dd47d211846b71fbbc00459f57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68a9002601f86948778adc82e105fb1c') in 0.006161 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.939198 seconds.
+  path: Assets/Data/Skills/Warlock/Hydra.asset
+  artifactKey: Guid(5a798eca0f12f814da9d21cbfdac86d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warlock/Hydra.asset using Guid(5a798eca0f12f814da9d21cbfdac86d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33511d6543e62f5240403e562310549e') in 0.012441 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.050387 seconds.
+  path: Assets/Data/Skills/Warlock/SummonBat.asset
+  artifactKey: Guid(67391edc98a92c141aaddea5c0e651f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warlock/SummonBat.asset using Guid(67391edc98a92c141aaddea5c0e651f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3bca8f4ba0635544bdc692d0307be26') in 0.011224 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.421277 seconds.
   path: Assets/Data/Skills/Warlock/SummonGolem.asset
   artifactKey: Guid(291680274d426b8489e2fc16ad21bbae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warlock/SummonGolem.asset using Guid(291680274d426b8489e2fc16ad21bbae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19fe310b44c2cbc76a0bfa352575a98d') in 0.013140 seconds 
+Start importing Assets/Data/Skills/Warlock/SummonGolem.asset using Guid(291680274d426b8489e2fc16ad21bbae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d82b646d554bc7a74c34d68eb227628') in 0.010371 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 7.022351 seconds.
+  Time since last request: 0.208681 seconds.
+  path: Assets/Data/Skills/Warlock/SummonSkull.asset
+  artifactKey: Guid(a16dc6f06bc65824d801a13ff14a179c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warlock/SummonSkull.asset using Guid(a16dc6f06bc65824d801a13ff14a179c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38dee938207febd738f331dfac16abe6') in 0.011624 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 24.512793 seconds.
+  path: Assets/Data/Skills/Warrior/Berserk.asset
+  artifactKey: Guid(95b3ecfe75f83d2439d68734679681c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warrior/Berserk.asset using Guid(95b3ecfe75f83d2439d68734679681c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa0d33681b6553d52d13a68c85b5d7f5') in 0.008570 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.737399 seconds.
+  path: Assets/Data/Skills/Warrior/CriticalHit.asset
+  artifactKey: Guid(dd5639f9816d3d6499815cd3dd2812b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warrior/CriticalHit.asset using Guid(dd5639f9816d3d6499815cd3dd2812b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e6135cce560e73090faea7590255f13') in 0.011880 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.124692 seconds.
+  path: Assets/Data/Skills/Warrior/Disarm.asset
+  artifactKey: Guid(5f9d48b0de83f464c96efac3f927e8d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warrior/Disarm.asset using Guid(5f9d48b0de83f464c96efac3f927e8d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0230b37af0fcf1bb00603e164ed05a0') in 0.010143 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.178476 seconds.
+  path: Assets/Data/Skills/Warrior/Inspire.asset
+  artifactKey: Guid(30abd13998a5fcd448b9a2013fbbfcd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warrior/Inspire.asset using Guid(30abd13998a5fcd448b9a2013fbbfcd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7b57dc97bd47fc9bb9e02eefe0e9465') in 0.011441 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.208271 seconds.
+  path: Assets/Data/Skills/Warrior/LastBreath.asset
+  artifactKey: Guid(07d6ecd70b8a30c48b94561f49d371f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warrior/LastBreath.asset using Guid(07d6ecd70b8a30c48b94561f49d371f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99aab84513673880decc7764a4e72d7d') in 0.009976 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.326659 seconds.
   path: Assets/Data/Skills/Warrior/Parry.asset
   artifactKey: Guid(48273483e1c027e4fba8cdf1e701db13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warrior/Parry.asset using Guid(48273483e1c027e4fba8cdf1e701db13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fd9a9762b85c2d1227b25d19f1458e5') in 0.009909 seconds 
+Start importing Assets/Data/Skills/Warrior/Parry.asset using Guid(48273483e1c027e4fba8cdf1e701db13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34d48cc000d3f8036b7d547a353664f0') in 0.010843 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 9.717621 seconds.
+  Time since last request: 3.675840 seconds.
   path: Assets/Data/Skills/Warrior/Pierce.asset
   artifactKey: Guid(13cb257ce82ec69448cff2dede6b0221) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warrior/Pierce.asset using Guid(13cb257ce82ec69448cff2dede6b0221) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf8fe91211e7fea6ab7837c330676aeb') in 0.010459 seconds 
+Start importing Assets/Data/Skills/Warrior/Pierce.asset using Guid(13cb257ce82ec69448cff2dede6b0221) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '610c4cf02a583c028a554705cbfc6944') in 0.013513 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 8.734213 seconds.
+  Time since last request: 24.858563 seconds.
+  path: Assets/Data/Skills/Warrior/Pierce.asset
+  artifactKey: Guid(13cb257ce82ec69448cff2dede6b0221) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warrior/Pierce.asset using Guid(13cb257ce82ec69448cff2dede6b0221) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03411d3e4ec6eba143dffd47bcadc3e2') in 0.006063 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.083445 seconds.
+  path: Assets/Data/Skills/Warrior/SeismicDive.asset
+  artifactKey: Guid(8ee65561f5c956c47bf1080076a02280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warrior/SeismicDive.asset using Guid(8ee65561f5c956c47bf1080076a02280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c1e16633d159ac9ac082e260e6f5de7') in 0.019654 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.427679 seconds.
+  path: Assets/Data/Skills/Warrior/SeismicDive.asset
+  artifactKey: Guid(8ee65561f5c956c47bf1080076a02280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warrior/SeismicDive.asset using Guid(8ee65561f5c956c47bf1080076a02280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb80f1b8fea96456cfe339191a341638') in 0.012444 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.321873 seconds.
   path: Assets/Data/Skills/Warrior/WhirlwindSlash.asset
   artifactKey: Guid(e857c302343404f4a83864d43af09806) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warrior/WhirlwindSlash.asset using Guid(e857c302343404f4a83864d43af09806) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '672a87c2bf461729bbd142a52182a6c6') in 0.018202 seconds 
+Start importing Assets/Data/Skills/Warrior/WhirlwindSlash.asset using Guid(e857c302343404f4a83864d43af09806) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7576520005ac711408941ab74208e27') in 0.013272 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 8.640008 seconds.
-  path: Assets/Animations/Warrior/Warrior_Reaction_Parry.anim
-  artifactKey: Guid(314806315d6fc154fac6a11328696a3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Warrior/Warrior_Reaction_Parry.anim using Guid(314806315d6fc154fac6a11328696a3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c09dafb4e941dee81dcef96c5be8a72') in 0.010973 seconds 
+  Time since last request: 15.424975 seconds.
+  path: Assets/Animations/Ronin/Ronin_Damage_Assassinate.anim
+  artifactKey: Guid(22f45fa3a90a45149a82c214735f1bdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Ronin/Ronin_Damage_Assassinate.anim using Guid(22f45fa3a90a45149a82c214735f1bdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd08190cfeaf1a028a6fcec2b82db734e') in 0.008022 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 300.603939 seconds.
-  path: Assets/Animations/Warrior/Warrior_Damage_SeismicDive.anim
-  artifactKey: Guid(4aa4f129a4cff874d9fc18c0af2c46b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Warrior/Warrior_Damage_SeismicDive.anim using Guid(4aa4f129a4cff874d9fc18c0af2c46b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b754ab79d71c03b98a5a055c8798130e') in 0.010216 seconds 
+  Time since last request: 6.091841 seconds.
+  path: Assets/Animations/Ronin/Ronin_Damage_DoubleSlash.anim
+  artifactKey: Guid(3c4476c88a811914ab7805d10590e4d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Ronin/Ronin_Damage_DoubleSlash.anim using Guid(3c4476c88a811914ab7805d10590e4d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a411ef27ce4a929e77f4692ed86ddd75') in 0.008905 seconds 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004815 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.31 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.304 seconds
-Platform modules already initialized, skipping
-Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.39 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 285.1 MB.
-System memory in use after: 285.4 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6230.
-Total: 4.416100 ms (FindLiveObjects: 0.522400 ms CreateObjectMapping: 0.309000 ms MarkObjects: 3.426800 ms  DeleteObjects: 0.156100 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 269.530831 seconds.
-  path: Assets/Art/UI/Skill Icons/skill icons.png
-  artifactKey: Guid(81a9d733d3f18674d83a972c96b73102) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/UI/Skill Icons/skill icons.png using Guid(81a9d733d3f18674d83a972c96b73102) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6aab047867993f488a406fa14fc85767') in 0.323378 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 23.538685 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone.png
-  artifactKey: Guid(62ce01ddca719d34ea9648c586a7cc94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone.png using Guid(62ce01ddca719d34ea9648c586a7cc94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b643a733a052ac74950d92d0a1f59ef0') in 0.022069 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000241 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/character_Mode@4x.png
-  artifactKey: Guid(0ccc508108fa6ed4fa11b4a467d7f609) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/character_Mode@4x.png using Guid(0ccc508108fa6ed4fa11b4a467d7f609) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ea2c79f9711285016faa42b4f250c6e') in 0.038066 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000251 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Copy.png
-  artifactKey: Guid(42f4b048501996743958df91513f824a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Copy.png using Guid(42f4b048501996743958df91513f824a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28bab987157eff4cbeb2c73bdc0adccf') in 0.031731 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000229 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone_Influence@2x.png
-  artifactKey: Guid(7395bf0bc3cc40e4ab2dda5ec6832261) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone_Influence@2x.png using Guid(7395bf0bc3cc40e4ab2dda5ec6832261) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '343fec876408fd32d9a1a3f567cb707d') in 0.024842 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000229 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Bone_Influence@4x.png
-  artifactKey: Guid(daf2ab606d4db0d4f9ecf4c02137d2a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Bone_Influence@4x.png using Guid(daf2ab606d4db0d4f9ecf4c02137d2a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4029828dc89e91c1482432dedf9f4c63') in 0.027589 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000263 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Create_Edge@4x.png
-  artifactKey: Guid(1f21190ca9d1e8540b2a3a2e46002685) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Create_Edge@4x.png using Guid(1f21190ca9d1e8540b2a3a2e46002685) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4520f7a3075cbc896574f1b62c6ecb2') in 0.025248 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000218 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Bone_Influence@3x.png
-  artifactKey: Guid(56431fa7b1b21794baaf8d8e47c78bdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Bone_Influence@3x.png using Guid(56431fa7b1b21794baaf8d8e47c78bdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93854527a5556351a0e89edb7e368224') in 0.027605 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000327 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Create Bones@2x.png
-  artifactKey: Guid(fea84712d555ee04a8147088aad76931) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Create Bones@2x.png using Guid(fea84712d555ee04a8147088aad76931) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '229282cc3f26f5b1ad7908fd6615736d') in 0.026188 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000223 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Create Bones@4x.png
-  artifactKey: Guid(61ac40b257b3a994f841856ad38b2b6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Create Bones@4x.png using Guid(61ac40b257b3a994f841856ad38b2b6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f39ffad313ce11a6843d17194485b24b') in 0.029183 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000253 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Copy.png
-  artifactKey: Guid(678095381d851334fb550c5032ba1a81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Copy.png using Guid(678095381d851334fb550c5032ba1a81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd2aaec5f3b6debeb689799c723761a7') in 0.018586 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000235 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Create Bones@3x.png
-  artifactKey: Guid(7835bec40f86c2c4fb3f91a6eb3b7034) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Create Bones@3x.png using Guid(7835bec40f86c2c4fb3f91a6eb3b7034) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc8fa6f61961fc37a58032758f871554') in 0.021452 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000241 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Create Bones.png
-  artifactKey: Guid(7b86a539750e1a44ca7ec5b7f690babd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Create Bones.png using Guid(7b86a539750e1a44ca7ec5b7f690babd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41267df500957952a54754a6f862d148') in 0.024672 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000215 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Copy@2x.png
-  artifactKey: Guid(312df9440efd5df4ea8f6c98591d6b96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Copy@2x.png using Guid(312df9440efd5df4ea8f6c98591d6b96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1df7fa9e4a3c088e58f9e57c1665fdd') in 0.022844 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000214 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Bone_Influence.png
-  artifactKey: Guid(ff00345da0563d641903c5bd5bb748a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Bone_Influence.png using Guid(ff00345da0563d641903c5bd5bb748a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8d7f8853d7671234907c91538ba29ea') in 0.026864 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000246 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Create_Vertex@4x.png
-  artifactKey: Guid(6a7ac9e8c26b12440bf2b1da2ca97794) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Create_Vertex@4x.png using Guid(6a7ac9e8c26b12440bf2b1da2ca97794) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1c30ed603e3335ae9e8344f3085884a') in 0.032072 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000245 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/character_Mode@2x.png
-  artifactKey: Guid(25096ce515c063c48a2bd6b108c95912) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/character_Mode@2x.png using Guid(25096ce515c063c48a2bd6b108c95912) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec50d86671c6b1056a7fa7b8f80d7d16') in 0.024312 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000240 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/d_Bone.png
-  artifactKey: Guid(006a3adba8ff95144b4e779daa84bb7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/d_Bone.png using Guid(006a3adba8ff95144b4e779daa84bb7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4631b6c21fd8fc6c6f15a2288203d46') in 0.021094 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000200 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Create Bones@3x.png
-  artifactKey: Guid(803b0b9bfc1fd824aae8423bfbab83b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Create Bones@3x.png using Guid(803b0b9bfc1fd824aae8423bfbab83b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd26adeec18ab8f0d6fa95c5c649f8d43') in 0.023674 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000245 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Create Bones.png
-  artifactKey: Guid(b4b58192a0265df4980d56bf9054df08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Create Bones.png using Guid(b4b58192a0265df4980d56bf9054df08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a6fda2e8e380fca08179f782fc2a7e5') in 0.022706 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000237 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Create Bones@4x.png
-  artifactKey: Guid(7e1aff9652c0dac418d9aa42f5f24dc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Create Bones@4x.png using Guid(7e1aff9652c0dac418d9aa42f5f24dc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4080eafcfd18f569dccba620668acf8') in 0.034752 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000234 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/character_Mode@3x.png
-  artifactKey: Guid(dcea51d6065d64246aeec467afeff684) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/character_Mode@3x.png using Guid(dcea51d6065d64246aeec467afeff684) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3fb0b4e5a185b1daf11d71adbac9b54') in 0.024097 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000236 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Create_Vertex.png
-  artifactKey: Guid(31f371f2dfe50c34081023094aed72c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Create_Vertex.png using Guid(31f371f2dfe50c34081023094aed72c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc193d729f5eafe8bae6f651a1186a8a') in 0.022926 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000200 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Copy@4x.png
-  artifactKey: Guid(00b8ce4a201871b498992f536279acf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Copy@4x.png using Guid(00b8ce4a201871b498992f536279acf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '980a3629c17e1549bd1b683f7cce2243') in 0.023353 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000188 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Bone_Influence@3x.png
-  artifactKey: Guid(68e5a78013e33f247822a837e55b0ab4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Bone_Influence@3x.png using Guid(68e5a78013e33f247822a837e55b0ab4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f8a388b880b4d2631864a0161622d94') in 0.021959 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000229 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Create_Vertex@3x.png
-  artifactKey: Guid(47fe565904dc6b1419e9acc62b99812e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Create_Vertex@3x.png using Guid(47fe565904dc6b1419e9acc62b99812e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71a4e1c5a4c791969f244950ea63ef20') in 0.023187 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000227 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Bone_Influence@4x.png
-  artifactKey: Guid(1e0f2b45945c8254abd59f40d783c11f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Bone_Influence@4x.png using Guid(1e0f2b45945c8254abd59f40d783c11f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '145373108b6f3db24f591d2961fc630a') in 0.024439 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000214 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone_Influence.png
-  artifactKey: Guid(e92fc44f12c21dd44a49e390f39f7ffd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone_Influence.png using Guid(e92fc44f12c21dd44a49e390f39f7ffd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '201f7cb1884a35198e60c151d7b32994') in 0.020418 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000256 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Create_Edge@2x.png
-  artifactKey: Guid(ebaf5b914f751a142b6851d985adf69d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Create_Edge@2x.png using Guid(ebaf5b914f751a142b6851d985adf69d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03e9875bc7a48b8e3e7c5e93cd28f99d') in 0.023881 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000225 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Copy@4x.png
-  artifactKey: Guid(b6a96c7c65795c94abf54a62adbf5c38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Copy@4x.png using Guid(b6a96c7c65795c94abf54a62adbf5c38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bbedecc86d0e2459c1425a72a86fc5a') in 0.022859 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000228 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone_Influence@4x.png
-  artifactKey: Guid(c7aa62ae78ffca0498c89e5f45f94c0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone_Influence@4x.png using Guid(c7aa62ae78ffca0498c89e5f45f94c0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb55aef7775093966ecb3bba297fcec3') in 0.023516 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000226 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Create_Edge.png
-  artifactKey: Guid(7a5bb676bcccfea429f2138b6fbd005e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Create_Edge.png using Guid(7a5bb676bcccfea429f2138b6fbd005e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '705165e9521337adb9356a7134fe410b') in 0.021854 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000255 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Create_Edge.png
-  artifactKey: Guid(1af9d2e44ecf3a2468601c9071df581f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Create_Edge.png using Guid(1af9d2e44ecf3a2468601c9071df581f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02cb443938d860039556ca9483d7bb9d') in 0.023543 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000225 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Create_Vertex@2x.png
-  artifactKey: Guid(a0c33b3a6e0728343b29883d739f1322) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Create_Vertex@2x.png using Guid(a0c33b3a6e0728343b29883d739f1322) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '641b446efdc740f346b11d02aa8d280c') in 0.026825 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000262 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Bone@3x.png
-  artifactKey: Guid(fe145a004cb46de488885e70d26cade0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Bone@3x.png using Guid(fe145a004cb46de488885e70d26cade0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1888ec934db065b0686a209e2ce49250') in 0.020265 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000185 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Create Bones@2x.png
-  artifactKey: Guid(03976b6af3289c0409a55e2c4eab4087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Create Bones@2x.png using Guid(03976b6af3289c0409a55e2c4eab4087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8708ba6bab1ceb4ceaa7f2a57c3d32a8') in 0.019274 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000209 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/character_Mode.png
-  artifactKey: Guid(d4d64a6cd9624c34a815dd79fb2a20a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/character_Mode.png using Guid(d4d64a6cd9624c34a815dd79fb2a20a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3082be96ede6fd34dd2ee8ed0d8e0935') in 0.019954 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000249 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_character_Mode@3x.png
-  artifactKey: Guid(c22340e383b54c44196cb7765328e79d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_character_Mode@3x.png using Guid(c22340e383b54c44196cb7765328e79d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e28fe1160124abb7b49440e6cfc0381a') in 0.022384 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000219 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone@2x.png
-  artifactKey: Guid(d6a44ab95b0def041a7929981a2c23a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone@2x.png using Guid(d6a44ab95b0def041a7929981a2c23a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6ae31078c64398c6f2b7ce83a5848a5') in 0.023842 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000241 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Create_Vertex.png
-  artifactKey: Guid(efe4b927ec825b242bf70d64c4258c1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Create_Vertex.png using Guid(efe4b927ec825b242bf70d64c4258c1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5c6a7be665390ffa0bf9d8efb809773') in 0.024281 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000254 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/d_Bone@3x.png
-  artifactKey: Guid(443d05f2a4ae81a4297ac8ec762644c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/d_Bone@3x.png using Guid(443d05f2a4ae81a4297ac8ec762644c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce507076588f1f865667052e7540bd65') in 0.026693 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000229 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Bone@2x.png
-  artifactKey: Guid(17d971605cfbaea47b0d10b0b5dbc406) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Bone@2x.png using Guid(17d971605cfbaea47b0d10b0b5dbc406) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7cabfc2a5678947d282ed4853f86a01') in 0.022350 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000244 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Create_Edge.png
-  artifactKey: Guid(ad7b296d426713b4593ee1a19fcbf9d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Create_Edge.png using Guid(ad7b296d426713b4593ee1a19fcbf9d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c6ff15aad173ffc5a00e0d85936e143') in 0.019083 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000241 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Copy@4x.png
-  artifactKey: Guid(5430b5412bcac5b4986be0a875a5e978) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Copy@4x.png using Guid(5430b5412bcac5b4986be0a875a5e978) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f925b82243621ab4d4d5a7732265a34e') in 0.022409 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000239 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/d_Bone@4x.png
-  artifactKey: Guid(1bb69cd91685d9248a58b144052746f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/d_Bone@4x.png using Guid(1bb69cd91685d9248a58b144052746f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f9d0c648c29c76d3dcdb7d195bacd48') in 0.023546 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000236 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Create_Vertex.png
-  artifactKey: Guid(e7ddb9213511d984f8b951a7c913d83a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Create_Vertex.png using Guid(e7ddb9213511d984f8b951a7c913d83a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecfae82b5e122130c2d08ceda5718a12') in 0.023776 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000248 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Create_Vertex@2x.png
-  artifactKey: Guid(8afb57fea8c4eea4a8085e91c810380b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Create_Vertex@2x.png using Guid(8afb57fea8c4eea4a8085e91c810380b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bffa91d30c91553b7af68c44af12cbd0') in 0.022234 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000246 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Bone_Influence.png
-  artifactKey: Guid(c037c4c58e8d8c34ca9bf121abb7ee49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Bone_Influence.png using Guid(c037c4c58e8d8c34ca9bf121abb7ee49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8363558f4ce81175406ab97f76d0dcb4') in 0.025135 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000234 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Create_Vertex@4x.png
-  artifactKey: Guid(e6a6624ab013b8e44beddfa2668afb65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Create_Vertex@4x.png using Guid(e6a6624ab013b8e44beddfa2668afb65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '812f3a946c06bd4fbcde1f804a847df5') in 0.027017 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000236 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone@3x.png
-  artifactKey: Guid(76beef9fdae7b48468ddf07d0400a374) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone@3x.png using Guid(76beef9fdae7b48468ddf07d0400a374) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1dd6c60dc2a68c00e63fc1f7fa06047') in 0.028179 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000275 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_character_Mode.png
-  artifactKey: Guid(a33833072bf90f34c856623b67d0e897) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_character_Mode.png using Guid(a33833072bf90f34c856623b67d0e897) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78882bff8b5bdada464d78e1eda097b9') in 0.024356 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000224 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Create_Edge@4x.png
-  artifactKey: Guid(62053ed690017d143bd2cfa8e5dc3ff5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Create_Edge@4x.png using Guid(62053ed690017d143bd2cfa8e5dc3ff5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25ac01fe4d01b7456927d02ea7bb8f7a') in 0.023372 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000226 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Bone_Influence@2x.png
-  artifactKey: Guid(0779ad3feec52124e97114bcbb12ef13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Bone_Influence@2x.png using Guid(0779ad3feec52124e97114bcbb12ef13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c01e5feb2d9b2254302cc27ac4386d1') in 0.023571 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000203 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Copy@3x.png
-  artifactKey: Guid(bb51334c6930f864abac38001f7bdf6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Copy@3x.png using Guid(bb51334c6930f864abac38001f7bdf6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf351f61b0495507548fbb6c959824e1') in 0.022087 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000227 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/character_Mode@2x.png
-  artifactKey: Guid(5d52b20f865aff242bfcb08c3b6f61a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/character_Mode@2x.png using Guid(5d52b20f865aff242bfcb08c3b6f61a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '364a1084ca3a6a4be2e29c4765066529') in 0.021718 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000225 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_character_Mode@2x.png
-  artifactKey: Guid(d4a1388a0d4ee9c44bcaa86e463a7b39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_character_Mode@2x.png using Guid(d4a1388a0d4ee9c44bcaa86e463a7b39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86c8bd31c09718018e1b55a58104109c') in 0.025250 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000241 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Create Bones@4x.png
-  artifactKey: Guid(f618c5fe13b18994aa5aee8b97d8dca1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Create Bones@4x.png using Guid(f618c5fe13b18994aa5aee8b97d8dca1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07a2b3d48133720de7730060d8ecddde') in 0.022427 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000195 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Create_Edge@3x.png
-  artifactKey: Guid(374643871a39dd44880f1c0eff14f46c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Create_Edge@3x.png using Guid(374643871a39dd44880f1c0eff14f46c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fad8f6be81f2eb22704d9f647d0d98c') in 0.028492 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000274 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Create_Edge@2x.png
-  artifactKey: Guid(e5da66fa63839274dbffb877e43e888b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Create_Edge@2x.png using Guid(e5da66fa63839274dbffb877e43e888b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38618d5243bbdeee078c6faa850bbc90') in 0.022331 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000215 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/character_Mode@3x.png
-  artifactKey: Guid(17fa84703485d314b8d6b5216987d4b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/character_Mode@3x.png using Guid(17fa84703485d314b8d6b5216987d4b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc7f3abf45133f464ae908522395a6b4') in 0.024134 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000231 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Copy.png
-  artifactKey: Guid(69fdfe6d8e206134a83223383472ff48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Copy.png using Guid(69fdfe6d8e206134a83223383472ff48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66b0e390e75cc1c0b3b3304b9a7e8ead') in 0.023374 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000231 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Create_Edge@2x.png
-  artifactKey: Guid(3b4e88f5705085042a95960cdcef2561) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Create_Edge@2x.png using Guid(3b4e88f5705085042a95960cdcef2561) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bc32b7fb8b3478bf267594d8362fccd') in 0.019925 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000258 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Bone_Influence@2x.png
-  artifactKey: Guid(045a46ed7fd32804eb02dc411be96859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Bone_Influence@2x.png using Guid(045a46ed7fd32804eb02dc411be96859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2de461d9128af7d9937e48b43e89fe4c') in 0.024564 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000235 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone_Influence@3x.png
-  artifactKey: Guid(cee9dbe90b270c944ae1dabf41c93b10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone_Influence@3x.png using Guid(cee9dbe90b270c944ae1dabf41c93b10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2167a66b51e60bdd4a340ddf447fce75') in 0.023256 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000231 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/character_Mode.png
-  artifactKey: Guid(e60718119cec31e4190849292fcde068) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/character_Mode.png using Guid(e60718119cec31e4190849292fcde068) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1d1a2243a9cf0b345533fa5b33d9da8') in 0.018476 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000235 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Bone.png
-  artifactKey: Guid(fc2eaf4b0441b7645960252182c27446) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Bone.png using Guid(fc2eaf4b0441b7645960252182c27446) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c29d377a12ee4ce93bfe9a824207e75') in 0.026194 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000174 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Bone@4x.png
-  artifactKey: Guid(246d7c7c8e9e6cf43893ae13c5a81bdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Bone@4x.png using Guid(246d7c7c8e9e6cf43893ae13c5a81bdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2f8962d6a2f9b2bc6329784b935fac6') in 0.019890 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000241 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone@4x.png
-  artifactKey: Guid(9125c204f566db048a92ebcb64d9d14a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone@4x.png using Guid(9125c204f566db048a92ebcb64d9d14a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15de22f8a7db83e73562ef8280caf5eb') in 0.023095 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000231 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Create_Vertex@3x.png
-  artifactKey: Guid(66fa19194577350438c952106f661c2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Create_Vertex@3x.png using Guid(66fa19194577350438c952106f661c2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5d1f61774eafa3d935cb7d4cf8b3c11') in 0.020535 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000219 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Create Bones.png
-  artifactKey: Guid(0e5ae7fe3a07e88429a3e90897c6ab82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Create Bones.png using Guid(0e5ae7fe3a07e88429a3e90897c6ab82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc960e084c6a63097990229199dd1b69') in 0.024024 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000225 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_character_Mode@4x.png
-  artifactKey: Guid(395f6b9556f14704790df6035be6ee3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_character_Mode@4x.png using Guid(395f6b9556f14704790df6035be6ee3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '001896d03851afba0868299d03cad02a') in 0.032441 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000202 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Copy@3x.png
-  artifactKey: Guid(55ad4b6109677be42b239f450ce98c29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Copy@3x.png using Guid(55ad4b6109677be42b239f450ce98c29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '647f1cacc0424d121a8a291cb60440ee') in 0.026728 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000208 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Create_Edge@3x.png
-  artifactKey: Guid(9d68cf945428ac2448d4c657f30b31cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Create_Edge@3x.png using Guid(9d68cf945428ac2448d4c657f30b31cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e983be3af8eda6f2300dcf505250989f') in 0.021622 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000245 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Create_Edge@4x.png
-  artifactKey: Guid(3458c119c69e9bc4f9647599c2901dee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Create_Edge@4x.png using Guid(3458c119c69e9bc4f9647599c2901dee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '128964b70f10b478d2d41f283f93a51a') in 0.020314 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000216 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/character_Mode@4x.png
-  artifactKey: Guid(748ae8b33df036b46a86e0387f1602cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/character_Mode@4x.png using Guid(748ae8b33df036b46a86e0387f1602cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea827e8334c5e35d4b77097590b7525c') in 0.032955 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000268 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Copy@2x.png
-  artifactKey: Guid(6cc5103edc9f0dd4f80e8274c73dfeac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Copy@2x.png using Guid(6cc5103edc9f0dd4f80e8274c73dfeac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '426564f520d04f4b20452c32bc8c9b0d') in 0.029654 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000297 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Create Bones@3x.png
-  artifactKey: Guid(6e2c347c12b3fe04b94007ad25ace23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Create Bones@3x.png using Guid(6e2c347c12b3fe04b94007ad25ace23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '863258ca1c48d01c37de9e9d638e12b4') in 0.026787 seconds 
-========================================================================
 Received Import Request.
-  Time since last request: 0.000230 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Copy@2x.png
-  artifactKey: Guid(2e0cf451cb3d56742aad87ea75993209) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Copy@2x.png using Guid(2e0cf451cb3d56742aad87ea75993209) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24286372b2ddedafca96fb6f3e788c3d') in 0.023023 seconds 
+  Time since last request: 2.212639 seconds.
+  path: Assets/Animations/Ronin/Ronin_Damage_EclipseRush.anim
+  artifactKey: Guid(11ebdf6d4a872da408369fd0666dae34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Ronin/Ronin_Damage_EclipseRush.anim using Guid(11ebdf6d4a872da408369fd0666dae34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8557cac9282f430ffed06311623a707') in 0.008948 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000224 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/d_Bone@2x.png
-  artifactKey: Guid(24cf210708c57674b894af3341b1738b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/d_Bone@2x.png using Guid(24cf210708c57674b894af3341b1738b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36ec3932fabda4b5540be4465d6ec94a') in 0.019025 seconds 
+  Time since last request: 6.956975 seconds.
+  path: Assets/Animations/Ronin/Ronin_Damage_TripleSlash.anim
+  artifactKey: Guid(23509d67ef5717a40bdd73eddc0f84c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Ronin/Ronin_Damage_TripleSlash.anim using Guid(23509d67ef5717a40bdd73eddc0f84c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eee1dbc1902bd8055ae2bd213a96e915') in 0.008931 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000230 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Create Bones@2x.png
-  artifactKey: Guid(5b7f664b515582d458717c354f6be292) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Create Bones@2x.png using Guid(5b7f664b515582d458717c354f6be292) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da7a0badcbf88150056fc166e5ef9367') in 0.024965 seconds 
+  Time since last request: 4.584359 seconds.
+  path: Assets/Animations/Ronin/Ronin_Defense_ShadowRetreat.anim
+  artifactKey: Guid(3523b2b466836c9449068961eebcc20e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Ronin/Ronin_Defense_ShadowRetreat.anim using Guid(3523b2b466836c9449068961eebcc20e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5299f93714fad124e7b477057b856ac4') in 0.009225 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000196 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Create_Edge@3x.png
-  artifactKey: Guid(0da63bf69e254aa4a83c345c3de497c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Create_Edge@3x.png using Guid(0da63bf69e254aa4a83c345c3de497c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03a85fe59845beb7baf1807453d1476b') in 0.021107 seconds 
+  Time since last request: 6.423909 seconds.
+  path: Assets/Animations/Ronin/Ronin_Defense_SideStep.anim
+  artifactKey: Guid(7f3acb5ccf6d3624f9aa1c5ed23e7d2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Ronin/Ronin_Defense_SideStep.anim using Guid(7f3acb5ccf6d3624f9aa1c5ed23e7d2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a52f7813f73d48e7f5716ac5d63ea22') in 0.008453 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000206 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Copy@3x.png
-  artifactKey: Guid(3b5ad4dfc78124a489bb5c48a4b57195) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Dark/d_Copy@3x.png using Guid(3b5ad4dfc78124a489bb5c48a4b57195) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6b914447bde451b151360746e5283f0') in 0.022052 seconds 
+  Time since last request: 9.448246 seconds.
+  path: Assets/Animations/Ronin/Ronin_Reaction_ShadowRetreat.anim
+  artifactKey: Guid(8844f4b2c2acaac4093d7d2126608417) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Ronin/Ronin_Reaction_ShadowRetreat.anim using Guid(8844f4b2c2acaac4093d7d2126608417) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d062f87d89fe33515904d46f57e102c') in 0.009019 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 74.560766 seconds.
-  path: Packages/com.unity.2d.path/Editor/Handles/ShapeTool.png
-  artifactKey: Guid(0601759dc49769849996e4dae10a2204) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.path/Editor/Handles/ShapeTool.png using Guid(0601759dc49769849996e4dae10a2204) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bec7cbb8f05114d259ba2416e69e0527') in 0.027138 seconds 
+  Time since last request: 3.950258 seconds.
+  path: Assets/Animations/Ronin/Ronin_Reaction_SideStep.anim
+  artifactKey: Guid(c8dbc475452de094183c2a3e452f080c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Ronin/Ronin_Reaction_SideStep.anim using Guid(c8dbc475452de094183c2a3e452f080c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9838ab9738472a88f11b2ed681f19bab') in 0.008673 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000228 seconds.
-  path: Packages/com.unity.2d.path/Editor/Handles/ShapeToolPro.png
-  artifactKey: Guid(20ac412813dce2241a95fcf2dad05436) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.path/Editor/Handles/ShapeToolPro.png using Guid(20ac412813dce2241a95fcf2dad05436) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7aaa9ea893f74b31943a6a94819a6b1c') in 0.020293 seconds 
+  Time since last request: 37.376731 seconds.
+  path: Assets/Animations/Warrior/Warrior_Defense_Parry.anim
+  artifactKey: Guid(b97dc8d6aca92214b84e5c7a417956f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Warrior/Warrior_Defense_Parry.anim using Guid(b97dc8d6aca92214b84e5c7a417956f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3adaae3e1e75ac2cbdcec570eacdd6c') in 0.010547 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 241.575902 seconds.
-  path: Assets/Data/Skills/Gunslinger/SuppressiveFire.asset
-  artifactKey: Guid(340101889350ad34683af2297f7bbc70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Gunslinger/SuppressiveFire.asset using Guid(340101889350ad34683af2297f7bbc70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b07499b38f2cd657d6c59524bdbe20f8') in 0.012097 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 303.481583 seconds.
-  path: Assets/Data/Skills/Ronin/TripleSlash.asset
-  artifactKey: Guid(9408a64f5cb5b9f4abda00ebea156158) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Ronin/TripleSlash.asset using Guid(9408a64f5cb5b9f4abda00ebea156158) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a04bb05c6c31c40995803f0f87e9314c') in 0.011125 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 434.014744 seconds.
-  path: Assets/Data/Skills/Warrior/WhirlwindSlash.asset
-  artifactKey: Guid(e857c302343404f4a83864d43af09806) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warrior/WhirlwindSlash.asset using Guid(e857c302343404f4a83864d43af09806) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4019f99dbeddbc10ea8a4ec0dc8f5d17') in 0.018129 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005366 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.48 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.534 seconds
-Platform modules already initialized, skipping
-Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 2.11 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5583 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 326.9 MB.
-System memory in use after: 327.2 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 7511.
-Total: 9.567700 ms (FindLiveObjects: 1.266600 ms CreateObjectMapping: 1.062700 ms MarkObjects: 6.992600 ms  DeleteObjects: 0.242600 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007765 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.39 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Unable to allocate new scene culling mask
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
-UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
-UnityEditor.PreviewScene:.ctor (string)
-UnityEditor.PreviewRenderUtility:.ctor ()
-UnityEditor.Texture3DPreview:InitPreviewUtility ()
-UnityEditor.Texture3DPreview:OnEnable ()
-
-[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.342 seconds
-Platform modules already initialized, skipping
-Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.30 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 323.3 MB.
-System memory in use after: 323.7 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 7515.
-Total: 5.196700 ms (FindLiveObjects: 0.657000 ms CreateObjectMapping: 0.201500 ms MarkObjects: 4.154700 ms  DeleteObjects: 0.182100 ms)
-
+  Time since last request: 120.578483 seconds.
+  path: Assets/Animations/Warlock/Warlock_Summon.anim
+  artifactKey: Guid(df9cbff8281335243b1d576c86686290) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Warlock/Warlock_Summon.anim using Guid(df9cbff8281335243b1d576c86686290) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '668af05bd66832fe4d552d5013df441c') in 0.010106 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

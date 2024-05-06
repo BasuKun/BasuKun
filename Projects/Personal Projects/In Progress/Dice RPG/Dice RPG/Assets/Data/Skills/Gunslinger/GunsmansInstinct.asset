@@ -20,9 +20,11 @@ MonoBehaviour:
   skillType: 1
   skillClass: 3
   hasSeparateAnim: 0
+  description: Gain +2 Damage for the rest of the battle.
   icon: {fileID: -4324453974390329268, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
   sprites: []
   frameDuration: 0
+  eventFrames: 
   createdAnimationClip: {fileID: 0}
   separateAnim: {fileID: 0}
   summon: {fileID: 0}

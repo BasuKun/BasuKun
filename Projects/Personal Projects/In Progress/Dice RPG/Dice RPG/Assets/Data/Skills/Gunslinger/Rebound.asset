@@ -20,9 +20,11 @@ MonoBehaviour:
   skillType: 2
   skillClass: 3
   hasSeparateAnim: 0
+  description: Basic Attack rebounds and deals 50% of its initial damage.
   icon: {fileID: 2235113440243983157, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
   sprites: []
   frameDuration: 0
+  eventFrames: 
   createdAnimationClip: {fileID: 0}
   separateAnim: {fileID: 0}
   summon: {fileID: 0}

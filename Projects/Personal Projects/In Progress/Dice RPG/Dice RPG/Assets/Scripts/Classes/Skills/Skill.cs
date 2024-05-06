@@ -17,6 +17,7 @@ public class Skill : ScriptableObject
     public SkillTypes.types skillType;
     public CurrentClass.classes skillClass;
 	public bool hasSeparateAnim;
+	[Multiline()] public string description;
 
 	[Header("VISUALS")]
 	public Sprite icon;

@@ -15,14 +15,16 @@ MonoBehaviour:
   skillName: Accuracy
   stateName: 
   currentLevel: 0
-  maxLevel: 0
+  maxLevel: 1
   skillCooldown: 0
   skillType: 1
   skillClass: 3
   hasSeparateAnim: 0
+  description: All 1 rolls deal 2x damage.
   icon: {fileID: -8659324989264533859, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
   sprites: []
   frameDuration: 0
+  eventFrames: 
   createdAnimationClip: {fileID: 0}
   separateAnim: {fileID: 0}
   summon: {fileID: 0}

@@ -20,9 +20,11 @@ MonoBehaviour:
   skillType: 6
   skillClass: 5
   hasSeparateAnim: 0
+  description: Summon a Skull for 5 turns which can give 2 temporary Dice for 1 turn.
   icon: {fileID: -3555947598725589450, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
   sprites: []
   frameDuration: 0
+  eventFrames: 
   createdAnimationClip: {fileID: 0}
   separateAnim: {fileID: 0}
   summon: {fileID: 8083943819038104611, guid: 705de789696bae241a1111545641ea92, type: 3}

@@ -15,11 +15,11 @@ D:/_GITHUB/Root/Projects/Personal Projects/In Progress/Dice RPG/Dice RPG
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-51349
+64625
 Successfully changed project path to: D:/_GITHUB/Root/Projects/Personal Projects/In Progress/Dice RPG/Dice RPG
 D:/_GITHUB/Root/Projects/Personal Projects/In Progress/Dice RPG/Dice RPG
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 178.07 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 177.48 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.7f1 (d91830b65d9b)
 [Subsystems] Discovering subsystems at path D:/Outerminds/Unity Editors/2021.1.7f1/Editor/Data/Resources/UnitySubsystems
@@ -37,164 +37,533 @@ Initialize mono
 Mono path[0] = 'D:/Outerminds/Unity Editors/2021.1.7f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Outerminds/Unity Editors/2021.1.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/Outerminds/Unity Editors/2021.1.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56656
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56776
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Outerminds/Unity Editors/2021.1.7f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: D:/Outerminds/Unity Editors/2021.1.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001719 seconds.
+Registered in 0.001698 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 171.94 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 198.16 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.234 seconds
+- Completed reload, in  2.191 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.004849 seconds.
+Registered in 0.004750 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 174.62 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 168.82 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.619 seconds
+- Completed reload, in  1.654 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 1.34 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.29 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5667 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 297.3 MB.
 System memory in use after: 297.6 MB.
 
 Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 6122.
-Total: 4.087700 ms (FindLiveObjects: 0.581900 ms CreateObjectMapping: 0.195000 ms MarkObjects: 3.141300 ms  DeleteObjects: 0.168300 ms)
+Total: 4.304300 ms (FindLiveObjects: 0.507100 ms CreateObjectMapping: 0.188200 ms MarkObjects: 3.390600 ms  DeleteObjects: 0.217000 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Animations/Gunslinger/Gunslinger_Damage_Dynamite.anim
-  artifactKey: Guid(4b7c5991b9046be4bb13283f7f8a2dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Gunslinger/Gunslinger_Damage_Dynamite.anim using Guid(4b7c5991b9046be4bb13283f7f8a2dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8625d42cdf2fd4ada133e276ab3ca8da') in 0.051060 seconds 
+  path: Assets/Scripts/Player.cs
+  artifactKey: Guid(762f7d8595f0ee04380391820dbb9270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player.cs using Guid(762f7d8595f0ee04380391820dbb9270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee3b1676e71d1ec7c944d3c276132ebd') in 0.048659 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 35.995939 seconds.
-  path: Assets/Animations/Gunslinger/Gunslinger_Damage_Rifle.anim
-  artifactKey: Guid(b6ef78064136fd142b20c3b4a87f3bc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Gunslinger/Gunslinger_Damage_Rifle.anim using Guid(b6ef78064136fd142b20c3b4a87f3bc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b553f7d9e12322679c89dcf6d04b710') in 0.009043 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 482.624814 seconds.
-  path: Assets/Data/Skills/Gunslinger/Accuracy.asset
-  artifactKey: Guid(338f3337408dcf1409b48d7e12c06f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Gunslinger/Accuracy.asset using Guid(338f3337408dcf1409b48d7e12c06f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ceca48221fd6ac819d83c21d3f3399ed') in 0.011827 seconds 
+  Time since last request: 8.403359 seconds.
+  path: Assets/Scripts/UI/SelectScreen/SelectedClassConfirmButton.cs
+  artifactKey: Guid(8d4d0de0fae079245b78d957546cf86d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/UI/SelectScreen/SelectedClassConfirmButton.cs using Guid(8d4d0de0fae079245b78d957546cf86d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdfa75c7886eb98925c800a9da477d81') in 0.010547 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.004700 seconds.
+Registered in 0.004812 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 2.27 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.33 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.320 seconds
+- Completed reload, in  1.300 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Refreshing native plugins compatible for Editor in 1.38 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.36 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 284.6 MB.
 System memory in use after: 284.9 MB.
 
 Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6126.
-Total: 4.186400 ms (FindLiveObjects: 0.518900 ms CreateObjectMapping: 0.283800 ms MarkObjects: 3.233200 ms  DeleteObjects: 0.149400 ms)
+Total: 3.624700 ms (FindLiveObjects: 0.458600 ms CreateObjectMapping: 0.153100 ms MarkObjects: 2.866900 ms  DeleteObjects: 0.145000 ms)
 
-========================================================================
-Received Import Request.
-  Time since last request: 201.221322 seconds.
-  path: Assets/Data/Skills/Gunslinger/BleedingShot.asset
-  artifactKey: Guid(4743fddd5bb91a448949d0f1c22cbe11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Gunslinger/BleedingShot.asset using Guid(4743fddd5bb91a448949d0f1c22cbe11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '203364b9b02ea3a340ae4aa92379d19c') in 0.038940 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.402083 seconds.
-  path: Assets/Data/Skills/Gunslinger/Bullseye.asset
-  artifactKey: Guid(8655a85aed959234ca4cefcf15e2d049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Gunslinger/Bullseye.asset using Guid(8655a85aed959234ca4cefcf15e2d049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbaeb8573167537b1809d46d7b3b56dd') in 0.008893 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.375128 seconds.
-  path: Assets/Data/Skills/Gunslinger/DistancedAdvantage.asset
-  artifactKey: Guid(d20f7ff49a01a69439a419a9f99a0f1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Gunslinger/DistancedAdvantage.asset using Guid(d20f7ff49a01a69439a419a9f99a0f1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8de3ed61e2f240d4ac36db1dc7e888bd') in 0.009247 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.398047 seconds.
-  path: Assets/Data/Skills/Gunslinger/CripplingShot.asset
-  artifactKey: Guid(5c6055ffe5921b049a8a18ef078ce687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Gunslinger/CripplingShot.asset using Guid(5c6055ffe5921b049a8a18ef078ce687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '323f0c2f9e65503970cdbfc05df4ef19') in 0.008825 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.683373 seconds.
-  path: Assets/Data/Skills/Gunslinger/Dynamite.asset
-  artifactKey: Guid(0bbdcc6f2113c8a46a162a95fcf71e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Gunslinger/Dynamite.asset using Guid(0bbdcc6f2113c8a46a162a95fcf71e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '580e466b6cac5d1ca29b451b91b40900') in 0.020149 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 26.052302 seconds.
-  path: Assets/Data/Skills/Gunslinger/Dynamite.asset
-  artifactKey: Guid(0bbdcc6f2113c8a46a162a95fcf71e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Gunslinger/Dynamite.asset using Guid(0bbdcc6f2113c8a46a162a95fcf71e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ea4eeebeb96fc25dcaac5089877ca8c') in 0.019505 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.004797 seconds.
+Registered in 0.004936 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.30 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.42 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.312 seconds
+- Completed reload, in  1.355 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Refreshing native plugins compatible for Editor in 1.33 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.46 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 284.7 MB.
 System memory in use after: 285.0 MB.
 
 Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6130.
-Total: 3.931400 ms (FindLiveObjects: 0.529100 ms CreateObjectMapping: 0.192000 ms MarkObjects: 3.055500 ms  DeleteObjects: 0.153800 ms)
+Total: 5.550100 ms (FindLiveObjects: 0.626900 ms CreateObjectMapping: 0.490800 ms MarkObjects: 4.282200 ms  DeleteObjects: 0.148500 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 98.933246 seconds.
-  path: Assets/Data/Skills/Gunslinger/Dynamite.asset
-  artifactKey: Guid(0bbdcc6f2113c8a46a162a95fcf71e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Gunslinger/Dynamite.asset using Guid(0bbdcc6f2113c8a46a162a95fcf71e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ff781b8feb5f9528dc96c979d7ca935') in 0.043281 seconds 
+  Time since last request: 3034.277541 seconds.
+  path: Assets/Data/Skills/Ronin/Karma.asset
+  artifactKey: Guid(80ae28062562ceb4abc4c359a21c291b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Ronin/Karma.asset using Guid(80ae28062562ceb4abc4c359a21c291b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e00cff6ea4a457da4da1397d816bf19') in 0.031549 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 5.169823 seconds.
-  path: Assets/Animations/Gunslinger/Gunslinger_Damage_Dynamite.anim
-  artifactKey: Guid(4b7c5991b9046be4bb13283f7f8a2dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Gunslinger/Gunslinger_Damage_Dynamite.anim using Guid(4b7c5991b9046be4bb13283f7f8a2dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d89bafefe23452a4b07b74bc0f8a977') in 0.009992 seconds 
+  Time since last request: 1.965776 seconds.
+  path: Assets/Data/Skills/Ronin/Pickpocket.asset
+  artifactKey: Guid(4ef0a74ca00c7374090811e94caffeeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Ronin/Pickpocket.asset using Guid(4ef0a74ca00c7374090811e94caffeeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '177e2a26f8f4a26f9d442a3c3965a03b') in 0.011821 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.125800 seconds.
+  path: Assets/Data/Skills/Ronin/ShadowRetreat.asset
+  artifactKey: Guid(51b497ebe93ccad45ad00ea182803e1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Ronin/ShadowRetreat.asset using Guid(51b497ebe93ccad45ad00ea182803e1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5075de7af5fef25fdca8618a0b756f9') in 0.010538 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.004966 seconds.
+Registered in 0.004863 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.93 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.604 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
+Refreshing native plugins compatible for Editor in 1.38 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 284.7 MB.
+System memory in use after: 285.1 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6134.
+Total: 3.705700 ms (FindLiveObjects: 0.455400 ms CreateObjectMapping: 0.169000 ms MarkObjects: 2.936500 ms  DeleteObjects: 0.143500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1756.083567 seconds.
+  path: Assets/Data/Skills/Gunslinger/BleedingShot.asset
+  artifactKey: Guid(4743fddd5bb91a448949d0f1c22cbe11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/BleedingShot.asset using Guid(4743fddd5bb91a448949d0f1c22cbe11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84cbcdd54bf10a6ddf5a9145fe75f889') in 0.044692 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.103227 seconds.
+  path: Assets/Data/Skills/Gunslinger/BleedingShot.asset
+  artifactKey: Guid(4743fddd5bb91a448949d0f1c22cbe11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/BleedingShot.asset using Guid(4743fddd5bb91a448949d0f1c22cbe11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '115fc2f786e61d415f4e72e0914a163f') in 0.006670 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.647408 seconds.
+  path: Assets/Data/Skills/Gunslinger/BleedingShot.asset
+  artifactKey: Guid(4743fddd5bb91a448949d0f1c22cbe11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/BleedingShot.asset using Guid(4743fddd5bb91a448949d0f1c22cbe11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79ad89708b7989c4e3da2651195f6731') in 0.003772 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.091703 seconds.
+  path: Assets/Data/Skills/Gunslinger/Accuracy.asset
+  artifactKey: Guid(338f3337408dcf1409b48d7e12c06f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/Accuracy.asset using Guid(338f3337408dcf1409b48d7e12c06f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56aabdf83c3dcf9a5afde387b9c65763') in 0.011310 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 39.387656 seconds.
+  path: Assets/Data/Skills/Gunslinger/Bullseye.asset
+  artifactKey: Guid(8655a85aed959234ca4cefcf15e2d049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/Bullseye.asset using Guid(8655a85aed959234ca4cefcf15e2d049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10901d59840806f62b5f408e39bc2f00') in 0.009775 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 87.495651 seconds.
+  path: Assets/Data/Skills/Gunslinger/CripplingShot.asset
+  artifactKey: Guid(5c6055ffe5921b049a8a18ef078ce687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/CripplingShot.asset using Guid(5c6055ffe5921b049a8a18ef078ce687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '574ad41802a31a2678a9e123f5160283') in 0.010640 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 27.021881 seconds.
+  path: Assets/Data/Skills/Gunslinger/DistancedAdvantage.asset
+  artifactKey: Guid(d20f7ff49a01a69439a419a9f99a0f1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/DistancedAdvantage.asset using Guid(d20f7ff49a01a69439a419a9f99a0f1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8dbe1a4d391ce8d572cc892fc24de8a') in 0.009533 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 61.603547 seconds.
+  path: Assets/Data/Skills/Gunslinger/Dynamite.asset
+  artifactKey: Guid(0bbdcc6f2113c8a46a162a95fcf71e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/Dynamite.asset using Guid(0bbdcc6f2113c8a46a162a95fcf71e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4861b880bb57e3572aa043fa6f3fc011') in 0.171792 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 29.217410 seconds.
+  path: Assets/Data/Skills/Gunslinger/GunsmansInstinct.asset
+  artifactKey: Guid(fee3dd6b618698e4fa4ee7cdcd09bc7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/GunsmansInstinct.asset using Guid(fee3dd6b618698e4fa4ee7cdcd09bc7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73447b906dd8a74f1c76512ce0782899') in 0.009978 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 54.000332 seconds.
+  path: Assets/Data/Skills/Gunslinger/Rebound.asset
+  artifactKey: Guid(a4f6db6889a97654d8754035be506a5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/Rebound.asset using Guid(a4f6db6889a97654d8754035be506a5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '917b49d5555b8e521bdb7d987b42b5fa') in 0.009206 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 56.265524 seconds.
+  path: Assets/Data/Skills/Gunslinger/Rifle.asset
+  artifactKey: Guid(0e9878af89867ff4eaead790d694b8bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/Rifle.asset using Guid(0e9878af89867ff4eaead790d694b8bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '692f3178482c45aea40848b5aa32173e') in 0.103579 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 37.587404 seconds.
+  path: Assets/Data/Skills/Gunslinger/SuppressiveFire.asset
+  artifactKey: Guid(340101889350ad34683af2297f7bbc70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/SuppressiveFire.asset using Guid(340101889350ad34683af2297f7bbc70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7a08de3996e8665dcfd0a2565849bff') in 0.119701 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 64.816692 seconds.
+  path: Assets/Data/Skills/Ronin/Assassinate.asset
+  artifactKey: Guid(3015f660212243440a059150e3417352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Ronin/Assassinate.asset using Guid(3015f660212243440a059150e3417352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f14cdeb29b7b8d3a2ea19032c8b1dc03') in 0.212762 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.769203 seconds.
+  path: Assets/Data/Skills/Ronin/Assassinate.asset
+  artifactKey: Guid(3015f660212243440a059150e3417352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Ronin/Assassinate.asset using Guid(3015f660212243440a059150e3417352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7592e3975aa49efbcc26c2860faf627c') in 0.020875 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.096270 seconds.
+  path: Assets/Data/Skills/Ronin/Bandage.asset
+  artifactKey: Guid(01183644c5e92d84ba15714fca247c4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Ronin/Bandage.asset using Guid(01183644c5e92d84ba15714fca247c4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fce0e95d5f2d22637bfcc1d4f3df988') in 0.008920 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 42.237487 seconds.
+  path: Assets/Data/Skills/Ronin/Bandage.asset
+  artifactKey: Guid(01183644c5e92d84ba15714fca247c4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Ronin/Bandage.asset using Guid(01183644c5e92d84ba15714fca247c4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '534b438001e2dd5aeaf0cedab10fbcd1') in 0.005020 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.541941 seconds.
+  path: Assets/Data/Skills/Ronin/DoubleSlash.asset
+  artifactKey: Guid(ccff88f741366f24dba2a7a16e285116) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Ronin/DoubleSlash.asset using Guid(ccff88f741366f24dba2a7a16e285116) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26ceb2229ec9143716c3689aa6e4cd43') in 0.043204 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 33.827338 seconds.
+  path: Assets/Data/Skills/Ronin/EclipseRush.asset
+  artifactKey: Guid(a2733e8d303ae2d4484fa60fd0485559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Ronin/EclipseRush.asset using Guid(a2733e8d303ae2d4484fa60fd0485559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e916ddfddb3c1b87783197713bea04e') in 0.132424 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 36.193176 seconds.
+  path: Assets/Data/Skills/Ronin/EclipseRush.asset
+  artifactKey: Guid(a2733e8d303ae2d4484fa60fd0485559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Ronin/EclipseRush.asset using Guid(a2733e8d303ae2d4484fa60fd0485559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb3f5135c14607f56ddf428b7922185e') in 0.014017 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.310918 seconds.
+  path: Assets/Data/Skills/Gunslinger/SuppressiveFire.asset
+  artifactKey: Guid(340101889350ad34683af2297f7bbc70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/SuppressiveFire.asset using Guid(340101889350ad34683af2297f7bbc70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '179d338305231da78f2ed0b56458f238') in 0.010322 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 39.408402 seconds.
+  path: Assets/Data/Skills/Ronin/Karma.asset
+  artifactKey: Guid(80ae28062562ceb4abc4c359a21c291b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Ronin/Karma.asset using Guid(80ae28062562ceb4abc4c359a21c291b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '868ec4222ec62c5c368bfb2a815ae111') in 0.009110 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.782159 seconds.
+  path: Assets/Data/Skills/Ronin/Pickpocket.asset
+  artifactKey: Guid(4ef0a74ca00c7374090811e94caffeeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Ronin/Pickpocket.asset using Guid(4ef0a74ca00c7374090811e94caffeeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '759f4803f6bc2f8a49c5612caeda074b') in 0.009042 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.697187 seconds.
+  path: Assets/Data/Skills/Ronin/ShadowRetreat.asset
+  artifactKey: Guid(51b497ebe93ccad45ad00ea182803e1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Ronin/ShadowRetreat.asset using Guid(51b497ebe93ccad45ad00ea182803e1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c79d8c21a0d46436ab8fcf7501f986a9') in 0.044816 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 35.613510 seconds.
+  path: Assets/Data/Skills/Ronin/SideStep.asset
+  artifactKey: Guid(d1d46f1fbba4fd147bc010b9bb59d234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Ronin/SideStep.asset using Guid(d1d46f1fbba4fd147bc010b9bb59d234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cadffba7a175f1121a794abc7b4eecc5') in 0.039784 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.021733 seconds.
+  path: Assets/Data/Skills/Ronin/SideStep.asset
+  artifactKey: Guid(d1d46f1fbba4fd147bc010b9bb59d234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Ronin/SideStep.asset using Guid(d1d46f1fbba4fd147bc010b9bb59d234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6edcaa1c02e0c08eb72e15d79ab1fa67') in 0.004684 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.109262 seconds.
+  path: Assets/Data/Skills/Ronin/SideStep.asset
+  artifactKey: Guid(d1d46f1fbba4fd147bc010b9bb59d234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Ronin/SideStep.asset using Guid(d1d46f1fbba4fd147bc010b9bb59d234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77eb89a2dc381d18ef097ad7ac1fd2ab') in 0.009399 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 26.589499 seconds.
+  path: Assets/Data/Skills/Ronin/Skillful.asset
+  artifactKey: Guid(e63e28eaa45a0aa46a35d69a40f020ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Ronin/Skillful.asset using Guid(e63e28eaa45a0aa46a35d69a40f020ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '659df2d2e7c3ed6efc42bf4871ce6038') in 0.008345 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 36.980862 seconds.
+  path: Assets/Data/Skills/Ronin/TripleSlash.asset
+  artifactKey: Guid(9408a64f5cb5b9f4abda00ebea156158) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Ronin/TripleSlash.asset using Guid(9408a64f5cb5b9f4abda00ebea156158) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33d376dcfc82d77b8649c6844183f8b6') in 0.098016 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 184.680074 seconds.
+  path: Assets/Data/Skills/Warlock/Hellfire.asset
+  artifactKey: Guid(754b53dd47d211846b71fbbc00459f57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warlock/Hellfire.asset using Guid(754b53dd47d211846b71fbbc00459f57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b3f151b64e763ab5f69bdeaa7cae57d') in 0.010272 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 133.356462 seconds.
+  path: Assets/Data/Skills/Warlock/Hydra.asset
+  artifactKey: Guid(5a798eca0f12f814da9d21cbfdac86d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warlock/Hydra.asset using Guid(5a798eca0f12f814da9d21cbfdac86d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1625c2170f37e7fb2d33ca8b03ec47b') in 0.010750 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 25.801180 seconds.
+  path: Assets/Data/Skills/Warlock/SummonBat.asset
+  artifactKey: Guid(67391edc98a92c141aaddea5c0e651f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warlock/SummonBat.asset using Guid(67391edc98a92c141aaddea5c0e651f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ededa631a09a3cb9f41558c219787b3') in 0.048180 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.340432 seconds.
+  path: Assets/Data/Skills/Warlock/SummonBat.asset
+  artifactKey: Guid(67391edc98a92c141aaddea5c0e651f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warlock/SummonBat.asset using Guid(67391edc98a92c141aaddea5c0e651f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '272a48d424451dc511ff50dd9dd83ad4') in 0.008013 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 41.723995 seconds.
+  path: Assets/Data/Skills/Warlock/SummonGolem.asset
+  artifactKey: Guid(291680274d426b8489e2fc16ad21bbae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warlock/SummonGolem.asset using Guid(291680274d426b8489e2fc16ad21bbae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24b814673dec13ea2268c1827696dbc0') in 0.040641 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 38.100823 seconds.
+  path: Assets/Data/Skills/Warlock/SummonSkull.asset
+  artifactKey: Guid(a16dc6f06bc65824d801a13ff14a179c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warlock/SummonSkull.asset using Guid(a16dc6f06bc65824d801a13ff14a179c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbb3b43cac7536a7b66a814b98636b3e') in 0.047607 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 38.942059 seconds.
+  path: Assets/Data/Skills/Warrior/Berserk.asset
+  artifactKey: Guid(95b3ecfe75f83d2439d68734679681c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warrior/Berserk.asset using Guid(95b3ecfe75f83d2439d68734679681c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d338995b9ca327cf604c24daa31acb4') in 0.009259 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.337684 seconds.
+  path: Assets/Data/Skills/Warrior/CriticalHit.asset
+  artifactKey: Guid(dd5639f9816d3d6499815cd3dd2812b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warrior/CriticalHit.asset using Guid(dd5639f9816d3d6499815cd3dd2812b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d641ad4951ca99ad676ff0ac6d06f3b') in 0.010162 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 24.020848 seconds.
+  path: Assets/Data/Skills/Gunslinger/Accuracy.asset
+  artifactKey: Guid(338f3337408dcf1409b48d7e12c06f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/Accuracy.asset using Guid(338f3337408dcf1409b48d7e12c06f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3f66dd02c35a916b3cfa0205c35c386') in 0.003563 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.988860 seconds.
+  path: Assets/Data/Skills/Warrior/Disarm.asset
+  artifactKey: Guid(5f9d48b0de83f464c96efac3f927e8d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warrior/Disarm.asset using Guid(5f9d48b0de83f464c96efac3f927e8d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8f33a8336fef2ebdae56bf536d43246') in 0.009414 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.249724 seconds.
+  path: Assets/Data/Skills/Warrior/Disarm.asset
+  artifactKey: Guid(5f9d48b0de83f464c96efac3f927e8d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warrior/Disarm.asset using Guid(5f9d48b0de83f464c96efac3f927e8d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e6f870e879d2cc3bd2bb4ff2a5cefa9') in 0.003191 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.450701 seconds.
+  path: Assets/Data/Skills/Warrior/Disarm.asset
+  artifactKey: Guid(5f9d48b0de83f464c96efac3f927e8d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warrior/Disarm.asset using Guid(5f9d48b0de83f464c96efac3f927e8d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a8e2e546132a020142d19ab62e61ccc') in 0.004884 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.924494 seconds.
+  path: Assets/Data/Skills/Gunslinger/CripplingShot.asset
+  artifactKey: Guid(5c6055ffe5921b049a8a18ef078ce687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/CripplingShot.asset using Guid(5c6055ffe5921b049a8a18ef078ce687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24cd56bb7aa568b6ec13a6f0e862fb9c') in 0.008871 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.449659 seconds.
+  path: Assets/Data/Skills/Warrior/Disarm.asset
+  artifactKey: Guid(5f9d48b0de83f464c96efac3f927e8d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warrior/Disarm.asset using Guid(5f9d48b0de83f464c96efac3f927e8d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd68173f061f6f0666ab9e0c03f816d3a') in 0.008017 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.377349 seconds.
+  path: Assets/Data/Skills/Warrior/Disarm.asset
+  artifactKey: Guid(5f9d48b0de83f464c96efac3f927e8d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warrior/Disarm.asset using Guid(5f9d48b0de83f464c96efac3f927e8d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99f40e3fc28f57d8c2aaf0734dcd3252') in 0.003381 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.559966 seconds.
+  path: Assets/Data/Skills/Gunslinger/Bullseye.asset
+  artifactKey: Guid(8655a85aed959234ca4cefcf15e2d049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/Bullseye.asset using Guid(8655a85aed959234ca4cefcf15e2d049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21f259c2b0001b35d59c6a77cfcf2b99') in 0.004898 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.668647 seconds.
+  path: Assets/Data/Skills/Gunslinger/CripplingShot.asset
+  artifactKey: Guid(5c6055ffe5921b049a8a18ef078ce687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/CripplingShot.asset using Guid(5c6055ffe5921b049a8a18ef078ce687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1235bd2a9a76fa2c10a739ccd4beb8aa') in 0.004296 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 74.601211 seconds.
+  path: Assets/Data/Skills/Warrior/Inspire.asset
+  artifactKey: Guid(30abd13998a5fcd448b9a2013fbbfcd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warrior/Inspire.asset using Guid(30abd13998a5fcd448b9a2013fbbfcd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ac85eb32922fe0aaaa2138deb63f20d') in 0.009486 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 71.050097 seconds.
+  path: Assets/Data/Skills/Warrior/LastBreath.asset
+  artifactKey: Guid(07d6ecd70b8a30c48b94561f49d371f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warrior/LastBreath.asset using Guid(07d6ecd70b8a30c48b94561f49d371f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbdf6246668e1ae7e0f63472e990b94f') in 0.009422 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 35.746296 seconds.
+  path: Assets/Data/Skills/Warrior/Parry.asset
+  artifactKey: Guid(48273483e1c027e4fba8cdf1e701db13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warrior/Parry.asset using Guid(48273483e1c027e4fba8cdf1e701db13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b40d046e04a7d8b96e2f751a2b97276') in 0.051459 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.801916 seconds.
+  path: Assets/Data/Skills/Warrior/Parry.asset
+  artifactKey: Guid(48273483e1c027e4fba8cdf1e701db13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warrior/Parry.asset using Guid(48273483e1c027e4fba8cdf1e701db13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08945cc8f53b0e5fe45fce6f68e2503e') in 0.011321 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.046571 seconds.
+  path: Assets/Data/Skills/Warrior/Parry.asset
+  artifactKey: Guid(48273483e1c027e4fba8cdf1e701db13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warrior/Parry.asset using Guid(48273483e1c027e4fba8cdf1e701db13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0534e54d902a8c9d131cd72ee014297') in 0.005891 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.924827 seconds.
+  path: Assets/Data/Skills/Warrior/Pierce.asset
+  artifactKey: Guid(13cb257ce82ec69448cff2dede6b0221) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warrior/Pierce.asset using Guid(13cb257ce82ec69448cff2dede6b0221) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8a6e84559a6df49d1fba31142a44452') in 0.062432 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.152997 seconds.
+  path: Assets/Data/Skills/Warrior/SeismicDive.asset
+  artifactKey: Guid(8ee65561f5c956c47bf1080076a02280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warrior/SeismicDive.asset using Guid(8ee65561f5c956c47bf1080076a02280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4f0fc0639e8581616e029b22ed5324f') in 0.128084 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.912925 seconds.
+  path: Assets/Data/Skills/Warrior/Strengthen.asset
+  artifactKey: Guid(eabf13cf43685ec45a5d7403cfb89e7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warrior/Strengthen.asset using Guid(eabf13cf43685ec45a5d7403cfb89e7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9969a5971b17260b82ef7053cf6580c5') in 0.009277 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.235464 seconds.
+  path: Assets/Data/Skills/Warrior/WhirlwindSlash.asset
+  artifactKey: Guid(e857c302343404f4a83864d43af09806) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warrior/WhirlwindSlash.asset using Guid(e857c302343404f4a83864d43af09806) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '661f56f51aa929ad7a78afe3ad209eb0') in 0.138272 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.117445 seconds.
+  path: Assets/Data/Skills/Warrior/Strengthen.asset
+  artifactKey: Guid(eabf13cf43685ec45a5d7403cfb89e7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Warrior/Strengthen.asset using Guid(eabf13cf43685ec45a5d7403cfb89e7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0de11bf6ea290acf4a13526d0d1481c6') in 0.008159 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008792 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 2.11 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.292 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
+Refreshing native plugins compatible for Editor in 1.82 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 284.8 MB.
+System memory in use after: 285.2 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6138.
+Total: 4.648900 ms (FindLiveObjects: 0.636600 ms CreateObjectMapping: 0.343900 ms MarkObjects: 3.512200 ms  DeleteObjects: 0.154700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004919 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.32 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.280 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
+Refreshing native plugins compatible for Editor in 1.43 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 284.8 MB.
+System memory in use after: 285.2 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6142.
+Total: 3.875000 ms (FindLiveObjects: 0.490500 ms CreateObjectMapping: 0.152600 ms MarkObjects: 3.080600 ms  DeleteObjects: 0.149600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004821 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
@@ -203,456 +572,84 @@ Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 1.30 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.312 seconds
+- Completed reload, in  1.277 seconds
 Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Refreshing native plugins compatible for Editor in 1.93 ms, found 2 plugins.
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.31 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 284.7 MB.
-System memory in use after: 285.0 MB.
+System memory in use before: 284.9 MB.
+System memory in use after: 285.2 MB.
 
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6134.
-Total: 4.313300 ms (FindLiveObjects: 0.493200 ms CreateObjectMapping: 0.188000 ms MarkObjects: 3.460500 ms  DeleteObjects: 0.170600 ms)
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6146.
+Total: 5.901500 ms (FindLiveObjects: 0.578300 ms CreateObjectMapping: 0.263600 ms MarkObjects: 4.816200 ms  DeleteObjects: 0.241200 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.005028 seconds.
+Registered in 0.004783 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.35 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.28 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.328 seconds
+- Completed reload, in  1.262 seconds
 Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Refreshing native plugins compatible for Editor in 1.96 ms, found 2 plugins.
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.30 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 284.7 MB.
-System memory in use after: 285.1 MB.
+System memory in use before: 284.9 MB.
+System memory in use after: 285.2 MB.
 
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6138.
-Total: 4.854400 ms (FindLiveObjects: 0.527000 ms CreateObjectMapping: 0.197100 ms MarkObjects: 3.951100 ms  DeleteObjects: 0.177600 ms)
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6150.
+Total: 4.412600 ms (FindLiveObjects: 0.582600 ms CreateObjectMapping: 0.196200 ms MarkObjects: 3.458000 ms  DeleteObjects: 0.174500 ms)
 
-========================================================================
-Received Import Request.
-  Time since last request: 280.234546 seconds.
-  path: Assets/Animations/Gunslinger/Gunslinger_Damage_Dynamite.anim
-  artifactKey: Guid(4b7c5991b9046be4bb13283f7f8a2dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Gunslinger/Gunslinger_Damage_Dynamite.anim using Guid(4b7c5991b9046be4bb13283f7f8a2dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51a48580a411f2742de2c381acfb1dc3') in 0.020291 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 57.010085 seconds.
-  path: Assets/Data/Skills/Gunslinger/Dynamite.asset
-  artifactKey: Guid(0bbdcc6f2113c8a46a162a95fcf71e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Gunslinger/Dynamite.asset using Guid(0bbdcc6f2113c8a46a162a95fcf71e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c23952469381bef6380382457057289a') in 0.015894 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 8.267371 seconds.
-  path: Assets/LeanTween/Examples/Models/2dText.fbx
-  artifactKey: Guid(c0f35ff1d23074af5bcd82d9caa31ebe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/LeanTween/Examples/Models/2dText.fbx using Guid(c0f35ff1d23074af5bcd82d9caa31ebe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13c5f685eba9a5e585225ea9e04aa1ed') in 0.295509 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000264 seconds.
-  path: Assets/LeanTween/Examples/Models/LeanTweenHD-Icon.fbx
-  artifactKey: Guid(7d6f6aee277594029851a7cc81d550d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/LeanTween/Examples/Models/LeanTweenHD-Icon.fbx using Guid(7d6f6aee277594029851a7cc81d550d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81df04e2b6ea8528f0df788786610cca') in 0.048852 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000209 seconds.
-  path: Assets/LeanTween/Examples/Models/SimpleAvatarPieces.fbx
-  artifactKey: Guid(f9f32fdb4bc7744849a33427aedb8702) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/LeanTween/Examples/Models/SimpleAvatarPieces.fbx using Guid(f9f32fdb4bc7744849a33427aedb8702) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95e07d441efea2819dfc521e69a15866') in 0.410441 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000228 seconds.
-  path: Assets/LeanTween/Examples/Models/AdvancedExamplesText.fbx
-  artifactKey: Guid(47a7c1f40f5df413fbc8bf1c01c011a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/LeanTween/Examples/Models/AdvancedExamplesText.fbx using Guid(47a7c1f40f5df413fbc8bf1c01c011a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '453f64060df64e74b12ab2ca2b0b30ff') in 0.061578 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000219 seconds.
-  path: Assets/LeanTween/Examples/Models/CurvePathsText.fbx
-  artifactKey: Guid(9256e250ab62647109679d3cbbaf6f04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/LeanTween/Examples/Models/CurvePathsText.fbx using Guid(9256e250ab62647109679d3cbbaf6f04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86d8199f3f6290e290bf691c96e5fc98') in 0.033404 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000241 seconds.
-  path: Assets/LeanTween/Examples/Models/LeanTween-Icon.fbx
-  artifactKey: Guid(6fc4240da91ab4747a411a8313faed53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/LeanTween/Examples/Models/LeanTween-Icon.fbx using Guid(6fc4240da91ab4747a411a8313faed53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e76989bf54870d4aa70e1495b3908658') in 0.048774 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000237 seconds.
-  path: Assets/Feel/FeelDemos/Tactical/Animations/FeelTactical@Idle.fbx
-  artifactKey: Guid(ae6eb209df497b846a8d698d0d2c07c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Feel/FeelDemos/Tactical/Animations/FeelTactical@Idle.fbx using Guid(ae6eb209df497b846a8d698d0d2c07c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d17a40a089a08810eeb86f892a0c742') in 0.013008 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000240 seconds.
-  path: Assets/LeanTween/Examples/Models/EndlessDrivingText.fbx
-  artifactKey: Guid(6311d891eea1c406c941c23f9dfa5265) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/LeanTween/Examples/Models/EndlessDrivingText.fbx using Guid(6311d891eea1c406c941c23f9dfa5265) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aead23eed45ceb4fc62d91e2b1d1f29d') in 0.027881 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000226 seconds.
-  path: Assets/LeanTween/Examples/Models/CameraShakeText.fbx
-  artifactKey: Guid(f4d8d07c107904cdfb54156450f020f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/LeanTween/Examples/Models/CameraShakeText.fbx using Guid(f4d8d07c107904cdfb54156450f020f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fafe43cd518e441c6e17fe3334f6ebc') in 0.030638 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000228 seconds.
-  path: Assets/Feel/FeelDemos/Tactical/Animations/FeelTactical@Reloading.fbx
-  artifactKey: Guid(3cc72561b9a8f1742888abad55b726e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Feel/FeelDemos/Tactical/Animations/FeelTactical@Reloading.fbx using Guid(3cc72561b9a8f1742888abad55b726e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5cd94c6051e4cf6e9be4a684c44447f') in 0.013232 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000235 seconds.
-  path: Assets/Feel/MMFeedbacks/Demos/MMFeedbacksDemo/Models/Dude/MMFeedbackDemoDude@Idle.fbx
-  artifactKey: Guid(b2fccabcb9892894a8720b37575d77ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Feel/MMFeedbacks/Demos/MMFeedbacksDemo/Models/Dude/MMFeedbackDemoDude@Idle.fbx using Guid(b2fccabcb9892894a8720b37575d77ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eeeda15010158e853a6d1aba22bc141e') in 0.011908 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000238 seconds.
-  path: Assets/LeanTween/Examples/Models/SimpleAvatar.fbx
-  artifactKey: Guid(c8c942998fe7e4845bed23e105bd031f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/LeanTween/Examples/Models/SimpleAvatar.fbx using Guid(c8c942998fe7e4845bed23e105bd031f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b47a9701fbcb63b343ef8a6870077a5') in 0.033404 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000210 seconds.
-  path: Assets/Feel/MMFeedbacks/Demos/MMFeedbacksDemo/Models/Dude/MMFeedbackDemoDude@Jump.fbx
-  artifactKey: Guid(14309b80c23b62044b2e4d8e4017ed68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Feel/MMFeedbacks/Demos/MMFeedbacksDemo/Models/Dude/MMFeedbackDemoDude@Jump.fbx using Guid(14309b80c23b62044b2e4d8e4017ed68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e8428d922978bcec7f92cee19929649') in 0.012817 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000239 seconds.
-  path: Assets/LeanTween/Examples/Models/DirectionalArrow.fbx
-  artifactKey: Guid(d47ae0396110840289d47476d8289fbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/LeanTween/Examples/Models/DirectionalArrow.fbx using Guid(d47ae0396110840289d47476d8289fbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8596c53ca6fe2f13db6433bb13b4fb7c') in 0.045672 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000225 seconds.
-  path: Assets/Feel/FeelDemos/Barbarians/Models/FeelBarbarianBackground.fbx
-  artifactKey: Guid(2e5dc414d2e25404ca15e4d9d6dda78d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Feel/FeelDemos/Barbarians/Models/FeelBarbarianBackground.fbx using Guid(2e5dc414d2e25404ca15e4d9d6dda78d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b3e0b2c00ea07365b86a4c385fcea13') in 0.404716 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000257 seconds.
-  path: Assets/LeanTween/Examples/Models/ExampleFirTree.fbx
-  artifactKey: Guid(26daae648a43e4db88d0a47a293d545c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/LeanTween/Examples/Models/ExampleFirTree.fbx using Guid(26daae648a43e4db88d0a47a293d545c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6776d7cd6b09d515cc5dd15da3508519') in 0.034662 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000240 seconds.
-  path: Assets/LeanTween/Examples/Models/Grid.fbx
-  artifactKey: Guid(cf8dd6c08e9ac4507bbbd1468b530d48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/LeanTween/Examples/Models/Grid.fbx using Guid(cf8dd6c08e9ac4507bbbd1468b530d48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f367eb57909f15351775d8d49cd4118') in 0.027111 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000261 seconds.
-  path: Assets/LeanTween/Examples/Models/BasicExamplesText.fbx
-  artifactKey: Guid(803bfbdea65eb4ebe96e481875403860) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/LeanTween/Examples/Models/BasicExamplesText.fbx using Guid(803bfbdea65eb4ebe96e481875403860) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3cbf7fe2840817e9d8d0fd8e4207a1a5') in 0.066942 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000231 seconds.
-  path: Assets/Feel/FeelDemos/Tactical/Animations/FeelTactical@Gunplay.fbx
-  artifactKey: Guid(709af496d33710a4fb05154e7b926384) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Feel/FeelDemos/Tactical/Animations/FeelTactical@Gunplay.fbx using Guid(709af496d33710a4fb05154e7b926384) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6dbc8c807a9b26cb148c544a6df3ee37') in 0.011644 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000255 seconds.
-  path: Assets/LeanTween/Examples/Models/ExampleCar.fbx
-  artifactKey: Guid(00046df2e01964c4cbb764131f0c85e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/LeanTween/Examples/Models/ExampleCar.fbx using Guid(00046df2e01964c4cbb764131f0c85e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9e031c9e939a7192b3946e88df05c98') in 0.031069 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.407919 seconds.
-  path: Assets/Animations/Gunslinger/Gunslinger_Damage_Dynamite.anim
-  artifactKey: Guid(4b7c5991b9046be4bb13283f7f8a2dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Gunslinger/Gunslinger_Damage_Dynamite.anim using Guid(4b7c5991b9046be4bb13283f7f8a2dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a17cfe85c3bd3b700a3c4eda4cc8405') in 0.003235 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.004918 seconds.
+Registered in 0.004894 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\_GITHUB\Root\Projects\Personal Projects\In Progress\Dice RPG\Dice RPG\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.29 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.307 seconds
+Platform modules already initialized, skipping
+Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Refreshing native plugins compatible for Editor in 1.33 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.383 seconds
-Platform modules already initialized, skipping
-Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.34 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 291.7 MB.
-System memory in use after: 292.1 MB.
+System memory in use before: 284.9 MB.
+System memory in use after: 285.2 MB.
 
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6227.
-Total: 3.682800 ms (FindLiveObjects: 0.491700 ms CreateObjectMapping: 0.147800 ms MarkObjects: 2.887300 ms  DeleteObjects: 0.155000 ms)
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 6154.
+Total: 4.768600 ms (FindLiveObjects: 0.513400 ms CreateObjectMapping: 0.191900 ms MarkObjects: 3.881800 ms  DeleteObjects: 0.180300 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 280.135867 seconds.
-  path: Assets/Animations/Gunslinger/Gunslinger_Damage_Dynamite.anim
-  artifactKey: Guid(4b7c5991b9046be4bb13283f7f8a2dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Gunslinger/Gunslinger_Damage_Dynamite.anim using Guid(4b7c5991b9046be4bb13283f7f8a2dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a4cb4c16ebbafae19316300f2cd14e5') in 0.031535 seconds 
+  Time since last request: 3183.280654 seconds.
+  path: Assets/Data/Skills/Gunslinger/Accuracy.asset
+  artifactKey: Guid(338f3337408dcf1409b48d7e12c06f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/Accuracy.asset using Guid(338f3337408dcf1409b48d7e12c06f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ce792fcafea189db7dcb66f15113adb') in 0.027517 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 25.205739 seconds.
-  path: Assets/Data/Skills/Gunslinger/GunsmansInstinct.asset
-  artifactKey: Guid(fee3dd6b618698e4fa4ee7cdcd09bc7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Gunslinger/GunsmansInstinct.asset using Guid(fee3dd6b618698e4fa4ee7cdcd09bc7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e413c6ae910f48fbf2c5bc43285290b') in 0.011124 seconds 
+  Time since last request: 2.234361 seconds.
+  path: Assets/Data/Skills/Gunslinger/Accuracy.asset
+  artifactKey: Guid(338f3337408dcf1409b48d7e12c06f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Skills/Gunslinger/Accuracy.asset using Guid(338f3337408dcf1409b48d7e12c06f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5702cfc9ff1e26e25f1b81265f1b777') in 0.008119 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.601422 seconds.
-  path: Assets/Data/Skills/Gunslinger/Rebound.asset
-  artifactKey: Guid(a4f6db6889a97654d8754035be506a5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Gunslinger/Rebound.asset using Guid(a4f6db6889a97654d8754035be506a5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd5e19596e8d037444ba8446fad8f4c4') in 0.009364 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.341865 seconds.
-  path: Assets/Data/Skills/Gunslinger/Rifle.asset
-  artifactKey: Guid(0e9878af89867ff4eaead790d694b8bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Gunslinger/Rifle.asset using Guid(0e9878af89867ff4eaead790d694b8bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76fd7631fbd6591b3f13cb6f78671eed') in 0.017101 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 35.225085 seconds.
-  path: Assets/Data/Skills/Gunslinger/Rifle.asset
-  artifactKey: Guid(0e9878af89867ff4eaead790d694b8bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Gunslinger/Rifle.asset using Guid(0e9878af89867ff4eaead790d694b8bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35922e1e23901b2a620c8b9f41ab5d6c') in 0.009726 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.251283 seconds.
-  path: Assets/Animations/Gunslinger/Gunslinger_Damage_Rifle.anim
-  artifactKey: Guid(b6ef78064136fd142b20c3b4a87f3bc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Gunslinger/Gunslinger_Damage_Rifle.anim using Guid(b6ef78064136fd142b20c3b4a87f3bc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24136755d58ae93c51664a54bbcc96d0') in 0.003770 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 173.291303 seconds.
-  path: Assets/Data/Skills/Gunslinger/SuppressiveFire.asset
-  artifactKey: Guid(340101889350ad34683af2297f7bbc70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Gunslinger/SuppressiveFire.asset using Guid(340101889350ad34683af2297f7bbc70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'add6e78fda8b62096093a2a5acae3521') in 0.016414 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.889350 seconds.
-  path: Assets/Animations/Gunslinger/Gunslinger_Damage_SuppressiveFire.anim
-  artifactKey: Guid(c2688ed1b318bcc49a76f437eebe60e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Gunslinger/Gunslinger_Damage_SuppressiveFire.anim using Guid(c2688ed1b318bcc49a76f437eebe60e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '433124c94ae1f168849bfb0f124af2ee') in 0.008884 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 19.954725 seconds.
-  path: Assets/Data/Skills/Ronin/Assassinate.asset
-  artifactKey: Guid(3015f660212243440a059150e3417352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Ronin/Assassinate.asset using Guid(3015f660212243440a059150e3417352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '117a9f196f2fefcf0451c4ff9a22b63f') in 0.023270 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 29.796609 seconds.
-  path: Assets/Data/Skills/Ronin/Assassinate.asset
-  artifactKey: Guid(3015f660212243440a059150e3417352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Ronin/Assassinate.asset using Guid(3015f660212243440a059150e3417352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9dcd6c0773a8bba28e9f8527d6fd8782') in 0.016835 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 11.371778 seconds.
-  path: Assets/Data/Skills/Ronin/DoubleSlash.asset
-  artifactKey: Guid(ccff88f741366f24dba2a7a16e285116) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Ronin/DoubleSlash.asset using Guid(ccff88f741366f24dba2a7a16e285116) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6390d87a776f1e14026ecd72aaa101e2') in 0.010747 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 22.028729 seconds.
-  path: Assets/Data/Skills/Ronin/DoubleSlash.asset
-  artifactKey: Guid(ccff88f741366f24dba2a7a16e285116) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Ronin/DoubleSlash.asset using Guid(ccff88f741366f24dba2a7a16e285116) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '680617462a442d1e10571e513bb592e4') in 0.005183 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.796359 seconds.
-  path: Assets/Data/Skills/Ronin/EclipseRush.asset
-  artifactKey: Guid(a2733e8d303ae2d4484fa60fd0485559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Ronin/EclipseRush.asset using Guid(a2733e8d303ae2d4484fa60fd0485559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ff8f97126eba9c315e47fa41bbc3952') in 0.019513 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 62.627527 seconds.
-  path: Assets/Data/Skills/Ronin/EclipseRush.asset
-  artifactKey: Guid(a2733e8d303ae2d4484fa60fd0485559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Ronin/EclipseRush.asset using Guid(a2733e8d303ae2d4484fa60fd0485559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87ccb7415055affa202a5aff569be865') in 0.012328 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.836046 seconds.
-  path: Assets/Data/Skills/Ronin/Skillful.asset
-  artifactKey: Guid(e63e28eaa45a0aa46a35d69a40f020ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Ronin/Skillful.asset using Guid(e63e28eaa45a0aa46a35d69a40f020ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd98c6fd9c0101d2a338d230b49566c00') in 0.008892 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.832273 seconds.
-  path: Assets/Data/Skills/Ronin/SideStep.asset
-  artifactKey: Guid(d1d46f1fbba4fd147bc010b9bb59d234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Ronin/SideStep.asset using Guid(d1d46f1fbba4fd147bc010b9bb59d234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02c4e50f6ad0db3b823d6dea92aea8f7') in 0.005342 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 26.427972 seconds.
-  path: Assets/Data/Skills/Ronin/TripleSlash.asset
-  artifactKey: Guid(9408a64f5cb5b9f4abda00ebea156158) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Ronin/TripleSlash.asset using Guid(9408a64f5cb5b9f4abda00ebea156158) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf106fe70a0226d296e9c14b27f03218') in 0.010034 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 16.778604 seconds.
-  path: Assets/Data/Skills/Warlock/Hellfire.asset
-  artifactKey: Guid(754b53dd47d211846b71fbbc00459f57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warlock/Hellfire.asset using Guid(754b53dd47d211846b71fbbc00459f57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68a9002601f86948778adc82e105fb1c') in 0.006161 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.939198 seconds.
-  path: Assets/Data/Skills/Warlock/Hydra.asset
-  artifactKey: Guid(5a798eca0f12f814da9d21cbfdac86d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warlock/Hydra.asset using Guid(5a798eca0f12f814da9d21cbfdac86d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33511d6543e62f5240403e562310549e') in 0.012441 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.050387 seconds.
-  path: Assets/Data/Skills/Warlock/SummonBat.asset
-  artifactKey: Guid(67391edc98a92c141aaddea5c0e651f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warlock/SummonBat.asset using Guid(67391edc98a92c141aaddea5c0e651f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3bca8f4ba0635544bdc692d0307be26') in 0.011224 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.421277 seconds.
-  path: Assets/Data/Skills/Warlock/SummonGolem.asset
-  artifactKey: Guid(291680274d426b8489e2fc16ad21bbae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warlock/SummonGolem.asset using Guid(291680274d426b8489e2fc16ad21bbae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d82b646d554bc7a74c34d68eb227628') in 0.010371 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.208681 seconds.
-  path: Assets/Data/Skills/Warlock/SummonSkull.asset
-  artifactKey: Guid(a16dc6f06bc65824d801a13ff14a179c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warlock/SummonSkull.asset using Guid(a16dc6f06bc65824d801a13ff14a179c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38dee938207febd738f331dfac16abe6') in 0.011624 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 24.512793 seconds.
-  path: Assets/Data/Skills/Warrior/Berserk.asset
-  artifactKey: Guid(95b3ecfe75f83d2439d68734679681c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warrior/Berserk.asset using Guid(95b3ecfe75f83d2439d68734679681c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa0d33681b6553d52d13a68c85b5d7f5') in 0.008570 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.737399 seconds.
-  path: Assets/Data/Skills/Warrior/CriticalHit.asset
-  artifactKey: Guid(dd5639f9816d3d6499815cd3dd2812b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warrior/CriticalHit.asset using Guid(dd5639f9816d3d6499815cd3dd2812b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e6135cce560e73090faea7590255f13') in 0.011880 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.124692 seconds.
-  path: Assets/Data/Skills/Warrior/Disarm.asset
-  artifactKey: Guid(5f9d48b0de83f464c96efac3f927e8d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warrior/Disarm.asset using Guid(5f9d48b0de83f464c96efac3f927e8d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0230b37af0fcf1bb00603e164ed05a0') in 0.010143 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.178476 seconds.
-  path: Assets/Data/Skills/Warrior/Inspire.asset
-  artifactKey: Guid(30abd13998a5fcd448b9a2013fbbfcd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warrior/Inspire.asset using Guid(30abd13998a5fcd448b9a2013fbbfcd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7b57dc97bd47fc9bb9e02eefe0e9465') in 0.011441 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.208271 seconds.
-  path: Assets/Data/Skills/Warrior/LastBreath.asset
-  artifactKey: Guid(07d6ecd70b8a30c48b94561f49d371f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warrior/LastBreath.asset using Guid(07d6ecd70b8a30c48b94561f49d371f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99aab84513673880decc7764a4e72d7d') in 0.009976 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.326659 seconds.
-  path: Assets/Data/Skills/Warrior/Parry.asset
-  artifactKey: Guid(48273483e1c027e4fba8cdf1e701db13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warrior/Parry.asset using Guid(48273483e1c027e4fba8cdf1e701db13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34d48cc000d3f8036b7d547a353664f0') in 0.010843 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.675840 seconds.
-  path: Assets/Data/Skills/Warrior/Pierce.asset
-  artifactKey: Guid(13cb257ce82ec69448cff2dede6b0221) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warrior/Pierce.asset using Guid(13cb257ce82ec69448cff2dede6b0221) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '610c4cf02a583c028a554705cbfc6944') in 0.013513 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 24.858563 seconds.
-  path: Assets/Data/Skills/Warrior/Pierce.asset
-  artifactKey: Guid(13cb257ce82ec69448cff2dede6b0221) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warrior/Pierce.asset using Guid(13cb257ce82ec69448cff2dede6b0221) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03411d3e4ec6eba143dffd47bcadc3e2') in 0.006063 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.083445 seconds.
-  path: Assets/Data/Skills/Warrior/SeismicDive.asset
-  artifactKey: Guid(8ee65561f5c956c47bf1080076a02280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warrior/SeismicDive.asset using Guid(8ee65561f5c956c47bf1080076a02280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c1e16633d159ac9ac082e260e6f5de7') in 0.019654 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 18.427679 seconds.
-  path: Assets/Data/Skills/Warrior/SeismicDive.asset
-  artifactKey: Guid(8ee65561f5c956c47bf1080076a02280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warrior/SeismicDive.asset using Guid(8ee65561f5c956c47bf1080076a02280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb80f1b8fea96456cfe339191a341638') in 0.012444 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 21.321873 seconds.
-  path: Assets/Data/Skills/Warrior/WhirlwindSlash.asset
-  artifactKey: Guid(e857c302343404f4a83864d43af09806) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Skills/Warrior/WhirlwindSlash.asset using Guid(e857c302343404f4a83864d43af09806) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7576520005ac711408941ab74208e27') in 0.013272 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 15.424975 seconds.
-  path: Assets/Animations/Ronin/Ronin_Damage_Assassinate.anim
-  artifactKey: Guid(22f45fa3a90a45149a82c214735f1bdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Ronin/Ronin_Damage_Assassinate.anim using Guid(22f45fa3a90a45149a82c214735f1bdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd08190cfeaf1a028a6fcec2b82db734e') in 0.008022 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.091841 seconds.
-  path: Assets/Animations/Ronin/Ronin_Damage_DoubleSlash.anim
-  artifactKey: Guid(3c4476c88a811914ab7805d10590e4d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Ronin/Ronin_Damage_DoubleSlash.anim using Guid(3c4476c88a811914ab7805d10590e4d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a411ef27ce4a929e77f4692ed86ddd75') in 0.008905 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.212639 seconds.
-  path: Assets/Animations/Ronin/Ronin_Damage_EclipseRush.anim
-  artifactKey: Guid(11ebdf6d4a872da408369fd0666dae34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Ronin/Ronin_Damage_EclipseRush.anim using Guid(11ebdf6d4a872da408369fd0666dae34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8557cac9282f430ffed06311623a707') in 0.008948 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.956975 seconds.
-  path: Assets/Animations/Ronin/Ronin_Damage_TripleSlash.anim
-  artifactKey: Guid(23509d67ef5717a40bdd73eddc0f84c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Ronin/Ronin_Damage_TripleSlash.anim using Guid(23509d67ef5717a40bdd73eddc0f84c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eee1dbc1902bd8055ae2bd213a96e915') in 0.008931 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.584359 seconds.
-  path: Assets/Animations/Ronin/Ronin_Defense_ShadowRetreat.anim
-  artifactKey: Guid(3523b2b466836c9449068961eebcc20e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Ronin/Ronin_Defense_ShadowRetreat.anim using Guid(3523b2b466836c9449068961eebcc20e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5299f93714fad124e7b477057b856ac4') in 0.009225 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.423909 seconds.
-  path: Assets/Animations/Ronin/Ronin_Defense_SideStep.anim
-  artifactKey: Guid(7f3acb5ccf6d3624f9aa1c5ed23e7d2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Ronin/Ronin_Defense_SideStep.anim using Guid(7f3acb5ccf6d3624f9aa1c5ed23e7d2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a52f7813f73d48e7f5716ac5d63ea22') in 0.008453 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 9.448246 seconds.
-  path: Assets/Animations/Ronin/Ronin_Reaction_ShadowRetreat.anim
-  artifactKey: Guid(8844f4b2c2acaac4093d7d2126608417) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Ronin/Ronin_Reaction_ShadowRetreat.anim using Guid(8844f4b2c2acaac4093d7d2126608417) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d062f87d89fe33515904d46f57e102c') in 0.009019 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.950258 seconds.
-  path: Assets/Animations/Ronin/Ronin_Reaction_SideStep.anim
-  artifactKey: Guid(c8dbc475452de094183c2a3e452f080c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Ronin/Ronin_Reaction_SideStep.anim using Guid(c8dbc475452de094183c2a3e452f080c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9838ab9738472a88f11b2ed681f19bab') in 0.008673 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 37.376731 seconds.
-  path: Assets/Animations/Warrior/Warrior_Defense_Parry.anim
-  artifactKey: Guid(b97dc8d6aca92214b84e5c7a417956f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Warrior/Warrior_Defense_Parry.anim using Guid(b97dc8d6aca92214b84e5c7a417956f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3adaae3e1e75ac2cbdcec570eacdd6c') in 0.010547 seconds 
+  Time since last request: 7820.303368 seconds.
+  path: Assets/Art/Dice/UI_MiniDices.aseprite
+  artifactKey: Guid(47e62668b86e8bb4288e5e8cfbcf8237) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Dice/UI_MiniDices.aseprite using Guid(47e62668b86e8bb4288e5e8cfbcf8237) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53ebb4437cb477445d5cdfc8c48e4431') in 0.715237 seconds 

@@ -9,6 +9,7 @@ public class PlayerSkills : MonoBehaviour
 	public Color pathUnlockedColor;
 	public TextMeshProUGUI skillPointsText;
 	public List<SkillTreeButton> skillTreeButtonsList = new List<SkillTreeButton>();
+	public List<GameObject> skillTrees = new List<GameObject>();
 	public static PlayerSkills Instance;
 
 	private void Awake()
@@ -96,6 +97,36 @@ public class PlayerSkills : MonoBehaviour
 				if (skill.unlockRequirements[i].currentLevel > 0)
 					skill.lines[i].color = pathUnlockedColor;
 			}
+		}
+	}
+
+	public void ActivateSkillTree(CurrentClass.classes curClass)
+	{
+		foreach (var skillTree in skillTrees)
+			skillTree.SetActive(false);
+
+		switch (curClass)
+		{
+			case CurrentClass.classes.Warrior:
+				skillTrees[0].SetActive(true);
+				break;
+			case CurrentClass.classes.Ronin:
+				skillTrees[4].SetActive(true);
+				break;
+			case CurrentClass.classes.Gunslinger:
+				skillTrees[2].SetActive(true);
+				break;
+			case CurrentClass.classes.Technomancer:
+				skillTrees[3].SetActive(true);
+				break;
+			case CurrentClass.classes.Warlock:
+				skillTrees[5].SetActive(true);
+				break;
+			case CurrentClass.classes.Healer:
+				skillTrees[1].SetActive(true);
+				break;
+			default:
+				break;
 		}
 	}
 }

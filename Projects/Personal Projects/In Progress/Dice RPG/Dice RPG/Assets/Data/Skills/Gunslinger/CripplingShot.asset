@@ -20,9 +20,11 @@ MonoBehaviour:
   skillType: 3
   skillClass: 3
   hasSeparateAnim: 0
+  description: Disable an enemy's Dice for multiple turns with your Basic Attack.
   icon: {fileID: -899348551402088272, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
   sprites: []
   frameDuration: 0
+  eventFrames: 
   createdAnimationClip: {fileID: 0}
   separateAnim: {fileID: 0}
   summon: {fileID: 0}

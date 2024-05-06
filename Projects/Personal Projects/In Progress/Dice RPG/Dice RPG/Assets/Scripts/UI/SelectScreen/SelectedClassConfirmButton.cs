@@ -191,6 +191,7 @@ public class SelectedClassConfirmButton : MonoBehaviour
         StatsMenu.Instance.UpdatePoints();
         StatsMenu.Instance.UpdateStats();
         StatsMenu.Instance.UpdateDamageRanges();
+		PlayerSkills.Instance.ActivateSkillTree(characterStats.classData.curClass);
 
         yield return new WaitForSeconds(1.9f);
         for (int i = 0; i < Player.Instance.diceAmount; i++)
