@@ -22,6 +22,7 @@ MonoBehaviour:
   hasSeparateAnim: 0
   description: Gain +1 Basic Attack Damage for the rest of the fight.
   icon: {fileID: -8457232326954375788, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
+  skillTrigger: {fileID: 21300000, guid: b4b257d6c6ab1b840b636b75d7f1256c, type: 3}
   sprites: []
   frameDuration: 0
   eventFrames: 

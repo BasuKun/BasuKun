@@ -21,6 +21,7 @@ public class Skill : ScriptableObject
 
 	[Header("VISUALS")]
 	public Sprite icon;
+	public Sprite skillTrigger;
 
 	[Header("ANIMATIONS")]
     public Sprite[] sprites;

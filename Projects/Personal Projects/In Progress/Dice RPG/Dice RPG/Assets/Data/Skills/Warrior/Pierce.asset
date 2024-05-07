@@ -22,6 +22,7 @@ MonoBehaviour:
   hasSeparateAnim: 0
   description: Deal Skill Damage.
   icon: {fileID: -5492118317891879678, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
+  skillTrigger: {fileID: 21300000, guid: 806c117de59538445baacef48a341522, type: 3}
   sprites:
   - {fileID: 21300000, guid: 33bb826084f8dca40acdb347d88f7369, type: 3}
   - {fileID: 21300000, guid: ef2e0840744044d4f83a7174ff990579, type: 3}

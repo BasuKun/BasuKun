@@ -20,8 +20,9 @@ MonoBehaviour:
   skillType: 1
   skillClass: 2
   hasSeparateAnim: 0
-  description: Gain +1 Skill Damage.
+  description: Gain +1 Skill Damage for each skill activated the previous turn.
   icon: {fileID: 7403219908499112042, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
+  skillTrigger: {fileID: 0}
   sprites: []
   frameDuration: 0
   eventFrames: 

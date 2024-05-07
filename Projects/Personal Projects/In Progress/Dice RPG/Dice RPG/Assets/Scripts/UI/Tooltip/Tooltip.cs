@@ -11,6 +11,8 @@ public class Tooltip : MonoBehaviour
 	public TextMeshProUGUI headerField;
 	public TextMeshProUGUI contentField;
 	public LayoutElement layoutElement;
+	public GameObject dicePattern;
+	public Image patternImage;
 	public int characterWrapLimit;
 	public Vector3 mouseOffset;
 
@@ -49,5 +51,17 @@ public class Tooltip : MonoBehaviour
 		gameObject.SetActive(true);
 
 		LeanTween.alphaCanvas(canvasGroup, 1f, 0.15f);
+	}
+
+	public void SetPattern(Sprite pattern)
+	{
+		if (pattern != null)
+		{
+			patternImage.sprite = pattern;
+			patternImage.SetNativeSize();
+			dicePattern.SetActive(true);
+		}
+		else
+			dicePattern.SetActive(false);
 	}
 }

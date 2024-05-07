@@ -22,6 +22,7 @@ MonoBehaviour:
   hasSeparateAnim: 0
   description: Multiply your Basic Attack damage by 10% per Dice.
   icon: {fileID: -3045888645205628149, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
+  skillTrigger: {fileID: 21300000, guid: 692c7d62a9a6683408c31df0c083aad6, type: 3}
   sprites: []
   frameDuration: 0
   eventFrames: 

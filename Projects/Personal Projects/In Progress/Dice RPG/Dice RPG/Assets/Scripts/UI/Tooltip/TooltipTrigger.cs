@@ -9,12 +9,13 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 	private static LTDescr delay;
 	[NonSerialized] public string header;
 	[NonSerialized] public string description;
+	[NonSerialized] public Sprite pattern;
 
 	public void OnPointerEnter(PointerEventData eventData)
 	{
 		delay = LeanTween.delayedCall(0.5f, () =>
 		{
-			TooltipSystem.Show(description, header);
+			TooltipSystem.Show(description, header, pattern);
 		});
 	}
 
@@ -28,5 +29,6 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 	{
 		header = skill.skillName;
 		description = skill.description;
+		pattern = skill.skillTrigger != null ? skill.skillTrigger : null;
 	}
 }

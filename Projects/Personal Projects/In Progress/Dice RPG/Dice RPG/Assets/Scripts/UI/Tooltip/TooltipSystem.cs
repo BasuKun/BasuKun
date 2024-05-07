@@ -16,8 +16,9 @@ public class TooltipSystem : MonoBehaviour
 		}
 	}
 
-	public static void Show(string content, string header = "")
+	public static void Show(string content, string header = "", Sprite pattern = null)
 	{
+		Instance.tooltip.SetPattern(pattern);
 		Instance.tooltip.SetText(content, header);
 	}
 
