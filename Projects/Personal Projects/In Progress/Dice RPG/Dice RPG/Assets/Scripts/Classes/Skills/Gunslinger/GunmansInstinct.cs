@@ -9,7 +9,8 @@ public class GunmansInstinct : MonoBehaviour, IBuffSkill
 	public void SetData()
     {
 		skillData.currentLevel = 0;
-    }
+		skillData.currentCooldown = 0;
+	}
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
     {
@@ -20,5 +21,7 @@ public class GunmansInstinct : MonoBehaviour, IBuffSkill
             Player.Instance.tempDamageBonus += 2;
             Battle.Instance.SkillNamePopout(skillData.skillName, Player.Instance.character.transform, skillData.skillType);
         }
-    }
+
+		skillData.currentCooldown = skillData.skillCooldown;
+	}
 }

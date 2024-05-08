@@ -9,7 +9,8 @@ public class SideStep : MonoBehaviour, IDefenseSkill
 	public void SetData()
     {
 		skillData.currentLevel = 0;
-    }
+		skillData.currentCooldown = 0;
+	}
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
     {
@@ -24,7 +25,8 @@ public class SideStep : MonoBehaviour, IDefenseSkill
                 Battle.Instance.isSideStepping = true;
                 Player.Instance.damageToAvoid += dices[i].value;
                 StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillData.skillName, false, Player.Instance.character.transform, skillData.skillType));
-                amountTriggered++;
+				skillData.currentCooldown = skillData.skillCooldown;
+				amountTriggered++;
             }
         }
 

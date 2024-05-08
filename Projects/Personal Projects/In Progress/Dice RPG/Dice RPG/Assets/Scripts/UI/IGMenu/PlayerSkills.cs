@@ -33,23 +33,44 @@ public class PlayerSkills : MonoBehaviour
 
 	public void UnlockSkill(string skillName)
 	{
+		ISkill skill = null;
+
 		if (BuffSkillsDictionary.Instance.buffSkillsDictionary.ContainsKey(skillName))
-			Player.Instance.buffSkills.Add(BuffSkillsDictionary.Instance.buffSkillsDictionary[skillName]);
-
+		{
+			skill = BuffSkillsDictionary.Instance.buffSkillsDictionary[skillName];
+			Player.Instance.buffSkills.Add((IBuffSkill)skill);
+		}
 		else if (DamageSkillsDictionary.Instance.damageSkillsDictionary.ContainsKey(skillName))
-			Player.Instance.damageSkills.Add(DamageSkillsDictionary.Instance.damageSkillsDictionary[skillName]);
-
+		{
+			skill = DamageSkillsDictionary.Instance.damageSkillsDictionary[skillName];
+			Player.Instance.damageSkills.Add((IDamageSkill)skill);
+		}
 		else if (DefenseSkillsDictionary.Instance.defenseSkillsDictionary.ContainsKey(skillName))
-			Player.Instance.defenseSkills.Add(DefenseSkillsDictionary.Instance.defenseSkillsDictionary[skillName]);
-
+		{
+			skill = DefenseSkillsDictionary.Instance.defenseSkillsDictionary[skillName];
+			Player.Instance.defenseSkills.Add((IDefenseSkill)skill);
+		}
 		else if (EffectSkillsDictionary.Instance.effectSkillsDictionary.ContainsKey(skillName))
-			Player.Instance.effectSkills.Add(EffectSkillsDictionary.Instance.effectSkillsDictionary[skillName]);
-
+		{
+			skill = EffectSkillsDictionary.Instance.effectSkillsDictionary[skillName];
+			Player.Instance.effectSkills.Add((IEffectSkill)skill);
+		}
 		else if (ReactionSkillsDictionary.Instance.reactionSkillsDictionary.ContainsKey(skillName))
-			Player.Instance.reactionSkills.Add(ReactionSkillsDictionary.Instance.reactionSkillsDictionary[skillName]);
-
+		{
+			skill = ReactionSkillsDictionary.Instance.reactionSkillsDictionary[skillName];
+			Player.Instance.reactionSkills.Add((IReactionSkill)skill);
+		}
 		else if (SummonSkillsDictionary.Instance.summonSkillsDictionary.ContainsKey(skillName))
-			Player.Instance.summonSkills.Add(SummonSkillsDictionary.Instance.summonSkillsDictionary[skillName]);
+		{
+			skill = SummonSkillsDictionary.Instance.summonSkillsDictionary[skillName];
+			Player.Instance.summonSkills.Add((ISummonSkill)skill);
+		}
+
+		if (Player.Instance.equippedSkills.Count < Player.Instance.skillSlotsAmount)
+		{
+			Player.Instance.equippedSkills.Add(skill);
+			SkillsBar.Instance.UpdateSkillsBar();
+		}
 	}
 
 	public void CheckForUnlockedButtons()

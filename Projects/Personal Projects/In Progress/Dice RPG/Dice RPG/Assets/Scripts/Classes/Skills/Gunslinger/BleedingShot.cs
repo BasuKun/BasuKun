@@ -9,9 +9,10 @@ public class BleedingShot : MonoBehaviour, IEffectSkill
 	public void SetData()
     {
 		skillData.currentLevel = 0;
-    }
+		skillData.currentCooldown = 0;
+	}
 
-    public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
+	public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
     {
         if (Battle.Instance.curEnemy.isBleeding) return;
 
@@ -26,9 +27,11 @@ public class BleedingShot : MonoBehaviour, IEffectSkill
                 Battle.Instance.curEnemy.bleedingTurns = 5;
             }
         }
-    }
 
-    public float GetAnimLength()
+		skillData.currentCooldown = skillData.skillCooldown;
+	}
+
+	public float GetAnimLength()
     {
         return 0;
     }

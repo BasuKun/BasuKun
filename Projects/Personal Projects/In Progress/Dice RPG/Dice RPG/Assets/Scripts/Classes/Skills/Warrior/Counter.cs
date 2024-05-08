@@ -9,7 +9,8 @@ public class Counter : MonoBehaviour, IDefenseSkill
 	public void SetData()
     {
 		skillData.currentLevel = 0;
-    }
+		skillData.currentCooldown = 0;
+	}
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
     {
@@ -26,7 +27,8 @@ public class Counter : MonoBehaviour, IDefenseSkill
         if (playerValue > enemyValue)
         {
             Battle.Instance.isCountering = true;
-            return;
+			skillData.currentCooldown = skillData.skillCooldown;
+			return;
         }
         else Battle.Instance.isCountering = false;
     }

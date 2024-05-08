@@ -9,7 +9,8 @@ public class Karma : MonoBehaviour, IBuffSkill
 	public void SetData()
     {
 		skillData.currentLevel = 0;
-    }
+		skillData.currentCooldown = 0;
+	}
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
     {
@@ -19,5 +20,7 @@ public class Karma : MonoBehaviour, IBuffSkill
             Player.Instance.damageToDeal *= 2;
             Battle.Instance.SkillNamePopout(skillData.skillName, Player.Instance.character.transform, skillData.skillType);
         }
-    }
+
+		skillData.currentCooldown = skillData.skillCooldown;
+	}
 }

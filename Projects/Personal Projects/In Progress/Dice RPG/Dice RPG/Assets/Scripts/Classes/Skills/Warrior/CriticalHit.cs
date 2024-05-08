@@ -9,7 +9,8 @@ public class CriticalHit : MonoBehaviour, IBuffSkill
 	public void SetData()
     {
 		skillData.currentLevel = 0;
-    }
+		skillData.currentCooldown = 0;
+	}
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
     {
         foreach (var dice in dices)
@@ -20,5 +21,7 @@ public class CriticalHit : MonoBehaviour, IBuffSkill
                 dice.skillValue = (int)(dice.skillValue * 0.3f);
             }
         }
-    }
+
+		skillData.currentCooldown = skillData.skillCooldown;
+	}
 }

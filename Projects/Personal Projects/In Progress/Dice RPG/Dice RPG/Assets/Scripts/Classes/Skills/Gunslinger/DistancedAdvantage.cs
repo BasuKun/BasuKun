@@ -9,7 +9,8 @@ public class DistancedAdvantage : MonoBehaviour, IBuffSkill
 	public void SetData()
     {
 		skillData.currentLevel = 0;
-    }
+		skillData.currentCooldown = 0;
+	}
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
     {
@@ -21,5 +22,7 @@ public class DistancedAdvantage : MonoBehaviour, IBuffSkill
             StartCoroutine(dices[0].TriggerSkillAnimation(0f, skillData.skillName, true, Player.Instance.character.transform, skillData.skillType));
             Battle.Instance.hasDistanceAdvantage = true;
         }
-    }
+
+		skillData.currentCooldown = skillData.skillCooldown;
+	}
 }

@@ -9,7 +9,8 @@ public class ShadowRetreat : MonoBehaviour, IDefenseSkill
 	public void SetData()
     {
 		skillData.currentLevel = 0;
-    }
+		skillData.currentCooldown = 0;
+	}
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
     {
@@ -18,7 +19,8 @@ public class ShadowRetreat : MonoBehaviour, IDefenseSkill
         if (Battle.Instance.curPlayer.mostRolledDigit <= Battle.Instance.curEnemy.mostRolledDigit / 2)
         {
             Battle.Instance.isShadowRetreating = true;
-        }
-        else Battle.Instance.isShadowRetreating = false;
+			skillData.currentCooldown = skillData.skillCooldown;
+		}
+		else Battle.Instance.isShadowRetreating = false;
     }
 }

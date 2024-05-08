@@ -9,7 +9,8 @@ public class CripplingShot : MonoBehaviour, IEffectSkill
 	public void SetData()
     {
 		skillData.currentLevel = 0;
-    }
+		skillData.currentCooldown = 0;
+	}
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
     {
@@ -19,5 +20,7 @@ public class CripplingShot : MonoBehaviour, IEffectSkill
             int random = Random.Range(0, enemyDices.Count - 1);
             enemyDices[random].LockDice(dices[dices.Count - 2].value);
         }
-    }
+
+		skillData.currentCooldown = skillData.skillCooldown;
+	}
 }

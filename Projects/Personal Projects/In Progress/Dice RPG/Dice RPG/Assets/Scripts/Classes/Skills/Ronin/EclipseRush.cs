@@ -12,7 +12,8 @@ public class EclipseRush : MonoBehaviour, IDamageSkill
     public void SetData()
     {
 		skillData.currentLevel = 0;
-    }
+		skillData.currentCooldown = 0;
+	}
 
     public bool hasSkillPattern(List<Dice> dices)
     {
@@ -42,6 +43,8 @@ public class EclipseRush : MonoBehaviour, IDamageSkill
         }
 
 		animator.Play(skillData.stateName);
+
+		skillData.currentCooldown = skillData.skillCooldown;
 	}
 
 	public float GetAnimLength()

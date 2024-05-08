@@ -11,7 +11,8 @@ public class SatansWrath : MonoBehaviour, IDamageSkill
 	public void SetData()
     {
 		skillData.currentLevel = 0;
-    }
+		skillData.currentCooldown = 0;
+	}
 
     public bool hasSkillPattern(List<Dice> dices)
     {
@@ -35,9 +36,11 @@ public class SatansWrath : MonoBehaviour, IDamageSkill
     {
         Player.Instance.damageToDeal = damageToDeal;
         anim = Instantiate(skillData.separateAnim);
-    }
 
-    public float GetAnimLength()
+		skillData.currentCooldown = skillData.skillCooldown;
+	}
+
+	public float GetAnimLength()
     {
         return anim.GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.length;
     }

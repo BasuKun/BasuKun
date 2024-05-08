@@ -9,7 +9,8 @@ public class Bullseye : MonoBehaviour, IBuffSkill
 	public void SetData()
     {
 		skillData.currentLevel = 0;
-    }
+		skillData.currentCooldown = 0;
+	}
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
     {
@@ -22,5 +23,7 @@ public class Bullseye : MonoBehaviour, IBuffSkill
 
             Player.Instance.damageToDeal += (int)(Player.Instance.damageToDeal * diceAmount * 0.1f);
         }
-    }
+
+		skillData.currentCooldown = skillData.skillCooldown;
+	}
 }

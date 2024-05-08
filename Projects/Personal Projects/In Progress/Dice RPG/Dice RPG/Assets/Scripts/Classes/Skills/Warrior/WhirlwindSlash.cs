@@ -10,7 +10,8 @@ public class WhirlwindSlash : MonoBehaviour, IDamageSkill
 	public void SetData()
     {
 		skillData.currentLevel = 0;
-    }
+		skillData.currentCooldown = 0;
+	}
 
     public bool hasSkillPattern(List<Dice> dices)
     {
@@ -35,6 +36,8 @@ public class WhirlwindSlash : MonoBehaviour, IDamageSkill
     {
         Player.Instance.damageToDeal = damageToDeal + Player.Instance.damageBonus + Player.Instance.tempDamageBonus;
 		animator.Play(skillData.stateName);
+
+		skillData.currentCooldown = skillData.skillCooldown;
 	}
 
 	public float GetAnimLength()

@@ -31,6 +31,9 @@ public class Player : MonoBehaviour
     public List<IReactionSkill> reactionSkills = new List<IReactionSkill>();
     public List<IDefenseSkill> defenseSkills = new List<IDefenseSkill>();
     public List<ISummonSkill> summonSkills = new List<ISummonSkill>();
+	public List<ISkill> equippedSkills = new List<ISkill>();
+	public int skillSlotsAmount;
+	public int maxSkillSlots = 15;
 
     [Header("OTHER STATS")]
     public int level = 1;
@@ -112,7 +115,8 @@ public class Player : MonoBehaviour
 
         foreach (var skill in buffSkills)
         {
-            skill.PerformSkill(dices, Battle.Instance.curEnemy.dices);
+			if (skill.skillData.currentCooldown == 0)
+				skill.PerformSkill(dices, Battle.Instance.curEnemy.dices);
         }
 
         yield return new WaitForSeconds(0.05f);
@@ -125,7 +129,7 @@ public class Player : MonoBehaviour
         {
             if (Battle.Instance.curEnemy.isDying) break;
 
-            if (skill.hasSkillPattern(dices))
+            if (skill.skillData.currentCooldown == 0 && skill.hasSkillPattern(dices))
             {
                 skill.PerformSkill(character.animator);
                 yield return new WaitForSeconds(0.01f);
@@ -162,7 +166,7 @@ public class Player : MonoBehaviour
         {
             if (Battle.Instance.curEnemy.isDying) break;
 
-            if (skill.hasSkillPattern(dices))
+			if (skill.skillData.currentCooldown == 0 && skill.hasSkillPattern(dices))
             {
                 skill.PerformSkill(character.animator);
                 isSummoning = true;
@@ -206,9 +210,10 @@ public class Player : MonoBehaviour
         {
             foreach (var skill in reactionSkills)
             {
-                skill.PerformSkill(dices, dices, curHitPoints, maxHitPoints);
-            }
-        }
+				if (skill.skillData.currentCooldown == 0)
+					skill.PerformSkill(dices, dices, curHitPoints, maxHitPoints);
+			}
+		}
 
         float hpPercent = (float)curHitPoints / (float)maxHitPoints * 100f;
         float offset = 80f;

@@ -9,7 +9,8 @@ public class Berserk : MonoBehaviour, IReactionSkill
 	public void SetData()
     {
 		skillData.currentLevel = 0;
-    }
+		skillData.currentCooldown = 0;
+	}
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices, int curHitPoints, int maxHitPoints)
     {
@@ -23,7 +24,8 @@ public class Berserk : MonoBehaviour, IReactionSkill
         {
             Battle.Instance.isBerserking = true;
             Battle.Instance.SkillNamePopout("Berserk", Player.Instance.character.transform, SkillTypes.types.Reaction);
-            Player.Instance.AddDice(true, false, int.MaxValue);
+			skillData.currentCooldown = skillData.skillCooldown;
+			Player.Instance.AddDice(true, false, int.MaxValue);
             Player.Instance.AddDice(true, false, int.MaxValue);
         }
 
@@ -31,9 +33,10 @@ public class Berserk : MonoBehaviour, IReactionSkill
         {
             ResetSkill();
         }
-    }
 
-    public void ResetSkill()
+	}
+
+	public void ResetSkill()
     {
         Battle.Instance.isBerserking = false;
 

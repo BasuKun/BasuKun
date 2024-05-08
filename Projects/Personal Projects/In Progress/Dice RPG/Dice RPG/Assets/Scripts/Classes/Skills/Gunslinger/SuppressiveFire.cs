@@ -10,7 +10,8 @@ public class SuppressiveFire : MonoBehaviour, IDamageSkill
 	public void SetData()
     {
 		skillData.currentLevel = 0;
-    }
+		skillData.currentCooldown = 0;
+	}
 
     public bool hasSkillPattern(List<Dice> dices)
     {
@@ -34,6 +35,8 @@ public class SuppressiveFire : MonoBehaviour, IDamageSkill
     {
         Player.Instance.damageToDeal = damageToDeal;
 		animator.Play(skillData.stateName);
+
+		skillData.currentCooldown = skillData.skillCooldown;
 	}
 
 	public float GetAnimLength()

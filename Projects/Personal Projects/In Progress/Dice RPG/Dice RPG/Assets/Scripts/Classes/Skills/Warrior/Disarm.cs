@@ -9,7 +9,8 @@ public class Disarm : MonoBehaviour, IEffectSkill
 	public void SetData()
     {
 		skillData.currentLevel = 0;
-    }
+		skillData.currentCooldown = 0;
+	}
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
     {
@@ -21,5 +22,7 @@ public class Disarm : MonoBehaviour, IEffectSkill
                 enemyDices[i].LockDice(dices[dices.Count - 1].value);
             }
         }
-    }
+
+		skillData.currentCooldown = skillData.skillCooldown;
+	}
 }

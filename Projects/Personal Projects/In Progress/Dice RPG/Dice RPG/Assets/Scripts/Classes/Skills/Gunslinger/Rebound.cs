@@ -10,7 +10,8 @@ public class Rebound : MonoBehaviour, IDamageSkill
 	public void SetData()
     {
         skillData.currentLevel = 0;
-    }
+		skillData.currentCooldown = 0;
+	}
 
     public bool hasSkillPattern(List<Dice> dices)
     {
@@ -33,9 +34,11 @@ public class Rebound : MonoBehaviour, IDamageSkill
     {
         Player.Instance.damageToDeal = damageToDeal;
         Battle.Instance.DealDamage(false, Player.Instance.damageToDeal);
-    }
 
-    public float GetAnimLength()
+		skillData.currentCooldown = skillData.skillCooldown;
+	}
+
+	public float GetAnimLength()
     {
         return 0;
     }

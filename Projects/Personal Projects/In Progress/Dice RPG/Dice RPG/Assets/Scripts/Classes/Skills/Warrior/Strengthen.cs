@@ -9,7 +9,8 @@ public class Strengthen : MonoBehaviour, IBuffSkill
 	public void SetData()
     {
 		skillData.currentLevel = 0;
-    }
+		skillData.currentCooldown = 0;
+	}
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
     {
@@ -29,5 +30,7 @@ public class Strengthen : MonoBehaviour, IBuffSkill
         {
             Battle.Instance.SkillNamePopout(skillData.skillName + " x" + amount, Player.Instance.character.transform, skillData.skillType);
         }
-    }
+
+		skillData.currentCooldown = skillData.skillCooldown;
+	}
 }

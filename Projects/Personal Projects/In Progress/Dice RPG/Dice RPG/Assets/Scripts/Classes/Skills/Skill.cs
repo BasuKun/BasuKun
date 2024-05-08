@@ -13,7 +13,8 @@ public class Skill : ScriptableObject
 	public string stateName;
 	public int currentLevel;
     public int maxLevel;
-    public int skillCooldown;
+	public int currentCooldown;
+	public int skillCooldown;
     public SkillTypes.types skillType;
     public CurrentClass.classes skillClass;
 	public bool hasSeparateAnim;

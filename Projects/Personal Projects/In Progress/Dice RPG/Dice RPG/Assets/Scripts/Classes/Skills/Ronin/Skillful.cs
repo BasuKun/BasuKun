@@ -9,7 +9,8 @@ public class Skillful : MonoBehaviour, IBuffSkill
 	public void SetData()
     {
 		skillData.currentLevel = 0;
-    }
+		skillData.currentCooldown = 0;
+	}
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
     {
@@ -20,5 +21,7 @@ public class Skillful : MonoBehaviour, IBuffSkill
         }
 
         Player.Instance.skillsActivated = 0;
-    }
+
+		skillData.currentCooldown = skillData.skillCooldown;
+	}
 }

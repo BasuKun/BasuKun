@@ -80,9 +80,10 @@ public class Battle : MonoBehaviour
             }
 
             turn++;
-        }
+			ReduceSkillsCooldown(1);
+		}
 
-        yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(1f);
         player.tempDamageBonus = 0;
         turn = 0;
         ResetSkills();
@@ -108,17 +109,35 @@ public class Battle : MonoBehaviour
             }
         }
 
-        Player.Instance.diceRack.GetComponent<DiceRackSizeFitter>().ResizeRack(Player.Instance.dices);
+		ReduceSkillsCooldown(999);
+		Player.Instance.diceRack.GetComponent<DiceRackSizeFitter>().ResizeRack(Player.Instance.dices);
     }
+
+	public void ReduceSkillsCooldown(int amount)
+	{
+		foreach (var skill in Player.Instance.buffSkills)
+			skill.skillData.currentCooldown = Mathf.Max(0, skill.skillData.currentCooldown - amount);
+		foreach (var skill in Player.Instance.damageSkills)
+			skill.skillData.currentCooldown = Mathf.Max(0, skill.skillData.currentCooldown - amount);
+		foreach (var skill in Player.Instance.defenseSkills)
+			skill.skillData.currentCooldown = Mathf.Max(0, skill.skillData.currentCooldown - amount);
+		foreach (var skill in Player.Instance.effectSkills)
+			skill.skillData.currentCooldown = Mathf.Max(0, skill.skillData.currentCooldown - amount);
+		foreach (var skill in Player.Instance.summonSkills)
+			skill.skillData.currentCooldown = Mathf.Max(0, skill.skillData.currentCooldown - amount);
+		foreach (var skill in Player.Instance.reactionSkills)
+			skill.skillData.currentCooldown = Mathf.Max(0, skill.skillData.currentCooldown - amount);
+	}
 
     public void ReceiveDamage()
     {
         foreach (var skill in curPlayer.defenseSkills)
         {
-            skill.PerformSkill(curPlayer.dices, curEnemy.dices);
-        }
+			if (skill.skillData.currentCooldown == 0)
+				skill.PerformSkill(curPlayer.dices, curEnemy.dices);
+		}
 
-        if (isShadowRetreating)
+		if (isShadowRetreating)
         {
             Player.Instance.skillsActivated++;
             SkillNamePopout("Shadow Retreat", Player.Instance.character.transform, SkillTypes.types.Defense);
@@ -157,7 +176,8 @@ public class Battle : MonoBehaviour
         {
             foreach (var skill in curPlayer.effectSkills)
             {
-                skill.PerformSkill(curPlayer.dices, curEnemy.dices);
+				if (skill.skillData.currentCooldown == 0)
+					skill.PerformSkill(curPlayer.dices, curEnemy.dices);
             }
         }
 

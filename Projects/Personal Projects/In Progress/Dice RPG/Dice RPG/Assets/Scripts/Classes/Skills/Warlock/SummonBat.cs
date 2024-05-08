@@ -9,7 +9,8 @@ public class SummonBat : MonoBehaviour, ISummonSkill
 	public void SetData()
     {
         skillData.currentLevel = 0;
-    }
+		skillData.currentCooldown = 0;
+	}
 
     public bool hasSkillPattern(List<Dice> dices)
     {
@@ -22,6 +23,7 @@ public class SummonBat : MonoBehaviour, ISummonSkill
                 StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillData.skillName, true, Player.Instance.character.transform, skillData.skillType));
                 Player.Instance.summonsToActivate.Add(skillData.summon);
                 Player.Instance.hasBat = true;
+				skillData.currentCooldown = skillData.skillCooldown;
 				skillData.summon.isActive = true;
 				skillData.summon.linkedDice = dices[i];
 				skillData.summon.turnsActive = 5;
