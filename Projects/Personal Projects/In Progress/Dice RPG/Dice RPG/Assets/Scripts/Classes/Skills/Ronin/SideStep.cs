@@ -32,4 +32,17 @@ public class SideStep : MonoBehaviour, IDefenseSkill
 
         if (amountTriggered == 0) Battle.Instance.isSideStepping = false;
     }
+
+	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
+	{
+		int maxDice = Mathf.Min(dices.Count, enemyDices.Count);
+
+		for (int i = 0; i < maxDice; i++)
+		{
+			if (dices[i].value == enemyDices[i].value)
+				return true;
+		}
+
+		return false;
+	}
 }

@@ -13,16 +13,19 @@ public class Pierce : MonoBehaviour, IDamageSkill
 		skillData.currentCooldown = 0;
 	}
 
-    public bool hasSkillPattern(List<Dice> dices)
+    public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
     {
         for (int i = 0; i < dices.Count - 2; i++)
         {
             if (dices[i].value == 1 && dices[i + 1].value == 1)
             {
-                damageToDeal = dices[i + 2].skillValue * 3;
-                StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillData.skillName, true, Player.Instance.character.transform, skillData.skillType));
-                StartCoroutine(dices[i + 1].TriggerSkillAnimation(0f, skillData.skillName, false, Player.Instance.character.transform, skillData.skillType));
-                StartCoroutine(dices[i + 2].TriggerSkillAnimation(0f, skillData.skillName, false, Player.Instance.character.transform, skillData.skillType));
+				if (triggerAttack)
+				{
+					damageToDeal = dices[i + 2].skillValue * 3;
+					StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillData.skillName, true, Player.Instance.character.transform, skillData.skillType));
+					StartCoroutine(dices[i + 1].TriggerSkillAnimation(0f, skillData.skillName, false, Player.Instance.character.transform, skillData.skillType));
+					StartCoroutine(dices[i + 2].TriggerSkillAnimation(0f, skillData.skillName, false, Player.Instance.character.transform, skillData.skillType));
+				}
 
                 return true;
             }

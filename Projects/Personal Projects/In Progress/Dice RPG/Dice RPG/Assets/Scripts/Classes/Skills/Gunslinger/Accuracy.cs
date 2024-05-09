@@ -25,4 +25,15 @@ public class Accuracy : MonoBehaviour, IBuffSkill
 
 		skillData.currentCooldown = skillData.skillCooldown;
     }
+
+	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
+	{
+		foreach (var dice in dices)
+		{
+			if (dice.value == 1)
+				return true;
+		}
+
+		return false;
+	}
 }

@@ -7,33 +7,40 @@ public class Berserk : MonoBehaviour, IReactionSkill
 	[field: SerializeField] public Skill skillData { get; set; }
 
 	public void SetData()
-    {
+	{
 		skillData.currentLevel = 0;
 		skillData.currentCooldown = 0;
 	}
 
-    public void PerformSkill(List<Dice> dices, List<Dice> enemyDices, int curHitPoints, int maxHitPoints)
-    {
-        if (curHitPoints <= 0 && !Battle.Instance.isLastBreathing)
-        {
-            ResetSkill();
-            return;
-        }
+	public void PerformSkill(List<Dice> dices, List<Dice> enemyDices, int curHitPoints, int maxHitPoints)
+	{
+		if (curHitPoints <= 0 && !Battle.Instance.isLastBreathing)
+		{
+			ResetSkill();
+			return;
+		}
 
-        if ((float)curHitPoints / (float)maxHitPoints <= 0.25f && !Battle.Instance.isBerserking)
-        {
-            Battle.Instance.isBerserking = true;
-            Battle.Instance.SkillNamePopout("Berserk", Player.Instance.character.transform, SkillTypes.types.Reaction);
+		if ((float)curHitPoints / (float)maxHitPoints <= 0.25f && !Battle.Instance.isBerserking)
+		{
+			Battle.Instance.isBerserking = true;
+			Battle.Instance.SkillNamePopout("Berserk", Player.Instance.character.transform, SkillTypes.types.Reaction);
 			skillData.currentCooldown = skillData.skillCooldown;
 			Player.Instance.AddDice(true, false, int.MaxValue);
-            Player.Instance.AddDice(true, false, int.MaxValue);
-        }
+			Player.Instance.AddDice(true, false, int.MaxValue);
+		}
 
-        if (((float)curHitPoints / (float)maxHitPoints > 0.25f && Battle.Instance.isBerserking))
-        {
-            ResetSkill();
-        }
+		if (((float)curHitPoints / (float)maxHitPoints > 0.25f && Battle.Instance.isBerserking))
+		{
+			ResetSkill();
+		}
+	}
 
+	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
+	{
+		if (Battle.Instance.curPlayer.curHitPoints / Battle.Instance.curPlayer.maxHitPoints <= 0.25f && !Battle.Instance.isBerserking)
+			return true;
+
+		return false;
 	}
 
 	public void ResetSkill()

@@ -25,4 +25,15 @@ public class DistancedAdvantage : MonoBehaviour, IBuffSkill
 
 		skillData.currentCooldown = skillData.skillCooldown;
 	}
+
+	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
+	{
+		if (Battle.Instance.turn != 1)
+			return false;
+
+		if (dices[0].value > 3)
+			return true;
+
+		return false;
+	}
 }

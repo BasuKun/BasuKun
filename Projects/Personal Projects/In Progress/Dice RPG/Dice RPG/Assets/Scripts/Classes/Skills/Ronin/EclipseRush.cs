@@ -15,17 +15,15 @@ public class EclipseRush : MonoBehaviour, IDamageSkill
 		skillData.currentCooldown = 0;
 	}
 
-    public bool hasSkillPattern(List<Dice> dices)
-    {
-        diceReqs.Clear();
+	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
+	{
+		diceReqs.Clear();
 
         foreach (var dice in dices)
         {
             if (!diceReqs.TryGetValue(dice.value, out Dice assignedDice))
-            {
-                diceReqs.Add(dice.value, dice);
-            }
-        }
+				diceReqs.Add(dice.value, dice);
+		}
 
         return diceReqs.Count == 6;
     }
@@ -38,9 +36,7 @@ public class EclipseRush : MonoBehaviour, IDamageSkill
         Battle.Instance.SkillNamePopout(skillData.skillName, Player.Instance.character.transform, skillData.skillType);
 
         foreach (var dice in diceReqs)
-        {
-            StartCoroutine(dice.Value.TriggerSkillAnimation(0f, skillData.skillName, false, Player.Instance.character.transform, skillData.skillType));
-        }
+			StartCoroutine(dice.Value.TriggerSkillAnimation(0f, skillData.skillName, false, Player.Instance.character.transform, skillData.skillType));
 
 		animator.Play(skillData.stateName);
 

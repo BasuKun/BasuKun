@@ -13,13 +13,16 @@ public class Dynamite : MonoBehaviour, IDamageSkill
 		skillData.currentCooldown = 0;
 	}
 
-    public bool hasSkillPattern(List<Dice> dices)
-    {
-        if (dices[dices.Count - 1].value == dices[0].value * 2)
+	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
+	{
+		if (dices[dices.Count - 1].value == dices[0].value * 2)
 		{
-            damageToDeal = dices[dices.Count - 1].skillValue * 4;
-            StartCoroutine(dices[0].TriggerSkillAnimation(0f, skillData.skillName, true, Player.Instance.character.transform, skillData.skillType));
-            StartCoroutine(dices[dices.Count - 1].TriggerSkillAnimation(0f, skillData.skillName, false, Player.Instance.character.transform, skillData.skillType));
+			if (triggerAttack)
+			{
+				damageToDeal = dices[dices.Count - 1].skillValue * 4;
+				StartCoroutine(dices[0].TriggerSkillAnimation(0f, skillData.skillName, true, Player.Instance.character.transform, skillData.skillType));
+				StartCoroutine(dices[dices.Count - 1].TriggerSkillAnimation(0f, skillData.skillName, false, Player.Instance.character.transform, skillData.skillType));
+			}
 
             return true;
         }

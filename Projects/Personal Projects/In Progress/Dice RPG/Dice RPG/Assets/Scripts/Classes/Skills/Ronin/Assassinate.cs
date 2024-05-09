@@ -13,17 +13,22 @@ public class Assassinate : MonoBehaviour, IDamageSkill
 		skillData.currentCooldown = 0;
 	}
 
-    public bool hasSkillPattern(List<Dice> dices)
-    {
-        if ((float)Battle.Instance.curEnemy.curHitPoints / (float)Battle.Instance.curEnemy.hitPoints > 0.2f) return false;
+	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
+	{
+		if ((float)Battle.Instance.curEnemy.curHitPoints / (float)Battle.Instance.curEnemy.hitPoints > 0.2f) 
+			return false;
         else
         {
             foreach (var dice in dices)
             {
                 if (dice.value == 2)
                 {
-                    damageToDeal = Battle.Instance.curEnemy.curHitPoints;
-                    StartCoroutine(dice.TriggerSkillAnimation(0f, skillData.skillName, true, Player.Instance.character.transform, skillData.skillType));
+					if (triggerAttack)
+					{
+						damageToDeal = Battle.Instance.curEnemy.curHitPoints;
+						StartCoroutine(dice.TriggerSkillAnimation(0f, skillData.skillName, true, Player.Instance.character.transform, skillData.skillType));
+					}
+
                     return true;
                 }
             }

@@ -28,4 +28,15 @@ public class Pickpocket : MonoBehaviour, IBuffSkill
 
 		skillData.currentCooldown = skillData.skillCooldown;
 	}
+
+	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
+	{
+		for (int i = 0; i < dices.Count - 1; i++)
+		{
+			if (dices[i].value + dices[i + 1].value == 7)
+				return true;
+		}
+
+		return false;
+	}
 }

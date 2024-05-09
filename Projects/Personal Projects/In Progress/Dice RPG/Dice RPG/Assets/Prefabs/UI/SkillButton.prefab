@@ -452,6 +452,7 @@ GameObject:
   - component: {fileID: 402627711130920685}
   - component: {fileID: 402627711130920684}
   - component: {fileID: 402627711130920595}
+  - component: {fileID: 1173990879422330788}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -572,6 +573,20 @@ MonoBehaviour:
           m_StringArgument: Pierce
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1173990879422330788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402627711130920593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48787e5052197764eb6455074318f04c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillData: {fileID: 0}
+  iconPrefab: {fileID: 6477418918016058443, guid: e6aaf84addada81418b2a25e6eee1a78, type: 3}
 --- !u!1 &402627711321610643
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,6 +718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillData: {fileID: 0}
   button: {fileID: 402627711130920595}
+  skillIcon: {fileID: 1173990879422330788}
   icon: {fileID: 402627711130920684}
   outline: {fileID: 3569885775404765179}
   currentLevelText: {fileID: 1004668857}

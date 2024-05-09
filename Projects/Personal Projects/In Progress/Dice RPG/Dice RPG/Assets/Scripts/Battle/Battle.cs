@@ -285,10 +285,14 @@ public class Battle : MonoBehaviour
 		}
 
         yield return new WaitForSeconds(0.95f);
-        DiceButtons.Instance.okButton.interactable = true;
+
+		curPlayer.mostRolledDigit = CalculateMostRolledDigit(curPlayer.dices);
+		DiceButtons.Instance.okButton.interactable = true;
         canModifyDices = true;
 
-        yield return null;
+		SkillsBar.Instance.CheckTriggers();
+
+		yield return null;
 	}
 
     public void SwapDices()
@@ -309,5 +313,7 @@ public class Battle : MonoBehaviour
 
         dicesToSwap[0].Swap(secondValue);
         dicesToSwap[1].Swap(firstValue);
-    }
+
+		SkillsBar.Instance.CheckTriggers();
+	}
 }

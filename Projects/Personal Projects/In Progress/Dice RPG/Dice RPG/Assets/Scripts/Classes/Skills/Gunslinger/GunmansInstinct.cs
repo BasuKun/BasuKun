@@ -24,4 +24,15 @@ public class GunmansInstinct : MonoBehaviour, IBuffSkill
 
 		skillData.currentCooldown = skillData.skillCooldown;
 	}
+
+	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
+	{
+		if (Battle.Instance.curPlayer.mostRolledDigit == 0) 
+			return false;
+
+		if (Battle.Instance.curPlayer.mostRolledDigit == Battle.Instance.curEnemy.mostRolledDigit)
+			return true;
+
+		return false;
+	}
 }

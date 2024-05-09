@@ -13,17 +13,20 @@ public class SeismicDive : MonoBehaviour, IDamageSkill
 		skillData.currentCooldown = 0;
 	}
 
-    public bool hasSkillPattern(List<Dice> dices)
-    {
-        for (int i = 0; i < dices.Count - 3; i++)
+	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
+	{
+		for (int i = 0; i < dices.Count - 3; i++)
         {
             if (dices[i].value < dices[i + 1].value && dices[i + 1].value == dices[i + 2].value && dices[i + 2].value > dices[i + 3].value)
             {
-                damageToDeal = (dices[i].skillValue + dices[i + 1].skillValue + dices[i + 2].skillValue + dices[i + 3].skillValue) * 2;
-                StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillData.skillName, true, Player.Instance.character.transform, skillData.skillType));
-                StartCoroutine(dices[i + 1].TriggerSkillAnimation(0f, skillData.skillName, false, Player.Instance.character.transform, skillData.skillType));
-                StartCoroutine(dices[i + 2].TriggerSkillAnimation(0f, skillData.skillName, false, Player.Instance.character.transform, skillData.skillType));
-                StartCoroutine(dices[i + 3].TriggerSkillAnimation(0f, skillData.skillName, false, Player.Instance.character.transform, skillData.skillType));
+				if (triggerAttack)
+				{
+					damageToDeal = (dices[i].skillValue + dices[i + 1].skillValue + dices[i + 2].skillValue + dices[i + 3].skillValue) * 2;
+					StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillData.skillName, true, Player.Instance.character.transform, skillData.skillType));
+					StartCoroutine(dices[i + 1].TriggerSkillAnimation(0f, skillData.skillName, false, Player.Instance.character.transform, skillData.skillType));
+					StartCoroutine(dices[i + 2].TriggerSkillAnimation(0f, skillData.skillName, false, Player.Instance.character.transform, skillData.skillType));
+					StartCoroutine(dices[i + 3].TriggerSkillAnimation(0f, skillData.skillName, false, Player.Instance.character.transform, skillData.skillType));
+				}
 
                 return true;
             }

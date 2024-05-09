@@ -32,4 +32,20 @@ public class Bandage : MonoBehaviour, IBuffSkill
 
 		skillData.currentCooldown = skillData.skillCooldown;
 	}
+
+	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
+	{
+		if ((float)Player.Instance.curHitPoints / (float)Player.Instance.maxHitPoints > 0.30f) 
+			return false;
+		else
+		{
+			for (int i = 1; i < dices.Count - 1; i++)
+			{
+				if (dices[i - 1].value == dices[i + 1].value)
+					return true;
+			}
+		}
+
+		return false;
+	}
 }

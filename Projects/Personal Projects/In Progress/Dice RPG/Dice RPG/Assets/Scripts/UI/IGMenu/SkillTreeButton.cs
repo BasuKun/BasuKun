@@ -12,6 +12,7 @@ public class SkillTreeButton : MonoBehaviour
 
 	[Header("COMPONENTS")]
 	public Button button;
+	public SkillIcon skillIcon;
 	public Image icon;
 	public Image outline;
 	public TextMeshProUGUI currentLevelText;
@@ -41,7 +42,7 @@ public class SkillTreeButton : MonoBehaviour
     {
         GenerateLine();
 		SetVisuals();
-
+		skillIcon.enabled = false;
 	}
 
 	private void Start()
@@ -145,7 +146,10 @@ public class SkillTreeButton : MonoBehaviour
     public void BuySkillLevel()
     {
         if (currentLevel == 0)
-            PlayerSkills.Instance.UnlockSkill(skillData.skillName);
+		{
+			PlayerSkills.Instance.UnlockSkill(skillData.skillName);
+			skillIcon.enabled = true;
+		}
 
         skill.skillData.currentLevel++;
         UpdateCurrentLevel();

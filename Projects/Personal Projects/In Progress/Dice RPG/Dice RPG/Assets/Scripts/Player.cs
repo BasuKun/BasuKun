@@ -25,15 +25,16 @@ public class Player : MonoBehaviour
     public int damageToAvoid;
     public int mostRolledDigit;
     public int diceAmount;
-    public List<IDamageSkill> damageSkills = new List<IDamageSkill>();
+	public int skillSlotsAmount = 2;
+	public int maxSkillSlots = 15;
+	public List<IDamageSkill> damageSkills = new List<IDamageSkill>();
     public List<IBuffSkill> buffSkills = new List<IBuffSkill>();
     public List<IEffectSkill> effectSkills = new List<IEffectSkill>();
     public List<IReactionSkill> reactionSkills = new List<IReactionSkill>();
     public List<IDefenseSkill> defenseSkills = new List<IDefenseSkill>();
     public List<ISummonSkill> summonSkills = new List<ISummonSkill>();
-	public List<ISkill> equippedSkills = new List<ISkill>();
-	public int skillSlotsAmount;
-	public int maxSkillSlots = 15;
+	public List<ISkill> equippedSkills = new List<ISkill>(new ISkill[2]);
+
 
     [Header("OTHER STATS")]
     public int level = 1;
@@ -80,7 +81,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void AddDice(bool isBerserkDice, bool isPermanentDice, int permTurnAmount)
+	private void Update()
+	{
+		if (equippedSkills.Count < skillSlotsAmount)
+			equippedSkills.Add(null);
+	}
+
+	public void AddDice(bool isBerserkDice, bool isPermanentDice, int permTurnAmount)
     {
         GameObject dice = Instantiate(dicePrefab, diceRack.transform.position, Quaternion.identity, diceRack.transform);
         Dice diceStats = dice.GetComponent<Dice>();
@@ -102,8 +109,13 @@ public class Player : MonoBehaviour
 
         Battle.Instance.canModifyDices = true;
         DiceButtons.Instance.okButton.interactable = true;
-        while (!Battle.Instance.isReadyToAttack && !Battle.Instance.isAutoAttacking) yield return null;
-        Battle.Instance.canModifyDices = false;
+
+		SkillsBar.Instance.CheckTriggers();
+
+        while (!Battle.Instance.isReadyToAttack && !Battle.Instance.isAutoAttacking) 
+			yield return null;
+
+		Battle.Instance.canModifyDices = false;
         foreach (Dice dice in dices) dice.RemoveHighlight();
 
         foreach (Dice dice in dices) damageToDeal += dice.value;
@@ -113,7 +125,9 @@ public class Player : MonoBehaviour
         damageToDeal += damageBonus;
         damageToDeal += tempDamageBonus;
 
-        foreach (var skill in buffSkills)
+		SkillsBar.Instance.ResetTriggers();
+
+		foreach (var skill in buffSkills)
         {
 			if (skill.skillData.currentCooldown == 0)
 				skill.PerformSkill(dices, Battle.Instance.curEnemy.dices);
@@ -129,7 +143,7 @@ public class Player : MonoBehaviour
         {
             if (Battle.Instance.curEnemy.isDying) break;
 
-            if (skill.skillData.currentCooldown == 0 && skill.hasSkillPattern(dices))
+            if (skill.skillData.currentCooldown == 0 && skill.HasSkillPattern(dices))
             {
                 skill.PerformSkill(character.animator);
                 yield return new WaitForSeconds(0.01f);
@@ -166,7 +180,7 @@ public class Player : MonoBehaviour
         {
             if (Battle.Instance.curEnemy.isDying) break;
 
-			if (skill.skillData.currentCooldown == 0 && skill.hasSkillPattern(dices))
+			if (skill.skillData.currentCooldown == 0 && skill.HasSkillPattern(dices))
             {
                 skill.PerformSkill(character.animator);
                 isSummoning = true;

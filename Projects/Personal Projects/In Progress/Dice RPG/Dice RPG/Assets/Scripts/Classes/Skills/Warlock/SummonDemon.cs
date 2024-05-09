@@ -21,20 +21,23 @@ public class SummonDemon : MonoBehaviour, ISummonSkill
         skillType = SkillTypes.types.Summon;
     }
 
-    public bool hasSkillPattern(List<Dice> dices)
-    {
-        if (summon.isActive) return false;
+	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
+	{
+		if (summon.isActive) return false;
 
         for (int i = 0; i < dices.Count; i++)
         {
             if (dices[i].value == 6 && !dices[i].isTemporary)
             {
-                StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillName, true, Player.Instance.character.transform, skillType));
-                Player.Instance.summonsToActivate.Add(summon);
-                Player.Instance.hasDemon = true;
-                summon.isActive = true;
-                summon.linkedDice = dices[i];
-                summon.turnsActive = 5;
+				if (triggerAttack)
+				{
+					StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillName, true, Player.Instance.character.transform, skillType));
+					Player.Instance.summonsToActivate.Add(summon);
+					Player.Instance.hasDemon = true;
+					summon.isActive = true;
+					summon.linkedDice = dices[i];
+					summon.turnsActive = 5;
+				}
 
                 return true;
             }

@@ -25,4 +25,12 @@ public class Disarm : MonoBehaviour, IEffectSkill
 
 		skillData.currentCooldown = skillData.skillCooldown;
 	}
+
+	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
+	{
+		if (dices[dices.Count - 1].value == enemyDices[enemyDices.Count - 1].value)
+			return true;
+
+		return false;
+	}
 }

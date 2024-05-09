@@ -29,7 +29,8 @@ public class SkillsBarSlot : MonoBehaviour
 
 	private Skill lastEquippedSkill = null;
 	private int lastSeenCooldown = -1;
-
+	private bool isTriggered = false;
+	private bool lastSeenTriggered = false;
 	private void Awake()
 	{
 		SetEmptyVisuals();
@@ -37,7 +38,7 @@ public class SkillsBarSlot : MonoBehaviour
 
 	private void Update()
 	{
-		if (skill != null && (lastEquippedSkill != skill || lastSeenCooldown != skill.currentCooldown))
+		if (skill != null && (lastEquippedSkill != skill || lastSeenCooldown != skill.currentCooldown || lastSeenTriggered != isTriggered))
 			UpdateState();
 	}
 
@@ -45,6 +46,8 @@ public class SkillsBarSlot : MonoBehaviour
 	{
 		if (skill == null)
 			slotState = skillSlotState.Empty;
+		else if (isTriggered)
+			slotState = skillSlotState.Triggered;
 		else if (skill.currentCooldown == 0)
 			slotState = skillSlotState.Available;
 		else if (skill.currentCooldown > 0)
@@ -68,8 +71,19 @@ public class SkillsBarSlot : MonoBehaviour
 				break;
 		}
 
-		lastEquippedSkill = skill;
-		lastSeenCooldown = skill.currentCooldown;
+		if (skill != null)
+		{
+			lastEquippedSkill = skill;
+			lastSeenCooldown = skill.currentCooldown;
+			lastSeenTriggered = isTriggered;
+		}
+		else
+		{
+			lastEquippedSkill = null;
+			lastSeenCooldown = -1;
+			lastSeenTriggered = false;
+			isTriggered = false;
+		}
 	}
 
 	private void SetAvailableVisuals()
@@ -117,5 +131,45 @@ public class SkillsBarSlot : MonoBehaviour
 		skill = skillData;
 		skillIcon.sprite = skill.icon;
 		slotState = skill.currentCooldown == 0 ? skillSlotState.Available : skillSlotState.OnCooldown;
+	}
+
+	public void EmptySkillSlot()
+	{
+		skill = null;
+		UpdateState();
+	}
+
+	public void CheckTrigger()
+	{
+		isTriggered = false;
+
+		switch (skill.skillType)
+		{
+			case SkillTypes.types.Buff:
+				isTriggered = BuffSkillsDictionary.Instance.buffSkillsDictionary[skill.skillName].HasSkillPattern(Battle.Instance.curPlayer.dices, Battle.Instance.curEnemy.dices, false);
+				break;
+			case SkillTypes.types.Damage:
+				isTriggered = DamageSkillsDictionary.Instance.damageSkillsDictionary[skill.skillName].HasSkillPattern(Battle.Instance.curPlayer.dices, Battle.Instance.curEnemy.dices, false);
+				break;
+			case SkillTypes.types.Effect:
+				isTriggered = EffectSkillsDictionary.Instance.effectSkillsDictionary[skill.skillName].HasSkillPattern(Battle.Instance.curPlayer.dices, Battle.Instance.curEnemy.dices, false);
+				break;
+			case SkillTypes.types.Reaction:
+				isTriggered = ReactionSkillsDictionary.Instance.reactionSkillsDictionary[skill.skillName].HasSkillPattern(Battle.Instance.curPlayer.dices, Battle.Instance.curEnemy.dices, false);
+				break;
+			case SkillTypes.types.Defense:
+				isTriggered = DefenseSkillsDictionary.Instance.defenseSkillsDictionary[skill.skillName].HasSkillPattern(Battle.Instance.curPlayer.dices, Battle.Instance.curEnemy.dices, false);
+				break;
+			case SkillTypes.types.Summon:
+				isTriggered = SummonSkillsDictionary.Instance.summonSkillsDictionary[skill.skillName].HasSkillPattern(Battle.Instance.curPlayer.dices, Battle.Instance.curEnemy.dices, false);
+				break;
+			default:
+				break;
+		}
+	}
+
+	public void ResetTrigger()
+	{
+		isTriggered = false;
 	}
 }

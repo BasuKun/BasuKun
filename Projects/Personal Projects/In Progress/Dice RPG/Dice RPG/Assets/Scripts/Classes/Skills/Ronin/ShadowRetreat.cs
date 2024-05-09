@@ -23,4 +23,15 @@ public class ShadowRetreat : MonoBehaviour, IDefenseSkill
 		}
 		else Battle.Instance.isShadowRetreating = false;
     }
+
+	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
+	{
+		if (Battle.Instance.curPlayer.mostRolledDigit == 0) 
+			return false;
+
+		if (Battle.Instance.curPlayer.mostRolledDigit <= Battle.Instance.curEnemy.mostRolledDigit / 2)
+			return true;
+
+		return false;
+	}
 }

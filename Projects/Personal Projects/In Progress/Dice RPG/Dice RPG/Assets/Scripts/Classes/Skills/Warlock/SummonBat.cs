@@ -12,21 +12,24 @@ public class SummonBat : MonoBehaviour, ISummonSkill
 		skillData.currentCooldown = 0;
 	}
 
-    public bool hasSkillPattern(List<Dice> dices)
-    {
-        if (skillData.summon.isActive) return false;
+	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
+	{
+		if (skillData.summon.isActive) return false;
 
         for (int i = 0; i < dices.Count; i++)
         {
             if (dices[i].value == 1 && !dices[i].isTemporary)
             {
-                StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillData.skillName, true, Player.Instance.character.transform, skillData.skillType));
-                Player.Instance.summonsToActivate.Add(skillData.summon);
-                Player.Instance.hasBat = true;
-				skillData.currentCooldown = skillData.skillCooldown;
-				skillData.summon.isActive = true;
-				skillData.summon.linkedDice = dices[i];
-				skillData.summon.turnsActive = 5;
+				if (triggerAttack)
+				{
+					StartCoroutine(dices[i].TriggerSkillAnimation(0f, skillData.skillName, true, Player.Instance.character.transform, skillData.skillType));
+					Player.Instance.summonsToActivate.Add(skillData.summon);
+					Player.Instance.hasBat = true;
+					skillData.currentCooldown = skillData.skillCooldown;
+					skillData.summon.isActive = true;
+					skillData.summon.linkedDice = dices[i];
+					skillData.summon.turnsActive = 5;
+				}
 
                 return true;
             }

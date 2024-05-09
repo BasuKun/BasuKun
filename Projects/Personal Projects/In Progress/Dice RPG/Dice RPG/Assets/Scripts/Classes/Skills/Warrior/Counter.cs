@@ -32,4 +32,19 @@ public class Counter : MonoBehaviour, IDefenseSkill
         }
         else Battle.Instance.isCountering = false;
     }
+
+	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
+	{
+		int diceAmount = dices.Count;
+		int enemyDiceAmount = enemyDices.Count;
+		if (diceAmount < 2 || enemyDiceAmount < 3)
+			return false;
+
+		int playerValue = dices[diceAmount - 1].value + dices[diceAmount - 2].value;
+		int enemyValue = enemyDices[enemyDiceAmount - 1].value + enemyDices[enemyDiceAmount - 2].value + enemyDices[enemyDiceAmount - 3].value;
+		if (playerValue > enemyValue)
+			return true;
+
+		return false;
+	}
 }

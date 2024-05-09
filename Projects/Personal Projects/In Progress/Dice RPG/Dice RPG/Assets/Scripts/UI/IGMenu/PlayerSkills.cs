@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 public class PlayerSkills : MonoBehaviour
 {
@@ -66,9 +67,15 @@ public class PlayerSkills : MonoBehaviour
 			Player.Instance.summonSkills.Add((ISummonSkill)skill);
 		}
 
-		if (Player.Instance.equippedSkills.Count < Player.Instance.skillSlotsAmount)
+		if (Player.Instance.equippedSkills.Count(skill => skill != null) < Player.Instance.skillSlotsAmount)
 		{
-			Player.Instance.equippedSkills.Add(skill);
+			int nullIndex = Player.Instance.equippedSkills.FindIndex(skill => skill == null);
+
+			if (nullIndex != -1)
+				Player.Instance.equippedSkills[nullIndex] = skill;
+			else
+				Player.Instance.equippedSkills.Add(skill);
+
 			SkillsBar.Instance.UpdateSkillsBar();
 		}
 	}

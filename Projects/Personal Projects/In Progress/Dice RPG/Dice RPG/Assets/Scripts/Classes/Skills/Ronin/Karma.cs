@@ -23,4 +23,12 @@ public class Karma : MonoBehaviour, IBuffSkill
 
 		skillData.currentCooldown = skillData.skillCooldown;
 	}
+
+	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
+	{
+		if (Player.Instance.mostRolledDigit < 3 && Player.Instance.mostRolledDigit != 0)
+			return true;
+
+		return false;
+	}
 }

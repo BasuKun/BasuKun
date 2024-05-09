@@ -35,6 +35,14 @@ public class LastBreath : MonoBehaviour, IReactionSkill
         }
 	}
 
+	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
+	{
+		if (Battle.Instance.usedLastBreath && dices[dices.Count - 1].value > 5)
+			Battle.Instance.isLastBreathing = true;
+
+		return false;
+	}
+
 	public void ResetSkill()
     {
         Battle.Instance.usedLastBreath = false;

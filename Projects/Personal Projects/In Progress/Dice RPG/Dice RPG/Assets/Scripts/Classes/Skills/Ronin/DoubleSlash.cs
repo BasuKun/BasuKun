@@ -13,17 +13,23 @@ public class DoubleSlash : MonoBehaviour, IDamageSkill
 		skillData.currentCooldown = 0;
 	}
 
-    public bool hasSkillPattern(List<Dice> dices)
-    {
-        damageToDeal = 0;
+	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
+	{
+		if (triggerAttack)
+			damageToDeal = 0;
 
-        if (dices[1].value < dices[0].value)
+		if (dices[1].value < dices[0].value)
         {
-            damageToDeal += dices[1].skillValue * 3;
-            StartCoroutine(dices[1].TriggerSkillAnimation(0f, skillData.skillName, false, Player.Instance.character.transform, skillData.skillType));
+			if (triggerAttack)
+			{
+				damageToDeal += dices[1].skillValue * 3;
+				StartCoroutine(dices[1].TriggerSkillAnimation(0f, skillData.skillName, false, Player.Instance.character.transform, skillData.skillType));
+			}
+
+			return true;
         }
 
-        return damageToDeal > 0;
+		return false;
     }
 
     public void PerformSkill(Animator animator)
