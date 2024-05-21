@@ -5,6 +5,7 @@ using UnityEngine;
 public class SideStep : MonoBehaviour, IDefenseSkill
 {
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	public void SetData()
     {
@@ -13,8 +14,10 @@ public class SideStep : MonoBehaviour, IDefenseSkill
 	}
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
-    {
-        Player.Instance.damageToAvoid = 0;
+	{
+		if (!isEquipped) return;
+
+		Player.Instance.damageToAvoid = 0;
         int maxDice = Mathf.Min(dices.Count, enemyDices.Count);
         int amountTriggered = 0;
 
@@ -35,6 +38,8 @@ public class SideStep : MonoBehaviour, IDefenseSkill
 
 	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
 	{
+		if (!isEquipped) return false;
+
 		int maxDice = Mathf.Min(dices.Count, enemyDices.Count);
 
 		for (int i = 0; i < maxDice; i++)

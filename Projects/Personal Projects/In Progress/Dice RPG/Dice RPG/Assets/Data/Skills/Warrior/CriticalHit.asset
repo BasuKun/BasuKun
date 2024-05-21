@@ -16,12 +16,13 @@ MonoBehaviour:
   stateName: 
   currentLevel: 0
   maxLevel: 5
+  currentCooldown: 0
   skillCooldown: 0
   skillType: 1
   skillClass: 1
   hasSeparateAnim: 0
   description: All 6 rolls deal 1.3x Damage.
-  icon: {fileID: 3366587014300866995, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
+  icon: {fileID: 21300000, guid: 0acb08603eff7e24ab2c428700d7cf96, type: 3}
   skillTrigger: {fileID: 21300000, guid: 6371ec129b27a404facd6225fa19e87d, type: 3}
   sprites: []
   frameDuration: 0

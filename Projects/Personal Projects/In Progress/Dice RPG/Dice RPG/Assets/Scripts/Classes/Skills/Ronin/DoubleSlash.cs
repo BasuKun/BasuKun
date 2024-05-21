@@ -6,6 +6,7 @@ public class DoubleSlash : MonoBehaviour, IDamageSkill
 {
     public int damageToDeal { get; set; }
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	public void SetData()
     {
@@ -15,6 +16,8 @@ public class DoubleSlash : MonoBehaviour, IDamageSkill
 
 	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
 	{
+		if (!isEquipped) return false;
+
 		if (triggerAttack)
 			damageToDeal = 0;
 
@@ -33,8 +36,10 @@ public class DoubleSlash : MonoBehaviour, IDamageSkill
     }
 
     public void PerformSkill(Animator animator)
-    {
-        Player.Instance.skillsActivated++;
+	{
+		if (!isEquipped) return;
+
+		Player.Instance.skillsActivated++;
         Player.Instance.damageToDeal = damageToDeal + Player.Instance.damageBonus + Player.Instance.tempDamageBonus;
         Battle.Instance.SkillNamePopout(skillData.skillName, Player.Instance.character.transform, skillData.skillType);
 		animator.Play(skillData.stateName);

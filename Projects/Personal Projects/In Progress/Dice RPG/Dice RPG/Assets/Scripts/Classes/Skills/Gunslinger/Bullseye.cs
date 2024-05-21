@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullseye : MonoBehaviour, IBuffSkill
 {
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	public void SetData()
 	{
@@ -14,6 +15,8 @@ public class Bullseye : MonoBehaviour, IBuffSkill
 
 	public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
 	{
+		if (!isEquipped) return;
+
 		int diceAmount = dices.Count;
 		if (dices[diceAmount - 3].value > dices[diceAmount - 2].value && dices[diceAmount - 2].value > dices[diceAmount - 1].value)
 		{
@@ -29,6 +32,8 @@ public class Bullseye : MonoBehaviour, IBuffSkill
 
 	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
 	{
+		if (!isEquipped) return false;
+
 		int diceAmount = dices.Count;
 		if (dices[diceAmount - 3].value > dices[diceAmount - 2].value && dices[diceAmount - 2].value > dices[diceAmount - 1].value)
 			return true;

@@ -5,6 +5,7 @@ using UnityEngine;
 public class DistancedAdvantage : MonoBehaviour, IBuffSkill
 {
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	public void SetData()
     {
@@ -13,8 +14,10 @@ public class DistancedAdvantage : MonoBehaviour, IBuffSkill
 	}
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
-    {
-        Battle.Instance.hasDistanceAdvantage = false;
+	{
+		if (!isEquipped) return;
+
+		Battle.Instance.hasDistanceAdvantage = false;
         if (Battle.Instance.turn != 1) return;
 
         if (dices[0].value > 3)
@@ -28,8 +31,8 @@ public class DistancedAdvantage : MonoBehaviour, IBuffSkill
 
 	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
 	{
-		if (Battle.Instance.turn != 1)
-			return false;
+		if (!isEquipped) return false;
+		if (Battle.Instance.turn != 1) return false;
 
 		if (dices[0].value > 3)
 			return true;

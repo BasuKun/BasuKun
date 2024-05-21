@@ -16,12 +16,13 @@ MonoBehaviour:
   stateName: Hurt_ShadowRetreat
   currentLevel: 0
   maxLevel: 1
+  currentCooldown: 0
   skillCooldown: 4
   skillType: 5
   skillClass: 2
   hasSeparateAnim: 0
   description: Avoid all damage for this turn.
-  icon: {fileID: -3918430503593701686, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
+  icon: {fileID: 21300000, guid: 55f8e81f179b2934489c1b33b5a7500a, type: 3}
   skillTrigger: {fileID: 21300000, guid: 54f9bd5150d31514e8d2442bb1a42db4, type: 3}
   sprites:
   - {fileID: 21300000, guid: 5c8857938e48d75449727bd10375d26f, type: 3}

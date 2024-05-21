@@ -6,6 +6,7 @@ public class Pierce : MonoBehaviour, IDamageSkill
 {
     public int damageToDeal { get; set; }
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	public void SetData()
     {
@@ -14,8 +15,10 @@ public class Pierce : MonoBehaviour, IDamageSkill
 	}
 
     public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
-    {
-        for (int i = 0; i < dices.Count - 2; i++)
+	{
+		if (!isEquipped) return false;
+
+		for (int i = 0; i < dices.Count - 2; i++)
         {
             if (dices[i].value == 1 && dices[i + 1].value == 1)
             {
@@ -35,8 +38,10 @@ public class Pierce : MonoBehaviour, IDamageSkill
     }
 
     public void PerformSkill(Animator animator)
-    {
-        Player.Instance.damageToDeal = damageToDeal + Player.Instance.damageBonus + Player.Instance.tempDamageBonus;
+	{
+		if (!isEquipped) return;
+
+		Player.Instance.damageToDeal = damageToDeal + Player.Instance.damageBonus + Player.Instance.tempDamageBonus;
 		animator.Play(skillData.stateName);
 
 		skillData.currentCooldown = skillData.skillCooldown;

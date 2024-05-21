@@ -6,6 +6,7 @@ public class Dynamite : MonoBehaviour, IDamageSkill
 {
     public int damageToDeal { get; set; }
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	public void SetData()
     {
@@ -15,6 +16,8 @@ public class Dynamite : MonoBehaviour, IDamageSkill
 
 	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
 	{
+		if (!isEquipped) return false;
+
 		if (dices[dices.Count - 1].value == dices[0].value * 2)
 		{
 			if (triggerAttack)
@@ -31,8 +34,10 @@ public class Dynamite : MonoBehaviour, IDamageSkill
     }
 
     public void PerformSkill(Animator animator)
-    {
-        Player.Instance.damageToDeal = damageToDeal + Player.Instance.damageBonus + Player.Instance.tempDamageBonus;
+	{
+		if (!isEquipped) return;
+
+		Player.Instance.damageToDeal = damageToDeal + Player.Instance.damageBonus + Player.Instance.tempDamageBonus;
         animator.Play(skillData.stateName);
 
 		skillData.currentCooldown = skillData.skillCooldown;

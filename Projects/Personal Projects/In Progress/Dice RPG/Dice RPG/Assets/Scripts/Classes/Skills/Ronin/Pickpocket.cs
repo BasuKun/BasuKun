@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pickpocket : MonoBehaviour, IBuffSkill
 {
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	public void SetData()
     {
@@ -13,8 +14,10 @@ public class Pickpocket : MonoBehaviour, IBuffSkill
 	}
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
-    {
-        for (int i = 0; i < dices.Count - 1; i++)
+	{
+		if (!isEquipped) return;
+
+		for (int i = 0; i < dices.Count - 1; i++)
         {
             if (dices[i].value + dices[i + 1].value == 7)
             {
@@ -31,6 +34,8 @@ public class Pickpocket : MonoBehaviour, IBuffSkill
 
 	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
 	{
+		if (!isEquipped) return false;
+
 		for (int i = 0; i < dices.Count - 1; i++)
 		{
 			if (dices[i].value + dices[i + 1].value == 7)

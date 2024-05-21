@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bandage : MonoBehaviour, IBuffSkill
 {
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	public void SetData()
     {
@@ -13,8 +14,10 @@ public class Bandage : MonoBehaviour, IBuffSkill
 	}
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
-    {
-        if ((float)Player.Instance.curHitPoints / (float)Player.Instance.maxHitPoints > 0.30f) return;
+	{
+		if (!isEquipped) return;
+
+		if ((float)Player.Instance.curHitPoints / (float)Player.Instance.maxHitPoints > 0.30f) return;
         else
         {
             for (int i = 1; i < dices.Count - 1; i++)
@@ -35,8 +38,9 @@ public class Bandage : MonoBehaviour, IBuffSkill
 
 	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
 	{
-		if ((float)Player.Instance.curHitPoints / (float)Player.Instance.maxHitPoints > 0.30f) 
-			return false;
+		if (!isEquipped) return false;
+
+		if ((float)Player.Instance.curHitPoints / (float)Player.Instance.maxHitPoints > 0.30f) return false;
 		else
 		{
 			for (int i = 1; i < dices.Count - 1; i++)

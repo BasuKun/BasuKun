@@ -5,6 +5,7 @@ using UnityEngine;
 public class LastBreath : MonoBehaviour, IReactionSkill
 {
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	public void SetData()
     {
@@ -13,8 +14,10 @@ public class LastBreath : MonoBehaviour, IReactionSkill
 	}
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices, int curHitPoints, int maxHitPoints)
-    {
-        Battle.Instance.isLastBreathing = false;
+	{
+		if (!isEquipped) return;
+
+		Battle.Instance.isLastBreathing = false;
 
         if (!Battle.Instance.usedLastBreath && Player.Instance.curHitPoints <= 0)
         {
@@ -37,6 +40,8 @@ public class LastBreath : MonoBehaviour, IReactionSkill
 
 	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
 	{
+		if (!isEquipped) return false;
+
 		if (Battle.Instance.usedLastBreath && dices[dices.Count - 1].value > 5)
 			Battle.Instance.isLastBreathing = true;
 

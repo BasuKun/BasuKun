@@ -24,6 +24,7 @@ public class GameUI : MonoBehaviour
 	public Slider idleSlider;
 	public Image idleSliderImage;
 	public List<Sprite> idleSliderSprites = new List<Sprite>();
+	public List<GameObject> battleFilters = new List<GameObject>();
 
 	public static GameUI Instance;
 
@@ -75,5 +76,11 @@ public class GameUI : MonoBehaviour
 		Battle.Instance.isAutoAttacking = idleSlider.value == 1 ? true : false;
 		idleSliderImage.sprite = idleSliderSprites[(int)idleSlider.value];
 		DiceButtons.Instance.CheckForInteractableConditions();
+	}
+
+	public void SetBattleFilter(bool active)
+	{
+		foreach (var filter in battleFilters)
+			filter.SetActive(active);
 	}
 }

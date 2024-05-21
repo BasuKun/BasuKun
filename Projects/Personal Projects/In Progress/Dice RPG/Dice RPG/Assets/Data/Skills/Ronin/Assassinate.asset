@@ -16,12 +16,14 @@ MonoBehaviour:
   stateName: Attack_Assassinate
   currentLevel: 0
   maxLevel: 2
+  currentCooldown: 0
   skillCooldown: 0
   skillType: 2
   skillClass: 2
   hasSeparateAnim: 0
   description: Instantly kill an enemy that has less than 20% HP remaining.
-  icon: {fileID: 7097711905252674471, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
+  icon: {fileID: 21300000, guid: 0acb08603eff7e24ab2c428700d7cf96, type: 3}
+  skillTrigger: {fileID: 0}
   sprites:
   - {fileID: 21300000, guid: 89bb23bf3951c4642bbf7ccdf645bca3, type: 3}
   - {fileID: 21300000, guid: 8f6f8fdb546895f419325ad425a11453, type: 3}

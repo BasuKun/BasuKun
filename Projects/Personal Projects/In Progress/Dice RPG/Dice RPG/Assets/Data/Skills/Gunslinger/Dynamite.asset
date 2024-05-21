@@ -16,12 +16,13 @@ MonoBehaviour:
   stateName: 
   currentLevel: 0
   maxLevel: 5
+  currentCooldown: 0
   skillCooldown: 3
   skillType: 2
   skillClass: 3
   hasSeparateAnim: 0
   description: Deal Skill Damage and set the enemy on fire for 3 turns.
-  icon: {fileID: -7682865060566114825, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
+  icon: {fileID: 21300000, guid: 40565793df130d7419db32b26c809ce9, type: 3}
   skillTrigger: {fileID: 21300000, guid: 495ed32ce39b99f4ebb6cb3b8b5c7b99, type: 3}
   sprites:
   - {fileID: 21300000, guid: b42acb1e530a6db4c9986e438318d6f7, type: 3}

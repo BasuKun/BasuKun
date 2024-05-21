@@ -22,6 +22,7 @@ public class SkillsBarSlot : MonoBehaviour
 	public Image skillIcon;
 	public Image cooldownFill;
 	public TextMeshProUGUI cooldownText;
+	public TooltipTrigger tooltip;
 
 	public Color availableColor;
 	public Color triggeredColor;
@@ -31,6 +32,7 @@ public class SkillsBarSlot : MonoBehaviour
 	private int lastSeenCooldown = -1;
 	private bool isTriggered = false;
 	private bool lastSeenTriggered = false;
+
 	private void Awake()
 	{
 		SetEmptyVisuals();
@@ -93,6 +95,7 @@ public class SkillsBarSlot : MonoBehaviour
 		skillIcon.gameObject.SetActive(true);
 		cooldownFill.fillAmount = 0f;
 		cooldownText.gameObject.SetActive(false);
+		tooltip.enabled = true;
 	}
 
 	private void SetEmptyVisuals()
@@ -101,6 +104,7 @@ public class SkillsBarSlot : MonoBehaviour
 		skillIcon.gameObject.SetActive(false);
 		cooldownFill.fillAmount = 0f;
 		cooldownText.gameObject.SetActive(false);
+		tooltip.enabled = false;
 	}
 
 	private void SetOnCooldownVisuals()
@@ -110,6 +114,7 @@ public class SkillsBarSlot : MonoBehaviour
 		skillIcon.color = onCooldownColor;
 		cooldownText.gameObject.SetActive(true);
 		cooldownText.text = skill.currentCooldown.ToString();
+		tooltip.enabled = true;
 
 		if (skill.skillCooldown != 0)
 			cooldownFill.fillAmount = (float)skill.currentCooldown / (float)skill.skillCooldown;
@@ -124,6 +129,8 @@ public class SkillsBarSlot : MonoBehaviour
 		skillIcon.color = triggeredColor;
 		cooldownFill.fillAmount = 0f;
 		cooldownText.gameObject.SetActive(false);
+		tooltip.enabled = true;
+
 	}
 
 	public void EquipSkill(Skill skillData)
@@ -131,12 +138,15 @@ public class SkillsBarSlot : MonoBehaviour
 		skill = skillData;
 		skillIcon.sprite = skill.icon;
 		slotState = skill.currentCooldown == 0 ? skillSlotState.Available : skillSlotState.OnCooldown;
+		tooltip.SetInfo(skillData);
+		tooltip.enabled = true;
 	}
 
 	public void EmptySkillSlot()
 	{
 		skill = null;
 		UpdateState();
+		tooltip.enabled = false;
 	}
 
 	public void CheckTrigger()

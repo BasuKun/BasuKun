@@ -5,6 +5,7 @@ using UnityEngine;
 public class Karma : MonoBehaviour, IBuffSkill
 {
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	public void SetData()
     {
@@ -13,8 +14,10 @@ public class Karma : MonoBehaviour, IBuffSkill
 	}
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
-    {
-        if (Player.Instance.mostRolledDigit < 3 && Player.Instance.mostRolledDigit != 0)
+	{
+		if (!isEquipped) return;
+
+		if (Player.Instance.mostRolledDigit < 3 && Player.Instance.mostRolledDigit != 0)
         {
             Player.Instance.skillsActivated++;
             Player.Instance.damageToDeal *= 2;
@@ -26,6 +29,8 @@ public class Karma : MonoBehaviour, IBuffSkill
 
 	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
 	{
+		if (!isEquipped) return false;
+
 		if (Player.Instance.mostRolledDigit < 3 && Player.Instance.mostRolledDigit != 0)
 			return true;
 

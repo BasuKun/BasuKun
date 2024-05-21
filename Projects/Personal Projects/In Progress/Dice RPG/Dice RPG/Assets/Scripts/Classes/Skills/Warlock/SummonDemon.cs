@@ -11,6 +11,7 @@ public class SummonDemon : MonoBehaviour, ISummonSkill
     public SkillTypes.types skillType { get; set; }
     public Summon summon;
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	public void SetData()
     {
@@ -23,6 +24,8 @@ public class SummonDemon : MonoBehaviour, ISummonSkill
 
 	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
 	{
+		if (!isEquipped) return false;
+
 		if (summon.isActive) return false;
 
         for (int i = 0; i < dices.Count; i++)

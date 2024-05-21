@@ -16,12 +16,14 @@ MonoBehaviour:
   stateName: 
   currentLevel: 0
   maxLevel: 3
+  currentCooldown: 0
   skillCooldown: 0
   skillType: 6
   skillClass: 5
   hasSeparateAnim: 0
   description: Summon a Skull for 5 turns which can give 2 temporary Dice for 1 turn.
-  icon: {fileID: -3555947598725589450, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
+  icon: {fileID: 21300000, guid: 22034ed710e784543b931299ac808459, type: 3}
+  skillTrigger: {fileID: 0}
   sprites: []
   frameDuration: 0
   eventFrames: 

@@ -6,6 +6,7 @@ public class Rifle : MonoBehaviour, IDamageSkill
 {
     public int damageToDeal { get; set; }
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	public void SetData()
     {
@@ -15,6 +16,8 @@ public class Rifle : MonoBehaviour, IDamageSkill
 
 	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
 	{
+		if (!isEquipped) return false;
+
 		for (int i = 0; i < dices.Count - 2; i++)
         {
             if (dices[i].value % 2 == 0 && dices[i + 1].value < dices[i].value && dices[i + 2].value == dices[i + 1].value)
@@ -35,8 +38,10 @@ public class Rifle : MonoBehaviour, IDamageSkill
     }
 
     public void PerformSkill(Animator animator)
-    {
-        Player.Instance.damageToDeal = damageToDeal + Player.Instance.damageBonus + Player.Instance.tempDamageBonus;
+	{
+		if (!isEquipped) return;
+
+		Player.Instance.damageToDeal = damageToDeal + Player.Instance.damageBonus + Player.Instance.tempDamageBonus;
 		animator.Play(skillData.stateName);
 
 		skillData.currentCooldown = skillData.skillCooldown;

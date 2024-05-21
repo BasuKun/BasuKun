@@ -16,12 +16,13 @@ MonoBehaviour:
   stateName: Attack_DoubleSlash
   currentLevel: 0
   maxLevel: 5
+  currentCooldown: 0
   skillCooldown: 0
   skillType: 2
   skillClass: 2
   hasSeparateAnim: 0
   description: Deal Skill Damage.
-  icon: {fileID: -7462222493155666356, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
+  icon: {fileID: 21300000, guid: a0dcb1fcb03e8494fb6d25bc93e37496, type: 3}
   skillTrigger: {fileID: 21300000, guid: 334f9596c9529e74ba1233ed3a651296, type: 3}
   sprites:
   - {fileID: 21300000, guid: 6847a6f976f78604997a9d33d2634318, type: 3}

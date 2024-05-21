@@ -5,6 +5,7 @@ using UnityEngine;
 public class GunmansInstinct : MonoBehaviour, IBuffSkill
 {
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	public void SetData()
     {
@@ -13,8 +14,9 @@ public class GunmansInstinct : MonoBehaviour, IBuffSkill
 	}
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
-    {
-        if (Battle.Instance.curPlayer.mostRolledDigit == 0) return;
+	{
+		if (!isEquipped) return;
+		if (Battle.Instance.curPlayer.mostRolledDigit == 0) return;
 
         if (Battle.Instance.curPlayer.mostRolledDigit == Battle.Instance.curEnemy.mostRolledDigit)
         {
@@ -27,8 +29,8 @@ public class GunmansInstinct : MonoBehaviour, IBuffSkill
 
 	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
 	{
-		if (Battle.Instance.curPlayer.mostRolledDigit == 0) 
-			return false;
+		if (!isEquipped) return false;
+		if (Battle.Instance.curPlayer.mostRolledDigit == 0) return false;
 
 		if (Battle.Instance.curPlayer.mostRolledDigit == Battle.Instance.curEnemy.mostRolledDigit)
 			return true;

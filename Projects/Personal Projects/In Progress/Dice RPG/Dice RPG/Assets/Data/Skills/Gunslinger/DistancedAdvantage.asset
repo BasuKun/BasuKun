@@ -16,12 +16,13 @@ MonoBehaviour:
   stateName: 
   currentLevel: 0
   maxLevel: 1
+  currentCooldown: 0
   skillCooldown: 0
   skillType: 1
   skillClass: 3
   hasSeparateAnim: 0
   description: Start the fight with an extra turn.
-  icon: {fileID: 6679564900334302133, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
+  icon: {fileID: 21300000, guid: d13920abdffc6c643a3c4f7e4074e6c7, type: 3}
   skillTrigger: {fileID: 21300000, guid: 533a026ba530db34d927c6b9c2afdb4c, type: 3}
   sprites: []
   frameDuration: 0

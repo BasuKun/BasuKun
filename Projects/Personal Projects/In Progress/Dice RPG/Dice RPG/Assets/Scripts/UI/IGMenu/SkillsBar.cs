@@ -123,11 +123,15 @@ public class SkillsBar : MonoBehaviour
 		int index = Player.Instance.equippedSkills.IndexOf(currentSkill);
 		Player.Instance.equippedSkills[index] = droppedSkill;
 
+		currentSkill.isEquipped = false;
+		droppedSkill.isEquipped = true;
+
 		UpdateSkillsBar();
 	}
 
 	private void RemoveSkillFromPlayerList(int index)
 	{
+		Player.Instance.equippedSkills[index].isEquipped = false;
 		Player.Instance.equippedSkills[index] = null;
 
 		UpdateSkillsBar();
@@ -147,6 +151,7 @@ public class SkillsBar : MonoBehaviour
 	private void AddSkillToPlayerList(ISkill skill, int index)
 	{
 		Player.Instance.equippedSkills[index] = skill;
+		skill.isEquipped = true;
 		UpdateSkillsBar();
 	}
 

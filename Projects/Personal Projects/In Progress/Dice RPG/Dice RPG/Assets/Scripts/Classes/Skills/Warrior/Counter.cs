@@ -5,6 +5,7 @@ using UnityEngine;
 public class Counter : MonoBehaviour, IDefenseSkill
 {
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	public void SetData()
     {
@@ -14,6 +15,8 @@ public class Counter : MonoBehaviour, IDefenseSkill
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
     {
+		if (!isEquipped) return;
+
         int diceAmount = dices.Count;
         int enemyDiceAmount = enemyDices.Count;
         if (diceAmount < 2 || enemyDiceAmount < 3)
@@ -35,6 +38,8 @@ public class Counter : MonoBehaviour, IDefenseSkill
 
 	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
 	{
+		if (!isEquipped) return false;
+
 		int diceAmount = dices.Count;
 		int enemyDiceAmount = enemyDices.Count;
 		if (diceAmount < 2 || enemyDiceAmount < 3)

@@ -16,12 +16,13 @@ MonoBehaviour:
   stateName: 
   currentLevel: 0
   maxLevel: 1
+  currentCooldown: 0
   skillCooldown: 0
   skillType: 1
   skillClass: 2
   hasSeparateAnim: 0
   description: Deal x2 Damage.
-  icon: {fileID: 3866210579457139781, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
+  icon: {fileID: 21300000, guid: 22034ed710e784543b931299ac808459, type: 3}
   skillTrigger: {fileID: 21300000, guid: ea05f46065219e74a9d6251c7bf04baf, type: 3}
   sprites: []
   frameDuration: 0

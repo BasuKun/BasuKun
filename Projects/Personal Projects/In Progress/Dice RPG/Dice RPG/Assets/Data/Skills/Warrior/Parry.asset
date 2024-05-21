@@ -14,14 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Parry
   stateName: Hurt_Parry
-  currentLevel: 1
+  currentLevel: 0
   maxLevel: 1
+  currentCooldown: 0
   skillCooldown: 1
   skillType: 5
   skillClass: 1
   hasSeparateAnim: 0
   description: Return half Damage to the enemy.
-  icon: {fileID: -4732283008299991042, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
+  icon: {fileID: 21300000, guid: 55f8e81f179b2934489c1b33b5a7500a, type: 3}
   skillTrigger: {fileID: 21300000, guid: 4c1ba340b1d7b934286ebc971c9ddb94, type: 3}
   sprites:
   - {fileID: 21300000, guid: ab8d2ba9a651faa43960f8f6b4d35dfb, type: 3}

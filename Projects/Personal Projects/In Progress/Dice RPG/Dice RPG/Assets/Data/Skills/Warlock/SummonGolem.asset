@@ -16,12 +16,14 @@ MonoBehaviour:
   stateName: 
   currentLevel: 0
   maxLevel: 1
+  currentCooldown: 0
   skillCooldown: 0
   skillType: 6
   skillClass: 5
   hasSeparateAnim: 0
   description: Summon a Golem for 5 turns which can reduce Damage by 25%.
-  icon: {fileID: 4719529561228631010, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
+  icon: {fileID: 21300000, guid: 55f8e81f179b2934489c1b33b5a7500a, type: 3}
+  skillTrigger: {fileID: 0}
   sprites: []
   frameDuration: 0
   eventFrames: 

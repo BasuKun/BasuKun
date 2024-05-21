@@ -76,6 +76,7 @@ public class PlayerSkills : MonoBehaviour
 			else
 				Player.Instance.equippedSkills.Add(skill);
 
+			skill.isEquipped = true;
 			SkillsBar.Instance.UpdateSkillsBar();
 		}
 	}

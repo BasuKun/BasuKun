@@ -5,6 +5,7 @@ using UnityEngine;
 public class CripplingShot : MonoBehaviour, IEffectSkill
 {
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	public void SetData()
 	{
@@ -14,6 +15,8 @@ public class CripplingShot : MonoBehaviour, IEffectSkill
 
 	public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
 	{
+		if (!isEquipped) return;
+
 		if (dices[dices.Count - 1].value == 1)
 		{
 			StartCoroutine(dices[dices.Count - 1].TriggerSkillAnimation(0f, skillData.skillName, true, Player.Instance.character.transform, skillData.skillType));
@@ -26,6 +29,8 @@ public class CripplingShot : MonoBehaviour, IEffectSkill
 
 	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
 	{
+		if (!isEquipped) return false;
+
 		if (dices[dices.Count - 1].value == 1)
 			return true;
 

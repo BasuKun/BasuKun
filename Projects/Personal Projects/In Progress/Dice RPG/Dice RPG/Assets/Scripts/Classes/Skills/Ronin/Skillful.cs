@@ -5,6 +5,7 @@ using UnityEngine;
 public class Skillful : MonoBehaviour, IBuffSkill
 {
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	public void SetData()
     {
@@ -13,8 +14,10 @@ public class Skillful : MonoBehaviour, IBuffSkill
 	}
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
-    {
-        if (Player.Instance.skillsActivated > 0)
+	{
+		if (!isEquipped) return;
+
+		if (Player.Instance.skillsActivated > 0)
         {
             Player.Instance.damageToDeal += Player.Instance.skillsActivated * 2;
             Battle.Instance.SkillNamePopout(skillData.skillName, Player.Instance.character.transform, skillData.skillType);
@@ -27,6 +30,8 @@ public class Skillful : MonoBehaviour, IBuffSkill
 
 	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
 	{
+		if (!isEquipped) return false;
+
 		if (Player.Instance.skillsActivated > 0)
 			return true;
 

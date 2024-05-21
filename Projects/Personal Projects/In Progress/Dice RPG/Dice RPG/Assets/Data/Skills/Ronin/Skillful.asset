@@ -16,12 +16,13 @@ MonoBehaviour:
   stateName: 
   currentLevel: 0
   maxLevel: 3
+  currentCooldown: 0
   skillCooldown: 0
   skillType: 1
   skillClass: 2
   hasSeparateAnim: 0
   description: Gain +1 Skill Damage for each skill activated the previous turn.
-  icon: {fileID: 7403219908499112042, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
+  icon: {fileID: 21300000, guid: 7feb93d0f2b2a7445a76fb0b3d5ae16d, type: 3}
   skillTrigger: {fileID: 0}
   sprites: []
   frameDuration: 0

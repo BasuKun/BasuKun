@@ -16,12 +16,14 @@ MonoBehaviour:
   stateName: 
   currentLevel: 0
   maxLevel: 1
+  currentCooldown: 0
   skillCooldown: 6
   skillType: 2
   skillClass: 5
   hasSeparateAnim: 0
   description: Deal 666 Skill Damage.
-  icon: {fileID: 7839962000633924148, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
+  icon: {fileID: 21300000, guid: 40565793df130d7419db32b26c809ce9, type: 3}
+  skillTrigger: {fileID: 0}
   sprites: []
   frameDuration: 0
   eventFrames: 

@@ -6,6 +6,7 @@ public class Assassinate : MonoBehaviour, IDamageSkill
 {
     public int damageToDeal { get; set; }
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	public void SetData()
     {
@@ -15,6 +16,8 @@ public class Assassinate : MonoBehaviour, IDamageSkill
 
 	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
 	{
+		if (!isEquipped) return false;
+
 		if ((float)Battle.Instance.curEnemy.curHitPoints / (float)Battle.Instance.curEnemy.hitPoints > 0.2f) 
 			return false;
         else
@@ -38,8 +41,10 @@ public class Assassinate : MonoBehaviour, IDamageSkill
     }
 
     public void PerformSkill(Animator animator)
-    {
-        Player.Instance.skillsActivated++;
+	{
+		if (!isEquipped) return;
+
+		Player.Instance.skillsActivated++;
         Player.Instance.damageToDeal = damageToDeal;
 		animator.Play(skillData.stateName);
 

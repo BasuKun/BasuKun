@@ -5,6 +5,7 @@ using UnityEngine;
 public class Strengthen : MonoBehaviour, IBuffSkill
 {
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	public void SetData()
 	{
@@ -14,6 +15,8 @@ public class Strengthen : MonoBehaviour, IBuffSkill
 
 	public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
 	{
+		if (!isEquipped) return;
+
 		int amount = 0;
 
 		foreach (var dice in dices)
@@ -36,6 +39,8 @@ public class Strengthen : MonoBehaviour, IBuffSkill
 
 	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
 	{
+		if (!isEquipped) return false;
+
 		foreach (var dice in dices)
 		{
 			if (dice.value == 6)

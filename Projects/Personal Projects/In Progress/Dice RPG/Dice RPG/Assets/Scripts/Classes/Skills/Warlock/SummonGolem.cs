@@ -5,6 +5,7 @@ using UnityEngine;
 public class SummonGolem : MonoBehaviour, ISummonSkill
 {
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	public void SetData()
     {
@@ -14,6 +15,8 @@ public class SummonGolem : MonoBehaviour, ISummonSkill
 
 	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
 	{
+		if (!isEquipped) return false;
+
 		if (skillData.summon.isActive) 
 			return false;
 

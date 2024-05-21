@@ -6,6 +6,7 @@ public class EclipseRush : MonoBehaviour, IDamageSkill
 {
     public int damageToDeal { get; set; }
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	private Dictionary<int, Dice> diceReqs = new Dictionary<int, Dice>();
 
@@ -17,6 +18,8 @@ public class EclipseRush : MonoBehaviour, IDamageSkill
 
 	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
 	{
+		if (!isEquipped) return false;
+
 		diceReqs.Clear();
 
         foreach (var dice in dices)
@@ -29,8 +32,10 @@ public class EclipseRush : MonoBehaviour, IDamageSkill
     }
 
     public void PerformSkill(Animator animator)
-    {
-        Player.Instance.skillsActivated++;
+	{
+		if (!isEquipped) return;
+
+		Player.Instance.skillsActivated++;
         damageToDeal = GetSkillValue((int)(Player.Instance.diceAmount / 5f));
         Player.Instance.damageToDeal = damageToDeal + Player.Instance.damageBonus + Player.Instance.tempDamageBonus;
         Battle.Instance.SkillNamePopout(skillData.skillName, Player.Instance.character.transform, skillData.skillType);

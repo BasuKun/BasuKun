@@ -7,6 +7,7 @@ public class SatansWrath : MonoBehaviour, IDamageSkill
     public int damageToDeal { get; set; }
 	[System.NonSerialized] public GameObject anim = null;
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	public void SetData()
     {
@@ -16,6 +17,8 @@ public class SatansWrath : MonoBehaviour, IDamageSkill
 
 	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
 	{
+		if (!isEquipped) return false;
+
 		for (int i = 0; i < dices.Count - 2; i++)
         {
             if (dices[i].value == 6 && dices[i + 1].value == 6 && dices[i + 2].value == 6)
@@ -36,8 +39,10 @@ public class SatansWrath : MonoBehaviour, IDamageSkill
     }
 
     public void PerformSkill(Animator animator)
-    {
-        Player.Instance.damageToDeal = damageToDeal;
+	{
+		if (!isEquipped) return;
+
+		Player.Instance.damageToDeal = damageToDeal;
         anim = Instantiate(skillData.separateAnim);
 
 		skillData.currentCooldown = skillData.skillCooldown;

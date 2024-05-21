@@ -5,6 +5,7 @@ using UnityEngine;
 public class Berserk : MonoBehaviour, IReactionSkill
 {
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	public void SetData()
 	{
@@ -14,6 +15,8 @@ public class Berserk : MonoBehaviour, IReactionSkill
 
 	public void PerformSkill(List<Dice> dices, List<Dice> enemyDices, int curHitPoints, int maxHitPoints)
 	{
+		if (!isEquipped) return;
+
 		if (curHitPoints <= 0 && !Battle.Instance.isLastBreathing)
 		{
 			ResetSkill();
@@ -37,6 +40,8 @@ public class Berserk : MonoBehaviour, IReactionSkill
 
 	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
 	{
+		if (!isEquipped) return false;
+
 		if (Battle.Instance.curPlayer.curHitPoints / Battle.Instance.curPlayer.maxHitPoints <= 0.25f && !Battle.Instance.isBerserking)
 			return true;
 

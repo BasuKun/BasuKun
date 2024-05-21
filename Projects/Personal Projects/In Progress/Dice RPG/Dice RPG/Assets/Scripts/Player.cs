@@ -267,6 +267,7 @@ public class Player : MonoBehaviour
     {
         isMoving = true;
         character.animator.Play("Move");
+		GameUI.Instance.SetBattleFilter(false);
 
         foreach (Dice dice in dices) dice.animator.SetBool("isMoving", true);
 
@@ -278,7 +279,12 @@ public class Player : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        yield return new WaitForSeconds(1f);
+		while (MenuToggle.Instance.isOpened)
+			yield return null;
+
+		GameUI.Instance.SetBattleFilter(true);
+
+		yield return new WaitForSeconds(1f);
         EnemySpawner.Instance.SpawnEnemy("Skeleton");
 
         yield return null;

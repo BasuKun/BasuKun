@@ -10,7 +10,7 @@ public class MenuToggle : MonoBehaviour
     public Vector2 targetPosition;
     public float moveSpeed; 
     public bool isMoving = false;
-    private bool isOpening = false;
+    public bool isOpened = false;
 
     public static MenuToggle Instance;
 
@@ -30,10 +30,10 @@ public class MenuToggle : MonoBehaviour
 
     private IEnumerator MoveUIOverTime()
     {
-        isOpening = currentPosition.x < targetPosition.x ? true : false;
+        isOpened = currentPosition.x < targetPosition.x ? true : false;
 
         Vector2 oldPosition = currentPosition;
-        float checkPosOffset = isOpening ? 0 : -1;
+        float checkPosOffset = isOpened ? 0 : -1;
         float timeElapsed = 0f;
         float totalDistance = Vector2.Distance(rectTransform.anchoredPosition, targetPosition);
         float totalTime = totalDistance / moveSpeed;

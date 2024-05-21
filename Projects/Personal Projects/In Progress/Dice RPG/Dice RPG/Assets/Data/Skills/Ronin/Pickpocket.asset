@@ -16,12 +16,13 @@ MonoBehaviour:
   stateName: 
   currentLevel: 0
   maxLevel: 4
+  currentCooldown: 0
   skillCooldown: 0
   skillType: 1
   skillClass: 2
   hasSeparateAnim: 0
   description: Drop more gold at the end of the fight.
-  icon: {fileID: 7244253545965101072, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
+  icon: {fileID: 21300000, guid: d13920abdffc6c643a3c4f7e4074e6c7, type: 3}
   skillTrigger: {fileID: 21300000, guid: cd3ca0405be63f047bd9c5e449eb197f, type: 3}
   sprites: []
   frameDuration: 0

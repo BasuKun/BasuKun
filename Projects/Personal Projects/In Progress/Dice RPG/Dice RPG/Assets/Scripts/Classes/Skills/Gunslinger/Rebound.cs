@@ -6,6 +6,7 @@ public class Rebound : MonoBehaviour, IDamageSkill
 {
     public int damageToDeal { get; set; }
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	public void SetData()
     {
@@ -15,6 +16,8 @@ public class Rebound : MonoBehaviour, IDamageSkill
 
 	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
 	{
+		if (!isEquipped) return false;
+
 		for (int i = 0; i <= dices.Count - 3; i++)
         {
             if (dices[i].value % 2 == 0 && dices[i + 1].value % 2 == 0 && dices[i + 2].value % 2 == 0)
@@ -35,8 +38,10 @@ public class Rebound : MonoBehaviour, IDamageSkill
     }
 
     public void PerformSkill(Animator animator)
-    {
-        Player.Instance.damageToDeal = damageToDeal;
+	{
+		if (!isEquipped) return;
+
+		Player.Instance.damageToDeal = damageToDeal;
         Battle.Instance.DealDamage(false, Player.Instance.damageToDeal);
 
 		skillData.currentCooldown = skillData.skillCooldown;

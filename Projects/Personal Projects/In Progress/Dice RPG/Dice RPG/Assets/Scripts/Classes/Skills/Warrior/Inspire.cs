@@ -5,6 +5,7 @@ using UnityEngine;
 public class Inspire : MonoBehaviour, IBuffSkill
 {
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	public void SetData()
 	{
@@ -14,6 +15,8 @@ public class Inspire : MonoBehaviour, IBuffSkill
 
 	public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
 	{
+		if (!isEquipped) return;
+
 		if (dices[0].value == 6)
 		{
 			Player.Instance.damageToDeal += dices.Count;
@@ -25,6 +28,8 @@ public class Inspire : MonoBehaviour, IBuffSkill
 
 	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
 	{
+		if (!isEquipped) return false;
+
 		if (dices[0].value == 6)
 			return true;
 

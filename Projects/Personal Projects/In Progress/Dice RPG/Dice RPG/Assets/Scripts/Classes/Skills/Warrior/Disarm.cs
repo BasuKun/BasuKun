@@ -5,6 +5,7 @@ using UnityEngine;
 public class Disarm : MonoBehaviour, IEffectSkill
 {
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	public void SetData()
     {
@@ -13,8 +14,10 @@ public class Disarm : MonoBehaviour, IEffectSkill
 	}
 
     public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
-    {
-        if (dices[dices.Count - 1].value == enemyDices[enemyDices.Count - 1].value)
+	{
+		if (!isEquipped) return;
+
+		if (dices[dices.Count - 1].value == enemyDices[enemyDices.Count - 1].value)
         {
             StartCoroutine(dices[dices.Count - 1].TriggerSkillAnimation(0f, skillData.skillName, true, Player.Instance.character.transform, skillData.skillType));
             for (int i = 0; i < enemyDices.Count / 2; i++)
@@ -28,6 +31,8 @@ public class Disarm : MonoBehaviour, IEffectSkill
 
 	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
 	{
+		if (!isEquipped) return false;
+
 		if (dices[dices.Count - 1].value == enemyDices[enemyDices.Count - 1].value)
 			return true;
 

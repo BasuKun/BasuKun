@@ -16,12 +16,13 @@ MonoBehaviour:
   stateName: 
   currentLevel: 0
   maxLevel: 1
+  currentCooldown: 0
   skillCooldown: 5
   skillType: 3
   skillClass: 1
   hasSeparateAnim: 0
   description: Disable half the enemy's Dice for multiple turns with your Basic Attack.
-  icon: {fileID: 4805335499060298388, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
+  icon: {fileID: 21300000, guid: 3d2d2ea526e06404ab4385a8a5912e91, type: 3}
   skillTrigger: {fileID: 21300000, guid: e1d5e18535e8f994ca135653c9248de8, type: 3}
   sprites: []
   frameDuration: 0

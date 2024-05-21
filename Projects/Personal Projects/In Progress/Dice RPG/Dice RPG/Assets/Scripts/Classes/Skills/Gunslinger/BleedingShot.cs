@@ -5,6 +5,7 @@ using UnityEngine;
 public class BleedingShot : MonoBehaviour, IEffectSkill
 {
 	[field: SerializeField] public Skill skillData { get; set; }
+	public bool isEquipped { get; set; }
 
 	public void SetData()
 	{
@@ -15,6 +16,7 @@ public class BleedingShot : MonoBehaviour, IEffectSkill
 	public void PerformSkill(List<Dice> dices, List<Dice> enemyDices)
 	{
 		if (Battle.Instance.curEnemy.isBleeding) return;
+		if (!isEquipped) return;
 
 		for (int i = 0; i < dices.Count - 1; i++)
 		{
@@ -33,8 +35,8 @@ public class BleedingShot : MonoBehaviour, IEffectSkill
 
 	public bool HasSkillPattern(List<Dice> dices, List<Dice> enemyDices = null, bool triggerAttack = true)
 	{
-		if (Battle.Instance.curEnemy.isBleeding) 
-			return false;
+		if (!isEquipped) return false;
+		if (Battle.Instance.curEnemy.isBleeding) return false;
 
 		for (int i = 0; i < dices.Count - 1; i++)
 		{

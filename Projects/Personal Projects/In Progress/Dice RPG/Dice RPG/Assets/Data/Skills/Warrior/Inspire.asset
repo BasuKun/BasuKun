@@ -16,12 +16,13 @@ MonoBehaviour:
   stateName: 
   currentLevel: 0
   maxLevel: 3
+  currentCooldown: 0
   skillCooldown: 3
   skillType: 1
   skillClass: 1
   hasSeparateAnim: 0
   description: Gain Damage for 1 turn.
-  icon: {fileID: 9001325716966530779, guid: 81a9d733d3f18674d83a972c96b73102, type: 3}
+  icon: {fileID: 21300000, guid: a0dcb1fcb03e8494fb6d25bc93e37496, type: 3}
   skillTrigger: {fileID: 21300000, guid: c3dcc28742b10e043a1405f385ef363d, type: 3}
   sprites: []
   frameDuration: 0
